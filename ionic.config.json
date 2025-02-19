@@ -1,0 +1,7 @@
+{
+  "name": "notsan-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
