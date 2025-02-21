@@ -9,7 +9,7 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
-      <component v-if="medicationComponent" :is="medicationComponent" />
+      <component v-if="medicationComponent" :is="medicationComponent" :medication="medication" />
     </ion-content>
   </ion-page>
 </template>

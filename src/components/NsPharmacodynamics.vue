@@ -9,7 +9,7 @@ import NsContentGroup from '@/components/NsContentGroup.vue'
 </script>
 
 <style lang="css" scoped>
-.ns-pharmacodyn >>> p
+.ns-pharmacodyn :deep(p)
 {
   margin-bottom: .5rem;
 }

@@ -1,8 +1,8 @@
 <template>
   <a class="link" :id="linkId" href="#" @click.prevent>{{ text }}</a>
   <ion-popover :trigger="linkId" trigger-action="click">
-    <ion-content class="ion-padding" v-if="!!tip">{{ tip }}</ion-content>
-    <ion-content class="ion-padding tip-text" v-else><slot></slot></ion-content>
+    <div class="ion-padding" v-if="!!tip">{{ tip }}</div>
+    <div class="ion-padding tip-text" v-else><slot></slot></div>
   </ion-popover>
 </template>
 
@@ -31,26 +31,26 @@ const linkId = ref(generateId())
 {
   font-size: 0.9rem;
 }
-.tip-text >>> h2
+.tip-text :deep(h2)
 {
   font-size: 1rem;
   font-weight: bold;
   margin: 0;
   padding: 0;
 }
-.tip-text >>> ul
+.tip-text :deep(ul)
 {
   margin: 0;
   padding: 0 0 0 1rem;
   font-size: 0.9em;
   list-style-type: circle;
 }
-.tip-text >>> p
+.tip-text :deep(p)
 {
   margin: 0 0 .5rem 0;
   padding: 0;
 }
-.tip-text >>> p:last-of-type
+.tip-text :deep(p:last-of-type)
 {
   margin: 0;
 }

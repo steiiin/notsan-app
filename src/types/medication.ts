@@ -1,7 +1,9 @@
+import { Package } from "./package";
 export interface Medication {
   id: string;
   title: string;
   subtitle?: string;
   path?: string,
-  component: () => Promise<any>;
+  packages: Record<string, Package>,
+  component: () => Promise<any>,
 }

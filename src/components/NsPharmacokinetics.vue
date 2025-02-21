@@ -6,14 +6,14 @@
             <ion-icon :icon="stopwatchOutline"></ion-icon>
             <span class="label">Wirkeintritt:</span>
           </ion-col>
-          <ion-col>{{ onset }}</ion-col>
+          <ion-col class="contentcolumn">{{ onset }}</ion-col>
         </ion-row>
         <ion-row v-if="!!duration">
           <ion-col class="labelcolumn">
             <ion-icon :icon="timer"></ion-icon>
             <span class="label">Wirkdauer:</span>
           </ion-col>
-          <ion-col>{{ duration }}</ion-col>
+          <ion-col class="contentcolumn">{{ duration }}</ion-col>
         </ion-row>
       </ion-grid>
     </ns-content-group>
@@ -43,9 +43,21 @@ defineProps<{
 .ns-pharmacokin .labelcolumn
 {
   max-width: 15rem;
+  min-width: 100px;
 }
 .ns-pharmacokin .label
 {
   font-weight: bold;
+}
+.ns-pharmacokin .contentcolumn
+{
+  display: inline;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media(max-width: 330px) {
+  .ns-pharmacokin ion-icon { display: none; }
 }
 </style>

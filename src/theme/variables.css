@@ -1,6 +1,15 @@
 :root {
+
+  --ns-card-padding: 16px;
+  --ns-card-neg-padding: -16px;
+
+  --ns-text-padding: 8px;
+
   --ns-color-blue: #1c34a9; /* Blue */
   --ns-color-blue-rgb: 28, 52, 169;
+
+  --ns-color-purple: #7D3C98; /* Purple */
+  --ns-color-purple-rgb: 125, 60, 152;
 
   --ns-color-red: #cf0005; /* Red */
   --ns-color-red-rgb: 207, 0, 5;
@@ -14,10 +23,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ns-color-blue: #5c6cff; /* Lighter blue for contrast */
+    --ns-color-blue: #5c6cff; /* Lighter blue */
     --ns-color-blue-rgb: 92, 108, 255;
 
-    --ns-color-red: #ff3b3f; /* Lighter red for visibility */
+    --ns-color-purple: #B583E7; /* Lighter purple */
+    --ns-color-purple-rgb: 181, 131, 231;
+
+    --ns-color-red: #ff3b3f; /* Lighter red  */
     --ns-color-red-rgb: 255, 59, 63;
 
     --ns-color-orange: #e6a820; /* Lighter orange */

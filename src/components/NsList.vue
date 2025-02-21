@@ -13,8 +13,8 @@ defineProps<{
 <style lang="css" scoped>
 .ns-list
 {
-  padding: 0 1rem .5rem 1rem;
-  margin: 0 -1rem .5rem -1rem;
+  padding: 0 var(--ns-card-padding) calc(0.5 * var(--ns-card-padding)) var(--ns-card-padding);
+  margin: 0 var(--ns-card-neg-padding) calc(0.5 * var(--ns-card-padding)) var(--ns-card-neg-padding);
   list-style: none;
 }
 .ns-list.divider
