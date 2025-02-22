@@ -63,6 +63,7 @@ const dosageTarget = computed(() => {
   gap: 0 .2rem;
   flex-wrap: wrap;
   overflow: hidden;
+  align-items: center;
 }
 .ns-dosage .info > span
 {

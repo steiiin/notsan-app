@@ -54,4 +54,10 @@ const linkId = ref(generateId())
 {
   margin: 0;
 }
+.tip-text :deep(hr)
+{
+  margin: 0 var(--ns-card-neg-padding) var(--ns-text-padding) var(--ns-card-neg-padding);
+  padding: var(--ns-text-padding) 0 0 0;
+  border-bottom: 1px solid var(--ion-color-light);
+}
 </style>

@@ -40,6 +40,20 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/amiodaron/ContentAmiodaron.vue')
   },
   {
+    id: 'atropin',
+    title: 'Atropin',
+    packages: {
+      'iv-0.5mg-1ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Atropin”',
+        incredients: [
+          <PackageIncredient>{ amount: '0,5mg / ml' }
+        ]
+      }
+    },
+    component: () => import('@/views/content/medications/atropin/ContentAtropin.vue')
+  },
+  {
     id: 'epinephrin',
     title: 'Adrenalin',
     subtitle: 'Epinephrin, Suprarenin',

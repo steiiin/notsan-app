@@ -6,5 +6,5 @@
 </script>
 
 <style lang="css" scoped>
-span { text-decoration: underline; }
+span { text-decoration: underline dotted; }
 </style>
