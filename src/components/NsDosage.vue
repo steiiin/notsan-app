@@ -55,6 +55,7 @@ const dosageTarget = computed(() => {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 .ns-dosage .info
 {

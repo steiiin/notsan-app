@@ -24,6 +24,22 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/acetylsalicyl/ContentAcetylsalicyl.vue')
   },
   {
+    id: 'amiodaron',
+    title: 'Amiodaron',
+    subtitle: 'Cordarex, Cordarone',
+    packages: {
+      'iv-150mg-3ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Amiodaron”',
+        incredients: [
+          <PackageIncredient>{ amount: ' 150mg / 3ml' },
+          <PackageIncredient>{ amount: '= 50mg / ml' },
+        ]
+      }
+    },
+    component: () => import('@/views/content/medications/amiodaron/ContentAmiodaron.vue')
+  },
+  {
     id: 'epinephrin',
     title: 'Adrenalin',
     subtitle: 'Epinephrin, Suprarenin',
