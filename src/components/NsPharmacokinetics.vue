@@ -6,14 +6,14 @@
             <ion-icon :icon="stopwatchOutline"></ion-icon>
             <span class="label">Wirkeintritt:</span>
           </ion-col>
-          <ion-col class="contentcolumn">{{ onset }}</ion-col>
+          <ion-col class="contentcolumn" v-html="onsetText"></ion-col>
         </ion-row>
         <ion-row v-if="!!duration">
           <ion-col class="labelcolumn">
             <ion-icon :icon="timer"></ion-icon>
             <span class="label">Wirkdauer:</span>
           </ion-col>
-          <ion-col class="contentcolumn">{{ duration }}</ion-col>
+          <ion-col class="contentcolumn" v-html="durationText"></ion-col>
         </ion-row>
       </ion-grid>
     </ns-content-group>
@@ -23,10 +23,14 @@
 import { IonIcon, IonGrid, IonCol, IonRow } from '@ionic/vue';
 import { stopwatchOutline, timer } from 'ionicons/icons';
 import NsContentGroup from '@/components/NsContentGroup.vue'
-defineProps<{
+import { computed } from 'vue';
+const props = defineProps<{
   onset?: string,
   duration?: string,
 }>()
+const onsetText = computed(() => props.onset ? props.onset.replaceAll('|','<br>') : null)
+const durationText = computed(() => props.duration ? props.duration.replaceAll('|','<br>') : null)
+
 </script>
 
 <style lang="css" scoped>
@@ -55,9 +59,17 @@ defineProps<{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  line-height: var(--ns-narrow-line);
 }
 
 @media(max-width: 330px) {
   .ns-pharmacokin ion-icon { display: none; }
+}
+
+.contentcolumn :deep(case)
+{
+  display: inline-block;
+  min-width: 30px;
+  font-weight: bold;
 }
 </style>

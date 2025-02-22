@@ -31,6 +31,10 @@ defineProps<{
 {
   margin: 0 var(--ns-card-neg-padding) 0 var(--ns-card-neg-padding);
 }
+.ns-dosage-indication:last-of-type
+{
+  margin-bottom: var(--ns-card-neg-padding);
+}
 
 header
 {
@@ -39,6 +43,7 @@ header
   padding-inline: var(--ns-card-padding);
   background-color: var(--ion-color-light);
   text-transform: uppercase;
+  line-height: 1;
 }
 header ion-icon
 {

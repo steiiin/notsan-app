@@ -11,7 +11,7 @@
           <ion-title size="large">Medikamente</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ContentListContainer :items="medications" />
+      <NsContentListContainer :items="medications" />
     </ion-content>
   </ion-page>
 </template>
@@ -24,7 +24,7 @@ import { useContentStore } from '@/stores/content'
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
-import ContentListContainer from '@/components/ContentListContainer.vue';
+import NsContentListContainer from '@/components/NsContentListContainer.vue';
 
 const content = useContentStore()
 

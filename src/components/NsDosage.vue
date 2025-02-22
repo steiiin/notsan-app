@@ -69,6 +69,13 @@ const dosageTarget = computed(() => {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.dose
+{
+  font-family: monospace;
+  white-space: pre !important;
+}
+
 @media(max-width: 450px) {
   .ns-dosage .target { width: 110px; }
 }

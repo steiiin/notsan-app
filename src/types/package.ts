@@ -1,6 +1,6 @@
 export interface PackageIncredient {
   amount: string
-  label: string
+  label?: string
 }
 export interface Package {
   id: string,

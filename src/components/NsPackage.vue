@@ -6,7 +6,7 @@
     <template #right>
       <h2>{{ package.name }}</h2>
       <pre v-for="incredient in package.incredients"
-        >{{ incredient.amount }} <span
+        >{{ incredient.amount }} <span v-if="incredient.label"
         >{{ incredient.label}}</span
       ></pre>
     </template>
@@ -90,7 +90,7 @@ const pkgIcon = computed(() => {
 .ns-medpackage pre
 {
   font-size: .9em;
-  line-height: 1.2;
+  line-height: var(--ns-narrow-line);
 }
 .ns-medpackage pre > span
 {

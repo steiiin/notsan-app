@@ -7,7 +7,7 @@ export const medications: Medication[] =[
     subtitle: 'ASS, Aspirin, Aspisol',
     packages: {
       'iv-set': <Package>{
-        type: "amp-flsk",
+        type: 'amp-flsk',
         name: 'Set „Aspirin”',
         incredients: [
           <PackageIncredient>{
@@ -22,5 +22,22 @@ export const medications: Medication[] =[
       }
     },
     component: () => import('@/views/content/medications/acetylsalicyl/ContentAcetylsalicyl.vue')
+  },
+  {
+    id: 'epinephrin',
+    title: 'Adrenalin',
+    subtitle: 'Epinephrin, Suprarenin',
+    packages: {
+      'iv-1mg-1ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Adrenalin”',
+        incredients: [
+          <PackageIncredient>{
+            amount: '1mg / 1ml',
+          },
+        ]
+      }
+    },
+    component: () => import('@/views/content/medications/epinephrin/ContentEpinephrin.vue')
   },
 ]

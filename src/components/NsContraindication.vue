@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import NsListItem from '@/components/NsListItem.vue'
 defineProps<{
-  type: "intolerance" | "acute" | "chronic" | "pediatric"
+  type: "intolerance" | "acute" | "chronic" | "pediatric" | "none"
 }>()
 </script>
 
@@ -16,4 +16,5 @@ defineProps<{
 .acute { color: var(--ns-color-red); }
 .chronic { color: var(--ns-color-orange); }
 .pediatric { color: var(--ns-color-green); }
+.none { color: var(--ns-color-green); }
 </style>
