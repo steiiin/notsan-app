@@ -44,7 +44,7 @@
 
     </ns-content-group>
 
-    <ns-pharmacokinetics onset="2-5min" duration="ca. 15min"></ns-pharmacokinetics>
+    <ns-pharmacokinetics onset="2-5 Minuten" duration="ca. 15 Minuten"></ns-pharmacokinetics>
 
     <ns-pharmacodynamics>
       <p>

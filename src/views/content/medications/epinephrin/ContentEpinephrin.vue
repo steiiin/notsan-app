@@ -112,8 +112,8 @@
     </ns-content-group>
 
     <ns-pharmacokinetics
-      onset="<case>i.v.</case>wenige Sekunden|<case>i.m.</case>3-10min"
-      duration="<case>i.v.</case>2-3min|<case>i.m.</case>20-30min ">
+      onset="<case>i.v.</case>wenige Sekunden|<case>i.m.</case>3-10 Minuten"
+      duration="<case>i.v.</case>2-3 Minuten|<case>i.m.</case>20-30 Minuten">
     </ns-pharmacokinetics>
 
     <ns-pharmacodynamics>
