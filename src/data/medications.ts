@@ -69,6 +69,35 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/butylscopolamin/ContentButylscopolamin.vue')
   },
   {
+    id: 'dimenhydrinat',
+    title: 'Dimenhydrinat',
+    subtitle: 'Vomex A',
+    packages: {
+      'iv-62mg-10ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Dimenhydrinat”',
+        incredients: [
+          <PackageIncredient>{ amount: '62mg / 10ml' },
+        ]
+      },
+      'supp-40mg': <Package>{
+        type: 'supp',
+        name: 'Zäpfchen „Vomex A”',
+        incredients: [
+          <PackageIncredient>{ amount: '40mg' },
+        ]
+      },
+      'supp-70mg': <Package>{
+        type: 'supp',
+        name: 'Zäpfchen „Vomex A”',
+        incredients: [
+          <PackageIncredient>{ amount: '70mg' },
+        ]
+      }
+    },
+    component: () => import('@/views/content/medications/dimenhydrinat/ContentDimenhydrinat.vue')
+  },
+  {
     id: 'dimetinden',
     title: 'Dimetinden',
     subtitle: 'Fenistil, Histakut',

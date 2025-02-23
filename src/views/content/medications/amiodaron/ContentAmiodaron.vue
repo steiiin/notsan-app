@@ -27,7 +27,7 @@
           <ns-dosage :dosage="{ dose: '300mg', hint: '(2 Ampullen)', type: 'adult' }"></ns-dosage>
           <div>
             <ns-dosage :dosage="{ dose: '50mg /10kg', type: 'child' }"></ns-dosage>
-            <ns-dosage :dosage="{ dose: ' 1ml /10kg', color: 'red', target: ' ' }"></ns-dosage>
+            <ns-dosage :dosage="{ dose: ' 1ml /10kg', type: 'empty', color: 'red' }"></ns-dosage>
             <p>Bei <ns-c red>Kindern</ns-c> maximal 2 Ampullen (<ns-m>6ml</ns-m>)</p>
           </div>
           <hr>

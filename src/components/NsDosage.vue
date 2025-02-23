@@ -16,27 +16,31 @@ const props = defineProps<{
 }>()
 
 const dosageColor = computed(() => {
+  if (props.dosage.color) {
+    return props.dosage.color
+  }
   if (props.dosage.type === 'adult') {
     return 'blue' }
   else if (props.dosage.type === 'child') {
     return 'red' }
   else if (props.dosage.type === 'youth') {
     return 'orange' }
-  else if (props.dosage.color) {
-    return props.dosage.color }
   else {
     return null }
 })
 
 const dosageTarget = computed(() => {
+  if (props.dosage.target) {
+    return props.dosage.target
+  }
   if (props.dosage.type === 'adult') {
     return 'Erwachsene' }
   else if (props.dosage.type === 'child') {
     return 'Kinder' }
   else if (props.dosage.type === 'youth') {
     return 'Jugendliche' }
-  else if (props.dosage.target) {
-    return props.dosage.target }
+  else if (props.dosage.type === 'empty') {
+    return ' ' }
   else {
     return null }
 })

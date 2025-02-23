@@ -15,7 +15,7 @@
 import NsContentSplit from '@/components/NsContentSplit.vue'
 import { computed } from 'vue'
 const props = defineProps<{
-  type: "iv" | "im" | "pi" | "none",
+  type: "iv" | "im" | "pi" | "supp" | "none",
 }>()
 const usageTag = computed(() => {
   switch (props.type) {
@@ -25,6 +25,8 @@ const usageTag = computed(() => {
       return 'i.m.'
     case "pi":
       return 'p.i.'
+    case "supp":
+      return 'p.r.'
     default:
       return ''
   }
