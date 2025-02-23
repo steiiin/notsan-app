@@ -69,6 +69,21 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/butylscopolamin/ContentButylscopolamin.vue')
   },
   {
+    id: 'dimetinden',
+    title: 'Dimetinden',
+    subtitle: 'Fenistil, Histakut',
+    packages: {
+      'iv-4mg-4ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Histakut”',
+        incredients: [
+          <PackageIncredient>{ amount: '4mg / 4ml' },
+        ]
+      }
+    },
+    component: () => import('@/views/content/medications/dimetinden/ContentDimetinden.vue')
+  },
+  {
     id: 'epinephrin',
     title: 'Adrenalin',
     subtitle: 'Epinephrin, Suprarenin',
