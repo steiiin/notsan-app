@@ -73,8 +73,8 @@
     <ns-content-group title="Einsatz & Dosierung">
 
       <ns-package :package="defaultPackage"></ns-package>
-      <ns-package :package="supp40Package"></ns-package>
-      <ns-package :package="supp70Package"></ns-package>
+      <ns-package v-if="isSupp40Enabled" :package="supp40Package"></ns-package>
+      <ns-package v-if="isSupp70Enabled" :package="supp70Package"></ns-package>
 
       <ns-dosage-indication name="Übelkeit & Erbrechen">
         <ns-dosage-usage type="iv">
