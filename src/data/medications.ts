@@ -54,6 +54,21 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/atropin/ContentAtropin.vue')
   },
   {
+    id: 'butylscopolamin',
+    title: 'Butylscopolamin',
+    subtitle: 'Buscopan',
+    packages: {
+      'iv-20mg-1ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Butylscopolamin”',
+        incredients: [
+          <PackageIncredient>{ amount: '20mg / ml' }
+        ]
+      }
+    },
+    component: () => import('@/views/content/medications/butylscopolamin/ContentButylscopolamin.vue')
+  },
+  {
     id: 'epinephrin',
     title: 'Adrenalin',
     subtitle: 'Epinephrin, Suprarenin',

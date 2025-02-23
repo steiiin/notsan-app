@@ -49,6 +49,7 @@ const linkId = ref(generateId())
 {
   margin: 0 0 .5rem 0;
   padding: 0;
+  line-height: var(--ns-narrow-line);
 }
 .tip-text :deep(p:last-of-type)
 {

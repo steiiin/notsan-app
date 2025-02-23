@@ -20,6 +20,8 @@ const dosageColor = computed(() => {
     return 'blue' }
   else if (props.dosage.type === 'child') {
     return 'red' }
+  else if (props.dosage.type === 'youth') {
+    return 'orange' }
   else if (props.dosage.color) {
     return props.dosage.color }
   else {
@@ -31,6 +33,8 @@ const dosageTarget = computed(() => {
     return 'Erwachsene' }
   else if (props.dosage.type === 'child') {
     return 'Kinder' }
+  else if (props.dosage.type === 'youth') {
+    return 'Jugendliche' }
   else if (props.dosage.target) {
     return props.dosage.target }
   else {

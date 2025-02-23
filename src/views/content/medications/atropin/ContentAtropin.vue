@@ -55,7 +55,7 @@
         <ns-dosage-usage type="iv">
           <ns-dosage :dosage="{ type: 'adult', dose: '0,5mg', hint: '(1 Ampulle)' }"></ns-dosage>
           <h2>Repetition</h2>
-          <p>Bei <i>nachweisbarer, aber nicht ausreichender</i> Wirkung, nach <ns-u>3-5min</ns-u> möglich.</p>
+          <p>Bei <i>nachweisbarer, aber nicht ausreichender</i> Wirkung, nach <ns-u>3-5 Minuten</ns-u> möglich.</p>
           <p>Maximaldosis: <ns-m>3mg</ns-m> (6 Ampullen)</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
