@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import { IonIcon } from '@ionic/vue';
-import { chevronForward } from 'ionicons/icons';
+import { IonIcon } from '@ionic/vue'
+import { chevronForward } from 'ionicons/icons'
 defineProps<{
   icon?: string
 }>()
