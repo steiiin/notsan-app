@@ -16,7 +16,7 @@
             <ns-quicktip text="Engwinkelglaukom">
             <p>Blockierter Abfluss von Kammerwasser im Auge und gefährlicher Augeninnendruckanstieg.</p>
             <hr>
-            <ns-c red><b>RedFlags:</b></ns-c>
+            <text-colored red><b>RedFlags:</b></text-colored>
             <ul>
               <li>Plötzlicher, intensiver Augenschmerz</li>
               <li>Sehstörungen</li>
@@ -55,8 +55,8 @@
         <ns-dosage-usage type="iv">
           <ns-dosage :dosage="{ type: 'adult', dose: '0,5mg', hint: '(1 Ampulle)' }"></ns-dosage>
           <h2>Repetition</h2>
-          <p>Bei <i>nachweisbarer, aber nicht ausreichender</i> Wirkung, nach <ns-u>3-5 Minuten</ns-u> möglich.</p>
-          <p>Maximaldosis: <ns-m>3mg</ns-m> (6 Ampullen)</p>
+          <p>Bei <i>nachweisbarer, aber nicht ausreichender</i> Wirkung, nach <text-underline>3-5 Minuten</text-underline> möglich.</p>
+          <p>Maximaldosis: <text-mono>3mg</text-mono> (6 Ampullen)</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
 
@@ -105,9 +105,9 @@ import NsDosageUsage from '@/components/NsDosageUsage.vue'
 import NsDosage from '@/components/NsDosage.vue'
 import NsPharmacokinetics from '@/components/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/NsPharmacodynamics.vue'
-import NsC from '@/components/NsC.vue'
-import NsU from '@/components/NsU.vue'
-import NsM from '@/components/NsM.vue'
+import TextColored from '@/components/TextColored.vue'
+import TextUnderline from '@/components/TextUnderline.vue'
+import TextMono from '@/components/TextMono.vue'
 
 const props = defineProps<{
   medication: Medication,

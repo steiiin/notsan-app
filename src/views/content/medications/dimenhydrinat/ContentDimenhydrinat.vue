@@ -16,7 +16,7 @@
           <ns-quicktip text="Engwinkelglaukom"> <!-- TODO: Passus Engwinkelglaukom, existiert 4x -- evtl. in eigenes Snippet packen -->
             <p>Blockierter Abfluss von Kammerwasser im Auge und gefährlicher Augeninnendruckanstieg.</p>
             <hr>
-            <ns-c red><b>RedFlags:</b></ns-c>
+            <text-colored red><b>RedFlags:</b></text-colored>
             <ul>
               <li>Plötzlicher, intensiver Augenschmerz</li>
               <li>Sehstörungen</li>
@@ -38,9 +38,9 @@
             Typisch sind anfallsweise auftretende Tachykardien, oft in Form einer Torsades-des-Pointes (einer Form der ventrikulären Tachykardie).
           </p>
           <hr>
-          <ns-c red><b>RedFlag:</b></ns-c><br>
+          <text-colored red><b>RedFlag:</b></text-colored><br>
           <p>
-            Wenn <b>QT</b>-Interval größer <b>50%</b> von <b>RR</b>-Abstand, dann <ns-c red>auffällig</ns-c>.
+            Wenn <b>QT</b>-Interval größer <b>50%</b> von <b>RR</b>-Abstand, dann <text-colored red>auffällig</text-colored>.
             <img :src="imgLongQt" />
           </p>
         </ns-quicktip></ns-contraindication>
@@ -88,7 +88,7 @@
             <p>Bei <i>i.v-Überdosierung</i> lebensbedrohliche Nebenwirkungen möglich. <i>Gewichtsadaptiert:</i></p>
             <ns-dosage :dosage="{ dose: '1,25mg / kg', type: 'none', color: 'red' }"></ns-dosage>
             <div>
-              <p>In Ampulle <ns-m>6,2mg / ml</ns-m>, d.h.:</p>
+              <p>In Ampulle <text-mono>6,2mg / ml</text-mono>, d.h.:</p>
               <ns-dosage :dosage="{ dose: '1ml /5kg', type: 'none', color: 'red' }"></ns-dosage>
             </div>
           </template>
@@ -145,9 +145,9 @@ import NsDosageUsage from '@/components/NsDosageUsage.vue'
 import NsDosage from '@/components/NsDosage.vue'
 import NsPharmacokinetics from '@/components/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/NsPharmacodynamics.vue'
-import NsC from '@/components/NsC.vue'
-import NsM from '@/components/NsM.vue'
-import NsU from '@/components/NsU.vue'
+import TextColored from '@/components/TextColored.vue'
+import TextMono from '@/components/TextMono.vue'
+import TextUnderline from '@/components/TextUnderline.vue'
 
 import imgLongQt from '@/data/assets/long-qt.png'
 

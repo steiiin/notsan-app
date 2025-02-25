@@ -20,7 +20,7 @@
           <ns-quicktip text="Hirndruckzeichen">
             <p>Gesteigerter Hirndruck durch Raumforderung, z.B. bei Hirnblutung oder Hirnödem.</p>
             <hr>
-            <ns-c red><b>RedFlags:</b></ns-c>
+            <text-colored red><b>RedFlags:</b></text-colored>
             <ul>
               <li>Kopfschmerzen</li>
               <li>Erbrechen</li>
@@ -109,27 +109,27 @@
             </div>
           </div>
           <p>
-            <ns-m>1ml</ns-m> entspricht jetzt <i>{{ onlySAA ? 'dem Maximum' : 'der Zieldosis' }}</i> <br>
-            pro <ns-m>10kgKG</ns-m>.
+            <text-mono>1ml</text-mono> entspricht jetzt <i>{{ onlySAA ? 'dem Maximum' : 'der Zieldosis' }}</i> <br>
+            pro <text-mono>10kgKG</text-mono>.
           </p>
           <hr>
           <h2>Initialdosis</h2>
           <p>{{ onlySAA ? 'Maximum' : 'Zieldosis' }} auf Spritze <i>markieren</i>.</p>
           <p style="opacity: .6;">
-            Ein <i><ns-m>80kg</ns-m>-Patient</i> würde <ns-m>8ml</ns-m> bekommen. <i>Rest <ns-m>2ml</ns-m> markieren</i>.
+            Ein <i><text-mono>80kg</text-mono>-Patient</i> würde <text-mono>8ml</text-mono> bekommen. <i>Rest <text-mono>2ml</text-mono> markieren</i>.
           </p>
           <p>Die <b>Hälfte</b> {{ onlySAA ? 'vom Maximum' : 'der Zieldosis' }} geben.</p>
           <hr>
           <h2>Repetition</h2>
           <p>
-            Nach <ns-u>4 Minuten</ns-u> Wartezeit die <br>
+            Nach <text-underline>4 Minuten</text-underline> Wartezeit die <br>
             andere <b>Hälfte</b> geben.
           </p>
           <p v-if="onlySAA">
             <i>Maximum erreicht.</i>
           </p>
           <p v-else>
-            Alle <ns-u>60 Sekunden</ns-u> weitere <b><ns-m>0,5ml</ns-m></b> geben, bis <i>Schmerzfreiheit</i> erreicht.
+            Alle <text-underline>60 Sekunden</text-underline> weitere <b><text-mono>0,5ml</text-mono></b> geben, bis <i>Schmerzfreiheit</i> erreicht.
           </p>
         </ns-dosage-usage>
         <ns-dosage-usage type="im" label="intramuskulär & nasal">
@@ -146,8 +146,8 @@
               <b>pur aufziehen</b>
             </div>
             <p>
-              <ns-m>1ml</ns-m> entspricht jetzt <i>der Zieldosis</i> <br>
-              pro <ns-m>10kgKG</ns-m>.
+              <text-mono>1ml</text-mono> entspricht jetzt <i>der Zieldosis</i> <br>
+              pro <text-mono>10kgKG</text-mono>.
             </p>
             <hr>
             <h2>Initialdosis</h2>
@@ -156,7 +156,7 @@
             <hr>
             <h2>Repetition</h2>
             <p>
-              Nach <ns-u>4 Minuten</ns-u> Wartezeit die <br>
+              Nach <text-underline>4 Minuten</text-underline> Wartezeit die <br>
               andere <b>Hälfte</b> geben.
             </p>
           </template>
@@ -182,8 +182,8 @@
               </div>
             </div>
             <p>
-              <ns-m>1ml</ns-m> entspricht jetzt <i>der Zieldosis</i> <br>
-              pro <ns-m>10kgKG</ns-m>.
+              <text-mono>1ml</text-mono> entspricht jetzt <i>der Zieldosis</i> <br>
+              pro <text-mono>10kgKG</text-mono>.
             </p>
             <h2>Aufziehen &gt; 40kg</h2>
             <div style="display:flex" v-if="isiv25_2mlEnabled">
@@ -201,8 +201,8 @@
               </div>
             </div>
             <p>
-              <ns-m>0,5ml</ns-m> entspricht jetzt <i>der Zieldosis</i> <br>
-              pro <ns-m>10kgKG</ns-m>.
+              <text-mono>0,5ml</text-mono> entspricht jetzt <i>der Zieldosis</i> <br>
+              pro <text-mono>10kgKG</text-mono>.
             </p>
             <hr>
             <h2>Initialdosis</h2>
@@ -211,7 +211,7 @@
             <hr>
             <h2>Repetition</h2>
             <p>
-              Nach <ns-u>4 Minuten</ns-u> Wartezeit die <br>
+              Nach <text-underline>4 Minuten</text-underline> Wartezeit die <br>
               andere <b>Hälfte</b> geben.
             </p>
           </template>
@@ -269,9 +269,9 @@ import NsDosageUsage from '@/components/NsDosageUsage.vue'
 import NsDosage from '@/components/NsDosage.vue'
 import NsPharmacokinetics from '@/components/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/NsPharmacodynamics.vue'
-import NsC from '@/components/NsC.vue'
-import NsM from '@/components/NsM.vue'
-import NsU from '@/components/NsU.vue'
+import TextColored from '@/components/TextColored.vue'
+import TextMono from '@/components/TextMono.vue'
+import TextUnderline from '@/components/TextUnderline.vue'
 
 import imgLongQt from '@/data/assets/long-qt.png'
 import { arrowForwardOutline } from 'ionicons/icons'

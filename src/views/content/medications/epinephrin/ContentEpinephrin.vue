@@ -45,19 +45,19 @@
           <hr>
           <ns-dosage :dosage="{ type: 'child', dose: '0,01mg/kg' }"></ns-dosage>
           <div>
-            <p>Bei <ns-c red>Kinder-REA</ns-c> 1 Ampulle auf <ns-m>20mg</ns-m> NaCl aufziehen, dann:</p>
+            <p>Bei <text-colored red>Kinder-REA</text-colored> 1 Ampulle auf <text-mono>20mg</text-mono> NaCl aufziehen, dann:</p>
             <ns-dosage :dosage="{ type: 'child', dose: '1ml/5kg' }"></ns-dosage>
           </div>
         </ns-dosage-usage>
         <ns-dosage-usage type="none">
           <h2>Repetition</h2>
-          <p>Alle <ns-u>4 Minuten</ns-u> nach erster Gabe</p>
+          <p>Alle <text-underline>4 Minuten</text-underline> nach erster Gabe</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
 
       <ns-dosage-indication name="Anaphylaxie">
         <ns-dosage-usage type="none">
-          <p>Bei <ns-u>ausgeprägter allergischer Reaktion, </ns-u>d.h. <i>Schockzeichen, Atemnot, Schleimhautödem</i></p>
+          <p>Bei <text-underline>ausgeprägter allergischer Reaktion, </text-underline>d.h. <i>Schockzeichen, Atemnot, Schleimhautödem</i></p>
         </ns-dosage-usage>
         <ns-dosage-usage type="im">
           <ns-dosage :dosage="{
@@ -78,20 +78,20 @@
         </ns-dosage-usage>
         <ns-dosage-usage type="none">
           <h2>Repetition</h2>
-          <p>Nach <ns-u>5 Minuten</ns-u> möglich</p>
+          <p>Nach <text-underline>5 Minuten</text-underline> möglich</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
 
       <ns-dosage-indication name="Instabile Bradykardie">
         <ns-dosage-usage type="none">
-          <p><ns-u>Instabilitätskriterien</ns-u> sind z.B. <i>Vigilanzminderung, Schock, Dyspnoe</i></p>
+          <p><text-underline>Instabilitätskriterien</text-underline> sind z.B. <i>Vigilanzminderung, Schock, Dyspnoe</i></p>
         </ns-dosage-usage>
         <ns-dosage-usage type="iv">
           <ns-dosage :dosage="{ type: 'none', dose: '2-10µg/min' }"></ns-dosage>
           <hr>
           <h2>Perfusor vorbereiten</h2>
           <p>
-            1 Ampulle auf <ns-m>50ml</ns-m> NaCl Perfusorspritze aufziehen. Beschriften: <ns-c grey><ns-m>20µg/ml</ns-m></ns-c>
+            1 Ampulle auf <text-mono>50ml</text-mono> NaCl Perfusorspritze aufziehen. Beschriften: <text-colored grey><text-mono>20µg/ml</text-mono></text-colored>
           </p>
           <ns-dosage :dosage="{
             target: 'Laufrate',
@@ -102,7 +102,7 @@
 
       <ns-dosage-indication name="Atemwegsobstruktion (Schleimhautödem/Pseudokrupp)">
         <ns-dosage-usage type="none">
-          <p>Wenn <ns-u>SpO<sub>2</sub> &lt; 90%,</ns-u> trotz Sauerstoffgabe</p>
+          <p>Wenn <text-underline>SpO<sub>2</sub> &lt; 90%,</text-underline> trotz Sauerstoffgabe</p>
         </ns-dosage-usage>
         <ns-dosage-usage type="pi">
           <ns-dosage :dosage="{ target: 'Vernebler', dose: '4mg', hint: '(4 Ampullen)' }"></ns-dosage>
@@ -149,9 +149,9 @@ import NsDosageUsage from '@/components/NsDosageUsage.vue'
 import NsDosage from '@/components/NsDosage.vue'
 import NsPharmacokinetics from '@/components/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/NsPharmacodynamics.vue'
-import NsC from '@/components/NsC.vue'
-import NsU from '@/components/NsU.vue'
-import NsM from '@/components/NsM.vue'
+import TextColored from '@/components/TextColored.vue'
+import TextUnderline from '@/components/TextUnderline.vue'
+import TextMono from '@/components/TextMono.vue'
 
 const props = defineProps<{
   medication: Medication,

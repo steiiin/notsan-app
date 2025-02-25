@@ -16,7 +16,7 @@
           <ns-quicktip text="Engwinkelglaukom"> <!-- TODO: Passus Engwinkelglaukom, existiert 3x -- evtl. in eigenes Snippet packen -->
             <p>Blockierter Abfluss von Kammerwasser im Auge und gefährlicher Augeninnendruckanstieg.</p>
             <hr>
-            <ns-c red><b>RedFlags:</b></ns-c>
+            <text-colored red><b>RedFlags:</b></text-colored>
             <ul>
               <li>Plötzlicher, intensiver Augenschmerz</li>
               <li>Sehstörungen</li>
@@ -62,7 +62,7 @@
             <ns-dosage :dosage="{ dose: '1ml /10kg', type: 'none' }"></ns-dosage>
           </div>
           <hr>
-          <p><ns-u>Keine</ns-u> Repetition.</p>
+          <p><text-underline>Keine</text-underline> Repetition.</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
 
@@ -102,9 +102,9 @@ import NsDosageUsage from '@/components/NsDosageUsage.vue'
 import NsDosage from '@/components/NsDosage.vue'
 import NsPharmacokinetics from '@/components/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/NsPharmacodynamics.vue'
-import NsC from '@/components/NsC.vue'
-import NsM from '@/components/NsM.vue'
-import NsU from '@/components/NsU.vue'
+import TextColored from '@/components/TextColored.vue'
+import TextMono from '@/components/TextMono.vue'
+import TextUnderline from '@/components/TextUnderline.vue'
 
 const props = defineProps<{
   medication: Medication,

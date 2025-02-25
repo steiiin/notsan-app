@@ -28,14 +28,14 @@
           <div>
             <ns-dosage :dosage="{ dose: '50mg /10kg', type: 'child' }"></ns-dosage>
             <ns-dosage :dosage="{ dose: ' 1ml /10kg', type: 'empty', color: 'red' }"></ns-dosage>
-            <p>Bei <ns-c red>Kindern</ns-c> maximal 2 Ampullen (<ns-m>6ml</ns-m>)</p>
+            <p>Bei <text-colored red>Kindern</text-colored> maximal 2 Ampullen (<text-mono>6ml</text-mono>)</p>
           </div>
           <hr>
           <h2>Nach 5. <i>erfolgloser</i> Defibrillation</h2>
           <ns-dosage :dosage="{ dose: '150mg', hint: '(1 Ampulle)', type: 'adult' }"></ns-dosage>
           <p>
-            Bei <ns-c red>Kindern</ns-c> wie bei 1. Gabe, <br>
-            aber maximal 1 Ampulle (<ns-m>150mg</ns-m>)
+            Bei <text-colored red>Kindern</text-colored> wie bei 1. Gabe, <br>
+            aber maximal 1 Ampulle (<text-mono>150mg</text-mono>)
           </p>
           <hr>
           <p>Langsam spritzen & Nachspülen</p>
@@ -82,8 +82,8 @@ import NsDosageUsage from '@/components/NsDosageUsage.vue'
 import NsDosage from '@/components/NsDosage.vue'
 import NsPharmacokinetics from '@/components/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/NsPharmacodynamics.vue'
-import NsC from '@/components/NsC.vue'
-import NsM from '@/components/NsM.vue'
+import TextColored from '@/components/TextColored.vue'
+import TextMono from '@/components/TextMono.vue'
 
 const props = defineProps<{
   medication: Medication,

@@ -17,7 +17,7 @@
             <ns-quicktip text="Engwinkelglaukom">
             <p>Blockierter Abfluss von Kammerwasser im Auge und gefährlicher Augeninnendruckanstieg.</p>
             <hr>
-            <ns-c red><b>RedFlags:</b></ns-c>
+            <text-colored red><b>RedFlags:</b></text-colored>
             <ul>
               <li>Plötzlicher, intensiver Augenschmerz</li>
               <li>Sehstörungen</li>
@@ -33,7 +33,7 @@
           <ns-quicktip text="Myasthenia Gravis">
             <p>Autoimmunerkrankung mit gestörter Signalübertragung zwischen Nerv und Muskel.</p>
             <hr>
-            <ns-c red><b>RedFlags:</b></ns-c>
+            <text-colored red><b>RedFlags:</b></text-colored>
             <ul>
               <li>Meistens bereits bekannt</li>
               <li>Unscharfes, doppeltes Sehen</li>
@@ -91,12 +91,12 @@
             <ns-dosage :dosage="{ dose: '10mg', hint: '(½ Ampulle)', type: 'child' }"></ns-dosage>
           </div>
           <hr>
-          <p>Auf <ns-m>20ml</ns-m> NaCl aufziehen, langsam spritzen &amp; nachspülen. </p>
+          <p>Auf <text-mono>20ml</text-mono> NaCl aufziehen, langsam spritzen &amp; nachspülen. </p>
           <p>Herzfrequenz mit EKG oder SpO<sub>2</sub>-Sensor <i>überwachen</i>.</p>
         </ns-dosage-usage>
         <ns-dosage-usage type="none">
           <h2>Repetition</h2>
-          <p>Nach <ns-u>5 Minuten</ns-u> kann der Rest gegeben werden.</p>
+          <p>Nach <text-underline>5 Minuten</text-underline> kann der Rest gegeben werden.</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
 
@@ -139,9 +139,9 @@ import NsDosageUsage from '@/components/NsDosageUsage.vue'
 import NsDosage from '@/components/NsDosage.vue'
 import NsPharmacokinetics from '@/components/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/NsPharmacodynamics.vue'
-import NsC from '@/components/NsC.vue'
-import NsM from '@/components/NsM.vue'
-import NsU from '@/components/NsU.vue'
+import TextColored from '@/components/TextColored.vue'
+import TextMono from '@/components/TextMono.vue'
+import TextUnderline from '@/components/TextUnderline.vue'
 
 const props = defineProps<{
   medication: Medication,
