@@ -1,12 +1,10 @@
 <template>
   <ion-list>
-    <ion-item-group v-for="(items, letter) in groupedList" :key="letter"
-      class="list-group">
+    <ion-item-group v-for="(items, letter) in groupedList" :key="letter" class="list-group">
       <ion-item-divider>
         <ion-label>{{ letter }}</ion-label>
       </ion-item-divider>
-      <ion-item v-for="item in items" :key="item.id"
-        button :routerLink="item.path">
+      <ion-item v-for="item in items" :key="item.id" button :routerLink="item.path">
         <ion-label>
           <template v-if="!item.subtitle">
             {{ item.title }}
@@ -23,16 +21,15 @@
 
 <script setup lang="ts">
 
-import { Medication } from '@/types/medication';
 import { IonList, IonItem, IonLabel, IonItemGroup, IonItemDivider } from '@ionic/vue'
+
+import { Medication } from '@/types/medication'
+
 import { computed } from 'vue'
-import { useRouter } from 'vue-router'
 
 const props = defineProps<{
   items: any[]
 }>()
-
-const router = useRouter()
 
 const groupedList = computed(() => {
   const groups: Record<string, Medication[]> = {}
