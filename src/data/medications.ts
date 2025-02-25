@@ -129,4 +129,33 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/epinephrin/ContentEpinephrin.vue')
   },
+  {
+    id: 'esketamin',
+    title: 'Esketamin',
+    subtitle: 'Ketanest S',
+    packages: {
+      'iv-5mg-ml--5ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Esketamin”',
+        incredients: [
+          <PackageIncredient>{ amount: '5mg/ml (5ml)' },
+        ]
+      },
+      'iv-25mg-ml--2ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Esketamin”',
+        incredients: [
+          <PackageIncredient>{ amount: '25mg/ml (2ml)' },
+        ]
+      },
+      'iv-25mg-ml--10ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Esketamin”',
+        incredients: [
+          <PackageIncredient>{ amount: '25mg/ml (10ml)' },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/esketamin/ContentEsketamin.vue')
+  },
 ]
