@@ -17,19 +17,23 @@ defineProps<{
 </script>
 
 <style lang="css" scoped>
-.ns-content-group ion-card-content
-{
-  font-size: 0.9rem;
-  color: var(--ion-color-dark);
-  padding: 0 var(--ns-card-padding) var(--ns-card-padding) var(--ns-card-padding);
-}
+
 .ns-content-group ion-card-header
 {
   padding-inline: var(--ns-card-padding);
   padding-top: var(--ns-card-padding);
 }
+.ns-content-group ion-card-content
+{
+  padding: 0 var(--ns-card-padding) var(--ns-card-padding) var(--ns-card-padding);
+
+  font-size: 0.9rem;
+  color: var(--ion-color-dark);
+}
+
 .ns-content-group ion-card-title.ios
 {
   font-size: 1.2rem;
 }
+
 </style>
