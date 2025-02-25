@@ -17,9 +17,12 @@
 </template>
 
 <script setup lang="ts">
-import NsContentSplit from './NsContentSplit.vue'
-import { IonIcon } from '@ionic/vue';
+
+import { IonIcon } from '@ionic/vue'
 import { medical } from 'ionicons/icons'
+
+import NsContentSplit from './NsContentSplit.vue'
+
 defineProps<{
   name: string,
 }>()
@@ -27,17 +30,14 @@ defineProps<{
 
 <style lang="css" scoped>
 
-.ns-dosage-indication
-{
+.ns-dosage-indication {
   margin: 0 var(--ns-card-neg-padding) 0 var(--ns-card-neg-padding);
 }
-.ns-dosage-indication:last-of-type
-{
+.ns-dosage-indication:last-of-type {
   margin-bottom: var(--ns-card-neg-padding);
 }
 
-header
-{
+header {
   font-size: 1em;
   padding-block: calc(0.5 * var(--ns-card-padding));
   padding-inline: var(--ns-card-padding);
@@ -45,14 +45,12 @@ header
   text-transform: uppercase;
   line-height: 1;
 }
-header ion-icon
-{
+header ion-icon {
   font-size: 1.5rem;
   opacity: .5;
 }
 
-.usages
-{
+.usages {
   padding-inline: var(--ns-card-padding);
   padding-top: var(--ns-text-padding);
 }
