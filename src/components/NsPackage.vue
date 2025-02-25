@@ -1,16 +1,24 @@
 <template>
-  <ns-content-split class="ns-medpackage" nowrap>
-    <template #left>
+  <template v-if="inline">
+    <span class="ns-medpackage-inline">
       <ion-icon :icon="pkgIcon"></ion-icon>
-    </template>
-    <template #right>
-      <h2>{{ package.name }}</h2>
-      <pre v-for="incredient in package.incredients"
-        >{{ incredient.amount }}<span v-if="incredient.label"
-        >{{ incredient.label}}</span
-      ></pre>
-    </template>
-  </ns-content-split>
+      <pre>{{ firstAmount }}<span>{{ firstIncredient?.label }}</span></pre>
+    </span>
+  </template>
+  <template v-else>
+    <ns-content-split class="ns-medpackage" nowrap>
+      <template #left>
+        <ion-icon :icon="pkgIcon"></ion-icon>
+      </template>
+      <template #right>
+        <h2>{{ package.name }}</h2>
+        <pre v-for="incredient in package.incredients"
+          >{{ incredient.amount }}<span v-if="incredient.label"
+          >{{ incredient.label}}</span
+        ></pre>
+      </template>
+    </ns-content-split>
+  </template>
 </template>
 
 <script setup lang="ts">
@@ -21,6 +29,7 @@ import { computed } from 'vue'
 import { Package } from '@/types/package'
 const props = defineProps<{
   package: Package,
+  inline?: boolean,
 }>()
 
 const pkgIcon = computed(() => {
@@ -48,6 +57,32 @@ const pkgIcon = computed(() => {
       return spritz
     default:
       return amp1x
+  }
+})
+
+const firstIncredient = computed(() => props.package.incredients.at(0) ? props.package.incredients.at(0) : null)
+const firstAmount = computed(() => firstIncredient.value ? firstIncredient.value.amount.replaceAll(' ', '') : null)
+
+const typeDescription = computed(() => {
+  switch (props.package.type) {
+    case "amp":
+    case "flexamp":
+      return "Ampulle"
+    case"amp-2x":
+      return "Ampullen"
+    case "amp-flsk":
+    case "flsk":
+      return "Flasche"
+    case "inhaler":
+      return "Inhalation"
+    case "infusion":
+      return "Infusion"
+    case "spray":
+      return "Spray"
+    case "supp":
+      return "Zäpfchen"
+    case "spritz":
+      return "Spritze"
   }
 })
 
@@ -87,16 +122,30 @@ const pkgIcon = computed(() => {
   font-size: 1em;
   font-weight: bold;
 }
-.ns-medpackage pre
+
+.ns-medpackage-inline
+{
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+.ns-medpackage-inline ion-icon
+{
+  font-size: 1.2em;
+}
+.ns-medpackage pre,
+.ns-medpackage-inline pre
 {
   font-size: .9em;
   line-height: var(--ns-narrow-line);
   white-space: pre;
 }
-.ns-medpackage pre > span
+.ns-medpackage pre > span,
+.ns-medpackage-inline pre > span
 {
   font-family: 'sans-serif';
   font-size: 1em;
+  margin-left: 0.2rem;
 }
 
 </style>
