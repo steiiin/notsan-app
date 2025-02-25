@@ -60,6 +60,7 @@ const durationText = computed(() => props.duration ? props.duration.replaceAll('
   white-space: nowrap;
   text-overflow: ellipsis;
   line-height: var(--ns-narrow-line);
+  margin: auto 0;
 }
 
 @media(max-width: 330px) {

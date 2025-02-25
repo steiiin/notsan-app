@@ -14,7 +14,7 @@
 .ns-content-split
 {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: .5rem;
   overflow: hidden;
 }
@@ -22,8 +22,9 @@
 {
   display: flex;
   width: 3rem;
-  justify-content: center;
   flex-shrink: 0;
+  align-items: stretch;
+  position: relative;
 }
 .right
 {
@@ -32,6 +33,7 @@
   flex: 1;
   min-width: none;
   overflow: hidden;
+  align-items: stretch;
 }
 
 @media(max-width: 360px) {

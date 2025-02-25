@@ -1,7 +1,9 @@
 <template>
-  <ns-content-split class="ns-dosage-usage">
+  <ns-content-split class="ns-dosage-usage" :class="{ 'nodivider': nodivider  }">
     <template #left>
-      <span class="usage-tag">{{ usageTag }}</span>
+      <span class="usage-divider" :class="usageColor">
+        <span>{{ usageTag }}</span>
+      </span>
     </template>
     <template #right>
       <div class="usage-content">
@@ -15,30 +17,73 @@
 import NsContentSplit from '@/components/NsContentSplit.vue'
 import { computed } from 'vue'
 const props = defineProps<{
-  type: "iv" | "im" | "pi" | "supp" | "none",
+  type: "iv" | "im" | "nasal" | "pi" | "supp" | "none",
+  label?: string,
+  nodivider?: boolean,
 }>()
 const usageTag = computed(() => {
+  if (props.label) { return props.label}
   switch (props.type) {
     case "iv":
-      return 'i.v.'
+      return 'intravenös'
     case "im":
-      return 'i.m.'
+      return 'intramuskulär'
+    case "nasal":
+      return 'intranasal'
     case "pi":
-      return 'p.i.'
+      return 'inhalativ'
     case "supp":
-      return 'p.r.'
+      return 'rektal'
     default:
-      return ''
+      return ' '
+  }
+})
+const usageColor = computed(() => {
+  switch (props.type) {
+    case "iv":
+      return 'red'
+    case "im":
+      return 'blue'
+    case "nasal":
+      return 'green'
+    case "pi":
+      return 'blue'
+    case "supp":
+      return 'orange'
+    default:
+      return 'none'
   }
 })
 </script>
 
 <style lang="css" scoped>
-.usage-tag
+.usage-divider
 {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: .5rem;
+  bottom: 0;
   font-size: 0.7rem;
   letter-spacing: 1px;
+  border-right: 3px solid;
 }
+.ns-dosage-usage.nodivider .usage-divider
+{
+  border-right: none;
+}
+.usage-divider span
+{
+  margin: auto 0;
+  writing-mode: vertical-lr;
+}
+
+.usage-divider.red { border-color: rgba(var(--ns-color-red-rgb), .2) }
+.usage-divider.blue { border-color: rgba(var(--ns-color-blue-rgb), .2) }
+.usage-divider.green { border-color: rgba(var(--ns-color-green-rgb), .2) }
+.usage-divider.orange { border-color: rgba(var(--ns-color-orange-rgb), .2) }
+.usage-divider.none { border-color: transparent }
 
 .ns-dosage-usage
 {

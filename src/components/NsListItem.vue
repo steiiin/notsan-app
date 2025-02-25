@@ -20,6 +20,10 @@ defineProps<{
   align-items: center;
   white-space: pre-line;
 }
+.ns-list-item span
+{
+  line-height: var(--ns-narrow-line);
+}
 .ns-list-item ion-icon
 {
   flex-shrink: 0;

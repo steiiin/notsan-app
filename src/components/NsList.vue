@@ -16,6 +16,9 @@ defineProps<{
   padding: 0 var(--ns-card-padding) calc(0.5 * var(--ns-card-padding)) var(--ns-card-padding);
   margin: 0 var(--ns-card-neg-padding) calc(0.5 * var(--ns-card-padding)) var(--ns-card-neg-padding);
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
 }
 .ns-list.divider
 {

@@ -6,7 +6,7 @@
           <ion-icon :icon="medical"></ion-icon>
         </template>
         <template #right>
-          <span>{{ name }}</span>
+          <span style="margin: auto 0;">{{ name }}</span>
         </template>
       </ns-content-split>
     </header>
