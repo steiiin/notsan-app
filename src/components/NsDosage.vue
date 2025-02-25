@@ -9,41 +9,27 @@
 </template>
 
 <script setup lang="ts">
+
 import { Dosage } from '@/types/dosage'
-import { computed } from 'vue';
+import { computed } from 'vue'
+
 const props = defineProps<{
   dosage: Dosage
 }>()
 
-const dosageColor = computed(() => {
-  if (props.dosage.color) {
-    return props.dosage.color
-  }
-  if (props.dosage.type === 'adult') {
-    return 'blue' }
-  else if (props.dosage.type === 'child') {
-    return 'red' }
-  else if (props.dosage.type === 'youth') {
-    return 'orange' }
-  else {
-    return null }
-})
+const dosageColorMap: Record<string, string> = {
+  adult: 'blue',
+  child: 'red',
+  youth: 'orange',
+}
+const dosageColor = computed(() => props.dosage.color || (props.dosage.type && props.dosage.type in dosageColorMap ? dosageColorMap[props.dosage.type] : null))
 
-const dosageTarget = computed(() => {
-  if (props.dosage.target) {
-    return props.dosage.target
-  }
-  if (props.dosage.type === 'adult') {
-    return 'Erwachsene' }
-  else if (props.dosage.type === 'child') {
-    return 'Kinder' }
-  else if (props.dosage.type === 'youth') {
-    return 'Jugendliche' }
-  else if (props.dosage.type === 'empty') {
-    return ' ' }
-  else {
-    return null }
-})
+const dosageTargetMap: Record<string, string> = {
+  adult: 'Erwachsene',
+  child: 'Kinder',
+  youth: 'Jugendliche',
+}
+const dosageTarget = computed(() => props.dosage.target || (props.dosage.type && props.dosage.type in dosageTargetMap ? dosageTargetMap[props.dosage.type] : null))
 
 </script>
 
@@ -57,21 +43,24 @@ const dosageTarget = computed(() => {
   overflow: hidden;
   gap: 0 .2rem;
 }
+
 .ns-dosage .target
 {
   width: 150px;
+  flex-shrink: 0;
+
+  text-transform: uppercase;
+  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
-  flex-shrink: 0;
 }
 .ns-dosage .info
 {
   display: flex;
   gap: 0 .2rem;
   flex-wrap: wrap;
-  overflow: hidden;
   align-items: center;
+  overflow: hidden;
 }
 .ns-dosage .info > span
 {
@@ -84,28 +73,21 @@ const dosageTarget = computed(() => {
 {
   font-family: monospace;
   white-space: pre !important;
-}
-
-@media(max-width: 450px) {
-  .ns-dosage .target { width: 110px; }
-}
-@media(max-width: 340px) {
-  .ns-dosage { flex-wrap: wrap; }
-  .ns-dosage .target { min-width: 110px; }
-}
-
-/* text styles */
-.target
-{
-  text-transform: uppercase;
-}
-.dose
-{
   font-weight: bold;
 }
 .hint
 {
   font-size: 0.9em;
+}
+
+@media(max-width: 450px)
+{
+  .ns-dosage .target { width: 110px; }
+}
+@media(max-width: 340px)
+{
+  .ns-dosage { flex-wrap: wrap; }
+  .ns-dosage .target { min-width: 110px; }
 }
 
 /* colors */
