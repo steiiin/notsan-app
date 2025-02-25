@@ -1,7 +1,11 @@
 <template>
-  <div class="ns-content-split"
-    ><span class="left"><slot name="left"></slot></span
-    ><span class="right"><slot name="right"></slot></span>
+  <div class="ns-content-split">
+    <div class="left">
+      <slot name="left"></slot>
+    </div>
+    <div class="right">
+      <slot name="right"></slot>
+    </div>
   </div>
 </template>
 
@@ -10,24 +14,21 @@
 
 <style lang="css" scoped>
 
-/* layout styles */
-.ns-content-split
-{
+.ns-content-split {
   display: flex;
   align-items: stretch;
   gap: .5rem;
   overflow: hidden;
 }
-.left
-{
+
+.left {
   display: flex;
   width: 3rem;
   flex-shrink: 0;
   align-items: stretch;
   position: relative;
 }
-.right
-{
+.right {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -36,12 +37,14 @@
   align-items: stretch;
 }
 
-@media(max-width: 360px) {
+@media(max-width: 360px)
+{
   .ns-content-split { gap: .2rem; }
   .left { width: 2rem; }
 }
-@media(max-width: 250px) {
+
+@media(max-width: 250px)
+{
   .left { display: none; }
 }
-
 </style>
