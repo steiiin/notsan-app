@@ -11,18 +11,20 @@
 </template>
 
 <script setup lang="ts">
+
 import { IonButton, IonIcon } from '@ionic/vue'
 import { caretForward, arrowForwardOutline } from 'ionicons/icons'
+import { computed } from 'vue'
 import NsListItem from './NsListItem.vue'
-import { computed } from 'vue';
+
 const props = defineProps<{
   severe?: boolean,
   todo?: boolean,
   link?: string,
   indented?: boolean,
 }>()
-const icon = computed(() => !props.severe ? (!props.todo ? undefined : arrowForwardOutline) : caretForward)
 
+const icon = computed(() => !props.severe ? (!props.todo ? undefined : arrowForwardOutline) : caretForward)
 const showButton = computed(() => !!props.link)
 
 </script>
