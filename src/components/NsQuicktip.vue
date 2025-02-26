@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 
-import { IonPopover, IonContent } from '@ionic/vue'
+import { IonPopover } from '@ionic/vue'
 import { ref } from 'vue'
 
 defineProps<{
@@ -22,15 +22,18 @@ const linkId = ref(generateId())
 </script>
 
 <style lang="css" scoped>
+
 .link
 {
   text-decoration: underline;
   color: inherit;
 }
+
 .tip-text
 {
   font-size: 0.9rem;
 }
+
 .tip-text :deep(h2)
 {
   font-size: 1rem;
@@ -61,4 +64,5 @@ const linkId = ref(generateId())
   padding: var(--ns-text-padding) 0 0 0;
   border-bottom: 1px solid var(--ion-color-light);
 }
+
 </style>
