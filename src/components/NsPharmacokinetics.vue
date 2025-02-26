@@ -20,20 +20,24 @@
 </template>
 
 <script setup lang="ts">
-import { IonIcon, IonGrid, IonCol, IonRow } from '@ionic/vue';
-import { stopwatchOutline, timer } from 'ionicons/icons';
-import NsContentGroup from '@/components/NsContentGroup.vue'
+
+import { IonIcon, IonGrid, IonCol, IonRow } from '@ionic/vue'
+import { stopwatchOutline, timer } from 'ionicons/icons'
 import { computed } from 'vue';
+import NsContentGroup from '@/components/NsContentGroup.vue'
+
 const props = defineProps<{
   onset?: string,
   duration?: string,
 }>()
+
 const onsetText = computed(() => props.onset ? props.onset.replaceAll('|','<br>') : null)
 const durationText = computed(() => props.duration ? props.duration.replaceAll('|','<br>') : null)
 
 </script>
 
 <style lang="css" scoped>
+
 .ns-pharmacokin ion-col
 {
   display: flex;
@@ -73,4 +77,5 @@ const durationText = computed(() => props.duration ? props.duration.replaceAll('
   min-width: 30px;
   font-weight: bold;
 }
+
 </style>
