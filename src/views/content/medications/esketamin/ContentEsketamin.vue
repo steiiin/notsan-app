@@ -3,8 +3,7 @@
 
     <ns-content-group title="Indikationen">
       <ns-list>
-        <ns-list-item v-if="onlySAA">Stärkste Schmerzen nach Trauma</ns-list-item>
-        <ns-list-item v-else>Starke Schmerzen</ns-list-item>
+        <ns-list-item>Starke Schmerzen <span v-if="onlySAA">(NRS &ge; 6)</span></ns-list-item>
       </ns-list>
     </ns-content-group>
 
