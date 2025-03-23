@@ -59,6 +59,7 @@ const firstAmount = computed(() => firstIncredient.value ? firstIncredient.value
 /* parent layout */
 .ns-medpackage {
   padding-bottom: var(--ns-card-padding);
+  align-items: center;
 }
 
 /* layout styles */
