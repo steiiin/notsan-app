@@ -68,7 +68,7 @@ const usageColor = computed(() => props.type && props.type in usageColorMap ? us
 }
 
 .usage-divider span {
-  margin: auto 0;
+  margin: auto;
   writing-mode: vertical-lr;
 }
 

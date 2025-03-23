@@ -26,6 +26,7 @@
   width: 3rem;
   flex-shrink: 0;
   align-items: stretch;
+  justify-content: center;
   position: relative;
 }
 .right {
