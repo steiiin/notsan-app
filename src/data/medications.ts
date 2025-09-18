@@ -158,4 +158,25 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/esketamin/ContentEsketamin.vue')
   },
+  {
+    id: 'fentanyl',
+    title: 'Fentanyl',
+    packages: {
+      'iv-01mg-2ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Fentanyl”',
+        incredients: [
+          <PackageIncredient>{ amount: '0,1mg/2ml' },
+        ]
+      },
+      'iv-05mg-10ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Fentanyl”',
+        incredients: [
+          <PackageIncredient>{ amount: '0,5mg/10ml' },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/fentanyl/ContentFentanyl.vue')
+  },
 ]
