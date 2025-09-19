@@ -266,4 +266,32 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/glyceroltrinitrat/ContentGlyceroltrinitrat.vue')
   },
+  {
+    id: 'heparin',
+    title: 'Heparin',
+    packages: {
+      'iv-25000-ml--0.2ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Heparin”',
+        incredients: [
+          <PackageIncredient>{ amount: ' 5.000IE (0.2ml)' },
+        ]
+      },
+      'iv-5000-ml--5ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Heparin”',
+        incredients: [
+          <PackageIncredient>{ amount: '25.000IE (5ml)' },
+        ]
+      },
+      'iv-5000-ml--1ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Heparin”',
+        incredients: [
+          <PackageIncredient>{ amount: ' 5.000IE (1ml)' },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/heparin/ContentHeparin.vue')
+  },
 ]
