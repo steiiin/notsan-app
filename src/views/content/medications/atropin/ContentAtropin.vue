@@ -13,7 +13,7 @@
       </ns-list>
       <ns-list>
         <ns-contraindication type="acute">
-            <ns-quicktip text="Engwinkelglaukom">
+          <ns-quicktip text="Engwinkelglaukom">
             <p>Blockierter Abfluss von Kammerwasser im Auge und gefährlicher Augeninnendruckanstieg.</p>
             <hr>
             <text-colored red><b>RedFlags:</b></text-colored>
