@@ -19,7 +19,7 @@ import { computed } from 'vue'
 import NsContentSplit from '@/components/NsContentSplit.vue'
 
 const props = defineProps<{
-  type: "iv" | "im" | "nasal" | "pi" | "supp" | "none",
+  type: "iv" | "im" | "nasal" | "pi" | "po" | "supp" | "none",
   label?: string,
   nodivider?: boolean,
 }>()
