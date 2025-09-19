@@ -19,6 +19,12 @@
   --ns-color-orange: #BF8808; /* Orange */
   --ns-color-orange-rgb: 191, 136, 8;
 
+  --ns-color-orange: #BF8808; /* Orange */
+  --ns-color-orange-rgb: 191, 136, 8;
+
+  --ns-color-grey: #D3D3D3; /* Light Grey */
+  --ns-color-grey-rgb: 211, 211, 211;
+
   --ns-color-green: #26A269; /* Green */
   --ns-color-green-rgb: 38, 162, 105;
 }

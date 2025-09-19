@@ -29,6 +29,7 @@ const usageTagMap: Record<string, string> = {
   im: 'intramuskulär',
   nasal: 'nasal',
   pi: 'inhalativ',
+  po: 'oral',
   supp: 'rektal',
   none: ' ',
 }
@@ -39,6 +40,7 @@ const usageColorMap: Record<string, string> = {
   im: 'blue',
   nasal: 'green',
   pi: 'blue',
+  po: 'grey',
   supp: 'orange',
   none: 'none',
 }
@@ -49,6 +51,7 @@ const usageMinHeightMap: Record<string, number> = {
   im: 7,
   nasal: 3.5,
   pi: 5,
+  po: 3,
   supp: 4,
   none: 1.5,
 }
@@ -94,6 +97,9 @@ const usageMinHeight = computed(() => props.type && props.type in usageMinHeight
 }
 .usage-divider.orange {
   border-color: rgba(var(--ns-color-orange-rgb), .4)
+}
+.usage-divider.grey {
+  border-color: rgba(var(--ns-color-grey-rgb), .4)
 }
 .usage-divider.none {
   border-color: transparent
