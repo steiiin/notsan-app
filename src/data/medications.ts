@@ -179,4 +179,26 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/fentanyl/ContentFentanyl.vue')
   },
+  {
+    id: 'furosemid',
+    title: 'Furosemid',
+    subtitle: 'Furesis, Lasix',
+    packages: {
+      'iv-20mg-2ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Furosemid”',
+        incredients: [
+          <PackageIncredient>{ amount: '20mg / 2ml',  },
+        ]
+      },
+      'iv-40mg-4ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Furosemid”',
+        incredients: [
+          <PackageIncredient>{ amount: '40mg / 4ml',  },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/furosemid/ContentFurosemid.vue')
+  },
 ]
