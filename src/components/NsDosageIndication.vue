@@ -1,6 +1,6 @@
 <template>
   <div class="ns-dosage-indication">
-    <header>
+    <header v-if="name">
       <ns-content-split>
         <template #left>
           <ion-icon :icon="medical"></ion-icon>
@@ -10,6 +10,7 @@
         </template>
       </ns-content-split>
     </header>
+    <header v-else></header>
     <div class="usages">
       <slot></slot>
     </div>
@@ -24,7 +25,7 @@ import { medical } from 'ionicons/icons'
 import NsContentSplit from './NsContentSplit.vue'
 
 defineProps<{
-  name: string,
+  name?: string,
 }>()
 </script>
 
