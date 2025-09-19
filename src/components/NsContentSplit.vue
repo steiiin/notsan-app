@@ -3,13 +3,18 @@
     <div class="left">
       <slot name="left"></slot>
     </div>
-    <div class="right">
+    <div class="right" :class="{ center }">
       <slot name="right"></slot>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+
+const props = defineProps<{
+  center?: boolean
+}>()
+
 </script>
 
 <style lang="css" scoped>
@@ -36,6 +41,9 @@
   min-width: none;
   overflow: hidden;
   align-items: stretch;
+}
+.right.center {
+  justify-content: center;
 }
 
 @media(max-width: 360px)

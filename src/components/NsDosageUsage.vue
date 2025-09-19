@@ -1,5 +1,5 @@
 <template>
-  <ns-content-split class="ns-dosage-usage" :class="{ nodivider }">
+  <ns-content-split class="ns-dosage-usage" :class="{ nodivider }" center :style="'min-height: ' + usageMinHeight + 'em'">
     <template #left>
       <span class="usage-divider" :class="usageColor">
         <span>{{ usageTag }}</span>
@@ -43,6 +43,17 @@ const usageColorMap: Record<string, string> = {
   none: 'none',
 }
 const usageColor = computed(() => props.type && props.type in usageColorMap ? usageColorMap[props.type] : 'none')
+
+const usageMinHeightMap: Record<string, number> = {
+  iv: 5,
+  im: 7,
+  nasal: 3.5,
+  pi: 5,
+  supp: 4,
+  none: 1.5,
+}
+const usageMinHeight = computed(() => props.type && props.type in usageMinHeightMap ? usageMinHeightMap[props.type] : 1)
+
 
 </script>
 
