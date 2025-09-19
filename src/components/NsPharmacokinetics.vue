@@ -78,4 +78,11 @@ const durationText = computed(() => props.duration ? props.duration.replaceAll('
   font-weight: bold;
 }
 
+.contentcolumn :deep(case)::after
+{
+  content: ' ';
+  display: inline-block;
+  min-width: 4px;
+}
+
 </style>
