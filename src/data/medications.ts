@@ -223,4 +223,32 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/glucagon/ContentGlucagon.vue')
   },
+  {
+    id: 'glucose',
+    title: 'Glucose',
+    packages: {
+      'iv-g10': <Package>{
+        type: 'flexamp',
+        name: 'Ampulle „G10”',
+        incredients: [
+          <PackageIncredient>{ amount: '1g/10ml',  },
+        ]
+      },
+      'iv-g20': <Package>{
+        type: 'flexamp',
+        name: 'Ampulle „G20”',
+        incredients: [
+          <PackageIncredient>{ amount: '2g/10ml' },
+        ]
+      },
+      'iv-g40': <Package>{
+        type: 'flexamp',
+        name: 'Ampulle „G40”',
+        incredients: [
+          <PackageIncredient>{ amount: '4g/10ml' },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/glucose/ContentGlucose.vue')
+  },
 ]
