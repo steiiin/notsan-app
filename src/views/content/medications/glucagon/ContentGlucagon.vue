@@ -49,7 +49,7 @@
       <ns-package :package="inGl" v-if="isInGlEnabled"></ns-package>
 
       <ns-dosage-indication name="Hypoglykämie">
-        <ns-dosage-usage type="im">
+        <ns-dosage-usage type="im" v-if="isImGlEnabled">
           <div>
             <ns-dosage :dosage="{
               target: '>25kg (8J)', color: 'blue',
@@ -61,7 +61,7 @@
             </ns-dosage>
           </div>
         </ns-dosage-usage>
-        <ns-dosage-usage type="nasal">
+        <ns-dosage-usage type="nasal" v-if="isInGlEnabled">
           <h2>Ab 4 Jahren</h2>
           <div>
             <ns-dosage :dosage="{ dose: '3mg', hint: '(Ganzes Nasenspray)' }"></ns-dosage>
@@ -72,7 +72,7 @@
     </ns-content-group>
 
     <ns-pharmacokinetics
-      onset="<case>i.m.</case>10-30 Minuten|<case>nasal</case>Ca. 15 Minuten"
+      :onset="onsetText"
       duration="ca. 1,5 Stunden">
     </ns-pharmacokinetics>
 
@@ -123,6 +123,22 @@ const isInGlEnabled = computed(() => true)
 const onlyOneEnabled = computed(() => [ isImGlEnabled.value, isInGlEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
+
+
+const onsetText = computed(() => {
+  if (onlyOneEnabled.value)
+  {
+    if (isImGlEnabled.value) {
+      return '10-30 Minuten'
+    } else {
+      return 'Ca. 15 Minuten'
+    }
+  }
+  else
+  {
+    return '<case>i.m.</case>10-30 Minuten|<case>nasal</case>Ca. 15 Minuten'
+  }
+})
 
 </script>
 
