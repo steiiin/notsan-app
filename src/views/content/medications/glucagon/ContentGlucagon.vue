@@ -7,7 +7,7 @@
       </ns-list>
     </ns-content-group>
 
-    <ns-content-group title="Absolute Kontraindikation">
+    <ns-content-group title="Kontraindikation">
       <ns-list>
         <ns-contraindication type="intolerance">Bekannte <b>Unverträglichkeit</b> ggb. Glucagon</ns-contraindication>
         <ns-contraindication type="intolerance">Einnahme von
