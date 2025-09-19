@@ -94,7 +94,8 @@ const dosageTarget = computed(() => props.dosage.target || (props.dosage.type &&
 .ns-dosage.red { color: var(--ns-color-red) }
 .ns-dosage.blue { color: var(--ns-color-blue) }
 .ns-dosage.orange { color: var(--ns-color-orange) }
-.ns-dosage.lila { color: var(--ns-color-lila) }
+.ns-dosage.lila { color: var(--ns-color-purple) }
+.ns-dosage.grey { color: var(--ns-color-grey) }
 .ns-dosage.green { color: var(--ns-color-green) }
 
 </style>

@@ -18,6 +18,6 @@ defineProps<{
 .green { color: var(--ns-color-green) }
 .blue { color: var(--ns-color-blue) }
 .orange { color: var(--ns-color-orange) }
-.lila { color: var(--ns-color-lila) }
+.lila { color: var(--ns-color-purple) }
 .grey { opacity: 0.6; }
 </style>
