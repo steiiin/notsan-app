@@ -48,6 +48,17 @@ const linkId = ref(generateId())
   font-size: 0.9em;
   list-style-type: circle;
 }
+.tip-text :deep(li[head])
+{
+  list-style-type: none;
+  margin-left: -1rem;
+  font-weight: bold;
+}
+.tip-text :deep(li[head]) i
+{
+  font-style: normal;
+  font-weight: normal;
+}
 .tip-text :deep(p)
 {
   margin: 0 0 .5rem 0;
