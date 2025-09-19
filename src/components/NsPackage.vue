@@ -23,7 +23,7 @@
 <script setup lang="ts">
 
 import { IonIcon } from '@ionic/vue'
-import { amp1x, amp2x, ampFlsk, flsk, flexamp, spray, spritz, supp, infusion, inhaler } from '@/theme/icons/vials-icons'
+import { amp1x, amp2x, ampFlsk, flsk, flexamp, spray, spritz, supp, pill, infusion, inhaler } from '@/theme/icons/vials-icons'
 
 import { computed } from 'vue'
 import { Package } from '@/types/package'
@@ -45,6 +45,7 @@ const pkgIconMap: Record<string, string> = {
   'infusion': infusion,
   'spray': spray,
   'supp': supp,
+  'pill': pill,
   'spritz': spritz,
 }
 const pkgIcon = computed(() => props.package.type in pkgIconMap ? pkgIconMap[props.package.type] : amp1x)

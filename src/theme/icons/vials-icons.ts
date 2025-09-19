@@ -7,6 +7,7 @@ import inhaler from './inh.svg'
 import infusion from './iv.svg'
 import spray from './spray.svg'
 import supp from './supp.svg'
+import pill from './pill.svg'
 import spritz from './syringe.svg'
 
-export { amp1x, amp2x, ampFlsk, flexamp, flsk, inhaler, infusion, spray, supp, spritz }
+export { amp1x, amp2x, ampFlsk, flexamp, flsk, inhaler, infusion, spray, supp, pill, spritz }
