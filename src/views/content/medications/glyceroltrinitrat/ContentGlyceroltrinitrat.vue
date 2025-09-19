@@ -5,7 +5,7 @@
       <ns-list>
         <ns-list-item>Kardiales Lungenödem</ns-list-item>
         <ns-list-item>Hypertensiver Notfall mit kardialer Symptomatik</ns-list-item>
-        <ns-list-item>Myokardinfarkt</ns-list-item>
+        <ns-list-item>Akutes Koronarsyndrom</ns-list-item>
       </ns-list>
     </ns-content-group>
 
