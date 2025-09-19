@@ -294,4 +294,44 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/heparin/ContentHeparin.vue')
   },
+  {
+    id: 'ibuprofen',
+    title: 'Ibuprofen',
+    subtitle: 'Nurofen',
+    packages: {
+      'po-tabl': <Package>{
+        type: 'pill',
+        name: 'Ibuprofen-Tabletten',
+        incredients: [
+          <PackageIncredient>{ amount: '200mg, 400mg', label: '(rezeptfrei)' },
+          <PackageIncredient>{ amount: '600mg. 800mg', label: '(rezeptpflichtig)' },
+        ]
+      },
+      'po-saft': <Package>{
+        type: 'flsk',
+        name: 'Ibuprofen-Saft',
+        incredients: [
+          <PackageIncredient>{ amount: ' 20mg / ml' },
+          <PackageIncredient>{ amount: ' 40mg / ml' },
+        ]
+      },
+      'supp': <Package>{
+        type: 'supp',
+        name: 'Ibuprofen-Zäpfchen',
+        incredients: [
+          <PackageIncredient>{ amount: ' 75mg, 125mg' },
+          <PackageIncredient>{ amount: '150mg, 250mg' },
+        ]
+      },
+      'iv-flask': <Package>{
+        type: 'infusion',
+        name: 'Kurzinfusionen',
+        incredients: [
+          <PackageIncredient>{ amount: '400mg / 100ml' },
+          <PackageIncredient>{ amount: '600mg / 100ml' },
+        ]
+      }
+    },
+    component: () => import('@/views/content/medications/ibuprofen/ContentIbuprofen.vue')
+  },
 ]
