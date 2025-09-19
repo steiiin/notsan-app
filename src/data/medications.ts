@@ -201,4 +201,26 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/furosemid/ContentFurosemid.vue')
   },
+  {
+    id: 'glucagon',
+    title: 'Glucagon',
+    packages: {
+      'im-1mg-1ml': <Package>{
+        type: 'spritz',
+        name: 'Fertig-Set „Glucagon”',
+        incredients: [
+          <PackageIncredient>{ amount: '  1mg', label: 'Pulver (Durchstechflasche)' },
+          <PackageIncredient>{ amount: '+ 1ml', label: 'Wasser (Spritze)' },
+        ]
+      },
+      'nasal-3mg': <Package>{
+        type: 'spray',
+        name: 'Nasenspray „baqsimi”',
+        incredients: [
+          <PackageIncredient>{ amount: '3mg' },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/glucagon/ContentGlucagon.vue')
+  },
 ]
