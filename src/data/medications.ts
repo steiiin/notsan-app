@@ -334,4 +334,26 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/ibuprofen/ContentIbuprofen.vue')
   },
+  {
+    id: 'ipratropium',
+    title: 'Ipratropiumbromid',
+    subtitle: 'Atrovent',
+    packages: {
+      'pi-250': <Package>{
+        type: 'flexamp',
+        name: 'Ampulle „Atrovent”',
+        incredients: [
+          <PackageIncredient>{ amount: '250µg / 2ml' },
+        ]
+      },
+      'pi-500': <Package>{
+        type: 'flexamp',
+        name: 'Ampulle „Atrovent”',
+        incredients: [
+          <PackageIncredient>{ amount: '500µg / 2ml' },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/ipratropiumbromid/ContentIpratropiumbromid.vue')
+  },
 ]
