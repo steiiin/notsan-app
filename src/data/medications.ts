@@ -251,4 +251,19 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/glucose/ContentGlucose.vue')
   },
+  {
+    id: 'glyceroltrinitrat',
+    title: 'Glyceroltrinitrat',
+    subtitle: 'Nitro',
+    packages: {
+      'spray-nitro': <Package>{
+        type: 'spray',
+        name: 'Spray „Nitro”',
+        incredients: [
+          <PackageIncredient>{ amount: '0,4mg / Hub',  },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/glyceroltrinitrat/ContentGlyceroltrinitrat.vue')
+  },
 ]
