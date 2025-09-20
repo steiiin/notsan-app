@@ -356,4 +356,19 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/ipratropiumbromid/ContentIpratropiumbromid.vue')
   },
+  {
+    id: 'metoprolol',
+    title: 'Metoprolol',
+    subtitle: 'Beloc',
+    packages: {
+      'iv-5mg-5ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle „Metoprolol”',
+        incredients: [
+          <PackageIncredient>{ amount: '5mg / 5ml',  },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/metoprolol/ContentMetoprolol.vue')
+  },
 ]
