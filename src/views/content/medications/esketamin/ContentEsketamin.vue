@@ -136,11 +136,10 @@
           </div>
           <template v-if="isiv5_5mlEnabled && onlyOneEnabled">
             <h2>Aufziehen</h2>
-            <div style="display:flex">
-              <span v-if="onlyOneEnabled">Ampulle&nbsp;</span>
-              <ns-package inline :package="iv5_5ml" v-else></ns-package>
-              <b>pur aufziehen</b>
-            </div>
+            <ns-package
+              :package="iv5_5ml" :inline-specs="{
+              onlyOne: onlyOneEnabled }">
+            </ns-package>
             <p>
               <text-mono>1ml</text-mono> entspricht jetzt <i>der Zieldosis</i> <br>
               pro <text-mono>10kgKG</text-mono>.
@@ -158,44 +157,39 @@
           </template>
           <template v-else>
             <h2>Aufziehen &lt; 40kg</h2>
-            <div style="display:flex" v-if="isiv5_5mlEnabled">
-              <span v-if="onlyOneEnabled">Ampulle&nbsp;</span>
-              <ns-package inline :package="iv5_5ml" v-else></ns-package>
-              <b>pur aufziehen</b>
-            </div>
-            <div style="display:flex" v-if="isiv25_2mlEnabled">
-              <span v-if="onlyOneEnabled">Ampulle&nbsp;</span>
-              <ns-package inline :package="iv25_2ml" v-else></ns-package>
-              <b>auf 10ml</b>
-            </div>
-            <div>
-              <div style="display:flex; flex-wrap: wrap" v-if="isiv25_10mlEnabled">
-                <i v-if="onlyOneEnabled">Ampulle&nbsp;</i>
-                <ns-package inline :package="iv25_10ml" v-else></ns-package>
-                <b>2ml abziehen</b>,
-                <p v-if="onlyOneEnabled">dann <b>auf 10ml</b> aufziehen.</p>
-                <p v-else style="margin-left: 1.2rem">dann <b>auf 10ml</b> aufziehen.</p>
-              </div>
-            </div>
+
+            <ns-package v-if="isiv5_5mlEnabled"
+              :package="iv5_5ml" :inline-specs="{
+              onlyOne: onlyOneEnabled }">
+            </ns-package>
+            <ns-package v-if="isiv25_2mlEnabled"
+              :package="iv25_2ml" :inline-specs="{
+              on: 10,
+              onlyOne: onlyOneEnabled }">
+            </ns-package>
+            <ns-package v-if="isiv25_10mlEnabled"
+              :package="iv25_10ml" :inline-specs="{
+              on: 10, off: 2,
+              onlyOne: onlyOneEnabled }">
+            </ns-package>
+
             <p>
               <text-mono>1ml</text-mono> entspricht jetzt <i>der Zieldosis</i> <br>
               pro <text-mono>10kgKG</text-mono>.
             </p>
             <h2>Aufziehen &gt; 40kg</h2>
-            <div style="display:flex" v-if="isiv25_2mlEnabled">
-              <span v-if="onlyOneEnabled">Ampulle&nbsp;</span>
-              <ns-package inline :package="iv25_2ml" v-else></ns-package>
-              <b>auf 5ml</b>
-            </div>
-            <div>
-              <div style="display:flex; flex-wrap: wrap" v-if="isiv25_10mlEnabled">
-                <i v-if="onlyOneEnabled">Ampulle&nbsp;</i>
-                <ns-package inline :package="iv25_10ml" v-else></ns-package>
-                <b>2ml abziehen</b>,
-                <p v-if="onlyOneEnabled">dann <b>auf 5ml</b> aufziehen.</p>
-                <p v-else style="margin-left: 1.2rem">dann <b>auf 5ml</b> aufziehen.</p>
-              </div>
-            </div>
+
+            <ns-package v-if="isiv25_2mlEnabled"
+              :package="iv25_2ml" :inline-specs="{
+              on: 5,
+              onlyOne: onlyOneEnabled }">
+            </ns-package>
+            <ns-package v-if="isiv25_10mlEnabled"
+              :package="iv25_10ml" :inline-specs="{
+              on: 5, off: 2,
+              onlyOne: onlyOneEnabled }">
+            </ns-package>
+
             <p>
               <text-mono>0,5ml</text-mono> entspricht jetzt <i>der Zieldosis</i> <br>
               pro <text-mono>10kgKG</text-mono>.
@@ -213,13 +207,6 @@
           </template>
         </ns-dosage-usage>
 
-        <!-- <ns-dosage-usage type="supp" v-if="anySuppEnabled">
-          <div v-if="isSupp70Enabled">
-            <ns-dosage :dosage="{ dose: '70mg', hint: '(Zäpfchen)', target: '> 14kg', color: 'green' }"></ns-dosage>
-            <ns-dosage v-if="isSupp40Enabled" :dosage="{ dose: '40mg', hint: '(Zäpfchen)', target: '> 6kg', color: 'red' }"></ns-dosage>
-          </div>
-          <ns-dosage v-if="isSupp40Enabled" :dosage="{ dose: '40mg', hint: '(Zäpfchen)', type: 'child' }"></ns-dosage>
-        </ns-dosage-usage>-->
       </ns-dosage-indication>
 
     </ns-content-group>
