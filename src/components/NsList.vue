@@ -41,6 +41,6 @@ defineProps<{
   background: var(--ion-color-light);
   color: var(--ion-color-light-contrast);
   padding: 4px var(--ns-card-padding);
-  margin: 0 var(--ns-card-neg-padding);
+  margin: 0 var(--ns-card-neg-padding) calc(0.5 * var(--ns-card-padding)) var(--ns-card-neg-padding);
 }
 </style>
