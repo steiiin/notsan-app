@@ -1,11 +1,36 @@
 <template>
   <template v-if="inline">
+
     <span class="ns-medpackage-inline">
       <ion-icon :icon="pkgIcon"></ion-icon>
       <pre>{{ firstAmount }}<span>{{ firstIncredient?.label }}</span></pre>
     </span>
+
+  </template>
+  <template v-else-if="inlineSpecs">
+
+    <div class="ns-medpackage-specs">
+
+      <i v-if="inlineSpecs.onlyOne">Ampulle&nbsp;</i>
+      <span class="ns-medpackage-inline" v-else>
+        <ion-icon :icon="pkgIcon"></ion-icon>
+        <pre>{{ firstAmount }}<span>{{ firstIncredient?.label }}</span></pre>
+      </span>
+
+      <template v-if="inlineSpecs.off">
+        <b>{{ inlineSpecs.off }}ml abziehen</b>,
+        <p :class="{ 'no-indent': !inlineSpecs.onlyOne }">dann <b>auf {{ inlineSpecs.on }}ml</b> aufziehen.</p>
+      </template>
+      <template v-else>
+        <b v-if="inlineSpecs.on">auf {{ inlineSpecs.on }}ml</b>
+        <b v-else>pur</b>.
+      </template>
+
+    </div>
+
   </template>
   <template v-else>
+
     <ns-content-split class="ns-medpackage" nowrap>
       <template #left>
         <ion-icon :icon="pkgIcon"></ion-icon>
@@ -17,6 +42,7 @@
         ></pre>
       </template>
     </ns-content-split>
+
   </template>
 </template>
 
@@ -33,6 +59,7 @@ import NsContentSplit from '@/components/NsContentSplit.vue'
 const props = defineProps<{
   package: Package,
   inline?: boolean,
+  inlineSpecs?: { off?: number, on?: number, onlyOne?: boolean },
 }>()
 
 const pkgIconMap: Record<string, string> = {
@@ -52,6 +79,8 @@ const pkgIcon = computed(() => props.package.type in pkgIconMap ? pkgIconMap[pro
 
 const firstIncredient = computed(() => props.package.incredients.at(0) ? props.package.incredients.at(0) : null)
 const firstAmount = computed(() => firstIncredient.value ? firstIncredient.value.amount.replaceAll(' ', '') : null)
+
+
 
 </script>
 
@@ -111,6 +140,15 @@ const firstAmount = computed(() => firstIncredient.value ? firstIncredient.value
   font-family: 'sans-serif';
   font-size: 1em;
   margin-left: 0.2rem;
+}
+
+.ns-medpackage-specs {
+  display:flex;
+  flex-wrap: wrap
+}
+
+.ns-medpackage-specs .no-indent {
+  margin-left: 1.2rem;
 }
 
 </style>
