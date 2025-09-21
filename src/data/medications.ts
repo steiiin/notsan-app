@@ -371,4 +371,44 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/metoprolol/ContentMetoprolol.vue')
   },
+
+  {
+    id: 'midazolam',
+    title: 'Midazolam',
+    subtitle: 'Dormicum',
+    packages: {
+      'iv-5mg-ml--1ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle Midazolam',
+        incredients: [
+          <PackageIncredient>{ amount: '5mg / ml (1ml)' }
+        ]
+      },
+      'iv-1mg-ml--5ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle Midazolam',
+        incredients: [
+          <PackageIncredient>{ amount: '1mg / ml (5ml)' }
+        ]
+      },
+      'iv-5mg-ml--3ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle Midazolam',
+        incredients: [
+          <PackageIncredient>{ amount: '5mg / ml (3ml)' }
+        ]
+      },
+      'buccolam': <Package>{
+        type: 'spritz',
+        name: 'Buccolam Fertigspritzen',
+        incredients: [
+          <PackageIncredient>{ amount: ' 2,5mg', label: '(gelb)' },
+          <PackageIncredient>{ amount: ' 5,0mg', label: '(blau)' },
+          <PackageIncredient>{ amount: ' 7,5mg', label: '(lila)' },
+          <PackageIncredient>{ amount: '10,0mg', label: '(rot)' },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/midazolam/ContentMidazolam.vue')
+  },
 ]
