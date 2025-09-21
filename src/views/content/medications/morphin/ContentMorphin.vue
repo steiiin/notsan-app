@@ -67,7 +67,7 @@
         <ns-dosage-usage type="iv">
 
           <h2>Aufziehen</h2>
-          <p>Um <i>Fehldosierung</i> zu vermeiden, immer gleiche Konzentration benutzen (<text-mono>1mg/ml</text-mono>), dazu:
+          <p>Um <i>Fehldosierung</i> zu vermeiden, immer gleiche Konzentration (<text-mono>1mg/ml</text-mono>) benutzen, dazu:
           </p>
           <ns-package v-if="isIv10_1Enabled"
             :package="iv10_1" :inline-specs="{

@@ -86,7 +86,7 @@
           </div>
           <hr>
           <h2>Aufziehen</h2>
-          <p>Um <i>Fehldosierung</i> zu vermeiden, immer gleiche Konzentration benutzen, dazu:
+          <p>Um <i>Fehldosierung</i> zu vermeiden, immer gleiche Konzentration (<text-mono>2,5mg/ml</text-mono>) benutzen, dazu:
           </p>
           <ns-package v-if="isiv5_5mlEnabled"
             :package="iv5_5ml" :inline-specs="{
