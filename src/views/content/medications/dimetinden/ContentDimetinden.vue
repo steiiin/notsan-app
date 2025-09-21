@@ -57,12 +57,16 @@
 
       <ns-dosage-indication name="Anaphylaxie">
         <ns-dosage-usage type="iv">
+
           <div>
             <ns-dosage :dosage="{ dose: '1mg /10kg', type: 'none' }"></ns-dosage>
             <ns-dosage :dosage="{ dose: '1ml /10kg', type: 'none' }"></ns-dosage>
           </div>
+
           <hr>
+
           <p><text-underline>Keine</text-underline> Repetition.</p>
+
         </ns-dosage-usage>
       </ns-dosage-indication>
 
