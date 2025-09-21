@@ -432,4 +432,18 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/morphin/ContentMorphin.vue')
   },
+  {
+    id: 'nalbuphin',
+    title: 'Nalbuphin',
+    packages: {
+      'iv-20mg-2ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle Nalbuphin',
+        incredients: [
+          <PackageIncredient>{ amount: '20mg / 2ml' },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/nalbuphin/ContentNalbuphin.vue')
+  },
 ]
