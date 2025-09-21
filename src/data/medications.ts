@@ -411,4 +411,25 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/midazolam/ContentMidazolam.vue')
   },
+  {
+    id: 'morphin',
+    title: 'Morphin',
+    packages: {
+      'iv-10mg-1ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle Morphin',
+        incredients: [
+          <PackageIncredient>{ amount: '10mg / 1ml' },
+        ]
+      },
+      'iv-20mg-1ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle Morphin',
+        incredients: [
+          <PackageIncredient>{ amount: '20mg / 1ml' },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/morphin/ContentMorphin.vue')
+  },
 ]
