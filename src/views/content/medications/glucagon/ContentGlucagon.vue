@@ -52,11 +52,11 @@
         <ns-dosage-usage type="im" v-if="isImGlEnabled">
           <div>
             <ns-dosage :dosage="{
-              target: '>25kg (8J)', color: 'blue',
+              target: '> 25kg (8J)', color: 'blue',
               dose: '  1mg', hint: '(Ganze Spritze)'}">
             </ns-dosage>
             <ns-dosage :dosage="{
-              target: '<25kg', color: 'red',
+              target: '< 25kg', color: 'red',
               dose: '0,5mg', hint: '(½ Spritze)'}">
             </ns-dosage>
           </div>

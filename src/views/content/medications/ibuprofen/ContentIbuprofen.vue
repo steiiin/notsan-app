@@ -76,7 +76,7 @@
           <div>
             <ns-dosage :dosage="{ type: 'adult', dose: 'bis 1.200mg / Tag' }"></ns-dosage>
             <ns-dosage :dosage="{
-              target: '<1 Jahr',
+              target: '< 1 Jahr',
               color: 'red',
               dose: '50mg' }">
             </ns-dosage>
@@ -96,7 +96,7 @@
               dose: '200mg' }">
             </ns-dosage>
             <ns-dosage :dosage="{
-              target: '>12 Jahre',
+              target: '> 12 Jahre',
               color: 'orange',
               dose: ' 75mg / 10kg' }">
             </ns-dosage>

@@ -35,11 +35,11 @@
         <ns-dosage-usage type="iv">
           <div>
             <ns-dosage :dosage="{
-              target: '>30kg (8J)', color: 'blue',
+              target: '> 30kg (8J)', color: 'blue',
               dose: '8g', hint: doseAdultHint }">
             </ns-dosage>
             <ns-dosage :dosage="{
-              target: '<30kg', color: 'red',
+              target: '< 30kg', color: 'red',
               dose: '2g / 10kg' }">
             </ns-dosage>
           </div>
