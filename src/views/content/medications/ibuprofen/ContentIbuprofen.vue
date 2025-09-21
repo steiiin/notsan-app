@@ -98,7 +98,7 @@
             <ns-dosage :dosage="{
               target: '> 12 Jahre',
               color: 'orange',
-              dose: ' 75mg / 10kg' }">
+              dose: ' 75mg /10kg' }">
             </ns-dosage>
           </div>
         </ns-dosage-usage>

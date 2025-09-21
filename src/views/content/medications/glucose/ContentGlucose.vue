@@ -40,7 +40,7 @@
             </ns-dosage>
             <ns-dosage :dosage="{
               target: '< 30kg', color: 'red',
-              dose: '2g / 10kg' }">
+              dose: '2g /10kg' }">
             </ns-dosage>
           </div>
           <hr>
