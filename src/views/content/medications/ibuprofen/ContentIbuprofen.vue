@@ -170,9 +170,9 @@ const hasIv = computed(() => isIvFlaskEnabled.value)
 const onsetText = computed(() => {
   const one = onlyOneEnabled.value
   const parts = []
-  if (hasIv) { parts.push(`${one ? '' : '<case>i.v.</case> '}5-10 Minuten${one ? '' : '|'}`) }
-  if (hasPo) { parts.push(`${one ? '' : '<case>oral</case> '}30-60 Minuten${one ? '' : '|'}`) }
-  if (hasSupp) { parts.push(`${one ? '' : '<case>rektal</case> '}30-45 Minuten${one ? '' : '|'}`) }
+  if (hasIv.value) { parts.push(`${one ? '' : '<case>i.v.</case> '}5-10 Minuten${one ? '' : '|'}`) }
+  if (hasPo.value) { parts.push(`${one ? '' : '<case>oral</case> '}30-60 Minuten${one ? '' : '|'}`) }
+  if (hasSupp.value) { parts.push(`${one ? '' : '<case>rektal</case> '}30-45 Minuten${one ? '' : '|'}`) }
   return parts.join('')
 })
 
