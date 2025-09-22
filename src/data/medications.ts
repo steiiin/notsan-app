@@ -460,4 +460,40 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/naloxon/ContentNaloxon.vue')
   },
+  {
+    id: 'paracetamol',
+    title: 'Paracetamol',
+    subtitle: 'Perfalgan',
+    packages: {
+      'po-tabl': <Package>{
+        type: 'pill',
+        name: 'Paracetamol-Tablette',
+        incredients: [
+          <PackageIncredient>{ amount: '500mg' }
+        ]
+      },
+      'po-saft': <Package>{
+        type: 'flsk',
+        name: 'Paracetamol-Saft',
+        incredients: [
+          <PackageIncredient>{ amount: '40mg / ml' }
+        ]
+      },
+      'supp': <Package>{
+        type: 'supp',
+        name: 'Paracetamol-Zäpfchen',
+        incredients: [
+          <PackageIncredient>{ amount: '125mg, 250mg' }
+        ]
+      },
+      'iv-flask': <Package>{
+        type: 'infusion',
+        name: 'Kurzinfusionen',
+        incredients: [
+          <PackageIncredient>{ amount: '10mg/ml (100ml)' }
+        ]
+      }
+    },
+    component: () => import('@/views/content/medications/paracetamol/ContentParacetamol.vue')
+  },
 ]
