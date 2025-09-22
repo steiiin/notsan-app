@@ -496,4 +496,35 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/paracetamol/ContentParacetamol.vue')
   },
+  {
+    id: 'prednisolon',
+    title: 'Prednisolon',
+    subtitle: 'Prednisolut',
+    packages: {
+      'supp': <Package>{
+        type: 'supp',
+        name: 'Zäpfchen „Rectodelt”',
+        incredients: [
+          <PackageIncredient>{ amount: '100mg' }
+        ]
+      },
+      'iv-100mg': <Package>{
+        type: 'amp-2x',
+        name: 'Set „Prednisolut”',
+        incredients: [
+          <PackageIncredient>{ amount: ' 100mg', label: 'Pulver' },
+          <PackageIncredient>{ amount: '+  2ml', label: 'Wasser' },
+        ]
+      },
+      'iv-250mg': <Package>{
+        type: 'amp-flsk',
+        name: 'Set „Prednisolut”',
+        incredients: [
+          <PackageIncredient>{ amount: ' 250mg', label: 'Pulver' },
+          <PackageIncredient>{ amount: '+  5ml', label: 'Wasser' },
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/prednisolon/ContentPrednisolon.vue')
+  },
 ]
