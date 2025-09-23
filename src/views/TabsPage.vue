@@ -18,7 +18,7 @@
           <ion-label>Rechner</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="emerg" href="/tabs/emerg" class="emergButton">
+        <ion-tab-button tab="emerg" href="/tabs/emergency" class="emergButton">
           <ion-icon aria-hidden="true" :icon="warning" />
           <ion-label>Notfall</ion-label>
         </ion-tab-button>

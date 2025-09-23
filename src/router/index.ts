@@ -17,13 +17,19 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'meds',
-        component: () => import('@/views/MedsListPage.vue'),
+        component: () => import('@/views/content/MedsListPage.vue'),
       },
       {
         path: 'meds/:id',
-        component: () => import('@/views/MedsContentPage.vue'),
+        component: () => import('@/views/content/medications/MedsContentPage.vue'),
         props: true
-      }
+      },
+
+      {
+        path: 'emergency',
+        component: () => import('@/views/content/EmergencyPage.vue'),
+      },
+
     ]
   }
 ]
