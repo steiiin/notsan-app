@@ -527,4 +527,18 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/prednisolon/ContentPrednisolon.vue')
   },
+  {
+    id: 'salbutamol',
+    title: 'Salbutamol',
+    packages: {
+      'verneb': <Package>{
+        type: 'flexamp',
+        name: 'Inhalationslösung Salbutamol',
+        incredients: [
+          <PackageIncredient>{ amount: '5mg / ml' }
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/salbutamol/ContentSalbutamol.vue')
+  },
 ]
