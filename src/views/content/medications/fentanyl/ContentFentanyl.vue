@@ -38,7 +38,7 @@
       </ns-list>
       <ns-list>
         <ns-sideeffect todo>Ultima Ratio:</ns-sideeffect>
-        <ns-sideeffect link="/tabs/med/naloxon">Naloxon</ns-sideeffect>
+        <ns-sideeffect link="/tabs/meds/naloxon">Naloxon</ns-sideeffect>
       </ns-list>
     </ns-content-group>
 

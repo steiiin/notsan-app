@@ -17,7 +17,7 @@
       <ns-list divider>
         <ns-sideeffect severe><b>Nekrosen</b> bei paravasaler Gabe</ns-sideeffect>
         <ns-sideeffect todo>Bei unsicherem Zugang Alternative benutzen:</ns-sideeffect>
-        <ns-sideeffect link="/tabs/med/glucagon">Glucagon</ns-sideeffect>
+        <ns-sideeffect link="/tabs/meds/glucagon">Glucagon</ns-sideeffect>
       </ns-list>
       <ns-list divider>
         <ns-sideeffect>Venenreizung</ns-sideeffect>

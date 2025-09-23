@@ -76,7 +76,7 @@
         <ns-dosage-usage type="none">
           <h2 v-if="onlySAA">NRS &ge; 6</h2>
           <p><i>Ko-Medikation obligatorisch:</i></p>
-          <ns-sideeffect link="/tabs/med/midazolam">Midazolam</ns-sideeffect>
+          <ns-sideeffect link="/tabs/meds/midazolam">Midazolam</ns-sideeffect>
         </ns-dosage-usage>
         <ns-dosage-usage type="iv">
           <div>
