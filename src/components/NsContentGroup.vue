@@ -1,5 +1,5 @@
 <template>
-  <ion-card class="ns-content-group">
+  <ion-card class="ns-content-group" :class="{ 'no-header': !title }">
     <ion-card-header v-if="title">
       <ion-card-title>{{ title }}</ion-card-title>
     </ion-card-header>
@@ -29,6 +29,9 @@ defineProps<{
 
   font-size: 0.9rem;
   color: var(--ion-color-dark);
+}
+.ns-content-group.no-header {
+  padding-top: var(--ns-card-padding);
 }
 
 .ns-content-group ion-card-title.ios
