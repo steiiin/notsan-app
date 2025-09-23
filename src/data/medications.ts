@@ -562,4 +562,26 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/tranexam/ContentTranexam.vue')
   },
+  {
+    id: 'urapidil',
+    title: 'Urapidil',
+    subtitle: 'Ebrantil',
+    packages: {
+      'iv-5mg-ml--5ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle Urapidil',
+        incredients: [
+          <PackageIncredient>{ amount: '5mg / ml (5ml)' }
+        ]
+      },
+      'iv-5mg-ml--10ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle Urapidil',
+        incredients: [
+          <PackageIncredient>{ amount: '5mg / ml (10ml)' }
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/urapidil/ContentUrapidil.vue')
+  },
 ]
