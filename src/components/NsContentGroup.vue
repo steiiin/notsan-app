@@ -1,6 +1,6 @@
 <template>
   <ion-card class="ns-content-group">
-    <ion-card-header>
+    <ion-card-header v-if="title">
       <ion-card-title>{{ title }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/vue'
 defineProps<{
-  title: string,
+  title?: string,
 }>()
 </script>
 
