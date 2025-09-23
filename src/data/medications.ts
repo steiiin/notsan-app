@@ -541,4 +541,25 @@ export const medications: Medication[] =[
     },
     component: () => import('@/views/content/medications/salbutamol/ContentSalbutamol.vue')
   },
+  {
+    id: 'tranexam',
+    title: 'Tranexamsäure',
+    packages: {
+      'iv-500mg-5ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle Tranexamsäure',
+        incredients: [
+          <PackageIncredient>{ amount: '100mg / ml (5ml)' }
+        ]
+      },
+      'iv-1000mg-10ml': <Package>{
+        type: 'amp',
+        name: 'Ampulle Tranexamsäure',
+        incredients: [
+          <PackageIncredient>{ amount: '100mg / ml (10ml)' }
+        ]
+      },
+    },
+    component: () => import('@/views/content/medications/tranexam/ContentTranexam.vue')
+  },
 ]
