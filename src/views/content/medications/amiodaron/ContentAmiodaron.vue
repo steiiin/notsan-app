@@ -26,8 +26,7 @@
           <h2>Nach 3. <i>erfolgloser</i> Defibrillation</h2>
           <ns-dosage :dosage="{ dose: '300mg', hint: '(2 Ampullen)', type: 'adult' }"></ns-dosage>
           <div>
-            <ns-dosage :dosage="{ dose: '50mg /10kg', type: 'child' }"></ns-dosage>
-            <ns-dosage :dosage="{ dose: ' 1ml /10kg', type: 'empty', color: 'red' }"></ns-dosage>
+            <ns-dosage :dosage="{ dose: '50mg /10kg', hint: '(1ml /10kg)', type: 'child' }"></ns-dosage>
             <p>Bei <text-colored red>Kindern</text-colored> maximal 2 Ampullen (<text-mono>6ml</text-mono>)</p>
           </div>
           <hr>
