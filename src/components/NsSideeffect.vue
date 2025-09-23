@@ -1,6 +1,6 @@
 <template>
   <template v-if="showButton">
-    <ion-button expand="full" color="light" :routerLink="link">
+    <ion-button expand="full" color="light" :routerLink="resolvedLink">
       <ion-icon slot="start" :icon="arrowForwardOutline"></ion-icon>
       <slot></slot>
     </ion-button>
@@ -25,7 +25,19 @@ const props = defineProps<{
 }>()
 
 const icon = computed(() => !props.severe ? (!props.todo ? undefined : arrowForwardOutline) : caretForward)
-const showButton = computed(() => !!props.link)
+const resolvedLink = computed(() => {
+  if (!props.link) {
+    return undefined
+  }
+
+  if (props.link.startsWith('/tabs/med/')) {
+    return props.link.replace('/tabs/med/', '/tabs/meds/')
+  }
+
+  return props.link
+})
+
+const showButton = computed(() => !!resolvedLink.value)
 
 </script>
 
