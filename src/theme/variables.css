@@ -1,5 +1,9 @@
 :root {
 
+  --ion-color-primary: #0054e9;
+  --ion-color-primary-rgb: 0, 84, 233;
+  --background-hover-opacity: 0.02;
+
   --ns-card-padding: 16px;
   --ns-card-neg-padding: -16px;
 
@@ -27,6 +31,9 @@
 
   --ns-color-green: #26A269; /* Green */
   --ns-color-green-rgb: 38, 162, 105;
+
+  --ns-ion-primary-fade: rgba(var(--ion-color-primary-rgb), var(--background-hover-opacity));
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,5 +52,6 @@
 
     --ns-color-green: #3ddc97; /* Lighter green */
     --ns-color-green-rgb: 61, 220, 151;
+
   }
 }
