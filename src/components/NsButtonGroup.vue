@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import { IonButton } from '@ionic/vue'
 
-type ButtonValue = string | number
+type ButtonValue = string | number | boolean
 
 type ButtonOption = {
   label: string

@@ -1,16 +1,17 @@
 <template>
   <ion-input v-model="internalValue"
-    label="Gewicht" class="ns-weight-input"
+    label="Größe" class="ns-height-input"
     fill="outline" labelPlacement="stacked" inputmode="numeric"
-    :maxlength="3" ref="internalEl"
+    :maxlength="heightMaxLength" ref="internalEl"
     @input="onInput">
-    <span slot="end" class="kg-suffix">kg</span>
+    <span slot="end" class="cm-suffix">{{ heightSuffix }}</span>
   </ion-input>
 </template>
 
 <script setup lang="ts">
+import { countChar, stripDots, stripWrongDots } from '@/service/text';
 import { IonInput } from '@ionic/vue'
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 const props = defineProps<{ modelValue?: number|null }>()
 
@@ -20,6 +21,15 @@ const emit = defineEmits<{
 
 const internalEl = ref<any|null>(null)
 const internalValue = ref(props.modelValue != null ? String(props.modelValue) : '')
+
+const inputMode = ref<'m'|'cm'>('m')
+const heightSuffix = computed(() => inputMode.value)
+const heightMaxLength = computed(() => {
+  if (inputMode.value == 'm') { return 4 }
+  const firstDigit = Number(internalValue.value.slice(0, 1))
+  if (firstDigit>2) { return 2 }
+  else { return 3 }
+})
 
 watch(
   () => props.modelValue,
@@ -34,16 +44,30 @@ watch(
 const onInput = (event: Event) => {
 
   const target = event.target as HTMLInputElement
-  let weight = target.value.replace(/\D+/g, '')
+  let height = target.value.replace(/[^0-9.,]/g, '').replace(',', '.')
 
-  // limit weight
-  if (weight.length>=1 && Number(weight) == 0) { weight = '' }
-  if (weight.length>=3)
+  // limit height
+  if (height.length == 0) { inputMode.value = 'm' }
+  else if (height.length == 1)
   {
-    weight = weight.slice(0, 3)
-    const firstDigits = Number(weight.slice(0, 2))
-    if (firstDigits>50) {
-      weight = String(firstDigits)
+    if (Number(height) > 2) { inputMode.value = 'cm' }
+    else { inputMode.value = 'm' }
+  }
+  else if (height.length >= 2)
+  {
+
+    const firstDigit = Number(height.slice(0, 1))
+    if (isNaN(firstDigit) || firstDigit >= 3 || Number(height)>=3) {
+
+      height = stripDots(height)
+      inputMode.value = 'cm'
+
+    }
+    else {
+
+      height = stripWrongDots(height)
+      inputMode.value = 'm'
+
     }
   }
 
@@ -51,31 +75,31 @@ const onInput = (event: Event) => {
    * Update both the state variable and
    * the component to keep them in sync.
    */
-  internalValue.value = weight;
+  internalValue.value = height;
 
   const inputCmp = internalEl.value;
   if (inputCmp !== undefined) {
-    inputCmp.$el.value = weight;
+    inputCmp.$el.value = height;
   }
 
-  emit('update:modelValue', (weight === '' ? null : Number(weight)))
+  emit('update:modelValue', (height === '' ? null : Number(height)))
 }
 
 </script>
 
 <style scoped>
-.ns-weight-input {
+.ns-height-input {
   --border-width: var(--highlight-height);
   --border-color: var(--highlight-color);
   border-radius: 4px; max-width: 6rem;
   text-align: center;
 }
-.ns-weight-input:hover {
+.ns-height-input:hover {
   --border-color: var(--highlight-color);
   background: var(--ns-ion-primary-fade);
 }
 
-.kg-suffix {
+.cm-suffix {
   margin-inline-start: 0 !important;
   opacity: 0.4;
   cursor: text;
