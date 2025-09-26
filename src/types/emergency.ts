@@ -94,6 +94,9 @@ export class Patient {
     if (this.WeightAccuracy == 'direct')
     {
 
+      // filter empty value
+      if (!this.Weight) { return 'undefined' }
+
       // check if Weight in valid range
       if (this.Weight > 0 && this.Weight < 500)
       {
@@ -114,6 +117,9 @@ export class Patient {
       if (this.WeightEstimateBy == 'by-age')
       {
 
+        // filter empty value
+        if (!this.Age) { return 'undefined' }
+
         // check if Age in valid range
         if (this.Age >= 0 && this.Age <= 12)
         {
@@ -133,6 +139,9 @@ export class Patient {
       // ... height
       if (this.WeightEstimateBy == 'by-height')
       {
+
+        // filter empty value
+        if (!this.Height) { return 'undefined' }
 
         // check if height in valid range
         if (this.Height >= 30 && this.Height < 300)
