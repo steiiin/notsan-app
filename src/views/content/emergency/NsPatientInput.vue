@@ -102,7 +102,7 @@ watch(() => weightEstimateBy.value, (v) => {
 
   if (v == 'by-age')
   {
-    patientAge.value = 50
+    patientAge.value = 12
     gainFocus(inputAge, true)
   }
   else if (v == 'by-height')

@@ -70,8 +70,8 @@ export class Patient {
     if (
       this.WeightAccuracy == 'estimate' &&
       (
-        (this.WeightEstimateBy == 'by-age' && this.Age <= 12)
-        || (this.WeightEstimateBy == 'by-height' && this.Height <= 150)
+        (this.WeightEstimateBy == 'by-age' && this.Age <= 12) ||
+        (this.WeightEstimateBy == 'by-height' && this.Height <= 150)
       )
     ) { return 'child' }
     else { return 'adult' }
