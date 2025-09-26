@@ -100,6 +100,8 @@ watch(() => weightAccuracy.value, (v) => {
 
 watch(() => weightEstimateBy.value, (v) => {
 
+  patientHabitus.value = 'normal'
+
   if (v == 'by-age')
   {
     patientAge.value = 12
