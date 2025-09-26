@@ -85,7 +85,7 @@ watch(() => weightAccuracy.value, (v) => {
   }
   else if (v == 'estimate')
   {
-    patientWeight.value = 0
+    patientHeight.value = 180
     if (weightEstimateBy.value != 'by-height')
     {
       weightEstimateBy.value = 'by-height'

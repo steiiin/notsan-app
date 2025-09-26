@@ -12,7 +12,7 @@ export type HabitusValue =
   | 'lightly-overweight'
   | 'overweight'
   | 'very-overweight'
-export type WeightError = 'invalid_weight' | 'invalid_age' | 'invalid_height' | 'undefined'
+export type CalcMethod = 'direct' | 'by-age' | 'by-height-curve' | 'by-height-bmi' | 'invalid_weight' | 'invalid_age' | 'invalid_height' | 'undefined'
 
 export class Patient {
 
@@ -87,98 +87,110 @@ export class Patient {
 
   // ######################################################
 
-  get currentWeight(): number|WeightError
+  get currentMethod(): CalcMethod
   {
+
 
     // direct input
     if (this.WeightAccuracy == 'direct')
-    {
-
-      // filter empty value
-      if (!this.Weight) { return 'undefined' }
-
-      // check if Weight in valid range
-      if (this.Weight > 0 && this.Weight < 500)
-      {
-        return this.Weight
-      }
-      else
-      {
-        return 'invalid_weight'
-      }
-
-    }
-
-    // estimate by ...
-    if (this.WeightAccuracy == 'estimate')
-    {
-
-      // ... age
-      if (this.WeightEstimateBy == 'by-age')
       {
 
         // filter empty value
-        if (!this.Age) { return 'undefined' }
+        if (!this.Weight) { return 'undefined' }
 
-        // check if Age in valid range
-        if (this.Age >= 0 && this.Age <= 12)
+        // check if Weight in valid range
+        if (this.Weight > 3 && this.Weight < 500)
         {
-
-          return CurveCalculation.calculateChildWeightByAge(
-            this.Sex, this.Age, this.currentHabitusMulti
-          )
-
+          return 'direct'
         }
         else
         {
-          return 'invalid_age' // too old, to use curve method based on age
+          return 'invalid_weight'
         }
 
       }
 
-      // ... height
-      if (this.WeightEstimateBy == 'by-height')
+      // estimate by ...
+      if (this.WeightAccuracy == 'estimate')
       {
 
-        // filter empty value
-        if (!this.Height) { return 'undefined' }
-
-        // check if height in valid range
-        if (this.Height >= 30 && this.Height < 300)
+        // ... age
+        if (this.WeightEstimateBy == 'by-age')
         {
 
-          // use curve method for children
-          if (this.Height <= 150)
+          // filter empty value
+          if (!this.Age) { return 'undefined' }
+
+          // check if Age in valid range
+          if (this.Age >= 0 && this.Age <= 15)
           {
-
-            return CurveCalculation.calculateChildWeightByHeight(
-              this.Sex, this.Height, this.currentHabitusMulti
-            )
-
+            return 'by-age'
           }
-
-          // otherwise use BMI method
           else
           {
-
-            return BmiCalculation.calculateAdultWeightByHeight(
-              this.Sex, this.Height, this.currentHabitusMulti
-            )
-
+            return 'invalid_age' // too old, to use curve method based on age
           }
 
         }
-        else
+
+        // ... height
+        if (this.WeightEstimateBy == 'by-height')
         {
-          return 'invalid_height'
+
+          // filter empty value
+          if (!this.Height) { return 'undefined' }
+
+          // check if height in valid range
+          if (this.Height >= 30 && this.Height < 300)
+          {
+
+            // use curve method for children
+            if (this.Height <= 150)
+            {
+              return 'by-height-curve'
+            }
+
+            // otherwise use BMI method
+            else
+            {
+              return 'by-height-bmi'
+            }
+
+          }
+          else
+          {
+            return 'invalid_height'
+          }
+
         }
 
       }
 
-    }
+      // in all other cases return nothing
+      return 'undefined'
 
-    // in all other cases return nothing
-    return 'undefined'
+  }
+
+  get currentWeight(): number
+  {
+
+    if (this.currentMethod == 'direct') { return this.Weight }
+    if (this.currentMethod == 'by-age') {
+      return CurveCalculation.calculateChildWeightByAge(
+        this.Sex, this.Age, this.currentHabitusMulti
+      )
+    }
+    if (this.currentMethod == 'by-height-curve') {
+      return CurveCalculation.calculateChildWeightByHeight(
+        this.Sex, this.Height, this.currentHabitusMulti
+      )
+    }
+    if (this.currentMethod == 'by-height-bmi') {
+      return BmiCalculation.calculateAdultWeightByHeight(
+        this.Sex, this.Height, this.currentHabitusMulti
+      )
+    }
+    return -1
 
   }
 

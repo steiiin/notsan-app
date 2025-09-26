@@ -10,56 +10,62 @@ export class CurveCalculation {
 
   private static readonly TABLES: Record<SexValue, ReadonlyArray<CurvePoint>> = {
     male: [
-      { height: 52.1, weight: 3.5,   age: 0.000 }, // birth
-      { height: 56.0, weight: 4.5,   age: 0.083 }, // 1 mo
-      { height: 59.0, weight: 5.6,   age: 0.167 }, // 2 mo
-      { height: 62.0, weight: 6.4,   age: 0.250 }, // 3 mo
-      { height: 64.5, weight: 7.1,   age: 0.333 }, // 4 mo
-      { height: 67.0, weight: 7.7,   age: 0.417 }, // 5 mo
-      { height: 69.0, weight: 8.2,   age: 0.500 }, // 6 mo
-      { height: 70.5, weight: 8.6,   age: 0.583 }, // 7 mo
-      { height: 72.0, weight: 9.0,   age: 0.667 }, // 8 mo
-      { height: 73.0, weight: 9.3,   age: 0.750 }, // 9 mo
-      { height: 74.0, weight: 9.6,   age: 0.833 }, //10 mo
-      { height: 75.0, weight: 9.9,   age: 0.917 }, //11 mo
-      { height: 82.9, weight:11.4,   age: 1.000 }, // 1 yr
-      { height: 92.9, weight:14.1,   age: 2.000 },
-      { height:101.2, weight:16.4,   age: 3.000 },
-      { height:108.0, weight:18.4,   age: 4.000 },
-      { height:114.8, weight:20.7,   age: 5.000 },
-      { height:121.2, weight:23.7,   age: 6.000 },
-      { height:128.0, weight:27.0,   age: 7.000 },
-      { height:133.5, weight:30.5,   age: 8.000 },
-      { height:139.0, weight:34.0,   age: 9.000 },
-      { height:144.5, weight:38.0,   age:10.000 },
-      { height:150.0, weight:42.5,   age:11.000 },
-      { height:156.0, weight:47.5,   age:12.000 },
+      { height: 51.0, weight: 3.5,   age: 0.000 }, // birth
+      { height: 54.5, weight: 4.4,   age: 0.083 }, // 1 mo
+      { height: 57.8, weight: 5.2,   age: 0.167 }, // 2 mo
+      { height: 61.4, weight: 6.1,   age: 0.250 }, // 3 mo
+      { height: 63.9, weight: 6.7,   age: 0.333 }, // 4 mo
+      { height: 66.4, weight: 7.3,   age: 0.417 }, // 5 mo
+      { height: 68.9, weight: 7.9,   age: 0.500 }, // 6 mo
+      { height: 70.4, weight: 8.3,   age: 0.583 }, // 7 mo
+      { height: 71.8, weight: 8.7,   age: 0.667 }, // 8 mo
+      { height: 73.2, weight: 9.1,   age: 0.750 }, // 9 mo
+      { height: 74.6, weight: 9.3,   age: 0.833 }, //10 mo
+      { height: 75.8, weight: 9.6,   age: 0.917 }, //11 mo
+      { height: 77.1, weight: 9.9,   age: 1.000 }, // 1 yr
+      { height: 89.4, weight:12.7,   age: 2.000 },
+      { height: 97.8, weight:15.3,   age: 3.000 },
+      { height:105.6, weight:17.4,   age: 4.000 },
+      { height:112.5, weight:20.0,   age: 5.000 },
+      { height:117.8, weight:21.5,   age: 6.000 },
+      { height:124.5, weight:24.6,   age: 7.000 },
+      { height:130.8, weight:27.7,   age: 8.000 },
+      { height:136.4, weight:31.0,   age: 9.000 },
+      { height:141.6, weight:33.8,   age:10.000 },
+      { height:146.7, weight:38.9,   age:11.000 },
+      { height:152.3, weight:43.3,   age:12.000 },
+      { height:159.2, weight:48.9,   age:13.000 },
+      { height:167.0, weight:55.6,   age:14.000 },
+      { height:173.2, weight:61.7,   age:15.000 },
     ],
     female: [
-      { height: 51.3, weight: 3.4,   age: 0.000 }, // birth
-      { height: 54.0, weight: 4.3,   age: 0.083 }, // 1 mo
-      { height: 57.0, weight: 5.2,   age: 0.167 }, // 2 mo
-      { height: 60.0, weight: 6.0,   age: 0.250 }, // 3 mo
-      { height: 62.5, weight: 6.6,   age: 0.333 }, // 4 mo
-      { height: 65.0, weight: 7.2,   age: 0.417 }, // 5 mo
-      { height: 67.0, weight: 7.7,   age: 0.500 }, // 6 mo
-      { height: 68.5, weight: 8.1,   age: 0.583 }, // 7 mo
-      { height: 70.0, weight: 8.4,   age: 0.667 }, // 8 mo
-      { height: 71.0, weight: 8.7,   age: 0.750 }, // 9 mo
-      { height: 72.0, weight: 9.0,   age: 0.833 }, //10 mo
-      { height: 73.0, weight: 9.3,   age: 0.917 }, //11 mo
-      { height: 78.5, weight:10.8,   age: 1.000 }, // 1 yr
-      { height: 91.1, weight:13.3,   age: 2.000 },
-      { height:100.0, weight:15.8,   age: 3.000 },
-      { height:107.2, weight:18.1,   age: 4.000 },
-      { height:114.3, weight:20.5,   age: 5.000 },
-      { height:120.7, weight:23.2,   age: 6.000 },
-      { height:127.0, weight:26.0,   age: 7.000 },
-      { height:133.0, weight:30.0,   age: 8.000 },
-      { height:139.0, weight:34.0,   age: 9.000 },
-      { height:145.0, weight:39.0,   age:10.000 },
-      { height:151.0, weight:44.0,   age:11.000 },
-      { height:157.0, weight:49.0,   age:12.000 },
+      { height: 50.5, weight: 3.4,   age: 0.000 }, // birth
+      { height: 53.7, weight: 4.1,   age: 0.083 }, // 1 mo
+      { height: 56.8, weight: 4.9,   age: 0.167 }, // 2 mo
+      { height: 60.0, weight: 5.6,   age: 0.250 }, // 3 mo
+      { height: 62.4, weight: 6.2,   age: 0.333 }, // 4 mo
+      { height: 65.0, weight: 6.9,   age: 0.417 }, // 5 mo
+      { height: 67.4, weight: 7.5,   age: 0.500 }, // 6 mo
+      { height: 68.9, weight: 7.9,   age: 0.583 }, // 7 mo
+      { height: 70.4, weight: 8.3,   age: 0.667 }, // 8 mo
+      { height: 71.8, weight: 8.6,   age: 0.750 }, // 9 mo
+      { height: 73.0, weight: 8.9,   age: 0.833 }, //10 mo
+      { height: 74.2, weight: 9.2,   age: 0.917 }, //11 mo
+      { height: 75.3, weight: 9.4,   age: 1.000 }, // 1 yr
+      { height: 87.7, weight:12.3,   age: 2.000 },
+      { height: 97.0, weight:14.7,   age: 3.000 },
+      { height:104.7, weight:16.8,   age: 4.000 },
+      { height:112.2, weight:19.2,   age: 5.000 },
+      { height:117.6, weight:21.4,   age: 6.000 },
+      { height:123.7, weight:24.1,   age: 7.000 },
+      { height:129.5, weight:27.0,   age: 8.000 },
+      { height:135.3, weight:30.6,   age: 9.000 },
+      { height:141.2, weight:34.7,   age:10.000 },
+      { height:147.7, weight:39.4,   age:11.000 },
+      { height:154.4, weight:44.9,   age:12.000 },
+      { height:159.6, weight:50.1,   age:13.000 },
+      { height:162.8, weight:54.0,   age:14.000 },
+      { height:164.6, weight:56.8,   age:15.000 },
     ]
   }
 

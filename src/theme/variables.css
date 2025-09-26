@@ -34,6 +34,16 @@
 
   --ns-ion-primary-fade: rgba(var(--ion-color-primary-rgb), var(--background-hover-opacity));
 
+  --ns-broselow-code-grey:   #B0B0B0; /* neutral grey */
+  --ns-broselow-code-pink:   #F4A7C0; /* soft pink */
+  --ns-broselow-code-red:    #E74C3C; /* bright red */
+  --ns-broselow-code-purple:   #9B59B6; /* vivid purple */
+  --ns-broselow-code-yellow:   #F1C40F; /* rich yellow */
+  --ns-broselow-code-white:   #ECF0F1; /* off-white */
+  --ns-broselow-code-blue:   #3498DB; /* clear blue */
+  --ns-broselow-code-orange: #E67E22; /* deep orange */
+  --ns-broselow-code-green:   #27AE60; /* fresh green */
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,6 +62,16 @@
 
     --ns-color-green: #3ddc97; /* Lighter green */
     --ns-color-green-rgb: 61, 220, 151;
+
+    --ns-broselow-code-grey:    #7A7A7A; /* darker grey */
+    --ns-broselow-code-pink:    #D16C90; /* stronger pink */
+    --ns-broselow-code-red:     #C0392B; /* deep red */
+    --ns-broselow-code-purple:    #8E44AD; /* dark purple */
+    --ns-broselow-code-yellow:    #D4AC0D; /* warm golden yellow */
+    --ns-broselow-code-white:    #BDC3C7; /* light grey for dark UI */
+    --ns-broselow-code-blue:    #2E86C1; /* dark blue */
+    --ns-broselow-code-orange:  #CA6F1E; /* dark orange */
+    --ns-broselow-code-green:    #1E8449; /* deep green */
 
   }
 }
