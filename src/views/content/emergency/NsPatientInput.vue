@@ -92,7 +92,7 @@ watch(() => weightAccuracy.value, (v) => {
     }
     else
     {
-      gainFocus(inputAge, true)
+      gainFocus(inputHeight, true)
     }
   }
 
