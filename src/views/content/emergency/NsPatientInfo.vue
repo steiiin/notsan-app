@@ -24,7 +24,8 @@ const info = computed(() => {
   xx.push(`Age: ${props.patient.Age}`)
   xx.push(`Weight: ${props.patient.Weight}`)
   xx.push(`Height: ${props.patient.Height}`)
-  xx.push(`Habitus: ${props.patient.HabitusMultiplier}`)
+  xx.push(`Habitus: ${props.patient.Habitus}`)
+  xx.push(`HabitusMultiplier: ${props.patient.currentHabitusMulti}`)
   xx.push(`calcHabitusMode: ${props.patient.currentHabitusMode}`)
   xx.push(`calcWeight: ${props.patient.currentWeight}`)
 

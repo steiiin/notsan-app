@@ -4,6 +4,14 @@ export type WeightAccuracyValue = 'direct' | 'estimate'
 export type WeightEstimateByValue = 'by-age' | 'by-height'
 export type SexValue = 'male' | 'female'
 export type HabitusModeValue = 'child' | 'adult'
+export type HabitusValue =
+  | 'very-thin'
+  | 'thin'
+  | 'normal'
+  | 'sporty'
+  | 'lightly-overweight'
+  | 'overweight'
+  | 'very-overweight'
 export type WeightError = 'invalid_weight' | 'invalid_age' | 'invalid_height' | 'undefined'
 
 export class Patient {
@@ -14,9 +22,32 @@ export class Patient {
   public Sex: SexValue
   public Age: number
   public Height: number
-  public HabitusMultiplier: number
+  public Habitus: HabitusValue
 
   public Weight: number
+
+  private static readonly DEFAULT_HABITUS: HabitusValue = 'normal'
+
+  private static readonly HABITUS_MULTIPLIERS: Record<HabitusModeValue, Record<HabitusValue, number>> = {
+    child: {
+      'very-thin': 0.85,
+      thin: 0.92,
+      normal: 1.00,
+      sporty: 1.10,
+      'lightly-overweight': 1.10,
+      overweight: 1.20,
+      'very-overweight': 1.30,
+    },
+    adult: {
+      'very-thin': 0.84,
+      thin: 0.91,
+      normal: 1.05,
+      sporty: 1.23,
+      'lightly-overweight': 1.27,
+      overweight: 1.45,
+      'very-overweight': 1.68,
+    },
+  }
 
   // ######################################################
 
@@ -28,7 +59,7 @@ export class Patient {
     this.Sex = 'male'
     this.Age = 50
     this.Height = 180
-    this.HabitusMultiplier = 1
+    this.Habitus = Patient.DEFAULT_HABITUS
 
     this.Weight = 80
   }
@@ -44,6 +75,14 @@ export class Patient {
       )
     ) { return 'child' }
     else { return 'adult' }
+  }
+
+  // ######################################################
+
+  get currentHabitusMulti(): number {
+    const mode = this.currentHabitusMode
+    const modeMultipliers = Patient.HABITUS_MULTIPLIERS[mode]
+    return modeMultipliers[this.Habitus] ?? modeMultipliers[Patient.DEFAULT_HABITUS]
   }
 
   // ######################################################
@@ -80,7 +119,7 @@ export class Patient {
         {
 
           return CurveCalculation.calculateChildWeightByAge(
-            this.Sex, this.Age, this.HabitusMultiplier
+            this.Sex, this.Age, this.currentHabitusMulti
           )
 
         }
@@ -104,7 +143,7 @@ export class Patient {
           {
 
             return CurveCalculation.calculateChildWeightByHeight(
-              this.Sex, this.Height, this.HabitusMultiplier
+              this.Sex, this.Height, this.currentHabitusMulti
             )
 
           }
@@ -114,7 +153,7 @@ export class Patient {
           {
 
             return BmiCalculation.calculateAdultWeightByHeight(
-              this.Sex, this.Height, this.HabitusMultiplier
+              this.Sex, this.Height, this.currentHabitusMulti
             )
 
           }
