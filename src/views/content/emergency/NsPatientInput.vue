@@ -30,7 +30,7 @@
         </template>
 
         <ns-sex-input v-model="patientSex"></ns-sex-input>
-        <ns-habitus-input v-model="patientHabitusMulti" :mode="modelValue.currentHabitusMode"></ns-habitus-input>
+        <ns-habitus-input v-model="patientHabitus" :mode="modelValue.currentHabitusMode"></ns-habitus-input>
 
       </div>
 
@@ -52,7 +52,7 @@ import NsSexInput from '@/components/NsSexInput.vue';
 import NsHabitusInput from '@/components/NsHabitusInput.vue';
 
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
-import { Patient, SexValue, WeightAccuracyValue, WeightEstimateByValue } from '@/types/emergency';
+import { HabitusValue, Patient, SexValue, WeightAccuracyValue, WeightEstimateByValue } from '@/types/emergency';
 import { gainFocus } from '@/service/input';
 
 const props = defineProps<{
@@ -70,7 +70,7 @@ const patientSex = ref<SexValue>(props.modelValue.Sex)
 const patientAge = ref<number>(props.modelValue.Age)
 const patientWeight = ref<number>(props.modelValue.Weight)
 const patientHeight = ref<number>(props.modelValue.Height)
-const patientHabitusMulti = ref<number>(props.modelValue.HabitusMultiplier)
+const patientHabitus = ref<HabitusValue>(props.modelValue.Habitus)
 
 const inputWeight = ref<any|null>(null)
 const inputAge = ref<any|null>(null)
@@ -120,7 +120,7 @@ watch(() => [
   patientAge.value,
   patientWeight.value,
   patientHeight.value,
-  patientHabitusMulti.value
+  patientHabitus.value
 ], () => {
   const newPatient = new Patient()
   newPatient.WeightAccuracy = weightAccuracy.value
@@ -129,7 +129,7 @@ watch(() => [
   newPatient.Sex = patientSex.value
   newPatient.Weight = patientWeight.value
   newPatient.Height = patientHeight.value
-  newPatient.HabitusMultiplier = patientHabitusMulti.value
+  newPatient.Habitus = patientHabitus.value
   emit('update:modelValue', newPatient)
 })
 

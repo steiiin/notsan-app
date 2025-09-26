@@ -1,58 +1,77 @@
 <template>
   <ion-select placeholder="Habitus" class="ns-habitus-input"
-    fill="outline" interface="popover" v-model="currentMulti">
+    fill="outline" interface="popover" v-model="currentValue">
 
-    <template v-if="mode == 'child'">
-      <ion-select-option :value="formatOptionValue(0.85)">Sehr dünn</ion-select-option>
-      <ion-select-option :value="formatOptionValue(0.92)">Dünn</ion-select-option>
-      <ion-select-option :value="formatOptionValue(1.00)">Normaler Habitus</ion-select-option>
-      <ion-select-option :value="formatOptionValue(1.10)">Leicht übergewichtig</ion-select-option>
-      <ion-select-option :value="formatOptionValue(1.20)">Übergewichtig</ion-select-option>
-      <ion-select-option :value="formatOptionValue(1.30)">Sehr übergewichtig</ion-select-option>
-    </template>
-
-    <template v-else-if="mode == 'adult'">
-      <ion-select-option :value="formatOptionValue(0.84)">Sehr dünn</ion-select-option>
-      <ion-select-option :value="formatOptionValue(0.91)">Dünn</ion-select-option>
-      <ion-select-option :value="formatOptionValue(1.05)">Normaler Habitus</ion-select-option>
-      <ion-select-option :value="formatOptionValue(1.23)">Sportlich/Muskulös</ion-select-option>
-      <ion-select-option :value="formatOptionValue(1.27)">Leicht übergewichtig</ion-select-option>
-      <ion-select-option :value="formatOptionValue(1.45)">Übergewichtig</ion-select-option>
-      <ion-select-option :value="formatOptionValue(1.68)">Sehr übergewichtig</ion-select-option>
-    </template>
+    <ion-select-option v-for="option in modeOptions"
+      :key="option.value" :value="option.value">
+      {{ option.label }}
+    </ion-select-option>
 
   </ion-select>
 </template>
 
 <script setup lang="ts">
-import { HabitusModeValue } from '@/types/emergency';
+import { HabitusModeValue, HabitusValue } from '@/types/emergency';
 import { IonSelect, IonSelectOption } from '@ionic/vue'
-import { ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 
 const props = defineProps<{
-  modelValue: number,
+  modelValue: HabitusValue,
   mode: HabitusModeValue,
 }>()
 
 const emit = defineEmits<{
-  (event: 'update:modelValue', value: number): void
+  (event: 'update:modelValue', value: HabitusValue): void
 }>()
 
-const formatOptionValue = (value: number) => value.toFixed(2)
+const OPTIONS: Record<HabitusModeValue, ReadonlyArray<{ value: HabitusValue, label: string }>> = {
+  child: [
+    { value: 'very-thin', label: 'Sehr dünn' },
+    { value: 'thin', label: 'Dünn' },
+    { value: 'normal', label: 'Normaler Habitus' },
+    { value: 'lightly-overweight', label: 'Leicht übergewichtig' },
+    { value: 'overweight', label: 'Übergewichtig' },
+    { value: 'very-overweight', label: 'Sehr übergewichtig' },
+  ],
+  adult: [
+    { value: 'very-thin', label: 'Sehr dünn' },
+    { value: 'thin', label: 'Dünn' },
+    { value: 'normal', label: 'Normaler Habitus' },
+    { value: 'sporty', label: 'Sportlich/Muskulös' },
+    { value: 'lightly-overweight', label: 'Leicht übergewichtig' },
+    { value: 'overweight', label: 'Übergewichtig' },
+    { value: 'very-overweight', label: 'Sehr übergewichtig' },
+  ],
+}
 
-const currentMulti = ref(formatOptionValue(props.modelValue))
+const currentValue = ref<HabitusValue>(props.modelValue)
+
+const modeOptions = computed(() => {
+  const baseOptions = OPTIONS[props.mode]
+  if (baseOptions.some(option => option.value === currentValue.value)) {
+    return baseOptions
+  }
+
+  const fallbackOption =
+    OPTIONS.child.find(option => option.value === currentValue.value) ||
+    OPTIONS.adult.find(option => option.value === currentValue.value)
+
+  if (fallbackOption) {
+    return [...baseOptions, fallbackOption]
+  }
+
+  return baseOptions
+})
 
 watch(() => props.modelValue, (value) => {
-  const formatted = formatOptionValue(value)
-  if (currentMulti.value !== formatted) {
-    currentMulti.value = formatted
+  if (currentValue.value !== value) {
+    currentValue.value = value
   }
 })
 
-watch(() => currentMulti.value, (value) => {
-  const numericValue = Number.parseFloat(value)
-  if (!Number.isNaN(numericValue) && numericValue !== props.modelValue) {
-    emit('update:modelValue', numericValue)
+watch(() => currentValue.value, (value) => {
+  if (value !== props.modelValue) {
+    emit('update:modelValue', value)
   }
 })
 
