@@ -13,6 +13,7 @@
       </ion-header>
 
       <ns-patient-input v-model="currentPatient"></ns-patient-input>
+      <ns-patient-info :patient="currentPatient"></ns-patient-info>
 
     </ion-content>
   </ion-page>
@@ -23,6 +24,7 @@
 import { IonPage, IonHeader, IonToolbar, IonIcon, IonTitle, IonContent, onIonViewWillEnter } from '@ionic/vue';
 
 import NsPatientInput from './emergency/NsPatientInput.vue';
+import NsPatientInfo from './emergency/NsPatientInfo.vue';
 
 import { useContentStore } from '@/stores/content'
 import { ref, computed } from 'vue'
