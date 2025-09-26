@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { countChar, stripDots, stripWrongDots } from '@/service/text';
+import { stripDots, stripWrongDots } from '@/service/text';
 import { IonInput } from '@ionic/vue'
 import { computed, ref, watch } from 'vue'
 
@@ -19,10 +19,41 @@ const emit = defineEmits<{
   (event: 'update:modelValue', value: number|null): void
 }>()
 
-const internalEl = ref<any|null>(null)
-const internalValue = ref(props.modelValue != null ? String(props.modelValue) : '')
+const normalizeToCentimeters = (value: number|null|undefined): number|null => {
+  if (value == null || Number.isNaN(value)) { return null }
+  if (value < 3) { return Math.round(value * 100) }
+  return Math.round(value)
+}
 
-const inputMode = ref<'m'|'cm'>('m')
+const deriveModeFromValue = (value: number|null|undefined): 'm'|'cm' => {
+  if (value == null) { return 'm' }
+  return value < 3 ? 'm' : 'cm'
+}
+
+const formatDisplayValue = (centimeters: number, mode: 'm'|'cm'): string => {
+  if (mode === 'm') {
+    const meters = (centimeters / 100).toFixed(2)
+    return meters.replace(/(\.\d*?[1-9])0+$/, '$1').replace(/\.0+$/, '')
+  }
+  return String(centimeters)
+}
+
+const internalEl = ref<any|null>(null)
+
+const lastManualCentimeters = ref<number|null>(null)
+
+const initialCentimeters = normalizeToCentimeters(props.modelValue)
+const inputMode = ref<'m'|'cm'>(deriveModeFromValue(props.modelValue))
+const internalValue = ref(
+  initialCentimeters != null ? formatDisplayValue(initialCentimeters, inputMode.value) : ''
+)
+
+const syncInputElement = (value: string) => {
+  const inputCmp = internalEl.value
+  if (inputCmp !== undefined && inputCmp !== null) {
+    inputCmp.$el.value = value
+  }
+}
 const heightSuffix = computed(() => inputMode.value)
 const heightMaxLength = computed(() => {
   if (inputMode.value == 'm') { return 4 }
@@ -34,10 +65,25 @@ const heightMaxLength = computed(() => {
 watch(
   () => props.modelValue,
   value => {
-    const nextValue = value != null ? String(value) : ''
-    if (nextValue !== internalValue.value) {
-      internalValue.value = nextValue
+    const normalizedValue = normalizeToCentimeters(value)
+
+    if (normalizedValue === lastManualCentimeters.value) {
+      lastManualCentimeters.value = null
+      return
     }
+
+    if (normalizedValue == null) {
+      inputMode.value = 'm'
+      internalValue.value = ''
+      syncInputElement('')
+      lastManualCentimeters.value = null
+      return
+    }
+
+    inputMode.value = deriveModeFromValue(value)
+    internalValue.value = formatDisplayValue(normalizedValue, inputMode.value)
+    syncInputElement(internalValue.value)
+    lastManualCentimeters.value = null
   }
 )
 
@@ -75,14 +121,26 @@ const onInput = (event: Event) => {
    * Update both the state variable and
    * the component to keep them in sync.
    */
-  internalValue.value = height;
+  internalValue.value = height
+  syncInputElement(height)
 
-  const inputCmp = internalEl.value;
-  if (inputCmp !== undefined) {
-    inputCmp.$el.value = height;
+  if (height === '') {
+    lastManualCentimeters.value = null
+    emit('update:modelValue', null)
+    return
   }
 
-  emit('update:modelValue', (height === '' ? null : Number(height)))
+  let centimeters: number|null = null
+  if (inputMode.value === 'm') {
+    const meters = Number(height)
+    centimeters = Number.isNaN(meters) ? null : Math.round(meters * 100)
+  } else {
+    const cmValue = Number(height)
+    centimeters = Number.isNaN(cmValue) ? null : Math.round(cmValue)
+  }
+
+  lastManualCentimeters.value = centimeters
+  emit('update:modelValue', centimeters)
 }
 
 </script>
