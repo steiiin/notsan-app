@@ -1,4 +1,7 @@
 <template>
+
+  <!-- SAA: 2025 -->
+
   <div id="ns-content-bg">
 
     <ns-content-group title="Indikationen">
@@ -7,9 +10,28 @@
       </ns-list>
     </ns-content-group>
 
-    <ns-content-group title="Kontraindikationen">
+    <ns-content-group titlte="Absolute Kontraindikationen">
       <ns-list>
-        <ns-contraindication type="intolerance">Bekannte <b>Unverträglichkeit</b> ggb. ASS oder andere
+        <ns-contraindication type="intolerance">Bekannte Unverträglichkeit ggb. <b>ASS/Salicylate</b></ns-contraindication>
+        <ns-contraindication type="intolerance">Einnahme von <b>Methotrexat</b> (<b>MTX</b>) &gt; 15mg</ns-contraindication>
+      </ns-list>
+      <ns-list>
+        <ns-contraindication type="chronic">Akute Magen-Darm-<b> Geschwüre</b></ns-contraindication>
+        <ns-contraindication type="acute">Vd. auf <b>Aortensyndrom</b></ns-contraindication>
+        <ns-contraindication type="acute">Vd. auf <b>Innere Blutung</b></ns-contraindication>
+        <ns-contraindication type="acute"><b>Nicht beherrschbare</b> Blutung</ns-contraindication>
+      </ns-list>
+      <ns-list>
+        <ns-contraindication type="chronic">Bekannte <b>Blutungsneigung</b></ns-contraindication>
+      </ns-list>
+      <ns-list>
+        <ns-contraindication type="pediatric">Letztes Schwangerschaft-Trimester (<b>&gt;29. SSW</b>)</ns-contraindication>
+        <ns-contraindication type="pediatric">Alle <b>&lt; 18 Jahren</b></ns-contraindication>
+      </ns-list>
+    </ns-content-group>
+    <ns-content-group title="Relative Kontraindikationen">
+      <ns-list>
+        <ns-contraindication type="intolerance">Bekannte <b>Unverträglichkeit</b> ggb.
           <ns-quicktip text="NSAR">
             <h2>Nicht-Steroidale-Antirheumatika</h2>
             <p>Schmerz-/Fiebermittel, z.B.</p>
@@ -22,20 +44,15 @@
         </ns-contraindication>
       </ns-list>
       <ns-list>
-        <ns-contraindication type="acute">Vd. auf <b>Innere Blutung</b></ns-contraindication>
-        <ns-contraindication type="acute">Vd. auf <b>Aortensyndrom</b></ns-contraindication>
         <ns-contraindication type="acute">Asthmaanfall</ns-contraindication>
-        <ns-contraindication type="acute"><b>Nicht beherrschbare</b> Blutung</ns-contraindication>
-      </ns-list>
+        </ns-list>
       <ns-list>
-        <ns-contraindication type="chronic">Bekannte <b>Blutungsneigung</b></ns-contraindication>
-        <ns-contraindication type="chronic">Magen-Darm-<b>Geschwüre</b></ns-contraindication>
         <ns-contraindication type="chronic">Schwerer Leberschaden <b>(Liberzirrhose)</b></ns-contraindication>
         <ns-contraindication type="chronic">Schwere <b>Nierenfunktionsstörung</b></ns-contraindication>
+        <ns-contraindication type="chronic">Schwerer </ns-contraindication>
       </ns-list>
       <ns-list>
         <ns-contraindication type="pediatric">Schwangerschaft</ns-contraindication>
-        <ns-contraindication type="pediatric">Alle <b>&lt; 18 Jahren</b></ns-contraindication>
       </ns-list>
     </ns-content-group>
 
@@ -58,7 +75,7 @@
 
       <ns-dosage-indication name="Akutes Koronarsyndrom">
         <ns-dosage-usage type="iv">
-          <ns-dosage :dosage="{ type: 'adult', dose: '500mg', hint: '(½ Flasche)' }"></ns-dosage>
+          <ns-dosage :dosage="{ type: 'adult', dose: '250mg', hint: '(½ Flasche)' }"></ns-dosage>
           <hr>
           <p>Langsam spritzen.</p>
           <p>Eventuell ist zu einem späteren Zeitpunkt eine orale Gabe möglich.</p>
