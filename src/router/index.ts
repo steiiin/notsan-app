@@ -24,7 +24,25 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/content/medications/MedsContentPage.vue'),
         props: true
       },
-
+      {
+        path: 'lib',
+        component: () => import('@/views/content/LibraryListPage.vue'),
+      },
+      {
+        path: 'lib/list/:listId/:entryId',
+        component: () => import('@/views/content/library/LibraryContentPage.vue'),
+        props: true
+      },
+      {
+        path: 'lib/list/:id',
+        component: () => import('@/views/content/LibrarySubListPage.vue'),
+        props: true
+      },
+      {
+        path: 'lib/entry/:entryId',
+        component: () => import('@/views/content/library/LibraryContentPage.vue'),
+        props: true
+      },
       {
         path: 'emergency',
         component: () => import('@/views/content/EmergencyPage.vue'),
