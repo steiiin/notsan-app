@@ -1,5 +1,5 @@
 <template>
-  <div class="ns-flow">
+  <div ref="containerRef" class="ns-flow">
     <div
       v-if="layout.nodes.length"
       class="ns-flow__canvas"
@@ -99,7 +99,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import Elk, { type ElkEdge, type ElkNode } from 'elkjs/lib/elk.bundled.js'
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
 import type { NsFlowData, NsFlowEdge, NsFlowNode, NsFlowNodeType } from '@/types/flow'
@@ -132,104 +133,169 @@ interface LayoutResult {
   nodeSize: { width: number; height: number }
 }
 
+type ElkLayoutChild = ElkNode & { id?: string; x?: number; y?: number }
+interface ElkPointLike {
+  x: number
+  y: number
+}
+interface ElkSectionLike {
+  startPoint?: ElkPointLike
+  endPoint?: ElkPointLike
+  bendPoints?: ElkPointLike[]
+}
+type ElkLayoutEdge = ElkEdge & { id?: string; sections?: ElkSectionLike[] }
+type ElkLayoutGraph = ElkNode & {
+  children?: ElkLayoutChild[]
+  edges?: ElkLayoutEdge[]
+  width?: number
+  height?: number
+}
+
 const markerId = `ns-flow-arrow-${Math.random().toString(36).slice(2, 10)}`
 const router = useRouter()
 const NODE_TYPES = new Set<NsFlowNodeType>(['start-end', 'decision', 'process', 'task', 'link'])
+const fallback: LayoutResult = {
+  nodes: [],
+  edges: [],
+  width: 320,
+  height: 240,
+  aspectRatio: 320 / 240,
+  nodeSize: { width: 220, height: 92 },
+}
 
-const layout = computed<LayoutResult>(() => {
-  const fallback: LayoutResult = {
-    nodes: [],
-    edges: [],
-    width: 320,
-    height: 240,
-    aspectRatio: 320 / 240,
-    nodeSize: { width: 220, height: 92 },
+const layout = ref<LayoutResult>({ ...fallback })
+const containerRef = ref<HTMLDivElement | null>(null)
+const containerSize = ref({ width: 0, height: 0 })
+const elk = new Elk()
+let resizeObserver: ResizeObserver | undefined
+let layoutToken = 0
+
+onMounted(() => {
+  if (typeof ResizeObserver === 'undefined') {
+    scheduleLayoutUpdate()
+    return
   }
 
+  resizeObserver = new ResizeObserver(entries => {
+    const entry = entries[0]
+    if (!entry) {
+      return
+    }
+    const { width, height } = entry.contentRect
+    if (width !== containerSize.value.width || height !== containerSize.value.height) {
+      containerSize.value = { width, height }
+    }
+  })
+
+  if (containerRef.value) {
+    resizeObserver.observe(containerRef.value)
+  }
+  scheduleLayoutUpdate()
+})
+
+onBeforeUnmount(() => {
+  resizeObserver?.disconnect()
+})
+
+watch(
+  () => props.flow,
+  () => {
+    scheduleLayoutUpdate()
+  },
+  { deep: true }
+)
+
+watch(
+  containerSize,
+  () => {
+    scheduleLayoutUpdate()
+  },
+  { deep: true }
+)
+
+function scheduleLayoutUpdate(): void {
+  const token = ++layoutToken
+  void computeLayout().then(result => {
+    if (token === layoutToken) {
+      layout.value = result
+    }
+  })
+}
+
+async function computeLayout(): Promise<LayoutResult> {
   if (!props.flow || !props.flow.nodes?.length) {
-    return fallback
+    return { ...fallback }
   }
 
-  const nodeSize = {
-    width: 220,
-    height: 92,
-  }
+  const nodeSize = { width: 220, height: 92 }
   const columnSpacing = 120
   const rowSpacing = 40
   const paddingX = 32
   const paddingY = 32
-
   const nodes = props.flow.nodes
   const edges = props.flow.edges ?? []
 
+  const orientation = determineDirection(containerSize.value)
   const nodeMap = new Map(nodes.map(node => [node.id, node]))
-  const adjacency = new Map<string, string[]>(nodes.map(node => [node.id, []]))
-  const indegree = new Map<string, number>(nodes.map(node => [node.id, 0]))
+  const edgeMap = new Map<string, NsFlowEdge>()
 
-  for (const edge of edges) {
-    if (!nodeMap.has(edge.source) || !nodeMap.has(edge.target)) {
+  const elkGraph: ElkNode = {
+    id: 'ns-flow',
+    layoutOptions: {
+      'elk.algorithm': 'layered',
+      'elk.direction': orientation,
+      'elk.layered.spacing.nodeNodeBetweenLayers': `${columnSpacing}`,
+      'elk.spacing.nodeNode': `${rowSpacing}`,
+      'elk.padding': `[${paddingY}, ${paddingX}, ${paddingY}, ${paddingX}]`,
+      'elk.edgeRouting': 'POLYLINE',
+      'elk.layered.crossingMinimization.strategy': 'LAYER_SWEEP',
+      'elk.layered.nodePlacement.strategy': 'BRANDES_KOEPF',
+      'elk.layered.compaction.postCompaction.enabled': 'true',
+    },
+    children: nodes.map(node => ({
+      id: node.id,
+      width: nodeSize.width,
+      height: nodeSize.height,
+    })),
+    edges: edges
+      .filter(edge => nodeMap.has(edge.source) && nodeMap.has(edge.target))
+      .map((edge, index) => {
+        const id = edge.id ?? `${edge.source}-${edge.target}-${index}`
+        edgeMap.set(id, edge)
+        return {
+          id,
+          sources: [edge.source],
+          targets: [edge.target],
+        } satisfies ElkEdge
+      }),
+  }
+
+  let elkResult: ElkLayoutGraph
+  try {
+    elkResult = await elk.layout(elkGraph)
+  } catch (error) {
+    console.warn('Failed to compute ELK layout. Falling back to static layout.', error)
+    return { ...fallback }
+  }
+
+  const layoutNodes: LayoutNode[] = []
+  for (const child of elkResult.children ?? []) {
+    const original = child.id ? nodeMap.get(child.id) : undefined
+    if (!original) {
       continue
     }
-    adjacency.get(edge.source)?.push(edge.target)
-    indegree.set(edge.target, (indegree.get(edge.target) ?? 0) + 1)
-  }
-
-  const queue: string[] = []
-  const levels = new Map<string, number>()
-  const visited = new Set<string>()
-
-  for (const [id, count] of indegree) {
-    if (count === 0) {
-      queue.push(id)
-      levels.set(id, 0)
-    }
-  }
-
-  while (queue.length) {
-    const current = queue.shift() as string
-    visited.add(current)
-    const currentLevel = levels.get(current) ?? 0
-    const targets = adjacency.get(current) ?? []
-
-    for (const target of targets) {
-      const nextLevel = currentLevel + 1
-      levels.set(target, Math.max(levels.get(target) ?? 0, nextLevel))
-
-      const nextIndegree = (indegree.get(target) ?? 1) - 1
-      indegree.set(target, nextIndegree)
-      if (nextIndegree === 0) {
-        queue.push(target)
-      }
-    }
-  }
-
-  // Ensure cyclic nodes still receive a column by appending them after traversal.
-  const maxAssignedLevel = Math.max(0, ...Array.from(levels.values()))
-  for (const node of nodes) {
-    if (!levels.has(node.id)) {
-      levels.set(node.id, maxAssignedLevel)
-    }
-  }
-
-  const columns = new Map<number, LayoutNode[]>()
-  let maxColumnHeight = 0
-
-  for (const node of nodes) {
-    const column = levels.get(node.id) ?? 0
-    const columnNodes = columns.get(column) ?? []
-    columns.set(column, columnNodes)
-    const nodeType = resolveNodeType(node)
-    const quicktip = extractQuicktip(node)
-    const linkPath = extractLinkPath(node)
+    const nodeType = resolveNodeType(original)
+    const quicktip = extractQuicktip(original)
+    const linkPath = extractLinkPath(original)
     const isClickable = nodeType === 'link' && typeof linkPath === 'string'
 
-    columnNodes.push({
-      ...node,
-      x: 0,
-      y: 0,
-      column,
+    layoutNodes.push({
+      ...original,
+      x: child.x ?? 0,
+      y: child.y ?? 0,
+      column: 0,
       row: 0,
-      lines: extractLines(node),
+      lines: extractLines(original),
       nodeType,
       quicktip,
       linkPath,
@@ -237,62 +303,135 @@ const layout = computed<LayoutResult>(() => {
     })
   }
 
-  const columnEntries = Array.from(columns.entries()).sort((a, b) => a[0] - b[0])
-  const columnCount = columnEntries.length
-
-  for (const [, columnNodes] of columnEntries) {
-    const columnHeight = columnNodes.length * nodeSize.height + Math.max(0, columnNodes.length - 1) * rowSpacing
-    maxColumnHeight = Math.max(maxColumnHeight, columnHeight)
-  }
-
-  const layoutWidth = paddingX * 2 + columnCount * nodeSize.width + Math.max(0, columnCount - 1) * columnSpacing
-  const contentHeight = Math.max(nodeSize.height, maxColumnHeight)
-  const layoutHeight = paddingY * 2 + contentHeight
-
-  for (const [columnIndex, columnNodes] of columnEntries) {
-    const columnHeight = columnNodes.length * nodeSize.height + Math.max(0, columnNodes.length - 1) * rowSpacing
-    const offsetY = paddingY + (contentHeight - columnHeight) / 2
-    columnNodes.forEach((node, nodeIndex) => {
-      node.row = nodeIndex
-      node.x = paddingX + columnIndex * (nodeSize.width + columnSpacing)
-      node.y = offsetY + nodeIndex * (nodeSize.height + rowSpacing)
-    })
-  }
-
-  const layoutNodes = columnEntries.flatMap(([, columnNodes]) => columnNodes)
+  assignGridCoordinates(layoutNodes, orientation, nodeSize)
 
   const layoutEdges: LayoutEdge[] = []
-  for (const edge of edges) {
-    const source = layoutNodes.find(node => node.id === edge.source)
-    const target = layoutNodes.find(node => node.id === edge.target)
-    if (!source || !target) {
+  for (const edgeLayout of elkResult.edges ?? []) {
+    const edgeId = edgeLayout.id ?? ''
+    const originalEdge = edgeMap.get(edgeId)
+    if (!originalEdge) {
       continue
     }
-    const startX = source.x + nodeSize.width
-    const startY = source.y + nodeSize.height / 2
-    const endX = target.x
-    const endY = target.y + nodeSize.height / 2
-    const controlX = startX + (endX - startX) / 2
-    const path = `M ${startX} ${startY} C ${controlX} ${startY}, ${controlX} ${endY}, ${endX} ${endY}`
-
+    const path = buildEdgePath(edgeLayout)
+    if (!path) {
+      continue
+    }
     layoutEdges.push({
-      ...edge,
-      id: edge.id ?? `${edge.source}-${edge.target}`,
+      ...originalEdge,
+      id: edgeId,
       path,
     })
   }
 
-  const aspectRatio = layoutWidth / layoutHeight
+  const width = elkResult.width ?? fallback.width
+  const height = elkResult.height ?? fallback.height
+  const aspectRatio = width > 0 && height > 0 ? width / height : fallback.aspectRatio
 
   return {
     nodes: layoutNodes,
     edges: layoutEdges,
-    width: layoutWidth,
-    height: layoutHeight,
-    aspectRatio: Number.isFinite(aspectRatio) && aspectRatio > 0 ? aspectRatio : fallback.aspectRatio,
+    width,
+    height,
+    aspectRatio,
     nodeSize,
   }
-})
+}
+
+function determineDirection(size: { width: number; height: number }): 'DOWN' | 'RIGHT' {
+  const { width, height } = size
+  if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0) {
+    return 'DOWN'
+  }
+
+  const aspectRatio = width / height
+  return aspectRatio >= 1.35 ? 'RIGHT' : 'DOWN'
+}
+
+function assignGridCoordinates(
+  nodes: LayoutNode[],
+  orientation: 'DOWN' | 'RIGHT',
+  nodeSize: { width: number; height: number }
+): void {
+  if (!nodes.length) {
+    return
+  }
+
+  if (orientation === 'DOWN') {
+    const columns: LayoutNode[][] = []
+    const sorted = [...nodes].sort((a, b) => (a.x - b.x) || (a.y - b.y))
+    const threshold = nodeSize.width / 2
+
+    for (const node of sorted) {
+      let columnIndex = columns.findIndex(column => Math.abs(column[0].x - node.x) <= threshold)
+      if (columnIndex === -1) {
+        columnIndex = columns.length
+        columns[columnIndex] = []
+      }
+      node.column = columnIndex
+      columns[columnIndex].push(node)
+    }
+
+    columns.forEach(column => {
+      column.sort((a, b) => a.y - b.y)
+      column.forEach((node, index) => {
+        node.row = index
+      })
+    })
+  } else {
+    const rows: LayoutNode[][] = []
+    const sorted = [...nodes].sort((a, b) => (a.y - b.y) || (a.x - b.x))
+    const threshold = nodeSize.height / 2
+
+    for (const node of sorted) {
+      let rowIndex = rows.findIndex(row => Math.abs(row[0].y - node.y) <= threshold)
+      if (rowIndex === -1) {
+        rowIndex = rows.length
+        rows[rowIndex] = []
+      }
+      node.row = rowIndex
+      rows[rowIndex].push(node)
+    }
+
+    rows.forEach(row => {
+      row.sort((a, b) => a.x - b.x)
+      row.forEach((node, index) => {
+        node.column = index
+      })
+    })
+  }
+}
+
+function buildEdgePath(edge: ElkLayoutEdge): string | undefined {
+  const sections = edge.sections ?? []
+  const pathSegments: string[] = []
+
+  for (const section of sections) {
+    const points = [section.startPoint, ...(section.bendPoints ?? []), section.endPoint].filter(
+      Boolean
+    ) as Array<{ x: number; y: number }>
+
+    if (!points.length) {
+      continue
+    }
+
+    const segment = points
+      .map((point, index) => `${index === 0 ? 'M' : 'L'} ${round(point.x)} ${round(point.y)}`)
+      .join(' ')
+    if (segment) {
+      pathSegments.push(segment)
+    }
+  }
+
+  if (!pathSegments.length) {
+    return undefined
+  }
+
+  return pathSegments.join(' ')
+}
+
+function round(value: number): string {
+  return Number(value.toFixed(2)).toString()
+}
 
 function extractLines(node: NsFlowNode): string[] {
   const labelCandidate = typeof node.data?.label === 'string'
