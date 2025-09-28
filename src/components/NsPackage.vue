@@ -19,7 +19,7 @@
 
       <template v-if="inlineSpecs.off">
         <b>{{ inlineSpecs.off }}ml abziehen</b>,
-        <p :class="{ 'no-indent': !inlineSpecs.onlyOne }">dann <b>auf {{ inlineSpecs.on }}ml</b> aufziehen.</p>
+        <p v-if="inlineSpecs.on" :class="{ 'no-indent': !inlineSpecs.onlyOne }">dann <b>auf {{ inlineSpecs.on }}ml</b> aufziehen.</p>
       </template>
       <template v-else>
         <b v-if="inlineSpecs.on">auf {{ inlineSpecs.on }}ml</b>
