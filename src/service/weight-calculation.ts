@@ -1,4 +1,4 @@
-import { SexValue } from "./emergency";
+import { SexValue } from "../types/emergency";
 
 export interface CurvePoint {
   height: number; // cm

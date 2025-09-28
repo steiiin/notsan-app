@@ -1,4 +1,4 @@
-import { BmiCalculation, CurveCalculation } from "./weight-calculation"
+import { BmiCalculation, CurveCalculation } from "../service/weight-calculation"
 
 export type WeightAccuracyValue = 'direct' | 'estimate'
 export type WeightEstimateByValue = 'by-age' | 'by-height'
