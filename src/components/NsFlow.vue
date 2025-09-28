@@ -278,10 +278,6 @@ function extractLines(node: NsFlowNode): string[] {
 
 .ns-flow__canvas {
   width: 100%;
-  background: var(--ion-color-step-50, #f4f5f8);
-  border-radius: 18px;
-  padding: 12px;
-  box-shadow: 0 8px 20px rgba(15, 33, 55, 0.08);
 }
 
 .ns-flow__svg {
