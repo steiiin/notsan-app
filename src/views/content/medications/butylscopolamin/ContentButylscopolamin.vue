@@ -1,4 +1,7 @@
 <template>
+
+  <!-- SAA: 2025 -->
+
   <div id="ns-content-bg">
 
     <ns-content-group title="Indikationen">
@@ -7,7 +10,7 @@
       </ns-list>
     </ns-content-group>
 
-    <ns-content-group title="Kontraindikationen">
+    <ns-content-group title="Absolute Kontraindikationen">
       <ns-list>
         <ns-contraindication type="intolerance">Unverträglichkeit ggb. <b>Butylscopolamin</b></ns-contraindication>
       </ns-list>
@@ -50,6 +53,13 @@
       </ns-list>
     </ns-content-group>
 
+    <ns-content-group title="Relative Kontraindikationen">
+      <ns-list>
+        <ns-contraindication type="acute">Harnverhalt</ns-contraindication>
+        <ns-contraindication type="chronic">Kardiale Vorerkrankungen, z.b. <b>KHK</b>, <b>Herzklappenstenose</b></ns-contraindication>
+      </ns-list>
+    </ns-content-group>
+
     <ns-content-group title="Nebenwirkungen">
       <ns-list>
         <ns-sideeffect severe>Tachykardie</ns-sideeffect>
@@ -87,8 +97,7 @@
         <ns-dosage-usage type="iv">
           <div>
             <ns-dosage :dosage="{ dose: '20mg', hint: '(1 Ampulle)', type: 'adult' }"></ns-dosage>
-            <ns-dosage :dosage="{ dose: '15mg', hint: '(¾ Ampulle)', type: 'youth' }"></ns-dosage>
-            <ns-dosage :dosage="{ dose: '10mg', hint: '(½ Ampulle)', type: 'child' }"></ns-dosage>
+            <ns-dosage :dosage="{ dose: '10mg', hint: '(½ Ampulle)', type: 'youth' }"></ns-dosage>
           </div>
           <hr>
           <p>Auf <text-mono>20ml</text-mono> NaCl aufziehen, langsam spritzen &amp; nachspülen. </p>

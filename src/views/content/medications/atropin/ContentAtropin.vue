@@ -1,4 +1,7 @@
 <template>
+
+  <!-- SAA: 2025 -->
+
   <div id="ns-content-bg">
 
     <ns-content-group title="Indikationen">
@@ -86,6 +89,7 @@
     </ns-pharmacodynamics>
 
   </div>
+
 </template>
 
 <script setup lang="ts">

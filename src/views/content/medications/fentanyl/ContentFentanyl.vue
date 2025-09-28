@@ -1,4 +1,7 @@
 <template>
+
+  <!-- SAA: 2025 -->
+
   <div id="ns-content-bg">
 
     <ns-content-group title="Indikationen">
@@ -7,17 +10,30 @@
       </ns-list>
     </ns-content-group>
 
-    <ns-content-group title="Kontraindikationen">
+    <ns-content-group title="Absolute Kontraindikationen">
       <ns-list>
         <ns-contraindication type="intolerance">Bekannte <b>Unverträglichkeit</b> ggb. Fentanyl</ns-contraindication>
       </ns-list>
       <ns-list>
         <ns-contraindication type="acute">Atemdepression</ns-contraindication>
-        <ns-contraindication type="acute">Vigilanzminderung</ns-contraindication>
+        <ns-contraindication type="acute">Sopor, Koma</ns-contraindication>
       </ns-list>
       <ns-list>
         <ns-contraindication type="pediatric">Schwangerschaft</ns-contraindication>
-        <ns-contraindication type="pediatric">Keine Anwendung <b>&lt; 30kg KG</b> <span v-if="!onlySAA">(lt. SAA)</span></ns-contraindication>
+        <ns-contraindication type="pediatric">Keine Anwendung <b>&lt; 21kg KG (ca. 6 Jahre)</b> <span v-if="!onlySAA">(lt. SAA)</span></ns-contraindication>
+      </ns-list>
+    </ns-content-group>
+    <ns-content-group title="Relative Kontraindikationen">
+      <ns-list>
+        <ns-contraindication type="intolerance">Opioidabhängigkeit</ns-contraindication>
+      </ns-list>
+      <ns-list>
+        <ns-contraindication type="acute">Leichte Bewusstseinsstörung (<b>Somnolenz</b>)</ns-contraindication>
+        <ns-contraindication type="acute">Obstipation / Ileus</ns-contraindication>
+        <ns-contraindication type="acute">Atemwegsobstruktion</ns-contraindication>
+      </ns-list>
+      <ns-list>
+        <ns-contraindication type="chronic">Bekannte <b>Myasthenia Gravis</b></ns-contraindication>
       </ns-list>
     </ns-content-group>
 

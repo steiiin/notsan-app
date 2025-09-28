@@ -1,4 +1,7 @@
 <template>
+
+  <!-- SAA: 2025 -->
+
   <div id="ns-content-bg">
 
     <ns-content-group title="Indikationen">
@@ -7,10 +10,18 @@
       </ns-list>
     </ns-content-group>
 
-    <ns-content-group title="Kontraindikationen">
+    <ns-content-group title="Absolute Kontraindikationen">
       <ns-list>
         <ns-contraindication type="intolerance">Unverträglichkeit ggb. <b>Dimetinden</b></ns-contraindication>
       </ns-list>
+      <ns-list>
+        <ns-contraindication type="pediatric">Schwangerschaft</ns-contraindication>
+        <ns-contraindication type="pediatric">Stillzeit</ns-contraindication>
+        <ns-contraindication type="pediatric">Kinder &lt; 12 Jahre (durch SAA untersagt)</ns-contraindication>
+      </ns-list>
+    </ns-content-group>
+
+    <ns-content-group title="Relative Kontraindikationen">
       <ns-list>
         <ns-contraindication type="acute">
           <ns-quicktip text="Engwinkelglaukom"> <!-- TODO: Passus Engwinkelglaukom, existiert 3x -- evtl. in eigenes Snippet packen -->
@@ -25,11 +36,7 @@
             </ul>
           </ns-quicktip>
         </ns-contraindication>
-      </ns-list>
-      <ns-list>
-        <ns-contraindication type="pediatric">Schwangerschaft</ns-contraindication>
-        <ns-contraindication type="pediatric">Stillzeit</ns-contraindication>
-        <ns-contraindication type="pediatric">Kinder &lt; 12 Jahre (durch SAA untersagt)</ns-contraindication>
+        <ns-contraindication type="chronic">Epilepsie</ns-contraindication>
       </ns-list>
     </ns-content-group>
 
@@ -58,13 +65,8 @@
       <ns-dosage-indication name="Anaphylaxie">
         <ns-dosage-usage type="iv">
 
-          <div>
-            <ns-dosage :dosage="{ dose: '1mg /10kg', type: 'none' }"></ns-dosage>
-            <ns-dosage :dosage="{ dose: '1ml /10kg', type: 'none' }"></ns-dosage>
-          </div>
-
+          <ns-dosage :dosage="{ dose: '1mg /10kg', hint: '(1ml /10kg)', type: 'none' }"></ns-dosage>
           <hr>
-
           <p><text-underline>Keine</text-underline> Repetition.</p>
 
         </ns-dosage-usage>

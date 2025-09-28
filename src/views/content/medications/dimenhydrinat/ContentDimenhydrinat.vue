@@ -1,4 +1,7 @@
 <template>
+
+  <!-- SAA: 2025 -->
+
   <div id="ns-content-bg">
 
     <ns-content-group title="Indikationen">
@@ -10,6 +13,19 @@
     <ns-content-group title="Kontraindikationen">
       <ns-list>
         <ns-contraindication type="intolerance">Unverträglichkeit ggb. <b>Dimenhydrinat</b></ns-contraindication>
+        <ns-contraindication type="intolerance">Einnahme von
+          <ns-quicktip text="MAO-Hemmer">
+            <h2>MAO-Hemmer</h2>
+            <p>MAO-Hemmer erhöhen Monoamine im Gehirn, wirken antidepressiv.</p>
+            <hr>
+            <ul>
+              <li head>Tranylcypromin: <i>Parnate</i></li>
+              <li head>Moclobemid: <i>Aurorix</i></li>
+              <li head>Phenelzin: <i>Nardil</i></li>
+              <li head>Selegilin: <i>Eldepryl, Movern, Selgin</i></li>
+            </ul>
+          </ns-quicktip>
+        </ns-contraindication>
       </ns-list>
       <ns-list>
         <ns-contraindication type="acute">
@@ -46,9 +62,15 @@
         </ns-quicktip></ns-contraindication>
       </ns-list>
       <ns-list>
+        <ns-contraindication type="pediatric">Unter <b>Wehentätigkeit</b></ns-contraindication>
+        <ns-contraindication type="pediatric">Keine Kinder &lt; {{ anySuppEnabled ? '1 Jahr' : '6 Jahre' }}</ns-contraindication>
+      </ns-list>
+    </ns-content-group>
+    <ns-content-group title="Relative Kontraindikationen">
+      <ns-list>
+        <ns-contraindication type="acute">Herzrhythmusstörungen</ns-contraindication>
         <ns-contraindication type="pediatric">Schwangerschaft</ns-contraindication>
         <ns-contraindication type="pediatric">Stillzeit</ns-contraindication>
-        <ns-contraindication type="pediatric">Keine Kinder &lt; 6kg / &lt; 1 Jahr</ns-contraindication>
       </ns-list>
     </ns-content-group>
 
@@ -80,7 +102,7 @@
         <ns-dosage-usage type="iv">
           <div>
             <ns-dosage :dosage="{ dose: '62mg', hint: '(1 Ampulle)', color: 'blue', target: '> 14 Jahre' }"></ns-dosage>
-            <ns-dosage :dosage="{ dose: '31mg', hint: '(½ Ampulle)', color: 'orange', target: '≥ 7 Jahre' }"></ns-dosage>
+            <ns-dosage :dosage="{ dose: '31mg', hint: '(½ Ampulle)', color: 'orange', target: '≥ 6 Jahre' }"></ns-dosage>
           </div>
           <template v-if="!onlySAA">
             <hr>
