@@ -24,12 +24,29 @@ import type { NsFlowData } from '@/types/flow'
 
 const airwayFlow: NsFlowData = {
   nodes: [
-    { id: 'assessment', data: { label: 'Bewusstsein\nprüfen' } },
-    { id: 'open-airway', data: { label: 'Atemweg\nfreimachen' } },
+    { id: 'start', type: 'start-end', label: 'Startpunkt' },
+    { id: 'assessment', type: 'process', data: { label: 'Bewusstsein\nprüfen' } },
+    {
+      id: 'decision',
+      type: 'decision',
+      data: { label: 'Atmung\nvorhanden?', quicktip: '10 Sekunden prüfen' },
+    },
+    { id: 'open-airway', type: 'task', data: { label: 'Atemweg\nfreimachen' } },
+    { id: 'monitor', type: 'process', data: { label: 'Vitalparameter\nüberwachen' } },
+    {
+      id: 'library-link',
+      type: 'link',
+      data: { label: 'Weitere Infos zur Beatmung', path: '/tabs/lib' },
+    },
+    { id: 'end', type: 'start-end', data: { label: 'Behandlung\nabschließen' } },
   ],
   edges: [
-    { source: 'assessment', target: 'open-airway' },
-    { source: 'open-airway', target: 'ventilate' },
+    { source: 'start', target: 'assessment' },
+    { source: 'assessment', target: 'decision' },
+    { source: 'decision', target: 'open-airway' },
+    { source: 'open-airway', target: 'monitor' },
+    { source: 'monitor', target: 'library-link' },
+    { source: 'library-link', target: 'end' },
   ],
 }
 </script>

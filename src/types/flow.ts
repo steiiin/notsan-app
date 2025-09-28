@@ -1,9 +1,19 @@
+export type NsFlowNodeType = 'start-end' | 'decision' | 'process' | 'task' | 'link'
+
+export interface NsFlowNodeData {
+  label?: string
+  quicktip?: string
+  path?: string
+  [key: string]: unknown
+}
+
 export interface NsFlowNode {
   id: string
+  type?: NsFlowNodeType
   /**
    * Optional payload compatible with VueFlow default nodes.
    */
-  data?: Record<string, unknown>
+  data?: NsFlowNodeData
   /**
    * Convenience label if no data.label is supplied.
    */
