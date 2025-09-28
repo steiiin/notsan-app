@@ -1,5 +1,20 @@
 import { LibraryListItem } from '@/types/library-list';
 
 export const libraryItems: LibraryListItem[] = [
-  // Entries and sublists will be added here.
+
+  {
+    id: 'bpr-list',
+    title: 'Behandlungspfade',
+    entries:
+    [
+
+      {
+        id: 'bpr-airway',
+        title: 'Atemwegsmanagement',
+        component: () => import('@/views/content/library/bpr/airway/ContentAirway.vue')
+      },
+
+    ]
+  },
+
 ];
