@@ -25,7 +25,7 @@
 :deep(.ns-key-value__cell) {
   display: table-cell;
   vertical-align: top;
-  padding: 0.25rem 0;
+  padding: 0;
 }
 
 :deep(.ns-key-value__cell--key) {
