@@ -29,8 +29,7 @@
 }
 
 :deep(.ns-key-value__cell--key) {
-  width: 50%;
-  max-width: 50%;
+  width: 25%;
   padding-right: .5rem;
 }
 
