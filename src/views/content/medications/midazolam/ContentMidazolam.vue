@@ -67,7 +67,7 @@
 
       <ns-dosage-indication name="Krampfanfall">
 
-        <ns-dosage-usage type="none" v-if="!onlyOneIvEnabled">
+        <ns-dosage-usage type="invisible" v-if="!onlyOneIvEnabled">
           <h2><text-colored red>Achtung</text-colored></h2>
           <p>
             Unbedingt auf richtige Dosierung <br>

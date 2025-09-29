@@ -79,7 +79,7 @@
       <ns-package :package="defaultPackage"></ns-package>
 
       <ns-dosage-indication name="Kolikartiger Schmerz">
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <h2>Ab <ns-quicktip text="NRS">
             <h2>Numeric-Rating-Scale</h2>
             <p>Schmerzskala</p>
@@ -103,7 +103,7 @@
           <p>Auf <text-mono>20ml</text-mono> NaCl aufziehen, langsam spritzen &amp; nachspülen. </p>
           <p>Herzfrequenz mit EKG oder SpO<sub>2</sub>-Sensor <i>überwachen</i>.</p>
         </ns-dosage-usage>
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <h2>Repetition</h2>
           <p>Nach <text-underline>5 Minuten</text-underline> kann der Rest gegeben werden.</p>
         </ns-dosage-usage>

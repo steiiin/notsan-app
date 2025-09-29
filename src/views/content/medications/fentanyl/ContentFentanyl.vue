@@ -64,7 +64,7 @@
       <ns-package :package="iv05mg" v-if="isiv05Enabled"></ns-package>
 
       <ns-dosage-indication name="Stärkste Schmerzen">
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <h2 v-if="onlySAA">NRS &ge; 6</h2>
         </ns-dosage-usage>
         <ns-dosage-usage type="iv">

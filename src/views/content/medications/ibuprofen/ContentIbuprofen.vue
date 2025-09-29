@@ -72,7 +72,7 @@
       <ns-package :package="ivFlask" v-if="isIvFlaskEnabled"></ns-package>
 
       <ns-dosage-indication>
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <div>
             <ns-dosage :dosage="{ type: 'adult', dose: 'bis 1.200mg / Tag' }"></ns-dosage>
             <ns-dosage :dosage="{

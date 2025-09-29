@@ -16,7 +16,7 @@
 
     <ns-content-group title="Kontraindikationen">
       <ns-list>
-        <ns-contraindication type="none"><b>Keine, </b>wegen Lebensgefahr</ns-contraindication>
+        <ns-contraindication type="invisible"><b>Keine, </b>wegen Lebensgefahr</ns-contraindication>
       </ns-list>
     </ns-content-group>
 
@@ -37,7 +37,7 @@
       <ns-package :package="defaultPackage"></ns-package>
 
       <ns-dosage-indication name="Reanimation">
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <h2>Schockbar (VF, VT)</h2>
           <p>Nach dem 3. erfolglosen Schock</p>
           <h2>Nicht Schockbar (PEA, Asystolie)</h2>
@@ -52,14 +52,14 @@
             <ns-dosage :dosage="{ type: 'child', dose: '1ml/5kg' }"></ns-dosage>
           </div>
         </ns-dosage-usage>
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <h2>Repetition</h2>
           <p>Alle <text-underline>4 Minuten</text-underline> nach erster Gabe</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
 
       <ns-dosage-indication name="Anaphylaxie">
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <p>Bei <text-underline>ausgeprägter allergischer Reaktion, </text-underline>d.h. <i>Schockzeichen, Atemnot, Schleimhautödem</i></p>
         </ns-dosage-usage>
         <ns-dosage-usage type="im">
@@ -79,14 +79,14 @@
             </ns-dosage>
           </div>
         </ns-dosage-usage>
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <h2>Repetition</h2>
           <p>Nach <text-underline>5 Minuten</text-underline> möglich</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
 
       <ns-dosage-indication name="Instabile Bradykardie">
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <p><text-underline>Instabilitätskriterien</text-underline> sind z.B. <i>Vigilanzminderung, Schock, Dyspnoe</i></p>
         </ns-dosage-usage>
         <ns-dosage-usage type="iv">
@@ -104,7 +104,7 @@
       </ns-dosage-indication>
 
       <ns-dosage-indication name="Atemwegsobstruktion (Schleimhautödem/Pseudokrupp)">
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <p>Wenn <text-underline>SpO<sub>2</sub> &lt; 90%,</text-underline> trotz Sauerstoffgabe</p>
         </ns-dosage-usage>
         <ns-dosage-usage type="pi">

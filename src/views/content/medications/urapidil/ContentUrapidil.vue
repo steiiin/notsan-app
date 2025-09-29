@@ -58,7 +58,7 @@
       <ns-package :package="iv5_10" v-if="isIv5_10Enabled"></ns-package>
 
       <ns-dosage-indication>
-        <ns-dosage-usage type="none">
+        <ns-dosage-usage type="invisible">
           <h2>Zielwert</h2>
           <p>
             <text-underline>Aortensyndrom</text-underline>: <text-mono>100-120mmHg</text-mono><br>

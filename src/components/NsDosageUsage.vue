@@ -19,7 +19,7 @@ import { computed } from 'vue'
 import NsContentSplit from '@/components/NsContentSplit.vue'
 
 const props = defineProps<{
-  type: "iv" | "im" | "nasal" | "pi" | "po" | "supp" | "none",
+  type: "iv" | "im" | "nasal" | "pi" | "po" | "supp" | "invisible" | "none",
   label?: string,
   nodivider?: boolean,
 }>()
@@ -31,6 +31,7 @@ const usageTagMap: Record<string, string> = {
   pi: 'inhalativ',
   po: 'oral',
   supp: 'rektal',
+  invisible: ' ',
   none: ' ',
 }
 const usageTag = computed(() => props.label || (props.type && props.type in usageTagMap ? usageTagMap[props.type] : null))
@@ -42,6 +43,7 @@ const usageColorMap: Record<string, string> = {
   pi: 'blue',
   po: 'grey',
   supp: 'orange',
+  invisible: 'none',
   none: 'none',
 }
 const usageColor = computed(() => props.type && props.type in usageColorMap ? usageColorMap[props.type] : 'none')
@@ -53,6 +55,7 @@ const usageMinHeightMap: Record<string, number> = {
   pi: 5,
   po: 3,
   supp: 4,
+  invisible: 0,
   none: 1.5,
 }
 const usageMinHeight = computed(() => props.type && props.type in usageMinHeightMap ? usageMinHeightMap[props.type] : 1)
@@ -101,8 +104,13 @@ const usageMinHeight = computed(() => props.type && props.type in usageMinHeight
 .usage-divider.grey {
   border-color: rgba(var(--ns-color-grey-rgb), .4)
 }
+.usage-divider.invisible,
 .usage-divider.none {
   border-color: transparent
+}
+
+.ns-dosage-usage :deep(.left) {
+  width: 0 !important;
 }
 
 .usage-content {
