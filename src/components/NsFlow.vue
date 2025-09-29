@@ -457,11 +457,7 @@ function round(value: number): string {
 }
 
 function extractLines(node: NsFlowNode): string[] {
-  const labelCandidate = typeof node.data?.label === 'string'
-    ? node.data.label
-    : typeof node.label === 'string'
-      ? node.label
-      : ''
+  const labelCandidate = typeof node.label === 'string' ? node.label : ''
 
   return labelCandidate
     .split(/\r?\n/g)
@@ -470,7 +466,7 @@ function extractLines(node: NsFlowNode): string[] {
 }
 
 function extractQuicktip(node: NsFlowNode): string | undefined {
-  const quicktipCandidate = node.data?.quicktip
+  const quicktipCandidate = node.quicktip
   if (typeof quicktipCandidate !== 'string') {
     return undefined
   }
@@ -480,7 +476,7 @@ function extractQuicktip(node: NsFlowNode): string | undefined {
 }
 
 function extractLinkPath(node: NsFlowNode): string | undefined {
-  const pathCandidate = node.data?.path
+  const pathCandidate = node.path
   if (typeof pathCandidate !== 'string') {
     return undefined
   }
