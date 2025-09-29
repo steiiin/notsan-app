@@ -7,7 +7,10 @@
     </ns-button-group>
     <hr>
     <template v-if="weightAccuracy == 'direct'">
-      <ns-weight-input v-model="patientWeight" ref="inputWeight"></ns-weight-input>
+      <div class="ns-same-row">
+        <ns-weight-input v-model="patientWeight" ref="inputWeight"></ns-weight-input>
+        <ns-sex-input v-model="patientSex"></ns-sex-input>
+      </div>
     </template>
     <template v-else-if="weightAccuracy == 'estimate'">
 

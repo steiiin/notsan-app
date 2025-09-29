@@ -162,7 +162,7 @@ export class Patient {
 
   // ######################################################
 
-  get currentMethod(): CalcMethod
+  get estimatedWeightCalcMethod(): CalcMethod
   {
 
 
@@ -249,18 +249,18 @@ export class Patient {
   get estimatedWeight(): number
   {
 
-    if (this.currentMethod == 'direct') { return this.Weight }
-    if (this.currentMethod == 'by-age') {
+    if (this.estimatedWeightCalcMethod == 'direct') { return this.Weight }
+    if (this.estimatedWeightCalcMethod == 'by-age') {
       return CurveCalculation.calculateChildWeightByAge(
         this.Sex, this.Age, this.currentHabitusMulti
       )
     }
-    if (this.currentMethod == 'by-height-curve') {
+    if (this.estimatedWeightCalcMethod == 'by-height-curve') {
       return CurveCalculation.calculateChildWeightByHeight(
         this.Sex, this.Height, this.currentHabitusMulti
       )
     }
-    if (this.currentMethod == 'by-height-bmi') {
+    if (this.estimatedWeightCalcMethod == 'by-height-bmi') {
       return BmiCalculation.calculateAdultWeightByHeight(
         this.Sex, this.Height, this.currentHabitusMulti
       )
@@ -271,28 +271,30 @@ export class Patient {
 
   // ######################################################
 
-  private get ageIsActive(): boolean {
+  get isAgeDirectlyUsed(): boolean {
     return this.WeightAccuracy === 'estimate' && this.WeightEstimateBy === 'by-age';
   }
-  private get heightIsActive(): boolean {
+  get isHeightDirectlyUsed(): boolean {
     return this.WeightAccuracy === 'estimate' && this.WeightEstimateBy === 'by-height';
   }
-  private get weightIsActive(): boolean {
+  get isWeightDirectlyUsed(): boolean {
     return this.WeightAccuracy === 'direct';
   }
+
+  // ######################################################
 
   get estimatedAge(): number
   {
 
-    if (this.ageIsActive && this.Age && this.Age > 0) { return this.Age }
+    if (this.isAgeDirectlyUsed && this.Age && this.Age > 0) { return this.Age }
 
     const estimates: number[] = []
 
-    if (this.heightIsActive) {
+    if (this.isHeightDirectlyUsed) {
       const heightAge = this.estimateAgeFromHeight()
       if (heightAge !== undefined) { estimates.push(heightAge) }
     }
-    if (this.weightIsActive) {
+    if (this.isWeightDirectlyUsed) {
       const weightAge = this.estimateAgeFromWeight()
       if (weightAge !== undefined) { estimates.push(weightAge) }
     }
@@ -304,9 +306,11 @@ export class Patient {
     return Math.max(0, Math.round(base + habitusOffset))
   }
 
-  get isLikelyAdult(): boolean
+  // ######################################################
+
+  get isLikelyAnAdult(): boolean
   {
-    const knownAge = this.ageIsActive && this.Age && this.Age > 0 ? this.Age : undefined
+    const knownAge = this.isAgeDirectlyUsed && this.Age && this.Age > 0 ? this.Age : undefined
     const maturity = this.maturityScore
     const estimate = this.estimatedAge
 
@@ -332,10 +336,10 @@ export class Patient {
   // ######################################################
 
   get isValid(): boolean {
-    return this.currentMethod == 'direct'
-      || this.currentMethod == 'by-age'
-      || this.currentMethod == 'by-height-bmi'
-      || this.currentMethod == 'by-height-curve'
+    return this.estimatedWeightCalcMethod == 'direct'
+      || this.estimatedWeightCalcMethod == 'by-age'
+      || this.estimatedWeightCalcMethod == 'by-height-bmi'
+      || this.estimatedWeightCalcMethod == 'by-height-curve'
   }
 
 }

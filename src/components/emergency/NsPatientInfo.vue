@@ -37,10 +37,10 @@ const info = computed(() => {
   const showAnything = computed(() => !isUndefined.value)
   const showError = computed(() => isInvalidAge.value || isInvalidWeight.value || isInvalidHeight.value)
 
-  const isUndefined = computed(() => props.patient.currentMethod == 'undefined')
-  const isInvalidAge = computed(() => props.patient.currentMethod == 'invalid_age')
-  const isInvalidWeight = computed(() => props.patient.currentMethod == 'invalid_weight')
-  const isInvalidHeight = computed(() => props.patient.currentMethod == 'invalid_height')
+  const isUndefined = computed(() => props.patient.estimatedWeightCalcMethod == 'undefined')
+  const isInvalidAge = computed(() => props.patient.estimatedWeightCalcMethod == 'invalid_age')
+  const isInvalidWeight = computed(() => props.patient.estimatedWeightCalcMethod == 'invalid_weight')
+  const isInvalidHeight = computed(() => props.patient.estimatedWeightCalcMethod == 'invalid_height')
 
 // #endregion
 
@@ -60,11 +60,11 @@ const infoData = computed((): InfoData => {
     {
 
       // show declarative messages
-      if (props.patient.currentMethod == 'invalid_age') {
+      if (props.patient.estimatedWeightCalcMethod == 'invalid_age') {
         return new InfoData('Zu Alt für Schätzung', 'Anhand von Perzentilenkurven kann bis max. 15 Jahren geschätzt werden.') }
-      if (props.patient.currentMethod == 'invalid_height') {
+      if (props.patient.estimatedWeightCalcMethod == 'invalid_height') {
         return new InfoData('Ungültige Größe', 'Unter 30cm Körpergröße kann nicht geschätzt werden.') }
-      if (props.patient.currentMethod == 'invalid_weight') {
+      if (props.patient.estimatedWeightCalcMethod == 'invalid_weight') {
         return new InfoData('Ungültiges Gewicht', 'Mit unter 3kg Gewicht kann nichts berechnet werden.') }
 
     }
@@ -72,9 +72,9 @@ const infoData = computed((): InfoData => {
     {
 
       let inputMethod = 'Eingabe'
-      if (props.patient.currentMethod == 'by-age') { inputMethod = 'Perzentil/Alter' }
-      else if (props.patient.currentMethod == 'by-height-curve') { inputMethod = 'Perzentil/Größe' }
-      else if (props.patient.currentMethod == 'by-height-bmi') { inputMethod = 'BMI/Größe' }
+      if (props.patient.estimatedWeightCalcMethod == 'by-age') { inputMethod = 'Perzentil/Alter' }
+      else if (props.patient.estimatedWeightCalcMethod == 'by-height-curve') { inputMethod = 'Perzentil/Größe' }
+      else if (props.patient.estimatedWeightCalcMethod == 'by-height-bmi') { inputMethod = 'BMI/Größe' }
 
       const broselowCode = getBroselowCode(props.patient.estimatedWeight)
       if (broselowCode)
