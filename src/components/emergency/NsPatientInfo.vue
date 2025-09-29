@@ -27,7 +27,7 @@ const info = computed(() => {
   xx.push(`Habitus: ${props.patient.Habitus}`)
   xx.push(`HabitusMultiplier: ${props.patient.currentHabitusMulti}`)
   xx.push(`calcHabitusMode: ${props.patient.currentHabitusMode}`)
-  xx.push(`calcWeight: ${props.patient.currentWeight}`)
+  xx.push(`calcWeight: ${props.patient.estimatedWeight}`)
 
   return xx.join('<br>')
 })
@@ -76,14 +76,14 @@ const infoData = computed((): InfoData => {
       else if (props.patient.currentMethod == 'by-height-curve') { inputMethod = 'Perzentil/Größe' }
       else if (props.patient.currentMethod == 'by-height-bmi') { inputMethod = 'BMI/Größe' }
 
-      const broselowCode = getBroselowCode(props.patient.currentWeight)
+      const broselowCode = getBroselowCode(props.patient.estimatedWeight)
       if (broselowCode)
       {
         return new InfoData(`Broselow: ${broselowCode.code}`, broselowCode.range, broselowCode.colorCode)
       }
       else
       {
-        return new InfoData(getSexDescription(props.patient.Sex), props.patient.currentWeight.toFixed() + 'kg')
+        return new InfoData(getSexDescription(props.patient.Sex), props.patient.estimatedWeight.toFixed() + 'kg')
       }
 
     }

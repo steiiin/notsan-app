@@ -28,8 +28,8 @@ const props = defineProps<{
   patient: Patient
 }>()
 
-const useManufacturerEnergy = computed(() => props.patient.currentWeight >= 25)
-const manualEnergy = computed(() => round(props.patient.currentWeight * 4, 5, 'down'))
+const useManufacturerEnergy = computed(() => props.patient.estimatedWeight >= 25)
+const manualEnergy = computed(() => round(props.patient.estimatedWeight * 4, 5, 'down'))
 const manualIneffectiveEnergy = computed(() => manualEnergy.value * 2)
 
 </script>

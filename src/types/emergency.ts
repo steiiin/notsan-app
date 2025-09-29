@@ -246,7 +246,7 @@ export class Patient {
 
   }
 
-  get currentWeight(): number
+  get estimatedWeight(): number
   {
 
     if (this.currentMethod == 'direct') { return this.Weight }
