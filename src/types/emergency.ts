@@ -49,6 +49,16 @@ export class Patient {
     },
   }
 
+  private static readonly HABITUS_AGE_OFFSETS: Record<HabitusValue, number> = {
+    'very-thin': -2,
+    thin: -1,
+    normal: 0,
+    sporty: 1,
+    'lightly-overweight': 2,
+    overweight: 3,
+    'very-overweight': 4,
+  }
+
   // ######################################################
 
   constructor()
@@ -83,6 +93,71 @@ export class Patient {
     const mode = this.currentHabitusMode
     const modeMultipliers = Patient.HABITUS_MULTIPLIERS[mode]
     return modeMultipliers[this.Habitus] ?? modeMultipliers[Patient.DEFAULT_HABITUS]
+  }
+
+  // ######################################################
+
+  private estimateAgeFromHeight(): number | undefined
+  {
+    if (!this.Height || this.Height <= 0) { return undefined }
+
+    const height = this.Height
+    if (this.Sex == 'male')
+    {
+      if (height < 110) { return 5 }
+      if (height < 125) { return 7 }
+      if (height < 140) { return 11 }
+      if (height < 155) { return 14 }
+      if (height < 165) { return 16 }
+      if (height < 175) { return 18 }
+      if (height < 185) { return 21 }
+      return 25
+    }
+
+    if (height < 105) { return 5 }
+    if (height < 120) { return 7 }
+    if (height < 135) { return 11 }
+    if (height < 150) { return 14 }
+    if (height < 160) { return 16 }
+    if (height < 170) { return 18 }
+    return 22
+  }
+
+  private estimateAgeFromWeight(): number | undefined
+  {
+    if (!this.Weight || this.Weight <= 0) { return undefined }
+
+    const weight = this.Weight
+    if (weight < 20) { return 5 }
+    if (weight < 35) { return 9 }
+    if (weight < 50) { return 13 }
+    if (weight < 60) { return 15 }
+    if (weight < 70) { return 16 }
+    if (weight < 80) { return 18 }
+    if (weight < 95) { return 20 }
+    return 24
+  }
+
+  private get maturityScore(): number
+  {
+    let score = 0
+
+    if (this.Height >= 175) { score += 3 }
+    else if (this.Height >= 165) { score += 2 }
+    else if (this.Height >= 155) { score += 1 }
+
+    if (this.Weight >= 95) { score += 3 }
+    else if (this.Weight >= 80) { score += 2 }
+    else if (this.Weight >= 65) { score += 1 }
+
+    if (this.Habitus == 'sporty') { score += 1 }
+    else if (this.Habitus == 'lightly-overweight') { score += 2 }
+    else if (this.Habitus == 'overweight') { score += 3 }
+    else if (this.Habitus == 'very-overweight') { score += 4 }
+
+    if (this.currentHabitusMode == 'adult') { score += 1 }
+
+    return score
   }
 
   // ######################################################
@@ -192,6 +267,55 @@ export class Patient {
     }
     return -1
 
+  }
+
+  // ######################################################
+
+  get estimatedAge(): number
+  {
+    if (this.Age && this.Age > 0) { return this.Age }
+
+    const estimates: number[] = []
+
+    const heightAge = this.estimateAgeFromHeight()
+    if (heightAge !== undefined) { estimates.push(heightAge) }
+
+    const weightAge = this.estimateAgeFromWeight()
+    if (weightAge !== undefined) { estimates.push(weightAge) }
+
+    if (estimates.length == 0) { return 0 }
+
+    const habitusOffset = Patient.HABITUS_AGE_OFFSETS[this.Habitus] ?? 0
+    const base = estimates.reduce((sum, value) => sum + value, 0) / estimates.length
+
+    return Math.max(0, Math.round(base + habitusOffset))
+  }
+
+  // ######################################################
+
+  get isLikelyAdult(): boolean
+  {
+    const knownAge = this.Age && this.Age > 0 ? this.Age : undefined
+    const maturity = this.maturityScore
+    const estimate = this.estimatedAge
+
+    if (knownAge !== undefined)
+    {
+      if (knownAge >= 18) { return true }
+      if (knownAge <= 12) { return false }
+      if (knownAge >= 16 && maturity >= 2) { return true }
+      if (knownAge >= 15 && maturity >= 3) { return true }
+      if (knownAge >= 14 && maturity >= 4) { return true }
+      return false
+    }
+
+    if (estimate >= 18) { return true }
+    if (estimate <= 12) { return false }
+    if (estimate >= 16 && maturity >= 2) { return true }
+    if (estimate >= 15 && maturity >= 4) { return true }
+    if (maturity >= 5) { return true }
+
+    return false
   }
 
   // ######################################################
