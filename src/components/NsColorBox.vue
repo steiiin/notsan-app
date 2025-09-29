@@ -25,21 +25,41 @@ const backgroundColor = computed(() => {
   if (key.startsWith('--'))
     return `var(${key})`
 
-  return `var(--ns-broselow-code-${key}, var(--ns-color-${key}, ${key}))`
+  return `var(--ns-colorbox-${key})`
 })
 
 const boxStyle = computed(() => ({
   backgroundColor: backgroundColor.value,
 }))
+
 </script>
 
+<style>
+
+/* Colors */
+
+:root
+{
+  --ns-colorbox-igel1: #f1c5cc;
+  --ns-colorbox-igel1_5: #adc9e8;
+  --ns-colorbox-igel2: #9a9b9c;
+  --ns-colorbox-igel2_5: #ffffff;
+  --ns-colorbox-igel3: #ffe000;
+  --ns-colorbox-igel4: #00b38a;
+  --ns-colorbox-igel5: #f77a00;
+}
+
+</style>
 <style scoped>
+
+/* box style */
+
 .ns-color-box {
   display: inline-block;
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 1.75rem;
+  height: 1rem;
+  vertical-align: top;
   border-radius: 2px;
-  vertical-align: middle;
   margin-inline-end: 0.4rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -49,4 +69,5 @@ const boxStyle = computed(() => ({
     border-color: rgba(255, 255, 255, 0.2);
   }
 }
+
 </style>
