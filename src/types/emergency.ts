@@ -196,6 +196,11 @@ export class Patient {
 
   // ######################################################
 
-  get isValid(): boolean { return this.Weight>0 && this.Weight<500 }
+  get isValid(): boolean {
+    return this.currentMethod == 'direct'
+      || this.currentMethod == 'by-age'
+      || this.currentMethod == 'by-height-bmi'
+      || this.currentMethod == 'by-height-curve'
+  }
 
 }

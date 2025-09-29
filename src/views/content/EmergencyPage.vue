@@ -15,35 +15,24 @@
       <ns-patient-input v-model="currentPatient"></ns-patient-input>
       <ns-patient-info :patient="currentPatient"></ns-patient-info>
 
-      <ion-accordion-group :animated="false">
-        <ion-accordion value="reanimation">
-          <ion-item slot="header" color="danger">
-            <ion-label>Reanimation</ion-label>
-          </ion-item>
-          <div id="ns-content-bg" slot="content">
+      <ns-accordion-group v-if="currentPatient.isValid">
+        <ns-accordion title="Reanimation">
 
-            <ns-content-group title="hallo">
-              Hallo
-            </ns-content-group>
-            <ns-content-group title="hallo">
-              Hallo
-            </ns-content-group>
+          <ns-content-group title="Defibrillation" dense>
+            <ns-dosage-usage type="invisible">
+              <h2>Schockenergie</h2>
+              <p>~ 60 Joule</p>
+              <hr>
+              <h2>Erfolglose Schocks (&ge; 6x)</h2>
+              <p>~ 120 Joule</p>
+            </ns-dosage-usage>
+          </ns-content-group>
+          <ns-content-group title="hallo">
+            Hallo
+          </ns-content-group>
 
-          </div>
-        </ion-accordion>
-        <ion-accordion value="second">
-          <ion-item slot="header" color="light" style="margin-top: 1rem;">
-            <ion-label>Second Accordion</ion-label>
-          </ion-item>
-          <div class="ion-padding" slot="content">Second Content</div>
-        </ion-accordion>
-        <ion-accordion value="third">
-          <ion-item slot="header" color="light">
-            <ion-label>Third Accordion</ion-label>
-          </ion-item>
-          <div class="ion-padding" slot="content">Third Content</div>
-        </ion-accordion>
-      </ion-accordion-group>
+        </ns-accordion>
+      </ns-accordion-group>
 
     </ion-content>
   </ion-page>
@@ -63,7 +52,10 @@ import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
-import NsContentListContainer from '@/components/NsContentListContainer.vue';
+import NsAccordionGroup from '@/components/NsAccordionGroup.vue';
+import NsAccordion from '@/components/NsAccordion.vue';
+import NsDosageUsage from '@/components/NsDosageUsage.vue';
+
 import { Patient } from '@/types/emergency';
 
 const content = useContentStore()
