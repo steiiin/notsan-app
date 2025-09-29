@@ -174,7 +174,7 @@ export class Patient {
         if (!this.Weight) { return 'undefined' }
 
         // check if Weight in valid range
-        if (this.Weight > 3 && this.Weight < 500)
+        if (this.Weight > 0 && this.Weight < 500)
         {
           return 'direct'
         }

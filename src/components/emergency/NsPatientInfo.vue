@@ -65,7 +65,7 @@ const infoData = computed((): InfoData => {
       if (props.patient.estimatedWeightCalcMethod == 'invalid_height') {
         return new InfoData('Ungültige Größe', 'Unter 30cm Körpergröße kann nicht geschätzt werden.') }
       if (props.patient.estimatedWeightCalcMethod == 'invalid_weight') {
-        return new InfoData('Ungültiges Gewicht', 'Mit unter 3kg Gewicht kann nichts berechnet werden.') }
+        return new InfoData('Ungültiges Gewicht', 'Mit unter 1kg Gewicht kann nichts berechnet werden.') }
 
     }
     else
