@@ -16,7 +16,7 @@
 
     <ns-content-group title="Kontraindikationen">
       <ns-list>
-        <ns-contraindication type="invisible"><b>Keine, </b>wegen Lebensgefahr</ns-contraindication>
+        <ns-contraindication type="none"><b>Keine, </b>wegen Lebensgefahr</ns-contraindication>
       </ns-list>
     </ns-content-group>
 
