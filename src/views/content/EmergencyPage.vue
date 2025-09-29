@@ -18,18 +18,7 @@
       <ns-accordion-group v-if="currentPatient.isValid">
         <ns-accordion title="Reanimation">
 
-          <ns-content-group title="Defibrillation" dense>
-            <ns-dosage-usage type="invisible">
-              <h2>Schockenergie</h2>
-              <p>~ 60 Joule</p>
-              <hr>
-              <h2>Erfolglose Schocks (&ge; 6x)</h2>
-              <p>~ 120 Joule</p>
-            </ns-dosage-usage>
-          </ns-content-group>
-          <ns-content-group title="hallo">
-            Hallo
-          </ns-content-group>
+          <content-defibrillation :patient="currentPatient"></content-defibrillation>
 
         </ns-accordion>
       </ns-accordion-group>
@@ -54,7 +43,8 @@ import { useRouter } from 'vue-router'
 import NsContentGroup from '@/components/NsContentGroup.vue';
 import NsAccordionGroup from '@/components/NsAccordionGroup.vue';
 import NsAccordion from '@/components/NsAccordion.vue';
-import NsDosageUsage from '@/components/NsDosageUsage.vue';
+
+import ContentDefibrillation from './emergency/reanimation/ContentDefibrillation.vue';
 
 import { Patient } from '@/types/emergency';
 
