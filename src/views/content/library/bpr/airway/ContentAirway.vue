@@ -8,10 +8,6 @@
       </ns-list>
     </ns-content-group>
 
-    <ns-content-group title="Ablauf">
-      <ns-flow :flow="airwayFlow" />
-    </ns-content-group>
-
   </div>
 </template>
 
@@ -19,41 +15,7 @@
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsList from '@/components/NsList.vue'
 import NsListItem from '@/components/NsListItem.vue'
-import NsFlow from '@/components/NsFlow.vue'
-import type { NsFlowData } from '@/types/flow'
 
-const airwayFlow: NsFlowData = {
-  columns: 3,
-  nodes: [
-    { id: 'start', type: 'start-end', label: 'Startpunkt', column: 0 },
-    { id: 'assessment', type: 'process', label: 'Bewusstsein\nprüfen', column: 1 },
-    {
-      id: 'decision',
-      type: 'decision',
-      label: 'Atmung\nvorhanden?',
-      quicktip: '10 Sekunden prüfen',
-      column: 1,
-    },
-    { id: 'open-airway', type: 'task', label: 'Atemweg\nfreimachen', column: 1 },
-    { id: 'monitor', type: 'process', label: 'Vitalparameter\nüberwachen', column: 2 },
-    {
-      id: 'library-link',
-      type: 'link',
-      label: 'Weitere Infos zur Beatmung',
-      path: '/tabs/lib',
-      column: 2,
-    },
-    { id: 'end', type: 'start-end', label: 'Behandlung\nabschließen', column: 2 },
-  ],
-  edges: [
-    { source: 'start', target: 'assessment' },
-    { source: 'assessment', target: 'decision' },
-    { source: 'decision', target: 'open-airway' },
-    { source: 'open-airway', target: 'monitor' },
-    { source: 'monitor', target: 'library-link' },
-    { source: 'library-link', target: 'end' },
-  ],
-}
 </script>
 
 <style lang="css" scoped>
