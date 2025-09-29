@@ -21,3 +21,14 @@ export function round(value: number, multiple: number, direction?: 'up' | 'down'
       return Math.round(quotient) * multiple;
   }
 }
+
+/**
+ * Forces a value to stay within the low and high limits.
+ *
+ * @param value    The number to keep inside low/high.
+ * @param low The lower limit.
+ * @param hight The upper limit.
+ */
+export function clamp(value: number, low: number, high: number): number {
+  return Math.max(low, Math.min(high, value))
+}

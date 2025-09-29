@@ -103,7 +103,7 @@ const infoData = computed((): InfoData => {
   }
 
   const BROSELOW_ZONES: {code: string; colorCode: string; min: number; max: number}[] = [
-    { code: "Grau",   colorCode: "grey",   min: 3,  max: 5 },
+    { code: "Grau",   colorCode: "grey",   min: 0,  max: 5 },
     { code: "Rosa",   colorCode: "pink",   min: 6,  max: 7 },
     { code: "Rot",    colorCode: "red",    min: 8,  max: 9 },
     { code: "Lila",   colorCode: "purple", min: 10, max: 11 },
@@ -120,7 +120,7 @@ const infoData = computed((): InfoData => {
     return {
       code: zone.code,
       colorCode: zone.colorCode,
-      range: `${zone.min}–${zone.max} kg`,
+      range: `${Math.max(zone.min, 3)}–${zone.max} kg`,
     }
   }
 
