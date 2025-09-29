@@ -33,8 +33,8 @@ import { IonAccordionGroup, IonAccordion, IonItem, IonLabel, IonIcon, IonPage, I
 
 import { watchOutline, female } from 'ionicons/icons'
 
-import NsPatientInput from './emergency/NsPatientInput.vue';
-import NsPatientInfo from './emergency/NsPatientInfo.vue';
+import NsPatientInput from '../../components/emergency/NsPatientInput.vue';
+import NsPatientInfo from '../../components/emergency/NsPatientInfo.vue';
 
 import { useContentStore } from '@/stores/content'
 import { ref, computed } from 'vue'

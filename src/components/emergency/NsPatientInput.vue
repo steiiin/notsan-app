@@ -45,11 +45,11 @@ import { IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, onIonV
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
 import NsButtonGroup from '@/components/NsButtonGroup.vue';
-import NsWeightInput from '@/components/NsWeightInput.vue';
-import NsAgeInput from '@/components/NsAgeInput.vue';
-import NsHeightInput from '@/components/NsHeightInput.vue';
-import NsSexInput from '@/components/NsSexInput.vue';
-import NsHabitusInput from '@/components/NsHabitusInput.vue';
+import NsWeightInput from '@/components/emergency/NsWeightInput.vue';
+import NsAgeInput from '@/components/emergency/NsAgeInput.vue';
+import NsHeightInput from '@/components/emergency/NsHeightInput.vue';
+import NsSexInput from '@/components/emergency/NsSexInput.vue';
+import NsHabitusInput from '@/components/emergency/NsHabitusInput.vue';
 
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { HabitusValue, Patient, SexValue, WeightAccuracyValue, WeightEstimateByValue } from '@/types/emergency';
