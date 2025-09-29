@@ -6,9 +6,9 @@
       </span>
     </template>
     <template #right>
-      <div class="usage-content">
+      <ns-text-content class="usage-content">
         <slot></slot>
-      </div>
+      </ns-text-content>
     </template>
   </ns-content-split>
 </template>
@@ -17,6 +17,7 @@
 
 import { computed } from 'vue'
 import NsContentSplit from '@/components/NsContentSplit.vue'
+import NsTextContent from './NsTextContent.vue';
 
 const props = defineProps<{
   type: "iv" | "im" | "nasal" | "pi" | "po" | "supp" | "invisible" | "none",
@@ -104,13 +105,8 @@ const usageMinHeight = computed(() => props.type && props.type in usageMinHeight
 .usage-divider.grey {
   border-color: rgba(var(--ns-color-grey-rgb), .4)
 }
-.usage-divider.invisible,
-.usage-divider.none {
+.usage-divider.invisible {
   border-color: transparent
-}
-
-.ns-dosage-usage :deep(.left) {
-  width: 0 !important;
 }
 
 .usage-content {
