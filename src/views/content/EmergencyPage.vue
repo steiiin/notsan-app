@@ -19,6 +19,7 @@
         <ns-accordion title="Reanimation">
 
           <content-defibrillation :patient="currentPatient"></content-defibrillation>
+          <content-intubation :patient="currentPatient"></content-intubation>
 
         </ns-accordion>
       </ns-accordion-group>
@@ -45,6 +46,7 @@ import NsAccordionGroup from '@/components/NsAccordionGroup.vue';
 import NsAccordion from '@/components/NsAccordion.vue';
 
 import ContentDefibrillation from './emergency/reanimation/ContentDefibrillation.vue';
+import ContentIntubation from './emergency/reanimation/ContentIntubation.vue';
 
 import { Patient } from '@/types/emergency';
 

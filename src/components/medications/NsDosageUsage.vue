@@ -17,7 +17,7 @@
 
 import { computed } from 'vue'
 import NsContentSplit from '@/components/NsContentSplit.vue'
-import NsTextContent from './NsTextContent.vue';
+import NsTextContent from '../NsTextContent.vue';
 
 const props = defineProps<{
   type: "iv" | "im" | "nasal" | "pi" | "po" | "supp" | "invisible" | "none",

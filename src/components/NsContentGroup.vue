@@ -42,7 +42,7 @@ defineProps<{
 
 .ns-content-group.dense-header ion-card-content {
   padding-inline: var(--ns-card-padding);
-  padding-bottom: 0;
+  padding-bottom: var(--ns-card-padding);
 }
 
 .ns-content-group.dense-header ion-card-title {
