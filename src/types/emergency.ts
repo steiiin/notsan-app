@@ -271,18 +271,31 @@ export class Patient {
 
   // ######################################################
 
+  private get ageIsActive(): boolean {
+    return this.WeightAccuracy === 'estimate' && this.WeightEstimateBy === 'by-age';
+  }
+  private get heightIsActive(): boolean {
+    return this.WeightAccuracy === 'estimate' && this.WeightEstimateBy === 'by-height';
+  }
+  private get weightIsActive(): boolean {
+    return this.WeightAccuracy === 'direct';
+  }
+
   get estimatedAge(): number
   {
-    if (this.Age && this.Age > 0) { return this.Age }
+
+    if (this.ageIsActive && this.Age && this.Age > 0) { return this.Age }
 
     const estimates: number[] = []
 
-    const heightAge = this.estimateAgeFromHeight()
-    if (heightAge !== undefined) { estimates.push(heightAge) }
-
-    const weightAge = this.estimateAgeFromWeight()
-    if (weightAge !== undefined) { estimates.push(weightAge) }
-
+    if (this.heightIsActive) {
+      const heightAge = this.estimateAgeFromHeight()
+      if (heightAge !== undefined) { estimates.push(heightAge) }
+    }
+    if (this.weightIsActive) {
+      const weightAge = this.estimateAgeFromWeight()
+      if (weightAge !== undefined) { estimates.push(weightAge) }
+    }
     if (estimates.length == 0) { return 0 }
 
     const habitusOffset = Patient.HABITUS_AGE_OFFSETS[this.Habitus] ?? 0
@@ -291,11 +304,9 @@ export class Patient {
     return Math.max(0, Math.round(base + habitusOffset))
   }
 
-  // ######################################################
-
   get isLikelyAdult(): boolean
   {
-    const knownAge = this.Age && this.Age > 0 ? this.Age : undefined
+    const knownAge = this.ageIsActive && this.Age && this.Age > 0 ? this.Age : undefined
     const maturity = this.maturityScore
     const estimate = this.estimatedAge
 
