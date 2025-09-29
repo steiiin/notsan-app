@@ -23,22 +23,25 @@ import NsFlow from '@/components/NsFlow.vue'
 import type { NsFlowData } from '@/types/flow'
 
 const airwayFlow: NsFlowData = {
+  columns: 3,
   nodes: [
-    { id: 'start', type: 'start-end', label: 'Startpunkt' },
-    { id: 'assessment', type: 'process', data: { label: 'Bewusstsein\nprüfen' } },
+    { id: 'start', type: 'start-end', label: 'Startpunkt', column: 0 },
+    { id: 'assessment', type: 'process', data: { label: 'Bewusstsein\nprüfen' }, column: 1 },
     {
       id: 'decision',
       type: 'decision',
       data: { label: 'Atmung\nvorhanden?', quicktip: '10 Sekunden prüfen' },
+      column: 1,
     },
-    { id: 'open-airway', type: 'task', data: { label: 'Atemweg\nfreimachen' } },
-    { id: 'monitor', type: 'process', data: { label: 'Vitalparameter\nüberwachen' } },
+    { id: 'open-airway', type: 'task', data: { label: 'Atemweg\nfreimachen' }, column: 1 },
+    { id: 'monitor', type: 'process', data: { label: 'Vitalparameter\nüberwachen' }, column: 2 },
     {
       id: 'library-link',
       type: 'link',
       data: { label: 'Weitere Infos zur Beatmung', path: '/tabs/lib' },
+      column: 2,
     },
-    { id: 'end', type: 'start-end', data: { label: 'Behandlung\nabschließen' } },
+    { id: 'end', type: 'start-end', data: { label: 'Behandlung\nabschließen' }, column: 2 },
   ],
   edges: [
     { source: 'start', target: 'assessment' },
