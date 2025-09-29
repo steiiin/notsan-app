@@ -15,23 +15,24 @@
       <ns-patient-input v-model="currentPatient"></ns-patient-input>
       <ns-patient-info :patient="currentPatient"></ns-patient-info>
 
-      <ion-accordion-group>
-        <ion-accordion value="beatmung">
+      <ion-accordion-group :animated="false">
+        <ion-accordion value="reanimation">
           <ion-item slot="header" color="danger">
             <ion-label>Reanimation</ion-label>
           </ion-item>
           <div id="ns-content-bg" slot="content">
-            <ns-content-group title="hallo">
-              Hallo
-            </ns-content-group>
-            <ns-content-group title="hallo">
-              Hallo
-            </ns-content-group>
-          </div>
 
+            <ns-content-group title="hallo">
+              Hallo
+            </ns-content-group>
+            <ns-content-group title="hallo">
+              Hallo
+            </ns-content-group>
+
+          </div>
         </ion-accordion>
         <ion-accordion value="second">
-          <ion-item slot="header" color="light">
+          <ion-item slot="header" color="light" style="margin-top: 1rem;">
             <ion-label>Second Accordion</ion-label>
           </ion-item>
           <div class="ion-padding" slot="content">Second Content</div>
