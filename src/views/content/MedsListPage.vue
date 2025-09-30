@@ -19,10 +19,7 @@
       <template v-if="filteredMedications.length">
         <NsContentListContainer :items="filteredMedications" />
       </template>
-      <div v-else class="empty-state">
-        <ion-icon :icon="searchOutline" />
-        <ion-text>Keine Medikamente gefunden.</ion-text>
-      </div>
+      <NsEmptyState v-else label="Medikamente" />
     </ion-content>
   </ion-page>
   <meds-settings v-model="settingsVisible"></meds-settings>
@@ -30,16 +27,17 @@
 
 <script setup lang="ts">
 
-import { IonPage, IonHeader, IonToolbar, IonIcon, IonTitle, IonContent, IonButtons, IonButton, IonSearchbar, IonText, onIonViewWillEnter } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonIcon, IonTitle, IonContent, IonButtons, IonButton, IonSearchbar, onIonViewWillEnter } from '@ionic/vue';
 
 import { useContentStore } from '@/stores/content'
-import { ref, computed, nextTick } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
 import NsContentListContainer from '@/components/NsContentListContainer.vue';
+import NsEmptyState from '@/components/NsEmptyState.vue';
 import MedsSettings from './medications/MedsSettings.vue';
 
-import { closeOutline, searchOutline, settingsOutline } from 'ionicons/icons'
+import { settingsOutline } from 'ionicons/icons'
 import { gainFocus } from '@/service/input';
 
 const content = useContentStore()
@@ -96,21 +94,4 @@ const medications = computed(() => content.getMedications.map(i => ({ ...i, path
 // #endregion
 
 </script>
-
-<style scoped>
-
-.empty-state {
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--ion-color-medium);
-}
-
-.empty-state ion-icon {
-  font-size: 2.5rem;
-}
-
-</style>
 
