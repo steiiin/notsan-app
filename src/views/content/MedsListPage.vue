@@ -4,32 +4,18 @@
       <ion-toolbar>
         <ion-title>Medikamente</ion-title>
         <ion-buttons slot="end">
-          <ion-button fill="clear" @click="toggleSearch">
-            <ion-icon :icon="isSearchVisible ? closeOutline : searchOutline" slot="icon-only" />
-          </ion-button>
+          <!-- <ion-button fill="clear" @click="showSearch">
+            <ion-icon :icon="searchOutline" slot="icon-only" />
+          </ion-button> -->
         </ion-buttons>
       </ion-toolbar>
-      <ion-toolbar v-if="isSearchVisible">
-        <ion-searchbar
-          ref="searchbar"
-          v-model="searchTerm"
-          placeholder="Suche"
-          show-clear-button="focus"
-          :debounce="200"
-        />
+      <ion-toolbar>
+        <ion-searchbar ref="searchBarInput" v-model="searchTerm"
+          placeholder="Suchen" :animated="true" :debounce="200">
+        </ion-searchbar>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true" ref="mycontent">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Medikamente</ion-title>
-          <ion-buttons slot="end">
-            <ion-button fill="clear" @click="toggleSearch">
-              <ion-icon :icon="isSearchVisible ? closeOutline : searchOutline" slot="icon-only" />
-            </ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
       <template v-if="filteredMedications.length">
         <NsContentListContainer :items="filteredMedications" />
       </template>
@@ -52,40 +38,28 @@ import { useRouter } from 'vue-router'
 import NsContentListContainer from '@/components/NsContentListContainer.vue';
 
 import { closeOutline, searchOutline } from 'ionicons/icons'
+import { gainFocus } from '@/service/input';
 
 const content = useContentStore()
 
-const searchTerm = ref('')
-const isSearchVisible = ref(false)
-
-const searchbar = ref<{ $el: HTMLIonSearchbarElement } | null>(null)
-
 const medications = computed(() => content.getMedications.map(i => ({ ...i, path: `/tabs/meds/${i.id}` })) )
 
-const filteredMedications = computed(() => {
-  const term = searchTerm.value.trim().toLowerCase()
-  if (!term) {
-    return medications.value
-  }
-  return medications.value.filter(item => {
-    const title = item.title.toLowerCase()
-    const subtitle = item.subtitle?.toLowerCase() ?? ''
-    return title.includes(term) || subtitle.includes(term)
+// #region Search
+
+  const searchTerm = ref('')
+  const filteredMedications = computed(() => {
+    const term = searchTerm.value.trim().toLowerCase()
+    if (!term) {
+      return medications.value
+    }
+    return medications.value.filter(item => {
+      const title = item.title.toLowerCase()
+      const subtitle = item.subtitle?.toLowerCase() ?? ''
+      return title.includes(term) || subtitle.includes(term)
+    })
   })
-})
 
-const toggleSearch = async () => {
-  if (isSearchVisible.value) {
-    isSearchVisible.value = false
-    searchTerm.value = ''
-    return
-  }
-  isSearchVisible.value = true
-  await nextTick()
-  if (!searchbar.value) { return }
-  searchbar.value.$el.setFocus()
-}
-
+// #endregion
 // #region ScrollPosition
 
   const mycontent = ref<{ $el: HTMLIonContentElement } | null>(null);
