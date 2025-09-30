@@ -22,7 +22,7 @@
 import { IonIcon } from '@ionic/vue'
 import { medical } from 'ionicons/icons'
 
-import NsContentSplit from './NsContentSplit.vue'
+import NsContentSplit from '@/components/NsContentSplit.vue'
 
 defineProps<{
   name?: string,

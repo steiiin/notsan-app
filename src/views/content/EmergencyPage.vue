@@ -40,7 +40,7 @@ import NsPatientInput from '../../components/emergency/NsPatientInput.vue';
 import NsPatientInfo from '../../components/emergency/NsPatientInfo.vue';
 
 import { useContentStore } from '@/stores/content'
-import { ref, computed } from 'vue'
+import { computed, ref, shallowRef } from 'vue'
 import { useRouter } from 'vue-router'
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
@@ -86,7 +86,11 @@ const medications = computed(() => content.getMedications.map(i => ({ ...i, path
 
 // #region Patient
 
-  const currentPatient = ref<Patient>(new Patient())
+  const currentPatientRef = shallowRef(new Patient())
+  const currentPatient = computed({
+    get: () => currentPatientRef.value,
+    set: (value: Patient) => { currentPatientRef.value = value },
+  })
 
 // #endregion
 

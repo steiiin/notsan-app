@@ -15,7 +15,7 @@
 import { IonButton, IonIcon } from '@ionic/vue'
 import { caretForward, arrowForwardOutline } from 'ionicons/icons'
 import { computed } from 'vue'
-import NsListItem from './NsListItem.vue'
+import NsListItem from '@/components/NsListItem.vue'
 
 const props = defineProps<{
   severe?: boolean,
