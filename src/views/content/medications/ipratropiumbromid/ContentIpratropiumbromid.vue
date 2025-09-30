@@ -60,8 +60,8 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="pi250" v-if="isPi250Enabled"></ns-package>
-      <ns-package :package="pi500" v-if="isPi500Enabled"></ns-package>
+      <ns-package :package="inh_250ug" v-if="isInh_250ugEnabled"></ns-package>
+      <ns-package :package="inh_500ug" v-if="isInh_500ugEnabled"></ns-package>
 
       <ns-dosage-indication>
         <ns-dosage-usage type="pi">
@@ -130,12 +130,12 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const pi250 = computed(() => props.medication.packages['pi-250'])
-const pi500 = computed(() => props.medication.packages['pi-500'])
+const inh_250ug = computed(() => props.medication.packages['inh_250ug'])
+const inh_500ug = computed(() => props.medication.packages['inh_500ug'])
 
-const isPi250Enabled = computed(() => false)
-const isPi500Enabled = computed(() => true)
-const onlyOneEnabled = computed(() => [ isPi250Enabled.value, isPi500Enabled.value ].filter(Boolean).length === 1)
+const isInh_250ugEnabled = computed(() => false)
+const isInh_500ugEnabled = computed(() => true)
+const onlyOneEnabled = computed(() => [ isInh_250ugEnabled.value, isInh_500ugEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
@@ -143,8 +143,8 @@ const ampAmount = (dose: number) => {
   if (onlyOneEnabled.value)
   {
     let size = 1
-    if (isPi250Enabled.value) { size = 0.25 }
-    else if (isPi500Enabled.value) { size = 0.5 }
+    if (isInh_250ugEnabled.value) { size = 0.25 }
+    else if (isInh_500ugEnabled.value) { size = 0.5 }
     const amount = dose/size
     return `(${amount==0.5 ? '½' : amount} Ampulle${amount<=1 ? '' : 'n'})`
   }

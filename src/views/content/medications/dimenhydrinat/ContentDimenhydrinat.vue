@@ -94,9 +94,9 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="defaultPackage"></ns-package>
-      <ns-package v-if="isSupp40Enabled" :package="supp40Package"></ns-package>
-      <ns-package v-if="isSupp70Enabled" :package="supp70Package"></ns-package>
+      <ns-package :package="iv_62mg"></ns-package>
+      <ns-package v-if="isSupp40Enabled" :package="supp_40mg"></ns-package>
+      <ns-package v-if="isSupp70Enabled" :package="supp_70mg"></ns-package>
 
       <ns-dosage-indication name="Übelkeit & Erbrechen">
         <ns-dosage-usage type="iv">
@@ -177,9 +177,9 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const defaultPackage = computed(() => props.medication.packages['iv-62mg-10ml'])
-const supp40Package = computed(() => props.medication.packages['supp-40mg'])
-const supp70Package = computed(() => props.medication.packages['supp-70mg'])
+const iv_62mg = computed(() => props.medication.packages['iv_62mg'])
+const supp_40mg = computed(() => props.medication.packages['supp_40mg'])
+const supp_70mg = computed(() => props.medication.packages['supp_70mg'])
 
 const isSupp40Enabled = computed(() => false)
 const isSupp70Enabled = computed(() => false)

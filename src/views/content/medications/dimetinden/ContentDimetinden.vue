@@ -60,7 +60,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="defaultPackage"></ns-package>
+      <ns-package :package="iv_4mg"></ns-package>
 
       <ns-dosage-indication name="Anaphylaxie">
         <ns-dosage-usage type="iv">
@@ -116,7 +116,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const defaultPackage = computed(() => props.medication.packages['iv-4mg-4ml'])
+const iv_4mg = computed(() => props.medication.packages['iv_4mg'])
 
 </script>
 

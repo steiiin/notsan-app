@@ -31,7 +31,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv04_1"></ns-package>
+      <ns-package :package="iv_0_4mg"></ns-package>
 
       <ns-dosage-indication>
         <ns-dosage-usage type="iv">
@@ -40,7 +40,7 @@
           <p>Um <i>Fehldosierung</i> zu vermeiden, immer gleiche Konzentration (<text-mono>0,1mg/ml</text-mono>) benutzen, dazu:
           </p>
           <ns-package
-            :package="iv04_1" :inline-specs="{
+            :package="iv_0_4mg" :inline-specs="{
             on: 4, onlyOne: true }">
           </ns-package>
 
@@ -120,7 +120,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv04_1 = computed(() => props.medication.packages['iv-04mg-1ml'])
+const iv_0_4mg = computed(() => props.medication.packages['iv_0_4mg'])
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

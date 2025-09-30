@@ -66,7 +66,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="nitro"></ns-package>
+      <ns-package :package="spray_0_4mg"></ns-package>
 
       <ns-dosage-indication>
         <ns-dosage-usage type="po">
@@ -131,7 +131,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const nitro = computed(() => props.medication.packages['spray-nitro'])
+const spray_0_4mg = computed(() => props.medication.packages['spray_0_4mg'])
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

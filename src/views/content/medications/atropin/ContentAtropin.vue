@@ -52,7 +52,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="defaultPackage"></ns-package>
+      <ns-package :package="iv_0_5mg"></ns-package>
 
       <ns-dosage-indication name="Bradykardie">
         <ns-dosage-usage type="iv">
@@ -117,7 +117,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const defaultPackage = computed(() => props.medication.packages['iv-0.5mg-1ml'])
+const iv_0_5mg = computed(() => props.medication.packages['iv_0_5mg'])
 
 </script>
 

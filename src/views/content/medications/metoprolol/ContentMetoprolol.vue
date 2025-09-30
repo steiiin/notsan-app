@@ -63,7 +63,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv5mg5ml"></ns-package>
+      <ns-package :package="iv_5mg"></ns-package>
 
       <ns-dosage-indication>
         <ns-dosage-usage type="iv">
@@ -125,7 +125,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv5mg5ml = computed(() => props.medication.packages['iv-5mg-5ml'])
+const iv_5mg = computed(() => props.medication.packages['iv_5mg'])
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

@@ -60,8 +60,8 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv01mg" v-if="isiv01Enabled"></ns-package>
-      <ns-package :package="iv05mg" v-if="isiv05Enabled"></ns-package>
+      <ns-package :package="iv_0_05mgml_2ml" v-if="isIv_0_05mgml_2mlEnabled"></ns-package>
+      <ns-package :package="iv_0_05mgml_10ml" v-if="isIv_0_05mgml_10mlEnabled"></ns-package>
 
       <ns-dosage-indication name="Stärkste Schmerzen">
         <ns-dosage-usage type="invisible">
@@ -159,11 +159,11 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv01mg = computed(() => props.medication.packages['iv-01mg-2ml'])
-const iv05mg = computed(() => props.medication.packages['iv-05mg-10ml'])
+const iv_0_05mgml_2ml = computed(() => props.medication.packages['iv_0_05mgml_2ml'])
+const iv_0_05mgml_10ml = computed(() => props.medication.packages['iv_0_05mgml_10ml'])
 
-const isiv01Enabled = computed(() => true)
-const isiv05Enabled = computed(() => true)
+const isIv_0_05mgml_2mlEnabled = computed(() => true)
+const isIv_0_05mgml_10mlEnabled = computed(() => true)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

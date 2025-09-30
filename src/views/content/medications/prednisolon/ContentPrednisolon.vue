@@ -29,12 +29,12 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="supp" v-if="isSuppEnabled"></ns-package>
-      <ns-package :package="iv100" v-if="isIv100Enabled"></ns-package>
-      <ns-package :package="iv250" v-if="isIv250Enabled"></ns-package>
+      <ns-package :package="supp_100mg" v-if="isSupp_100mgEnabled"></ns-package>
+      <ns-package :package="iv_100mg" v-if="isIv_100mgEnabled"></ns-package>
+      <ns-package :package="iv_250mg" v-if="isIv_250mgEnabled"></ns-package>
 
       <ns-dosage-indication name="Anaphylaxie">
-        <ns-dosage-usage type="supp" v-if="isSuppEnabled">
+        <ns-dosage-usage type="supp" v-if="isSupp_100mgEnabled">
           <h2>Zäpfchen</h2>
           <ns-dosage :dosage="{ type: 'child', dose: '100mg'}"></ns-dosage>
         </ns-dosage-usage>
@@ -121,26 +121,26 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const supp = computed(() => props.medication.packages['supp'])
-const iv100 = computed(() => props.medication.packages['iv-100mg'])
-const iv250 = computed(() => props.medication.packages['iv-250mg'])
+const supp_100mg = computed(() => props.medication.packages['supp_100mg'])
+const iv_100mg = computed(() => props.medication.packages['iv_100mg'])
+const iv_250mg = computed(() => props.medication.packages['iv_250mg'])
 
-const isSuppEnabled = computed(() => true)
-const isIv100Enabled = computed(() => true)
-const isIv250Enabled = computed(() => true)
-const onlyOneIvEnabled = computed(() => [ isIv100Enabled.value, isIv250Enabled.value ].filter(Boolean).length === 1)
+const isSupp_100mgEnabled = computed(() => true)
+const isIv_100mgEnabled = computed(() => true)
+const isIv_250mgEnabled = computed(() => true)
+const onlyOneIvEnabled = computed(() => [ isIv_100mgEnabled.value, isIv_250mgEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
 const ivAnalphylHintText = (amount: number) => {
   if (!onlyOneIvEnabled.value) { return '' }
-  if (isIv100Enabled.value)
+  if (isIv_100mgEnabled.value)
   {
     if (amount == 250) { return '(2½ Ampullen)' }
     if (amount == 100) { return '(1 Ampulle)' }
     if (amount == 50) { return '(½ Ampulle)' }
   }
-  if (isIv250Enabled.value)
+  if (isIv_250mgEnabled.value)
   {
     if (amount == 250) { return '(1 Ampulle)' }
     if (amount == 100) { return '(2ml)' }
@@ -151,7 +151,7 @@ const ivAnalphylHintText = (amount: number) => {
 
 
 const onsetText = computed(() => {
-  if (isSuppEnabled.value)
+  if (isSupp_100mgEnabled.value)
   {
     return '<case>i.v.</case>Ca. 5 Minuten|<case>rektal</case>Ca. 1 Stunde'
   }

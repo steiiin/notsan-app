@@ -76,7 +76,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="defaultPackage"></ns-package>
+      <ns-package :package="iv_20mg"></ns-package>
 
       <ns-dosage-indication name="Kolikartiger Schmerz">
         <ns-dosage-usage type="invisible">
@@ -156,7 +156,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const defaultPackage = computed(() => props.medication.packages['iv-20mg-1ml'])
+const iv_20mg = computed(() => props.medication.packages['iv_20mg'])
 
 </script>
 

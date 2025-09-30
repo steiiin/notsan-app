@@ -71,7 +71,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="defaultPackage"></ns-package>
+      <ns-package :package="iv_500mg"></ns-package>
 
       <ns-dosage-indication name="Akutes Koronarsyndrom">
         <ns-dosage-usage type="iv">
@@ -132,7 +132,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const defaultPackage = computed(() => props.medication.packages['iv-set'])
+const iv_500mg = computed(() => props.medication.packages['iv_500mg'])
 
 </script>
 

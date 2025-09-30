@@ -27,9 +27,9 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="g10" v-if="isG10Enabled"></ns-package>
-      <ns-package :package="g20" v-if="isG20Enabled"></ns-package>
-      <ns-package :package="g40" v-if="isG40Enabled"></ns-package>
+      <ns-package :package="iv_1g_10ml" v-if="isIv_1g_10mlEnabled"></ns-package>
+      <ns-package :package="iv_2g_10ml" v-if="isIv_2g_10mlEnabled"></ns-package>
+      <ns-package :package="iv_4g_10ml" v-if="isIv_4g_10mlEnabled"></ns-package>
 
       <ns-dosage-indication name="Hypoglykämie">
         <ns-dosage-usage type="iv">
@@ -94,23 +94,23 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const g10 = computed(() => props.medication.packages['iv-g10'])
-const g20 = computed(() => props.medication.packages['iv-g20'])
-const g40 = computed(() => props.medication.packages['iv-g40'])
+const iv_1g_10ml = computed(() => props.medication.packages['iv_1g_10ml'])
+const iv_2g_10ml = computed(() => props.medication.packages['iv_2g_10ml'])
+const iv_4g_10ml = computed(() => props.medication.packages['iv_4g_10ml'])
 
-const isG10Enabled = computed(() => true)
-const isG20Enabled = computed(() => true)
-const isG40Enabled = computed(() => true)
-const onlyOneEnabled = computed(() => [ isG10Enabled.value, isG20Enabled.value, isG40Enabled.value ].filter(Boolean).length === 1)
+const isIv_1g_10mlEnabled = computed(() => true)
+const isIv_2g_10mlEnabled = computed(() => true)
+const isIv_4g_10mlEnabled = computed(() => true)
+const onlyOneEnabled = computed(() => [ isIv_1g_10mlEnabled.value, isIv_2g_10mlEnabled.value, isIv_4g_10mlEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
 const doseAdultHint = computed(() => {
   if (onlyOneEnabled.value)
   {
-    if (isG10Enabled.value) { return '(8 Ampullen)' }
-    if (isG20Enabled.value) { return '(4 Ampullen)' }
-    if (isG40Enabled.value) { return '(2 Ampullen)'}
+    if (isIv_1g_10mlEnabled.value) { return '(8 Ampullen)' }
+    if (isIv_2g_10mlEnabled.value) { return '(4 Ampullen)' }
+    if (isIv_4g_10mlEnabled.value) { return '(2 Ampullen)'}
   }
   return ''
 })

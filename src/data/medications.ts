@@ -6,7 +6,7 @@ export const medications: Medication[] =[
     title: 'Acetylsalicylsäure',
     subtitle: 'ASS, Aspirin, Aspisol',
     packages: {
-      'iv-set': <Package>{
+      'iv_500mg': <Package>{
         type: 'amp-flsk',
         name: 'Set „Aspirin”',
         incredients: [
@@ -28,7 +28,7 @@ export const medications: Medication[] =[
     title: 'Amiodaron',
     subtitle: 'Cordarex, Cordarone',
     packages: {
-      'iv-150mg-3ml': <Package>{
+      'iv_150mg': <Package>{
         type: 'amp',
         name: 'Ampulle „Amiodaron”',
         incredients: [
@@ -43,7 +43,7 @@ export const medications: Medication[] =[
     id: 'atropin',
     title: 'Atropin',
     packages: {
-      'iv-0.5mg-1ml': <Package>{
+      'iv_0_5mg': <Package>{
         type: 'amp',
         name: 'Ampulle „Atropin”',
         incredients: [
@@ -58,7 +58,7 @@ export const medications: Medication[] =[
     title: 'Butylscopolamin',
     subtitle: 'Buscopan',
     packages: {
-      'iv-20mg-1ml': <Package>{
+      'iv_20mg': <Package>{
         type: 'amp',
         name: 'Ampulle „Butylscopolamin”',
         incredients: [
@@ -73,21 +73,21 @@ export const medications: Medication[] =[
     title: 'Dimenhydrinat',
     subtitle: 'Vomex A',
     packages: {
-      'iv-62mg-10ml': <Package>{
+      'iv_62mg': <Package>{
         type: 'amp',
         name: 'Ampulle „Dimenhydrinat”',
         incredients: [
           <PackageIncredient>{ amount: '62mg / 10ml' },
         ]
       },
-      'supp-40mg': <Package>{
+      'supp_40mg': <Package>{
         type: 'supp',
         name: 'Zäpfchen „Vomex A”',
         incredients: [
           <PackageIncredient>{ amount: '40mg' },
         ]
       },
-      'supp-70mg': <Package>{
+      'supp_70mg': <Package>{
         type: 'supp',
         name: 'Zäpfchen „Vomex A”',
         incredients: [
@@ -102,7 +102,7 @@ export const medications: Medication[] =[
     title: 'Dimetinden',
     subtitle: 'Fenistil, Histakut',
     packages: {
-      'iv-4mg-4ml': <Package>{
+      'iv_4mg': <Package>{
         type: 'amp',
         name: 'Ampulle „Histakut”',
         incredients: [
@@ -117,7 +117,7 @@ export const medications: Medication[] =[
     title: 'Adrenalin',
     subtitle: 'Epinephrin, Suprarenin',
     packages: {
-      'iv-1mg-1ml': <Package>{
+      'iv_1mg': <Package>{
         type: 'amp',
         name: 'Ampulle „Adrenalin”',
         incredients: [
@@ -134,21 +134,21 @@ export const medications: Medication[] =[
     title: 'Esketamin',
     subtitle: 'Ketanest S',
     packages: {
-      'iv-5mg-ml--5ml': <Package>{
+      'iv_5mgml_5ml': <Package>{
         type: 'amp',
         name: 'Ampulle „Esketamin”',
         incredients: [
           <PackageIncredient>{ amount: '5mg/ml (5ml)' },
         ]
       },
-      'iv-25mg-ml--2ml': <Package>{
+      'iv_25mgml_2ml': <Package>{
         type: 'amp',
         name: 'Ampulle „Esketamin”',
         incredients: [
           <PackageIncredient>{ amount: '25mg/ml (2ml)' },
         ]
       },
-      'iv-25mg-ml--10ml': <Package>{
+      'iv_25mgml_10ml': <Package>{
         type: 'amp',
         name: 'Ampulle „Esketamin”',
         incredients: [
@@ -162,14 +162,14 @@ export const medications: Medication[] =[
     id: 'fentanyl',
     title: 'Fentanyl',
     packages: {
-      'iv-01mg-2ml': <Package>{
+      'iv_0_05mgml_2ml': <Package>{
         type: 'amp',
         name: 'Ampulle „Fentanyl”',
         incredients: [
           <PackageIncredient>{ amount: '0,1mg/2ml' },
         ]
       },
-      'iv-05mg-10ml': <Package>{
+      'iv_0_05mgml_10ml': <Package>{
         type: 'amp',
         name: 'Ampulle „Fentanyl”',
         incredients: [
@@ -184,14 +184,14 @@ export const medications: Medication[] =[
     title: 'Furosemid',
     subtitle: 'Furesis, Lasix',
     packages: {
-      'iv-20mg-2ml': <Package>{
+      'iv_20mg': <Package>{
         type: 'amp',
         name: 'Ampulle „Furosemid”',
         incredients: [
           <PackageIncredient>{ amount: '20mg / 2ml',  },
         ]
       },
-      'iv-40mg-4ml': <Package>{
+      'iv_40mg': <Package>{
         type: 'amp',
         name: 'Ampulle „Furosemid”',
         incredients: [
@@ -205,7 +205,7 @@ export const medications: Medication[] =[
     id: 'glucagon',
     title: 'Glucagon',
     packages: {
-      'im-1mg-1ml': <Package>{
+      'im_1mg': <Package>{
         type: 'spritz',
         name: 'Fertig-Set „Glucagon”',
         incredients: [
@@ -213,7 +213,7 @@ export const medications: Medication[] =[
           <PackageIncredient>{ amount: '+ 1ml', label: 'Wasser (Spritze)' },
         ]
       },
-      'nasal-3mg': <Package>{
+      'nasal_3mg': <Package>{
         type: 'spray',
         name: 'Nasenspray „baqsimi”',
         incredients: [
@@ -227,21 +227,21 @@ export const medications: Medication[] =[
     id: 'glucose',
     title: 'Glucose',
     packages: {
-      'iv-g10': <Package>{
+      'iv_1g_10ml': <Package>{
         type: 'flexamp',
         name: 'Ampulle „G10”',
         incredients: [
           <PackageIncredient>{ amount: '1g/10ml',  },
         ]
       },
-      'iv-g20': <Package>{
+      'iv_2g_10ml': <Package>{
         type: 'flexamp',
         name: 'Ampulle „G20”',
         incredients: [
           <PackageIncredient>{ amount: '2g/10ml' },
         ]
       },
-      'iv-g40': <Package>{
+      'iv_4g_10ml': <Package>{
         type: 'flexamp',
         name: 'Ampulle „G40”',
         incredients: [
@@ -256,7 +256,7 @@ export const medications: Medication[] =[
     title: 'Glyceroltrinitrat',
     subtitle: 'Nitro',
     packages: {
-      'spray-nitro': <Package>{
+      'spray_0_4mg': <Package>{
         type: 'spray',
         name: 'Spray „Nitro”',
         incredients: [
@@ -270,21 +270,21 @@ export const medications: Medication[] =[
     id: 'heparin',
     title: 'Heparin',
     packages: {
-      'iv-25000-ml--0.2ml': <Package>{
+      'iv_25000ieml_0_2ml': <Package>{
         type: 'amp',
         name: 'Ampulle „Heparin”',
         incredients: [
           <PackageIncredient>{ amount: ' 5.000IE (0.2ml)' },
         ]
       },
-      'iv-5000-ml--5ml': <Package>{
+      'iv_5000ieml_5ml': <Package>{
         type: 'amp',
         name: 'Ampulle „Heparin”',
         incredients: [
           <PackageIncredient>{ amount: '25.000IE (5ml)' },
         ]
       },
-      'iv-5000-ml--1ml': <Package>{
+      'iv_5000ieml_1ml': <Package>{
         type: 'amp',
         name: 'Ampulle „Heparin”',
         incredients: [
@@ -299,7 +299,7 @@ export const medications: Medication[] =[
     title: 'Ibuprofen',
     subtitle: 'Nurofen',
     packages: {
-      'po-tabl': <Package>{
+      'po_200mg_400mg_600mg_800mg': <Package>{
         type: 'pill',
         name: 'Ibuprofen-Tabletten',
         incredients: [
@@ -307,7 +307,7 @@ export const medications: Medication[] =[
           <PackageIncredient>{ amount: '600mg. 800mg', label: '(rezeptpflichtig)' },
         ]
       },
-      'po-saft': <Package>{
+      'po_20mgml_40mgml': <Package>{
         type: 'flsk',
         name: 'Ibuprofen-Saft',
         incredients: [
@@ -315,7 +315,7 @@ export const medications: Medication[] =[
           <PackageIncredient>{ amount: ' 40mg / ml' },
         ]
       },
-      'supp': <Package>{
+      'supp_75mg_125mg_150mg_250mg': <Package>{
         type: 'supp',
         name: 'Ibuprofen-Zäpfchen',
         incredients: [
@@ -323,7 +323,7 @@ export const medications: Medication[] =[
           <PackageIncredient>{ amount: '150mg, 250mg' },
         ]
       },
-      'iv-flask': <Package>{
+      'iv_4mgml_6mgml_100ml': <Package>{
         type: 'infusion',
         name: 'Kurzinfusionen',
         incredients: [
@@ -339,14 +339,14 @@ export const medications: Medication[] =[
     title: 'Ipratropiumbromid',
     subtitle: 'Atrovent',
     packages: {
-      'pi-250': <Package>{
+      'inh_250ug': <Package>{
         type: 'flexamp',
         name: 'Ampulle „Atrovent”',
         incredients: [
           <PackageIncredient>{ amount: '250µg / 2ml' },
         ]
       },
-      'pi-500': <Package>{
+      'inh_500ug': <Package>{
         type: 'flexamp',
         name: 'Ampulle „Atrovent”',
         incredients: [
@@ -361,7 +361,7 @@ export const medications: Medication[] =[
     title: 'Metoprolol',
     subtitle: 'Beloc',
     packages: {
-      'iv-5mg-5ml': <Package>{
+      'iv_5mg': <Package>{
         type: 'amp',
         name: 'Ampulle „Metoprolol”',
         incredients: [
@@ -377,28 +377,28 @@ export const medications: Medication[] =[
     title: 'Midazolam',
     subtitle: 'Dormicum',
     packages: {
-      'iv-5mg-ml--1ml': <Package>{
+      'iv_5mgml_1ml': <Package>{
         type: 'amp',
         name: 'Ampulle Midazolam',
         incredients: [
           <PackageIncredient>{ amount: '5mg / ml (1ml)' }
         ]
       },
-      'iv-1mg-ml--5ml': <Package>{
+      'iv_1mgml_5ml': <Package>{
         type: 'amp',
         name: 'Ampulle Midazolam',
         incredients: [
           <PackageIncredient>{ amount: '1mg / ml (5ml)' }
         ]
       },
-      'iv-5mg-ml--3ml': <Package>{
+      'iv_5mgml_3ml': <Package>{
         type: 'amp',
         name: 'Ampulle Midazolam',
         incredients: [
           <PackageIncredient>{ amount: '5mg / ml (3ml)' }
         ]
       },
-      'buccolam': <Package>{
+      'buccal_2_5mg_5mg_7_5mg_10mg': <Package>{
         type: 'spritz',
         name: 'Buccolam Fertigspritzen',
         incredients: [
@@ -415,14 +415,14 @@ export const medications: Medication[] =[
     id: 'morphin',
     title: 'Morphin',
     packages: {
-      'iv-10mg-1ml': <Package>{
+      'iv_10mg': <Package>{
         type: 'amp',
         name: 'Ampulle Morphin',
         incredients: [
           <PackageIncredient>{ amount: '10mg / 1ml' },
         ]
       },
-      'iv-20mg-1ml': <Package>{
+      'iv_20mg': <Package>{
         type: 'amp',
         name: 'Ampulle Morphin',
         incredients: [
@@ -436,7 +436,7 @@ export const medications: Medication[] =[
     id: 'nalbuphin',
     title: 'Nalbuphin',
     packages: {
-      'iv-20mg-2ml': <Package>{
+      'iv_20mg': <Package>{
         type: 'amp',
         name: 'Ampulle Nalbuphin',
         incredients: [
@@ -450,7 +450,7 @@ export const medications: Medication[] =[
     id: 'naloxon',
     title: 'Naloxon',
     packages: {
-      'iv-04mg-1ml': <Package>{
+      'iv_0_4mg': <Package>{
         type: 'amp',
         name: 'Ampulle Naloxon',
         incredients: [
@@ -465,28 +465,28 @@ export const medications: Medication[] =[
     title: 'Paracetamol',
     subtitle: 'Perfalgan',
     packages: {
-      'po-tabl': <Package>{
+      'po_500mg': <Package>{
         type: 'pill',
         name: 'Paracetamol-Tablette',
         incredients: [
           <PackageIncredient>{ amount: '500mg' }
         ]
       },
-      'po-saft': <Package>{
+      'po_40mgml': <Package>{
         type: 'flsk',
         name: 'Paracetamol-Saft',
         incredients: [
           <PackageIncredient>{ amount: '40mg / ml' }
         ]
       },
-      'supp': <Package>{
+      'supp_125mg_250mg': <Package>{
         type: 'supp',
         name: 'Paracetamol-Zäpfchen',
         incredients: [
           <PackageIncredient>{ amount: '125mg, 250mg' }
         ]
       },
-      'iv-flask': <Package>{
+      'iv_10mgml_100ml': <Package>{
         type: 'infusion',
         name: 'Kurzinfusionen',
         incredients: [
@@ -501,14 +501,14 @@ export const medications: Medication[] =[
     title: 'Prednisolon',
     subtitle: 'Prednisolut',
     packages: {
-      'supp': <Package>{
+      'supp_100mg': <Package>{
         type: 'supp',
         name: 'Zäpfchen „Rectodelt”',
         incredients: [
           <PackageIncredient>{ amount: '100mg' }
         ]
       },
-      'iv-100mg': <Package>{
+      'iv_100mg': <Package>{
         type: 'amp-2x',
         name: 'Set „Prednisolut”',
         incredients: [
@@ -516,7 +516,7 @@ export const medications: Medication[] =[
           <PackageIncredient>{ amount: '+  2ml', label: 'Wasser' },
         ]
       },
-      'iv-250mg': <Package>{
+      'iv_250mg': <Package>{
         type: 'amp-flsk',
         name: 'Set „Prednisolut”',
         incredients: [
@@ -531,7 +531,7 @@ export const medications: Medication[] =[
     id: 'salbutamol',
     title: 'Salbutamol',
     packages: {
-      'verneb': <Package>{
+      'inh_5mgml': <Package>{
         type: 'flexamp',
         name: 'Inhalationslösung Salbutamol',
         incredients: [
@@ -545,14 +545,14 @@ export const medications: Medication[] =[
     id: 'tranexam',
     title: 'Tranexamsäure',
     packages: {
-      'iv-500mg-5ml': <Package>{
+      'iv_100mgml_5ml': <Package>{
         type: 'amp',
         name: 'Ampulle Tranexamsäure',
         incredients: [
           <PackageIncredient>{ amount: '100mg / ml (5ml)' }
         ]
       },
-      'iv-1000mg-10ml': <Package>{
+      'iv_100mgml_10ml': <Package>{
         type: 'amp',
         name: 'Ampulle Tranexamsäure',
         incredients: [
@@ -567,14 +567,14 @@ export const medications: Medication[] =[
     title: 'Urapidil',
     subtitle: 'Ebrantil',
     packages: {
-      'iv-5mg-ml--5ml': <Package>{
+      'iv_5mgml_5ml': <Package>{
         type: 'amp',
         name: 'Ampulle Urapidil',
         incredients: [
           <PackageIncredient>{ amount: '5mg / ml (5ml)' }
         ]
       },
-      'iv-5mg-ml--10ml': <Package>{
+      'iv_5mgml_10ml': <Package>{
         type: 'amp',
         name: 'Ampulle Urapidil',
         incredients: [
