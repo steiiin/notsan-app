@@ -21,8 +21,8 @@
       </template>
       <NsEmptyState v-else label="Medikamente" />
     </ion-content>
+    <meds-settings v-model="settingsVisible"></meds-settings>
   </ion-page>
-  <meds-settings v-model="settingsVisible"></meds-settings>
 </template>
 
 <script setup lang="ts">
@@ -84,6 +84,12 @@ const medications = computed(() => content.getMedications.map(i => ({ ...i, path
         })
       }
     }
+    else
+    {
+      // reset search after switching tab
+      searchTerm.value = ''
+    }
+
   })
 
   onIonViewWillEnter(() => {
