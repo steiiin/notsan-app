@@ -27,7 +27,7 @@ import { useContentStore } from '@/stores/content'
 const content = useContentStore()
 
 const items = computed(() =>
-  content.getLibraryItems.map(item => {
+  content.getLibrary.map(item => {
     if ('entries' in item) {
       return { ...item, path: `/tabs/lib/list/${item.id}` }
     }

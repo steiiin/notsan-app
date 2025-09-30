@@ -1,6 +1,6 @@
 import { LibraryListItem } from '@/types/library-list';
 
-export const libraryItems: LibraryListItem[] = [
+export const library: LibraryListItem[] = [
 
   {
     id: 'bpr-list',
