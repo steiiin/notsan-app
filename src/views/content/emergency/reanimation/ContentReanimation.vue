@@ -5,6 +5,8 @@
       <frag-defibrillation :patient="patient"></frag-defibrillation>
       <frag-intubation :patient="patient"></frag-intubation>
 
+      <frag-epinephrine-reanimation></frag-epinephrine-reanimation>
+
     </ns-accordion>
   </ns-accordion-group>
 </template>
@@ -16,6 +18,8 @@ import NsAccordion from '@/components/NsAccordion.vue';
 
 import FragDefibrillation from './FragDefibrillation.vue';
 import FragIntubation from './FragIntubation.vue';
+
+import FragEpinephrineReanimation from '../../medications/epinephrin/FragEpinephrineReanimation.vue';
 
 import { Patient } from '@/types/emergency';
 
