@@ -35,8 +35,7 @@ import { medkit, library, calculator, warning } from 'ionicons/icons';
 <style lang="css" scoped>
 
 .emergButton {
-  --color: var(--ion-color-danger);
-  --color-selected: var(--ion-color-warning-shade);
+  --color-selected: var(--ion-color-danger);
 }
 
 </style>
