@@ -1,5 +1,5 @@
 <template>
-  <ns-content-group ref="inputRoot">
+  <ns-content-group ref="inputRoot" mode="md">
 
     <ns-button-group v-model="weightAccuracy" :options="[
         { label: 'Gewicht eingeben', value: 'direct' },
