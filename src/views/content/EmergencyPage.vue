@@ -15,6 +15,8 @@
       <ns-patient-input v-model="currentPatient"></ns-patient-input>
       <ns-patient-info :patient="currentPatient"></ns-patient-info>
 
+      <content-standards :patient="currentPatient"></content-standards>
+
       <ns-accordion-group v-if="currentPatient.isValid">
         <ns-accordion title="Reanimation">
 
@@ -45,6 +47,7 @@ import NsContentGroup from '@/components/NsContentGroup.vue';
 import NsAccordionGroup from '@/components/NsAccordionGroup.vue';
 import NsAccordion from '@/components/NsAccordion.vue';
 
+import ContentStandards from './emergency/standards/ContentStandards.vue';
 import ContentDefibrillation from './emergency/reanimation/ContentDefibrillation.vue';
 import ContentIntubation from './emergency/reanimation/ContentIntubation.vue';
 
