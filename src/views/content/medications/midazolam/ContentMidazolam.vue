@@ -60,10 +60,10 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv5_1" v-if="isIv5_1Enabled"></ns-package>
-      <ns-package :package="iv1_5" v-if="isIv1_5Enabled"></ns-package>
-      <ns-package :package="iv5_3" v-if="isIv5_3Enabled"></ns-package>
-      <ns-package :package="buccl" v-if="isBucclEnabled"></ns-package>
+      <ns-package :package="iv_5mgml_1ml" v-if="isIv_5mgml_1mlEnabled"></ns-package>
+      <ns-package :package="iv_1mgml_5ml" v-if="isIv_1mgml_5mlEnabled"></ns-package>
+      <ns-package :package="iv_5mgml_3ml" v-if="isIv_5mgml_3mlEnabled"></ns-package>
+      <ns-package :package="buccal_2_5mg_5mg_7_5mg_10mg" v-if="isBuccal_2_5mg_5mg_7_5mg_10mgEnabled"></ns-package>
 
       <ns-dosage-indication name="Krampfanfall">
 
@@ -75,7 +75,7 @@
           </p>
         </ns-dosage-usage>
 
-        <ns-dosage-usage type="po" v-if="isBucclEnabled">
+        <ns-dosage-usage type="po" v-if="isBuccal_2_5mg_5mg_7_5mg_10mgEnabled">
 
           <h2>Buccale Gabe</h2>
           <div>
@@ -131,17 +131,17 @@
           <h2>Aufziehen</h2>
           <p>Um <i>Fehldosierung</i> zu vermeiden, immer gleiche Konzentration (<text-mono>1mg/ml</text-mono>)benutzen, dazu:
           </p>
-          <ns-package v-if="isIv1_5Enabled"
-            :package="iv1_5" :inline-specs="{
+          <ns-package v-if="isIv_1mgml_5mlEnabled"
+            :package="iv_1mgml_5ml" :inline-specs="{
             onlyOne: onlyOneIvEnabled }">
           </ns-package>
-          <ns-package v-if="isIv5_1Enabled"
-            :package="iv5_1" :inline-specs="{
+          <ns-package v-if="isIv_5mgml_1mlEnabled"
+            :package="iv_5mgml_1ml" :inline-specs="{
             on: 5,
             onlyOne: onlyOneIvEnabled }">
           </ns-package>
-          <ns-package v-if="isIv5_3Enabled"
-            :package="iv5_3" :inline-specs="{
+          <ns-package v-if="isIv_5mgml_3mlEnabled"
+            :package="iv_5mgml_3ml" :inline-specs="{
             on: 5, off: 1,
             onlyOne: onlyOneIvEnabled }">
           </ns-package>
@@ -236,24 +236,24 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv5_1 = computed(() => props.medication.packages['iv-5mg-ml--1ml'])
-const iv5_3 = computed(() => props.medication.packages['iv-5mg-ml--3ml'])
-const iv1_5 = computed(() => props.medication.packages['iv-1mg-ml--5ml'])
-const buccl = computed(() => props.medication.packages['buccolam'])
+const iv_5mgml_1ml = computed(() => props.medication.packages['iv_5mgml_1ml'])
+const iv_5mgml_3ml = computed(() => props.medication.packages['iv_5mgml_3ml'])
+const iv_1mgml_5ml = computed(() => props.medication.packages['iv_1mgml_5ml'])
+const buccal_2_5mg_5mg_7_5mg_10mg = computed(() => props.medication.packages['buccal_2_5mg_5mg_7_5mg_10mg'])
 
-const isIv5_1Enabled = computed(() => true)
-const isIv5_3Enabled = computed(() => true)
-const isIv1_5Enabled = computed(() => true)
+const isIv_5mgml_1mlEnabled = computed(() => true)
+const isIv_5mgml_3mlEnabled = computed(() => true)
+const isIv_1mgml_5mlEnabled = computed(() => true)
 
-const isBucclEnabled = computed(() => true)
+const isBuccal_2_5mg_5mg_7_5mg_10mgEnabled = computed(() => true)
 
-const onlyOneEnabled = computed(() => [ onlyOneIvEnabled.value, isBucclEnabled.value ].filter(Boolean).length === 1)
-const onlyOneIvEnabled = computed(() => [ isIv5_1Enabled.value, isIv5_3Enabled.value, isIv1_5Enabled.value ].filter(Boolean).length === 1)
+const onlyOneEnabled = computed(() => [ onlyOneIvEnabled.value, isBuccal_2_5mg_5mg_7_5mg_10mgEnabled.value ].filter(Boolean).length === 1)
+const onlyOneIvEnabled = computed(() => [ isIv_5mgml_1mlEnabled.value, isIv_5mgml_3mlEnabled.value, isIv_1mgml_5mlEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
-const hasIv = computed(() => isIv1_5Enabled.value || isIv5_1Enabled.value || isIv5_3Enabled.value)
-const hasBuc = computed(() => isBucclEnabled.value)
+const hasIv = computed(() => isIv_1mgml_5mlEnabled.value || isIv_5mgml_1mlEnabled.value || isIv_5mgml_3mlEnabled.value)
+const hasBuc = computed(() => isBuccal_2_5mg_5mg_7_5mg_10mgEnabled.value)
 
 const onsetText = computed(() => {
   let one = onlyOneEnabled.value

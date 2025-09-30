@@ -53,13 +53,13 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="poTabl" v-if="isPoTablEnabled"></ns-package>
-      <ns-package :package="poSaft" v-if="isPoSaftEnabled"></ns-package>
-      <ns-package :package="supp" v-if="isSuppEnabled"></ns-package>
-      <ns-package :package="ivFlask" v-if="isIvFlaskEnabled"></ns-package>
+      <ns-package :package="po_500mg" v-if="isPo_500mgEnabled"></ns-package>
+      <ns-package :package="po_40mgml" v-if="isPo_40mgmlEnabled"></ns-package>
+      <ns-package :package="supp_125mg_250mg" v-if="isSupp_125mg_250mgEnabled"></ns-package>
+      <ns-package :package="iv_10mgml_100ml" v-if="isIv_10mgml_100mlEnabled"></ns-package>
 
       <ns-dosage-indication>
-        <ns-dosage-usage type="iv" v-if="isIvFlaskEnabled">
+        <ns-dosage-usage type="iv" v-if="isIv_10mgml_100mlEnabled">
           <h2>Kurzinfusion</h2>
           <div>
             <ns-dosage :dosage="{
@@ -75,15 +75,15 @@
           <h2>Repetition</h2>
           <p>Nur <text-underline>einmalige Gabe</text-underline> vorgesehen.</p>
         </ns-dosage-usage>
-        <ns-dosage-usage type="supp" v-if="isSuppEnabled">
+        <ns-dosage-usage type="supp" v-if="isSupp_125mg_250mgEnabled">
           <h2>Zäpfchen</h2>
           <div>
             <ns-dosage :dosage="{ target: '<2 Jahre', color: 'red', dose: ' 125mg' }"></ns-dosage>
             <ns-dosage :dosage="{ target: '>2 Jahre', color: 'green', dose: ' 250mg' }"></ns-dosage>
           </div>
         </ns-dosage-usage>
-        <ns-dosage-usage type="po" v-if="isPoTablEnabled || isPoSaftEnabled">
-          <template v-if="isPoTablEnabled">
+        <ns-dosage-usage type="po" v-if="isPo_500mgEnabled || isPo_40mgmlEnabled">
+          <template v-if="isPo_500mgEnabled">
             <h2>Tabletten</h2>
             <div>
               <ns-dosage :dosage="{
@@ -96,8 +96,8 @@
               </ns-dosage>
             </div>
           </template>
-          <hr v-if="isPoSaftEnabled && isPoTablEnabled">
-          <template v-if="isPoSaftEnabled">
+          <hr v-if="isPo_40mgmlEnabled && isPo_500mgEnabled">
+          <template v-if="isPo_40mgmlEnabled">
             <h2>Schmerzsaft</h2>
             <div>
               <ns-dosage :dosage="{ target: 'Einmaldosis', dose: ' 100mg /10kg' }"></ns-dosage>
@@ -151,22 +151,22 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const poTabl = computed(() => props.medication.packages['po-tabl'])
-const poSaft = computed(() => props.medication.packages['po-saft'])
-const supp = computed(() => props.medication.packages['supp'])
-const ivFlask = computed(() => props.medication.packages['iv-flask'])
+const po_500mg = computed(() => props.medication.packages['po_500mg'])
+const po_40mgml = computed(() => props.medication.packages['po_40mgml'])
+const supp_125mg_250mg = computed(() => props.medication.packages['supp_125mg_250mg'])
+const iv_10mgml_100ml = computed(() => props.medication.packages['iv_10mgml_100ml'])
 
-const isPoTablEnabled = computed(() => true)
-const isPoSaftEnabled = computed(() => true)
-const isSuppEnabled = computed(() => true)
-const isIvFlaskEnabled = computed(() => true)
-const onlyOneEnabled = computed(() => [ isPoTablEnabled.value, isPoSaftEnabled.value, isSuppEnabled.value, isIvFlaskEnabled.value ].filter(Boolean).length === 1)
+const isPo_500mgEnabled = computed(() => true)
+const isPo_40mgmlEnabled = computed(() => true)
+const isSupp_125mg_250mgEnabled = computed(() => true)
+const isIv_10mgml_100mlEnabled = computed(() => true)
+const onlyOneEnabled = computed(() => [ isPo_500mgEnabled.value, isPo_40mgmlEnabled.value, isSupp_125mg_250mgEnabled.value, isIv_10mgml_100mlEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
-const hasPo = computed(() => isPoTablEnabled.value || isPoSaftEnabled.value)
-const hasSupp = computed(() => isSuppEnabled.value)
-const hasIv = computed(() => isIvFlaskEnabled.value)
+const hasPo = computed(() => isPo_500mgEnabled.value || isPo_40mgmlEnabled.value)
+const hasSupp = computed(() => isSupp_125mg_250mgEnabled.value)
+const hasIv = computed(() => isIv_10mgml_100mlEnabled.value)
 
 const onsetText = computed(() => {
   const one = onlyOneEnabled.value

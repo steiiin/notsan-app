@@ -65,7 +65,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv20_2"></ns-package>
+      <ns-package :package="iv_20mg"></ns-package>
 
       <ns-dosage-indication name="Schmerzen">
         <ns-dosage-usage type="iv">
@@ -74,7 +74,7 @@
           <p>Um <i>Fehldosierung</i> zu vermeiden, immer gleiche Konzentration (<text-mono>1mg/ml</text-mono>) benutzen, dazu:
           </p>
           <ns-package
-            :package="iv20_2" :inline-specs="{
+            :package="iv_20mg" :inline-specs="{
             on: 20,
             onlyOne: true }">
           </ns-package>
@@ -163,7 +163,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv20_2 = computed(() => props.medication.packages['iv-20mg-2ml'])
+const iv_20mg = computed(() => props.medication.packages['iv_20mg'])
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

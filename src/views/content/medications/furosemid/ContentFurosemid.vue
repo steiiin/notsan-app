@@ -45,8 +45,8 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv20mg" v-if="isIv20mgEnabled"></ns-package>
-      <ns-package :package="iv40mg" v-if="isIv40mgEnabled"></ns-package>
+      <ns-package :package="iv_20mg" v-if="isIv_20mgEnabled"></ns-package>
+      <ns-package :package="iv_40mg" v-if="isIv_40mgEnabled"></ns-package>
 
       <ns-dosage-indication name="Kardiales Lungenödem">
         <ns-dosage-usage type="iv">
@@ -58,7 +58,7 @@
             </template>
           </div>
           <div v-if="!onlyOneEnabled" style="display:flex">
-            <ns-package inline :package="iv20mg"></ns-package> <b>ganz.</b>
+            <ns-package inline :package="iv_20mg"></ns-package> <b>ganz.</b>
           </div>
           <div v-if="!onlyOneEnabled" style="display:flex">
             <ns-package inline :package="iv40mg"></ns-package> <b>zur Hälfte.</b>
@@ -116,12 +116,12 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv20mg = computed(() => props.medication.packages['iv-20mg-2ml'])
-const iv40mg = computed(() => props.medication.packages['iv-40mg-4ml'])
+const iv_20mg = computed(() => props.medication.packages['iv_20mg'])
+const iv_40mg = computed(() => props.medication.packages['iv_40mg'])
 
-const isIv20mgEnabled = computed(() => true)
-const isIv40mgEnabled = computed(() => true)
-const onlyOneEnabled = computed(() => [ isIv20mgEnabled.value, isIv40mgEnabled.value ].filter(Boolean).length === 1)
+const isIv_20mgEnabled = computed(() => true)
+const isIv_40mgEnabled = computed(() => true)
+const onlyOneEnabled = computed(() => [ isIv_20mgEnabled.value, isIv_40mgEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

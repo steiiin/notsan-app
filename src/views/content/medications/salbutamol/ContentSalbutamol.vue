@@ -32,7 +32,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="verneb"></ns-package>
+      <ns-package :package="inh_5mgml"></ns-package>
 
       <ns-dosage-indication>
         <ns-dosage-usage type="pi">
@@ -95,7 +95,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const verneb = computed(() => props.medication.packages['verneb'])
+const inh_5mgml = computed(() => props.medication.packages['inh_5mgml'])
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

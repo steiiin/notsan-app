@@ -66,10 +66,10 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="poTabl" v-if="isPoTablEnabled"></ns-package>
-      <ns-package :package="poSaft" v-if="isPoSaftEnabled"></ns-package>
-      <ns-package :package="supp" v-if="isSuppEnabled"></ns-package>
-      <ns-package :package="ivFlask" v-if="isIvFlaskEnabled"></ns-package>
+      <ns-package :package="po_200mg_400mg_600mg_800mg" v-if="isPo_200mg_400mg_600mg_800mgEnabled"></ns-package>
+      <ns-package :package="po_20mgml_40mgml" v-if="isPo_20mgml_40mgmlEnabled"></ns-package>
+      <ns-package :package="supp_75mg_125mg_150mg_250mg" v-if="isSupp_75mg_125mg_150mg_250mgEnabled"></ns-package>
+      <ns-package :package="iv_4mgml_6mgml_100ml" v-if="isIv_4mgml_6mgml_100mlEnabled"></ns-package>
 
       <ns-dosage-indication>
         <ns-dosage-usage type="invisible">
@@ -150,22 +150,22 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const poTabl = computed(() => props.medication.packages['po-tabl'])
-const poSaft = computed(() => props.medication.packages['po-saft'])
-const supp = computed(() => props.medication.packages['supp'])
-const ivFlask = computed(() => props.medication.packages['iv-flask'])
+const po_200mg_400mg_600mg_800mg = computed(() => props.medication.packages['po_200mg_400mg_600mg_800mg'])
+const po_20mgml_40mgml = computed(() => props.medication.packages['po_20mgml_40mgml'])
+const supp_75mg_125mg_150mg_250mg = computed(() => props.medication.packages['supp_75mg_125mg_150mg_250mg'])
+const iv_4mgml_6mgml_100ml = computed(() => props.medication.packages['iv_4mgml_6mgml_100ml'])
 
-const isPoTablEnabled = computed(() => true)
-const isPoSaftEnabled = computed(() => true)
-const isSuppEnabled = computed(() => true)
-const isIvFlaskEnabled = computed(() => true)
-const onlyOneEnabled = computed(() => [ isPoTablEnabled.value, isPoSaftEnabled.value, isSuppEnabled.value, isIvFlaskEnabled.value ].filter(Boolean).length === 1)
+const isPo_200mg_400mg_600mg_800mgEnabled = computed(() => true)
+const isPo_20mgml_40mgmlEnabled = computed(() => true)
+const isSupp_75mg_125mg_150mg_250mgEnabled = computed(() => true)
+const isIv_4mgml_6mgml_100mlEnabled = computed(() => true)
+const onlyOneEnabled = computed(() => [ isPo_200mg_400mg_600mg_800mgEnabled.value, isPo_20mgml_40mgmlEnabled.value, isSupp_75mg_125mg_150mg_250mgEnabled.value, isIv_4mgml_6mgml_100mlEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
-const hasPo = computed(() => isPoTablEnabled.value || isPoSaftEnabled.value)
-const hasSupp = computed(() => isSuppEnabled.value)
-const hasIv = computed(() => isIvFlaskEnabled.value)
+const hasPo = computed(() => isPo_200mg_400mg_600mg_800mgEnabled.value || isPo_20mgml_40mgmlEnabled.value)
+const hasSupp = computed(() => isSupp_75mg_125mg_150mg_250mgEnabled.value)
+const hasIv = computed(() => isIv_4mgml_6mgml_100mlEnabled.value)
 
 const onsetText = computed(() => {
   const one = onlyOneEnabled.value

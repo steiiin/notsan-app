@@ -45,11 +45,11 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="imGl" v-if="isImGlEnabled"></ns-package>
-      <ns-package :package="inGl" v-if="isInGlEnabled"></ns-package>
+      <ns-package :package="im_1mg" v-if="isIm_1mgEnabled"></ns-package>
+      <ns-package :package="nasal_3mg" v-if="isNasal_3mgEnabled"></ns-package>
 
       <ns-dosage-indication name="Hypoglykämie">
-        <ns-dosage-usage type="im" v-if="isImGlEnabled">
+        <ns-dosage-usage type="im" v-if="isIm_1mgEnabled">
           <div>
             <ns-dosage :dosage="{
               target: '> 25kg (8J)', color: 'blue',
@@ -61,7 +61,7 @@
             </ns-dosage>
           </div>
         </ns-dosage-usage>
-        <ns-dosage-usage type="nasal" v-if="isInGlEnabled">
+        <ns-dosage-usage type="nasal" v-if="isNasal_3mgEnabled">
           <h2>Ab 4 Jahren</h2>
           <div>
             <ns-dosage :dosage="{ dose: '3mg', hint: '(Ganzes Nasenspray)' }"></ns-dosage>
@@ -115,12 +115,12 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const imGl = computed(() => props.medication.packages['im-1mg-1ml'])
-const inGl = computed(() => props.medication.packages['nasal-3mg'])
+const im_1mg = computed(() => props.medication.packages['im_1mg'])
+const nasal_3mg = computed(() => props.medication.packages['nasal_3mg'])
 
-const isImGlEnabled = computed(() => true)
-const isInGlEnabled = computed(() => true)
-const onlyOneEnabled = computed(() => [ isImGlEnabled.value, isInGlEnabled.value ].filter(Boolean).length === 1)
+const isIm_1mgEnabled = computed(() => true)
+const isNasal_3mgEnabled = computed(() => true)
+const onlyOneEnabled = computed(() => [ isIm_1mgEnabled.value, isNasal_3mgEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
@@ -128,7 +128,7 @@ const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 const onsetText = computed(() => {
   if (onlyOneEnabled.value)
   {
-    if (isImGlEnabled.value) {
+    if (isIm_1mgEnabled.value) {
       return '10-30 Minuten'
     } else {
       return 'Ca. 15 Minuten'

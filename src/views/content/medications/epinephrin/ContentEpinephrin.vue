@@ -34,7 +34,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="defaultPackage"></ns-package>
+      <ns-package :package="iv_1mg"></ns-package>
 
       <ns-dosage-indication name="Reanimation">
         <ns-dosage-usage type="invisible">
@@ -160,7 +160,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const defaultPackage = computed(() => props.medication.packages['iv-1mg-1ml'])
+const iv_1mg = computed(() => props.medication.packages['iv_1mg'])
 
 </script>
 

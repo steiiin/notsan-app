@@ -60,8 +60,8 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv10_1" v-if="isIv10_1Enabled"></ns-package>
-      <ns-package :package="iv20_1" v-if="isIv20_1Enabled"></ns-package>
+      <ns-package :package="iv_10mg" v-if="isIv_10mgEnabled"></ns-package>
+      <ns-package :package="iv_20mg" v-if="isIv_20mgEnabled"></ns-package>
 
       <ns-dosage-indication name="Schmerzen">
         <ns-dosage-usage type="iv">
@@ -69,13 +69,13 @@
           <h2>Aufziehen</h2>
           <p>Um <i>Fehldosierung</i> zu vermeiden, immer gleiche Konzentration (<text-mono>1mg/ml</text-mono>) benutzen, dazu:
           </p>
-          <ns-package v-if="isIv10_1Enabled"
-            :package="iv10_1" :inline-specs="{
+          <ns-package v-if="isIv_10mgEnabled"
+            :package="iv_10mg" :inline-specs="{
             on: 10,
             onlyOne: onlyOneEnabled }">
           </ns-package>
-          <ns-package v-if="isIv20_1Enabled"
-            :package="iv20_1" :inline-specs="{
+          <ns-package v-if="isIv_20mgEnabled"
+            :package="iv_20mg" :inline-specs="{
             on: 20,
             onlyOne: onlyOneEnabled }">
           </ns-package>
@@ -145,13 +145,13 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv10_1 = computed(() => props.medication.packages['iv-10mg-1ml'])
-const iv20_1 = computed(() => props.medication.packages['iv-20mg-1ml'])
+const iv_10mg = computed(() => props.medication.packages['iv_10mg'])
+const iv_20mg = computed(() => props.medication.packages['iv_20mg'])
 
-const isIv10_1Enabled = computed(() => true)
-const isIv20_1Enabled = computed(() => true)
+const isIv_10mgEnabled = computed(() => true)
+const isIv_20mgEnabled = computed(() => true)
 
-const onlyOneEnabled = computed(() => [ isIv10_1Enabled.value, isIv20_1Enabled.value ].filter(Boolean).length === 1)
+const onlyOneEnabled = computed(() => [ isIv_10mgEnabled.value, isIv_20mgEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

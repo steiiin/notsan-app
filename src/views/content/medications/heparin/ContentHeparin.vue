@@ -55,9 +55,9 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv25000_02ml" v-if="isIv25000_02mlEnabled"></ns-package>
-      <ns-package :package="iv5000_1ml" v-if="isIv5000_1mlEnabled"></ns-package>
-      <ns-package :package="iv5000_5ml" v-if="isIv5000_5mlEnabled"></ns-package>
+      <ns-package :package="iv_25000ieml_0_2ml" v-if="isIv_25000ieml_0_2mlEnabled"></ns-package>
+      <ns-package :package="iv_5000ieml_1ml" v-if="isIv_5000ieml_1mlEnabled"></ns-package>
+      <ns-package :package="iv_5000ieml_5ml" v-if="isIv_5000ieml_5mlEnabled"></ns-package>
 
       <ns-dosage-indication>
         <ns-dosage-usage type="iv">
@@ -113,18 +113,18 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv25000_02ml = computed(() => props.medication.packages['iv-25000-ml--0.2ml'])
-const iv5000_5ml = computed(() => props.medication.packages['iv-5000-ml--5ml'])
-const iv5000_1ml = computed(() => props.medication.packages['iv-5000-ml--1ml'])
+const iv_25000ieml_0_2ml = computed(() => props.medication.packages['iv_25000ieml_0_2ml'])
+const iv_5000ieml_5ml = computed(() => props.medication.packages['iv_5000ieml_5ml'])
+const iv_5000ieml_1ml = computed(() => props.medication.packages['iv_5000ieml_1ml'])
 
-const isIv25000_02mlEnabled = computed(() => false)
-const isIv5000_5mlEnabled = computed(() => true)
-const isIv5000_1mlEnabled = computed(() => false)
-const onlyOneEnabled = computed(() => [ isIv25000_02mlEnabled.value, isIv5000_5mlEnabled.value, isIv5000_1mlEnabled.value ].filter(Boolean).length === 1)
+const isIv_25000ieml_0_2mlEnabled = computed(() => false)
+const isIv_5000ieml_5mlEnabled = computed(() => true)
+const isIv_5000ieml_1mlEnabled = computed(() => false)
+const onlyOneEnabled = computed(() => [ isIv_25000ieml_0_2mlEnabled.value, isIv_5000ieml_5mlEnabled.value, isIv_5000ieml_1mlEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
-const hasToWarn = computed(() => isIv5000_5mlEnabled.value)
+const hasToWarn = computed(() => isIv_5000ieml_5mlEnabled.value)
 const doseHint = computed(() => {
   if (hasToWarn.value)
   {

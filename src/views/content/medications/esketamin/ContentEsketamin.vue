@@ -94,9 +94,9 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package v-if="isiv5_5mlEnabled" :package="iv5_5ml"></ns-package>
-      <ns-package v-if="isiv25_2mlEnabled" :package="iv25_2ml"></ns-package>
-      <ns-package v-if="isiv25_10mlEnabled" :package="iv25_10ml"></ns-package>
+      <ns-package v-if="isIv_5mgml_5mlEnabled" :package="iv_5mgml_5ml"></ns-package>
+      <ns-package v-if="isIv_25mgml_2mlEnabled" :package="iv_25mgml_2ml"></ns-package>
+      <ns-package v-if="isIv_25mgml_10mlEnabled" :package="iv_25mgml_10ml"></ns-package>
 
       <ns-dosage-indication name="Stärkste Schmerzen">
         <ns-dosage-usage type="iv">
@@ -112,18 +112,18 @@
           <h2>Aufziehen</h2>
           <p>Um <i>Fehldosierung</i> zu vermeiden, immer gleiche Konzentration (<text-mono>2,5mg/ml</text-mono>) benutzen, dazu:
           </p>
-          <ns-package v-if="isiv5_5mlEnabled"
-            :package="iv5_5ml" :inline-specs="{
+          <ns-package v-if="isIv_5mgml_5mlEnabled"
+            :package="iv_5mgml_5ml" :inline-specs="{
             on: 10,
             onlyOne: onlyOneEnabled }">
           </ns-package>
-          <ns-package v-else-if="isiv25_2mlEnabled"
-            :package="iv25_2ml" :inline-specs="{
+          <ns-package v-else-if="isIv_25mgml_2mlEnabled"
+            :package="iv_25mgml_2ml" :inline-specs="{
             on: 20,
             onlyOne: onlyOneEnabled }">
           </ns-package>
-          <ns-package v-else-if="isiv25_10mlEnabled"
-            :package="iv25_10ml" :inline-specs="{
+          <ns-package v-else-if="isIv_25mgml_10mlEnabled"
+            :package="iv_25mgml_10ml" :inline-specs="{
             on: 10, off: 2,
             onlyOne: onlyOneEnabled }">
           </ns-package>
@@ -163,9 +163,9 @@
             Um Applikation zu vereinfachen, geeignete Konzentration wählen und nur benötigte Menge <b>½-ml</b>-weise aufziehen.
           </p>
           <hr>
-          <template v-if="isiv5_5mlEnabled">
-            <ns-package v-if="isiv5_5mlEnabled"
-              :package="iv5_5ml" :inline-specs="{
+          <template v-if="isIv_5mgml_5mlEnabled">
+            <ns-package v-if="isIv_5mgml_5mlEnabled"
+              :package="iv_5mgml_5ml" :inline-specs="{
               onlyOne: onlyOneEnabled }">
             </ns-package>
             <p style="margin-left: 1.2rem">
@@ -176,15 +176,15 @@
             </p>
             <hr>
           </template>
-          <template v-if="isiv25_2mlEnabled || isiv25_10mlEnabled">
+          <template v-if="isIv_25mgml_2mlEnabled || isIv_25mgml_10mlEnabled">
 
-            <ns-package v-if="isiv25_2mlEnabled"
-              :package="iv25_2ml" :inline-specs="{
+            <ns-package v-if="isIv_25mgml_2mlEnabled"
+              :package="iv_25mgml_2ml" :inline-specs="{
               on: 5,
               onlyOne: onlyOneEnabled }">
             </ns-package>
             <ns-package v-else
-              :package="iv25_10ml" :inline-specs="{
+              :package="iv_25mgml_10ml" :inline-specs="{
               off: 2, on: 5,
               onlyOne: onlyOneEnabled }">
             </ns-package>
@@ -196,12 +196,12 @@
             </p>
             <hr>
 
-            <ns-package v-if="isiv25_2mlEnabled"
-              :package="iv25_2ml" :inline-specs="{
+            <ns-package v-if="isIv_25mgml_2mlEnabled"
+              :package="iv_25mgml_2ml" :inline-specs="{
               onlyOne: onlyOneEnabled }">
             </ns-package>
             <ns-package v-else
-              :package="iv25_10ml" :inline-specs="{
+              :package="iv_25mgml_10ml" :inline-specs="{
               off: 2,
               onlyOne: onlyOneEnabled }">
             </ns-package>
@@ -276,14 +276,14 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv5_5ml = computed(() => props.medication.packages['iv-5mg-ml--5ml'])
-const iv25_2ml = computed(() => props.medication.packages['iv-25mg-ml--2ml'])
-const iv25_10ml = computed(() => props.medication.packages['iv-25mg-ml--10ml'])
+const iv_5mgml_5ml = computed(() => props.medication.packages['iv_5mgml_5ml'])
+const iv_25mgml_2ml = computed(() => props.medication.packages['iv_25mgml_2ml'])
+const iv_25mgml_10ml = computed(() => props.medication.packages['iv_25mgml_10ml'])
 
-const isiv5_5mlEnabled = computed(() => true)
-const isiv25_2mlEnabled = computed(() => true)
-const isiv25_10mlEnabled = computed(() => true)
-const onlyOneEnabled = computed(() => [ isiv5_5mlEnabled.value, isiv25_2mlEnabled.value, isiv25_10mlEnabled.value ].filter(Boolean).length === 1)
+const isIv_5mgml_5mlEnabled = computed(() => true)
+const isIv_25mgml_2mlEnabled = computed(() => true)
+const isIv_25mgml_10mlEnabled = computed(() => true)
+const onlyOneEnabled = computed(() => [ isIv_5mgml_5mlEnabled.value, isIv_25mgml_2mlEnabled.value, isIv_25mgml_10mlEnabled.value ].filter(Boolean).length === 1)
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
