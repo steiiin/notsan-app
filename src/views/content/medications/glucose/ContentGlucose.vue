@@ -9,7 +9,7 @@
 
     <ns-content-group title="Kontraindikation">
       <ns-list>
-        <ns-contraindication type="invisible"><b>Keine</b></ns-contraindication>
+        <ns-contraindication type="none"><b>Keine</b></ns-contraindication>
       </ns-list>
     </ns-content-group>
 
