@@ -15,16 +15,13 @@
       <ns-patient-input v-model="currentPatient"></ns-patient-input>
       <ns-patient-info :patient="currentPatient"></ns-patient-info>
 
-      <content-standards :patient="currentPatient"></content-standards>
+      <content-standards
+        :patient="currentPatient">
+      </content-standards>
 
-      <ns-accordion-group v-if="currentPatient.isValid">
-        <ns-accordion title="Reanimation">
-
-          <content-defibrillation :patient="currentPatient"></content-defibrillation>
-          <content-intubation :patient="currentPatient"></content-intubation>
-
-        </ns-accordion>
-      </ns-accordion-group>
+      <content-reanimation v-if="currentPatient.isValid"
+        :patient="currentPatient">
+      </content-reanimation>
 
     </ion-content>
   </ion-page>
@@ -32,30 +29,19 @@
 
 <script setup lang="ts">
 
-import { IonAccordionGroup, IonAccordion, IonItem, IonLabel, IonIcon, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, onIonViewWillEnter } from '@ionic/vue';
-
-import { watchOutline, female } from 'ionicons/icons'
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, onIonViewWillEnter } from '@ionic/vue';
 
 import NsPatientInput from '../../components/emergency/NsPatientInput.vue';
 import NsPatientInfo from '../../components/emergency/NsPatientInfo.vue';
 
-import { useContentStore } from '@/stores/content'
 import { computed, ref, shallowRef } from 'vue'
 import { useRouter } from 'vue-router'
 
-import NsContentGroup from '@/components/NsContentGroup.vue';
-import NsAccordionGroup from '@/components/NsAccordionGroup.vue';
-import NsAccordion from '@/components/NsAccordion.vue';
-
 import ContentStandards from './emergency/standards/ContentStandards.vue';
-import ContentDefibrillation from './emergency/reanimation/ContentDefibrillation.vue';
-import ContentIntubation from './emergency/reanimation/ContentIntubation.vue';
+
+import ContentReanimation from './emergency/reanimation/ContentReanimation.vue';
 
 import { Patient } from '@/types/emergency';
-
-const content = useContentStore()
-
-const medications = computed(() => content.getMedications.map(i => ({ ...i, path: `/tabs/meds/${i.id}` })) )
 
 // #region ScrollPosition
 
