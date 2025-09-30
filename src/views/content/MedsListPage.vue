@@ -4,9 +4,9 @@
       <ion-toolbar>
         <ion-title>Medikamente</ion-title>
         <ion-buttons slot="end">
-          <!-- <ion-button fill="clear" @click="showSearch">
-            <ion-icon :icon="searchOutline" slot="icon-only" />
-          </ion-button> -->
+          <ion-button fill="clear" @click="openSettings">
+            <ion-icon :icon="settingsOutline" slot="icon-only" />
+          </ion-button>
         </ion-buttons>
       </ion-toolbar>
       <ion-toolbar>
@@ -25,6 +25,7 @@
       </div>
     </ion-content>
   </ion-page>
+  <meds-settings v-model="settingsVisible"></meds-settings>
 </template>
 
 <script setup lang="ts">
@@ -36,8 +37,9 @@ import { ref, computed, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 
 import NsContentListContainer from '@/components/NsContentListContainer.vue';
+import MedsSettings from './medications/MedsSettings.vue';
 
-import { closeOutline, searchOutline } from 'ionicons/icons'
+import { closeOutline, searchOutline, settingsOutline } from 'ionicons/icons'
 import { gainFocus } from '@/service/input';
 
 const content = useContentStore()
@@ -58,6 +60,12 @@ const medications = computed(() => content.getMedications.map(i => ({ ...i, path
       return title.includes(term) || subtitle.includes(term)
     })
   })
+
+// #endregion
+// #region Settings
+
+  const settingsVisible = ref(false)
+  const openSettings = () => settingsVisible.value = true
 
 // #endregion
 // #region ScrollPosition
@@ -90,6 +98,7 @@ const medications = computed(() => content.getMedications.map(i => ({ ...i, path
 </script>
 
 <style scoped>
+
 .empty-state {
   margin-top: 4rem;
   display: flex;
@@ -102,5 +111,6 @@ const medications = computed(() => content.getMedications.map(i => ({ ...i, path
 .empty-state ion-icon {
   font-size: 2.5rem;
 }
+
 </style>
 
