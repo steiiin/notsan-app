@@ -86,23 +86,21 @@
           </div>
 
         </ns-dosage-usage>
-        <ns-dosage-usage type="im">
+        <ns-dosage-usage type="im" label="i.m. & nasal">
 
-          <div>
-            <p>
-              Im Abstand von <text-underline>3-4 Minuten</text-underline>:
-            </p>
-            <ns-dosage :dosage="{ dose: '1ml', hint: '(0,05mg)'}"></ns-dosage>
-          </div>
-          <hr>
           <p>
-            Langsam spritzen.
+            Volumina beschränkt auf ...<br>
+            <b>Nasal</b>: <text-mono style="white-space:nowrap">1ml/Nasenloch</text-mono><br>
+            <b>Intramusk.</b>: <text-mono>5ml</text-mono>.
           </p>
           <hr>
           <div>
-            <ns-dosage :dosage="{ target: 'Maximal', dose: '2µg /kg' }"></ns-dosage>
-            <ns-dosage :dosage="{ target: ' ', dose: '1ml /25kg' }"></ns-dosage>
+            <ns-dosage :dosage="{ dose: ' 2µg /kg' }"></ns-dosage>
+            <ns-dosage :dosage="{ dose: '50µg /25kg' }"></ns-dosage>
+            <ns-dosage :dosage="{ dose: ' 1ml /25kg' }"></ns-dosage>
           </div>
+          <hr>
+          <h2>Keine Repetition</h2>
 
         </ns-dosage-usage>
       </ns-dosage-indication>
