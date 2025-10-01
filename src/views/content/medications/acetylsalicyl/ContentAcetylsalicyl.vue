@@ -16,7 +16,7 @@
         <ns-contraindication type="intolerance">Einnahme von <b>Methotrexat</b> (<b>MTX</b>) &gt; 15mg</ns-contraindication>
       </ns-list>
       <ns-list>
-        <ns-contraindication type="chronic">Akute Magen-Darm-<b> Geschwüre</b></ns-contraindication>
+        <ns-contraindication type="acute">Akute Magen-Darm-<b> Geschwüre</b></ns-contraindication>
         <ns-contraindication type="acute">Vd. auf <b>Aortensyndrom</b></ns-contraindication>
         <ns-contraindication type="acute">Vd. auf <b>Innere Blutung</b></ns-contraindication>
         <ns-contraindication type="acute"><b>Nicht beherrschbare</b> Blutung</ns-contraindication>
