@@ -71,7 +71,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv_500mg"></ns-package>
+      <ns-package :package="acetylsalicyl_iv_500mg"></ns-package>
 
       <ns-dosage-indication name="Akutes Koronarsyndrom">
         <ns-dosage-usage type="iv">
@@ -112,6 +112,7 @@
 
 <script setup lang="ts">
 
+import { computed } from 'vue'
 import { Medication } from '@/types/medication'
 
 import NsContentGroup from '@/components/NsContentGroup.vue'
@@ -127,11 +128,7 @@ import NsDosage from '@/components/medications/NsDosage.vue'
 import NsPharmacokinetics from '@/components/medications/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 
-const props = defineProps<{
-  medication: Medication,
-}>()
-
-const iv_500mg = props.medication.packages['iv_500mg']
+import { acetylsalicyl_iv_500mg } from './Packages'
 
 </script>
 
