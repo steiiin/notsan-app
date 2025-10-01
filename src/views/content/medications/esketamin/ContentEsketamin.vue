@@ -251,8 +251,6 @@
 <script setup lang="ts">
 
 import { computed } from 'vue'
-import { Medication } from '@/types/medication'
-
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsQuicktip from '@/components/NsQuicktip.vue'
 import NsList from '@/components/NsList.vue'
@@ -271,14 +269,7 @@ import TextUnderline from '@/components/TextUnderline.vue'
 
 import imgLongQt from '@/data/assets/long-qt.png'
 import { arrowForwardOutline } from 'ionicons/icons'
-
-const props = defineProps<{
-  medication: Medication,
-}>()
-
-const iv_5mgml_5ml = props.medication.packages['iv_5mgml_5ml']
-const iv_25mgml_2ml = props.medication.packages['iv_25mgml_2ml']
-const iv_25mgml_10ml = props.medication.packages['iv_25mgml_10ml']
+import { iv_5mgml_5ml, iv_25mgml_2ml, iv_25mgml_10ml } from './Packages'
 
 const isIv_5mgml_5mlEnabled = computed(() => true)
 const isIv_25mgml_2mlEnabled = computed(() => true)

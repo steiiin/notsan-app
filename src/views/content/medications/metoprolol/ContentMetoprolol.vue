@@ -101,8 +101,6 @@
 <script setup lang="ts">
 
 import { computed } from 'vue'
-import { Medication } from '@/types/medication'
-
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsQuicktip from '@/components/NsQuicktip.vue'
 import NsList from '@/components/NsList.vue'
@@ -120,12 +118,7 @@ import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
 
 import imgHyperkaliaemieEkg from '@/data/assets/hyperkaliaemie-ekg.png'
-
-const props = defineProps<{
-  medication: Medication,
-}>()
-
-const iv_5mg = props.medication.packages['iv_5mg']
+import { iv_5mg } from './Packages'
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

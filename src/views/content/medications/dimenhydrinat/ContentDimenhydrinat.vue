@@ -153,8 +153,6 @@
 <script setup lang="ts">
 
 import { computed } from 'vue'
-import { Medication } from '@/types/medication'
-
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsQuicktip from '@/components/NsQuicktip.vue'
 import NsList from '@/components/NsList.vue'
@@ -172,14 +170,7 @@ import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
 import imgLongQt from '@/data/assets/long-qt.png'
-
-const props = defineProps<{
-  medication: Medication,
-}>()
-
-const iv_62mg = props.medication.packages['iv_62mg']
-const supp_40mg = props.medication.packages['supp_40mg']
-const supp_70mg = props.medication.packages['supp_70mg']
+import { iv_62mg, supp_40mg, supp_70mg } from './Packages'
 
 const isSupp40Enabled = computed(() => false)
 const isSupp70Enabled = computed(() => false)

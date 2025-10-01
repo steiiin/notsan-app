@@ -73,8 +73,6 @@
 <script setup lang="ts">
 
 import { computed } from 'vue'
-import { Medication } from '@/types/medication'
-
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsQuicktip from '@/components/NsQuicktip.vue'
 import NsList from '@/components/NsList.vue'
@@ -90,12 +88,7 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
-
-const props = defineProps<{
-  medication: Medication,
-}>()
-
-const inh_5mgml = props.medication.packages['inh_5mgml']
+import { inh_5mgml } from './Packages'
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
