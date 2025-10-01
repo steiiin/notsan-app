@@ -236,10 +236,10 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv_5mgml_1ml = computed(() => props.medication.packages['iv_5mgml_1ml'])
-const iv_5mgml_3ml = computed(() => props.medication.packages['iv_5mgml_3ml'])
-const iv_1mgml_5ml = computed(() => props.medication.packages['iv_1mgml_5ml'])
-const buccal_2_5mg_5mg_7_5mg_10mg = computed(() => props.medication.packages['buccal_2_5mg_5mg_7_5mg_10mg'])
+const iv_5mgml_1ml = props.medication.packages['iv_5mgml_1ml']
+const iv_5mgml_3ml = props.medication.packages['iv_5mgml_3ml']
+const iv_1mgml_5ml = props.medication.packages['iv_1mgml_5ml']
+const buccal_2_5mg_5mg_7_5mg_10mg = props.medication.packages['buccal_2_5mg_5mg_7_5mg_10mg']
 
 const isIv_5mgml_1mlEnabled = computed(() => true)
 const isIv_5mgml_3mlEnabled = computed(() => true)

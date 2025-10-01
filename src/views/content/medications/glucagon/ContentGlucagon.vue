@@ -115,8 +115,8 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const im_1mg = computed(() => props.medication.packages['im_1mg'])
-const nasal_3mg = computed(() => props.medication.packages['nasal_3mg'])
+const im_1mg = props.medication.packages['im_1mg']
+const nasal_3mg = props.medication.packages['nasal_3mg']
 
 const isIm_1mgEnabled = computed(() => true)
 const isNasal_3mgEnabled = computed(() => true)

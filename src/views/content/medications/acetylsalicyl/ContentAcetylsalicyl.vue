@@ -112,7 +112,6 @@
 
 <script setup lang="ts">
 
-import { computed } from 'vue'
 import { Medication } from '@/types/medication'
 
 import NsContentGroup from '@/components/NsContentGroup.vue'
@@ -132,7 +131,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv_500mg = computed(() => props.medication.packages['iv_500mg'])
+const iv_500mg = props.medication.packages['iv_500mg']
 
 </script>
 

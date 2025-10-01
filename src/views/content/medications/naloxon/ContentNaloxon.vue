@@ -120,7 +120,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const iv_0_4mg = computed(() => props.medication.packages['iv_0_4mg'])
+const iv_0_4mg = props.medication.packages['iv_0_4mg']
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

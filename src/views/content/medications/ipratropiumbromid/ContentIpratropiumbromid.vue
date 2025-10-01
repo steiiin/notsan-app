@@ -130,8 +130,8 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const inh_250ug = computed(() => props.medication.packages['inh_250ug'])
-const inh_500ug = computed(() => props.medication.packages['inh_500ug'])
+const inh_250ug = props.medication.packages['inh_250ug']
+const inh_500ug = props.medication.packages['inh_500ug']
 
 const isInh_250ugEnabled = computed(() => false)
 const isInh_500ugEnabled = computed(() => true)
