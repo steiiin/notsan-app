@@ -1,39 +1,38 @@
 :root {
 
+  /* overwrite style */
   --ion-color-primary: #0054e9;
   --ion-color-primary-rgb: 0, 84, 233;
-  --background-hover-opacity: 0.02;
 
+  /* control style */
+  --background-hover-opacity: 0.02;
   --ns-card-padding: 16px;
   --ns-card-neg-padding: -16px;
-
   --ns-text-padding: 8px;
-
   --ns-narrow-line: 1.3;
-
-  --ns-color-blue: #1c34a9; /* Blue */
-  --ns-color-blue-rgb: 28, 52, 169;
-
-  --ns-color-purple: #7D3C98; /* Purple */
-  --ns-color-purple-rgb: 125, 60, 152;
-
-  --ns-color-red: #cf0005; /* Red */
-  --ns-color-red-rgb: 207, 0, 5;
-
-  --ns-color-orange: #BF8808; /* Orange */
-  --ns-color-orange-rgb: 191, 136, 8;
-
-  --ns-color-orange: #BF8808; /* Orange */
-  --ns-color-orange-rgb: 191, 136, 8;
-
-  --ns-color-grey: #D3D3D3; /* Light Grey */
-  --ns-color-grey-rgb: 211, 211, 211;
-
-  --ns-color-green: #26A269; /* Green */
-  --ns-color-green-rgb: 38, 162, 105;
-
   --ns-ion-primary-fade: rgba(var(--ion-color-primary-rgb), var(--background-hover-opacity));
 
+  /* colors */
+  --ns-color-blue: #1c34a9; /* Blue */
+  --ns-color-blue-shade: #8f9acb;
+
+  --ns-color-purple: #7d3c98; /* Purple */
+  --ns-color-purple-shade: #bb9bcc;
+
+  --ns-color-red: #cf0005; /* Red */
+  --ns-color-red-shade: #e6999b;
+
+  --ns-color-orange: #bf8808; /* Orange */
+  --ns-color-orange-shade: #dfc785;
+
+  --ns-color-grey: #d3d3d3; /* Light Grey */
+  --ns-color-grey-shade: #e9e9e9;
+
+  --ns-color-green: #26a269; /* Green */
+  --ns-color-green-shade: #91d1b4;
+
+
+  /* broselow colors */
   --ns-broselow-code-grey:   #B0B0B0; /* neutral grey */
   --ns-broselow-code-pink:   #F4A7C0; /* soft pink */
   --ns-broselow-code-red:    #E74C3C; /* bright red */
@@ -48,21 +47,28 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+
+    /* overwrite style */
+    --ion-color-primary: #4d8dff;
+    --ion-color-primary-rgb: 77, 141, 255;
+
+    /* colors */
     --ns-color-blue: #5c6cff; /* Lighter blue */
-    --ns-color-blue-rgb: 92, 108, 255;
+    --ns-color-blue-shade: #5c6cff;
 
     --ns-color-purple: #B583E7; /* Lighter purple */
-    --ns-color-purple-rgb: 181, 131, 231;
+    --ns-color-purple-shade: #B583E7;
 
     --ns-color-red: #ff3b3f; /* Lighter red  */
-    --ns-color-red-rgb: 255, 59, 63;
+    --ns-color-red-shade: #ff3b3f;
 
     --ns-color-orange: #e6a820; /* Lighter orange */
-    --ns-color-orange-rgb: 230, 168, 32;
+    --ns-color-orange-shade: #e6a820;
 
     --ns-color-green: #3ddc97; /* Lighter green */
-    --ns-color-green-rgb: 61, 220, 151;
+    --ns-color-green-shade: #3ddc97;
 
+    /* broselow colors */
     --ns-broselow-code-grey:    #7A7A7A; /* darker grey */
     --ns-broselow-code-pink:    #D16C90; /* stronger pink */
     --ns-broselow-code-red:     #C0392B; /* deep red */

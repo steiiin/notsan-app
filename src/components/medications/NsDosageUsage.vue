@@ -91,19 +91,19 @@ const usageMinHeight = computed(() => props.type && props.type in usageMinHeight
 }
 
 .usage-divider.red {
-  border-color: rgba(var(--ns-color-red-rgb), .4)
+  border-color: var(--ns-color-red-shade)
 }
 .usage-divider.blue {
-  border-color: rgba(var(--ns-color-blue-rgb), .4)
+  border-color: var(--ns-color-blue-shade)
 }
 .usage-divider.green {
-  border-color: rgba(var(--ns-color-green-rgb), .4)
+  border-color: var(--ns-color-green-shade)
 }
 .usage-divider.orange {
-  border-color: rgba(var(--ns-color-orange-rgb), .4)
+  border-color: var(--ns-color-orange-shade)
 }
 .usage-divider.grey {
-  border-color: rgba(var(--ns-color-grey-rgb), .4)
+  border-color: var(--ns-color-grey-shade)
 }
 .usage-divider.invisible {
   border-color: transparent
