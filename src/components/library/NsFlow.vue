@@ -1,8 +1,6 @@
 <template>
-  <div ref="panSurface" class="ns-flow"
-    @pointerdown="onPointerDown" @pointerup="onPointerUp" @pointerleave="onPointerUp" @pointercancel="onPointerUp"
-    @pointermove="onPointerMove"
-    @wheel.prevent="onWheel">
+  <div ref="panSurface" class="ns-flow" @pointerdown="onPointerDown" @pointerup="onPointerUp"
+    @pointerleave="onPointerUp" @pointercancel="onPointerUp" @pointermove="onPointerMove" @wheel.prevent="onWheel">
     <div class="ns-flow__content" :style="contentStyle">
       <div ref="svgHost" class="ns-flow__svg" v-html="svg" />
     </div>
@@ -26,75 +24,108 @@ const emit = defineEmits<{
 
 // #region pan/move
 
-  const MIN_ZOOM = 1
-  const MAX_ZOOM = 2
+const MIN_ZOOM = 1
+const MAX_ZOOM = 2
 
-  const panSurface = ref<HTMLDivElement | null>(null)
-  const svgHost = ref<HTMLDivElement | null>(null)
+const panSurface = ref<HTMLDivElement | null>(null)
+const svgHost = ref<HTMLDivElement | null>(null)
 
-  const viewportSize = reactive({ width: 0, height: 0 })
-  const contentSize = reactive({ width: 0, height: 0 })
+const viewportSize = reactive({ width: 0, height: 0 })
+const contentSize = reactive({ width: 0, height: 0 })
 
-  const zoom = ref(1)
+const zoom = ref(1)
 
-  const panState = reactive({
-    x: 0,
-    y: 0,
-    pointerId: null as number | null,
-    startX: 0,
-    startY: 0,
-  })
+const panState = reactive({
+  x: 0,
+  y: 0,
+  pointerId: null as number | null,
+  startX: 0,
+  startY: 0,
+})
 
-  const contentStyle = computed(() => ({
-    transform: `translate3d(${panState.x}px, ${panState.y}px, 0) scale(${zoom.value})`,
-  }))
+const contentStyle = computed(() => ({
+  transform: `translate3d(${panState.x}px, ${panState.y}px, 0) scale(${zoom.value})`,
+}))
 
-  const svgLinkListeners: Array<{ element: Element; handler: (event: Event) => void }> = []
+const svgLinkListeners: Array<{ element: Element; handler: (event: Event) => void }> = []
 
-  let surfaceObserver: ResizeObserver | null = null
-  let contentObserver: ResizeObserver | null = null
+let surfaceObserver: ResizeObserver | null = null
+let contentObserver: ResizeObserver | null = null
+function getInnerViewportSize() {
+  const surface = panSurface.value
+  if (!surface) return { width: 0, height: 0 }
 
-  function clampPan() {
-    const scaledWidth = contentSize.width * zoom.value
-    const scaledHeight = contentSize.height * zoom.value
+  const cs = getComputedStyle(surface)
+  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight)
+  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)
 
-    const availableWidth = viewportSize.width
-    const availableHeight = viewportSize.height
+  return {
+    width: surface.clientWidth - padX,
+    height: surface.clientHeight - padY,
+    padLeft: parseFloat(cs.paddingLeft),
+    padTop: parseFloat(cs.paddingTop),
+  }
+}
+function clampPan() {
+  const scaledWidth = contentSize.width * zoom.value
+  const scaledHeight = contentSize.height * zoom.value
 
-    if (scaledWidth <= availableWidth) {
-      panState.x = (availableWidth - scaledWidth) / 2
-    } else {
-      const minX = availableWidth - scaledWidth
-      const maxX = 0
-      panState.x = clamp(panState.x, minX, maxX)
-    }
+  const { width: vw, height: vh } = getInnerViewportSize()
 
-    if (scaledHeight <= availableHeight) {
-      panState.y = (availableHeight - scaledHeight) / 2
-    } else {
-      const minY = availableHeight - scaledHeight
-      const maxY = 0
-      panState.y = clamp(panState.y, minY, maxY)
-    }
+  // X
+  if (scaledWidth <= vw) {
+    panState.x = (vw - scaledWidth) / 2
+  } else {
+    const minX = vw - scaledWidth
+    const maxX = 0
+    panState.x = clamp(panState.x, minX, maxX)
   }
 
-  function cleanupSvgLinkListeners() {
-    while (svgLinkListeners.length) {
-      const { element, handler } = svgLinkListeners.pop()!
-      element.removeEventListener('click', handler)
-    }
+  // Y
+  if (scaledHeight <= vh) {
+    panState.y = (vh - scaledHeight) / 2
+  } else {
+    const minY = vh - scaledHeight
+    const maxY = 0
+    panState.y = clamp(panState.y, minY, maxY)
+  }
+}
+
+function cleanupSvgLinkListeners() {
+  while (svgLinkListeners.length) {
+    const { element, handler } = svgLinkListeners.pop()!
+    element.removeEventListener('click', handler)
+  }
+}
+
+function getSvgContentSize(): { width: number; height: number } | null {
+  const host = svgHost.value
+  const svgEl = host?.querySelector('svg') as SVGSVGElement | null
+  if (!svgEl) return null
+
+  // Prefer viewBox, fall back to bounding box if needed
+  const vb = svgEl.viewBox && svgEl.viewBox.baseVal
+  if (vb && (vb.width > 0) && (vb.height > 0)) {
+    return { width: vb.width, height: vb.height }
   }
 
-  function updateContentSize() {
-    const host = svgHost.value
-    if (!host) {
-      return
+  // Fallback: getBBox (requires the SVG to be in the DOM)
+  try {
+    const bbox = svgEl.getBBox()
+    if (bbox.width > 0 && bbox.height > 0) {
+      return { width: bbox.width, height: bbox.height }
     }
+  } catch { }
+  return null
+}
 
-    contentSize.width = host.clientWidth
-    contentSize.height = host.clientHeight
-    clampPan()
-  }
+function updateContentSize() {
+  const size = getSvgContentSize()
+  if (!size) return
+  contentSize.width = size.width
+  contentSize.height = size.height
+  clampPan()
+}
 
 function normalizeHref(rawHref: string): URL | null {
   if (!rawHref) {
@@ -204,20 +235,15 @@ function onPointerUp(event: PointerEvent) {
 
 function onWheel(event: WheelEvent) {
   const surface = panSurface.value
-  if (!surface) {
-    return
-  }
+  if (!surface) return
 
   const previousZoom = zoom.value
   const zoomDelta = Math.exp(-event.deltaY * 0.001)
-  let nextZoom = previousZoom * zoomDelta
-  nextZoom = clamp(nextZoom, MIN_ZOOM, MAX_ZOOM)
-
-  if (nextZoom === previousZoom) {
-    return
-  }
+  let nextZoom = clamp(previousZoom * zoomDelta, MIN_ZOOM, MAX_ZOOM)
+  if (nextZoom === previousZoom) return
 
   const rect = surface.getBoundingClientRect()
+  const { padLeft, padTop } = getInnerViewportSize()
   const cursorX = event.clientX - rect.left
   const cursorY = event.clientY - rect.top
 
@@ -225,7 +251,6 @@ function onWheel(event: WheelEvent) {
   const offsetY = cursorY - panState.y
 
   const scaleRatio = nextZoom / previousZoom
-
   panState.x = cursorX - offsetX * scaleRatio
   panState.y = cursorY - offsetY * scaleRatio
 
@@ -236,12 +261,13 @@ function onWheel(event: WheelEvent) {
 function setupObservers() {
   const surface = panSurface.value
   if (surface && !surfaceObserver) {
-    surfaceObserver = new ResizeObserver(entries => {
-      const entry = entries[0]
-      viewportSize.width = entry.contentRect.width
-      viewportSize.height = entry.contentRect.height
+    surfaceObserver = new ResizeObserver(() => {
+      const { width, height } = getInnerViewportSize()
+      viewportSize.width = width
+      viewportSize.height = height
       clampPan()
     })
+
     surfaceObserver.observe(surface)
   }
 
@@ -292,7 +318,10 @@ onBeforeUnmount(() => {
 <style scoped>
 .ns-flow {
   display: flex;
-  padding: calc(0.5 * var(--ns-card-padding));
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+  /* crucial for touch/pen */
 }
 
 .ns-flow__content {

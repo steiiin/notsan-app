@@ -14,4 +14,6 @@ function handleAction(key: string) {
 </script>
 
 <style scoped>
+
+  /* padding: calc(0.5 * var(--ns-card-padding));  <-- move this elsewhere */
 </style>
