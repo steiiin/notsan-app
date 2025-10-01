@@ -121,9 +121,9 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const supp_100mg = computed(() => props.medication.packages['supp_100mg'])
-const iv_100mg = computed(() => props.medication.packages['iv_100mg'])
-const iv_250mg = computed(() => props.medication.packages['iv_250mg'])
+const supp_100mg = props.medication.packages['supp_100mg']
+const iv_100mg = props.medication.packages['iv_100mg']
+const iv_250mg = props.medication.packages['iv_250mg']
 
 const isSupp_100mgEnabled = computed(() => true)
 const isIv_100mgEnabled = computed(() => true)

@@ -150,10 +150,10 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const po_200mg_400mg_600mg_800mg = computed(() => props.medication.packages['po_200mg_400mg_600mg_800mg'])
-const po_20mgml_40mgml = computed(() => props.medication.packages['po_20mgml_40mgml'])
-const supp_75mg_125mg_150mg_250mg = computed(() => props.medication.packages['supp_75mg_125mg_150mg_250mg'])
-const iv_4mgml_6mgml_100ml = computed(() => props.medication.packages['iv_4mgml_6mgml_100ml'])
+const po_200mg_400mg_600mg_800mg = props.medication.packages['po_200mg_400mg_600mg_800mg']
+const po_20mgml_40mgml = props.medication.packages['po_20mgml_40mgml']
+const supp_75mg_125mg_150mg_250mg = props.medication.packages['supp_75mg_125mg_150mg_250mg']
+const iv_4mgml_6mgml_100ml = props.medication.packages['iv_4mgml_6mgml_100ml']
 
 const isPo_200mg_400mg_600mg_800mgEnabled = computed(() => true)
 const isPo_20mgml_40mgmlEnabled = computed(() => true)

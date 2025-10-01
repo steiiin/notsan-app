@@ -131,7 +131,7 @@ const props = defineProps<{
   medication: Medication,
 }>()
 
-const spray_0_4mg = computed(() => props.medication.packages['spray_0_4mg'])
+const spray_0_4mg = props.medication.packages['spray_0_4mg']
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
