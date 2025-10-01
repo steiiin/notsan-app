@@ -12,7 +12,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="yHWT7IU4pxUufP5rQbJ7-1" value="Eskalierendes Atemwegsmanagement" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#ffffff;strokeColor=none;fillStyle=auto;fontFamily=bahnschrift;glass=0;shadow=0;arcSize=50;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="yHWT7IU4pxUufP5rQbJ7-1" value="Eskalierendes Atemwegsmanagement" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#ffffff;strokeColor=none;fillStyle=auto;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif; &quot;Helvetia Neue&quot;;glass=0;shadow=0;arcSize=50;fontStyle=1;fontSize=11;" vertex="1" parent="1">
           <mxGeometry width="360" height="40" as="geometry" />
         </mxCell>
         <mxCell id="yHWT7IU4pxUufP5rQbJ7-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yHWT7IU4pxUufP5rQbJ7-2" target="yHWT7IU4pxUufP5rQbJ7-3">
@@ -23,7 +23,7 @@
             <mxPoint x="80" y="140" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="yHWT7IU4pxUufP5rQbJ7-2" value="Atemwegsverlegung?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=bahnschrift;fontSize=10;fontStyle=0" vertex="1" parent="1">
+        <mxCell id="yHWT7IU4pxUufP5rQbJ7-2" value="Atemwegsverlegung?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=default;" vertex="1" parent="1">
           <mxGeometry y="60" width="160" height="40" as="geometry" />
         </mxCell>
         <mxCell id="yHWT7IU4pxUufP5rQbJ7-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="yHWT7IU4pxUufP5rQbJ7-3">
@@ -35,8 +35,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <UserObject label="A-Problem" link="/tabs/med/dimetinden" id="yHWT7IU4pxUufP5rQbJ7-3">
-          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.0625;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;glass=0;rounded=0;" vertex="1" parent="1">
+        <UserObject label="A-Problem" link="/tabs/meds/dimetinden" id="yHWT7IU4pxUufP5rQbJ7-3">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.0625;fillColor=#e51400;strokeColor=default;fontSize=10;glass=0;rounded=0;fontColor=#ffffff;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1" vertex="1" parent="1">
             <mxGeometry x="200" y="60" width="160" height="40" as="geometry" />
           </mxCell>
         </UserObject>
