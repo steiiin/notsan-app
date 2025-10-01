@@ -9,9 +9,9 @@ export const library: LibraryListItem[] = [
     [
 
       {
-        id: 'bpr-airway',
+        id: 'bpr-atemwegsmanagement',
         title: 'Atemwegsmanagement',
-        component: () => import('@/views/content/library/bpr/airway/ContentAirway.vue')
+        component: () => import('@/views/content/library/bpr/atemwegsmanagement/ContentAtemwegsmanagement.vue')
       },
 
     ]
