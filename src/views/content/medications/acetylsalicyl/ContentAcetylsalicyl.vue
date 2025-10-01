@@ -71,7 +71,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv_500mg"></ns-package>
+      <ns-package :package="acetylsalicyl_iv_500mg"></ns-package>
 
       <ns-dosage-indication name="Akutes Koronarsyndrom">
         <ns-dosage-usage type="iv">
@@ -124,6 +124,7 @@ import NsDosageUsage from '@/components/medications/NsDosageUsage.vue'
 import NsDosage from '@/components/medications/NsDosage.vue'
 import NsPharmacokinetics from '@/components/medications/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
+
 import { iv_500mg } from './Packages'
 
 </script>
