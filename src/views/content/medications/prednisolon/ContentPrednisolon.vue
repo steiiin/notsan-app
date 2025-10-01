@@ -99,8 +99,6 @@
 <script setup lang="ts">
 
 import { computed } from 'vue'
-import { Medication } from '@/types/medication'
-
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsQuicktip from '@/components/NsQuicktip.vue'
 import NsList from '@/components/NsList.vue'
@@ -116,14 +114,7 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
-
-const props = defineProps<{
-  medication: Medication,
-}>()
-
-const supp_100mg = props.medication.packages['supp_100mg']
-const iv_100mg = props.medication.packages['iv_100mg']
-const iv_250mg = props.medication.packages['iv_250mg']
+import { supp_100mg, iv_100mg, iv_250mg } from './Packages'
 
 const isSupp_100mgEnabled = computed(() => true)
 const isIv_100mgEnabled = computed(() => true)

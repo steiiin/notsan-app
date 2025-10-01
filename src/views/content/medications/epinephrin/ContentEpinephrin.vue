@@ -137,8 +137,6 @@
 
 <script setup lang="ts">
 
-import { Medication } from '@/types/medication'
-
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsQuicktip from '@/components/NsQuicktip.vue'
 import NsList from '@/components/NsList.vue'
@@ -154,12 +152,7 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextColored from '@/components/TextColored.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextMono from '@/components/TextMono.vue'
-
-const props = defineProps<{
-  medication: Medication,
-}>()
-
-const iv_1mg = props.medication.packages['iv_1mg']
+import { iv_1mg } from './Packages'
 
 </script>
 

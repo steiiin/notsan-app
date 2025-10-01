@@ -112,9 +112,6 @@
 
 <script setup lang="ts">
 
-import { computed } from 'vue'
-import { Medication } from '@/types/medication'
-
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsQuicktip from '@/components/NsQuicktip.vue'
 import NsList from '@/components/NsList.vue'
@@ -128,7 +125,7 @@ import NsDosage from '@/components/medications/NsDosage.vue'
 import NsPharmacokinetics from '@/components/medications/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 
-import { acetylsalicyl_iv_500mg } from './Packages'
+import { iv_500mg } from './Packages'
 
 </script>
 
