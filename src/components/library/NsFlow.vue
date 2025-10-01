@@ -17,20 +17,17 @@
 
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
-
-interface LinkActivatePayload {
-  element: Element
-  event: Event
-  href: string | null
-}
+import { useRouter } from 'vue-router'
 
 const props = defineProps<{
   svgMarkup: string
 }>()
 
 const emit = defineEmits<{
-  (event: 'link-activate', payload: LinkActivatePayload): void
+  (event: 'action', key: string): void
 }>()
+
+const router = useRouter()
 
 const MIN_ZOOM = 1
 const MAX_ZOOM = 2
@@ -106,6 +103,27 @@ function updateContentSize() {
   clampPan()
 }
 
+function normalizeHref(rawHref: string): URL | null {
+  if (!rawHref) {
+    return null
+  }
+
+  let href = rawHref.trim()
+  if (href.startsWith('file:///')) {
+    href = href.slice('file://'.length)
+  }
+  if (!href.startsWith('/')) {
+    href = `/${href.replace(/^\/*/, '')}`
+  }
+
+  try {
+    return new URL(href, 'https://local.app')
+  } catch (error) {
+    console.warn('Invalid link in flow diagram', rawHref)
+    return null
+  }
+}
+
 function setupSvgLinks() {
   cleanupSvgLinkListeners()
 
@@ -129,11 +147,22 @@ function setupSvgLinks() {
     const handler = (event: Event) => {
       event.preventDefault()
       event.stopPropagation()
-      emit('link-activate', {
-        element: link,
-        event,
-        href: link.getAttribute('xlink:href') || link.getAttribute('href'),
-      })
+      const rawHref = link.getAttribute('xlink:href') || link.getAttribute('href')
+      const url = rawHref ? normalizeHref(rawHref) : null
+
+      if (!url) {
+        return
+      }
+
+      const action = url.searchParams.get('action')
+      if (action) {
+        emit('action', action)
+        return
+      }
+
+      if (url.pathname) {
+        router.push(`${url.pathname}${url.search}`)
+      }
     }
     link.addEventListener('click', handler)
     svgLinkListeners.push({ element: link, handler })
