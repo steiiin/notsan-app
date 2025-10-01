@@ -30,21 +30,21 @@ const MAX_ZOOM = 2
 const panSurface = ref<HTMLDivElement | null>(null)
 const svgHost = ref<HTMLDivElement | null>(null)
 
-const viewportSize = reactive({ width: 0, height: 0 })
 const contentSize = reactive({ width: 0, height: 0 })
 
 const zoom = ref(1)
 
 const panState = reactive({
-  x: 0,
-  y: 0,
   pointerId: null as number | null,
   startX: 0,
   startY: 0,
+  startScrollLeft: 0,
+  startScrollTop: 0,
 })
 
 const contentStyle = computed(() => ({
-  transform: `translate3d(${panState.x}px, ${panState.y}px, 0) scale(${zoom.value})`,
+  width: `${contentSize.width * zoom.value}px`,
+  height: `${contentSize.height * zoom.value}px`,
 }))
 
 const svgLinkListeners: Array<{ element: Element; handler: (event: Event) => void }> = []
@@ -66,29 +66,15 @@ function getInnerViewportSize() {
     padTop: parseFloat(cs.paddingTop),
   }
 }
-function clampPan() {
-  const scaledWidth = contentSize.width * zoom.value
-  const scaledHeight = contentSize.height * zoom.value
+function clampScroll() {
+  const surface = panSurface.value
+  if (!surface) return
 
-  const { width: vw, height: vh } = getInnerViewportSize()
+  const maxScrollLeft = Math.max(0, surface.scrollWidth - surface.clientWidth)
+  const maxScrollTop = Math.max(0, surface.scrollHeight - surface.clientHeight)
 
-  // X
-  if (scaledWidth <= vw) {
-    panState.x = (vw - scaledWidth) / 2
-  } else {
-    const minX = vw - scaledWidth
-    const maxX = 0
-    panState.x = clamp(panState.x, minX, maxX)
-  }
-
-  // Y
-  if (scaledHeight <= vh) {
-    panState.y = (vh - scaledHeight) / 2
-  } else {
-    const minY = vh - scaledHeight
-    const maxY = 0
-    panState.y = clamp(panState.y, minY, maxY)
-  }
+  surface.scrollLeft = clamp(surface.scrollLeft, 0, maxScrollLeft)
+  surface.scrollTop = clamp(surface.scrollTop, 0, maxScrollTop)
 }
 
 function cleanupSvgLinkListeners() {
@@ -115,7 +101,9 @@ function getSvgContentSize(): { width: number; height: number } | null {
     if (bbox.width > 0 && bbox.height > 0) {
       return { width: bbox.width, height: bbox.height }
     }
-  } catch { }
+  } catch (_error) {
+    /* ignore */
+  }
   return null
 }
 
@@ -124,7 +112,9 @@ function updateContentSize() {
   if (!size) return
   contentSize.width = size.width
   contentSize.height = size.height
-  clampPan()
+  nextTick(() => {
+    clampScroll()
+  })
 }
 
 function normalizeHref(rawHref: string): URL | null {
@@ -200,9 +190,16 @@ function onPointerDown(event: PointerEvent) {
     return
   }
 
+  if (event.pointerType !== 'mouse') {
+    return
+  }
+
   panState.pointerId = event.pointerId
-  panState.startX = event.clientX - panState.x
-  panState.startY = event.clientY - panState.y
+  const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
+  panState.startX = event.clientX - padLeft
+  panState.startY = event.clientY - padTop
+  panState.startScrollLeft = surface.scrollLeft
+  panState.startScrollTop = surface.scrollTop
 
   surface.style.cursor = 'grabbing'
   surface.setPointerCapture?.(event.pointerId)
@@ -213,9 +210,18 @@ function onPointerMove(event: PointerEvent) {
     return
   }
 
-  panState.x = event.clientX - panState.startX
-  panState.y = event.clientY - panState.startY
-  clampPan()
+  const surface = panSurface.value
+  if (!surface) {
+    return
+  }
+
+  const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
+  const deltaX = event.clientX - padLeft - panState.startX
+  const deltaY = event.clientY - padTop - panState.startY
+
+  surface.scrollLeft = panState.startScrollLeft - deltaX
+  surface.scrollTop = panState.startScrollTop - deltaY
+  clampScroll()
 }
 
 function onPointerUp(event: PointerEvent) {
@@ -230,7 +236,7 @@ function onPointerUp(event: PointerEvent) {
     surface.releasePointerCapture(event.pointerId)
   }
 
-  clampPan()
+  clampScroll()
 }
 
 function onWheel(event: WheelEvent) {
@@ -239,33 +245,31 @@ function onWheel(event: WheelEvent) {
 
   const previousZoom = zoom.value
   const zoomDelta = Math.exp(-event.deltaY * 0.001)
-  let nextZoom = clamp(previousZoom * zoomDelta, MIN_ZOOM, MAX_ZOOM)
+  const nextZoom = clamp(previousZoom * zoomDelta, MIN_ZOOM, MAX_ZOOM)
   if (nextZoom === previousZoom) return
 
   const rect = surface.getBoundingClientRect()
-  const { padLeft, padTop } = getInnerViewportSize()
-  const cursorX = event.clientX - rect.left
-  const cursorY = event.clientY - rect.top
-
-  const offsetX = cursorX - panState.x
-  const offsetY = cursorY - panState.y
+  const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
+  const pointerOffsetX = event.clientX - rect.left - padLeft
+  const pointerOffsetY = event.clientY - rect.top - padTop
+  const contentOffsetX = surface.scrollLeft + pointerOffsetX
+  const contentOffsetY = surface.scrollTop + pointerOffsetY
 
   const scaleRatio = nextZoom / previousZoom
-  panState.x = cursorX - offsetX * scaleRatio
-  panState.y = cursorY - offsetY * scaleRatio
+  const nextScrollLeft = contentOffsetX * scaleRatio - pointerOffsetX
+  const nextScrollTop = contentOffsetY * scaleRatio - pointerOffsetY
 
   zoom.value = nextZoom
-  clampPan()
+  surface.scrollLeft = nextScrollLeft
+  surface.scrollTop = nextScrollTop
+  clampScroll()
 }
 
 function setupObservers() {
   const surface = panSurface.value
   if (surface && !surfaceObserver) {
     surfaceObserver = new ResizeObserver(() => {
-      const { width, height } = getInnerViewportSize()
-      viewportSize.width = width
-      viewportSize.height = height
-      clampPan()
+      clampScroll()
     })
 
     surfaceObserver.observe(surface)
@@ -286,12 +290,14 @@ watch(
     await nextTick()
     setupSvgLinks()
     updateContentSize()
-    clampPan()
+    clampScroll()
   }
 )
 
 watch(zoom, () => {
-  clampPan()
+  nextTick(() => {
+    clampScroll()
+  })
 })
 
 onMounted(async () => {
@@ -303,7 +309,7 @@ onMounted(async () => {
   if (surface) {
     surface.style.cursor = 'grab'
   }
-  clampPan()
+  clampScroll()
 })
 
 onBeforeUnmount(() => {
@@ -319,15 +325,13 @@ onBeforeUnmount(() => {
 .ns-flow {
   display: flex;
   position: relative;
-  overflow: hidden;
-  touch-action: none;
+  overflow: auto;
+  touch-action: pan-x pan-y;
   /* crucial for touch/pen */
 }
 
 .ns-flow__content {
   width: 100%;
-  transform-origin: top left;
-  will-change: transform;
 }
 
 .ns-flow__svg {
