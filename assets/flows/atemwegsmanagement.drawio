@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
   <diagram name="Seite-1" id="Ja2IVdMRkBDOTgbCthu4">
-    <mxGraphModel dx="758" dy="473" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="360" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="398" dy="473" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="360" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -34,7 +34,7 @@
           </mxGeometry>
         </mxCell>
         <UserObject label="Atemwegsverlegung?" id="yHWT7IU4pxUufP5rQbJ7-2">
-          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=default;" vertex="1" parent="1">
+          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
             <mxGeometry y="60" width="160" height="40" as="geometry" />
           </mxCell>
         </UserObject>
@@ -47,13 +47,13 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <UserObject label="A-Problem" link="/tabs/lib/list/bpr-list/bpr-aproblem" id="yHWT7IU4pxUufP5rQbJ7-3">
+        <UserObject label="Fremdkörperentfernung" link="/tabs/lib/list/bpr-list/bpr-aproblem" id="yHWT7IU4pxUufP5rQbJ7-3">
           <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.0625;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;glass=0;rounded=0;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1" vertex="1" parent="1">
             <mxGeometry x="200" y="60" width="160" height="40" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Einfache Maßnahmen&lt;br&gt;erfolgreich?" link="/?action=basic-treatment" id="yHWT7IU4pxUufP5rQbJ7-45">
-          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=4;textShadow=0;labelBorderColor=none;html=1;horizontal=1;" vertex="1" parent="1">
+          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;textShadow=0;labelBorderColor=none;html=1;horizontal=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
             <mxGeometry y="140" width="160" height="40" as="geometry" />
           </mxCell>
         </UserObject>
@@ -92,7 +92,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <UserObject label="Ventilation/Oxygenierung&lt;div&gt;möglich?&lt;/div&gt;" id="yHWT7IU4pxUufP5rQbJ7-62">
-          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=default;" vertex="1" parent="1">
+          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
             <mxGeometry x="40" y="270" width="160" height="40" as="geometry" />
           </mxCell>
         </UserObject>
@@ -127,7 +127,7 @@
           </mxGeometry>
         </mxCell>
         <UserObject label="Maskenbeatmung möglich?" id="yHWT7IU4pxUufP5rQbJ7-68">
-          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=default;" vertex="1" parent="1">
+          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
             <mxGeometry x="40" y="400" width="160" height="40" as="geometry" />
           </mxCell>
         </UserObject>
@@ -157,7 +157,7 @@
           </mxGeometry>
         </mxCell>
         <UserObject label="Schutzreflexe vorhanden?" id="yHWT7IU4pxUufP5rQbJ7-73">
-          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=default;" vertex="1" parent="1">
+          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
             <mxGeometry x="40" y="480" width="160" height="40" as="geometry" />
           </mxCell>
         </UserObject>
@@ -184,18 +184,18 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint y="240" as="targetPoint" />
             <Array as="points">
-              <mxPoint y="640" />
-              <mxPoint y="235" />
+              <mxPoint x="10" y="640" />
+              <mxPoint x="10" y="235" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="yHWT7IU4pxUufP5rQbJ7-82" value="Nein" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBorderColor=none;labelBackgroundColor=default;fillColor=none;gradientColor=none;" vertex="1" connectable="0" parent="yHWT7IU4pxUufP5rQbJ7-81">
           <mxGeometry x="-0.9017" y="-1" relative="1" as="geometry">
-            <mxPoint x="3" as="offset" />
+            <mxPoint x="8" as="offset" />
           </mxGeometry>
         </mxCell>
         <UserObject label="Ventilation/Oxygenierung&lt;div&gt;möglich?&lt;/div&gt;" id="yHWT7IU4pxUufP5rQbJ7-79">
-          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=default;" vertex="1" parent="1">
+          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=10;fontStyle=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
             <mxGeometry x="40" y="620" width="160" height="40" as="geometry" />
           </mxCell>
         </UserObject>
