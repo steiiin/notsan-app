@@ -1,107 +1,100 @@
 <template>
-  <div
-    ref="panSurface"
-    class="ns-flow"
-    @pointerdown="onPointerDown"
+  <div ref="panSurface" class="ns-flow"
+    @pointerdown="onPointerDown" @pointerup="onPointerUp" @pointerleave="onPointerUp" @pointercancel="onPointerUp"
     @pointermove="onPointerMove"
-    @pointerup="onPointerUp"
-    @pointercancel="onPointerUp"
-    @pointerleave="onPointerUp"
-    @wheel.prevent="onWheel"
-  >
+    @wheel.prevent="onWheel">
     <div class="ns-flow__content" :style="contentStyle">
-      <div ref="svgHost" class="ns-flow__svg" v-html="svgMarkup" />
+      <div ref="svgHost" class="ns-flow__svg" v-html="svg" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { clamp } from '@/service/math';
 import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
+const router = useRouter()
+
 const props = defineProps<{
-  svgMarkup: string
+  svg: string
 }>()
 
 const emit = defineEmits<{
   (event: 'action', key: string): void
 }>()
 
-const router = useRouter()
+// #region pan/move
 
-const MIN_ZOOM = 1
-const MAX_ZOOM = 2
+  const MIN_ZOOM = 1
+  const MAX_ZOOM = 2
 
-const panSurface = ref<HTMLDivElement | null>(null)
-const svgHost = ref<HTMLDivElement | null>(null)
+  const panSurface = ref<HTMLDivElement | null>(null)
+  const svgHost = ref<HTMLDivElement | null>(null)
 
-const viewportSize = reactive({ width: 0, height: 0 })
-const contentSize = reactive({ width: 0, height: 0 })
+  const viewportSize = reactive({ width: 0, height: 0 })
+  const contentSize = reactive({ width: 0, height: 0 })
 
-const zoom = ref(1)
+  const zoom = ref(1)
 
-const panState = reactive({
-  x: 0,
-  y: 0,
-  pointerId: null as number | null,
-  startX: 0,
-  startY: 0,
-})
+  const panState = reactive({
+    x: 0,
+    y: 0,
+    pointerId: null as number | null,
+    startX: 0,
+    startY: 0,
+  })
 
-const contentStyle = computed(() => ({
-  transform: `translate3d(${panState.x}px, ${panState.y}px, 0) scale(${zoom.value})`,
-}))
+  const contentStyle = computed(() => ({
+    transform: `translate3d(${panState.x}px, ${panState.y}px, 0) scale(${zoom.value})`,
+  }))
 
-const svgLinkListeners: Array<{ element: Element; handler: (event: Event) => void }> = []
+  const svgLinkListeners: Array<{ element: Element; handler: (event: Event) => void }> = []
 
-let surfaceObserver: ResizeObserver | null = null
-let contentObserver: ResizeObserver | null = null
+  let surfaceObserver: ResizeObserver | null = null
+  let contentObserver: ResizeObserver | null = null
 
-function clamp(value: number, min: number, max: number) {
-  return Math.max(min, Math.min(max, value))
-}
+  function clampPan() {
+    const scaledWidth = contentSize.width * zoom.value
+    const scaledHeight = contentSize.height * zoom.value
 
-function clampPan() {
-  const scaledWidth = contentSize.width * zoom.value
-  const scaledHeight = contentSize.height * zoom.value
+    const availableWidth = viewportSize.width
+    const availableHeight = viewportSize.height
 
-  const availableWidth = viewportSize.width
-  const availableHeight = viewportSize.height
+    if (scaledWidth <= availableWidth) {
+      panState.x = (availableWidth - scaledWidth) / 2
+    } else {
+      const minX = availableWidth - scaledWidth
+      const maxX = 0
+      panState.x = clamp(panState.x, minX, maxX)
+    }
 
-  if (scaledWidth <= availableWidth) {
-    panState.x = (availableWidth - scaledWidth) / 2
-  } else {
-    const minX = availableWidth - scaledWidth
-    const maxX = 0
-    panState.x = clamp(panState.x, minX, maxX)
+    if (scaledHeight <= availableHeight) {
+      panState.y = (availableHeight - scaledHeight) / 2
+    } else {
+      const minY = availableHeight - scaledHeight
+      const maxY = 0
+      panState.y = clamp(panState.y, minY, maxY)
+    }
   }
 
-  if (scaledHeight <= availableHeight) {
-    panState.y = (availableHeight - scaledHeight) / 2
-  } else {
-    const minY = availableHeight - scaledHeight
-    const maxY = 0
-    panState.y = clamp(panState.y, minY, maxY)
-  }
-}
-
-function cleanupSvgLinkListeners() {
-  while (svgLinkListeners.length) {
-    const { element, handler } = svgLinkListeners.pop()!
-    element.removeEventListener('click', handler)
-  }
-}
-
-function updateContentSize() {
-  const host = svgHost.value
-  if (!host) {
-    return
+  function cleanupSvgLinkListeners() {
+    while (svgLinkListeners.length) {
+      const { element, handler } = svgLinkListeners.pop()!
+      element.removeEventListener('click', handler)
+    }
   }
 
-  contentSize.width = host.clientWidth
-  contentSize.height = host.clientHeight
-  clampPan()
-}
+  function updateContentSize() {
+    const host = svgHost.value
+    if (!host) {
+      return
+    }
+
+    contentSize.width = host.clientWidth
+    contentSize.height = host.clientHeight
+    clampPan()
+  }
 
 function normalizeHref(rawHref: string): URL | null {
   if (!rawHref) {
@@ -111,9 +104,6 @@ function normalizeHref(rawHref: string): URL | null {
   let href = rawHref.trim()
   if (href.startsWith('file:///')) {
     href = href.slice('file://'.length)
-  }
-  if (!href.startsWith('/')) {
-    href = `/${href.replace(/^\/*/, '')}`
   }
 
   try {
@@ -265,7 +255,7 @@ function setupObservers() {
 }
 
 watch(
-  () => props.svgMarkup,
+  () => props.svg,
   async () => {
     await nextTick()
     setupSvgLinks()
@@ -301,13 +291,8 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .ns-flow {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  touch-action: none;
-  overflow: hidden;
-  background-color: transparent;
-  cursor: grab;
+  display: flex;
+  padding: calc(0.5 * var(--ns-card-padding));
 }
 
 .ns-flow__content {

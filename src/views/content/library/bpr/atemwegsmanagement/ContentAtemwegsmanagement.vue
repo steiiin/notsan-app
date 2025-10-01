@@ -1,14 +1,10 @@
 <template>
-  <div id="ns-content-bg" class="flow-page">
-    <NsFlow class="flow-surface" :svg-markup="svgMarkup" @action="handleAction" />
-  </div>
+  <ns-flow @action="handleAction" :svg="flowSvg"></ns-flow>
 </template>
 
 <script setup lang="ts">
 import NsFlow from '@/components/library/NsFlow.vue'
 import flowSvg from './flow.svg?raw'
-
-const svgMarkup = flowSvg
 
 function handleAction(key: string) {
   // Placeholder for action handling logic
@@ -18,18 +14,4 @@ function handleAction(key: string) {
 </script>
 
 <style scoped>
-.flow-page {
-  display: flex;
-  flex: 1 1 auto;
-  height: 100%;
-  min-height: 100vh;
-}
-
-.flow-surface {
-  flex: 1 1 auto;
-  position: relative;
-  overflow: hidden;
-  touch-action: none;
-  background-color: var(--ion-background-color, #fff);
-}
 </style>
