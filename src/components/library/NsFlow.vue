@@ -16,7 +16,6 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-// #region Props & Emits
 const props = defineProps<{
   svg: string
 }>()
@@ -24,14 +23,12 @@ const props = defineProps<{
 const emit = defineEmits<{
   (event: 'action', key: string): void
 }>()
-// #endregion
 
-// #region Constants
 const MIN_ZOOM = 0.5
 const MAX_ZOOM = 1.5
-// #endregion
 
 // #region State
+
 const panSurface = ref<HTMLDivElement | null>(null)
 const svgHost = ref<HTMLDivElement | null>(null)
 
@@ -55,13 +52,16 @@ const pinch = reactive({
   startScrollLeft: 0,
   startScrollTop: 0,
 })
+
 // #endregion
 
 // #region Computed
+
 const contentStyle = computed(() => ({
   width: `${contentSize.width * zoom.value}px`,
   height: `${contentSize.height * zoom.value}px`,
 }))
+
 // #endregion
 
 // #region Internal References
