@@ -1,8 +1,10 @@
 <template>
-  <div ref="panSurface" class="ns-flow" @pointerdown="onPointerDown" @pointerup="onPointerUp"
-    @pointerleave="onPointerUp" @pointercancel="onPointerUp" @pointermove="onPointerMove" @wheel.prevent="onWheel">
-    <div class="ns-flow__content" :style="contentStyle">
-      <div ref="svgHost" class="ns-flow__svg" v-html="svg" />
+  <div class="ns-flow__padding">
+    <div ref="panSurface" class="ns-flow" @pointerdown="onPointerDown" @pointerup="endPointer"
+      @pointercancel="endPointer" @pointermove="onPointerMove" @wheel.prevent="onWheel">
+      <div class="ns-flow__content" :style="contentStyle">
+        <div ref="svgHost" class="ns-flow__svg" v-html="svg" />
+      </div>
     </div>
   </div>
 </template>
@@ -89,21 +91,28 @@ function getSvgContentSize(): { width: number; height: number } | null {
   const svgEl = host?.querySelector('svg') as SVGSVGElement | null
   if (!svgEl) return null
 
-  // Prefer viewBox, fall back to bounding box if needed
+  // 1) viewBox first
   const vb = svgEl.viewBox && svgEl.viewBox.baseVal
-  if (vb && (vb.width > 0) && (vb.height > 0)) {
+  if (vb && vb.width > 0 && vb.height > 0) {
     return { width: vb.width, height: vb.height }
   }
 
-  // Fallback: getBBox (requires the SVG to be in the DOM)
+  // 2) width/height attributes (numbers or with units)
+  const wAttr = svgEl.getAttribute('width')
+  const hAttr = svgEl.getAttribute('height')
+  const wNum = wAttr ? parseFloat(wAttr) : NaN
+  const hNum = hAttr ? parseFloat(hAttr) : NaN
+  if (isFinite(wNum) && isFinite(hNum) && wNum > 0 && hNum > 0) {
+    return { width: wNum, height: hNum }
+  }
+
+  // 3) last resort: getBBox (can throw if SVG not fully laid out)
   try {
     const bbox = svgEl.getBBox()
     if (bbox.width > 0 && bbox.height > 0) {
       return { width: bbox.width, height: bbox.height }
     }
-  } catch (_error) {
-    /* ignore */
-  }
+  } catch {}
   return null
 }
 
@@ -137,22 +146,24 @@ function normalizeHref(rawHref: string): URL | null {
 
 function setupSvgLinks() {
   cleanupSvgLinkListeners()
-
   const host = svgHost.value
-  if (!host) {
-    return
-  }
+  if (!host) return
 
-  const svgElement = host.querySelector('svg')
-  if (svgElement instanceof SVGElement) {
-    svgElement.removeAttribute('width')
-    svgElement.removeAttribute('height')
-    svgElement.setAttribute('preserveAspectRatio', 'xMidYMid meet')
-    svgElement.style.width = '100%'
-    svgElement.style.height = 'auto'
-    svgElement.style.display = 'block'
-  }
+  const svgEl = host.querySelector('svg') as SVGSVGElement | null
+  if (!svgEl) return
 
+  // IMPORTANT: measure FIRST
+  updateContentSize()
+
+  // THEN make it responsive
+  svgEl.removeAttribute('width')
+  svgEl.removeAttribute('height')
+  svgEl.setAttribute('preserveAspectRatio', 'xMidYMid meet')
+  svgEl.style.width = '100%'
+  svgEl.style.height = 'auto'
+  svgEl.style.display = 'block'
+
+  // link wiring unchanged...
   const links = host.querySelectorAll('a')
   links.forEach(link => {
     const handler = (event: Event) => {
@@ -160,20 +171,14 @@ function setupSvgLinks() {
       event.stopPropagation()
       const rawHref = link.getAttribute('xlink:href') || link.getAttribute('href')
       const url = rawHref ? normalizeHref(rawHref) : null
-
-      if (!url) {
-        return
-      }
+      if (!url) return
 
       const action = url.searchParams.get('action')
       if (action) {
         emit('action', action)
         return
       }
-
-      if (url.pathname) {
-        router.push(`${url.pathname}${url.search}`)
-      }
+      if (url.pathname) router.push(`${url.pathname}${url.search}`)
     }
     link.addEventListener('click', handler)
     svgLinkListeners.push({ element: link, handler })
@@ -181,59 +186,118 @@ function setupSvgLinks() {
 }
 
 function onPointerDown(event: PointerEvent) {
-  if (event.button !== 0) {
-    return
-  }
-
   const surface = panSurface.value
-  if (!surface) {
+  if (!surface) return
+
+  // Mouse drag-to-scroll (unchanged)
+  if (event.pointerType === 'mouse') {
+    if (event.button !== 0) return
+    panState.pointerId = event.pointerId
+    const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
+    panState.startX = event.clientX - padLeft
+    panState.startY = event.clientY - padTop
+    panState.startScrollLeft = surface.scrollLeft
+    panState.startScrollTop = surface.scrollTop
+    surface.style.cursor = 'grabbing'
+    surface.setPointerCapture?.(event.pointerId)
     return
   }
 
-  if (event.pointerType !== 'mouse') {
-    return
-  }
-
-  panState.pointerId = event.pointerId
+  // Touch/pen — track positions but DO NOT capture
+  const rect = surface.getBoundingClientRect()
   const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
-  panState.startX = event.clientX - padLeft
-  panState.startY = event.clientY - padTop
-  panState.startScrollLeft = surface.scrollLeft
-  panState.startScrollTop = surface.scrollTop
+  activePointers.set(event.pointerId, {
+    x: event.clientX - rect.left - padLeft,
+    y: event.clientY - rect.top - padTop,
+  })
 
-  surface.style.cursor = 'grabbing'
-  surface.setPointerCapture?.(event.pointerId)
+  if (activePointers.size === 2) {
+    // enter pinch mode: disable native handling temporarily
+    surface.style.touchAction = 'none'
+
+    const [p1, p2] = [...activePointers.values()]
+    pinch.isPinching = true
+    pinch.initialZoom = zoom.value
+    pinch.startDistance = dist(p1, p2)
+    pinch.startScrollLeft = surface.scrollLeft
+    pinch.startScrollTop = surface.scrollTop
+  }
 }
 
 function onPointerMove(event: PointerEvent) {
-  if (panState.pointerId !== event.pointerId) {
-    return
-  }
-
   const surface = panSurface.value
-  if (!surface) {
+  if (!surface) return
+
+  const rect = surface.getBoundingClientRect()
+  const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
+
+  // Update tracked touch/pen positions
+  if (event.pointerType !== 'mouse' && activePointers.has(event.pointerId)) {
+    activePointers.set(event.pointerId, {
+      x: event.clientX - rect.left - padLeft,
+      y: event.clientY - rect.top - padTop,
+    })
+  }
+
+  // Pinch-zoom only (two fingers). Single-finger touch: let native scroll do it.
+  if (pinch.isPinching && activePointers.size >= 2) {
+    const [p1, p2] = [...activePointers.values()]
+    const currentDistance = Math.max(1, dist(p1, p2))
+    const scale = currentDistance / Math.max(1, pinch.startDistance)
+    const prev = zoom.value
+    const next = clamp(pinch.initialZoom * scale, MIN_ZOOM, MAX_ZOOM)
+    if (next !== prev) {
+      const mid = midpoint(p1, p2)
+      const contentOffsetX = surface.scrollLeft + mid.x
+      const contentOffsetY = surface.scrollTop + mid.y
+      const ratio = next / prev
+      zoom.value = next
+      surface.scrollLeft = contentOffsetX * ratio - mid.x
+      surface.scrollTop  = contentOffsetY * ratio - mid.y
+      clampScroll()
+    }
     return
   }
 
-  const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
-  const deltaX = event.clientX - padLeft - panState.startX
-  const deltaY = event.clientY - padTop - panState.startY
-
-  surface.scrollLeft = panState.startScrollLeft - deltaX
-  surface.scrollTop = panState.startScrollTop - deltaY
-  clampScroll()
+  // Mouse drag (unchanged)
+  if (event.pointerType === 'mouse' && panState.pointerId === event.pointerId) {
+    const deltaX = event.clientX - padLeft - panState.startX
+    const deltaY = event.clientY - padTop - panState.startY
+    surface.scrollLeft = panState.startScrollLeft - deltaX
+    surface.scrollTop = panState.startScrollTop - deltaY
+    clampScroll()
+  }
 }
 
-function onPointerUp(event: PointerEvent) {
+function endPointer(event: PointerEvent) {
   const surface = panSurface.value
-  if (panState.pointerId !== event.pointerId || !surface) {
+  if (!surface) return
+
+  if (event.pointerType === 'mouse') {
+    if (panState.pointerId === event.pointerId) {
+      panState.pointerId = null
+      surface.style.cursor = 'grab'
+      if (surface.hasPointerCapture?.(event.pointerId)) {
+        surface.releasePointerCapture(event.pointerId)
+      }
+    }
+    clampScroll()
     return
   }
 
-  panState.pointerId = null
-  surface.style.cursor = 'grab'
-  if (surface.hasPointerCapture?.(event.pointerId)) {
-    surface.releasePointerCapture(event.pointerId)
+  // Touch/pen end
+  if (activePointers.has(event.pointerId)) {
+    activePointers.delete(event.pointerId)
+  }
+
+  // Leaving pinch mode? Restore native scrolling.
+  if (pinch.isPinching && activePointers.size < 2) {
+    pinch.isPinching = false
+    surface.style.touchAction = 'pan-x pan-y'
+  }
+
+  if (panState.pointerId === event.pointerId) {
+    panState.pointerId = null
   }
 
   clampScroll()
@@ -263,6 +327,25 @@ function onWheel(event: WheelEvent) {
   surface.scrollLeft = nextScrollLeft
   surface.scrollTop = nextScrollTop
   clampScroll()
+}
+
+const activePointers = new Map<number, { x: number; y: number }>()
+
+const pinch = reactive({
+  isPinching: false,
+  initialZoom: 1,
+  startDistance: 0,
+  startScrollLeft: 0,
+  startScrollTop: 0,
+})
+
+function dist(a: {x:number;y:number}, b:{x:number;y:number}) {
+  const dx = a.x - b.x, dy = a.y - b.y
+  return Math.hypot(dx, dy)
+}
+
+function midpoint(a:{x:number;y:number}, b:{x:number;y:number}) {
+  return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }
 }
 
 function setupObservers() {
@@ -323,19 +406,21 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .ns-flow {
-  display: flex;
   position: relative;
   overflow: auto;
-  touch-action: pan-x pan-y;
-  /* crucial for touch/pen */
+  touch-action: pan-y pan-x;
 }
 
+.ns-flow__padding {
+  padding: calc(0.5 * var(--ns-card-padding));
+}
 .ns-flow__content {
-  width: 100%;
+  display: block;
 }
 
 .ns-flow__svg {
   width: 100%;
   height: auto;
+  display: block;
 }
 </style>
