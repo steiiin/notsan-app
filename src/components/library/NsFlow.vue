@@ -1,7 +1,7 @@
 <template>
   <div class="ns-flow__padding">
     <div ref="panSurface" class="ns-flow" @pointerdown="onPointerDown" @pointerup="endPointer"
-      @pointercancel="endPointer" @pointermove="onPointerMove" @wheel.prevent="onWheel">
+      @pointercancel="endPointer" @pointermove="onPointerMove">
       <div class="ns-flow__content" :style="contentStyle">
         <div ref="svgHost" class="ns-flow__svg" v-html="svg" />
       </div>
@@ -10,6 +10,7 @@
 </template>
 
 <script setup lang="ts">
+import { IonButton, IonFab, IonFabButton, IonIcon } from '@ionic/vue';
 import { clamp } from '@/service/math';
 import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
@@ -26,8 +27,8 @@ const emit = defineEmits<{
 
 // #region pan/move
 
-const MIN_ZOOM = 1
-const MAX_ZOOM = 2
+const MIN_ZOOM = 0.5
+const MAX_ZOOM = 1.5
 
 const panSurface = ref<HTMLDivElement | null>(null)
 const svgHost = ref<HTMLDivElement | null>(null)
@@ -116,6 +117,32 @@ function getSvgContentSize(): { width: number; height: number } | null {
   return null
 }
 
+let didInitialFit = false
+function fitToViewport({ center = true } = {}) {
+  const surface = panSurface.value
+  if (!surface || !contentSize.width || !contentSize.height) return
+
+  const { width: vw, height: vh } = getInnerViewportSize()
+  if (vw <= 0 || vh <= 0) return
+
+  // Compute the scale needed to fully fit inside viewport
+  const scaleToFit = vw / contentSize.width
+
+  // Allow upscaling above 1, but still respect MAX_ZOOM
+  const nextZoom = clamp(scaleToFit, MIN_ZOOM, MAX_ZOOM)
+
+  if (zoom.value !== nextZoom) zoom.value = nextZoom
+
+  if (center) {
+    const contentPxW = contentSize.width * zoom.value
+    const contentPxH = contentSize.height * zoom.value
+    surface.scrollLeft = Math.max(0, (contentPxW - vw) / 2)
+    surface.scrollTop  = Math.max(0, (contentPxH - vh) / 2)
+    clampScroll()
+  }
+}
+
+
 function updateContentSize() {
   const size = getSvgContentSize()
   if (!size) return
@@ -123,6 +150,8 @@ function updateContentSize() {
   contentSize.height = size.height
   nextTick(() => {
     clampScroll()
+    // Fit right after measuring (only at startup / fresh svg)
+    fitToViewport()
   })
 }
 
@@ -188,20 +217,6 @@ function setupSvgLinks() {
 function onPointerDown(event: PointerEvent) {
   const surface = panSurface.value
   if (!surface) return
-
-  // Mouse drag-to-scroll (unchanged)
-  if (event.pointerType === 'mouse') {
-    if (event.button !== 0) return
-    panState.pointerId = event.pointerId
-    const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
-    panState.startX = event.clientX - padLeft
-    panState.startY = event.clientY - padTop
-    panState.startScrollLeft = surface.scrollLeft
-    panState.startScrollTop = surface.scrollTop
-    surface.style.cursor = 'grabbing'
-    surface.setPointerCapture?.(event.pointerId)
-    return
-  }
 
   // Touch/pen — track positions but DO NOT capture
   const rect = surface.getBoundingClientRect()
@@ -273,18 +288,6 @@ function endPointer(event: PointerEvent) {
   const surface = panSurface.value
   if (!surface) return
 
-  if (event.pointerType === 'mouse') {
-    if (panState.pointerId === event.pointerId) {
-      panState.pointerId = null
-      surface.style.cursor = 'grab'
-      if (surface.hasPointerCapture?.(event.pointerId)) {
-        surface.releasePointerCapture(event.pointerId)
-      }
-    }
-    clampScroll()
-    return
-  }
-
   // Touch/pen end
   if (activePointers.has(event.pointerId)) {
     activePointers.delete(event.pointerId)
@@ -300,32 +303,6 @@ function endPointer(event: PointerEvent) {
     panState.pointerId = null
   }
 
-  clampScroll()
-}
-
-function onWheel(event: WheelEvent) {
-  const surface = panSurface.value
-  if (!surface) return
-
-  const previousZoom = zoom.value
-  const zoomDelta = Math.exp(-event.deltaY * 0.001)
-  const nextZoom = clamp(previousZoom * zoomDelta, MIN_ZOOM, MAX_ZOOM)
-  if (nextZoom === previousZoom) return
-
-  const rect = surface.getBoundingClientRect()
-  const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
-  const pointerOffsetX = event.clientX - rect.left - padLeft
-  const pointerOffsetY = event.clientY - rect.top - padTop
-  const contentOffsetX = surface.scrollLeft + pointerOffsetX
-  const contentOffsetY = surface.scrollTop + pointerOffsetY
-
-  const scaleRatio = nextZoom / previousZoom
-  const nextScrollLeft = contentOffsetX * scaleRatio - pointerOffsetX
-  const nextScrollTop = contentOffsetY * scaleRatio - pointerOffsetY
-
-  zoom.value = nextZoom
-  surface.scrollLeft = nextScrollLeft
-  surface.scrollTop = nextScrollTop
   clampScroll()
 }
 
@@ -352,9 +329,22 @@ function setupObservers() {
   const surface = panSurface.value
   if (surface && !surfaceObserver) {
     surfaceObserver = new ResizeObserver(() => {
+      // viewport changed; let’s clamp scroll and (maybe) fit
       clampScroll()
-    })
 
+      const { width: vw, height: vh } = getInnerViewportSize()
+      if (vw > 0 && vh > 0) {
+        // First time we have a real size → do initial fit
+        if (!didInitialFit) {
+          didInitialFit = true
+          // rAF to ensure DOM has applied any width/height we set
+          requestAnimationFrame(() => fitToViewport())
+        } else {
+            requestAnimationFrame(() => fitToViewport())
+
+        }
+      }
+    })
     surfaceObserver.observe(surface)
   }
 
@@ -362,18 +352,19 @@ function setupObservers() {
   if (host && !contentObserver) {
     contentObserver = new ResizeObserver(() => {
       updateContentSize()
+      // Content can change size (new SVG) → allow a fresh initial fit
+      didInitialFit = false
     })
     contentObserver.observe(host)
   }
 }
 
+
 watch(
   () => props.svg,
   async () => {
     await nextTick()
-    setupSvgLinks()
-    updateContentSize()
-    clampScroll()
+    setupSvgLinks()   // measures first, then makes responsive
   }
 )
 
@@ -383,17 +374,16 @@ watch(zoom, () => {
   })
 })
 
+
 onMounted(async () => {
   await nextTick()
   setupSvgLinks()
   setupObservers()
   updateContentSize()
-  const surface = panSurface.value
-  if (surface) {
-    surface.style.cursor = 'grab'
-  }
-  clampScroll()
+  // In case observers/layout were late:
+  nextTick(() => fitToViewport())
 })
+
 
 onBeforeUnmount(() => {
   cleanupSvgLinkListeners()
