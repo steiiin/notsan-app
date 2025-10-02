@@ -10,13 +10,13 @@
 </template>
 
 <script setup lang="ts">
-import { IonButton, IonFab, IonFabButton, IonIcon } from '@ionic/vue';
-import { clamp } from '@/service/math';
+import { clamp } from '@/service/math'
 import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
+// #region Props & Emits
 const props = defineProps<{
   svg: string
 }>()
@@ -24,17 +24,18 @@ const props = defineProps<{
 const emit = defineEmits<{
   (event: 'action', key: string): void
 }>()
+// #endregion
 
-// #region pan/move
-
+// #region Constants
 const MIN_ZOOM = 0.5
 const MAX_ZOOM = 1.5
+// #endregion
 
+// #region State
 const panSurface = ref<HTMLDivElement | null>(null)
 const svgHost = ref<HTMLDivElement | null>(null)
 
 const contentSize = reactive({ width: 0, height: 0 })
-
 const zoom = ref(1)
 
 const panState = reactive({
@@ -45,31 +46,53 @@ const panState = reactive({
   startScrollTop: 0,
 })
 
+const activePointers = new Map<number, { x: number; y: number }>()
+
+const pinch = reactive({
+  isPinching: false,
+  initialZoom: 1,
+  startDistance: 0,
+  startScrollLeft: 0,
+  startScrollTop: 0,
+})
+// #endregion
+
+// #region Computed
 const contentStyle = computed(() => ({
   width: `${contentSize.width * zoom.value}px`,
   height: `${contentSize.height * zoom.value}px`,
 }))
+// #endregion
 
+// #region Internal References
 const svgLinkListeners: Array<{ element: Element; handler: (event: Event) => void }> = []
-
 let surfaceObserver: ResizeObserver | null = null
 let contentObserver: ResizeObserver | null = null
-function getInnerViewportSize() {
-  const surface = panSurface.value
-  if (!surface) return { width: 0, height: 0 }
+let didInitialFit = false
+// #endregion
 
-  const cs = getComputedStyle(surface)
-  const padX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight)
-  const padY = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)
+// #region Helpers
+const getInnerViewportSize = () => {
+  const surface = panSurface.value
+  if (!surface) {
+    return { width: 0, height: 0, padLeft: 0, padTop: 0 }
+  }
+
+  const styles = getComputedStyle(surface)
+  const padLeft = parseFloat(styles.paddingLeft)
+  const padRight = parseFloat(styles.paddingRight)
+  const padTop = parseFloat(styles.paddingTop)
+  const padBottom = parseFloat(styles.paddingBottom)
 
   return {
-    width: surface.clientWidth - padX,
-    height: surface.clientHeight - padY,
-    padLeft: parseFloat(cs.paddingLeft),
-    padTop: parseFloat(cs.paddingTop),
+    width: surface.clientWidth - padLeft - padRight,
+    height: surface.clientHeight - padTop - padBottom,
+    padLeft,
+    padTop,
   }
 }
-function clampScroll() {
+
+const clampScroll = () => {
   const surface = panSurface.value
   if (!surface) return
 
@@ -80,85 +103,81 @@ function clampScroll() {
   surface.scrollTop = clamp(surface.scrollTop, 0, maxScrollTop)
 }
 
-function cleanupSvgLinkListeners() {
+const cleanupSvgLinkListeners = () => {
   while (svgLinkListeners.length) {
     const { element, handler } = svgLinkListeners.pop()!
     element.removeEventListener('click', handler)
   }
 }
 
-function getSvgContentSize(): { width: number; height: number } | null {
+const getSvgContentSize = (): { width: number; height: number } | null => {
   const host = svgHost.value
   const svgEl = host?.querySelector('svg') as SVGSVGElement | null
   if (!svgEl) return null
 
-  // 1) viewBox first
-  const vb = svgEl.viewBox && svgEl.viewBox.baseVal
-  if (vb && vb.width > 0 && vb.height > 0) {
-    return { width: vb.width, height: vb.height }
+  const viewBox = svgEl.viewBox?.baseVal
+  if (viewBox && viewBox.width > 0 && viewBox.height > 0) {
+    return { width: viewBox.width, height: viewBox.height }
   }
 
-  // 2) width/height attributes (numbers or with units)
-  const wAttr = svgEl.getAttribute('width')
-  const hAttr = svgEl.getAttribute('height')
-  const wNum = wAttr ? parseFloat(wAttr) : NaN
-  const hNum = hAttr ? parseFloat(hAttr) : NaN
-  if (isFinite(wNum) && isFinite(hNum) && wNum > 0 && hNum > 0) {
-    return { width: wNum, height: hNum }
+  const widthAttr = svgEl.getAttribute('width')
+  const heightAttr = svgEl.getAttribute('height')
+  const widthValue = widthAttr ? parseFloat(widthAttr) : NaN
+  const heightValue = heightAttr ? parseFloat(heightAttr) : NaN
+  if (isFinite(widthValue) && isFinite(heightValue) && widthValue > 0 && heightValue > 0) {
+    return { width: widthValue, height: heightValue }
   }
 
-  // 3) last resort: getBBox (can throw if SVG not fully laid out)
   try {
     const bbox = svgEl.getBBox()
     if (bbox.width > 0 && bbox.height > 0) {
       return { width: bbox.width, height: bbox.height }
     }
-  } catch {}
+  } catch (error) {
+    console.warn('Failed to read SVG bounding box', error)
+  }
+
   return null
 }
 
-let didInitialFit = false
-function fitToViewport({ center = true } = {}) {
+const fitToViewport = ({ center = true } = {}) => {
   const surface = panSurface.value
   if (!surface || !contentSize.width || !contentSize.height) return
 
-  const { width: vw, height: vh } = getInnerViewportSize()
-  if (vw <= 0 || vh <= 0) return
+  const { width: viewportWidth, height: viewportHeight } = getInnerViewportSize()
+  if (viewportWidth <= 0 || viewportHeight <= 0) return
 
-  // Compute the scale needed to fully fit inside viewport
-  const scaleToFit = vw / contentSize.width
-
-  // Allow upscaling above 1, but still respect MAX_ZOOM
+  const scaleToFit = viewportWidth / contentSize.width
   const nextZoom = clamp(scaleToFit, MIN_ZOOM, MAX_ZOOM)
 
-  if (zoom.value !== nextZoom) zoom.value = nextZoom
+  if (zoom.value !== nextZoom) {
+    zoom.value = nextZoom
+  }
 
   if (center) {
-    const contentPxW = contentSize.width * zoom.value
-    const contentPxH = contentSize.height * zoom.value
-    surface.scrollLeft = Math.max(0, (contentPxW - vw) / 2)
-    surface.scrollTop  = Math.max(0, (contentPxH - vh) / 2)
+    const contentWidth = contentSize.width * zoom.value
+    const contentHeight = contentSize.height * zoom.value
+    surface.scrollLeft = Math.max(0, (contentWidth - viewportWidth) / 2)
+    surface.scrollTop = Math.max(0, (contentHeight - viewportHeight) / 2)
     clampScroll()
   }
 }
 
-
-function updateContentSize() {
+const updateContentSize = () => {
   const size = getSvgContentSize()
   if (!size) return
+
   contentSize.width = size.width
   contentSize.height = size.height
+
   nextTick(() => {
     clampScroll()
-    // Fit right after measuring (only at startup / fresh svg)
     fitToViewport()
   })
 }
 
-function normalizeHref(rawHref: string): URL | null {
-  if (!rawHref) {
-    return null
-  }
+const normalizeHref = (rawHref: string): URL | null => {
+  if (!rawHref) return null
 
   let href = rawHref.trim()
   if (href.startsWith('file:///')) {
@@ -167,13 +186,13 @@ function normalizeHref(rawHref: string): URL | null {
 
   try {
     return new URL(href, 'https://local.app')
-  } catch (error) {
+  } catch {
     console.warn('Invalid link in flow diagram', rawHref)
     return null
   }
 }
 
-function setupSvgLinks() {
+const setupSvgLinks = () => {
   cleanupSvgLinkListeners()
   const host = svgHost.value
   if (!host) return
@@ -181,10 +200,8 @@ function setupSvgLinks() {
   const svgEl = host.querySelector('svg') as SVGSVGElement | null
   if (!svgEl) return
 
-  // IMPORTANT: measure FIRST
   updateContentSize()
 
-  // THEN make it responsive
   svgEl.removeAttribute('width')
   svgEl.removeAttribute('height')
   svgEl.setAttribute('preserveAspectRatio', 'xMidYMid meet')
@@ -192,12 +209,12 @@ function setupSvgLinks() {
   svgEl.style.height = 'auto'
   svgEl.style.display = 'block'
 
-  // link wiring unchanged...
   const links = host.querySelectorAll('a')
   links.forEach(link => {
     const handler = (event: Event) => {
       event.preventDefault()
       event.stopPropagation()
+
       const rawHref = link.getAttribute('xlink:href') || link.getAttribute('href')
       const url = rawHref ? normalizeHref(rawHref) : null
       if (!url) return
@@ -207,27 +224,43 @@ function setupSvgLinks() {
         emit('action', action)
         return
       }
-      if (url.pathname) router.push(`${url.pathname}${url.search}`)
+
+      if (url.pathname) {
+        router.push(`${url.pathname}${url.search}`)
+      }
     }
+
     link.addEventListener('click', handler)
     svgLinkListeners.push({ element: link, handler })
   })
 }
 
-function onPointerDown(event: PointerEvent) {
+const dist = (a: { x: number; y: number }, b: { x: number; y: number }) => {
+  const dx = a.x - b.x
+  const dy = a.y - b.y
+  return Math.hypot(dx, dy)
+}
+
+const midpoint = (a: { x: number; y: number }, b: { x: number; y: number }) => ({
+  x: (a.x + b.x) / 2,
+  y: (a.y + b.y) / 2,
+})
+// #endregion
+
+// #region Pointer Handlers
+const onPointerDown = (event: PointerEvent) => {
   const surface = panSurface.value
   if (!surface) return
 
-  // Touch/pen — track positions but DO NOT capture
   const rect = surface.getBoundingClientRect()
   const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
+
   activePointers.set(event.pointerId, {
     x: event.clientX - rect.left - padLeft,
     y: event.clientY - rect.top - padTop,
   })
 
   if (activePointers.size === 2) {
-    // enter pinch mode: disable native handling temporarily
     surface.style.touchAction = 'none'
 
     const [p1, p2] = [...activePointers.values()]
@@ -239,14 +272,13 @@ function onPointerDown(event: PointerEvent) {
   }
 }
 
-function onPointerMove(event: PointerEvent) {
+const onPointerMove = (event: PointerEvent) => {
   const surface = panSurface.value
   if (!surface) return
 
   const rect = surface.getBoundingClientRect()
   const { padLeft = 0, padTop = 0 } = getInnerViewportSize()
 
-  // Update tracked touch/pen positions
   if (event.pointerType !== 'mouse' && activePointers.has(event.pointerId)) {
     activePointers.set(event.pointerId, {
       x: event.clientX - rect.left - padLeft,
@@ -254,27 +286,27 @@ function onPointerMove(event: PointerEvent) {
     })
   }
 
-  // Pinch-zoom only (two fingers). Single-finger touch: let native scroll do it.
   if (pinch.isPinching && activePointers.size >= 2) {
     const [p1, p2] = [...activePointers.values()]
     const currentDistance = Math.max(1, dist(p1, p2))
     const scale = currentDistance / Math.max(1, pinch.startDistance)
-    const prev = zoom.value
-    const next = clamp(pinch.initialZoom * scale, MIN_ZOOM, MAX_ZOOM)
-    if (next !== prev) {
+    const previousZoom = zoom.value
+    const nextZoom = clamp(pinch.initialZoom * scale, MIN_ZOOM, MAX_ZOOM)
+
+    if (nextZoom !== previousZoom) {
       const mid = midpoint(p1, p2)
       const contentOffsetX = surface.scrollLeft + mid.x
       const contentOffsetY = surface.scrollTop + mid.y
-      const ratio = next / prev
-      zoom.value = next
+      const ratio = nextZoom / previousZoom
+
+      zoom.value = nextZoom
       surface.scrollLeft = contentOffsetX * ratio - mid.x
-      surface.scrollTop  = contentOffsetY * ratio - mid.y
+      surface.scrollTop = contentOffsetY * ratio - mid.y
       clampScroll()
     }
     return
   }
 
-  // Mouse drag (unchanged)
   if (event.pointerType === 'mouse' && panState.pointerId === event.pointerId) {
     const deltaX = event.clientX - padLeft - panState.startX
     const deltaY = event.clientY - padTop - panState.startY
@@ -284,16 +316,14 @@ function onPointerMove(event: PointerEvent) {
   }
 }
 
-function endPointer(event: PointerEvent) {
+const endPointer = (event: PointerEvent) => {
   const surface = panSurface.value
   if (!surface) return
 
-  // Touch/pen end
   if (activePointers.has(event.pointerId)) {
     activePointers.delete(event.pointerId)
   }
 
-  // Leaving pinch mode? Restore native scrolling.
   if (pinch.isPinching && activePointers.size < 2) {
     pinch.isPinching = false
     surface.style.touchAction = 'pan-x pan-y'
@@ -305,44 +335,21 @@ function endPointer(event: PointerEvent) {
 
   clampScroll()
 }
+// #endregion
 
-const activePointers = new Map<number, { x: number; y: number }>()
-
-const pinch = reactive({
-  isPinching: false,
-  initialZoom: 1,
-  startDistance: 0,
-  startScrollLeft: 0,
-  startScrollTop: 0,
-})
-
-function dist(a: {x:number;y:number}, b:{x:number;y:number}) {
-  const dx = a.x - b.x, dy = a.y - b.y
-  return Math.hypot(dx, dy)
-}
-
-function midpoint(a:{x:number;y:number}, b:{x:number;y:number}) {
-  return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }
-}
-
-function setupObservers() {
+// #region Observers
+const setupObservers = () => {
   const surface = panSurface.value
   if (surface && !surfaceObserver) {
     surfaceObserver = new ResizeObserver(() => {
-      // viewport changed; let’s clamp scroll and (maybe) fit
       clampScroll()
 
-      const { width: vw, height: vh } = getInnerViewportSize()
-      if (vw > 0 && vh > 0) {
-        // First time we have a real size → do initial fit
+      const { width: viewportWidth, height: viewportHeight } = getInnerViewportSize()
+      if (viewportWidth > 0 && viewportHeight > 0) {
         if (!didInitialFit) {
           didInitialFit = true
-          // rAF to ensure DOM has applied any width/height we set
-          requestAnimationFrame(() => fitToViewport())
-        } else {
-            requestAnimationFrame(() => fitToViewport())
-
         }
+        requestAnimationFrame(() => fitToViewport())
       }
     })
     surfaceObserver.observe(surface)
@@ -352,19 +359,19 @@ function setupObservers() {
   if (host && !contentObserver) {
     contentObserver = new ResizeObserver(() => {
       updateContentSize()
-      // Content can change size (new SVG) → allow a fresh initial fit
       didInitialFit = false
     })
     contentObserver.observe(host)
   }
 }
+// #endregion
 
-
+// #region Watchers
 watch(
   () => props.svg,
   async () => {
     await nextTick()
-    setupSvgLinks()   // measures first, then makes responsive
+    setupSvgLinks()
   }
 )
 
@@ -373,17 +380,16 @@ watch(zoom, () => {
     clampScroll()
   })
 })
+// #endregion
 
-
+// #region Lifecycle
 onMounted(async () => {
   await nextTick()
   setupSvgLinks()
   setupObservers()
   updateContentSize()
-  // In case observers/layout were late:
   nextTick(() => fitToViewport())
 })
-
 
 onBeforeUnmount(() => {
   cleanupSvgLinkListeners()
@@ -392,6 +398,7 @@ onBeforeUnmount(() => {
   surfaceObserver = null
   contentObserver = null
 })
+// #endregion
 </script>
 
 <style scoped>
