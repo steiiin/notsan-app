@@ -41,4 +41,15 @@
   line-height: var(--ns-narrow-line);
 }
 
+.ns-text-content :deep(img) {
+  border-radius: 4px;
+}
+
+.ns-text-content :deep(ul) {
+  list-style: square inside;
+}
+.ns-text-content :deep(ul li) {
+  line-height: 1.2;
+}
+
 </style>
