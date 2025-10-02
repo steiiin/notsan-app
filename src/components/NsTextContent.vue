@@ -43,6 +43,7 @@
 
 .ns-text-content :deep(img) {
   border-radius: 4px;
+  max-width: 540px;
 }
 
 .ns-text-content :deep(ul) {

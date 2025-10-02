@@ -3,7 +3,7 @@
     <div ref="panSurface" class="ns-flow" @pointerdown="onPointerDown" @pointerup="endPointer"
       @pointercancel="endPointer" @pointermove="onPointerMove">
       <div class="ns-flow__content" :style="contentStyle">
-        <div ref="svgHost" class="ns-flow__svg" v-html="svg" />
+        <div ref="svgHost" class="ns-flow__svg" v-html="svgData" />
       </div>
     </div>
   </div>
@@ -20,12 +20,14 @@ const props = defineProps<{
   svg: string
 }>()
 
+const svgData = computed(() => props.svg.replaceAll('#d5e8d4', '#f00'))
+
 const emit = defineEmits<{
   (event: 'action', key: string): void
 }>()
 
 const MIN_ZOOM = 0.5
-const MAX_ZOOM = 1.5
+const MAX_ZOOM = 1
 
 // #region State
 

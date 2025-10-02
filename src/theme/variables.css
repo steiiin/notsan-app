@@ -31,7 +31,6 @@
   --ns-color-green: #26a269; /* Green */
   --ns-color-green-shade: #91d1b4;
 
-
   /* broselow colors */
   --ns-broselow-code-grey:   #B0B0B0; /* neutral grey */
   --ns-broselow-code-pink:   #F4A7C0; /* soft pink */
@@ -42,6 +41,12 @@
   --ns-broselow-code-blue:   #3498DB; /* clear blue */
   --ns-broselow-code-orange: #E67E22; /* deep orange */
   --ns-broselow-code-green:   #27AE60; /* fresh green */
+
+  /* flow colors */
+  --ns-flow-saa: #D5E8D4;
+  --ns-flow-saa-border: #82B366;
+  --ns-flow-process: #DAE8FC;
+  --ns-flow-process-border: #6C8EBF;
 
 }
 
@@ -78,6 +83,12 @@
     --ns-broselow-code-blue:    #2E86C1; /* dark blue */
     --ns-broselow-code-orange:  #CA6F1E; /* dark orange */
     --ns-broselow-code-green:    #1E8449; /* deep green */
+
+    /* flow colors */
+    --ns-flow-saa: #1F2F1E;
+    --ns-flow-saa-border: #446E2C;
+    --ns-flow-process: #1D293B;
+    --ns-flow-process-border: #5C79A3;
 
   }
 }
