@@ -1,12 +1,12 @@
 <template>
   <template v-if="useFull">
-    <ns-dosage :dosage="{ target: 'Adrenalin', dose: '1mg', hint: '(1 Ampulle)' }"></ns-dosage>
+    <ns-dosage :dosage="{ target: 'Amiodaron', dose: '300mg', hint: '(2 Ampullen)' }"></ns-dosage>
+  </template>
+  <template v-else-if="noUse">
+    <ns-dosage :dosage="{ target: 'Amiodaron', dose: 'Keine', hint: 'Gabe' }"></ns-dosage>
   </template>
   <template v-else>
-    <div>
-      <p>1 Ampulle auf <text-mono>20ml</text-mono> NaCl aufziehen, dann:</p>
-      <ns-dosage :dosage="{ target: 'Adrenalin',  dose: `${childHint}ml`, hint: `${childDose}mg` }"></ns-dosage>
-    </div>
+    <ns-dosage :dosage="{ target: 'Amiodaron', dose: `${childDose}mg`, hint: `(${childHint})` }"></ns-dosage>
   </template>
 </template>
 
@@ -27,15 +27,20 @@ import { Patient } from '@/types/emergency';
 import { round } from '@/service/math';
 import { computed } from 'vue';
 
-import { iv_1mg } from './Packages'
-
 const props = defineProps<{
   patient: Patient
 }>()
 
-const useFull = computed(() => props.patient.isLikelyAnAdult || props.patient.estimatedWeight>=100)
-const childDose = computed(() => useFull.value ? 1 : round(props.patient.estimatedWeight*0.01, 0.05, 'up'))
-const childHint = computed(() => childDose.value / 0.05)
+const useFull = computed(() => props.patient.isLikelyAnAdult || props.patient.estimatedWeight>=60)
+const noUse = computed(() => props.patient.estimatedWeight < 5)
+
+const childDose = computed(() => useFull.value ? 300 : round(props.patient.estimatedWeight*5, 25, 'down'))
+const childHint = computed(() => {
+  const ml = round(childDose.value/50, 0.5)
+  if (ml == 3) { return '1 Ampulle' }
+  if (ml == 6) { return '2 Ampullen' }
+  return `${ml}ml`
+})
 
 </script>
 

@@ -1,7 +1,7 @@
 <template>
-  <ns-content-group :style="cardColorStyle(infoData.ColorClass)" v-if="showAnything">
-    <div class="title">{{ infoData.Title }}</div>
-    <div class="subtitle">{{ infoData.Subtitle }}</div>
+  <ns-content-group :style="cardColorStyle(infoData?.ColorClass)" v-if="showAnything">
+    <div class="title">{{ infoData?.Title }}</div>
+    <div class="subtitle">{{ infoData?.Subtitle }}</div>
   </ns-content-group>
 </template>
 
@@ -15,26 +15,9 @@ const props = defineProps<{
   patient: Patient
 }>()
 
-const info = computed(() => {
-
-  const xx = []
-  xx.push(`WeightAccuracy: ${props.patient.WeightAccuracy}`)
-  xx.push(`WeightEstimateBy: ${props.patient.WeightEstimateBy}`)
-  xx.push(`Sex: ${props.patient.Sex}`)
-  xx.push(`Age: ${props.patient.Age}`)
-  xx.push(`Weight: ${props.patient.Weight}`)
-  xx.push(`Height: ${props.patient.Height}`)
-  xx.push(`Habitus: ${props.patient.Habitus}`)
-  xx.push(`HabitusMultiplier: ${props.patient.currentHabitusMulti}`)
-  xx.push(`calcHabitusMode: ${props.patient.currentHabitusMode}`)
-  xx.push(`calcWeight: ${props.patient.estimatedWeight}`)
-
-  return xx.join('<br>')
-})
-
 // #region props
 
-  const showAnything = computed(() => !isUndefined.value)
+  const showAnything = computed(() => !!infoData.value && !isUndefined.value)
   const showError = computed(() => isInvalidAge.value || isInvalidWeight.value || isInvalidHeight.value)
 
   const isUndefined = computed(() => props.patient.estimatedWeightCalcMethod == 'undefined')
@@ -52,9 +35,9 @@ class InfoData {
   ) {}
 }
 
-const infoData = computed((): InfoData => {
+const infoData = computed((): InfoData|null => {
 
-  if (showAnything.value) {
+  if (!isUndefined.value) {
 
     if (showError.value)
     {
@@ -83,14 +66,14 @@ const infoData = computed((): InfoData => {
       }
       else
       {
-        return new InfoData(getSexDescription(props.patient.Sex), props.patient.estimatedWeight.toFixed() + 'kg')
+        return null
       }
 
     }
 
   }
 
-  return new InfoData('', '')
+  return null
 
 })
 
@@ -124,8 +107,8 @@ const infoData = computed((): InfoData => {
     }
   }
 
-  const cardColorStyle = (colorCode: string): string => {
-    if (colorCode.length>0)
+  const cardColorStyle = (colorCode?: string): string => {
+    if (!!colorCode && colorCode.length>0)
     {
       const colorCss = `var(--ns-broselow-code-${colorCode})`
       return `--ion-card-background:${colorCss};`
