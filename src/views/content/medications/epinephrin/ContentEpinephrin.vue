@@ -48,7 +48,7 @@
           <hr>
           <ns-dosage :dosage="{ type: 'child', dose: '0,01mg/kg' }"></ns-dosage>
           <div>
-            <p>Bei <text-colored red>Kinder-REA</text-colored> 1 Ampulle auf <text-mono>20mg</text-mono> NaCl aufziehen, dann:</p>
+            <p>Bei <text-colored red>Kinder-REA</text-colored> 1 Ampulle auf <text-mono>20ml</text-mono> NaCl aufziehen, dann:</p>
             <ns-dosage :dosage="{ type: 'child', dose: '1ml/5kg' }"></ns-dosage>
           </div>
         </ns-dosage-usage>
