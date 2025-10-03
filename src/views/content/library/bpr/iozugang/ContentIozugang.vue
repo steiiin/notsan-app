@@ -15,6 +15,10 @@
       <p>
         Nach Medikamentengabe immer mit <text-underline>NaCl</text-underline> nachspülen.
       </p>
+      <p>
+        Bei Erwachsenen 40mg Lidocain möglich, <br>
+        Bei Kindern <b>nicht empfohlen</b>.
+      </p>
       <hr>
       <p>
         <b>Kontraindiziert</b>, bei Fraktur proximal.
@@ -46,7 +50,7 @@
         <b><text-mono>2. </text-mono></b>Punktionsstelle lokalisieren, Extremität stabilisieren
       </p>
       <p>
-        <b><text-mono>3. </text-mono></b>Nadel bis auf Knochen stechen, Tiefe <i>(1 Ring sichtbar)</i> kontrollieren
+        <b><text-mono>3. </text-mono></b>Nadel einstechen, Tiefe kontrollieren
       </p>
       <p>
         <b><text-mono>4. </text-mono></b>Unter leichtem Druck bohren, bis Widerstand nachlässt
@@ -61,7 +65,7 @@
         <b><text-mono>7. </text-mono></b>Dreiwegehahn aufschrauben
       </p>
       <p>
-        <b><text-mono>8. </text-mono></b>NaCl anspülen
+        <b><text-mono>8. </text-mono></b>5-10ml NaCl anspülen
       </p>
     </ns-text-content>
   </ns-content-group>
@@ -116,14 +120,7 @@ import ort_proxtibia from './ort-proxtibia.svg?raw'
 import ort_disttibia from './ort-disttibia.svg?raw'
 import ort_distfemur from './ort-distfemur.svg?raw'
 
-function handleAction(key: string) {
-  // Placeholder for action handling logic
-  // Integrate with actual business logic when available
-  console.debug('[ContentAtemwegsmanagement] handleAction', key)
-}
 </script>
-
 <style scoped>
 
-  /* padding: calc(0.5 * var(--ns-card-padding));  <-- move this elsewhere */
 </style>
