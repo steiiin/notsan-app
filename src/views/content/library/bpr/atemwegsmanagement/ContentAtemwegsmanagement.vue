@@ -28,12 +28,12 @@
         Desinfizieren.
       </p>
       <p>
-        <b>5ml</b>-Spritze mit <b>NaCl</b> aufziehen.<br>
-        Auf den <b>pVK</b> diese Spritze aufstecken.
-      </p>
-      <p>
         Den Kolben der <b>2ml</b>-Spritze entfernen, <br>
         Fingertip aufstecken und mit Sauerstoffleitung verbinden.
+      </p>
+      <p>
+        <b>5ml</b>-Spritze mit <b>NaCl</b> aufziehen.<br>
+        Auf den <b>Verweilkatheter</b> diese Spritze aufstecken.
       </p>
       <img :src="lig_conicum"></img>
       <p>
