@@ -10,7 +10,8 @@
     "test:e2e": "cypress run",
     "test:unit": "vitest",
     "lint": "eslint .",
-    "svgo": "svgo --config svgo.config.js -f ./src/views/content/library/bpr/ -r"
+    "svgo": "svgo --config svgo.config.js -f ./src/views/content/library/bpr/ -r",
+    "svgo-assets": "svgo --config svgo.config.js -f ./src/data/assets/ -r"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
