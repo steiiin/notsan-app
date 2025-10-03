@@ -42,6 +42,7 @@
 }
 
 .ns-text-content :deep(img) {
+  border: 2px solid var(--ion-color-dark-shade);
   border-radius: 4px;
   max-width: 540px;
 }
