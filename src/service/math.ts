@@ -32,3 +32,11 @@ export function round(value: number, multiple: number, direction?: 'up' | 'down'
 export function clamp(value: number, low: number, high: number): number {
   return Math.max(low, Math.min(high, value))
 }
+
+/**
+ * Checks if the two numbers are approx. (0,001) equal.
+ *
+ * @param a 1st number
+ * @param b 2nd number
+ */
+export function approxEq(a: number, b: number): boolean { return Math.abs(a - b) < (1e-4) }

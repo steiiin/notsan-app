@@ -1,6 +1,6 @@
 <template>
   <div class="ns-flow__padding">
-    <div ref="panSurface" class="ns-flow" @dblclick="onDblClick"
+    <div ref="panSurface" class="ns-flow"
       @pointerdown="onPointerDown" @pointerup="onPointerUp">
       <div class="ns-flow__content" :style="contentStyle">
         <div ref="svgHost" class="ns-flow__svg" v-html="svg"></div>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { clamp } from '@/service/math'
+import { approxEq, clamp } from '@/service/math'
 import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -27,9 +27,8 @@ const emit = defineEmits<{
 const MIN_ZOOM = 0.1
 const MAX_ZOOM = 1
 
-const TAP_MAX_DELAY = 300;  // ms between taps
-const TAP_MAX_DIST  = 22;   // px max movement to still count as a tap
-
+const TAP_MAX_DELAY = 600;  // ms between taps
+const TAP_MAX_DIST  = 50;   // px max movement to still count as a tap
 
 // Refs
 const panSurface = ref<HTMLDivElement | null>(null)
@@ -63,15 +62,6 @@ const getInnerViewportSize = () => {
   }
 }
 
-const clampScroll = () => {
-  const surface = panSurface.value
-  if (!surface) return
-  const maxLeft = Math.max(0, surface.scrollWidth - surface.clientWidth)
-  const maxTop = Math.max(0, surface.scrollHeight - surface.clientHeight)
-  surface.scrollLeft = clamp(surface.scrollLeft, 0, maxLeft)
-  surface.scrollTop = clamp(surface.scrollTop, 0, maxTop)
-}
-
 const getSvgContentSize = (): { width: number; height: number } | null => {
   const host = svgHost.value
   const svgEl = host?.querySelector('svg') as SVGSVGElement | null
@@ -100,7 +90,7 @@ const getZoomFitWidth = () => {
   return clamp(viewportWidth / contentSize.width, MIN_ZOOM, MAX_ZOOM)
 }
 
-const fitToViewport = ({ center = true } = {}) => {
+const fitToViewport = () => {
   if (!panSurface.value || !contentSize.width || !contentSize.height) return
   if (!autoFit.value) return
 
@@ -109,14 +99,6 @@ const fitToViewport = ({ center = true } = {}) => {
 
   const nextZoom = getZoomFitWidth()
   if (zoom.value !== nextZoom) zoom.value = nextZoom
-
-  if (center) {
-    const contentW = contentSize.width * zoom.value
-    const contentH = contentSize.height * zoom.value
-    panSurface.value.scrollLeft = Math.max(0, (contentW - viewportWidth) / 2)
-    panSurface.value.scrollTop = Math.max(0, (contentH - viewportHeight) / 2)
-    clampScroll()
-  }
 }
 
 const toggleZoomAt = (clientX: number, clientY: number) => {
@@ -124,22 +106,24 @@ const toggleZoomAt = (clientX: number, clientY: number) => {
   if (!surface || !contentSize.width) return;
 
   const prev = zoom.value;
-  const target = prev < 1 ? 1 : getZoomFitWidth();
+  const fit = getZoomFitWidth();
 
-  if (target === prev) return;
+  // Toggle between "fit" and "1:1" semantically, not by exact numbers
+  const goingToFit = !approxEq(prev, fit); // if not at fit, next state is fit; else 1:1
+  const nextZoom = goingToFit ? fit : 1;
 
-  // Keep the tap point stable across the zoom change
-  scrollToKeepPoint(clientX, clientY, prev, target);
+  // Keep the tap point stable even if zoom numerically doesn't change
+  scrollToKeepPoint(clientX, clientY, prev, nextZoom);
 
-  // When at 1:1 we disable auto-fit; when back to fit we enable it,
-  // but we DO NOT center right away (feels jumpy). If you want to
-  // re-run fit sizing without centering, do this:
-  if (target === 1) {
-    autoFit.value = false;
+  // Update autoFit no matter what
+  autoFit.value = goingToFit;
+
+  if (autoFit.value) {
+    // Ensure we're snapped to exact fit
+    zoom.value = fit;
+    fitToViewport();
   } else {
-    autoFit.value = true;
-    // ensure dimensions are consistent but don't recentre:
-    fitToViewport({ center: false });
+    zoom.value = 1;
   }
 };
 
@@ -149,31 +133,31 @@ const updateContentSize = () => {
   contentSize.width = size.width
   contentSize.height = size.height
   nextTick(() => {
-    clampScroll()
     fitToViewport()
   })
 }
 
 const scrollToKeepPoint = (clientX: number, clientY: number, prevZoom: number, nextZoom: number) => {
-  const surface = panSurface.value;
-  if (!surface) return;
 
-  const rect = surface.getBoundingClientRect();
+  const viewEl = panSurface.value;
+  const el = scrollEl.value;
+  if (!viewEl || !el) return;
+
+  const rect = viewEl.getBoundingClientRect();
   const { padLeft = 0, padTop = 0 } = getInnerViewportSize();
 
-  const mx = clientX - rect.left - padLeft; // pointer inside the surface
+  const mx = clientX - rect.left - padLeft;
   const my = clientY - rect.top  - padTop;
 
-  const contentOffsetX = surface.scrollLeft + mx;
-  const contentOffsetY = surface.scrollTop  + my;
+  const contentOffsetX = el.scrollLeft + mx;
+  const contentOffsetY = el.scrollTop  + my;
+  const ratio = nextZoom / Math.max(prevZoom, 0.0001);
 
-  const ratio = nextZoom / Math.max(prevZoom, 0.0001); // guard div/0
-
-  // write scrolls *after* you update zoom
   zoom.value = nextZoom;
-  surface.scrollLeft = contentOffsetX * ratio - mx;
-  surface.scrollTop  = contentOffsetY * ratio - my;
-  clampScroll();
+  scrollToPoint(
+    contentOffsetX * ratio - mx,
+    contentOffsetY * ratio - my
+  );
 };
 
 let surfaceObserver: ResizeObserver | null = null
@@ -242,13 +226,27 @@ const setupSvgLinks = () => {
 
 
 // #endregion
+// #region scrolling
 
-// Desktop: double-click toggles zoom (ignore links)
-const onDblClick = (e: MouseEvent) => {
-  const target = e.target as Element | null;
-  if (target?.closest('a')) return; // let links work
-  toggleZoomAt(e.clientX, e.clientY);
+const scrollEl = ref<HTMLElement | null>(null);
+const ionEl = ref<HTMLIonContentElement | null>(null);
+
+const resolveScrollHost = async () => {
+  ionEl.value = panSurface.value?.closest('ion-content') as HTMLIonContentElement | null;
+  scrollEl.value = ionEl.value
+    ? await ionEl.value.getScrollElement()
+    : panSurface.value;
 };
+
+const scrollToPoint = async (x: number, y: number) => {
+  await nextTick()
+
+  if (!scrollEl.value) { return }
+  ionEl.value?.scrollToPoint(0, y, 0)
+  panSurface.value!.scrollTo(x, 0)
+}
+
+// #endregion
 
 // Touch: record down position (to measure move distance)
 const onPointerDown = (e: PointerEvent) => {
@@ -299,7 +297,6 @@ const setupObservers = () => {
   const surface = panSurface.value
   if (surface && !surfaceObserver) {
     surfaceObserver = new ResizeObserver(() => {
-      clampScroll()
       requestAnimationFrame(() => fitToViewport())
     })
     surfaceObserver.observe(surface)
@@ -321,6 +318,7 @@ watch(() => props.svg, async () => {
 
 onMounted(async () => {
   await nextTick()
+  await resolveScrollHost()
   setupSvgLinks()
   setupObservers()
   updateContentSize()
