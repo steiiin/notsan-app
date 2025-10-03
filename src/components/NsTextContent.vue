@@ -54,4 +54,15 @@
   line-height: 1.2;
 }
 
+.ns-text-content :deep(li[head])
+{
+  list-style-type: none;
+  font-weight: bold;
+}
+.ns-text-content :deep(li[head]) i
+{
+  font-style: normal;
+  font-weight: normal;
+}
+
 </style>
