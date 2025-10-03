@@ -43,7 +43,7 @@
               <li>Hohe T-Welle</li>
             </ul>
             <hr>
-            <ns-svg :svg="hyperkaliaemieEkg"></ns-svg>
+            <ns-svg :svg="hyperkaliaemieEkg" noframe></ns-svg>
           </ns-quicktip>
         </ns-contraindication>
       </ns-list>
