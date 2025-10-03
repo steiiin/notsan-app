@@ -14,6 +14,12 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/atemwegsmanagement/ContentAtemwegsmanagement.vue')
       },
 
+      {
+        id: 'bpr-iozugang',
+        title: 'Intraossärer Zugang',
+        component: () => import('@/views/content/library/bpr/iozugang/ContentIozugang.vue')
+      },
+
     ]
   },
 
