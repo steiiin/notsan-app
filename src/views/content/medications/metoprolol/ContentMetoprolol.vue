@@ -43,9 +43,7 @@
               <li>Hohe T-Welle</li>
             </ul>
             <hr>
-            <p>
-              <img :src="imgHyperkaliaemieEkg" />
-            </p>
+            <ns-svg :svg="hyperkaliaemieEkg"></ns-svg>
           </ns-quicktip>
         </ns-contraindication>
       </ns-list>
@@ -113,11 +111,13 @@ import NsDosageUsage from '@/components/medications/NsDosageUsage.vue'
 import NsDosage from '@/components/medications/NsDosage.vue'
 import NsPharmacokinetics from '@/components/medications/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
+import NsSvg from '@/components/NsSvg.vue'
+
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
 
-import imgHyperkaliaemieEkg from '@/data/assets/hyperkaliaemie-ekg.png'
+import hyperkaliaemieEkg from '../../../../data/assets/hyperkaliaemie-ekg.svg?raw'
 import { iv_5mg } from './Packages'
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
