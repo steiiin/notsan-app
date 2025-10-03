@@ -5,7 +5,7 @@
       <frag-defibrillation :patient="patient"></frag-defibrillation>
       <frag-intubation :patient="patient"></frag-intubation>
 
-      <frag-epinephrine-reanimation></frag-epinephrine-reanimation>
+      <frag-epinephrine-reanimation :patient="patient"></frag-epinephrine-reanimation>
 
     </ns-accordion>
   </ns-accordion-group>

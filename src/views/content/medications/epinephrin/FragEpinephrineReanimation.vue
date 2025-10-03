@@ -1,11 +1,24 @@
 <template>
   <ns-content-group title="Adrenalin" dense>
+    <ns-dosage-usage type="iv" dense>
+      <template v-if="useFull">
+        <ns-dosage :dosage="{ type: 'adult', dose: '1mg', hint: '(1 Ampulle)' }"></ns-dosage>
+      </template>
+      <template v-else>
+        <div>
+          <p>1 Ampulle auf <text-mono>20ml</text-mono> NaCl aufziehen, dann:</p>
+          <ns-dosage :dosage="{ type: 'child', dose: `${childHint}ml`, hint: `${childDose}mg` }"></ns-dosage>
+        </div>
+      </template>
+    </ns-dosage-usage>
   </ns-content-group>
 </template>
 
 <script setup lang="ts">
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
+import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
+import NsDosage from '@/components/medications/NsDosage.vue';
 import NsContentSplit from '@/components/NsContentSplit.vue';
 import NsTextContent from '@/components/NsTextContent.vue';
 import NsKeyValueContainer from '@/components/NsKeyValueContainer.vue';
@@ -15,8 +28,18 @@ import NsColorBox from '@/components/NsColorBox.vue';
 import TextColored from '@/components/TextColored.vue';
 import { Patient } from '@/types/emergency';
 
-import { clamp, round } from '@/service/math';
+import { round } from '@/service/math';
 import { computed } from 'vue';
+
+import { iv_1mg } from './Packages'
+
+const props = defineProps<{
+  patient: Patient
+}>()
+
+const useFull = computed(() => props.patient.isLikelyAnAdult || props.patient.estimatedWeight>=100)
+const childDose = computed(() => useFull.value ? 1 : round(props.patient.estimatedWeight*0.01, 0.05, 'up'))
+const childHint = computed(() => childDose.value / 0.05)
 
 </script>
 
