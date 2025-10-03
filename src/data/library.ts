@@ -5,6 +5,7 @@ export const library: LibraryListItem[] = [
   {
     id: 'bpr-list',
     title: 'Behandlungspfade',
+    subtitle: 'BPR',
     entries:
     [
 
@@ -14,13 +15,24 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/atemwegsmanagement/ContentAtemwegsmanagement.vue')
       },
 
+    ]
+  },
+
+  {
+    id: 'saa-list',
+    title: 'Standard-Arbeitsanweisungen',
+    subtitle: 'SAA',
+    entries:
+    [
+
+
       {
         id: 'bpr-iozugang',
         title: 'Intraossärer Zugang',
-        component: () => import('@/views/content/library/bpr/iozugang/ContentIozugang.vue')
+        component: () => import('@/views/content/library/saa/iozugang/ContentIozugang.vue')
       },
 
     ]
-  },
+  }
 
 ];
