@@ -23,6 +23,7 @@ const props = defineProps<{
   type: "iv" | "im" | "nasal" | "pi" | "po" | "supp" | "invisible" | "none",
   label?: string,
   nodivider?: boolean,
+  dense?: boolean,
 }>()
 
 const usageTagMap: Record<string, string> = {
@@ -35,7 +36,17 @@ const usageTagMap: Record<string, string> = {
   invisible: ' ',
   none: ' ',
 }
-const usageTag = computed(() => props.label || (props.type && props.type in usageTagMap ? usageTagMap[props.type] : null))
+const usageDenseTagMap: Record<string, string> = {
+  iv: 'i.v.',
+  im: 'i.m.',
+  nasal: 'i.n.',
+  pi: 'p.i.',
+  po: 'oral',
+  supp: 'rekt.',
+  invisible: ' ',
+  none: ' ',
+}
+const usageTag = computed(() => props.label || (props.type && props.type in usageTagMap ? (props.dense ? usageDenseTagMap[props.type] : usageTagMap[props.type]) : null))
 
 const usageColorMap: Record<string, string> = {
   iv: 'red',
@@ -59,7 +70,7 @@ const usageMinHeightMap: Record<string, number> = {
   invisible: 0,
   none: 1.5,
 }
-const usageMinHeight = computed(() => props.type && props.type in usageMinHeightMap ? usageMinHeightMap[props.type] : 1)
+const usageMinHeight = computed(() => props.dense ? 3.5 : (props.type && props.type in usageMinHeightMap ? usageMinHeightMap[props.type] : 1))
 
 
 </script>
