@@ -71,7 +71,7 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="acetylsalicyl_iv_500mg"></ns-package>
+      <ns-package :package="iv_500mg"></ns-package>
 
       <ns-dosage-indication name="Akutes Koronarsyndrom">
         <ns-dosage-usage type="iv">
