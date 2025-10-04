@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">notsan-app</string>
-    <string name="title_activity_main">notsan-app</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">NotSan-Taschenbuch</string>
+    <string name="title_activity_main">NotSan-Taschenbuch</string>
+    <string name="package_name">com.steiiin.notsan</string>
+    <string name="custom_url_scheme">com.steiiin.notsan</string>
 </resources>
