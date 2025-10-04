@@ -25,6 +25,11 @@ export const library: LibraryListItem[] = [
     entries:
     [
 
+      {
+        id: 'bpr-entlastung',
+        title: 'Thoraxentlastungspunktion',
+        component: () => import('@/views/content/library/saa/entlastung/ContentEntlastung.vue')
+      },
 
       {
         id: 'bpr-iozugang',
