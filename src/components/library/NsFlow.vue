@@ -11,6 +11,7 @@
 
 <script setup lang="ts">
 import { approxEq, clamp } from '@/service/math'
+import { FlowActionPayload } from '@/types/flow';
 import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -21,7 +22,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (event: 'action', key: string): void
+  (event: 'action', payload: FlowActionPayload): void
 }>()
 
 const MIN_ZOOM = 0.1
@@ -207,8 +208,8 @@ const setupSvgLinks = () => {
       const rawHref = link.getAttribute('xlink:href') || link.getAttribute('href')
       const url = rawHref ? normalizeHref(rawHref) : null
       if (!url) return
-      const action = url.searchParams.get('action')
-      if (action) { emit('action', action); return }
+      const keyword = url.searchParams.get('action')
+      if (keyword) { emit('action', { key: keyword, source: event }); return }
       if (url.pathname) router.push(`${url.pathname}${url.search}`)
     }
     link.addEventListener('click', handler)
