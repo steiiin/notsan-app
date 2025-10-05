@@ -9,7 +9,7 @@ defineProps<{ svg: string, noframe?: boolean }>();
 <style scoped>
 .ns-svg {
   display: flex;
-  border: 2px solid var(--ion-color-dark-shade);
+  border: 2px solid #000;
   border-radius: 4px;
   max-width: 540px;
 }
@@ -20,5 +20,7 @@ defineProps<{ svg: string, noframe?: boolean }>();
 .ns-svg :deep(svg) {
   width: 100%;
   height: auto;
+  border-radius: 4px;
+  overflow: hidden;
 }
 </style>
