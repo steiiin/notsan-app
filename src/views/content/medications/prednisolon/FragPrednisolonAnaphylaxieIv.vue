@@ -9,17 +9,14 @@
 
 <script setup lang="ts">
 
-import { iv_100mg, iv_250mg } from './Packages'
+import { isIv_100mgEnabled, isIv_250mgEnabled } from './Packages'
 import { MedId } from '@/types/medication'
 import { useConfigStore } from '@/stores/config'
-const configStore = useConfigStore()
 
 // ########################################################################################################
 
 const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Prednisolon) ?? true)
 
-const isIv_100mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Prednisolon, iv_100mg.id))
-const isIv_250mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Prednisolon, iv_250mg.id))
 const onlyOneIvEnabled = computed(() => [ isIv_100mgEnabled.value, isIv_250mgEnabled.value ].filter(Boolean).length === 1)
 
 // ########################################################################################################

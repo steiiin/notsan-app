@@ -1,13 +1,23 @@
+import { useMedicationPackageFlags } from '@/composables/useMedicationPackageFlags'
+import { MedId } from '@/types/medication'
 import { resolvePackages } from '../resolvePackages'
 
-const packages = resolvePackages('paracetamol', [
+const packageIds = [
   'po_500mg',
   'po_40mgml',
   'supp_125mg_250mg',
   'iv_10mgml_100ml'
-] as const)
+] as const
+
+const packages = resolvePackages('paracetamol', packageIds)
+const packageFlags = useMedicationPackageFlags(MedId.Paracetamol, packageIds)
 
 export const po_500mg = packages.po_500mg
 export const po_40mgml = packages.po_40mgml
 export const supp_125mg_250mg = packages.supp_125mg_250mg
 export const iv_10mgml_100ml = packages.iv_10mgml_100ml
+
+export const isPo_500mgEnabled = packageFlags.po_500mg
+export const isPo_40mgmlEnabled = packageFlags.po_40mgml
+export const isSupp_125mg_250mgEnabled = packageFlags.supp_125mg_250mg
+export const isIv_10mgml_100mlEnabled = packageFlags.iv_10mgml_100ml

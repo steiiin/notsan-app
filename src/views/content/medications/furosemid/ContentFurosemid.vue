@@ -110,15 +110,9 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
-import { iv_20mg, iv_40mg } from './Packages'
-import { MedId } from '@/types/medication'
-import { useConfigStore } from '@/stores/config'
-const configStore = useConfigStore()
+import { iv_20mg, iv_40mg, isIv_20mgEnabled, isIv_40mgEnabled } from './Packages'
 
 // ########################################################################################################
-
-const isIv_20mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Furosemid, iv_20mg.id))
-const isIv_40mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Furosemid, iv_40mg.id))
 
 const onlyOneEnabled = computed(() => [ isIv_20mgEnabled.value, isIv_40mgEnabled.value ].filter(Boolean).length === 1)
 
