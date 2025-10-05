@@ -5,583 +5,626 @@ export const medications: Medication[] =[
     id: MedId.Acetylsalicyl,
     title: 'Acetylsalicylsäure',
     subtitle: 'ASS, Aspirin, Aspisol',
-    packages: {
-      'iv_500mg': <Package>{
+    packages: [
+      {
+        id: 'iv_500mg',
         type: 'amp-flsk',
         name: 'Set „Aspirin”',
         incredients: [
-          <PackageIncredient>{
-            amount: '500mg',
-            label: 'Pulver (Durchstechflasche)'
-          },
-          <PackageIncredient>{
-            amount: '+ 5ml',
-            label: 'Wasser (Ampulle)'
-          },
+          { amount: '500mg', label: 'Pulver (Durchstechflasche)' },
+          { amount: '+ 5ml', label: 'Wasser (Ampulle)' },
         ]
       }
-    },
+    ],
     component: () => import('@/views/content/medications/acetylsalicyl/ContentAcetylsalicyl.vue')
   },
   {
     id: MedId.Amiodaron,
     title: 'Amiodaron',
     subtitle: 'Cordarex, Cordarone',
-    packages: {
-      'iv_150mg': <Package>{
+    packages: [
+      {
+        id: 'iv_150mg',
         type: 'amp',
         name: 'Ampulle „Amiodaron”',
         incredients: [
-          <PackageIncredient>{ amount: ' 150mg / 3ml' },
-          <PackageIncredient>{ amount: '= 50mg / ml' },
+          { amount: ' 150mg / 3ml' },
+          { amount: '= 50mg / ml' },
         ]
       }
-    },
+    ],
     component: () => import('@/views/content/medications/amiodaron/ContentAmiodaron.vue')
   },
   {
     id: MedId.Atropin,
     title: 'Atropin',
-    packages: {
-      'iv_0_5mg': <Package>{
+    packages: [
+      {
+        id: 'iv_0_5mg',
         type: 'amp',
         name: 'Ampulle „Atropin”',
         incredients: [
-          <PackageIncredient>{ amount: '0,5mg / ml' }
+          { amount: '0,5mg / ml' }
         ]
       }
-    },
+    ],
     component: () => import('@/views/content/medications/atropin/ContentAtropin.vue')
   },
   {
     id: MedId.Butylscopolamin,
     title: 'Butylscopolamin',
     subtitle: 'Buscopan',
-    packages: {
-      'iv_20mg': <Package>{
+    packages: [
+      {
+        id: 'iv_20mg',
         type: 'amp',
         name: 'Ampulle „Butylscopolamin”',
         incredients: [
-          <PackageIncredient>{ amount: '20mg / ml' }
+          { amount: '20mg / ml' }
         ]
       }
-    },
+    ],
     component: () => import('@/views/content/medications/butylscopolamin/ContentButylscopolamin.vue')
   },
   {
     id: MedId.Dimenhydrinat,
     title: 'Dimenhydrinat',
     subtitle: 'Vomex A',
-    packages: {
-      'iv_62mg': <Package>{
+    packages: [
+      {
+        id: 'iv_62mg',
         type: 'amp',
         name: 'Ampulle „Dimenhydrinat”',
         incredients: [
-          <PackageIncredient>{ amount: '62mg / 10ml' },
+          { amount: '62mg / 10ml' },
         ]
       },
-      'supp_40mg': <Package>{
+      {
+        id: 'supp_40mg',
         type: 'supp',
         name: 'Zäpfchen „Vomex A”',
         incredients: [
-          <PackageIncredient>{ amount: '40mg' },
+          { amount: '40mg' },
         ]
       },
-      'supp_70mg': <Package>{
+      {
+        id: 'supp_70mg',
         type: 'supp',
         name: 'Zäpfchen „Vomex A”',
         incredients: [
-          <PackageIncredient>{ amount: '70mg' },
+          { amount: '70mg' },
         ]
       }
-    },
+    ],
     component: () => import('@/views/content/medications/dimenhydrinat/ContentDimenhydrinat.vue')
   },
   {
     id: MedId.Dimetinden,
     title: 'Dimetinden',
     subtitle: 'Fenistil, Histakut',
-    packages: {
-      'iv_4mg': <Package>{
+    packages: [
+      {
+        id: 'iv_4mg',
         type: 'amp',
         name: 'Ampulle „Histakut”',
         incredients: [
-          <PackageIncredient>{ amount: '4mg / 4ml' },
+          { amount: '4mg / 4ml' },
         ]
       }
-    },
+    ],
     component: () => import('@/views/content/medications/dimetinden/ContentDimetinden.vue')
   },
   {
     id: MedId.Epinephrin,
     title: 'Adrenalin',
     subtitle: 'Epinephrin, Suprarenin',
-    packages: {
-      'iv_1mg': <Package>{
+    packages: [
+      {
+        id: 'iv_1mg',
         type: 'amp',
         name: 'Ampulle „Adrenalin”',
         incredients: [
-          <PackageIncredient>{
-            amount: '1mg / 1ml',
-          },
+          { amount: '1mg / 1ml' },
         ]
       }
-    },
+    ],
     component: () => import('@/views/content/medications/epinephrin/ContentEpinephrin.vue')
   },
   {
     id: MedId.Esketamin,
     title: 'Esketamin',
     subtitle: 'Ketanest S',
-    packages: {
-      'iv_5mgml_5ml': <Package>{
+    packages: [
+      {
+        id: 'iv_5mgml_5ml',
         type: 'amp',
         name: 'Ampulle „Esketamin”',
         incredients: [
-          <PackageIncredient>{ amount: '5mg/ml (5ml)' },
+          { amount: '5mg/ml (5ml)' },
         ]
       },
-      'iv_25mgml_2ml': <Package>{
+      {
+        id: 'iv_25mgml_2ml',
         type: 'amp',
         name: 'Ampulle „Esketamin”',
         incredients: [
-          <PackageIncredient>{ amount: '25mg/ml (2ml)' },
+          { amount: '25mg/ml (2ml)' },
         ]
       },
-      'iv_25mgml_10ml': <Package>{
+      {
+        id: 'iv_25mgml_10ml',
         type: 'amp',
         name: 'Ampulle „Esketamin”',
         incredients: [
-          <PackageIncredient>{ amount: '25mg/ml (10ml)' },
+          { amount: '25mg/ml (10ml)' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/esketamin/ContentEsketamin.vue')
   },
   {
     id: MedId.Fentanyl,
     title: 'Fentanyl',
-    packages: {
-      'iv_0_05mgml_2ml': <Package>{
+    packages: [
+      {
+        id: 'iv_0_05mgml_2ml',
         type: 'amp',
         name: 'Ampulle „Fentanyl”',
         incredients: [
-          <PackageIncredient>{ amount: '0,1mg/2ml' },
+          { amount: '0,1mg/2ml' },
         ]
       },
-      'iv_0_05mgml_10ml': <Package>{
+      {
+        id: 'iv_0_05mgml_10ml',
         type: 'amp',
         name: 'Ampulle „Fentanyl”',
         incredients: [
-          <PackageIncredient>{ amount: '0,5mg/10ml' },
+          { amount: '0,5mg/10ml' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/fentanyl/ContentFentanyl.vue')
   },
   {
     id: MedId.Furosemid,
     title: 'Furosemid',
     subtitle: 'Furesis, Lasix',
-    packages: {
-      'iv_20mg': <Package>{
+    packages: [
+      {
+        id: 'iv_20mg',
         type: 'amp',
         name: 'Ampulle „Furosemid”',
         incredients: [
-          <PackageIncredient>{ amount: '20mg / 2ml',  },
+          { amount: '20mg / 2ml' },
         ]
       },
-      'iv_40mg': <Package>{
+      {
+        id: 'iv_40mg',
         type: 'amp',
         name: 'Ampulle „Furosemid”',
         incredients: [
-          <PackageIncredient>{ amount: '40mg / 4ml',  },
+          { amount: '40mg / 4ml' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/furosemid/ContentFurosemid.vue')
   },
   {
     id: MedId.Glucagon,
     title: 'Glucagon',
-    packages: {
-      'im_1mg': <Package>{
+    packages: [
+      {
+        id: 'im_1mg',
         type: 'spritz',
         name: 'Fertig-Set „Glucagon”',
         incredients: [
-          <PackageIncredient>{ amount: '  1mg', label: 'Pulver (Durchstechflasche)' },
-          <PackageIncredient>{ amount: '+ 1ml', label: 'Wasser (Spritze)' },
+          { amount: '  1mg', label: 'Pulver (Durchstechflasche)' },
+          { amount: '+ 1ml', label: 'Wasser (Spritze)' },
         ]
       },
-      'nasal_3mg': <Package>{
+      {
+        id: 'nasal_3mg',
         type: 'spray',
         name: 'Nasenspray „baqsimi”',
         incredients: [
-          <PackageIncredient>{ amount: '3mg' },
+          { amount: '3mg' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/glucagon/ContentGlucagon.vue')
   },
   {
     id: MedId.Glucose,
     title: 'Glucose',
-    packages: {
-      'iv_1g_10ml': <Package>{
+    packages: [
+      {
+        id: 'iv_1g_10ml',
         type: 'flexamp',
         name: 'Ampulle „G10”',
         incredients: [
-          <PackageIncredient>{ amount: '1g/10ml',  },
+          { amount: '1g/10ml' },
         ]
       },
-      'iv_2g_10ml': <Package>{
+      {
+        id: 'iv_2g_10ml',
         type: 'flexamp',
         name: 'Ampulle „G20”',
         incredients: [
-          <PackageIncredient>{ amount: '2g/10ml' },
+          { amount: '2g/10ml' },
         ]
       },
-      'iv_4g_10ml': <Package>{
+      {
+        id: 'iv_4g_10ml',
         type: 'flexamp',
         name: 'Ampulle „G40”',
         incredients: [
-          <PackageIncredient>{ amount: '4g/10ml' },
+          { amount: '4g/10ml' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/glucose/ContentGlucose.vue')
   },
   {
     id: MedId.Glyceroltrinitrat,
     title: 'Glyceroltrinitrat',
     subtitle: 'Nitro',
-    packages: {
-      'spray_0_4mg': <Package>{
+    packages: [
+      {
+        id: 'spray_0_4mg',
         type: 'spray',
         name: 'Spray „Nitro”',
         incredients: [
-          <PackageIncredient>{ amount: '0,4mg / Hub',  },
+          { amount: '0,4mg / Hub' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/glyceroltrinitrat/ContentGlyceroltrinitrat.vue')
   },
   {
     id: MedId.Heparin,
     title: 'Heparin',
-    packages: {
-      'iv_25000ieml_0_2ml': <Package>{
+    packages: [
+      {
+        id: 'iv_25000ieml_0_2ml',
         type: 'amp',
         name: 'Ampulle „Heparin”',
         incredients: [
-          <PackageIncredient>{ amount: ' 5.000IE (0.2ml)' },
+          { amount: ' 5.000IE (0.2ml)' },
         ]
       },
-      'iv_5000ieml_5ml': <Package>{
+      {
+        id: 'iv_5000ieml_5ml',
         type: 'amp',
         name: 'Ampulle „Heparin”',
         incredients: [
-          <PackageIncredient>{ amount: '25.000IE (5ml)' },
+          { amount: '25.000IE (5ml)' },
         ]
       },
-      'iv_5000ieml_1ml': <Package>{
+      {
+        id: 'iv_5000ieml_1ml',
         type: 'amp',
         name: 'Ampulle „Heparin”',
         incredients: [
-          <PackageIncredient>{ amount: ' 5.000IE (1ml)' },
+          { amount: ' 5.000IE (1ml)' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/heparin/ContentHeparin.vue')
   },
   {
     id: MedId.Ibuprofen,
     title: 'Ibuprofen',
     subtitle: 'Nurofen',
-    packages: {
-      'po_200mg_400mg_600mg_800mg': <Package>{
+    packages: [
+      {
+        id: 'po_200mg_400mg_600mg_800mg',
         type: 'pill',
         name: 'Ibuprofen-Tabletten',
         incredients: [
-          <PackageIncredient>{ amount: '200mg, 400mg', label: '(rezeptfrei)' },
-          <PackageIncredient>{ amount: '600mg. 800mg', label: '(rezeptpflichtig)' },
+          { amount: '200mg, 400mg', label: '(rezeptfrei)' },
+          { amount: '600mg. 800mg', label: '(rezeptpflichtig)' },
         ]
       },
-      'po_20mgml_40mgml': <Package>{
+      {
+        id: 'po_20mgml_40mgml',
         type: 'flsk',
         name: 'Ibuprofen-Saft',
         incredients: [
-          <PackageIncredient>{ amount: ' 20mg / ml' },
-          <PackageIncredient>{ amount: ' 40mg / ml' },
+          { amount: ' 20mg / ml' },
+          { amount: ' 40mg / ml' },
         ]
       },
-      'supp_75mg_125mg_150mg_250mg': <Package>{
+      {
+        id: 'supp_75mg_125mg_150mg_250mg',
         type: 'supp',
         name: 'Ibuprofen-Zäpfchen',
         incredients: [
-          <PackageIncredient>{ amount: ' 75mg, 125mg' },
-          <PackageIncredient>{ amount: '150mg, 250mg' },
+          { amount: ' 75mg, 125mg' },
+          { amount: '150mg, 250mg' },
         ]
       },
-      'iv_4mgml_6mgml_100ml': <Package>{
+      {
+        id: 'iv_4mgml_6mgml_100ml',
         type: 'infusion',
         name: 'Kurzinfusionen',
         incredients: [
-          <PackageIncredient>{ amount: '400mg / 100ml' },
-          <PackageIncredient>{ amount: '600mg / 100ml' },
+          { amount: '400mg / 100ml' },
+          { amount: '600mg / 100ml' },
         ]
       }
-    },
+    ],
     component: () => import('@/views/content/medications/ibuprofen/ContentIbuprofen.vue')
   },
   {
     id: MedId.Ipratropiumbromid,
     title: 'Ipratropiumbromid',
     subtitle: 'Atrovent',
-    packages: {
-      'inh_250ug': <Package>{
+    packages: [
+      {
+        id: 'inh_250ug',
         type: 'flexamp',
         name: 'Ampulle „Atrovent”',
         incredients: [
-          <PackageIncredient>{ amount: '250µg / 2ml' },
+          { amount: '250µg / 2ml' },
         ]
       },
-      'inh_500ug': <Package>{
+      {
+        id: 'inh_500ug',
         type: 'flexamp',
         name: 'Ampulle „Atrovent”',
         incredients: [
-          <PackageIncredient>{ amount: '500µg / 2ml' },
+          { amount: '500µg / 2ml' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/ipratropiumbromid/ContentIpratropiumbromid.vue')
   },
   {
     id: MedId.Metoprolol,
     title: 'Metoprolol',
     subtitle: 'Beloc',
-    packages: {
-      'iv_5mg': <Package>{
+    packages: [
+      {
+        id: 'iv_5mg',
         type: 'amp',
         name: 'Ampulle „Metoprolol”',
         incredients: [
-          <PackageIncredient>{ amount: '5mg / 5ml',  },
+          { amount: '5mg / 5ml' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/metoprolol/ContentMetoprolol.vue')
   },
-
   {
     id: MedId.Midazolam,
     title: 'Midazolam',
     subtitle: 'Dormicum',
-    packages: {
-      'iv_5mgml_1ml': <Package>{
+    packages: [
+      {
+        id: 'iv_5mgml_1ml',
         type: 'amp',
         name: 'Ampulle Midazolam',
         incredients: [
-          <PackageIncredient>{ amount: '5mg / ml (1ml)' }
+          { amount: '5mg / ml (1ml)' }
         ]
       },
-      'iv_1mgml_5ml': <Package>{
+      {
+        id: 'iv_1mgml_5ml',
         type: 'amp',
         name: 'Ampulle Midazolam',
         incredients: [
-          <PackageIncredient>{ amount: '1mg / ml (5ml)' }
+          { amount: '1mg / ml (5ml)' }
         ]
       },
-      'iv_5mgml_3ml': <Package>{
+      {
+        id: 'iv_5mgml_3ml',
         type: 'amp',
         name: 'Ampulle Midazolam',
         incredients: [
-          <PackageIncredient>{ amount: '5mg / ml (3ml)' }
+          { amount: '5mg / ml (3ml)' }
         ]
       },
-      'buccal_2_5mg_5mg_7_5mg_10mg': <Package>{
+      {
+        id: 'buccal_2_5mg_5mg_7_5mg_10mg',
         type: 'spritz',
         name: 'Buccolam Fertigspritzen',
         incredients: [
-          <PackageIncredient>{ amount: ' 2,5mg', label: '(gelb)' },
-          <PackageIncredient>{ amount: ' 5,0mg', label: '(blau)' },
-          <PackageIncredient>{ amount: ' 7,5mg', label: '(lila)' },
-          <PackageIncredient>{ amount: '10,0mg', label: '(rot)' },
+          { amount: ' 2,5mg', label: '(gelb)' },
+          { amount: ' 5,0mg', label: '(blau)' },
+          { amount: ' 7,5mg', label: '(lila)' },
+          { amount: '10,0mg', label: '(rot)' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/midazolam/ContentMidazolam.vue')
   },
   {
     id: MedId.Morphin,
     title: 'Morphin',
-    packages: {
-      'iv_10mg': <Package>{
+    packages: [
+      {
+        id: 'iv_10mg',
         type: 'amp',
         name: 'Ampulle Morphin',
         incredients: [
-          <PackageIncredient>{ amount: '10mg / 1ml' },
+          { amount: '10mg / 1ml' },
         ]
       },
-      'iv_20mg': <Package>{
+      {
+        id: 'iv_20mg',
         type: 'amp',
         name: 'Ampulle Morphin',
         incredients: [
-          <PackageIncredient>{ amount: '20mg / 1ml' },
+          { amount: '20mg / 1ml' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/morphin/ContentMorphin.vue')
   },
   {
     id: MedId.Nalbuphin,
     title: 'Nalbuphin',
-    packages: {
-      'iv_20mg': <Package>{
+    packages: [
+      {
+        id: 'iv_20mg',
         type: 'amp',
         name: 'Ampulle Nalbuphin',
         incredients: [
-          <PackageIncredient>{ amount: '20mg / 2ml' },
+          { amount: '20mg / 2ml' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/nalbuphin/ContentNalbuphin.vue')
   },
   {
     id: MedId.Naloxon,
     title: 'Naloxon',
-    packages: {
-      'iv_0_4mg': <Package>{
+    packages: [
+      {
+        id: 'iv_0_4mg',
         type: 'amp',
         name: 'Ampulle Naloxon',
         incredients: [
-          <PackageIncredient>{ amount: '0,4mg / 1ml' },
+          { amount: '0,4mg / 1ml' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/naloxon/ContentNaloxon.vue')
   },
   {
     id: MedId.Paracetamol,
     title: 'Paracetamol',
     subtitle: 'Perfalgan',
-    packages: {
-      'po_500mg': <Package>{
+    packages: [
+      {
+        id: 'po_500mg',
         type: 'pill',
         name: 'Paracetamol-Tablette',
         incredients: [
-          <PackageIncredient>{ amount: '500mg' }
+          { amount: '500mg' }
         ]
       },
-      'po_40mgml': <Package>{
+      {
+        id: 'po_40mgml',
         type: 'flsk',
         name: 'Paracetamol-Saft',
         incredients: [
-          <PackageIncredient>{ amount: '40mg / ml' }
+          { amount: '40mg / ml' }
         ]
       },
-      'supp_125mg_250mg': <Package>{
+      {
+        id: 'supp_125mg_250mg',
         type: 'supp',
         name: 'Paracetamol-Zäpfchen',
         incredients: [
-          <PackageIncredient>{ amount: '125mg, 250mg' }
+          { amount: '125mg, 250mg' }
         ]
       },
-      'iv_10mgml_100ml': <Package>{
+      {
+        id: 'iv_10mgml_100ml',
         type: 'infusion',
         name: 'Kurzinfusionen',
         incredients: [
-          <PackageIncredient>{ amount: '10mg/ml (100ml)' }
+          { amount: '10mg/ml (100ml)' }
         ]
       }
-    },
+    ],
     component: () => import('@/views/content/medications/paracetamol/ContentParacetamol.vue')
   },
   {
     id: MedId.Prednisolon,
     title: 'Prednisolon',
     subtitle: 'Prednisolut',
-    packages: {
-      'supp_100mg': <Package>{
+    packages: [
+      {
+        id: 'supp_100mg',
         type: 'supp',
         name: 'Zäpfchen „Rectodelt”',
         incredients: [
-          <PackageIncredient>{ amount: '100mg' }
+          { amount: '100mg' }
         ]
       },
-      'iv_100mg': <Package>{
+      {
+        id: 'iv_100mg',
         type: 'amp-2x',
         name: 'Set „Prednisolut”',
         incredients: [
-          <PackageIncredient>{ amount: ' 100mg', label: 'Pulver' },
-          <PackageIncredient>{ amount: '+  2ml', label: 'Wasser' },
+          { amount: ' 100mg', label: 'Pulver' },
+          { amount: '+  2ml', label: 'Wasser' },
         ]
       },
-      'iv_250mg': <Package>{
+      {
+        id: 'iv_250mg',
         type: 'amp-flsk',
         name: 'Set „Prednisolut”',
         incredients: [
-          <PackageIncredient>{ amount: ' 250mg', label: 'Pulver' },
-          <PackageIncredient>{ amount: '+  5ml', label: 'Wasser' },
+          { amount: ' 250mg', label: 'Pulver' },
+          { amount: '+  5ml', label: 'Wasser' },
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/prednisolon/ContentPrednisolon.vue')
   },
   {
     id: MedId.Salbutamol,
     title: 'Salbutamol',
-    packages: {
-      'inh_5mgml': <Package>{
+    packages: [
+      {
+        id: 'inh_5mgml',
         type: 'flexamp',
         name: 'Inhalationslösung Salbutamol',
         incredients: [
-          <PackageIncredient>{ amount: '5mg / ml' }
+          { amount: '5mg / ml' }
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/salbutamol/ContentSalbutamol.vue')
   },
   {
     id: MedId.Tranexam,
     title: 'Tranexamsäure',
-    packages: {
-      'iv_100mgml_5ml': <Package>{
+    packages: [
+      {
+        id: 'iv_100mgml_5ml',
         type: 'amp',
         name: 'Ampulle Tranexamsäure',
         incredients: [
-          <PackageIncredient>{ amount: '100mg / ml (5ml)' }
+          { amount: '100mg / ml (5ml)' }
         ]
       },
-      'iv_100mgml_10ml': <Package>{
+      {
+        id: 'iv_100mgml_10ml',
         type: 'amp',
         name: 'Ampulle Tranexamsäure',
         incredients: [
-          <PackageIncredient>{ amount: '100mg / ml (10ml)' }
+          { amount: '100mg / ml (10ml)' }
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/tranexam/ContentTranexam.vue')
   },
   {
     id: MedId.Urapidil,
     title: 'Urapidil',
     subtitle: 'Ebrantil',
-    packages: {
-      'iv_5mgml_5ml': <Package>{
+    packages: [
+      {
+        id: 'iv_5mgml_5ml',
         type: 'amp',
         name: 'Ampulle Urapidil',
         incredients: [
-          <PackageIncredient>{ amount: '5mg / ml (5ml)' }
+          { amount: '5mg / ml (5ml)' }
         ]
       },
-      'iv_5mgml_10ml': <Package>{
+      {
+        id: 'iv_5mgml_10ml',
         type: 'amp',
         name: 'Ampulle Urapidil',
         incredients: [
-          <PackageIncredient>{ amount: '5mg / ml (10ml)' }
+          { amount: '5mg / ml (10ml)' }
         ]
       },
-    },
+    ],
     component: () => import('@/views/content/medications/urapidil/ContentUrapidil.vue')
   },
 ]

@@ -34,7 +34,7 @@ export interface Medication {
   title: string;
   subtitle?: string;
   path?: string,
-  packages: Record<string, Package>,
+  packages: Array<Package>,
   component: () => Promise<any>,
 }
 
