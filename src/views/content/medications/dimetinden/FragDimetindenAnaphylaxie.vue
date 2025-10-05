@@ -38,7 +38,7 @@ const props = defineProps<{
 
 const isApplicable = computed(() => props.patient.estimatedAge >= 12 && props.patient.estimatedWeight >= 10)
 
-const weightDose = computed(() => isApplicable.value ? 0 : round(Math.max(props.patient.estimatedWeight / 10, 8), 1, 'down'))
+const weightDose = computed(() => isApplicable.value ? 0 : round(Math.min(props.patient.estimatedWeight / 10, 8), 1, 'down'))
 const weightHint = computed(() => {
   const ml = weightDose.value
   if (ml == 4) { return '1 Ampulle' }

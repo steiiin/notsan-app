@@ -39,8 +39,8 @@ const usageTagMap: Record<string, string> = {
 const usageDenseTagMap: Record<string, string> = {
   iv: 'i.v.',
   im: 'i.m.',
-  nasal: 'i.n.',
-  pi: 'p.i.',
+  nasal: 'nasal',
+  pi: 'inhal.',
   po: 'oral',
   supp: 'rekt.',
   invisible: ' ',
