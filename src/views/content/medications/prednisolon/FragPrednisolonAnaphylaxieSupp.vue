@@ -8,16 +8,13 @@
 
 <script setup lang="ts">
 
-import { supp_100mg } from './Packages'
+import { isSupp_100mgEnabled } from './Packages'
 import { MedId } from '@/types/medication'
 import { useConfigStore } from '@/stores/config'
-const configStore = useConfigStore()
 
 // ########################################################################################################
 
 const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Prednisolon) ?? true)
-const isSupp_100mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Prednisolon, supp_100mg.id))
-
 // ########################################################################################################
 
 import { Patient } from '@/types/emergency';

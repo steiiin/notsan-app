@@ -124,15 +124,9 @@ import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
 
-import { inh_250ug, inh_500ug } from './Packages'
-import { MedId } from '@/types/medication'
-import { useConfigStore } from '@/stores/config'
-const configStore = useConfigStore()
+import { inh_250ug, inh_500ug, isInh_250ugEnabled, isInh_500ugEnabled } from './Packages'
 
 // ########################################################################################################
-
-const isInh_250ugEnabled = computed(() => configStore.checkPackageEnable(MedId.Ipratropiumbromid, inh_250ug.id))
-const isInh_500ugEnabled = computed(() => configStore.checkPackageEnable(MedId.Ipratropiumbromid, inh_500ug.id))
 
 const onlyOneEnabled = computed(() => [ isInh_250ugEnabled.value, isInh_500ugEnabled.value ].filter(Boolean).length === 1)
 

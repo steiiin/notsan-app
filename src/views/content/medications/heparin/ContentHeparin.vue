@@ -107,16 +107,16 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
-import { iv_25000ieml_0_2ml, iv_5000ieml_5ml, iv_5000ieml_1ml } from './Packages'
-import { MedId } from '@/types/medication'
-import { useConfigStore } from '@/stores/config'
-const configStore = useConfigStore()
+import {
+  iv_25000ieml_0_2ml,
+  iv_5000ieml_5ml,
+  iv_5000ieml_1ml,
+  isIv_25000ieml_0_2mlEnabled,
+  isIv_5000ieml_5mlEnabled,
+  isIv_5000ieml_1mlEnabled,
+} from './Packages'
 
 // ########################################################################################################
-
-const isIv_25000ieml_0_2mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Heparin, iv_25000ieml_0_2ml.id))
-const isIv_5000ieml_5mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Heparin, iv_5000ieml_5ml.id))
-const isIv_5000ieml_1mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Heparin, iv_5000ieml_1ml.id))
 
 const onlyOneEnabled = computed(() => [ isIv_25000ieml_0_2mlEnabled.value, isIv_5000ieml_5mlEnabled.value, isIv_5000ieml_1mlEnabled.value ].filter(Boolean).length === 1)
 

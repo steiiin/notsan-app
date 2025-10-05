@@ -115,16 +115,16 @@ import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
 
-import { supp_100mg, iv_100mg, iv_250mg } from './Packages'
-import { MedId } from '@/types/medication'
-import { useConfigStore } from '@/stores/config'
-const configStore = useConfigStore()
+import {
+  supp_100mg,
+  iv_100mg,
+  iv_250mg,
+  isSupp_100mgEnabled,
+  isIv_100mgEnabled,
+  isIv_250mgEnabled,
+} from './Packages'
 
 // ########################################################################################################
-
-const isSupp_100mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Prednisolon, supp_100mg.id))
-const isIv_100mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Prednisolon, iv_100mg.id))
-const isIv_250mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Prednisolon, iv_250mg.id))
 
 const onlyOneIvEnabled = computed(() => [ isIv_100mgEnabled.value, isIv_250mgEnabled.value ].filter(Boolean).length === 1)
 

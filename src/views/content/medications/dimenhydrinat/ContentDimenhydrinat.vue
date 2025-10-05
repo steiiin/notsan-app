@@ -162,16 +162,10 @@ import TextUnderline from '@/components/TextUnderline.vue'
 
 import imgLongQt from '@/data/assets/long-qt.png'
 
-import { iv_62mg, supp_40mg, supp_70mg } from './Packages'
-import { MedId } from '@/types/medication'
-import { useConfigStore } from '@/stores/config'
-const configStore = useConfigStore()
+import { iv_62mg, supp_40mg, supp_70mg, isIv_62Enabled, isSupp40Enabled, isSupp70Enabled } from './Packages'
 
 // ########################################################################################################
 
-const isIv_62Enabled = computed(() => configStore.checkPackageEnable(MedId.Dimenhydrinat, iv_62mg.id))
-const isSupp40Enabled = computed(() => configStore.checkPackageEnable(MedId.Dimenhydrinat, supp_40mg.id))
-const isSupp70Enabled = computed(() => configStore.checkPackageEnable(MedId.Dimenhydrinat, supp_70mg.id))
 const anySuppEnabled = computed(() => isSupp40Enabled.value || isSupp70Enabled.value)
 
 </script>

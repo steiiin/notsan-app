@@ -151,15 +151,9 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
-import { iv_0_05mgml_2ml, iv_0_05mgml_10ml } from './Packages'
-import { MedId } from '@/types/medication'
-import { useConfigStore } from '@/stores/config'
-const configStore = useConfigStore()
+import { iv_0_05mgml_2ml, iv_0_05mgml_10ml, isIv_0_05mgml_2mlEnabled, isIv_0_05mgml_10mlEnabled } from './Packages'
 
 // ########################################################################################################
-
-const isIv_0_05mgml_2mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Fentanyl, iv_0_05mgml_2ml.id))
-const isIv_0_05mgml_10mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Fentanyl, iv_0_05mgml_10ml.id))
 
 // ########################################################################################################
 

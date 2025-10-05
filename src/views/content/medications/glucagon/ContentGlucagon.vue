@@ -109,15 +109,9 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
-import { im_1mg, nasal_3mg } from './Packages'
-import { MedId } from '@/types/medication'
-import { useConfigStore } from '@/stores/config'
-const configStore = useConfigStore()
+import { im_1mg, nasal_3mg, isIm_1mgEnabled, isNasal_3mgEnabled } from './Packages'
 
 // ########################################################################################################
-
-const isIm_1mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Glucagon, im_1mg.id))
-const isNasal_3mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Glucagon, nasal_3mg.id))
 
 const onlyOneEnabled = computed(() => [ isIm_1mgEnabled.value, isNasal_3mgEnabled.value ].filter(Boolean).length === 1)
 
