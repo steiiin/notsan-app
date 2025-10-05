@@ -36,12 +36,12 @@ function decimalPlaces(num: number): number {
 }
 
 function sanitizeFloatingPoint(num: number, precision: number): number {
-  if (precision <= 0) {
-    return Math.round(num + Number.EPSILON);
+  if (!Number.isFinite(num)) {
+    return num;
   }
-  const safePrecision = Math.min(precision, 15);
-  const factor = 10 ** safePrecision;
-  return Math.round((num + Number.EPSILON) * factor) / factor;
+
+  const safePrecision = Math.min(Math.max(precision, 0), 15);
+  return Number.parseFloat(num.toFixed(safePrecision));
 }
 
 /**
