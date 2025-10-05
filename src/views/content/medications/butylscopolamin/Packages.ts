@@ -1,6 +1,7 @@
+import { MedId } from '@/types/medication'
 import { resolvePackages } from '../resolvePackages'
 
-const packages = resolvePackages('butylscopolamin', [
+const packages = resolvePackages(MedId.Butylscopolamin, [
   'iv_20mg'
 ] as const)
 

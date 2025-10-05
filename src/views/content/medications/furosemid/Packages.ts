@@ -5,7 +5,7 @@ import { computedOnlyOne } from '@/service/reactive'
 
 const packageIds = ['iv_20mg', 'iv_40mg'] as const
 
-const packages = resolvePackages('furosemid', packageIds)
+const packages = resolvePackages(MedId.Furosemid, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Furosemid, packageIds)
 
 export const iv_20mg = packages.iv_20mg

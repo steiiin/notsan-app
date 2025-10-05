@@ -7,7 +7,7 @@ const packageIds = [
   'iv_100mgml_10ml'
 ] as const
 
-const packages = resolvePackages('tranexam', packageIds)
+const packages = resolvePackages(MedId.Tranexam, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Tranexam, packageIds)
 
 export const iv_100mgml_5ml = packages.iv_100mgml_5ml

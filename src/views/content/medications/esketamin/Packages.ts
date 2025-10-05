@@ -9,7 +9,7 @@ const packageIds = [
   'iv_25mgml_10ml'
 ] as const
 
-const packages = resolvePackages('esketamin', packageIds)
+const packages = resolvePackages(MedId.Esketamin, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Esketamin, packageIds)
 
 export const iv_5mgml_5ml = packages.iv_5mgml_5ml

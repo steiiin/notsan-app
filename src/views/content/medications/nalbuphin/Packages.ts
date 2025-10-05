@@ -1,6 +1,7 @@
+import { MedId } from '@/types/medication'
 import { resolvePackages } from '../resolvePackages'
 
-const packages = resolvePackages('nalbuphin', [
+const packages = resolvePackages(MedId.Nalbuphin, [
   'iv_20mg'
 ] as const)
 

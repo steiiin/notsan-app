@@ -7,7 +7,7 @@ const packageIds = [
   'iv_5mgml_10ml'
 ] as const
 
-const packages = resolvePackages('urapidil', packageIds)
+const packages = resolvePackages(MedId.Urapidil, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Urapidil, packageIds)
 
 export const iv_5mgml_5ml = packages.iv_5mgml_5ml

@@ -9,7 +9,7 @@ const packageIds = [
   'supp_70mg'
 ] as const
 
-const packages = resolvePackages('dimenhydrinat', packageIds)
+const packages = resolvePackages(MedId.Dimenhydrinat, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Dimenhydrinat, packageIds)
 
 export const iv_62mg = packages.iv_62mg

@@ -9,7 +9,7 @@ const packageIds = [
   'iv_5000ieml_1ml'
 ] as const
 
-const packages = resolvePackages('heparin', packageIds)
+const packages = resolvePackages(MedId.Heparin, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Heparin, packageIds)
 
 export const iv_25000ieml_0_2ml = packages.iv_25000ieml_0_2ml

@@ -9,7 +9,7 @@ const packageIds = [
   'iv_4g_10ml'
 ] as const
 
-const packages = resolvePackages('glucose', packageIds)
+const packages = resolvePackages(MedId.Glucose, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Glucose, packageIds)
 
 export const iv_1g_10ml = packages.iv_1g_10ml

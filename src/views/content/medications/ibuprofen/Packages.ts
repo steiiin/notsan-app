@@ -10,7 +10,7 @@ const packageIds = [
   'iv_4mgml_6mgml_100ml'
 ] as const
 
-const packages = resolvePackages('ibuprofen', packageIds)
+const packages = resolvePackages(MedId.Ibuprofen, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Ibuprofen, packageIds)
 
 export const po_200mg_400mg_600mg_800mg = packages.po_200mg_400mg_600mg_800mg

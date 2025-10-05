@@ -10,7 +10,7 @@ const packageIds = [
   'buccal_2_5mg_5mg_7_5mg_10mg',
 ] as const
 
-const packages = resolvePackages('midazolam', packageIds)
+const packages = resolvePackages(MedId.Midazolam, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Midazolam, packageIds)
 
 export const iv_5mgml_1ml = packages.iv_5mgml_1ml

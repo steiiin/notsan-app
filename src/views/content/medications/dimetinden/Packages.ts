@@ -1,6 +1,7 @@
+import { MedId } from '@/types/medication'
 import { resolvePackages } from '../resolvePackages'
 
-const packages = resolvePackages('dimetinden', [
+const packages = resolvePackages(MedId.Dimetinden, [
   'iv_4mg'
 ] as const)
 

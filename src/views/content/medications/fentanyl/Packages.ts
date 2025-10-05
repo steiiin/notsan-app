@@ -7,7 +7,7 @@ const packageIds = [
   'iv_0_05mgml_10ml'
 ] as const
 
-const packages = resolvePackages('fentanyl', packageIds)
+const packages = resolvePackages(MedId.Fentanyl, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Fentanyl, packageIds)
 
 export const iv_0_05mgml_2ml = packages.iv_0_05mgml_2ml

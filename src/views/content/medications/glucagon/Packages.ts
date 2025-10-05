@@ -8,7 +8,7 @@ const packageIds = [
   'nasal_3mg'
 ] as const
 
-const packages = resolvePackages('glucagon', packageIds)
+const packages = resolvePackages(MedId.Glucagon, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Glucagon, packageIds)
 
 export const im_1mg = packages.im_1mg

@@ -10,7 +10,7 @@ const packageIds = [
   'iv_10mgml_100ml'
 ] as const
 
-const packages = resolvePackages('paracetamol', packageIds)
+const packages = resolvePackages(MedId.Paracetamol, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Paracetamol, packageIds)
 
 export const po_500mg = packages.po_500mg

@@ -8,7 +8,7 @@ const packageIds = [
   'inh_500ug'
 ] as const
 
-const packages = resolvePackages('ipratropiumbromid', packageIds)
+const packages = resolvePackages(MedId.Ipratropiumbromid, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Ipratropiumbromid, packageIds)
 
 export const inh_250ug = packages.inh_250ug

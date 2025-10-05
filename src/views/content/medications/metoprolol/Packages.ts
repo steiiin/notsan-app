@@ -1,6 +1,7 @@
+import { MedId } from '@/types/medication'
 import { resolvePackages } from '../resolvePackages'
 
-const packages = resolvePackages('metoprolol', [
+const packages = resolvePackages(MedId.Metoprolol, [
   'iv_5mg'
 ] as const)
 

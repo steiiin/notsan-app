@@ -8,7 +8,7 @@ const packageIds = [
   'iv_20mg'
 ] as const
 
-const packages = resolvePackages('morphin', packageIds)
+const packages = resolvePackages(MedId.Morphin, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Morphin, packageIds)
 
 export const iv_10mg = packages.iv_10mg

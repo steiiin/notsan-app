@@ -9,7 +9,7 @@ const packageIds = [
   'iv_250mg'
 ] as const
 
-const packages = resolvePackages('prednisolon', packageIds)
+const packages = resolvePackages(MedId.Prednisolon, packageIds)
 const packageFlags = useMedicationPackageFlags(MedId.Prednisolon, packageIds)
 
 export const supp_100mg = packages.supp_100mg
