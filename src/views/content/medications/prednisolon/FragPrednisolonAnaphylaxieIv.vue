@@ -2,7 +2,7 @@
   <template v-if="enabled">
     <ns-dosage :dosage="{
       target: 'Prednisolon',
-      dose: `${weightDose}mg`, hint: `(${weightHint})` }">
+      dose: `${weightDose}mg`, hint: weightHint }">
     </ns-dosage>
   </template>
 </template>
