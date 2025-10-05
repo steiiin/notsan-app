@@ -1,6 +1,6 @@
 <template>
   <template v-if="enabled">
-    <ns-dosage-usage type="im">
+    <ns-dosage-usage type="im" dense>
       <template v-if="ageRange == EpiAgeRange.High">
         <ns-dosage :dosage="{ target: 'Adrenalin', dose: '0,5mg', hint: '(½ Ampulle)' }"></ns-dosage>
       </template>
