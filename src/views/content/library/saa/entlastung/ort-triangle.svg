@@ -25,7 +25,7 @@
      showgrid="false"
      inkscape:zoom="2.2111607"
      inkscape:cx="175.69958"
-     inkscape:cy="185.42298"
+     inkscape:cy="233.3616"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="0"
@@ -83,7 +83,13 @@
        maskUnits="userSpaceOnUse"><use
          transform="translate(43.012 -.047314)"
          xlink:href="#path2658"
-         id="use1131" /></mask></defs><g
+         id="use1131" /></mask></defs><rect
+     style="fill:#ffffff;fill-opacity:0.50439882;stroke:none;stroke-width:0.210879;stroke-linecap:round;stroke-linejoin:bevel;paint-order:fill markers stroke"
+     id="rect766"
+     width="97.789124"
+     height="97.789124"
+     x="0.10543948"
+     y="0.10543948" /><g
      id="g1142"><image
        x="-35.665"
        y="-52.598"

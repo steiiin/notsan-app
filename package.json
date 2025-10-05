@@ -10,7 +10,7 @@
     "test:e2e": "cypress run",
     "test:unit": "vitest",
     "lint": "eslint .",
-    "svgo": "find src/views/content/library/bpr -type f -name 'flow.svg' -exec svgo --config svgo.flow.config.js {} \\; && find src/views/content/library/bpr -type f -name '*.svg' ! -name 'flow.svg' -exec svgo --config svgo.assets.config.js {} \\; && find src/data/assets -type f -name '*.svg' -exec svgo --config svgo.assets.config.js {} \\;"
+    "svgo": "find src/views/content/library/ -type f -name 'flow.svg' -exec svgo --config svgo.flow.config.js {} \\; && find src/views/content/library/bpr -type f -name '*.svg' ! -name 'flow.svg' -exec svgo --config svgo.assets.config.js {} \\; && find src/data/assets -type f -name '*.svg' -exec svgo --config svgo.assets.config.js {} \\;"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
