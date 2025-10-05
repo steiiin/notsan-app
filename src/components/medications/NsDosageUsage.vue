@@ -77,10 +77,6 @@ const usageMinHeight = computed(() => props.dense ? 3.5 : (props.type && props.t
 
 <style lang="css" scoped>
 
-.ns-dosage-usage {
-  margin-bottom: var(--ns-card-padding);
-}
-
 .ns-dosage-usage .usage-divider {
   display: flex;
   position: absolute;
@@ -116,7 +112,7 @@ const usageMinHeight = computed(() => props.dense ? 3.5 : (props.type && props.t
 .usage-divider.grey {
   border-color: var(--ns-color-grey-shade)
 }
-.usage-divider.invisible {
+.usage-divider.none {
   border-color: transparent
 }
 
