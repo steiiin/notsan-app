@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 
-import { supp_100mg, iv_100mg, iv_250mg } from './Packages'
+import { iv_100mg, iv_250mg } from './Packages'
 import { MedId } from '@/types/medication'
 import { useConfigStore } from '@/stores/config'
 const configStore = useConfigStore()

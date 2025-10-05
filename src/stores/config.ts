@@ -14,7 +14,7 @@ export const useConfigStore = defineStore('config', {
       return true
     },
     checkPackageEnable(medId: string, packageId: string): boolean {
-      if (this.checkMedicationEnabled(medId)) {
+      if (this.medicationConfig.hasOwnProperty(medId)) {
         if (this.medicationConfig[medId].packages.hasOwnProperty(packageId)) {
           return this.medicationConfig[medId].packages[packageId]
         }
@@ -26,7 +26,7 @@ export const useConfigStore = defineStore('config', {
 
       /* TODO: implement config save/load */
       this.medicationConfig = {
-        'prednisolon': { enabled: true, packages: { 'supp_100mg': false } }
+        'prednisolxon': { enabled: true, packages: { 'supp_100mg': false } }
       }
 
     },
