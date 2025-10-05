@@ -43,7 +43,7 @@ const props = defineProps<{
 
 const useFull = computed(() => props.patient.isLikelyAnAdult || props.patient.estimatedWeight>=100)
 const childDose = computed(() => useFull.value ? 1 : round(props.patient.estimatedWeight*0.01, 0.05, 'up'))
-const childHint = computed(() => childDose.value / 0.05)
+const childHint = computed(() => (childDose.value / 0.05).toFixed())
 
 </script>
 
