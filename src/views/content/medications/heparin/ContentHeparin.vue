@@ -63,7 +63,7 @@
         <ns-dosage-usage type="iv">
           <div>
             <ns-dosage :dosage="{ dose: '5.000IE', hint: doseHint }"></ns-dosage>
-            <ns-dosage v-if="hasToWarn && !onlyOneEnabled" :dosage="{ dose: 'Auf richtige Ampullengröße achten!', color: 'red' }"></ns-dosage>
+            <ns-dosage v-if="isIv_5000ieml_5mlEnabled && !isOnlyOneEnabled" :dosage="{ dose: 'Auf richtige Ampullengröße achten!', color: 'red' }"></ns-dosage>
           </div>
           <hr>
           <h2>Keine Repetition</h2>
@@ -108,25 +108,24 @@ import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
 import {
+
   iv_25000ieml_0_2ml,
   iv_5000ieml_5ml,
   iv_5000ieml_1ml,
+
   isIv_25000ieml_0_2mlEnabled,
   isIv_5000ieml_5mlEnabled,
   isIv_5000ieml_1mlEnabled,
+  isOnlyOneEnabled,
+
 } from './Packages'
 
 // ########################################################################################################
 
-const onlyOneEnabled = computed(() => [ isIv_25000ieml_0_2mlEnabled.value, isIv_5000ieml_5mlEnabled.value, isIv_5000ieml_1mlEnabled.value ].filter(Boolean).length === 1)
-
-// ########################################################################################################
-
-const hasToWarn = computed(() => isIv_5000ieml_5mlEnabled.value)
 const doseHint = computed(() => {
-  if (hasToWarn.value)
+  if (isIv_5000ieml_5mlEnabled.value)
   {
-    if (onlyOneEnabled.value) { return '(nur 1ml aus der Ampulle)' }
+    if (isOnlyOneEnabled.value) { return '(nur 1ml aus der Ampulle)' }
   }
   else
   {

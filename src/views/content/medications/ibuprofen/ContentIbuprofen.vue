@@ -145,32 +145,31 @@ import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
 import {
+
   po_200mg_400mg_600mg_800mg,
   po_20mgml_40mgml,
   supp_75mg_125mg_150mg_250mg,
   iv_4mgml_6mgml_100ml,
+
   isPo_200mg_400mg_600mg_800mgEnabled,
   isPo_20mgml_40mgmlEnabled,
   isSupp_75mg_125mg_150mg_250mgEnabled,
   isIv_4mgml_6mgml_100mlEnabled,
+  isOnlyOneEnabled,
+  isAnyPoEnabled,
+  isAnySuppEnabled,
+  isAnyIvEnabled,
+
 } from './Packages'
 
 // ########################################################################################################
 
-const onlyOneEnabled = computed(() => [ isPo_200mg_400mg_600mg_800mgEnabled.value, isPo_20mgml_40mgmlEnabled.value, isSupp_75mg_125mg_150mg_250mgEnabled.value, isIv_4mgml_6mgml_100mlEnabled.value ].filter(Boolean).length === 1)
-
-const hasPo = computed(() => isPo_200mg_400mg_600mg_800mgEnabled.value || isPo_20mgml_40mgmlEnabled.value)
-const hasSupp = computed(() => isSupp_75mg_125mg_150mg_250mgEnabled.value)
-const hasIv = computed(() => isIv_4mgml_6mgml_100mlEnabled.value)
-
-// ########################################################################################################
-
 const onsetText = computed(() => {
-  const one = onlyOneEnabled.value
+  const one = isOnlyOneEnabled.value
   const parts = []
-  if (hasIv.value) { parts.push(`${one ? '' : '<case>i.v.</case> '}5-10 Minuten${one ? '' : '|'}`) }
-  if (hasPo.value) { parts.push(`${one ? '' : '<case>oral</case> '}30-60 Minuten${one ? '' : '|'}`) }
-  if (hasSupp.value) { parts.push(`${one ? '' : '<case>rektal</case> '}30-45 Minuten${one ? '' : '|'}`) }
+  if (isAnyIvEnabled.value) { parts.push(`${one ? '' : '<case>i.v.</case> '}5-10 Minuten${one ? '' : '|'}`) }
+  if (isAnyPoEnabled.value) { parts.push(`${one ? '' : '<case>oral</case> '}30-60 Minuten${one ? '' : '|'}`) }
+  if (isAnySuppEnabled.value) { parts.push(`${one ? '' : '<case>rektal</case> '}30-45 Minuten${one ? '' : '|'}`) }
   return parts.join('')
 })
 

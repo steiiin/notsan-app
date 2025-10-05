@@ -67,7 +67,7 @@
 
       <ns-dosage-indication name="Krampfanfall">
 
-        <ns-dosage-usage type="invisible" v-if="!onlyOneIvEnabled">
+        <ns-dosage-usage type="invisible" v-if="!isOnlyOneIvEnabled">
           <h2><text-colored red>Achtung</text-colored></h2>
           <p>
             Unbedingt auf richtige Dosierung <br>
@@ -133,17 +133,17 @@
           </p>
           <ns-package v-if="isIv_1mgml_5mlEnabled"
             :package="iv_1mgml_5ml" :inline-specs="{
-            onlyOne: onlyOneIvEnabled }">
+            onlyOne: isOnlyOneIvEnabled }">
           </ns-package>
           <ns-package v-if="isIv_5mgml_1mlEnabled"
             :package="iv_5mgml_1ml" :inline-specs="{
             on: 5,
-            onlyOne: onlyOneIvEnabled }">
+            onlyOne: isOnlyOneIvEnabled }">
           </ns-package>
           <ns-package v-if="isIv_5mgml_3mlEnabled"
             :package="iv_5mgml_3ml" :inline-specs="{
             on: 5, off: 1,
-            onlyOne: onlyOneIvEnabled }">
+            onlyOne: isOnlyOneIvEnabled }">
           </ns-package>
 
           <hr>
@@ -232,44 +232,44 @@ import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
 
 import {
+
   iv_5mgml_1ml,
   iv_5mgml_3ml,
   iv_1mgml_5ml,
   buccal_2_5mg_5mg_7_5mg_10mg,
+
   isIv_5mgml_1mlEnabled,
   isIv_5mgml_3mlEnabled,
   isIv_1mgml_5mlEnabled,
   isBuccal_2_5mg_5mg_7_5mg_10mgEnabled,
+
+  isAnyIvEnabled,
+  isAnyBucEnabled,
+  isOnlyOneIvEnabled,
+  isOnlyOneEnabled,
+
 } from './Packages'
 
 // ########################################################################################################
 
-const onlyOneEnabled = computed(() => [ onlyOneIvEnabled.value, isBuccal_2_5mg_5mg_7_5mg_10mgEnabled.value ].filter(Boolean).length === 1)
-const onlyOneIvEnabled = computed(() => [ isIv_5mgml_1mlEnabled.value, isIv_5mgml_3mlEnabled.value, isIv_1mgml_5mlEnabled.value ].filter(Boolean).length === 1)
-
-const hasIv = computed(() => isIv_1mgml_5mlEnabled.value || isIv_5mgml_1mlEnabled.value || isIv_5mgml_3mlEnabled.value)
-const hasBuc = computed(() => isBuccal_2_5mg_5mg_7_5mg_10mgEnabled.value)
-
-// ########################################################################################################
-
 const onsetText = computed(() => {
-  let one = onlyOneEnabled.value
+  let one = isOnlyOneEnabled.value
   const parts = []
-  if (hasIv.value) {
+  if (isAnyIvEnabled.value) {
     parts.push('<case>i.v.</case>1-5 Minuten|<case>nasal</case>5-10 Minuten|')
     one = false
   }
-  if (hasBuc.value) { parts.push(`${one ? '' : '<case>buccal</case> '}10-15 Minuten${one ? '' : '|'}`) }
+  if (isAnyBucEnabled.value) { parts.push(`${one ? '' : '<case>buccal</case> '}10-15 Minuten${one ? '' : '|'}`) }
   return parts.join('')
 })
 const durationText = computed(() => {
-  let one = onlyOneEnabled.value
+  let one = isOnlyOneEnabled.value
   const parts = []
-  if (hasIv.value) {
+  if (isAnyIvEnabled.value) {
     parts.push('<case>i.v.</case>1-2 Stunden|<case>nasal</case>1-2 Stunden|')
     one = false
   }
-  if (hasBuc.value) { parts.push(`${one ? '' : '<case>buccal</case> '}Bis 4 Stunden${one ? '' : '|'}`) }
+  if (isAnyBucEnabled.value) { parts.push(`${one ? '' : '<case>buccal</case> '}Bis 4 Stunden${one ? '' : '|'}`) }
   return parts.join('')
 })
 

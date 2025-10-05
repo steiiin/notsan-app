@@ -1,7 +1,7 @@
 import { useMedicationPackageFlags } from '@/composables/useMedicationPackageFlags'
 import { MedId } from '@/types/medication'
 import { resolvePackages } from '../resolvePackages'
-import { computed } from 'vue'
+import { computedAny } from '@/service/reactive'
 
 const packageIds = [
   'iv_62mg',
@@ -20,4 +20,4 @@ export const isIv_62Enabled = packageFlags.iv_62mg
 export const isSupp40Enabled = packageFlags.supp_40mg
 export const isSupp70Enabled = packageFlags.supp_70mg
 
-export const isAnySuppEnabled = computed(() => isSupp40Enabled.value || isSupp70Enabled.value)
+export const isAnySuppEnabled = computedAny([ isSupp40Enabled, isSupp70Enabled])
