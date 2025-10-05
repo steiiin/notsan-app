@@ -126,8 +126,6 @@ import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import { spray_0_4mg } from './Packages'
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
-
 </script>
 
 <style lang="css" scoped>

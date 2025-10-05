@@ -230,26 +230,26 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
-import {
-  iv_5mgml_1ml,
-  iv_5mgml_3ml,
-  iv_1mgml_5ml,
-  buccal_2_5mg_5mg_7_5mg_10mg,
-} from './Packages'
 
-const isIv_5mgml_1mlEnabled = computed(() => true)
-const isIv_5mgml_3mlEnabled = computed(() => true)
-const isIv_1mgml_5mlEnabled = computed(() => true)
+import { iv_5mgml_1ml, iv_5mgml_3ml, iv_1mgml_5ml, buccal_2_5mg_5mg_7_5mg_10mg } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
 
-const isBuccal_2_5mg_5mg_7_5mg_10mgEnabled = computed(() => true)
+// ########################################################################################################
+
+const isIv_5mgml_1mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Midazolam, iv_5mgml_1ml.id))
+const isIv_5mgml_3mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Midazolam, iv_5mgml_3ml.id))
+const isIv_1mgml_5mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Midazolam, iv_1mgml_5ml.id))
+const isBuccal_2_5mg_5mg_7_5mg_10mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Midazolam, buccal_2_5mg_5mg_7_5mg_10mg.id))
 
 const onlyOneEnabled = computed(() => [ onlyOneIvEnabled.value, isBuccal_2_5mg_5mg_7_5mg_10mgEnabled.value ].filter(Boolean).length === 1)
 const onlyOneIvEnabled = computed(() => [ isIv_5mgml_1mlEnabled.value, isIv_5mgml_3mlEnabled.value, isIv_1mgml_5mlEnabled.value ].filter(Boolean).length === 1)
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
-
 const hasIv = computed(() => isIv_1mgml_5mlEnabled.value || isIv_5mgml_1mlEnabled.value || isIv_5mgml_3mlEnabled.value)
 const hasBuc = computed(() => isBuccal_2_5mg_5mg_7_5mg_10mgEnabled.value)
+
+// ########################################################################################################
 
 const onsetText = computed(() => {
   let one = onlyOneEnabled.value

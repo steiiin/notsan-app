@@ -87,14 +87,21 @@ import NsPharmacokinetics from '@/components/medications/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
-import { iv_1g_10ml, iv_2g_10ml, iv_4g_10ml } from './Packages'
 
-const isIv_1g_10mlEnabled = computed(() => true)
-const isIv_2g_10mlEnabled = computed(() => true)
-const isIv_4g_10mlEnabled = computed(() => true)
+import { iv_1g_10ml, iv_2g_10ml, iv_4g_10ml } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
+
+// ########################################################################################################
+
+const isIv_1g_10mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Glucose, iv_1g_10ml.id))
+const isIv_2g_10mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Glucose, iv_2g_10ml.id))
+const isIv_4g_10mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Glucose, iv_4g_10ml.id))
+
 const onlyOneEnabled = computed(() => [ isIv_1g_10mlEnabled.value, isIv_2g_10mlEnabled.value, isIv_4g_10mlEnabled.value ].filter(Boolean).length === 1)
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
+// ########################################################################################################
 
 const doseAdultHint = computed(() => {
   if (onlyOneEnabled.value)

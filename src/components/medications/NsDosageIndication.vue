@@ -52,8 +52,10 @@ header ion-icon {
 }
 
 .usages {
-  padding-inline: var(--ns-card-padding);
-  padding-top: var(--ns-text-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-card-padding);
+  padding: var(--ns-text-padding) var(--ns-card-padding) var(--ns-text-padding) var(--ns-card-padding);
 }
 
 </style>

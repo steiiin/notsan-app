@@ -1,14 +1,25 @@
 <template>
   <template v-if="enabled">
-    <template v-if="useFull">
-      <ns-dosage :dosage="{ target: 'Adrenalin', dose: '1mg', hint: '(1 Ampulle)' }"></ns-dosage>
-    </template>
-    <template v-else>
-      <div>
-        <p>1 Ampulle auf <text-mono>20ml</text-mono> NaCl aufziehen, dann:</p>
-        <ns-dosage :dosage="{ target: 'Adrenalin',  dose: `${childHint}ml`, hint: `${childDose}mg` }"></ns-dosage>
-      </div>
-    </template>
+    <ns-dosage-usage type="im">
+      <template v-if="ageRange == EpiAgeRange.High">
+        <ns-dosage :dosage="{ target: 'Adrenalin', dose: '0,5mg', hint: '(½ Ampulle)' }"></ns-dosage>
+      </template>
+      <template v-else>
+
+        <div>
+          <p><i>Totfraumfreie</i> 1ml-Spritze verwenden:</p>
+          <ns-dosage v-if="ageRange == EpiAgeRange.Medium" :dosage="{
+            target: 'Adrenalin',
+            dose: ' 0,3mg', hint: '≙  0,3ml' }">
+          </ns-dosage>
+          <ns-dosage v-else :dosage="{
+            target: 'Adrenalin',
+            dose: '0,15mg', hint: '≙ 0,15ml' }">
+          </ns-dosage>
+        </div>
+
+      </template>
+    </ns-dosage-usage>
   </template>
 </template>
 
@@ -41,9 +52,19 @@ const props = defineProps<{
   patient: Patient
 }>()
 
-const useFull = computed(() => props.patient.isLikelyAnAdult || props.patient.estimatedWeight>=100)
-const childDose = computed(() => useFull.value ? 1 : round(props.patient.estimatedWeight*0.01, 0.05, 'up'))
-const childHint = computed(() => childDose.value / 0.05)
+
+enum EpiAgeRange
+{
+  High,
+  Medium,
+  Low,
+}
+
+const ageRange = computed(() => {
+  if (props.patient.estimatedAge >= 12) { return EpiAgeRange.High }
+  else if (props.patient.estimatedAge >= 6) { return EpiAgeRange.Medium }
+  else { return EpiAgeRange.Low }
+})
 
 </script>
 

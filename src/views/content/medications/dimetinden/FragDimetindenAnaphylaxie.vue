@@ -1,13 +1,10 @@
 <template>
   <template v-if="enabled">
-    <template v-if="useFull">
-      <ns-dosage :dosage="{ target: 'Adrenalin', dose: '1mg', hint: '(1 Ampulle)' }"></ns-dosage>
+    <template v-if="isApplicable">
+      <ns-dosage :dosage="{ target: 'Dimetinden', dose: 'Keine', hint: 'Gabe' }"></ns-dosage>
     </template>
     <template v-else>
-      <div>
-        <p>1 Ampulle auf <text-mono>20ml</text-mono> NaCl aufziehen, dann:</p>
-        <ns-dosage :dosage="{ target: 'Adrenalin',  dose: `${childHint}ml`, hint: `${childDose}mg` }"></ns-dosage>
-      </div>
+      <ns-dosage :dosage="{ target: 'Dimetinden', dose: `${weightDose}mg`, hint: `(${weightHint})` }"></ns-dosage>
     </template>
   </template>
 </template>
@@ -16,7 +13,7 @@
 
 import { MedId } from '@/types/medication'
 import { useConfigStore } from '@/stores/config'
-const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Epinephrin) ?? true)
+const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Dimetinden) ?? true)
 
 // ########################################################################################################
 
@@ -35,15 +32,19 @@ import { Patient } from '@/types/emergency';
 import { round } from '@/service/math';
 import { computed } from 'vue';
 
-import { iv_1mg } from './Packages'
-
 const props = defineProps<{
   patient: Patient
 }>()
 
-const useFull = computed(() => props.patient.isLikelyAnAdult || props.patient.estimatedWeight>=100)
-const childDose = computed(() => useFull.value ? 1 : round(props.patient.estimatedWeight*0.01, 0.05, 'up'))
-const childHint = computed(() => childDose.value / 0.05)
+const isApplicable = computed(() => props.patient.estimatedAge >= 12 && props.patient.estimatedWeight >= 10)
+
+const weightDose = computed(() => isApplicable.value ? 0 : round(Math.max(props.patient.estimatedWeight / 10, 8), 1, 'down'))
+const weightHint = computed(() => {
+  const ml = weightDose.value
+  if (ml == 4) { return '1 Ampulle' }
+  if (ml == 8) { return '2 Ampullen' }
+  return `${ml}ml`
+})
 
 </script>
 

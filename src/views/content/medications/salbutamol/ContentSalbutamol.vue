@@ -90,8 +90,6 @@ import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
 import { inh_5mgml } from './Packages'
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
-
 </script>
 
 <style lang="css" scoped>

@@ -138,12 +138,20 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
-import { iv_10mg, iv_20mg } from './Packages'
 
-const isIv_10mgEnabled = computed(() => true)
-const isIv_20mgEnabled = computed(() => true)
+import { iv_10mg, iv_20mg } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
+
+// ########################################################################################################
+
+const isIv_10mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Morphin, iv_10mg.id))
+const isIv_20mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Morphin, iv_20mg.id))
 
 const onlyOneEnabled = computed(() => [ isIv_10mgEnabled.value, isIv_20mgEnabled.value ].filter(Boolean).length === 1)
+
+// ########################################################################################################
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
