@@ -2,123 +2,120 @@
   <ns-content-group>
     <ns-text-content>
       <p>
-        Alternativer Applikationsweg, wenn <br>
-        kein <b>i.v.-Zugang</b> innerhalb <text-underline>2min</text-underline> möglich.
+        Zur Entlastung beim <text-underline>Spannungspneumothorax</text-underline> bei zunehmender hämdynamischer und respiratorischer Instabilität.
       </p>
     </ns-text-content>
   </ns-content-group>
+  <ns-flow @action="handleAction" :svg="flowSvg"></ns-flow>
   <ns-content-group title="Grundlagen">
     <ns-text-content>
       <p>
-        Um gute Durchflussrate zu erreichen, ist eine <b>Druckinfusionsmanschette</b> obligatorisch.
+        Eine Entlastungspunktion ist nur eine <b>Notfallmaßnahme</b> zur Überbrückung bis zur Thoraxdrainage.
       </p>
       <p>
-        Nach Medikamentengabe immer mit <text-underline>NaCl</text-underline> nachspülen.
-      </p>
-      <p>
-        Bei Erwachsenen 40mg Lidocain möglich, <br>
-        Bei Kindern <b>nicht empfohlen</b>.
+        Wechsel des <text-underline>Punktionsortes</text-underline> bei ausbleibendem Erfolg.
       </p>
       <hr>
       <p>
-        <b>Kontraindiziert</b>, bei Fraktur proximal.
-      </p>
-      <p>
-        <b>Kontraindiziert</b>, wenn letzte <text-underline>48h</text-underline> bereits <b>i.O.-Zugang</b> im selben Knochen gelegt war.
-      </p>
-    </ns-text-content>
-  </ns-content-group>
-  <ns-content-group title="Nadelgröße">
-    <ns-text-content>
-      <ul>
-        <li head>Rosa: <i>Tibia Kind</i></li>
-        <li head>Rosa: <i>Tibia Erwachsene</i></li>
-        <li head>Rosa: <i>Humerus Erwachsene</i></li>
-      </ul>
-      <hr>
-      <p>
-        Nach <b>Einstechen</b> muss die oberste Markierung erkennbar sein. <i>(ca. 5mm)</i>
+        Immer <b>oberhalb</b> der Rippe punktieren, um Gefäß- und Nervenverletzungen zu vermeiden.
       </p>
     </ns-text-content>
   </ns-content-group>
   <ns-content-group title="Durchführung">
     <ns-text-content>
       <p>
-        <b><text-mono>1. </text-mono></b>20ml-Spritze mit NaCl aufziehen, Dreiwegehahn entlüften
+        <b><text-mono>1. </text-mono></b>20ml-Spritze <text-underline>zur Hälfte</text-underline> mit  NaCl aufziehen
       </p>
       <p>
-        <b><text-mono>2. </text-mono></b>Punktionsstelle lokalisieren, Extremität stabilisieren
+        <b><text-mono>2. </text-mono></b>Spritze auf die Punktionskanüle aufstecken
       </p>
       <p>
-        <b><text-mono>3. </text-mono></b>Nadel einstechen, Tiefe kontrollieren
+        <b><text-mono>3. </text-mono></b>Punktionsort lokalisieren &amp; desinfizieren
       </p>
       <p>
-        <b><text-mono>4. </text-mono></b>Unter leichtem Druck bohren, bis Widerstand nachlässt
+        <b><text-mono>4. </text-mono></b>Punktion am <text-underline>Oberrand der Rippe</text-underline>, senkrecht zur Thoraxwand
       </p>
       <p>
-        <b><text-mono>5. </text-mono></b>Kanüle festhalten, Mandrin ausdrehen
+        <b><text-mono>5. </text-mono></b>bei Aspiration von Luft Stahlmandrin entfernen&nbsp;/&nbsp;Kanüle <i>gleichzeitig</i> vorschieben
       </p>
       <p>
-        <b><text-mono>6. </text-mono></b>Stabilizer aufkleben
-      </p>
-      <p>
-        <b><text-mono>7. </text-mono></b>Dreiwegehahn aufschrauben
-      </p>
-      <p>
-        <b><text-mono>8. </text-mono></b>5-10ml NaCl anspülen
+        <b><text-mono>6. </text-mono></b>Fixierung mit Pflasterrolle als Knickschutz <i>(Monaldi)</i>
       </p>
     </ns-text-content>
   </ns-content-group>
 
-  <ns-content-group title="Proximale Tibia">
+  <ns-content-group title="Bühlau">
     <ns-text-content>
-      <h2>Erste Wahl</h2>
       <p>
-        Nach Tasten der <text-underline>Tuberositas tibiae</text-underline> <i>(Höcker unterhalb Kniescheibe)</i> 1-2cm medial.
+        <b>4.</b>-<b>5. ICR</b> vordere bis mittlere Axillarlinie.
       </p>
       <p>
-        Bei Kindern ca. 1-2cm distal des <text-underline>Erwachsenen</text-underline>-Punktionsortes. <br>
-        <i>(Zur Schonung der Wachstumsfuge)</i>
+        <text-underline>Triangle of Safety</text-underline> beachten:
       </p>
-      <ns-svg :svg="ort_proxtibia"></ns-svg>
+      <ns-svg :svg="ort_triangle"></ns-svg>
     </ns-text-content>
   </ns-content-group>
 
-  <ns-content-group title="Distale Tibia">
+  <ns-content-group title="Monaldi">
     <ns-text-content>
-      <h2>Zweite Wahl</h2>
       <p>
-        Nach Tasten des <text-underline>Malleolus medialis</text-underline> <i>(Innenknöchel)</i> 1-2cm proximal.
+        <b>2.</b>-<b>3. ICR</b> Medioklavikularlinie.
       </p>
       <p>
-        In dieser Höhe mittig in die Tibia bohren.
+        Gemäß <text-underline>ATLS-Empfehlungen</text-underline> <b>nicht mehr empfohlen</b>.
       </p>
-      <ns-svg :svg="ort_disttibia"></ns-svg>
     </ns-text-content>
   </ns-content-group>
 
-  <ns-content-group title="Distale Tibia">
-    <ns-text-content>
-      <h2>Dritte Wahl (Kinder)</h2>
-      <p>
-        2cm oberhalb der <text-underline>Patella</text-underline> mittig in den <text-underline>Femur</text-underline>.
-      </p>
-      <ns-svg :svg="ort_distfemur"></ns-svg>
-    </ns-text-content>
-  </ns-content-group>
+  <ns-flow-action ref="action_bproblem">
+    <h2>Spezifische B-Symptome</h2>
+    <ul>
+      <li>Akute Dyspnoe / Tachypnoe</li>
+      <li>Abgeschwächtes Atemgeräusch</li>
+      <li>Thoraxschmerz</li>
+      <li>Schnelle Verschlechterung</li>
+      <li><i>Evtl. Hautemphysem</i></li>
+    </ul>
+  </ns-flow-action>
+
+  <ns-flow-action ref="action_cproblem">
+    <h2>Spezifische C-Symptome</h2>
+    <ul>
+      <li>Tachykardie</li>
+      <li>Hypotonie / Schock</li>
+      <li>Schnelle Verschlechterung</li>
+      <li><i>Evtl. Halsvenenstauung</i></li>
+    </ul>
+  </ns-flow-action>
 
 </template>
 
 <script setup lang="ts">
 import NsSvg from '@/components/NsSvg.vue'
+import NsFlow from '@/components/library/NsFlow.vue'
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsTextContent from '@/components/NsTextContent.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextMono from '@/components/TextMono.vue'
+import NsFlowAction from '@/components/library/NsFlowAction.vue'
 
-import ort_proxtibia from './ort-proxtibia.svg?raw'
-import ort_disttibia from './ort-disttibia.svg?raw'
-import ort_distfemur from './ort-distfemur.svg?raw'
+import flowSvg from './flow.svg?raw'
+import ort_triangle from './ort-triangle.svg?raw'
+
+import { ref } from 'vue'
+import { FlowActionPayload } from '@/types/flow'
+
+const action_bproblem = ref<InstanceType<typeof NsFlowAction> | null>(null);
+const action_cproblem = ref<InstanceType<typeof NsFlowAction> | null>(null);
+
+function handleAction(payload: FlowActionPayload) {
+  if (payload.key === 'bprobleme') {
+    action_bproblem.value?.presentPopover(payload)
+  }
+  else if (payload.key === 'cprobleme') {
+    action_cproblem.value?.presentPopover(payload)
+  }
+}
 
 </script>
 <style scoped>
