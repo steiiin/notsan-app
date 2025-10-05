@@ -27,6 +27,7 @@ import '@ionic/vue/css/palettes/dark.system.css';
 
 /* PINIA */
 import { createPinia } from 'pinia';
+import { useConfigStore } from './stores/config';
 const pinia = createPinia()
 
 /* THEME VARIABLES */
@@ -38,5 +39,12 @@ const app = createApp(App)
   .use(router);
 
 router.isReady().then(() => {
+
+  // init configuration
+  const configStore = useConfigStore()
+  configStore.loadConfig()
+
+  // mount app
   app.mount('#app');
+
 });

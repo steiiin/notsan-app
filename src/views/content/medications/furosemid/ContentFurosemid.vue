@@ -53,15 +53,15 @@
           <div>
             <ns-dosage :dosage="{ dose: '20mg', hint: 'langsam spritzen.'}"></ns-dosage>
             <template v-if="onlyOneEnabled">
-              <ns-dosage v-if="isIv20mgEnabled" :dosage="{ dose: ' 2ml', hint: '(1 Ampulle)'}"></ns-dosage>
-              <ns-dosage v-if="isIv40mgEnabled" :dosage="{ dose: ' 2ml', hint: '(½ Ampulle)'}"></ns-dosage>
+              <ns-dosage v-if="isIv_20mgEnabled" :dosage="{ dose: ' 2ml', hint: '(1 Ampulle)'}"></ns-dosage>
+              <ns-dosage v-if="isIv_40mgEnabled" :dosage="{ dose: ' 2ml', hint: '(½ Ampulle)'}"></ns-dosage>
             </template>
           </div>
           <div v-if="!onlyOneEnabled" style="display:flex">
             <ns-package inline :package="iv_20mg"></ns-package> <b>ganz.</b>
           </div>
           <div v-if="!onlyOneEnabled" style="display:flex">
-            <ns-package inline :package="iv40mg"></ns-package> <b>zur Hälfte.</b>
+            <ns-package inline :package="iv_40mg"></ns-package> <b>zur Hälfte.</b>
           </div>
           <hr>
           <p>
@@ -109,15 +109,20 @@ import NsPharmacokinetics from '@/components/medications/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
-import { iv_20mg, iv_40mg } from './Packages'
-const iv20mg = iv_20mg
-const iv40mg = iv_40mg
 
-const isIv_20mgEnabled = computed(() => true)
-const isIv_40mgEnabled = computed(() => true)
-const isIv20mgEnabled = isIv_20mgEnabled
-const isIv40mgEnabled = isIv_40mgEnabled
+import { iv_20mg, iv_40mg } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
+
+// ########################################################################################################
+
+const isIv_20mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Furosemid, iv_20mg.id))
+const isIv_40mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Furosemid, iv_40mg.id))
+
 const onlyOneEnabled = computed(() => [ isIv_20mgEnabled.value, isIv_40mgEnabled.value ].filter(Boolean).length === 1)
+
+// ########################################################################################################
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

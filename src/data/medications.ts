@@ -1,8 +1,8 @@
-import { Medication } from '@/types/medication'
+import { Medication, MedId } from '@/types/medication'
 import { Package, PackageIncredient } from '@/types/package'
 export const medications: Medication[] =[
   {
-    id: 'acetylsalicyl',
+    id: MedId.Acetylsalicyl,
     title: 'Acetylsalicylsäure',
     subtitle: 'ASS, Aspirin, Aspisol',
     packages: {
@@ -24,7 +24,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/acetylsalicyl/ContentAcetylsalicyl.vue')
   },
   {
-    id: 'amiodaron',
+    id: MedId.Amiodaron,
     title: 'Amiodaron',
     subtitle: 'Cordarex, Cordarone',
     packages: {
@@ -40,7 +40,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/amiodaron/ContentAmiodaron.vue')
   },
   {
-    id: 'atropin',
+    id: MedId.Atropin,
     title: 'Atropin',
     packages: {
       'iv_0_5mg': <Package>{
@@ -54,7 +54,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/atropin/ContentAtropin.vue')
   },
   {
-    id: 'butylscopolamin',
+    id: MedId.Butylscopolamin,
     title: 'Butylscopolamin',
     subtitle: 'Buscopan',
     packages: {
@@ -69,7 +69,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/butylscopolamin/ContentButylscopolamin.vue')
   },
   {
-    id: 'dimenhydrinat',
+    id: MedId.Dimenhydrinat,
     title: 'Dimenhydrinat',
     subtitle: 'Vomex A',
     packages: {
@@ -98,7 +98,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/dimenhydrinat/ContentDimenhydrinat.vue')
   },
   {
-    id: 'dimetinden',
+    id: MedId.Dimetinden,
     title: 'Dimetinden',
     subtitle: 'Fenistil, Histakut',
     packages: {
@@ -113,7 +113,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/dimetinden/ContentDimetinden.vue')
   },
   {
-    id: 'epinephrin',
+    id: MedId.Epinephrin,
     title: 'Adrenalin',
     subtitle: 'Epinephrin, Suprarenin',
     packages: {
@@ -130,7 +130,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/epinephrin/ContentEpinephrin.vue')
   },
   {
-    id: 'esketamin',
+    id: MedId.Esketamin,
     title: 'Esketamin',
     subtitle: 'Ketanest S',
     packages: {
@@ -159,7 +159,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/esketamin/ContentEsketamin.vue')
   },
   {
-    id: 'fentanyl',
+    id: MedId.Fentanyl,
     title: 'Fentanyl',
     packages: {
       'iv_0_05mgml_2ml': <Package>{
@@ -180,7 +180,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/fentanyl/ContentFentanyl.vue')
   },
   {
-    id: 'furosemid',
+    id: MedId.Furosemid,
     title: 'Furosemid',
     subtitle: 'Furesis, Lasix',
     packages: {
@@ -202,7 +202,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/furosemid/ContentFurosemid.vue')
   },
   {
-    id: 'glucagon',
+    id: MedId.Glucagon,
     title: 'Glucagon',
     packages: {
       'im_1mg': <Package>{
@@ -224,7 +224,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/glucagon/ContentGlucagon.vue')
   },
   {
-    id: 'glucose',
+    id: MedId.Glucose,
     title: 'Glucose',
     packages: {
       'iv_1g_10ml': <Package>{
@@ -252,7 +252,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/glucose/ContentGlucose.vue')
   },
   {
-    id: 'glyceroltrinitrat',
+    id: MedId.Glyceroltrinitrat,
     title: 'Glyceroltrinitrat',
     subtitle: 'Nitro',
     packages: {
@@ -267,7 +267,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/glyceroltrinitrat/ContentGlyceroltrinitrat.vue')
   },
   {
-    id: 'heparin',
+    id: MedId.Heparin,
     title: 'Heparin',
     packages: {
       'iv_25000ieml_0_2ml': <Package>{
@@ -295,7 +295,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/heparin/ContentHeparin.vue')
   },
   {
-    id: 'ibuprofen',
+    id: MedId.Ibuprofen,
     title: 'Ibuprofen',
     subtitle: 'Nurofen',
     packages: {
@@ -335,7 +335,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/ibuprofen/ContentIbuprofen.vue')
   },
   {
-    id: 'ipratropium',
+    id: MedId.Ipratropiumbromid,
     title: 'Ipratropiumbromid',
     subtitle: 'Atrovent',
     packages: {
@@ -357,7 +357,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/ipratropiumbromid/ContentIpratropiumbromid.vue')
   },
   {
-    id: 'metoprolol',
+    id: MedId.Metoprolol,
     title: 'Metoprolol',
     subtitle: 'Beloc',
     packages: {
@@ -373,7 +373,7 @@ export const medications: Medication[] =[
   },
 
   {
-    id: 'midazolam',
+    id: MedId.Midazolam,
     title: 'Midazolam',
     subtitle: 'Dormicum',
     packages: {
@@ -412,7 +412,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/midazolam/ContentMidazolam.vue')
   },
   {
-    id: 'morphin',
+    id: MedId.Morphin,
     title: 'Morphin',
     packages: {
       'iv_10mg': <Package>{
@@ -433,7 +433,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/morphin/ContentMorphin.vue')
   },
   {
-    id: 'nalbuphin',
+    id: MedId.Nalbuphin,
     title: 'Nalbuphin',
     packages: {
       'iv_20mg': <Package>{
@@ -447,7 +447,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/nalbuphin/ContentNalbuphin.vue')
   },
   {
-    id: 'naloxon',
+    id: MedId.Naloxon,
     title: 'Naloxon',
     packages: {
       'iv_0_4mg': <Package>{
@@ -461,7 +461,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/naloxon/ContentNaloxon.vue')
   },
   {
-    id: 'paracetamol',
+    id: MedId.Paracetamol,
     title: 'Paracetamol',
     subtitle: 'Perfalgan',
     packages: {
@@ -497,7 +497,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/paracetamol/ContentParacetamol.vue')
   },
   {
-    id: 'prednisolon',
+    id: MedId.Prednisolon,
     title: 'Prednisolon',
     subtitle: 'Prednisolut',
     packages: {
@@ -528,7 +528,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/prednisolon/ContentPrednisolon.vue')
   },
   {
-    id: 'salbutamol',
+    id: MedId.Salbutamol,
     title: 'Salbutamol',
     packages: {
       'inh_5mgml': <Package>{
@@ -542,7 +542,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/salbutamol/ContentSalbutamol.vue')
   },
   {
-    id: 'tranexam',
+    id: MedId.Tranexam,
     title: 'Tranexamsäure',
     packages: {
       'iv_100mgml_5ml': <Package>{
@@ -563,7 +563,7 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/tranexam/ContentTranexam.vue')
   },
   {
-    id: 'urapidil',
+    id: MedId.Urapidil,
     title: 'Urapidil',
     subtitle: 'Ebrantil',
     packages: {

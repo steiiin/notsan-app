@@ -4,6 +4,9 @@ import { Medication } from '@/types/medication';
 import { LibraryEntry } from '@/types/library-entry';
 import { LibraryList } from '@/types/library-list';
 import { defineStore } from 'pinia'
+import { useConfigStore } from './config';
+
+const configStore = useConfigStore()
 
 export const useContentStore = defineStore('content', {
   state: () => ({
@@ -13,7 +16,7 @@ export const useContentStore = defineStore('content', {
   getters: {
 
     getMedications(state) {
-      return state.medications
+      return state.medications.filter(e => configStore.checkMedicationEnabled(e.id))
     },
     getLibrary(state) {
       return state.library

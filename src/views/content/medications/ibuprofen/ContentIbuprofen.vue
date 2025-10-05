@@ -143,13 +143,22 @@ import NsPharmacokinetics from '@/components/medications/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
-import { po_200mg_400mg_600mg_800mg, po_20mgml_40mgml, supp_75mg_125mg_150mg_250mg, iv_4mgml_6mgml_100ml } from './Packages'
 
-const isPo_200mg_400mg_600mg_800mgEnabled = computed(() => true)
-const isPo_20mgml_40mgmlEnabled = computed(() => true)
-const isSupp_75mg_125mg_150mg_250mgEnabled = computed(() => true)
-const isIv_4mgml_6mgml_100mlEnabled = computed(() => true)
+import { po_200mg_400mg_600mg_800mg, po_20mgml_40mgml, supp_75mg_125mg_150mg_250mg, iv_4mgml_6mgml_100ml } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
+
+// ########################################################################################################
+
+const isPo_200mg_400mg_600mg_800mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Ibuprofen, po_200mg_400mg_600mg_800mg.id))
+const isPo_20mgml_40mgmlEnabled = computed(() => configStore.checkPackageEnable(MedId.Ibuprofen, po_20mgml_40mgml.id))
+const isSupp_75mg_125mg_150mg_250mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Ibuprofen, supp_75mg_125mg_150mg_250mg.id))
+const isIv_4mgml_6mgml_100mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Ibuprofen, iv_4mgml_6mgml_100ml.id))
+
 const onlyOneEnabled = computed(() => [ isPo_200mg_400mg_600mg_800mgEnabled.value, isPo_20mgml_40mgmlEnabled.value, isSupp_75mg_125mg_150mg_250mgEnabled.value, isIv_4mgml_6mgml_100mlEnabled.value ].filter(Boolean).length === 1)
+
+// ########################################################################################################
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

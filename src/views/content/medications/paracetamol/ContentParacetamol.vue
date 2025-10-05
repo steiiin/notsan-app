@@ -144,19 +144,28 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
+
 import { po_500mg, po_40mgml, supp_125mg_250mg, iv_10mgml_100ml } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
 
-const isPo_500mgEnabled = computed(() => true)
-const isPo_40mgmlEnabled = computed(() => true)
-const isSupp_125mg_250mgEnabled = computed(() => true)
-const isIv_10mgml_100mlEnabled = computed(() => true)
+// ########################################################################################################
+
+const isPo_500mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Paracetamol, po_500mg.id))
+const isPo_40mgmlEnabled = computed(() => configStore.checkPackageEnable(MedId.Paracetamol, po_40mgml.id))
+const isSupp_125mg_250mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Paracetamol, supp_125mg_250mg.id))
+const isIv_10mgml_100mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Paracetamol, iv_10mgml_100ml.id))
+
 const onlyOneEnabled = computed(() => [ isPo_500mgEnabled.value, isPo_40mgmlEnabled.value, isSupp_125mg_250mgEnabled.value, isIv_10mgml_100mlEnabled.value ].filter(Boolean).length === 1)
-
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
 const hasPo = computed(() => isPo_500mgEnabled.value || isPo_40mgmlEnabled.value)
 const hasSupp = computed(() => isSupp_125mg_250mgEnabled.value)
 const hasIv = computed(() => isIv_10mgml_100mlEnabled.value)
+
+// ########################################################################################################
+
+const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
 const onsetText = computed(() => {
   const one = onlyOneEnabled.value

@@ -117,12 +117,16 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
+
 import { iv_5mgml_5ml, iv_5mgml_10ml } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
 
-const isIv_5mgml_5mlEnabled = computed(() => true)
-const isIv_5mgml_10mlEnabled = computed(() => true)
+// ########################################################################################################
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
+const isIv_5mgml_5mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Urapidil, iv_5mgml_5ml.id))
+const isIv_5mgml_10mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Urapidil, iv_5mgml_10ml.id))
 
 </script>
 

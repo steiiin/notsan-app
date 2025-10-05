@@ -269,12 +269,21 @@ import TextUnderline from '@/components/TextUnderline.vue'
 
 import imgLongQt from '@/data/assets/long-qt.png'
 import { arrowForwardOutline } from 'ionicons/icons'
-import { iv_5mgml_5ml, iv_25mgml_2ml, iv_25mgml_10ml } from './Packages'
 
-const isIv_5mgml_5mlEnabled = computed(() => true)
-const isIv_25mgml_2mlEnabled = computed(() => true)
-const isIv_25mgml_10mlEnabled = computed(() => true)
+import { iv_5mgml_5ml, iv_25mgml_2ml, iv_25mgml_10ml } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
+
+// ########################################################################################################
+
+const isIv_5mgml_5mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Esketamin, iv_5mgml_5ml.id))
+const isIv_25mgml_2mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Esketamin, iv_25mgml_2ml.id))
+const isIv_25mgml_10mlEnabled = computed(() => configStore.checkPackageEnable(MedId.Esketamin, iv_25mgml_10ml.id))
+
 const onlyOneEnabled = computed(() => [ isIv_5mgml_5mlEnabled.value, isIv_25mgml_2mlEnabled.value, isIv_25mgml_10mlEnabled.value ].filter(Boolean).length === 1)
+
+// ########################################################################################################
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

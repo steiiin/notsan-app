@@ -94,26 +94,16 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="iv_62mg"></ns-package>
+      <ns-package v-if="isIv_62Enabled" :package="iv_62mg"></ns-package>
       <ns-package v-if="isSupp40Enabled" :package="supp_40mg"></ns-package>
       <ns-package v-if="isSupp70Enabled" :package="supp_70mg"></ns-package>
 
       <ns-dosage-indication name="Übelkeit & Erbrechen">
-        <ns-dosage-usage type="iv">
+        <ns-dosage-usage type="iv" v-if="isIv_62Enabled">
           <div>
             <ns-dosage :dosage="{ dose: '62mg', hint: '(1 Ampulle)', color: 'blue', target: '> 14 Jahre' }"></ns-dosage>
             <ns-dosage :dosage="{ dose: '31mg', hint: '(½ Ampulle)', color: 'orange', target: '≥ 6 Jahre' }"></ns-dosage>
           </div>
-          <template v-if="!onlySAA">
-            <hr>
-            <h2>Achtung bei Kleinkindern</h2>
-            <p>Bei <i>i.v-Überdosierung</i> lebensbedrohliche Nebenwirkungen möglich. <i>Gewichtsadaptiert:</i></p>
-            <ns-dosage :dosage="{ dose: '1,25mg / kg', type: 'none', color: 'red' }"></ns-dosage>
-            <div>
-              <p>In Ampulle <text-mono>6,2mg / ml</text-mono>, d.h.:</p>
-              <ns-dosage :dosage="{ dose: '1ml /5kg', type: 'none', color: 'red' }"></ns-dosage>
-            </div>
-          </template>
         </ns-dosage-usage>
         <ns-dosage-usage type="supp" v-if="anySuppEnabled">
           <div v-if="isSupp70Enabled">
@@ -153,6 +143,7 @@
 <script setup lang="ts">
 
 import { computed } from 'vue'
+
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsQuicktip from '@/components/NsQuicktip.vue'
 import NsList from '@/components/NsList.vue'
@@ -170,13 +161,18 @@ import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
 import imgLongQt from '@/data/assets/long-qt.png'
+
 import { iv_62mg, supp_40mg, supp_70mg } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
 
-const isSupp40Enabled = computed(() => false)
-const isSupp70Enabled = computed(() => false)
+// ########################################################################################################
+
+const isIv_62Enabled = computed(() => configStore.checkPackageEnable(MedId.Dimenhydrinat, iv_62mg.id))
+const isSupp40Enabled = computed(() => configStore.checkPackageEnable(MedId.Dimenhydrinat, supp_40mg.id))
+const isSupp70Enabled = computed(() => configStore.checkPackageEnable(MedId.Dimenhydrinat, supp_70mg.id))
 const anySuppEnabled = computed(() => isSupp40Enabled.value || isSupp70Enabled.value)
-
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
 </script>
 

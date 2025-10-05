@@ -108,11 +108,20 @@ import NsPharmacokinetics from '@/components/medications/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
-import { im_1mg, nasal_3mg } from './Packages'
 
-const isIm_1mgEnabled = computed(() => true)
-const isNasal_3mgEnabled = computed(() => true)
+import { im_1mg, nasal_3mg } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
+
+// ########################################################################################################
+
+const isIm_1mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Glucagon, im_1mg.id))
+const isNasal_3mgEnabled = computed(() => configStore.checkPackageEnable(MedId.Glucagon, nasal_3mg.id))
+
 const onlyOneEnabled = computed(() => [ isIm_1mgEnabled.value, isNasal_3mgEnabled.value ].filter(Boolean).length === 1)
+
+// ########################################################################################################
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 

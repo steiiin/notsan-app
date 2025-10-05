@@ -1,16 +1,24 @@
 <template>
-  <template v-if="useFull">
-    <ns-dosage :dosage="{ target: 'Adrenalin', dose: '1mg', hint: '(1 Ampulle)' }"></ns-dosage>
-  </template>
-  <template v-else>
-    <div>
-      <p>1 Ampulle auf <text-mono>20ml</text-mono> NaCl aufziehen, dann:</p>
-      <ns-dosage :dosage="{ target: 'Adrenalin',  dose: `${childHint}ml`, hint: `${childDose}mg` }"></ns-dosage>
-    </div>
+  <template v-if="enabled">
+    <template v-if="useFull">
+      <ns-dosage :dosage="{ target: 'Adrenalin', dose: '1mg', hint: '(1 Ampulle)' }"></ns-dosage>
+    </template>
+    <template v-else>
+      <div>
+        <p>1 Ampulle auf <text-mono>20ml</text-mono> NaCl aufziehen, dann:</p>
+        <ns-dosage :dosage="{ target: 'Adrenalin',  dose: `${childHint}ml`, hint: `${childDose}mg` }"></ns-dosage>
+      </div>
+    </template>
   </template>
 </template>
 
 <script setup lang="ts">
+
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Epinephrin) ?? true)
+
+// ########################################################################################################
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';

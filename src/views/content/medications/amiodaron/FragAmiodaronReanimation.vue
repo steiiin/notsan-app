@@ -1,16 +1,24 @@
 <template>
-  <template v-if="useFull">
-    <ns-dosage :dosage="{ target: 'Amiodaron', dose: '300mg', hint: '(2 Ampullen)' }"></ns-dosage>
-  </template>
-  <template v-else-if="noUse">
-    <ns-dosage :dosage="{ target: 'Amiodaron', dose: 'Keine', hint: 'Gabe' }"></ns-dosage>
-  </template>
-  <template v-else>
-    <ns-dosage :dosage="{ target: 'Amiodaron', dose: `${childDose}mg`, hint: `(${childHint})` }"></ns-dosage>
+  <template v-if="enabled">
+    <template v-if="useFull">
+      <ns-dosage :dosage="{ target: 'Amiodaron', dose: '300mg', hint: '(2 Ampullen)' }"></ns-dosage>
+    </template>
+    <template v-else-if="noUse">
+      <ns-dosage :dosage="{ target: 'Amiodaron', dose: 'Keine', hint: 'Gabe' }"></ns-dosage>
+    </template>
+    <template v-else>
+      <ns-dosage :dosage="{ target: 'Amiodaron', dose: `${childDose}mg`, hint: `(${childHint})` }"></ns-dosage>
+    </template>
   </template>
 </template>
 
 <script setup lang="ts">
+
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Amiodaron) ?? true)
+
+// ########################################################################################################
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';

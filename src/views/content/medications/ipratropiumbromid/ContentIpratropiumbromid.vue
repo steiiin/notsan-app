@@ -123,11 +123,20 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
-import { inh_250ug, inh_500ug } from './Packages'
 
-const isInh_250ugEnabled = computed(() => false)
-const isInh_500ugEnabled = computed(() => true)
+import { inh_250ug, inh_500ug } from './Packages'
+import { MedId } from '@/types/medication'
+import { useConfigStore } from '@/stores/config'
+const configStore = useConfigStore()
+
+// ########################################################################################################
+
+const isInh_250ugEnabled = computed(() => configStore.checkPackageEnable(MedId.Ipratropiumbromid, inh_250ug.id))
+const isInh_500ugEnabled = computed(() => configStore.checkPackageEnable(MedId.Ipratropiumbromid, inh_500ug.id))
+
 const onlyOneEnabled = computed(() => [ isInh_250ugEnabled.value, isInh_500ugEnabled.value ].filter(Boolean).length === 1)
+
+// ########################################################################################################
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
