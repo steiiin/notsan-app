@@ -3,10 +3,10 @@
     <ns-accordion title="Anaphylaxie">
 
       <ns-content-group dense>
+        <frag-epinephrine-anaphylaxie :patient="patient"></frag-epinephrine-anaphylaxie>
         <ns-dosage-usage type="iv" dense>
 
-          <frag-epinephrine-reanimation :patient="patient"></frag-epinephrine-reanimation>
-          <frag-amiodaron-reanimation :patient="patient"></frag-amiodaron-reanimation>
+          <frag-dimetinden-anaphylaxie :patient="patient"></frag-dimetinden-anaphylaxie>
           <frag-prednisolon-anaphylaxie-iv :patient="patient"></frag-prednisolon-anaphylaxie-iv>
 
         </ns-dosage-usage>
@@ -24,8 +24,8 @@ import NsAccordion from '@/components/NsAccordion.vue';
 import NsContentGroup from '@/components/NsContentGroup.vue';
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
 
-import FragEpinephrineReanimation from '../../medications/epinephrin/FragEpinephrineReanimation.vue';
-import FragAmiodaronReanimation from '../../medications/amiodaron/FragAmiodaronReanimation.vue';
+import FragEpinephrineAnaphylaxie from '../../medications/epinephrin/FragEpinephrineAnaphylaxie.vue';
+import FragDimetindenAnaphylaxie from '../../medications/dimetinden/FragDimetindenAnaphylaxie.vue';
 import FragPrednisolonAnaphylaxieSupp from '../../medications/prednisolon/FragPrednisolonAnaphylaxieSupp.vue';
 import FragPrednisolonAnaphylaxieIv from '../../medications/prednisolon/FragPrednisolonAnaphylaxieIv.vue';
 

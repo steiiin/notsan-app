@@ -29,6 +29,10 @@
           :patient="currentPatient">
         </content-anaphylaxie>
 
+        <content-krampfanfall
+          :patient="currentPatient">
+        </content-krampfanfall>
+
       </template>
 
     </ion-content>
@@ -48,6 +52,7 @@ import { useRouter } from 'vue-router'
 import ContentStandards from './emergency/standards/ContentStandards.vue';
 import ContentReanimation from './emergency/reanimation/ContentReanimation.vue';
 import ContentAnaphylaxie from './emergency/anaphylaxie/ContentAnaphylaxie.vue';
+import ContentKrampfanfall from './emergency/krampfanfall/ContentKrampfanfall.vue';
 
 import { Patient } from '@/types/emergency';
 

@@ -89,7 +89,7 @@
             </ns-dosage>
             <ns-dosage :dosage="{
               target: 'Grundschule', color: 'lila',
-              dose: ' 7,5mg', hint: '(lia)' }">
+              dose: ' 7,5mg', hint: '(lila)' }">
             </ns-dosage>
             <ns-dosage :dosage="{
               target: '> 10 Jahre', color: 'red',
