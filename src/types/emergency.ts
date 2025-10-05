@@ -101,6 +101,9 @@ export class Patient {
   {
     if (!this.Height || this.Height <= 0) { return undefined }
 
+    const childAge = CurveCalculation.calculateChildAgeByHeight(this.Sex, this.Height)
+    if (childAge !== undefined) { return childAge }
+
     const height = this.Height
     if (this.Sex == 'male')
     {
@@ -126,6 +129,9 @@ export class Patient {
   private estimateAgeFromWeight(): number | undefined
   {
     if (!this.Weight || this.Weight <= 0) { return undefined }
+
+    const childAge = CurveCalculation.calculateChildAgeByWeight(this.Sex, this.Weight)
+    if (childAge !== undefined) { return childAge }
 
     const weight = this.Weight
     if (weight < 20) { return 5 }

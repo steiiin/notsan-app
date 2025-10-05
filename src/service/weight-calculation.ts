@@ -77,7 +77,7 @@ export class CurveCalculation {
   ): number {
     const table = this.requireTable(sex);
     const byAge = [...table].sort((a, b) => a.age - b.age);
-    const base = this.interpolate(byAge, 'age', ageYears);
+    const base = this.interpolate(byAge, 'age', ageYears, 'weight');
     return base * multiplier;
   }
 
@@ -89,8 +89,32 @@ export class CurveCalculation {
   ): number {
     const table = this.requireTable(sex);
     const byHeight = [...table].sort((a, b) => a.height - b.height);
-    const base = this.interpolate(byHeight, 'height', heightCm);
+    const base = this.interpolate(byHeight, 'height', heightCm, 'weight');
     return base * multiplier;
+  }
+
+  /** Estimate child age (years) for given weight (kg). */
+  static calculateChildAgeByWeight(
+    sex: SexValue,
+    weightKg: number
+  ): number | undefined {
+    const table = this.requireTable(sex);
+    const byWeight = [...table].sort((a, b) => a.weight - b.weight);
+    const maxWeight = byWeight[byWeight.length - 1].weight;
+    if (weightKg > maxWeight) { return undefined; }
+    return this.interpolate(byWeight, 'weight', weightKg, 'age');
+  }
+
+  /** Estimate child age (years) for given height (cm). */
+  static calculateChildAgeByHeight(
+    sex: SexValue,
+    heightCm: number
+  ): number | undefined {
+    const table = this.requireTable(sex);
+    const byHeight = [...table].sort((a, b) => a.height - b.height);
+    const maxHeight = byHeight[byHeight.length - 1].height;
+    if (heightCm > maxHeight) { return undefined; }
+    return this.interpolate(byHeight, 'height', heightCm, 'age');
   }
 
   // --- helpers ---
@@ -102,21 +126,22 @@ export class CurveCalculation {
 
   private static interpolate(
     arr: ReadonlyArray<CurvePoint>,
-    key: 'age' | 'height',
-    value: number
+    key: 'age' | 'height' | 'weight',
+    value: number,
+    target: 'age' | 'height' | 'weight'
   ): number {
     if (!Number.isFinite(value)) throw new Error(`${key} must be a number`);
 
     // Clamp to range
-    if (value <= arr[0][key]) return arr[0].weight;
-    if (value >= arr[arr.length - 1][key]) return arr[arr.length - 1].weight;
+    if (value <= arr[0][key]) return arr[0][target];
+    if (value >= arr[arr.length - 1][key]) return arr[arr.length - 1][target];
 
     // Binary search for bounding segment
     let lo = 0, hi = arr.length - 1;
     while (lo <= hi) {
       const mid = (lo + hi) >> 1;
       const midVal = arr[mid][key];
-      if (midVal === value) return arr[mid].weight;
+      if (midVal === value) return arr[mid][target];
       if (midVal < value) lo = mid + 1;
       else hi = mid - 1;
     }
@@ -126,7 +151,7 @@ export class CurveCalculation {
     const p0 = arr[i0];
     const p1 = arr[i1];
     const t = (value - p0[key]) / (p1[key] - p0[key]);
-    return p0.weight + t * (p1.weight - p0.weight);
+    return p0[target] + t * (p1[target] - p0[target]);
   }
 
 }
