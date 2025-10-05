@@ -8,6 +8,12 @@ export function gainFocus(inputCmp: any|null, selectAll: boolean = false)
 
     const EL = inputCmp.value.$el
     if (typeof EL.setFocus === "function") { EL.setFocus() }
+    else
+    {
+      // fallback for multi-input components
+      const fallbackEL = EL.querySelector('ion-input')
+      if (fallbackEL && typeof fallbackEL.setFocus === "function") { fallbackEL.setFocus() }
+    }
 
     if (!selectAll) { return }
     if (typeof EL.querySelector === "function")
