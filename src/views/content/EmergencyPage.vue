@@ -19,9 +19,17 @@
         :patient="currentPatient">
       </content-standards>
 
-      <content-reanimation v-if="currentPatient.isValid"
-        :patient="currentPatient">
-      </content-reanimation>
+      <template v-if="currentPatient.isValid">
+
+        <content-reanimation
+          :patient="currentPatient">
+        </content-reanimation>
+
+        <content-anaphylaxie
+          :patient="currentPatient">
+        </content-anaphylaxie>
+
+      </template>
 
     </ion-content>
   </ion-page>
@@ -38,8 +46,8 @@ import { computed, ref, shallowRef } from 'vue'
 import { useRouter } from 'vue-router'
 
 import ContentStandards from './emergency/standards/ContentStandards.vue';
-
 import ContentReanimation from './emergency/reanimation/ContentReanimation.vue';
+import ContentAnaphylaxie from './emergency/anaphylaxie/ContentAnaphylaxie.vue';
 
 import { Patient } from '@/types/emergency';
 
