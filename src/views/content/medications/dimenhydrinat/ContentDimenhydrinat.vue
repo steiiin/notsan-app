@@ -63,7 +63,7 @@
       </ns-list>
       <ns-list>
         <ns-contraindication type="pediatric">Unter <b>Wehentätigkeit</b></ns-contraindication>
-        <ns-contraindication type="pediatric">Keine Kinder &lt; {{ anySuppEnabled ? '1 Jahr' : '6 Jahre' }}</ns-contraindication>
+        <ns-contraindication type="pediatric">Keine Kinder &lt; {{ isAnySuppEnabled ? '1 Jahr' : '6 Jahre' }}</ns-contraindication>
       </ns-list>
     </ns-content-group>
     <ns-content-group title="Relative Kontraindikationen">
@@ -105,7 +105,7 @@
             <ns-dosage :dosage="{ dose: '31mg', hint: '(½ Ampulle)', color: 'orange', target: '≥ 6 Jahre' }"></ns-dosage>
           </div>
         </ns-dosage-usage>
-        <ns-dosage-usage type="supp" v-if="anySuppEnabled">
+        <ns-dosage-usage type="supp" v-if="isAnySuppEnabled">
           <div v-if="isSupp70Enabled">
             <ns-dosage :dosage="{ dose: '70mg', hint: '(Zäpfchen)', target: '> 14kg', color: 'green' }"></ns-dosage>
             <ns-dosage v-if="isSupp40Enabled" :dosage="{ dose: '40mg', hint: '(Zäpfchen)', target: '> 6kg', color: 'red' }"></ns-dosage>
@@ -116,7 +116,7 @@
 
     </ns-content-group>
 
-    <ns-pharmacokinetics v-if="anySuppEnabled"
+    <ns-pharmacokinetics v-if="isAnySuppEnabled"
       onset="<case>i.v.</case>3-5 Minuten|<case>p.r.</case>15-30 Minuten"
       duration="3-6 Stunden">
     </ns-pharmacokinetics>
@@ -142,8 +142,6 @@
 
 <script setup lang="ts">
 
-import { computed } from 'vue'
-
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsQuicktip from '@/components/NsQuicktip.vue'
 import NsList from '@/components/NsList.vue'
@@ -157,16 +155,21 @@ import NsDosage from '@/components/medications/NsDosage.vue'
 import NsPharmacokinetics from '@/components/medications/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextColored from '@/components/TextColored.vue'
-import TextMono from '@/components/TextMono.vue'
-import TextUnderline from '@/components/TextUnderline.vue'
 
 import imgLongQt from '@/data/assets/long-qt.png'
 
-import { iv_62mg, supp_40mg, supp_70mg, isIv_62Enabled, isSupp40Enabled, isSupp70Enabled } from './Packages'
+import {
 
-// ########################################################################################################
+  iv_62mg,
+  supp_40mg,
+  supp_70mg,
 
-const anySuppEnabled = computed(() => isSupp40Enabled.value || isSupp70Enabled.value)
+  isIv_62Enabled,
+  isSupp40Enabled,
+  isSupp70Enabled,
+  isAnySuppEnabled,
+
+} from './Packages'
 
 </script>
 
