@@ -120,8 +120,6 @@ import TextColored from '@/components/TextColored.vue'
 import hyperkaliaemieEkg from '../../../../data/assets/hyperkaliaemie-ekg.svg?raw'
 import { iv_5mg } from './Packages'
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
-
 </script>
 
 <style lang="css" scoped>

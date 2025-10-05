@@ -103,8 +103,6 @@ const onlyOneEnabled = computed(() => [ isIv_1g_10mlEnabled.value, isIv_2g_10mlE
 
 // ########################################################################################################
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
-
 const doseAdultHint = computed(() => {
   if (onlyOneEnabled.value)
   {

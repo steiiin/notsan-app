@@ -125,7 +125,6 @@ const onlyOneEnabled = computed(() => [ isIm_1mgEnabled.value, isNasal_3mgEnable
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
-
 const onsetText = computed(() => {
   if (onlyOneEnabled.value)
   {

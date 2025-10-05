@@ -138,8 +138,6 @@ const onlyOneEnabled = computed(() => [ isInh_250ugEnabled.value, isInh_500ugEna
 
 // ########################################################################################################
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
-
 const ampAmount = (dose: number) => {
   if (onlyOneEnabled.value)
   {

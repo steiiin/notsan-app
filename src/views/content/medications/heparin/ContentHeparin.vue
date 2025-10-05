@@ -122,8 +122,6 @@ const onlyOneEnabled = computed(() => [ isIv_25000ieml_0_2mlEnabled.value, isIv_
 
 // ########################################################################################################
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
-
 const hasToWarn = computed(() => isIv_5000ieml_5mlEnabled.value)
 const doseHint = computed(() => {
   if (hasToWarn.value)

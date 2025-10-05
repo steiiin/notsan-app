@@ -165,8 +165,6 @@ const hasIv = computed(() => isIv_10mgml_100mlEnabled.value)
 
 // ########################################################################################################
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
-
 const onsetText = computed(() => {
   const one = onlyOneEnabled.value
   const parts = []

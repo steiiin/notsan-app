@@ -246,12 +246,10 @@ const isBuccal_2_5mg_5mg_7_5mg_10mgEnabled = computed(() => configStore.checkPac
 const onlyOneEnabled = computed(() => [ onlyOneIvEnabled.value, isBuccal_2_5mg_5mg_7_5mg_10mgEnabled.value ].filter(Boolean).length === 1)
 const onlyOneIvEnabled = computed(() => [ isIv_5mgml_1mlEnabled.value, isIv_5mgml_3mlEnabled.value, isIv_1mgml_5mlEnabled.value ].filter(Boolean).length === 1)
 
-// ########################################################################################################
-
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
-
 const hasIv = computed(() => isIv_1mgml_5mlEnabled.value || isIv_5mgml_1mlEnabled.value || isIv_5mgml_3mlEnabled.value)
 const hasBuc = computed(() => isBuccal_2_5mg_5mg_7_5mg_10mgEnabled.value)
+
+// ########################################################################################################
 
 const onsetText = computed(() => {
   let one = onlyOneEnabled.value

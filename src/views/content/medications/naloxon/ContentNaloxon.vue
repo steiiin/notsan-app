@@ -113,9 +113,8 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
-import { iv_0_4mg } from './Packages'
 
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
+import { iv_0_4mg } from './Packages'
 
 </script>
 

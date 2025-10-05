@@ -158,13 +158,11 @@ const isIv_4mgml_6mgml_100mlEnabled = computed(() => configStore.checkPackageEna
 
 const onlyOneEnabled = computed(() => [ isPo_200mg_400mg_600mg_800mgEnabled.value, isPo_20mgml_40mgmlEnabled.value, isSupp_75mg_125mg_150mg_250mgEnabled.value, isIv_4mgml_6mgml_100mlEnabled.value ].filter(Boolean).length === 1)
 
-// ########################################################################################################
-
-const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
-
 const hasPo = computed(() => isPo_200mg_400mg_600mg_800mgEnabled.value || isPo_20mgml_40mgmlEnabled.value)
 const hasSupp = computed(() => isSupp_75mg_125mg_150mg_250mgEnabled.value)
 const hasIv = computed(() => isIv_4mgml_6mgml_100mlEnabled.value)
+
+// ########################################################################################################
 
 const onsetText = computed(() => {
   const one = onlyOneEnabled.value
