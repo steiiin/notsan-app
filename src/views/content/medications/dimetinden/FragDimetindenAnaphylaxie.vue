@@ -1,10 +1,10 @@
 <template>
   <template v-if="enabled">
     <template v-if="isApplicable">
-      <ns-dosage :dosage="{ target: 'Dimetinden', dose: 'Keine', hint: 'Gabe' }"></ns-dosage>
+      <ns-dosage :dosage="{ target: 'Dimetinden', dose: `${weightDose}mg`, hint: `(${weightHint})` }"></ns-dosage>
     </template>
     <template v-else>
-      <ns-dosage :dosage="{ target: 'Dimetinden', dose: `${weightDose}mg`, hint: `(${weightHint})` }"></ns-dosage>
+      <ns-dosage :dosage="{ target: 'Dimetinden', dose: 'Keine', hint: 'Gabe' }"></ns-dosage>
     </template>
   </template>
 </template>
@@ -38,7 +38,7 @@ const props = defineProps<{
 
 const isApplicable = computed(() => props.patient.estimatedAge >= 12 && props.patient.estimatedWeight >= 10)
 
-const weightDose = computed(() => isApplicable.value ? 0 : round(Math.min(props.patient.estimatedWeight / 10, 8), 1, 'down'))
+const weightDose = computed(() => isApplicable.value ? round(Math.min(props.patient.estimatedWeight / 10, 8), 1, 'down') : 0)
 const weightHint = computed(() => {
   const ml = weightDose.value
   if (ml == 4) { return '1 Ampulle' }
