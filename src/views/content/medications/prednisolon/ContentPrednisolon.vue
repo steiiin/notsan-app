@@ -116,22 +116,22 @@ import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
 
 import {
+
   supp_100mg,
   iv_100mg,
   iv_250mg,
+
   isSupp_100mgEnabled,
   isIv_100mgEnabled,
   isIv_250mgEnabled,
+  isOnlyOneIvEnabled,
+
 } from './Packages'
 
 // ########################################################################################################
 
-const onlyOneIvEnabled = computed(() => [ isIv_100mgEnabled.value, isIv_250mgEnabled.value ].filter(Boolean).length === 1)
-
-// ########################################################################################################
-
 const ivAnalphylHintText = (amount: number) => {
-  if (!onlyOneIvEnabled.value) { return '' }
+  if (!isOnlyOneIvEnabled.value) { return '' }
   if (isIv_100mgEnabled.value)
   {
     if (amount == 250) { return '(2½ Ampullen)' }

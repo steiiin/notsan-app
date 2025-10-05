@@ -15,6 +15,7 @@ import { useConfigStore } from '@/stores/config'
 // ########################################################################################################
 
 const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Prednisolon) ?? true)
+
 // ########################################################################################################
 
 import { Patient } from '@/types/emergency';

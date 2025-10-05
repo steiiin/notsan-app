@@ -9,15 +9,13 @@
 
 <script setup lang="ts">
 
-import { isIv_100mgEnabled, isIv_250mgEnabled } from './Packages'
+import { isIv_100mgEnabled, isIv_250mgEnabled, isOnlyOneIvEnabled } from './Packages'
 import { MedId } from '@/types/medication'
 import { useConfigStore } from '@/stores/config'
 
 // ########################################################################################################
 
 const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Prednisolon) ?? true)
-
-const onlyOneIvEnabled = computed(() => [ isIv_100mgEnabled.value, isIv_250mgEnabled.value ].filter(Boolean).length === 1)
 
 // ########################################################################################################
 
@@ -35,7 +33,7 @@ const weightDose = computed(() => {
   return 50
 })
 const weightHint = computed(() => {
-  if (!onlyOneIvEnabled.value) { return '' }
+  if (!isOnlyOneIvEnabled.value) { return '' }
   if (isIv_100mgEnabled.value)
   {
     if (weightDose.value == 250) { return '(2½ Ampullen)' }

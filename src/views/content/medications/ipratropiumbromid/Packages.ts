@@ -1,6 +1,7 @@
 import { useMedicationPackageFlags } from '@/composables/useMedicationPackageFlags'
 import { MedId } from '@/types/medication'
 import { resolvePackages } from '../resolvePackages'
+import { computedOnlyOne } from '@/service/reactive'
 
 const packageIds = [
   'inh_250ug',
@@ -15,3 +16,5 @@ export const inh_500ug = packages.inh_500ug
 
 export const isInh_250ugEnabled = packageFlags.inh_250ug
 export const isInh_500ugEnabled = packageFlags.inh_500ug
+
+export const isOnlyOneEnabled = computedOnlyOne([ isInh_250ugEnabled, isInh_500ugEnabled ])

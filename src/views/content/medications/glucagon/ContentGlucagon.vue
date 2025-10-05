@@ -109,18 +109,23 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
-import { im_1mg, nasal_3mg, isIm_1mgEnabled, isNasal_3mgEnabled } from './Packages'
+import {
 
-// ########################################################################################################
+  im_1mg,
+  nasal_3mg,
 
-const onlyOneEnabled = computed(() => [ isIm_1mgEnabled.value, isNasal_3mgEnabled.value ].filter(Boolean).length === 1)
+  isIm_1mgEnabled,
+  isNasal_3mgEnabled,
+  isOnlyOneEnabled,
+
+} from './Packages'
 
 // ########################################################################################################
 
 const onlySAA = computed(() => false) /* TODO: onlySAA-Trigger */
 
 const onsetText = computed(() => {
-  if (onlyOneEnabled.value)
+  if (isOnlyOneEnabled.value)
   {
     if (isIm_1mgEnabled.value) {
       return '10-30 Minuten'

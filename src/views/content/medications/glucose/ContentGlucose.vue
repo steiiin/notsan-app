@@ -88,16 +88,23 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
-import { iv_1g_10ml, iv_2g_10ml, iv_4g_10ml, isIv_1g_10mlEnabled, isIv_2g_10mlEnabled, isIv_4g_10mlEnabled } from './Packages'
+import {
 
-// ########################################################################################################
+  iv_1g_10ml,
+  iv_2g_10ml,
+  iv_4g_10ml,
 
-const onlyOneEnabled = computed(() => [ isIv_1g_10mlEnabled.value, isIv_2g_10mlEnabled.value, isIv_4g_10mlEnabled.value ].filter(Boolean).length === 1)
+  isIv_1g_10mlEnabled,
+  isIv_2g_10mlEnabled,
+  isIv_4g_10mlEnabled,
+  isOnlyOneEnabled,
+
+} from './Packages'
 
 // ########################################################################################################
 
 const doseAdultHint = computed(() => {
-  if (onlyOneEnabled.value)
+  if (isOnlyOneEnabled.value)
   {
     if (isIv_1g_10mlEnabled.value) { return '(8 Ampullen)' }
     if (isIv_2g_10mlEnabled.value) { return '(4 Ampullen)' }

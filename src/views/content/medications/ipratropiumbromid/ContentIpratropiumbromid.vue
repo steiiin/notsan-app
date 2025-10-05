@@ -75,7 +75,7 @@
               dose: '0,25mg', hint: ampAmount(0.25) }">
             </ns-dosage>
           </div>
-          <div v-if="!onlyOneEnabled">
+          <div v-if="!isOnlyOneEnabled">
             Auf die richtige <b>Ampullengröße</b> achten!
           </div>
           <hr>
@@ -124,16 +124,21 @@ import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
 
-import { inh_250ug, inh_500ug, isInh_250ugEnabled, isInh_500ugEnabled } from './Packages'
+import {
 
-// ########################################################################################################
+  inh_250ug,
+  inh_500ug,
 
-const onlyOneEnabled = computed(() => [ isInh_250ugEnabled.value, isInh_500ugEnabled.value ].filter(Boolean).length === 1)
+  isInh_250ugEnabled,
+  isInh_500ugEnabled,
+  isOnlyOneEnabled,
+
+} from './Packages'
 
 // ########################################################################################################
 
 const ampAmount = (dose: number) => {
-  if (onlyOneEnabled.value)
+  if (isOnlyOneEnabled.value)
   {
     let size = 1
     if (isInh_250ugEnabled.value) { size = 0.25 }

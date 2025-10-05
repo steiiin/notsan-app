@@ -115,17 +115,17 @@
           <ns-package v-if="isIv_5mgml_5mlEnabled"
             :package="iv_5mgml_5ml" :inline-specs="{
             on: 10,
-            onlyOne: onlyOneEnabled }">
+            onlyOne: isOnlyOneEnabled }">
           </ns-package>
           <ns-package v-else-if="isIv_25mgml_2mlEnabled"
             :package="iv_25mgml_2ml" :inline-specs="{
             on: 20,
-            onlyOne: onlyOneEnabled }">
+            onlyOne: isOnlyOneEnabled }">
           </ns-package>
           <ns-package v-else-if="isIv_25mgml_10mlEnabled"
             :package="iv_25mgml_10ml" :inline-specs="{
             on: 10, off: 2,
-            onlyOne: onlyOneEnabled }">
+            onlyOne: isOnlyOneEnabled }">
           </ns-package>
 
           <p>
@@ -166,7 +166,7 @@
           <template v-if="isIv_5mgml_5mlEnabled">
             <ns-package v-if="isIv_5mgml_5mlEnabled"
               :package="iv_5mgml_5ml" :inline-specs="{
-              onlyOne: onlyOneEnabled }">
+              onlyOne: isOnlyOneEnabled }">
             </ns-package>
             <p style="margin-left: 1.2rem">
               <text-mono><b>0,5ml</b>:  5kg</text-mono><br>
@@ -181,12 +181,12 @@
             <ns-package v-if="isIv_25mgml_2mlEnabled"
               :package="iv_25mgml_2ml" :inline-specs="{
               on: 5,
-              onlyOne: onlyOneEnabled }">
+              onlyOne: isOnlyOneEnabled }">
             </ns-package>
             <ns-package v-else
               :package="iv_25mgml_10ml" :inline-specs="{
               off: 2, on: 5,
-              onlyOne: onlyOneEnabled }">
+              onlyOne: isOnlyOneEnabled }">
             </ns-package>
             <p style="margin-left: 1.2rem">
               <text-mono><b>0,5ml</b>: 10kg</text-mono><br>
@@ -198,12 +198,12 @@
 
             <ns-package v-if="isIv_25mgml_2mlEnabled"
               :package="iv_25mgml_2ml" :inline-specs="{
-              onlyOne: onlyOneEnabled }">
+              onlyOne: isOnlyOneEnabled }">
             </ns-package>
             <ns-package v-else
               :package="iv_25mgml_10ml" :inline-specs="{
               off: 2,
-              onlyOne: onlyOneEnabled }">
+              onlyOne: isOnlyOneEnabled }">
             </ns-package>
             <p style="margin-left: 1.2rem">
               <text-mono><b>0,5ml</b>: &nbsp;25kg</text-mono><br>
@@ -271,17 +271,17 @@ import imgLongQt from '@/data/assets/long-qt.png'
 import { arrowForwardOutline } from 'ionicons/icons'
 
 import {
+
   iv_5mgml_5ml,
   iv_25mgml_2ml,
   iv_25mgml_10ml,
+
   isIv_5mgml_5mlEnabled,
   isIv_25mgml_2mlEnabled,
   isIv_25mgml_10mlEnabled,
+  isOnlyOneEnabled,
+
 } from './Packages'
-
-// ########################################################################################################
-
-const onlyOneEnabled = computed(() => [ isIv_5mgml_5mlEnabled.value, isIv_25mgml_2mlEnabled.value, isIv_25mgml_10mlEnabled.value ].filter(Boolean).length === 1)
 
 // ########################################################################################################
 

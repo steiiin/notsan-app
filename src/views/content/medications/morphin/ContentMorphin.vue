@@ -72,12 +72,12 @@
           <ns-package v-if="isIv_10mgEnabled"
             :package="iv_10mg" :inline-specs="{
             on: 10,
-            onlyOne: onlyOneEnabled }">
+            onlyOne: isOnlyOneEnabled }">
           </ns-package>
           <ns-package v-if="isIv_20mgEnabled"
             :package="iv_20mg" :inline-specs="{
             on: 20,
-            onlyOne: onlyOneEnabled }">
+            onlyOne: isOnlyOneEnabled }">
           </ns-package>
 
           <hr>
@@ -139,11 +139,16 @@ import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
 
-import { iv_10mg, iv_20mg, isIv_10mgEnabled, isIv_20mgEnabled } from './Packages'
+import {
 
-// ########################################################################################################
+  iv_10mg,
+  iv_20mg,
 
-const onlyOneEnabled = computed(() => [ isIv_10mgEnabled.value, isIv_20mgEnabled.value ].filter(Boolean).length === 1)
+  isIv_10mgEnabled,
+  isIv_20mgEnabled,
+  isOnlyOneEnabled,
+
+} from './Packages'
 
 // ########################################################################################################
 

@@ -146,32 +146,32 @@ import TextUnderline from '@/components/TextUnderline.vue'
 import TextColored from '@/components/TextColored.vue'
 
 import {
+
   po_500mg,
   po_40mgml,
   supp_125mg_250mg,
   iv_10mgml_100ml,
+
   isPo_500mgEnabled,
   isPo_40mgmlEnabled,
   isSupp_125mg_250mgEnabled,
   isIv_10mgml_100mlEnabled,
+
+  isOnlyOneEnabled,
+  isAnyPoEnabled,
+  isAnyIvEnabled,
+  isAnySuppEnabled,
+
 } from './Packages'
 
 // ########################################################################################################
 
-const onlyOneEnabled = computed(() => [ isPo_500mgEnabled.value, isPo_40mgmlEnabled.value, isSupp_125mg_250mgEnabled.value, isIv_10mgml_100mlEnabled.value ].filter(Boolean).length === 1)
-
-const hasPo = computed(() => isPo_500mgEnabled.value || isPo_40mgmlEnabled.value)
-const hasSupp = computed(() => isSupp_125mg_250mgEnabled.value)
-const hasIv = computed(() => isIv_10mgml_100mlEnabled.value)
-
-// ########################################################################################################
-
 const onsetText = computed(() => {
-  const one = onlyOneEnabled.value
+  const one = isOnlyOneEnabled.value
   const parts = []
-  if (hasIv.value) { parts.push(`${one ? '' : '<case>i.v.</case> '}5-10 Minuten${one ? '' : '|'}`) }
-  if (hasPo.value) { parts.push(`${one ? '' : '<case>oral</case> '}30-60 Minuten${one ? '' : '|'}`) }
-  if (hasSupp.value) { parts.push(`${one ? '' : '<case>rektal</case> '}45-60 Minuten${one ? '' : '|'}`) }
+  if (isAnyIvEnabled.value) { parts.push(`${one ? '' : '<case>i.v.</case> '}5-10 Minuten${one ? '' : '|'}`) }
+  if (isAnyPoEnabled.value) { parts.push(`${one ? '' : '<case>oral</case> '}30-60 Minuten${one ? '' : '|'}`) }
+  if (isAnySuppEnabled.value) { parts.push(`${one ? '' : '<case>rektal</case> '}45-60 Minuten${one ? '' : '|'}`) }
   return parts.join('')
 })
 

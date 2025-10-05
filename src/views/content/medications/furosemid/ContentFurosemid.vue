@@ -52,15 +52,15 @@
         <ns-dosage-usage type="iv">
           <div>
             <ns-dosage :dosage="{ dose: '20mg', hint: 'langsam spritzen.'}"></ns-dosage>
-            <template v-if="onlyOneEnabled">
+            <template v-if="isOnlyOneEnabled">
               <ns-dosage v-if="isIv_20mgEnabled" :dosage="{ dose: ' 2ml', hint: '(1 Ampulle)'}"></ns-dosage>
               <ns-dosage v-if="isIv_40mgEnabled" :dosage="{ dose: ' 2ml', hint: '(½ Ampulle)'}"></ns-dosage>
             </template>
           </div>
-          <div v-if="!onlyOneEnabled" style="display:flex">
+          <div v-if="!isOnlyOneEnabled" style="display:flex">
             <ns-package inline :package="iv_20mg"></ns-package> <b>ganz.</b>
           </div>
-          <div v-if="!onlyOneEnabled" style="display:flex">
+          <div v-if="!isOnlyOneEnabled" style="display:flex">
             <ns-package inline :package="iv_40mg"></ns-package> <b>zur Hälfte.</b>
           </div>
           <hr>
@@ -110,11 +110,16 @@ import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
-import { iv_20mg, iv_40mg, isIv_20mgEnabled, isIv_40mgEnabled } from './Packages'
+import {
 
-// ########################################################################################################
+  iv_20mg,
+  iv_40mg,
 
-const onlyOneEnabled = computed(() => [ isIv_20mgEnabled.value, isIv_40mgEnabled.value ].filter(Boolean).length === 1)
+  isIv_20mgEnabled,
+  isIv_40mgEnabled,
+  isOnlyOneEnabled,
+
+} from './Packages'
 
 // ########################################################################################################
 
