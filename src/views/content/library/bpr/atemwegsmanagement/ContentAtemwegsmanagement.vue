@@ -6,7 +6,7 @@
       </p>
     </ns-text-content>
   </ns-content-group>
-  <ns-flow @action="handleAction" :svg="flowSvg"></ns-flow>
+  <ns-flow :svg="flowSvg"></ns-flow>
   <ns-content-group title="PTO">
     <ns-text-content>
       <h2>Rettungsversuch!</h2>
@@ -60,11 +60,6 @@ import TextUnderline from '@/components/TextUnderline.vue'
 import lig_conicum from '@/data/assets/lig-conicum.png'
 import flowSvg from './flow.svg?raw'
 
-function handleAction(key: string) {
-  // Placeholder for action handling logic
-  // Integrate with actual business logic when available
-  console.debug('[ContentAtemwegsmanagement] handleAction', key)
-}
 </script>
 
 <style scoped>
