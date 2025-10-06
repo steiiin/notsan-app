@@ -2,17 +2,17 @@
   <template v-if="enabled">
 
     <template v-if="dose == IvRange.NotApplicable">
-      <ns-dosage :dosage="{
+      <ns-dosage mono :dosage="{
         target: 'Midazolam', dose: 'Keine', hint: 'Gabe' }">
       </ns-dosage>
     </template>
     <template v-else-if="dose == IvRange.Low">
-      <ns-dosage :dosage="{
+      <ns-dosage mono :dosage="{
         target: 'Midazolam', dose: '1mg' }">
       </ns-dosage>
     </template>
     <template v-else-if="dose == IvRange.High">
-      <ns-dosage :dosage="{
+      <ns-dosage mono :dosage="{
         target: 'Midazolam', dose: '2mg' }">
       </ns-dosage>
     </template>

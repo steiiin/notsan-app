@@ -1,7 +1,7 @@
 import { useMedicationPackageFlags } from '@/composables/useMedicationPackageFlags'
 import { MedId } from '@/types/medication'
 import { resolvePackages } from '../resolvePackages'
-import { computedOnlyOne } from '@/service/reactive'
+import { computedAny, computedOnlyOne } from '@/service/reactive'
 
 const packageIds = [
   'iv_5mgml_5ml',
@@ -21,3 +21,4 @@ export const isIv_25mgml_2mlEnabled = packageFlags.iv_25mgml_2ml
 export const isIv_25mgml_10mlEnabled = packageFlags.iv_25mgml_10ml
 
 export const isOnlyOneEnabled = computedOnlyOne([ isIv_5mgml_5mlEnabled, isIv_25mgml_2mlEnabled, isIv_25mgml_10mlEnabled ])
+export const isAnyHighConcentrationEnabled = computedAny([ isIv_25mgml_2mlEnabled, isIv_25mgml_10mlEnabled ])

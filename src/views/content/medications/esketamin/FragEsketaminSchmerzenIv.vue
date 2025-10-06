@@ -1,18 +1,20 @@
 <template>
   <template v-if="enabled">
     <template v-if="!isApplicable">
-      <ns-dosage :dosage="{
+      <ns-dosage mono :dosage="{
         target: 'Esketamin', dose: 'Keine', hint: 'Gabe' }">
       </ns-dosage>
     </template>
     <template v-else>
-      <ns-dosage :dosage="{
-        target: 'Esketamin', dose: `${weightDose}mg`, hint: '(Initial)' }">
-      </ns-dosage>
-      <ns-dosage :dosage="{
-        target: ' 2.5mg/ml', color: 'blue',
-        dose: `${schemeMl}ml` }">
-      </ns-dosage>
+      <div>
+        <ns-dosage mono :dosage="{
+          target: 'Esketamin', dose: `${weightDose}mg`, hint: '(Initial)' }">
+        </ns-dosage>
+        <ns-dosage mono :dosage="{
+          target: ' 2.5mg/ml', color: 'blue',
+          dose: `${schemeMl}ml` }">
+        </ns-dosage>
+      </div>
     </template>
   </template>
 </template>
