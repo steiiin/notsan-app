@@ -3,23 +3,23 @@
     <ns-key-value-container>
       <ns-key-value label="Puls">
         <p range>
-          <low><value>{{ normVitals.pulseLow }}</value>/<unit>min</unit></low>
-          <norm><value>{{ normVitals.pulse }}</value>/<unit>min</unit></norm>
-          <high><value>{{ normVitals.pulseHigh }}</value>/<unit>min</unit></high>
+          <span class="range-level range-level--low"><value>{{ normVitals.pulseLow }}</value>/<unit>min</unit></span>
+          <span class="range-level range-level--norm"><value>{{ normVitals.pulse }}</value>/<unit>min</unit></span>
+          <span class="range-level range-level--high"><value>{{ normVitals.pulseHigh }}</value>/<unit>min</unit></span>
         </p>
       </ns-key-value>
       <ns-key-value label="Blutdruck">
         <p range>
-          <low><value>{{ normVitals.pressureLow }}</value><sub>syst</sub></low>
-          <norm><value>{{ normVitals.pressure }}</value><unit><sub>syst</sub></unit></norm>
-          <high><value>{{ normVitals.pressureHigh }}</value><sub>syst</sub></high>
+          <span class="range-level range-level--low"><value>{{ normVitals.pressureLow }}</value><sub>syst</sub></span>
+          <span class="range-level range-level--norm"><value>{{ normVitals.pressure }}</value><unit><sub>syst</sub></unit></span>
+          <span class="range-level range-level--high"><value>{{ normVitals.pressureHigh }}</value><sub>syst</sub></span>
         </p>
       </ns-key-value>
       <ns-key-value label="AF">
         <p range>
-          <low><value>{{ normVitals.respirationLow }}</value>/<unit>min</unit></low>
-          <norm><value>{{ normVitals.respiration }}</value>/<unit>min</unit></norm>
-          <high><value>{{ normVitals.respirationHigh }}</value>/<unit>min</unit></high>
+          <span class="range-level range-level--low"><value>{{ normVitals.respirationLow }}</value>/<unit>min</unit></span>
+          <span class="range-level range-level--norm"><value>{{ normVitals.respiration }}</value>/<unit>min</unit></span>
+          <span class="range-level range-level--high"><value>{{ normVitals.respirationHigh }}</value>/<unit>min</unit></span>
         </p>
       </ns-key-value>
     </ns-key-value-container>
@@ -150,19 +150,22 @@ p[range] unit {
   font-weight: 100;
 }
 
-p[range] low,
-p[range] high {
-  color: var(--ns-color-blue);
+p[range] .range-level {
   letter-spacing: 0px;
+}
+
+p[range] .range-level--low,
+p[range] .range-level--high {
+  color: var(--ns-color-blue);
   font-size: 0.9em;
 }
-p[range] high {
+p[range] .range-level--high {
   color: var(--ns-color-red);
 }
-p[range] low::after {
+p[range] .range-level--low::after {
   content: ' >';
 }
-p[range] high::before {
+p[range] .range-level--high::before {
   content: '< ';
 }
 
