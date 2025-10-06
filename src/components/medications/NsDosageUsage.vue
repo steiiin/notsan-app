@@ -126,7 +126,7 @@ const usageMinHeight = computed(() => props.dense ? 3.5 : (props.type && props.t
 .usage-content :deep(hr) {
   margin: 0px var(--ns-card-neg-padding) 0 -2px;
   padding: 0 0 0 0;
-  border-bottom: 1px solid var(--ion-color-light);
+  border-bottom: 1px solid var(--ns-color-divider);
 }
 .usage-content :deep(*) {
   margin: 0;

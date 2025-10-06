@@ -1,7 +1,7 @@
 <template>
   <template v-if="enabled">
     <ns-dosage-usage type="iv" label="i.v./i.m." dense>
-      <ns-dosage :dosage="{
+      <ns-dosage mono :dosage="{
         target: 'Midazolam', dose: doseText }">
       </ns-dosage>
     </ns-dosage-usage>
