@@ -1,3 +1,4 @@
+import { round } from "@/service/math"
 import { BmiCalculation, CurveCalculation } from "../service/weight-calculation"
 
 export type WeightAccuracyValue = 'direct' | 'estimate'
@@ -325,7 +326,11 @@ export class Patient {
     const habitusOffset = Patient.HABITUS_AGE_OFFSETS[this.Habitus] ?? 0
     const base = estimates.reduce((sum, value) => sum + value, 0) / estimates.length
 
-    return Math.max(0, Math.round(base + habitusOffset))
+    let estimate = base + habitusOffset
+
+    if (estimate < 1) { return round(estimate, 0.01) }
+    return round(estimate, 1)
+
   }
 
   // ######################################################
