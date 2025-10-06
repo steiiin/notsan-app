@@ -51,7 +51,7 @@ const dosageTarget = computed(() => props.dosage.target || (props.dosage.type &&
 
   text-transform: uppercase;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: pre;
   overflow: hidden;
 }
 .ns-dosage .info
