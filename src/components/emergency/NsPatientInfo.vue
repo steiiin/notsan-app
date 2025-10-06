@@ -8,6 +8,7 @@
 <script setup lang="ts">
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
+import { getBroselowCode } from '@/components/emergency/broselow';
 import { Patient, SexValue } from '@/types/emergency';
 import { computed } from 'vue';
 
@@ -78,34 +79,6 @@ const infoData = computed((): InfoData|null => {
 })
 
 // #region Broselow
-
-  interface BroselowCode {
-    code: string;      // color name, e.g. "Grün"
-    colorCode: string; // key, e.g. "green"
-    range: string;     // e.g. "8–12 kg"
-  }
-
-  const BROSELOW_ZONES: {code: string; colorCode: string; min: number; max: number}[] = [
-    { code: "Grau",   colorCode: "grey",   min: 0,  max: 5 },
-    { code: "Rosa",   colorCode: "pink",   min: 6,  max: 7 },
-    { code: "Rot",    colorCode: "red",    min: 8,  max: 9 },
-    { code: "Lila",   colorCode: "purple", min: 10, max: 11 },
-    { code: "Gelb",   colorCode: "yellow", min: 12, max: 14 },
-    { code: "Weiß",   colorCode: "white",  min: 15, max: 18 },
-    { code: "Blau",   colorCode: "blue",   min: 19, max: 23 },
-    { code: "Orange", colorCode: "orange", min: 24, max: 29 },
-    { code: "Grün",   colorCode: "green",  min: 30, max: 36 },
-  ]
-
-  const getBroselowCode = (weightKg: number): BroselowCode | null => {
-    const zone = BROSELOW_ZONES.find(z => weightKg >= z.min && weightKg <= z.max);
-    if (!zone) return null
-    return {
-      code: zone.code,
-      colorCode: zone.colorCode,
-      range: `${Math.max(zone.min, 3)}–${zone.max} kg`,
-    }
-  }
 
   const cardColorStyle = (colorCode?: string): string => {
     if (!!colorCode && colorCode.length>0)
