@@ -31,6 +31,8 @@
   --ns-color-green: #26a269; /* Green */
   --ns-color-green-shade: #91d1b4;
 
+  --ns-color-divider: #f4f5f8;
+
   /* broselow colors */
   --ns-broselow-code-grey:   #B0B0B0; /* neutral grey */
   --ns-broselow-code-pink:   #F4A7C0; /* soft pink */
@@ -72,6 +74,8 @@
 
     --ns-color-green: #3ddc97; /* Lighter green */
     --ns-color-green-shade: #3ddc97;
+
+    --ns-color-divider: #f4f5f866;
 
     /* broselow colors */
     --ns-broselow-code-grey:    #7A7A7A; /* darker grey */

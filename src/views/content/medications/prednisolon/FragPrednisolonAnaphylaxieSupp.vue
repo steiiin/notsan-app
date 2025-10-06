@@ -1,7 +1,7 @@
 <template>
   <template v-if="enabled && isSuppApplicable">
     <ns-dosage-usage type="supp">
-      <ns-dosage :dosage="{ target: 'Prednisolon', dose: '100mg', hint: '(Zäpfchen)' }"></ns-dosage>
+      <ns-dosage mono :dosage="{ target: 'Prednisolon', dose: '100mg', hint: '(Zäpfchen)' }"></ns-dosage>
     </ns-dosage-usage>
   </template>
 </template>

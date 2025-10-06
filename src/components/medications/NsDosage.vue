@@ -1,6 +1,6 @@
 <template>
   <div class="ns-dosage" :class="dosageColor">
-    <span class="target" v-if="dosageTarget">{{ dosageTarget }}</span>
+    <span class="target" :class="{ 'mono': mono }" v-if="dosageTarget">{{ dosageTarget }}</span>
     <span class="info">
       <span class="dose">{{ dosage.dose }}</span>
       <span class="hint" v-if="dosage.hint">{{ dosage.hint }}</span>
@@ -14,7 +14,8 @@ import { Dosage } from '@/types/dosage'
 import { computed } from 'vue'
 
 const props = defineProps<{
-  dosage: Dosage
+  dosage: Dosage,
+  mono?: boolean,
 }>()
 
 const dosageColorMap: Record<string, string> = {
@@ -51,9 +52,15 @@ const dosageTarget = computed(() => props.dosage.target || (props.dosage.type &&
 
   text-transform: uppercase;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: pre;
   overflow: hidden;
 }
+.ns-dosage .target.mono
+{
+  font-family: monospace;
+  text-transform: none;
+}
+
 .ns-dosage .info
 {
   display: flex;

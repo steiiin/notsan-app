@@ -33,19 +33,19 @@ export class Patient {
       'very-thin': 0.85,
       thin: 0.92,
       normal: 1.00,
-      sporty: 1.10,
-      'lightly-overweight': 1.10,
-      overweight: 1.20,
-      'very-overweight': 1.30,
+      sporty: 1.08,               // +8%
+      'lightly-overweight': 1.10, // +10%
+      overweight: 1.20,           // +20%
+      'very-overweight': 1.35,    // +35%
     },
     adult: {
-      'very-thin': 0.84,
-      thin: 0.91,
-      normal: 1.05,
-      sporty: 1.23,
-      'lightly-overweight': 1.27,
-      overweight: 1.45,
-      'very-overweight': 1.68,
+      'very-thin': 0.86,
+      thin: 0.93,
+      normal: 1.00,
+      sporty: 1.10,               // +10%
+      'lightly-overweight': 1.12, // +12%
+      overweight: 1.25,           // +25%
+      'very-overweight': 1.40,    // +40%
     },
   }
 
@@ -261,6 +261,22 @@ export class Patient {
         this.Sex, this.Age, this.currentHabitusMulti
       )
     }
+    if (this.estimatedWeightCalcMethod == 'invalid_age') {
+
+      // for too old ages, return rough estimate (based on age / habitus only)
+      const base = this.Sex === 'male' ? 78 : 65
+
+      let ageFactor = 1
+      if (this.Age < 30) ageFactor = 0.95 + (this.Age - 18) * 0.004     // 18–30: langsamer Anstieg
+      else if (this.Age < 50) ageFactor = 1.02 + (this.Age - 30) * 0.005 // 30–50: leichter Anstieg
+      else if (this.Age < 70) ageFactor = 1.12 - (this.Age - 50) * 0.004 // 50–70: langsamer Rückgang
+      else ageFactor = 1.04 - (this.Age - 70) * 0.006               // >70: stärkerer Rückgang
+
+      const weight = base * ageFactor * this.currentHabitusMulti
+      return Math.round(weight)
+
+    }
+
     if (this.estimatedWeightCalcMethod == 'by-height-curve') {
       return CurveCalculation.calculateChildWeightByHeight(
         this.Sex, this.Height, this.currentHabitusMulti
@@ -344,6 +360,7 @@ export class Patient {
   get isValid(): boolean {
     return this.estimatedWeightCalcMethod == 'direct'
       || this.estimatedWeightCalcMethod == 'by-age'
+      || this.estimatedWeightCalcMethod == 'invalid_age'
       || this.estimatedWeightCalcMethod == 'by-height-bmi'
       || this.estimatedWeightCalcMethod == 'by-height-curve'
   }
