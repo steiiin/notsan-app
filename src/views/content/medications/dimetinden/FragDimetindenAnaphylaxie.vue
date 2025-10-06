@@ -1,10 +1,10 @@
 <template>
   <template v-if="enabled">
     <template v-if="isApplicable">
-      <ns-dosage :dosage="{ target: 'Dimetinden', dose: `${weightDose}mg`, hint: `(${weightHint})` }"></ns-dosage>
+      <ns-dosage mono :dosage="{ target: 'Dimetinden', dose: `${weightDose}mg`, hint: `(${weightHint})` }"></ns-dosage>
     </template>
     <template v-else>
-      <ns-dosage :dosage="{ target: 'Dimetinden', dose: 'Keine', hint: 'Gabe' }"></ns-dosage>
+      <ns-dosage mono :dosage="{ target: 'Dimetinden', dose: 'Keine', hint: 'Gabe' }"></ns-dosage>
     </template>
   </template>
 </template>

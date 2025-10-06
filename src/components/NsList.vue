@@ -24,7 +24,7 @@ defineProps<{
 }
 .ns-list.divider
 {
-  border-bottom: 1px solid var(--ion-color-light);
+  border-bottom: 1px solid var(--ns-color-divider);
 }
 .ns-list:last-of-type
 {

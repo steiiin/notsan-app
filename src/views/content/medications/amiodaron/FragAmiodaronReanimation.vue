@@ -1,13 +1,13 @@
 <template>
   <template v-if="enabled">
     <template v-if="useFull">
-      <ns-dosage :dosage="{ target: 'Amiodaron', dose: '300mg', hint: '(2 Ampullen)' }"></ns-dosage>
+      <ns-dosage mono :dosage="{ target: 'Amiodaron', dose: '300mg', hint: '(2 Ampullen)' }"></ns-dosage>
     </template>
     <template v-else-if="noUse">
-      <ns-dosage :dosage="{ target: 'Amiodaron', dose: 'Keine', hint: 'Gabe' }"></ns-dosage>
+      <ns-dosage mono :dosage="{ target: 'Amiodaron', dose: 'Keine', hint: 'Gabe' }"></ns-dosage>
     </template>
     <template v-else>
-      <ns-dosage :dosage="{ target: 'Amiodaron', dose: `${childDose}mg`, hint: `(${childHint})` }"></ns-dosage>
+      <ns-dosage mono :dosage="{ target: 'Amiodaron', dose: `${childDose}mg`, hint: `(${childHint})` }"></ns-dosage>
     </template>
   </template>
 </template>

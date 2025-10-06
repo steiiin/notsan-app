@@ -2,24 +2,24 @@
   <template v-if="enabled && isAnyIvEnabled">
     <ns-dosage-usage type="nasal" dense>
       <template v-if="ageRange === NasalAgeRange.NotApplicable">
-        <ns-dosage :dosage="{
+        <ns-dosage mono :dosage="{
           target: 'Midazolam', dose: 'Keine', hint:'Gabe' }">
         </ns-dosage>
       </template>
       <template v-if="ageRange === NasalAgeRange.Low">
-        <ns-dosage :dosage="{
+        <ns-dosage mono :dosage="{
           target: 'Midazolam',
           dose: ' 2,5mg', hint: '(MAD)' }">
         </ns-dosage>
       </template>
       <template v-if="ageRange === NasalAgeRange.Medium">
-        <ns-dosage :dosage="{
+        <ns-dosage mono :dosage="{
           target: 'Midazolam',
           dose: ' 5mg', hint: '(MAD)' }">
         </ns-dosage>
       </template>
       <template v-if="ageRange === NasalAgeRange.High">
-        <ns-dosage :dosage="{
+        <ns-dosage mono :dosage="{
           target: 'Midazolam',
           dose: '10mg', hint: '(MAD)' }">
         </ns-dosage>

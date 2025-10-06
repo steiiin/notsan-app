@@ -2,30 +2,30 @@
   <template v-if="enabled && isAnyBucEnabled">
     <ns-dosage-usage type="po" dense>
       <template v-if="ageRange === BuccAgeRange.NotApplicable">
-        <ns-dosage :dosage="{
+        <ns-dosage mono :dosage="{
           target: 'Buccolam', dose: 'Keine', hint:'Gabe' }">
         </ns-dosage>
       </template>
       <template v-else-if="ageRange === BuccAgeRange.Gelb">
-        <ns-dosage :dosage="{
+        <ns-dosage mono :dosage="{
           target: 'Buccolam', color: 'orange',
           dose: ' 2,5mg', hint: '(gelb)' }">
         </ns-dosage>
       </template>
       <template v-else-if="ageRange === BuccAgeRange.Blau">
-        <ns-dosage :dosage="{
+        <ns-dosage mono :dosage="{
           target: 'Buccolam', color: 'blue',
           dose: ' 5,0mg', hint: '(blau)' }">
         </ns-dosage>
       </template>
       <template v-else-if="ageRange === BuccAgeRange.Violet">
-        <ns-dosage :dosage="{
+        <ns-dosage mono :dosage="{
           target: 'Buccolam', color: 'lila',
           dose: ' 7,5mg', hint: '(lila)' }">
         </ns-dosage>
       </template>
       <template v-else-if="ageRange === BuccAgeRange.Rot">
-        <ns-dosage :dosage="{
+        <ns-dosage mono :dosage="{
           target: 'Buccolam', color: 'red',
           dose: '10,0mg', hint: '(rot)' }">
         </ns-dosage>

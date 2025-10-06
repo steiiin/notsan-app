@@ -33,6 +33,10 @@
           :patient="currentPatient">
         </content-krampfanfall>
 
+        <content-schmerzen
+          :patient="currentPatient">
+        </content-schmerzen>
+
       </template>
 
     </ion-content>
@@ -53,6 +57,7 @@ import ContentStandards from './emergency/standards/ContentStandards.vue';
 import ContentReanimation from './emergency/reanimation/ContentReanimation.vue';
 import ContentAnaphylaxie from './emergency/anaphylaxie/ContentAnaphylaxie.vue';
 import ContentKrampfanfall from './emergency/krampfanfall/ContentKrampfanfall.vue';
+import ContentSchmerzen from './emergency/schmerzen/ContentSchmerzen.vue';
 
 import { Patient } from '@/types/emergency';
 

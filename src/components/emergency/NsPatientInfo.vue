@@ -45,7 +45,7 @@ const infoData = computed((): InfoData|null => {
 
       // show declarative messages
       if (props.patient.estimatedWeightCalcMethod == 'invalid_age') {
-        return new InfoData('Zu Alt für Schätzung', 'Anhand von Perzentilenkurven kann bis max. 15 Jahren geschätzt werden.') }
+        return new InfoData('Zu Alt für Schätzung', `Anhand von Perzentilenkurven kann bis max. 15 Jahren geschätzt werden. Nutze jetzt ${props.patient.estimatedWeight}kg.`) }
       if (props.patient.estimatedWeightCalcMethod == 'invalid_height') {
         return new InfoData('Ungültige Größe', 'Unter 30cm Körpergröße kann nicht geschätzt werden.') }
       if (props.patient.estimatedWeightCalcMethod == 'invalid_weight') {

@@ -74,11 +74,10 @@
       <ns-dosage-indication>
         <ns-dosage-usage type="invisible">
           <div>
-            <ns-dosage :dosage="{ type: 'adult', dose: 'bis 1.200mg / Tag' }"></ns-dosage>
             <ns-dosage :dosage="{
               target: '< 1 Jahr',
               color: 'red',
-              dose: '50mg' }">
+              dose: ' 50mg' }">
             </ns-dosage>
             <ns-dosage :dosage="{
               target: '1-3 Jahre',
@@ -86,19 +85,29 @@
               dose: '100mg' }">
             </ns-dosage>
             <ns-dosage :dosage="{
-              target: '4-5 Jahre',
+              target: '3-6 Jahre',
               color: 'lila',
               dose: '150mg' }">
             </ns-dosage>
             <ns-dosage :dosage="{
-              target: '6-11 Jahre',
+              target: '6-9 Jahre',
               color: 'green',
               dose: '200mg' }">
             </ns-dosage>
             <ns-dosage :dosage="{
+              target: '9-12 Jahre',
+              color: 'green',
+              dose: '300mg' }">
+            </ns-dosage>
+            <ns-dosage :dosage="{
               target: '> 12 Jahre',
-              color: 'orange',
-              dose: ' 75mg /10kg' }">
+              color: 'blue',
+              dose: '400mg' }">
+            </ns-dosage>
+            <hr>
+            <ns-dosage :dosage="{
+              target: 'Max. / Tag',
+              dose: '3x', hint: 'Einzeldosis' }">
             </ns-dosage>
           </div>
         </ns-dosage-usage>
@@ -155,6 +164,7 @@ import {
   isPo_20mgml_40mgmlEnabled,
   isSupp_75mg_125mg_150mg_250mgEnabled,
   isIv_4mgml_6mgml_100mlEnabled,
+
   isOnlyOneEnabled,
   isAnyPoEnabled,
   isAnySuppEnabled,
