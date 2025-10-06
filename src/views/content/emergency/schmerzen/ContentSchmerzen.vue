@@ -29,13 +29,24 @@
 
       </ns-content-group>
 
-      <!-- Kolikschmerz -->
+      <!-- Sonstige -->
       <ns-content-group dense>
 
-      </ns-content-group>
+        <ns-dosage-usage type="iv" dense>
+          <frag-butylscopolamin-schmerzen :patient="patient"></frag-butylscopolamin-schmerzen>
+          <frag-ibuprofen-schmerzen-iv :patient="patient"></frag-ibuprofen-schmerzen-iv>
+          <frag-paracetamol-schmerzen-iv :patient="patient"></frag-paracetamol-schmerzen-iv>
+        </ns-dosage-usage>
 
-      <!-- Weitere -->
-      <ns-content-group dense>
+        <ns-dosage-usage type="supp" dense v-if="useSuppositories">
+          <frag-ibuprofen-schmerzen-supp :patient="patient"></frag-ibuprofen-schmerzen-supp>
+          <frag-paracetamol-schmerzen-supp :patient="patient"></frag-paracetamol-schmerzen-supp>
+        </ns-dosage-usage>
+
+        <ns-dosage-usage type="po" dense>
+          <frag-ibuprofen-schmerzen-po :patient="patient"></frag-ibuprofen-schmerzen-po>
+          <frag-paracetamol-schmerzen-po :patient="patient"></frag-paracetamol-schmerzen-po>
+        </ns-dosage-usage>
 
       </ns-content-group>
 
@@ -60,11 +71,25 @@ import FragFentanylSchmerzenNasal from '../../medications/fentanyl/FragFentanylS
 import FragNalbuphinSchmerzenIv from '../../medications/nalbuphin/FragNalbuphinSchmerzenIv.vue';
 import FragNalbuphinSchmerzenNasal from '../../medications/nalbuphin/FragNalbuphinSchmerzenNasal.vue';
 
+import FragButylscopolaminSchmerzen from '../../medications/butylscopolamin/FragButylscopolaminSchmerzen.vue';
+import FragIbuprofenSchmerzenIv from '../../medications/ibuprofen/FragIbuprofenSchmerzenIv.vue';
+import FragIbuprofenSchmerzenSupp from '../../medications/ibuprofen/FragIbuprofenSchmerzenSupp.vue';
+import FragIbuprofenSchmerzenPo from '../../medications/ibuprofen/FragIbuprofenSchmerzenPo.vue';
+import FragParacetamolSchmerzenIv from '../../medications/paracetamol/FragParacetamolSchmerzenIv.vue';
+import FragParacetamolSchmerzenSupp from '../../medications/paracetamol/FragParacetamolSchmerzenSupp.vue';
+import FragParacetamolSchmerzenPo from '../../medications/paracetamol/FragParacetamolSchmerzenPo.vue';
+
+import { isAnySuppEnabled as isIbuSuppEnabled } from '../../medications/ibuprofen/Packages';
+import { isAnySuppEnabled as isParaSuppEnabled } from '../../medications/paracetamol/Packages';
+
 import { Patient } from '@/types/emergency';
+import { computed } from 'vue';
 
 const props = defineProps<{
   patient: Patient
 }>()
+
+const useSuppositories = computed(() => props.patient.estimatedAge < 12 && (isIbuSuppEnabled.value || isParaSuppEnabled.value));
 
 </script>
 

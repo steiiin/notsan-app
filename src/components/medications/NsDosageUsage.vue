@@ -120,6 +120,8 @@ const usageMinHeight = computed(() => props.dense ? 3.5 : (props.type && props.t
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  padding-top: .25rem;
+  padding-bottom: 0.25rem;
 }
 
 /* text styles */
