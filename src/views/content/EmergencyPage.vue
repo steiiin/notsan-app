@@ -37,6 +37,10 @@
           :patient="currentPatient">
         </content-schmerzen>
 
+        <content-sonstige
+          :patient="currentPatient">
+        </content-sonstige>
+
       </template>
 
     </ion-content>
@@ -58,6 +62,7 @@ import ContentReanimation from './emergency/reanimation/ContentReanimation.vue';
 import ContentAnaphylaxie from './emergency/anaphylaxie/ContentAnaphylaxie.vue';
 import ContentKrampfanfall from './emergency/krampfanfall/ContentKrampfanfall.vue';
 import ContentSchmerzen from './emergency/schmerzen/ContentSchmerzen.vue';
+import ContentSonstige from './emergency/sonstige/ContentSonstige.vue';
 
 import { Patient } from '@/types/emergency';
 
