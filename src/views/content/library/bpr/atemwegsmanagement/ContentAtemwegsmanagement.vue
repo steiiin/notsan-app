@@ -2,7 +2,7 @@
   <ns-content-group>
     <ns-text-content>
       <p>
-        Stufenweises Vorgehen zur Sicherung und Aufrechterhaltung der Atemwege.
+        Stufenweises Vorgehen zur <b>Sicherung</b> und Aufrechterhaltung der Atemwege.
       </p>
     </ns-text-content>
   </ns-content-group>

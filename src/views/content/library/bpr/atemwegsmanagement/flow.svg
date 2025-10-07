@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="541px" height="1021px" viewBox="-0.5 -0.5 541 1021">
-  <rect fill="transparent" width="100%" height="100%" x="0" y="0" style="fill:var(--background)" stroke="transparent"/>
-  <path d="M 120.45 60 L 120.45 70 L 120.45 71.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 120.45 78.88 L 116.95 71.88 L 123.95 71.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 120 60 L 120 70 L 120 71.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 78.88 L 116.5 71.88 L 123.5 71.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="0" y="0" width="540" height="60" rx="30" ry="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:#111;stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:30px;margin-left:1px">
@@ -14,10 +13,10 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 239.82 109.73 L 270 109.73 L 291.88 109.73" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 298.88 109.73 L 291.88 113.23 L 291.88 106.23 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 240 110 L 270 110 L 291.88 110" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 298.88 110 L 291.88 113.5 L 291.88 106.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:110px;margin-left:266px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:111px;margin-left:266px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           JA
@@ -25,10 +24,10 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 120.45 140 L 120.45 160 L 120.45 171.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 120.45 178.88 L 116.95 171.88 L 123.95 171.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 120 140 L 120 160 L 120 171.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 178.88 L 116.5 171.88 L 123.5 171.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:157px;margin-left:121px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:158px;margin-left:121px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           NEIN
@@ -51,56 +50,10 @@
   <a xlink:href="file:///tabs/med/dimetinden"><rect x="300" y="80" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <path d="M 313 80 L 313 140 M 527 80 L 527 140" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:212px;height:1px;padding-top:110px;margin-left:315px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal"><font style="font-size:13px">SAA: Bolus</font></div></div></div></foreignObject></a>
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:211px;height:1px;padding-top:110px;margin-left:314px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal"><font style="font-size:13px">SAA: Bolus</font></div></div></div></foreignObject></a>
   <path d="M 20 180 L 520 180 L 540 210 L 520 240 L 20 240 L 0 210 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:210px;margin-left:1px">
@@ -111,8 +64,8 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 120 310 L 120.09 311.89" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 120.4 318.88 L 116.59 312.05 L 123.58 311.73 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 120 310 L 120 315 L 120 311.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 318.88 L 116.5 311.88 L 123.5 311.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="20" y="280" width="220" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:295px;margin-left:21px">
@@ -123,10 +76,10 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 429.55 240 L 429.55 271.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 429.55 278.88 L 426.05 271.88 L 433.05 271.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 429.55 240 L 429.91 271.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 429.99 278.88 L 426.41 271.92 L 433.41 271.84 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:257px;margin-left:429px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:257px;margin-left:430px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           NEIN
@@ -134,10 +87,10 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 119.5 240 L 119.54 271.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 119.54 278.88 L 116.04 271.89 L 123.04 271.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 119.5 240 L 119.9 271.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 119.99 278.88 L 116.4 271.93 L 123.4 271.84 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:257px;margin-left:119px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:257px;margin-left:120px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           JA
@@ -145,8 +98,8 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 120 350 L 119.91 351.89" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 119.6 358.88 L 116.42 351.73 L 123.41 352.05 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 120 350 L 120 351.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 358.88 L 116.5 351.88 L 123.5 351.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="20" y="320" width="220" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:335px;margin-left:21px">
@@ -157,8 +110,8 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 120 390 L 120.09 391.89" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 120.4 398.88 L 116.59 392.05 L 123.58 391.73 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 120 390 L 120 395 L 120 391.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 398.88 L 116.5 391.88 L 123.5 391.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="20" y="360" width="220" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:375px;margin-left:21px">
@@ -169,8 +122,8 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 120 430 L 120.09 431.89" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 120.4 438.88 L 116.59 432.05 L 123.58 431.73 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 120 430 L 120 435 L 120 431.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 438.88 L 116.5 431.88 L 123.5 431.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="20" y="400" width="220" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:415px;margin-left:21px">
@@ -181,8 +134,8 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 120 470 L 120.09 471.89" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 120.4 478.88 L 116.59 472.05 L 123.58 471.73 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 120 470 L 120 475 L 120 471.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 478.88 L 116.5 471.88 L 123.5 471.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="20" y="440" width="220" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:455px;margin-left:21px">
@@ -203,10 +156,10 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 120.32 510.18 L 120.27 520 L 10 520 L 10 270 L 40 270 L 40 248.12" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120.32 510.18 L 120.3 520 L 10 520 L 10 270 L 40 270 L 40 248.12" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 40 241.12 L 43.5 248.12 L 36.5 248.12 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <path d="M 430 310 L 430.09 311.89" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 430.4 318.88 L 426.59 312.05 L 433.58 311.73 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 430 310 L 430 315 L 430 311.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 430 318.88 L 426.5 311.88 L 433.5 311.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="320" y="280" width="220" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:295px;margin-left:321px">
@@ -217,8 +170,8 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 430 350 L 430.09 351.89" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 430.4 358.88 L 426.59 352.05 L 433.58 351.73 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 430 350 L 430 355 L 430 351.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 430 358.88 L 426.5 351.88 L 433.5 351.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="320" y="320" width="220" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:335px;margin-left:321px">
@@ -229,8 +182,8 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 430 390 L 430.09 391.89" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 430.4 398.88 L 426.59 392.05 L 433.58 391.73 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 430 390 L 430 395 L 430 391.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 430 398.88 L 426.5 391.88 L 433.5 391.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="320" y="360" width="220" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:375px;margin-left:321px">
@@ -241,8 +194,8 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 430 440 L 430.27 451.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 430.43 458.88 L 426.77 451.96 L 433.77 451.8 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 430 440 L 430 451.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 430 458.88 L 426.5 451.88 L 433.5 451.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="320" y="400" width="220" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:420px;margin-left:321px">
@@ -256,7 +209,7 @@
   <path d="M 320 490 L 280 490 L 280 295 L 311.88 295" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 318.88 295 L 311.88 298.5 L 311.88 291.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:490px;margin-left:300px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:491px;margin-left:301px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           NEIN
@@ -276,8 +229,8 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 430 600 L 430.27 611.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 430.43 618.88 L 426.77 611.96 L 433.77 611.8 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 430 600 L 430 610 L 430 611.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 430 618.88 L 426.5 611.88 L 433.5 611.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="320" y="560" width="220" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:580px;margin-left:321px">
@@ -290,10 +243,10 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 429.71 520 L 429.58 551.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 429.55 558.88 L 426.08 551.87 L 433.08 551.9 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 429.71 520 L 429.94 551.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 429.99 558.88 L 426.44 551.91 L 433.44 551.86 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:537px;margin-left:429px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:537px;margin-left:430px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           JA
@@ -301,10 +254,10 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 320 650 L 280.45 650 L 248.12 650" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 320 650 L 280 650 L 248.12 650" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 241.12 650 L 248.12 646.5 L 248.12 653.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:650px;margin-left:300px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:651px;margin-left:300px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           JA
@@ -334,10 +287,10 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 429.92 680 L 429.62 711.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 429.56 718.88 L 426.12 711.85 L 433.12 711.92 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 429.92 680 L 429.98 711.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 430 718.88 L 426.48 711.89 L 433.48 711.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:698px;margin-left:429px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:697px;margin-left:430px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           NEIN
@@ -345,8 +298,8 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 430.45 760 L 430.45 771.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 430.45 778.88 L 426.95 771.88 L 433.95 771.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 430 760 L 430 770 L 430 771.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 430 778.88 L 426.5 771.88 L 433.5 771.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <rect x="320" y="720" width="220" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:740px;margin-left:321px">
@@ -359,7 +312,7 @@
   </foreignObject>
   <path d="M 320 810 L 280 810 L 280 650" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:810px;margin-left:300px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:811px;margin-left:301px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           JA
@@ -379,10 +332,10 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 429.92 840 L 429.62 871.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 429.56 878.88 L 426.12 871.85 L 433.12 871.92 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 429.92 840 L 429.98 871.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 430 878.88 L 426.48 871.89 L 433.48 871.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:858px;margin-left:429px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:857px;margin-left:430px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           NEIN
@@ -392,7 +345,7 @@
   </foreignObject>
   <path d="M 320 910 L 280 910 L 280 810" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:910px;margin-left:301px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:911px;margin-left:301px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           JA
@@ -413,10 +366,10 @@
       </div>
     </div>
   </foreignObject>
-  <path d="M 428.71 940 L 428.65 971.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 428.64 978.88 L 425.15 971.88 L 432.15 971.89 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 428.71 940 L 428.94 971.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 428.99 978.88 L 425.44 971.91 L 432.44 971.86 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:958px;margin-left:428px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:958px;margin-left:429px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
         <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
           NEIN

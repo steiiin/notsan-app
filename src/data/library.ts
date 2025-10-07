@@ -14,6 +14,11 @@ export const library: LibraryListItem[] = [
         title: 'Atemwegsmanagement',
         component: () => import('@/views/content/library/bpr/atemwegsmanagement/ContentAtemwegsmanagement.vue')
       },
+      {
+        id: 'bpr-nausea',
+        title: 'Übelkeit/Erbrechen',
+        component: () => import('@/views/content/library/bpr/nausea/ContentNausea.vue')
+      },
 
     ]
   },
