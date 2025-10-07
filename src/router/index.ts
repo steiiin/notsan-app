@@ -35,7 +35,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'lib/list/:id',
-        component: () => import('@/views/content/LibrarySubListPage.vue'),
+        component: () => import('@/views/content/library/LibrarySubListPage.vue'),
         props: true
       },
       {
