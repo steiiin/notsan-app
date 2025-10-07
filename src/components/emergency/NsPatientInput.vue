@@ -56,17 +56,18 @@ import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { gainFocus } from '@/service/input';
 
 import { usePatientStore } from '@/stores/patient';
-import { HabitusValue, SexValue, WeightAccuracyValue, WeightEstimateByValue } from '@/types/patient';
+import { storeToRefs } from 'pinia';
 const patient = usePatientStore()
 
-const weightAccuracy = ref<WeightAccuracyValue>(patient.inputWeightAccuracy)
-const weightEstimateBy = ref<WeightEstimateByValue>(patient.inputWeightEstimateBy)
-
-const patientSex = ref<SexValue>(patient.inputSex)
-const patientAge = ref<number>(patient.inputAge)
-const patientWeight = ref<number>(patient.inputAge)
-const patientHeight = ref<number>(patient.inputHeight)
-const patientHabitus = ref<HabitusValue>(patient.inputHabitus)
+const {
+  inputWeightAccuracy: weightAccuracy,
+  inputWeightEstimateBy: weightEstimateBy,
+  inputSex: patientSex,
+  inputAge: patientAge,
+  inputWeight: patientWeight,
+  inputHeight: patientHeight,
+  inputHabitus: patientHabitus,
+} = storeToRefs(patient)
 
 const inputWeight = ref<any|null>(null)
 const inputAge = ref<any|null>(null)
@@ -110,14 +111,6 @@ watch(() => weightEstimateBy.value, (v) => {
   }
 
 })
-
-watch(() => weightAccuracy.value, (v) => patient.inputWeightAccuracy = v)
-watch(() => weightEstimateBy.value, (v) => patient.inputWeightEstimateBy = v)
-watch(() => patientSex.value, (v) => patient.inputSex = v)
-watch(() => patientAge.value, (v) => patient.inputAge = v)
-watch(() => patientWeight.value, (v) => patient.inputWeight = v)
-watch(() => patientHeight.value, (v) => patient.inputHeight = v)
-watch(() => patientHabitus.value, (v) => patient.inputHabitus = v)
 
 const inputRoot = ref<any|null>(null)
 
