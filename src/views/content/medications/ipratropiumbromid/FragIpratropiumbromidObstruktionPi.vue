@@ -32,16 +32,15 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Ip
 // ########################################################################################################
 
 import NsDosage from '@/components/medications/NsDosage.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 
-const props = defineProps<{
-  patient: Patient
-}>()
+const isApplicable = computed(() => patient.age >= 6)
 
-const isApplicable = computed(() => props.patient.estimatedAge >= 6)
-
-const useHighDose = computed(() => props.patient.estimatedAge >= 12)
+const useHighDose = computed(() => patient.age >= 12)
 
 const ampAmount = (dose: number) => {
   if (isOnlyOneEnabled.value)

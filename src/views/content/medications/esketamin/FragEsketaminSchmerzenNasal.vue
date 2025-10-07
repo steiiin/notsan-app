@@ -35,20 +35,18 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Es
 
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
 import NsDosage from '@/components/medications/NsDosage.vue';
-import TextMono from '@/components/TextMono.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 import { round } from '@/service/math';
 
 import { isAnyHighConcentrationEnabled } from './Packages';
 
-const props = defineProps<{
-  patient: Patient
-}>()
+const isApplicable = computed(() => patient.weight >= 10)
 
-const isApplicable = computed(() => props.patient.estimatedWeight >= 10)
-
-const weightDose = computed(() => round(props.patient.estimatedWeight * 0.5, 5, 'down'))
+const weightDose = computed(() => round(patient.weight * 0.5, 5, 'down'))
 
 const schemeMl5 = computed(() => {
   const ml = round(weightDose.value / 5, 0.5, 'down')

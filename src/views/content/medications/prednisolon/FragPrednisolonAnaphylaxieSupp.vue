@@ -18,17 +18,15 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Pr
 
 // ########################################################################################################
 
-import { Patient } from '@/types/emergency';
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
 import NsDosage from '@/components/medications/NsDosage.vue';
 
-const props = defineProps<{
-  patient: Patient
-}>()
-
-const isSuppApplicable = computed(() => isSupp_100mgEnabled.value && props.patient.estimatedAge <= 12)
+const isSuppApplicable = computed(() => isSupp_100mgEnabled.value && patient.age <= 12)
 
 </script>
 

@@ -28,12 +28,11 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Mi
 // ########################################################################################################
 
 import NsDosage from '@/components/medications/NsDosage.vue';
-import { Patient } from '@/types/emergency';
-import { computed } from 'vue';
 
-const props = defineProps<{
-  patient: Patient
-}>()
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
+import { computed } from 'vue';
 
 enum IvRange
 {
@@ -43,8 +42,8 @@ enum IvRange
 }
 
 const dose = computed(() => {
-  if (props.patient.estimatedWeight < 10) { return IvRange.NotApplicable }
-  if (props.patient.estimatedAge > 60 || props.patient.estimatedWeight < 50) { return IvRange.Low }
+  if (patient.weight < 10) { return IvRange.NotApplicable }
+  if (patient.age > 60 || patient.weight < 50) { return IvRange.Low }
   return IvRange.High
 })
 

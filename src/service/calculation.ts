@@ -1,4 +1,4 @@
-import { SexValue } from "../types/emergency";
+import { HabitusValue, SexValue } from "../types/patient";
 
 export interface CurvePoint {
   height: number; // cm
@@ -6,7 +6,111 @@ export interface CurvePoint {
   age: number;    // years (e.g., 0.5 = 6 months)
 }
 
-export class CurveCalculation {
+export class PatientCalculation
+{
+
+  /** Estimate weight (kg) for given age (years). */
+  static calculateWeightByAge(age: number, sex: SexValue, multi: number) {
+    if (age <= 15)
+    {
+
+      // for young ages, return percentile calculation
+      return CurveCalculation.calculateChildWeightByAge(sex, age, multi)
+
+    }
+    else
+    {
+
+      // for older ages, return rough estimate (based on age / habitus only)
+      const base = sex === 'male' ? 78 : 65
+
+      let ageFactor = 1
+      if (age < 30) ageFactor = 0.95 + (age - 18) * 0.004       // 18–30: increasing
+      else if (age < 50) ageFactor = 1.02 + (age - 30) * 0.005  // 30–50: increasing
+      else if (age < 70) ageFactor = 1.12 - (age - 50) * 0.004  // 50–70: decreasing
+      else ageFactor = 1.04 - (age - 70) * 0.006                // >70: decreasing a lot
+
+      const weight = base * ageFactor * multi
+      return Math.round(weight)
+
+    }
+  }
+
+  /** Estimate age (years) for a given height (cm). */
+  static calculateAgeByHeight(height: number, sex: SexValue): number {
+
+    const childAge = CurveCalculation.calculateChildAgeByHeight(sex, height)
+    if (childAge !== undefined) { return childAge }
+
+    if (sex == 'male')
+    {
+      if (height < 110) { return 5 }
+      if (height < 125) { return 7 }
+      if (height < 140) { return 11 }
+      if (height < 155) { return 14 }
+      if (height < 165) { return 16 }
+      if (height < 175) { return 18 }
+      if (height < 185) { return 21 }
+      return 25
+    }
+    else
+    {
+      if (height < 105) { return 5 }
+      if (height < 120) { return 7 }
+      if (height < 135) { return 11 }
+      if (height < 150) { return 14 }
+      if (height < 160) { return 16 }
+      if (height < 170) { return 18 }
+      return 22
+    }
+
+  }
+
+  /** Estimate age (years) for a given weight (kg) */
+  static calculateAgeByWeight(weight: number, sex: SexValue): number {
+
+    const childAge = CurveCalculation.calculateChildAgeByWeight(sex, weight)
+    if (childAge !== undefined) { return childAge }
+
+    if (weight < 20) { return 5 }
+    if (weight < 35) { return 9 }
+    if (weight < 50) { return 13 }
+    if (weight < 60) { return 15 }
+    if (weight < 70) { return 16 }
+    if (weight < 80) { return 18 }
+    if (weight < 95) { return 20 }
+    return 24
+
+  }
+
+  /** Calculate maturity score based on height, weight and sporty habitus */
+  static calculateMaturityScore(height: number|undefined, weight: number|undefined, habitus: HabitusValue): number {
+    let score = 0
+
+    if (height !== undefined)
+    {
+      if (height >= 175) { score += 3 }
+      else if (height >= 165) { score += 2 }
+      else if (height >= 155) { score += 1 }
+    }
+
+    if (weight !== undefined)
+    {
+      if (weight >= 95) { score += 3 }
+      else if (weight >= 80) { score += 2 }
+      else if (weight >= 65) { score += 1 }
+    }
+
+    if (habitus == 'sporty') { score += 1 }
+
+    return score
+  }
+
+
+}
+
+export class CurveCalculation
+{
 
   private static readonly TABLES: Record<SexValue, ReadonlyArray<CurvePoint>> = {
     male: [
@@ -156,7 +260,8 @@ export class CurveCalculation {
 
 }
 
-export class BmiCalculation {
+export class BmiCalculation
+{
 
   /**
    * Calculate adult weight based on height and sex,

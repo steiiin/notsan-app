@@ -38,7 +38,10 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Mi
 
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
 import NsDosage from '@/components/medications/NsDosage.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 
 import {
@@ -46,10 +49,6 @@ import {
   isAnyIvEnabled,
 
 } from './Packages'
-
-const props = defineProps<{
-  patient: Patient
-}>()
 
 enum NasalAgeRange
 {
@@ -60,9 +59,9 @@ enum NasalAgeRange
 }
 
 const ageRange = computed(() => {
-  if (props.patient.estimatedAge <= 0.17) { return NasalAgeRange.NotApplicable }
-  if (props.patient.estimatedWeight < 10) { return NasalAgeRange.Low }
-  if (props.patient.estimatedWeight < 20) { return NasalAgeRange.Medium }
+  if (patient.age <= 0.17) { return NasalAgeRange.NotApplicable }
+  if (patient.weight < 10) { return NasalAgeRange.Low }
+  if (patient.weight < 20) { return NasalAgeRange.Medium }
   return NasalAgeRange.High
 })
 

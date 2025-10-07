@@ -8,25 +8,15 @@
 <script setup lang="ts">
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
+
 import { getBroselowCode } from '@/components/emergency/broselow';
-import { Patient, SexValue } from '@/types/emergency';
 import { computed } from 'vue';
 
-const props = defineProps<{
-  patient: Patient
-}>()
+import { usePatientStore } from '@/stores/patient';
+import { SexValue } from '@/types/patient';
+const patient = usePatientStore()
 
-// #region props
-
-  const showAnything = computed(() => !!infoData.value && !isUndefined.value)
-  const showError = computed(() => isInvalidAge.value || isInvalidWeight.value || isInvalidHeight.value)
-
-  const isUndefined = computed(() => props.patient.estimatedWeightCalcMethod == 'undefined')
-  const isInvalidAge = computed(() => props.patient.estimatedWeightCalcMethod == 'invalid_age')
-  const isInvalidWeight = computed(() => props.patient.estimatedWeightCalcMethod == 'invalid_weight')
-  const isInvalidHeight = computed(() => props.patient.estimatedWeightCalcMethod == 'invalid_height')
-
-// #endregion
+const showAnything = computed(() => patient.hasResult && infoData.value != null)
 
 class InfoData {
   constructor(
@@ -38,38 +28,23 @@ class InfoData {
 
 const infoData = computed((): InfoData|null => {
 
-  if (!isUndefined.value) {
+  if (patient.hasResult) {
 
-    if (showError.value)
+    let resultType = 'Eingabe'
+    if (patient.resultType == 'by-age') { resultType = 'Perzentil/Alter' }
+    else if (patient.resultType == 'by-height-curve') { resultType = 'Perzentil/Größe' }
+    else if (patient.resultType == 'by-height-bmi') { resultType = 'BMI/Größe' }
+
+    const broselowCode = getBroselowCode(patient.weight)
+    if (broselowCode)
     {
-
-      // show declarative messages
-      if (props.patient.estimatedWeightCalcMethod == 'invalid_age') {
-        return new InfoData('Zu Alt für Schätzung', `Anhand von Perzentilenkurven kann bis max. 15 Jahren geschätzt werden. Nutze jetzt ${props.patient.estimatedWeight}kg.`) }
-      if (props.patient.estimatedWeightCalcMethod == 'invalid_height') {
-        return new InfoData('Ungültige Größe', 'Unter 30cm Körpergröße kann nicht geschätzt werden.') }
-      if (props.patient.estimatedWeightCalcMethod == 'invalid_weight') {
-        return new InfoData('Ungültiges Gewicht', 'Mit unter 1kg Gewicht kann nichts berechnet werden.') }
-
+      return new InfoData(`Broselow: ${broselowCode.code}`, broselowCode.range, broselowCode.colorCode)
     }
     else
     {
-
-      let inputMethod = 'Eingabe'
-      if (props.patient.estimatedWeightCalcMethod == 'by-age') { inputMethod = 'Perzentil/Alter' }
-      else if (props.patient.estimatedWeightCalcMethod == 'by-height-curve') { inputMethod = 'Perzentil/Größe' }
-      else if (props.patient.estimatedWeightCalcMethod == 'by-height-bmi') { inputMethod = 'BMI/Größe' }
-
-      const broselowCode = getBroselowCode(props.patient.estimatedWeight)
-      if (broselowCode)
-      {
-        return new InfoData(`Broselow: ${broselowCode.code}`, broselowCode.range, broselowCode.colorCode)
+      if (patient.isEstimate) {
+        return new InfoData(`${patient.inputSex == 'male' ? 'Männlicher' : 'Weiblicher'} Patient`, `ca. ${patient.weight} (nach ${resultType})`)
       }
-      else
-      {
-        return null
-      }
-
     }
 
   }

@@ -24,16 +24,14 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Gl
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue'
 import NsDosage from '@/components/medications/NsDosage.vue';
 
-import { Patient } from '@/types/emergency';
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 import { round } from '@/service/math'
 import { numToFracSymbol } from '@/service/text'
 
-const props = defineProps<{
-  patient: Patient
-}>()
-
-const weightDose = computed(() => Math.min(8, round(props.patient.estimatedWeight * 0.2, 1, 'up')))
+const weightDose = computed(() => Math.min(8, round(patient.weight * 0.2, 1, 'up')))
 
 const doseHint = computed(() => {
   if (isOnlyOneEnabled.value)

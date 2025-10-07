@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { HabitusModeValue, HabitusValue } from '@/types/emergency';
+import { HabitusModeValue, HabitusValue } from '@/types/patient';
 import { IonSelect, IonSelectOption } from '@ionic/vue'
 import { computed, ref, watch } from 'vue';
 

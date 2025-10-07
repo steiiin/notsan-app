@@ -14,20 +14,16 @@
 <script setup lang="ts">
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
-import NsContentSplit from '@/components/NsContentSplit.vue';
-import NsTextContent from '@/components/NsTextContent.vue';
 import NsKeyValueContainer from '@/components/NsKeyValueContainer.vue';
 import NsKeyValue from '@/components/NsKeyValue.vue';
 import TextMono from '@/components/TextMono.vue';
 import NsColorBox from '@/components/NsColorBox.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
 
 import { clamp, round } from '@/service/math';
 import { computed } from 'vue';
-
-const props = defineProps<{
-  patient: Patient
-}>()
 
 // #region ET tube estimation
 
@@ -40,11 +36,11 @@ const props = defineProps<{
   function estimateET(): ETRecommendation
   {
 
-    const age = props.patient.estimatedAge
-    const height = props.patient.isHeightDirectlyUsed ? props.patient.Height : NaN
-    const weight = props.patient.estimatedWeight
-    const sex = props.patient.Sex
-    const isLikelyAnAdult = props.patient.isLikelyAnAdult
+    const age = patient.age
+    const height = patient.isHeightInputUsed ? patient.inputHeight : NaN
+    const weight = patient.weight
+    const sex = patient.inputSex
+    const isLikelyAnAdult = patient.isLikelyAnAdult
 
     // 1) Neonate/infant weight-based
     if (weight <= 3)
@@ -100,7 +96,7 @@ const props = defineProps<{
 
   function estimateIgel(): IgelRecommendation {
 
-    const weight = props.patient.estimatedWeight
+    const weight = patient.weight
     if (weight < 5) {
       return { size: 1.0, color: 'igel1' }
     }

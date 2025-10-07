@@ -26,17 +26,16 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Ib
 // ########################################################################################################
 
 import NsDosage from '@/components/medications/NsDosage.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 
 import { isAnyIvEnabled } from './Packages';
 
-const props = defineProps<{
-  patient: Patient
-}>()
-
-const isApplicable = computed(() => props.patient.estimatedAge >= 6)
-const useHigherDose = computed(() => props.patient.estimatedAge >= 12)
+const isApplicable = computed(() => patient.age >= 6)
+const useHigherDose = computed(() => patient.age >= 12)
 
 const ageDose = computed(() => useHigherDose.value ? '1000mg' : '500mg')
 const doseHint = computed(() => useHigherDose.value ? '(1 Infusion)' : '(½ Infusion)')

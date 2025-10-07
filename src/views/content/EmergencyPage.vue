@@ -12,38 +12,20 @@
         </ion-toolbar>
       </ion-header>
 
-      <ns-patient-input v-model="currentPatient"></ns-patient-input>
-      <ns-patient-info :patient="currentPatient"></ns-patient-info>
+      <ns-patient-input></ns-patient-input>
 
-      <content-standards
-        :patient="currentPatient">
-      </content-standards>
+      <template v-if="patient.hasResult">
 
-      <template v-if="currentPatient.isValid">
+        <ns-patient-info></ns-patient-info>
 
-        <content-reanimation
-          :patient="currentPatient">
-        </content-reanimation>
+        <content-standards></content-standards>
 
-        <content-anaphylaxie
-          :patient="currentPatient">
-        </content-anaphylaxie>
-
-        <content-krampfanfall
-          :patient="currentPatient">
-        </content-krampfanfall>
-
-        <content-schmerzen
-          :patient="currentPatient">
-        </content-schmerzen>
-
-        <content-luftnot
-          :patient="currentPatient">
-        </content-luftnot>
-
-        <content-sonstige
-          :patient="currentPatient">
-        </content-sonstige>
+        <content-reanimation></content-reanimation>
+        <content-anaphylaxie></content-anaphylaxie>
+        <content-krampfanfall></content-krampfanfall>
+        <content-schmerzen></content-schmerzen>
+        <content-luftnot></content-luftnot>
+        <content-sonstige></content-sonstige>
 
       </template>
 
@@ -58,7 +40,9 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, onIonViewWillEnte
 import NsPatientInput from '../../components/emergency/NsPatientInput.vue';
 import NsPatientInfo from '../../components/emergency/NsPatientInfo.vue';
 
-import { computed, ref, shallowRef } from 'vue'
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { useRouter } from 'vue-router'
 
 import ContentStandards from './emergency/standards/ContentStandards.vue';
@@ -69,41 +53,15 @@ import ContentSchmerzen from './emergency/schmerzen/ContentSchmerzen.vue';
 import ContentLuftnot from './emergency/luftnot/ContentLuftnot.vue';
 import ContentSonstige from './emergency/sonstige/ContentSonstige.vue';
 
-import { Patient } from '@/types/emergency';
-
 // #region ScrollPosition
-
-  const mycontent = ref<{ $el: HTMLIonContentElement } | null>(null);
-  const scrollPos = ref<number>(0);
 
   const router = useRouter()
   router.afterEach(async (to, from) => {
-    if (!mycontent || !mycontent.value) { return }
 
-    if (to.fullPath.includes('meds') && from.fullPath.includes('meds'))
+    if (to.fullPath.includes('emergency'))
     {
-      if (to.fullPath.length > from.fullPath.length)
-      {
-        mycontent.value.$el.getScrollElement().then(el => {
-          scrollPos.value = el.scrollTop
-        })
-      }
+      patient.resetPatient()
     }
-  })
-
-  onIonViewWillEnter(() => {
-    if (!mycontent || !mycontent.value) { return }
-    mycontent.value.$el.scrollToPoint(0, scrollPos.value, 400);
-  })
-
-// #endregion
-
-// #region Patient
-
-  const currentPatientRef = shallowRef(new Patient())
-  const currentPatient = computed({
-    get: () => currentPatientRef.value,
-    set: (value: Patient) => { currentPatientRef.value = value },
   })
 
 // #endregion

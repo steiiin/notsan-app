@@ -17,28 +17,17 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Di
 
 // ########################################################################################################
 
-import NsContentGroup from '@/components/NsContentGroup.vue';
-import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
 import NsDosage from '@/components/medications/NsDosage.vue';
-import NsContentSplit from '@/components/NsContentSplit.vue';
-import NsTextContent from '@/components/NsTextContent.vue';
-import NsKeyValueContainer from '@/components/NsKeyValueContainer.vue';
-import NsKeyValue from '@/components/NsKeyValue.vue';
-import TextMono from '@/components/TextMono.vue';
-import NsColorBox from '@/components/NsColorBox.vue';
-import TextColored from '@/components/TextColored.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
 
 import { round } from '@/service/math';
 import { computed } from 'vue';
 
-const props = defineProps<{
-  patient: Patient
-}>()
+const isApplicable = computed(() => patient.age >= 12 && patient.weight >= 10)
 
-const isApplicable = computed(() => props.patient.estimatedAge >= 12 && props.patient.estimatedWeight >= 10)
-
-const weightDose = computed(() => isApplicable.value ? round(Math.min(props.patient.estimatedWeight / 10, 8), 1, 'down') : 0)
+const weightDose = computed(() => isApplicable.value ? round(Math.min(patient.weight / 10, 8), 1, 'down') : 0)
 const weightHint = computed(() => {
   const ml = weightDose.value
   if (ml == 4) { return '1 Ampulle' }

@@ -6,10 +6,10 @@
       <ns-content-group title="Esketamin & Midazolam" dense>
 
         <ns-dosage-usage type="iv" dense>
-          <frag-esketamin-schmerzen-iv :patient="patient"></frag-esketamin-schmerzen-iv>
-          <frag-midazolam-schmerzen-iv :patient="patient"></frag-midazolam-schmerzen-iv>
+          <frag-esketamin-schmerzen-iv></frag-esketamin-schmerzen-iv>
+          <frag-midazolam-schmerzen-iv></frag-midazolam-schmerzen-iv>
         </ns-dosage-usage>
-        <frag-esketamin-schmerzen-nasal :patient="patient"></frag-esketamin-schmerzen-nasal>
+        <frag-esketamin-schmerzen-nasal></frag-esketamin-schmerzen-nasal>
 
       </ns-content-group>
 
@@ -17,39 +17,39 @@
       <ns-content-group title="Opioide" dense>
 
         <ns-dosage-usage type="iv" dense>
-          <frag-morphin-schmerzen-iv :patient="patient"></frag-morphin-schmerzen-iv>
-          <frag-fentanyl-schmerzen-iv :patient="patient"></frag-fentanyl-schmerzen-iv>
-          <frag-nalbuphin-schmerzen-iv :patient="patient"></frag-nalbuphin-schmerzen-iv>
+          <frag-morphin-schmerzen-iv></frag-morphin-schmerzen-iv>
+          <frag-fentanyl-schmerzen-iv></frag-fentanyl-schmerzen-iv>
+          <frag-nalbuphin-schmerzen-iv></frag-nalbuphin-schmerzen-iv>
         </ns-dosage-usage>
 
         <ns-dosage-usage type="nasal" label="i.m./nasal" dense>
-          <frag-fentanyl-schmerzen-nasal :patient="patient"></frag-fentanyl-schmerzen-nasal>
-          <frag-nalbuphin-schmerzen-nasal :patient="patient"></frag-nalbuphin-schmerzen-nasal>
+          <frag-fentanyl-schmerzen-nasal></frag-fentanyl-schmerzen-nasal>
+          <frag-nalbuphin-schmerzen-nasal></frag-nalbuphin-schmerzen-nasal>
         </ns-dosage-usage>
 
       </ns-content-group>
 
       <ns-content-group title="Trauma" dense>
-        <frag-tranexam-trauma :patient="patient"></frag-tranexam-trauma>
+        <frag-tranexam-trauma></frag-tranexam-trauma>
       </ns-content-group>
 
       <!-- Sonstige -->
       <ns-content-group title="Nicht-Opioide" dense>
 
         <ns-dosage-usage type="iv" dense>
-          <frag-butylscopolamin-schmerzen :patient="patient"></frag-butylscopolamin-schmerzen>
-          <frag-ibuprofen-schmerzen-iv :patient="patient"></frag-ibuprofen-schmerzen-iv>
-          <frag-paracetamol-schmerzen-iv :patient="patient"></frag-paracetamol-schmerzen-iv>
+          <frag-butylscopolamin-schmerzen></frag-butylscopolamin-schmerzen>
+          <frag-ibuprofen-schmerzen-iv></frag-ibuprofen-schmerzen-iv>
+          <frag-paracetamol-schmerzen-iv></frag-paracetamol-schmerzen-iv>
         </ns-dosage-usage>
 
         <ns-dosage-usage type="supp" dense v-if="useSuppositories">
-          <frag-ibuprofen-schmerzen-supp :patient="patient"></frag-ibuprofen-schmerzen-supp>
-          <frag-paracetamol-schmerzen-supp :patient="patient"></frag-paracetamol-schmerzen-supp>
+          <frag-ibuprofen-schmerzen-supp></frag-ibuprofen-schmerzen-supp>
+          <frag-paracetamol-schmerzen-supp></frag-paracetamol-schmerzen-supp>
         </ns-dosage-usage>
 
         <ns-dosage-usage type="po" dense>
-          <frag-ibuprofen-schmerzen-po :patient="patient"></frag-ibuprofen-schmerzen-po>
-          <frag-paracetamol-schmerzen-po :patient="patient"></frag-paracetamol-schmerzen-po>
+          <frag-ibuprofen-schmerzen-po></frag-ibuprofen-schmerzen-po>
+          <frag-paracetamol-schmerzen-po></frag-paracetamol-schmerzen-po>
         </ns-dosage-usage>
 
       </ns-content-group>
@@ -88,14 +88,12 @@ import FragParacetamolSchmerzenPo from '../../medications/paracetamol/FragParace
 import { isAnySuppEnabled as isIbuSuppEnabled } from '../../medications/ibuprofen/Packages';
 import { isAnySuppEnabled as isParaSuppEnabled } from '../../medications/paracetamol/Packages';
 
-import { Patient } from '@/types/emergency';
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 
-const props = defineProps<{
-  patient: Patient
-}>()
-
-const useSuppositories = computed(() => props.patient.estimatedAge < 12 && (isIbuSuppEnabled.value || isParaSuppEnabled.value));
+const useSuppositories = computed(() => patient.age < 12 && (isIbuSuppEnabled.value || isParaSuppEnabled.value));
 
 </script>
 
