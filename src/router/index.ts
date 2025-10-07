@@ -11,10 +11,14 @@ const routes: Array<RouteRecordRaw> = [
     path: '/tabs/',
     component: TabsPage,
     children: [
+
+      // startpage
       {
         path: '',
         redirect: '/tabs/meds'
       },
+
+      // medication-tab
       {
         path: 'meds',
         component: () => import('@/views/content/MedsListPage.vue'),
@@ -24,6 +28,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/content/medications/MedsContentPage.vue'),
         props: true
       },
+
+      // library-tab
       {
         path: 'lib',
         component: () => import('@/views/content/LibraryListPage.vue'),
@@ -43,6 +49,29 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/content/library/LibraryContentPage.vue'),
         props: true
       },
+
+      // forms-tab
+      {
+        path: 'forms',
+        component: () => import('@/views/content/FormListPage.vue'),
+      },
+      {
+        path: 'forms/list/:listId/:entryId',
+        component: () => import('@/views/content/forms/FormsContentPage.vue'),
+        props: true
+      },
+      {
+        path: 'forms/list/:id',
+        component: () => import('@/views/content/forms/FormsSubListPage.vue'),
+        props: true
+      },
+      {
+        path: 'forms/entry/:entryId',
+        component: () => import('@/views/content/forms/FormsContentPage.vue'),
+        props: true
+      },
+
+      // emergency-tab
       {
         path: 'emergency',
         component: () => import('@/views/content/EmergencyPage.vue'),

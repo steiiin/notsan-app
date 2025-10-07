@@ -1,10 +1,13 @@
 import { medications } from '@/data/medications'
 import { library } from '@/data/library'
-import { Medication } from '@/types/medication';
-import { LibraryEntry } from '@/types/library-entry';
-import { LibraryList } from '@/types/library-list';
+import { forms } from '@/data/forms'
+import { Medication } from '@/types/medication'
+import { LibraryEntry } from '@/types/library-entry'
+import { LibraryList } from '@/types/library-list'
 import { defineStore } from 'pinia'
-import { useConfigStore } from './config';
+import { useConfigStore } from './config'
+import { FormList } from '@/types/form-list'
+import { FormEntry } from '@/types/form-entry'
 
 const configStore = useConfigStore()
 
@@ -12,6 +15,7 @@ export const useContentStore = defineStore('content', {
   state: () => ({
     medications,
     library,
+    forms,
   }),
   getters: {
 
@@ -21,6 +25,9 @@ export const useContentStore = defineStore('content', {
     getLibrary(state) {
       return state.library
     },
+    getForms(state) {
+      return state.forms
+    }
 
   },
   actions: {
@@ -46,6 +53,27 @@ export const useContentStore = defineStore('content', {
     },
     findLibraryEntryInList(listId: string, entryId: string): LibraryEntry | null {
       const list = this.findLibraryListById(listId)
+      if (!list) { return null }
+      return list.entries.find(entry => entry.id === entryId) ?? null
+    },
+
+    findFormListById(id: string): FormList | null {
+      const item = this.forms.find(entry => 'entries' in entry && entry.id === id)
+      return (item && 'entries' in item) ? item : null
+    },
+    findFormEntryById(id: string): FormEntry | null {
+      for (const item of this.forms) {
+        if ('entries' in item) {
+          const found = item.entries.find(entry => entry.id === id)
+          if (found) { return found }
+        } else if (item.id === id) {
+          return item
+        }
+      }
+      return null
+    },
+    findFormEntryInList(listId: string, entryId: string): FormEntry | null {
+      const list = this.findFormListById(listId)
       if (!list) { return null }
       return list.entries.find(entry => entry.id === entryId) ?? null
     },

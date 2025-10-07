@@ -13,7 +13,7 @@
           <ion-label>Wissen</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="calc" href="/tabs/calc">
+        <ion-tab-button tab="calc" href="/tabs/forms">
           <ion-icon aria-hidden="true" :icon="calculator" />
           <ion-label>Rechner</ion-label>
         </ion-tab-button>
