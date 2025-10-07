@@ -1,14 +1,16 @@
 <template>
-  <template v-if="enabled && isSuppApplicable">
-    <ns-dosage-usage type="supp" dense>
-      <ns-dosage mono :dosage="{ target: 'Prednisolon', dose: '100mg', hint: '(Zäpfchen)' }"></ns-dosage>
+  <template v-if="enabled">
+    <ns-dosage-usage type="iv" dense>
+      <ns-dosage :dosage="{
+        target: 'Prednisolon',
+        dose: `${weightDose}mg` }">
+      </ns-dosage>
     </ns-dosage-usage>
   </template>
 </template>
 
 <script setup lang="ts">
 
-import { isSupp_100mgEnabled } from './Packages'
 import { MedId } from '@/types/medication'
 import { useConfigStore } from '@/stores/config'
 
@@ -18,17 +20,17 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Pr
 
 // ########################################################################################################
 
-import { Patient } from '@/types/emergency';
-import { computed } from 'vue';
-
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
 import NsDosage from '@/components/medications/NsDosage.vue';
+import { Patient } from '@/types/emergency';
+import { computed } from 'vue';
+import { round } from '@/service/math';
 
 const props = defineProps<{
   patient: Patient
 }>()
 
-const isSuppApplicable = computed(() => isSupp_100mgEnabled.value && props.patient.estimatedAge <= 12)
+const weightDose = computed(() => Math.min(80, round(props.patient.estimatedWeight * 2, 50, 'up')))
 
 </script>
 

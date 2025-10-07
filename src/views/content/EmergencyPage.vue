@@ -37,6 +37,10 @@
           :patient="currentPatient">
         </content-schmerzen>
 
+        <content-luftnot
+          :patient="currentPatient">
+        </content-luftnot>
+
         <content-sonstige
           :patient="currentPatient">
         </content-sonstige>
@@ -62,6 +66,7 @@ import ContentReanimation from './emergency/reanimation/ContentReanimation.vue';
 import ContentAnaphylaxie from './emergency/anaphylaxie/ContentAnaphylaxie.vue';
 import ContentKrampfanfall from './emergency/krampfanfall/ContentKrampfanfall.vue';
 import ContentSchmerzen from './emergency/schmerzen/ContentSchmerzen.vue';
+import ContentLuftnot from './emergency/luftnot/ContentLuftnot.vue';
 import ContentSonstige from './emergency/sonstige/ContentSonstige.vue';
 
 import { Patient } from '@/types/emergency';
