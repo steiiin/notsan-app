@@ -24,18 +24,16 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Bu
 // ########################################################################################################
 
 import NsDosage from '@/components/medications/NsDosage.vue';
-import TextMono from '@/components/TextMono.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 import { round } from '@/service/math';
 
-const props = defineProps<{
-  patient: Patient
-}>()
+const isApplicable = computed(() => patient.age >= 12)
 
-const isApplicable = computed(() => props.patient.estimatedAge >= 12)
-
-const weightDose = computed(() => Math.min(round(props.patient.estimatedWeight * 0.3, 10, 'down'), 20))
+const weightDose = computed(() => Math.min(round(patient.weight * 0.3, 10, 'down'), 20))
 const weightHint = computed(() => {
   if (weightDose.value == 10) { return '(½ Ampulle)' }
   return '(1 Ampulle)'

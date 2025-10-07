@@ -44,18 +44,13 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Mi
 
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
 import NsDosage from '@/components/medications/NsDosage.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 
-import {
-
-  isAnyBucEnabled,
-
-} from './Packages'
-
-const props = defineProps<{
-  patient: Patient
-}>()
+import { isAnyBucEnabled } from './Packages'
 
 enum BuccAgeRange
 {
@@ -67,10 +62,10 @@ enum BuccAgeRange
 }
 
 const ageRange = computed(() => {
-  if (props.patient.estimatedAge <= 0.17) { return BuccAgeRange.NotApplicable }
-  if (props.patient.estimatedAge < 1) { return BuccAgeRange.Gelb }
-  if (props.patient.estimatedAge < 5) { return BuccAgeRange.Blau }
-  if (props.patient.estimatedAge < 10) { return BuccAgeRange.Violet }
+  if (patient.age <= 0.17) { return BuccAgeRange.NotApplicable }
+  if (patient.age < 1) { return BuccAgeRange.Gelb }
+  if (patient.age < 5) { return BuccAgeRange.Blau }
+  if (patient.age < 10) { return BuccAgeRange.Violet }
   return BuccAgeRange.Rot
 })
 

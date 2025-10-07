@@ -29,21 +29,13 @@
 <script setup lang="ts">
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
-import NsContentSplit from '@/components/NsContentSplit.vue';
-import NsTextContent from '@/components/NsTextContent.vue';
 import NsKeyValueContainer from '@/components/NsKeyValueContainer.vue';
 import NsKeyValue from '@/components/NsKeyValue.vue';
-import TextMono from '@/components/TextMono.vue';
-import NsColorBox from '@/components/NsColorBox.vue';
-import TextColored from '@/components/TextColored.vue';
-import { Patient } from '@/types/emergency';
 
-import { clamp, round } from '@/service/math';
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
-
-const props = defineProps<{
-  patient: Patient
-}>()
 
 // #region age-based estimation
 
@@ -61,7 +53,7 @@ const props = defineProps<{
 
   function estimateVitals(): VitalNorms {
 
-    const age = props.patient.estimatedAge
+    const age = patient.age
 
     // Newborn (0-3m)
     if (age <= 0.25) {

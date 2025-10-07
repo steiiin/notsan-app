@@ -44,14 +44,13 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Pa
 // ########################################################################################################
 
 import NsDosage from '@/components/medications/NsDosage.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 
 import { isAnyPoEnabled } from './Packages';
-
-const props = defineProps<{
-  patient: Patient
-}>()
 
 enum PoDose {
   d_lt_1,
@@ -63,11 +62,11 @@ enum PoDose {
 }
 
 const weightDose = computed(() => {
-  if (props.patient.estimatedAge < 1) return PoDose.d_lt_1
-  if (props.patient.estimatedAge < 2) return PoDose.d_1_2
-  if (props.patient.estimatedAge < 5) return PoDose.d_2_5
-  if (props.patient.estimatedAge < 8) return PoDose.d_5_8
-  if (props.patient.estimatedAge < 11) return PoDose.d_8_11
+  if (patient.age < 1) return PoDose.d_lt_1
+  if (patient.age < 2) return PoDose.d_1_2
+  if (patient.age < 5) return PoDose.d_2_5
+  if (patient.age < 8) return PoDose.d_5_8
+  if (patient.age < 11) return PoDose.d_8_11
   return PoDose.gt_11
 })
 

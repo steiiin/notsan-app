@@ -19,17 +19,15 @@
 
 import NsContentGroup from '@/components/NsContentGroup.vue';
 import NsTextContent from '@/components/NsTextContent.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
 
 import { round } from '@/service/math';
 import { computed } from 'vue';
 
-const props = defineProps<{
-  patient: Patient
-}>()
-
-const useManufacturerEnergy = computed(() => props.patient.estimatedWeight >= 25)
-const manualEnergy = computed(() => round(props.patient.estimatedWeight * 4, 5, 'down'))
+const useManufacturerEnergy = computed(() => patient.weight >= 25)
+const manualEnergy = computed(() => round(patient.weight * 4, 5, 'down'))
 const manualIneffectiveEnergy = computed(() => manualEnergy.value * 2)
 
 </script>

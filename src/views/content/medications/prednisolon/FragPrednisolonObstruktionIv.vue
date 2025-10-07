@@ -22,15 +22,14 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Pr
 
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
 import NsDosage from '@/components/medications/NsDosage.vue';
-import { Patient } from '@/types/emergency';
+
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
 import { round } from '@/service/math';
 
-const props = defineProps<{
-  patient: Patient
-}>()
-
-const weightDose = computed(() => Math.min(80, round(props.patient.estimatedWeight * 2, 50, 'up')))
+const weightDose = computed(() => Math.min(80, round(patient.weight * 2, 50, 'up')))
 
 </script>
 

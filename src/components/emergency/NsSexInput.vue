@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { SexValue } from '@/types/emergency';
+import { SexValue } from '@/types/patient';
 import { IonButton, IonIcon } from '@ionic/vue'
 import { male, female } from 'ionicons/icons'
 

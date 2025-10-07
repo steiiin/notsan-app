@@ -31,27 +31,13 @@ const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Ep
 
 // ########################################################################################################
 
-import NsContentGroup from '@/components/NsContentGroup.vue';
 import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
 import NsDosage from '@/components/medications/NsDosage.vue';
-import NsContentSplit from '@/components/NsContentSplit.vue';
-import NsTextContent from '@/components/NsTextContent.vue';
-import NsKeyValueContainer from '@/components/NsKeyValueContainer.vue';
-import NsKeyValue from '@/components/NsKeyValue.vue';
-import TextMono from '@/components/TextMono.vue';
-import NsColorBox from '@/components/NsColorBox.vue';
-import TextColored from '@/components/TextColored.vue';
-import { Patient } from '@/types/emergency';
 
-import { round } from '@/service/math';
+import { usePatientStore } from '@/stores/patient';
+const patient = usePatientStore()
+
 import { computed } from 'vue';
-
-import { iv_1mg } from './Packages'
-
-const props = defineProps<{
-  patient: Patient
-}>()
-
 
 enum EpiAgeRange
 {
@@ -61,8 +47,8 @@ enum EpiAgeRange
 }
 
 const ageRange = computed(() => {
-  if (props.patient.estimatedAge >= 12) { return EpiAgeRange.High }
-  else if (props.patient.estimatedAge >= 6) { return EpiAgeRange.Medium }
+  if (patient.age >= 12) { return EpiAgeRange.High }
+  else if (patient.age >= 6) { return EpiAgeRange.Medium }
   else { return EpiAgeRange.Low }
 })
 
