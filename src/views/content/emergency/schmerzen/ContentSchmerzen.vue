@@ -1,9 +1,9 @@
 <template>
   <ns-accordion-group>
-    <ns-accordion title="Schmerzen">
+    <ns-accordion title="Schmerzen + Trauma">
 
       <!-- Traumatische Schmerzen -->
-      <ns-content-group dense>
+      <ns-content-group title="Esketamin & Midazolam" dense>
 
         <ns-dosage-usage type="iv" dense>
           <frag-esketamin-schmerzen-iv :patient="patient"></frag-esketamin-schmerzen-iv>
@@ -14,7 +14,7 @@
       </ns-content-group>
 
       <!-- Opioide -->
-      <ns-content-group dense>
+      <ns-content-group title="Opioide" dense>
 
         <ns-dosage-usage type="iv" dense>
           <frag-morphin-schmerzen-iv :patient="patient"></frag-morphin-schmerzen-iv>
@@ -29,8 +29,12 @@
 
       </ns-content-group>
 
+      <ns-content-group title="Trauma" dense>
+        <frag-tranexam-trauma :patient="patient"></frag-tranexam-trauma>
+      </ns-content-group>
+
       <!-- Sonstige -->
-      <ns-content-group dense>
+      <ns-content-group title="Nicht-Opioide" dense>
 
         <ns-dosage-usage type="iv" dense>
           <frag-butylscopolamin-schmerzen :patient="patient"></frag-butylscopolamin-schmerzen>
@@ -64,6 +68,8 @@ import NsDosageUsage from '@/components/medications/NsDosageUsage.vue';
 import FragEsketaminSchmerzenIv from '../../medications/esketamin/FragEsketaminSchmerzenIv.vue';
 import FragMidazolamSchmerzenIv from '../../medications/midazolam/FragMidazolamSchmerzenIv.vue';
 import FragEsketaminSchmerzenNasal from '../../medications/esketamin/FragEsketaminSchmerzenNasal.vue';
+
+import FragTranexamTrauma from '../../medications/tranexam/FragTranexamTrauma.vue';
 
 import FragMorphinSchmerzenIv from '../../medications/morphin/FragMorphinSchmerzen.vue';
 import FragFentanylSchmerzenIv from '../../medications/fentanyl/FragFentanylSchmerzenIv.vue';
