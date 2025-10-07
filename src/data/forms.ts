@@ -8,11 +8,11 @@ export const forms: FormListItem[] = [
     entries:
     [
 
-      // {
-      //   id: 'diagnose-ekg',
-      //   title: 'EKG-Diagnose',
-      //   component: () => import('@/views/content/forms/diagnose/ekg/ContentEkg.vue')
-      // },
+      {
+        id: 'diagnose-ekg',
+        title: 'EKG-Diagnose',
+        component: () => import('@/views/content/forms/diagnose/ekg/ContentEkg.vue')
+      },
 
     ]
   },

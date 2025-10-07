@@ -30,9 +30,9 @@ const content = useContentStore()
 
 const entry = computed(() => {
   if (props.listId) {
-    return content.findLibraryEntryInList(props.listId, props.entryId)
+    return content.findFormEntryInList(props.listId, props.entryId)
   }
-  return content.findLibraryEntryById(props.entryId)
+  return content.findFormEntryById(props.entryId)
 })
 
 const entryComponent = computed(() => {
@@ -44,9 +44,9 @@ const entryComponent = computed(() => {
 
 const defaultHref = computed(() => {
   if (props.listId) {
-    return `/tabs/lib/list/${props.listId}`
+    return `/tabs/forms/list/${props.listId}`
   }
-  return '/tabs/lib'
+  return '/tabs/forms'
 })
 </script>
 
