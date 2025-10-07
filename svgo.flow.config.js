@@ -66,7 +66,6 @@ const mapColorsToCssVars = {
           if (!a.style) return;
 
           const o = parseStyle(a.style);
-          console.log(o)
           if (o.fill)           o.fill = mapColor(o.fill);
           if (o.stroke)         o.stroke = mapColor(o.stroke);
           if (o.color)          o.color = mapColor(o.color);
@@ -86,20 +85,31 @@ const dropFullBackgroundRect = {
   fn: () => ({
     element: {
       enter: (node, parentNode) => {
-        if (node.name === 'rect' && parentNode?.name === 'svg') {
-          const a = node.attributes || {};
-          const isFull =
-            (a.width === '100%' && a.height === '100%') ||
-            (a.x === '0' && a.y === '0' && a.width && a.height); // conservative
-          const isJustBg = !a.stroke || a.stroke === 'transparent';
-          if (isFull && isJustBg) {
-            return null
-          }
+        if (!parentNode || parentNode.name !== 'svg' || node.name !== 'rect') return;
+
+        const a = node.attributes || {};
+        const x = a.x ?? '0';
+        const y = a.y ?? '0';
+        const w = a.width;
+        const h = a.height;
+
+        // consider it "just background" if fill is absent/none/transparent
+        const bgFill = !a.fill || a.fill === 'transparent';
+
+        // match 100% x 100% at (0,0)
+        let isFull =
+          w === '100%' && h === '100%' && x === '0' && y === '0';
+
+        if (isFull && bgFill) {
+          console.log('removed bg-rect');
+          // actually remove the node
+          parentNode.children = parentNode.children.filter((child) => child !== node);
         }
       }
     }
   })
 };
+
 
 const dropGroupMetaData = {
   name: 'dropGroupMetaData',
@@ -187,8 +197,8 @@ export default {
     'removeEmptyText',
     'removeEmptyContainers',
 
-    neutralizePaintAttrs,
     dropFullBackgroundRect,
+    neutralizePaintAttrs,
     dropGroupMetaData,
     dropTextFallback,
     dropSvgStyle,
