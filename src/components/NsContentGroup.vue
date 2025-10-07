@@ -34,7 +34,8 @@ defineProps<{
 .ns-content-group.no-header {
   padding-top: var(--ns-card-padding);
 }
-.ns-content-group.no-header ion-card-content {
+.ns-content-group.no-header ion-card-content,
+.ns-content-group.dense-header ion-card-content {
   display: flex;
   flex-direction: column;
   gap: .5rem;
