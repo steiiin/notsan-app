@@ -1,5 +1,4 @@
 import { Medication, MedId } from '@/types/medication'
-import { Package, PackageIncredient } from '@/types/package'
 export const medications: Medication[] =[
   {
     id: MedId.Acetylsalicyl,

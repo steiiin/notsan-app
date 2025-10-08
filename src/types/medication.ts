@@ -42,3 +42,9 @@ export interface PerMedicationConfig {
   enabled: boolean;
   packages: Record<string, boolean>;
 }
+
+export interface MedicationSwitchOption {
+  id: string;
+  label: string;
+  path: string;
+}

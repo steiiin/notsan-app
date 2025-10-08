@@ -8,6 +8,8 @@ const COLORMAP = new Map([
   ['#6c8ebf', 'var(--ns-flow-process-border)'],
   ['#d5e8d4', 'var(--ns-flow-saa)'],
   ['#82b366', 'var(--ns-flow-saa-border)'],
+  ['#f8cecc', 'var(--ns-flow-bpr)'],
+  ['#b85450', 'var(--ns-flow-bpr-border)'],
 ]);
 
 const NodesToNeutralize = new Set([
