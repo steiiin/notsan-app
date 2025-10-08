@@ -13,8 +13,9 @@ export const useConfigStore = defineStore('config', {
       }
       return true
     },
-    checkPackageEnable(medId: string, packageId: string): boolean {
+    checkPackageEnabled(medId: string, packageId: string): boolean {
       if (this.medicationConfig.hasOwnProperty(medId)) {
+        if (!this.checkMedicationEnabled(medId)) { return false }
         if (this.medicationConfig[medId].packages.hasOwnProperty(packageId)) {
           return this.medicationConfig[medId].packages[packageId]
         }

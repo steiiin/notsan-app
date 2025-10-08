@@ -18,6 +18,17 @@
     </ul>
   </ns-flow-action>
 
+  <ns-flow-action ref="noPPR">
+    <h2>Kein peripheres Schmerzmittel</h2>
+    <p>In den Einstellungen wurden alle peripher wirkenden Schmerzmittel ausgeblendet, z.B.:</p>
+    <hr>
+    <ul>
+      <li>Paracetamol</li>
+      <li>Ibuprofen</li>
+      <li>Metamizol</li>
+    </ul>
+  </ns-flow-action>
+
 </template>
 
 <script setup lang="ts">
@@ -29,9 +40,12 @@ import NsTextContent from '@/components/NsTextContent.vue'
 import flowSvg from './flow.svg?raw'
 import { compile, computed, ref } from 'vue'
 import { FlowActionPayload } from '@/types/flow'
+import { useConfigStore } from '@/stores/config'
 
-import { isAnyIvEnabled as isIbuEnabled } from '@/views/content/medications/ibuprofen/Packages'
+import { isAnyIvEnabled, isAnyIvEnabled as isIbuEnabled } from '@/views/content/medications/ibuprofen/Packages'
 import { isAnyIvEnabled as isParacetamolEnabled } from '@/views/content/medications/paracetamol/Packages'
+const isMetamizolEnabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Metamizol) ?? true)
+
 import { MedicationSwitchOption, MedId } from '@/types/medication'
 import { useMedicationSwitchOption } from '@/composables/useMedicationSwitchOption'
 import router from '@/router'
@@ -42,6 +56,7 @@ function handleAction(payload: FlowActionPayload) {
   if (payload.key == 'switchPPR') {
     const target = switchOptionPPR.value.path
     if (target) { router.push(target) }
+    else { noPPR.value?.presentPopover(payload) }
   }
   else if (payload.key === 'kolik') {
     action_kolik.value?.presentPopover(payload)
@@ -49,17 +64,21 @@ function handleAction(payload: FlowActionPayload) {
 }
 
 const switchOptionPPR = computed(() => {
+  if (isMetamizolEnabled.value) {
+    return useMedicationSwitchOption(MedId.Metamizol) }
   if (isParacetamolEnabled.value) {
     return useMedicationSwitchOption(MedId.Paracetamol) }
-  else {
+  if (isIbuEnabled.value) {
     return useMedicationSwitchOption(MedId.Ibuprofen) }
+  return { id: '', label: 'periph. Schmerzmittel', path: null }
 })
 
 const action_kolik = ref<InstanceType<typeof NsFlowAction> | null>(null)
+const noPPR = ref<InstanceType<typeof NsFlowAction> | null>(null)
 
 </script>
 
 <style scoped>
 
-  /* padding: calc(0.5 * var(--ns-card-padding));  <-- move this elsewhere */
+  /* padding: calc(0.5 * var(--ns-card-paddcomputed(() => {{ id: '' }})ing));  <-- move this elsewhere */
 </style>

@@ -11,7 +11,7 @@ export function useMedicationPackageFlags<const Keys extends readonly string[]>(
 
   for (const packageId of packageIds) {
     const key = packageId as Keys[number]
-    flags[key] = computed(() => configStore.checkPackageEnable(medicationId, key))
+    flags[key] = computed(() => configStore.checkPackageEnabled(medicationId, key))
   }
 
   return flags
