@@ -41,7 +41,7 @@
           <ns-dosage :dosage="{ dose: '100mg /10kg', hint: '(1ml /10kg)' }"></ns-dosage>
           <p>Langsam spritzen (<text-mono>1ml/min</text-mono>).</p>
           <hr>
-          <h2>Keine Repetition</h2>
+          <p><text-underline>Keine</text-underline> Repetition.</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
     </ns-content-group>

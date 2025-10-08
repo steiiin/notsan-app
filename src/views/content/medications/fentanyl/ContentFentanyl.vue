@@ -54,7 +54,7 @@
       </ns-list>
       <ns-list>
         <ns-sideeffect todo>Ultima Ratio:</ns-sideeffect>
-        <ns-sideeffect link="/tabs/meds/naloxon">Naloxon</ns-sideeffect>
+        <ns-sideeffect link="med:naloxon">Naloxon</ns-sideeffect>
       </ns-list>
     </ns-content-group>
 
@@ -100,7 +100,7 @@
             <ns-dosage :dosage="{ dose: ' 1ml /25kg' }"></ns-dosage>
           </div>
           <hr>
-          <h2>Keine Repetition</h2>
+          <p><text-underline>Keine</text-underline> Repetition.</p>
 
         </ns-dosage-usage>
       </ns-dosage-indication>

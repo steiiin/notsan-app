@@ -43,7 +43,7 @@
       <ns-list divider>
         <ns-sideeffect severe>Allergische Reaktionen</ns-sideeffect>
         <ns-sideeffect todo>Gemäß BPR intervenieren:</ns-sideeffect>
-        <ns-sideeffect link="/library/bpr/anaphylaxie">Anaphylaxie</ns-sideeffect>
+        <ns-sideeffect link="bpr:anaphylaxie">Anaphylaxie</ns-sideeffect>
       </ns-list>
       <ns-list divider>
         <ns-sideeffect>Hypotonie</ns-sideeffect>

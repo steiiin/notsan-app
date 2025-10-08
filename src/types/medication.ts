@@ -17,6 +17,7 @@ export const MedId = Object.freeze({
   Heparin: 'heparin',
   Ibuprofen: 'ibuprofen',
   Ipratropiumbromid: 'ipratropiumbromid',
+  Metamizol: 'metamizol',
   Metoprolol: 'metoprolol',
   Midazolam: 'midazolam',
   Morphin: 'morphin',

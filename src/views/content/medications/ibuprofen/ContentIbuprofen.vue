@@ -54,7 +54,7 @@
       <ns-list divider>
         <ns-sideeffect severe>Schwere allergische Reaktionen</ns-sideeffect>
         <ns-sideeffect todo>Gemäß BPR intervenieren:</ns-sideeffect>
-        <ns-sideeffect link="/library/bpr/anaphylaxie">Anaphylaxie</ns-sideeffect>
+        <ns-sideeffect link="bpr:anaphylaxie">Anaphylaxie</ns-sideeffect>
       </ns-list>
       <ns-list>
         <ns-sideeffect>Magen-Darm-Beschwerden</ns-sideeffect>

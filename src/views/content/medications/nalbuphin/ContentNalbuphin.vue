@@ -51,12 +51,12 @@
       </ns-list>
       <ns-list divider>
         <ns-sideeffect todo>Ultima Ratio:</ns-sideeffect>
-        <ns-sideeffect link="/tabs/meds/naloxon">Naloxon</ns-sideeffect>
+        <ns-sideeffect link="med:naloxon">Naloxon</ns-sideeffect>
       </ns-list>
       <ns-list divider>
         <ns-sideeffect>Übelkeit / Erbrechen</ns-sideeffect>
         <ns-sideeffect todo>Bei wiederholtem Erbrechen:</ns-sideeffect>
-        <ns-sideeffect link="/tabs/meds/dimenhydrinat">Dimenhydrinat</ns-sideeffect>
+        <ns-sideeffect link="med:dimenhydrinat">Dimenhydrinat</ns-sideeffect>
       </ns-list>
       <ns-list>
         <ns-sideeffect>Benommenheit / Schwindel</ns-sideeffect>

@@ -379,6 +379,22 @@ export const medications: Medication[] =[
     component: () => import('@/views/content/medications/ipratropiumbromid/ContentIpratropiumbromid.vue')
   },
   {
+    id: MedId.Metamizol,
+    title: 'Metamizol',
+    subtitle: 'Novaminsulfon',
+    packages: [
+      {
+        id: 'iv_500mgml_2ml',
+        type: 'amp',
+        name: 'Ampulle „Metamizol”',
+        incredients: [
+          { amount: '1g / 2ml' },
+        ]
+      }
+    ],
+    component: () => import('@/views/content/medications/metamizol/ContentMetamizol.vue')
+  },
+  {
     id: MedId.Metoprolol,
     title: 'Metoprolol',
     subtitle: 'Beloc',
