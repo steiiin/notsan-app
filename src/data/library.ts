@@ -19,6 +19,11 @@ export const library: LibraryListItem[] = [
         title: 'Übelkeit/Erbrechen',
         component: () => import('@/views/content/library/bpr/nausea/ContentNausea.vue')
       },
+      {
+        id: 'bpr-schmerzen',
+        title: 'Schmerzen',
+        component: () => import('@/views/content/library/bpr/schmerzen/ContentSchmerzen.vue')
+      },
 
     ]
   },
