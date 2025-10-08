@@ -66,7 +66,7 @@
             <ns-dosage v-if="isIv_5000ieml_5mlEnabled && !isOnlyOneEnabled" :dosage="{ dose: 'Auf richtige Ampullengröße achten!', color: 'red' }"></ns-dosage>
           </div>
           <hr>
-          <h2>Keine Repetition</h2>
+          <p><text-underline>Keine</text-underline> Repetition.</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
 

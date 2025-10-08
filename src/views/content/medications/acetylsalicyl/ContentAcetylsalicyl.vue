@@ -62,7 +62,7 @@
         <ns-sideeffect severe indented>Luftnot</ns-sideeffect>
         <ns-sideeffect indented>Ausschlag</ns-sideeffect>
         <ns-sideeffect indented>Magenschmerzen, Übelkeit</ns-sideeffect>
-        <ns-sideeffect link="/med/">Anaphylaxie</ns-sideeffect>
+        <ns-sideeffect link="bpr:anaphylaxie">Anaphylaxie</ns-sideeffect>
       </ns-list>
       <ns-list>
         <ns-sideeffect>Blutungsneigung</ns-sideeffect>

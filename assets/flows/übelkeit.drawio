@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.1.2 Chrome/138.0.7204.243 Electron/37.4.0 Safari/537.36" version="28.1.2">
   <diagram name="Seite-1" id="L2w308fRFKuACmfVMeDd">
-    <mxGraphModel dx="1219" dy="1183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="540" pageHeight="420" math="0" shadow="0">
+    <mxGraphModel dx="1426" dy="833" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="540" pageHeight="420" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -112,17 +112,17 @@
             <mxPoint x="-65" y="-19" as="offset" />
           </mxGeometry>
         </mxCell>
-        <UserObject label="SAA Ondensatron" link="/tabs/meds/ondensatron" id="VgdP7V1OxryVakJov2ZO-21">
+        <UserObject label="SAA Ondensatron" link="med:ondensatron" id="VgdP7V1OxryVakJov2ZO-21">
           <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05555555555555555;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;fontColor=default;labelBackgroundColor=none;" parent="1" vertex="1">
             <mxGeometry x="300" y="279.9999999999999" width="240" height="60" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="SAA Dimenhydrinat" link="/tabs/meds/dimenhydrinat" id="VgdP7V1OxryVakJov2ZO-22">
+        <UserObject label="SAA Dimenhydrinat" link="med:dimenhydrinat" id="VgdP7V1OxryVakJov2ZO-22">
           <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05555555555555555;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;fontColor=default;labelBackgroundColor=none;" parent="1" vertex="1">
             <mxGeometry x="300" y="350" width="240" height="60" as="geometry" />
           </mxCell>
         </UserObject>
-        <mxCell id="LQJ_-I9uN-qzmDFlOrRo-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.775;entryY=-0.017;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bO4cj00JHxBitIa0UD0s-22" target="VgdP7V1OxryVakJov2ZO-12">
+        <mxCell id="LQJ_-I9uN-qzmDFlOrRo-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.775;entryY=-0.017;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="bO4cj00JHxBitIa0UD0s-22" target="VgdP7V1OxryVakJov2ZO-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="420" y="260" />

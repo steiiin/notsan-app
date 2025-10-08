@@ -10,6 +10,7 @@
 </template>
 
 <script setup lang="ts">
+import { useContentLink } from '@/composables/useContentLink';
 import { approxEq, clamp } from '@/service/math'
 import { FlowActionPayload } from '@/types/flow';
 import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
@@ -208,9 +209,19 @@ const setupSvgLinks = () => {
       const rawHref = link.getAttribute('xlink:href') || link.getAttribute('href')
       const url = rawHref ? normalizeHref(rawHref) : null
       if (!url) return
+
+      // /?action=XXXXX
       const keyword = url.searchParams.get('action')
       if (keyword) { emit('action', { key: keyword, source: event }); return }
-      if (url.pathname) router.push(`${url.pathname}${url.search}`)
+
+      // /med:XXXXX or similar
+      const parts = url.pathname.split('/')
+      if (parts.length==0) return
+
+      const lastPart = parts[parts.length-1]
+      if (!lastPart.includes(':')) return
+
+      router.push(useContentLink(lastPart))
     }
     link.addEventListener('click', handler)
     svgLinkListeners.push({ element: link, handler })

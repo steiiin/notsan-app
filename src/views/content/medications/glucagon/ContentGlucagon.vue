@@ -35,7 +35,7 @@
       <ns-list divider>
         <ns-sideeffect severe>Paradoxe Wirkung bei <b>Indometacin</b></ns-sideeffect>
         <ns-sideeffect todo>Intravenöse Gabe von Glucose</ns-sideeffect>
-        <ns-sideeffect link="/tabs/meds/glucose">Glucose</ns-sideeffect>
+        <ns-sideeffect link="med:glucose">Glucose</ns-sideeffect>
       </ns-list>
       <ns-list divider>
         <ns-sideeffect>Übelkeit / Erbrechen</ns-sideeffect>

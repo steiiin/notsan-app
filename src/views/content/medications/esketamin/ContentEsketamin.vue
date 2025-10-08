@@ -82,7 +82,7 @@
         <ns-sideeffect>Euphorie (&bdquo;Neben der Spur&rdquo;)</ns-sideeffect>
         <ns-sideeffect todo>Ruhige Atmosphäre schaffen</ns-sideeffect>
         <ns-sideeffect todo>Ggf. Repetition Benzodiazepine</ns-sideeffect>
-        <ns-sideeffect link="/tabs/meds/midazolam">Midazolam</ns-sideeffect>
+        <ns-sideeffect link="med:midazolam">Midazolam</ns-sideeffect>
       </ns-list>
       <ns-list>
         <ns-sideeffect severe>Blutdruckanstieg, Herzfrequenzanstieg</ns-sideeffect>
@@ -101,7 +101,7 @@
       <ns-dosage-indication name="Stärkste Schmerzen">
         <ns-dosage-usage type="iv">
           <p><i>Ko-Medikation empfohlen:</i></p>
-          <ns-sideeffect link="/tabs/meds/midazolam">Midazolam</ns-sideeffect>
+          <ns-sideeffect link="med:midazolam">Midazolam</ns-sideeffect>
           <hr>
           <div>
             <ns-dosage :dosage="{ dose: '1,25mg /10kg', target: 'Initial' }"></ns-dosage>
