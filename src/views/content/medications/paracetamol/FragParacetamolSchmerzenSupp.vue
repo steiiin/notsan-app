@@ -21,7 +21,7 @@
 
 import { MedId } from '@/types/medication'
 import { useConfigStore } from '@/stores/config'
-const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Ibuprofen) ?? true)
+const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Paracetamol) ?? true)
 
 // ########################################################################################################
 
