@@ -1,5 +1,5 @@
 <template>
-  <div class="ns-flow__padding">
+  <div class="ns-flow__padding" :class="{ 'no-padding': nopadding }">
     <div ref="panSurface" class="ns-flow"
       @pointerdown="onPointerDown" @pointerup="onPointerUp">
       <div class="ns-flow__content" :style="contentStyle">
@@ -19,7 +19,8 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const props = defineProps<{
-  svg: string
+  svg: string,
+  nopadding?: boolean,
 }>()
 
 const emit = defineEmits<{
@@ -357,6 +358,9 @@ onBeforeUnmount(() => {
 
 .ns-flow__padding {
   padding: calc(0.5 * var(--ns-card-padding));
+}
+.ns-flow__padding.no-padding {
+  padding: 0;
 }
 .ns-flow__content {
   display: block;
