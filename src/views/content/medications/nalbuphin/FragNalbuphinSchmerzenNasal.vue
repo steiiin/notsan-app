@@ -14,7 +14,7 @@
     </template>
     <template v-else>
       <ns-dosage mono :dosage="{
-        target: 'Fentanyl', dose: 'Keine', hint: 'Gabe' }">
+        target: 'Nalbuphin', dose: 'Keine', hint: 'Gabe' }">
       </ns-dosage>
     </template>
 
