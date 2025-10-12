@@ -49,6 +49,8 @@
   --ns-flow-saa-border: #82B366;
   --ns-flow-process: #DAE8FC;
   --ns-flow-process-border: #6C8EBF;
+  --ns-flow-subprocess: #F5F5F5;
+  --ns-flow-subprocess-border: #666666;
   --ns-flow-bpr: #F8CECC;
   --ns-flow-bpr-border: #B85450;
 
@@ -95,6 +97,8 @@
     --ns-flow-saa-border: #446E2C;
     --ns-flow-process: #1D293B;
     --ns-flow-process-border: #5C79A3;
+    --ns-flow-subprocess: #1A1A1A;
+    --ns-flow-subprocess-border: #959595;
     --ns-flow-bpr: #512D2B;
     --ns-flow-bpr-border: #D7817E;
 

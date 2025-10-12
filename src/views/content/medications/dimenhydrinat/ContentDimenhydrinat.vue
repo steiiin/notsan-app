@@ -18,11 +18,11 @@
             <h2>MAO-Hemmer</h2>
             <p>MAO-Hemmer erhöhen Monoamine im Gehirn, wirken antidepressiv.</p>
             <hr>
-            <ul>
-              <li head>Tranylcypromin: <i>Parnate</i></li>
-              <li head>Moclobemid: <i>Aurorix</i></li>
-              <li head>Phenelzin: <i>Nardil</i></li>
-              <li head>Selegilin: <i>Eldepryl, Movern, Selgin</i></li>
+            <ul head>
+              <li>Tranylcypromin: <i>Parnate</i></li>
+              <li>Moclobemid: <i>Aurorix</i></li>
+              <li>Phenelzin: <i>Nardil</i></li>
+              <li>Selegilin: <i>Eldepryl, Movern, Selgin</i></li>
             </ul>
           </ns-quicktip>
         </ns-contraindication>

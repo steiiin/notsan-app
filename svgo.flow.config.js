@@ -6,6 +6,8 @@ const COLORMAP = new Map([
   ['#fff', 'var(--background)'],
   ['#dae8fc', 'var(--ns-flow-process)'],
   ['#6c8ebf', 'var(--ns-flow-process-border)'],
+  ['#f5f5f5', 'var(--ns-flow-subprocess)'],
+  ['#666', 'var(--ns-flow-subprocess-border)'],
   ['#d5e8d4', 'var(--ns-flow-saa)'],
   ['#82b366', 'var(--ns-flow-saa-border)'],
   ['#f8cecc', 'var(--ns-flow-bpr)'],
@@ -52,8 +54,50 @@ const mapColor = (v) => {
 const styleToString = (obj) =>
   Object.entries(obj).map(([k, v]) => `${k}:${v}`).join(';');
 
+const getLightColor = (str) => {
+  if (str.startsWith('light-dark(') && str.endsWith(')') && str.includes(','))
+  {
+    const parts = str.split(',')
+    const lightColor = parts[0]?.replace('light-dark(', '') ?? ''
+    if (lightColor.startsWith('#') && (lightColor.length == 4 || lightColor.length == 7 || lightColor.length == 9)) {
+      return lightColor
+    }
+  }
+  return null
+}
+
+const replaceColorSafely = (original) => {
+  const lightColor = getLightColor(original)
+  return !lightColor ? original : lightColor
+}
 
 // #endregion
+
+const useLightColorsOnly = {
+  name: 'useLightColorsOnly',
+  type: 'visitor',
+  fn: (root, params) => {
+    const allowed = NodesToColorMap
+    return {
+      element: {
+        enter(node) {
+          if (!allowed.has(node.name)) return;
+          const a = node.attributes || {};
+          if (!a.style) return;
+
+          const o = parseStyle(a.style);
+          if (o.fill)           o.fill = replaceColorSafely(o.fill);
+          if (o.stroke)         o.stroke = replaceColorSafely(o.stroke);
+          if (o.color)          o.color = replaceColorSafely(o.color);
+          if (o['stop-color'])  o['stop-color'] = replaceColorSafely(o['stop-color']);
+          if (o['background-color'])  o['background-color'] = replaceColorSafely(o['background-color']);
+          a.style = styleToString(o)
+
+        }
+      }
+    };
+  }
+};
 
 const mapColorsToCssVars = {
   name: 'mapColorsToCssVars',
@@ -206,6 +250,7 @@ export default {
     dropSvgStyle,
 
     'minifyStyles',
+    useLightColorsOnly,
     mapColorsToCssVars,
 
     'collapseGroups',

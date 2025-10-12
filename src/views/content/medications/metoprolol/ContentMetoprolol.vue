@@ -19,9 +19,9 @@
             <h2>Calciumantagonisten vom Verapamil-Typ</h2>
             <p>Diese Medikamente wirken hauptsächlich auf das Herz und die glatte Muskulatur der Blutgefäße; zu einer Senkung der Herzfrequenz, einer Verringerung der Kontraktionskraft des Herzens und einer Gefäßerweiterung.</p>
             <hr>
-            <ul>
-              <li head>Verapamil: <i>Isoptin</i></li>
-              <li head>Gallopamil: <i>Procorum</i></li>
+            <ul head>
+              <li>Verapamil: <i>Isoptin</i></li>
+              <li>Gallopamil: <i>Procorum</i></li>
             </ul>
           </ns-quicktip>
         </ns-contraindication>
