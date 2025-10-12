@@ -1,6 +1,6 @@
 <template>
   <template v-if="showButton">
-    <ion-button expand="full" color="light" :routerLink="link">
+    <ion-button expand="full" color="light" :routerLink="resolvedLink">
       <ion-icon slot="start" :icon="arrowForwardOutline"></ion-icon>
       <slot></slot>
     </ion-button>
@@ -16,6 +16,7 @@ import { IonButton, IonIcon } from '@ionic/vue'
 import { caretForward, arrowForwardOutline } from 'ionicons/icons'
 import { computed } from 'vue'
 import NsListItem from '@/components/NsListItem.vue'
+import { useContentLink } from '@/composables/useContentLink';
 
 const props = defineProps<{
   severe?: boolean,
@@ -26,6 +27,8 @@ const props = defineProps<{
 
 const icon = computed(() => !props.severe ? (!props.todo ? undefined : arrowForwardOutline) : caretForward)
 const showButton = computed(() => !!props.link)
+
+const resolvedLink = computed(() => !props.link ? null : useContentLink(props.link))
 
 </script>
 

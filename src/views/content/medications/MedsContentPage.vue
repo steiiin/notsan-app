@@ -5,41 +5,33 @@
         <ion-buttons slot="start">
           <ion-back-button @click="back"></ion-back-button>
         </ion-buttons>
-        <ion-title>{{ medication?.title }}</ion-title>
+        <ion-title>{{ medication?.title ?? 'Medikament' }}</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
       <component v-if="medicationComponent" :is="medicationComponent" />
+      <ns-empty-state v-else label="Medikament" :id="medId"></ns-empty-state>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
 
-import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonButtons,
-  IonBackButton,
-  IonButton,
-  IonIcon,
-  IonModal
-} from '@ionic/vue';
-import { useContentStore } from '@/stores/content'
-import { ref, computed, defineAsyncComponent } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import MedsSettings from './MedsSettings.vue'
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton } from '@ionic/vue'
+import NsEmptyState from '@/components/NsEmptyState.vue'
 
-const route = useRoute()
+import { useContentStore } from '@/stores/content'
+import { computed, defineAsyncComponent } from 'vue'
+import { useRouter } from 'vue-router'
+
+const props = defineProps<{
+  medId: string
+}>()
+
 const router = useRouter()
 const content = useContentStore()
 
-const medicationId = ref(Array.isArray(route.params.id) ? route.params.id[0] : route.params.id)
-const medication = ref(content.findMedicationById(medicationId.value))
-
+const medication = computed(() => content.findMedicationById(props.medId))
 const medicationComponent = computed(() => {
   if (medication.value && medication.value.component) {
     return defineAsyncComponent(medication.value.component);

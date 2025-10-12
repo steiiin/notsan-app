@@ -15,9 +15,7 @@
         </ion-toolbar>
       </ion-header>
       <NsContentListContainer v-if="entries.length" :items="entries" />
-      <div v-else class="empty-state">
-        <p>Es konnten keine Inhalte gefunden werden.</p>
-      </div>
+      <ns-empty-state v-else label="Liste" :key="id"></ns-empty-state>
     </ion-content>
   </ion-page>
 </template>
@@ -28,6 +26,7 @@ import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 import NsContentListContainer from '@/components/NsContentListContainer.vue'
+import NsEmptyState from '@/components/NsEmptyState.vue'
 import { useContentStore } from '@/stores/content'
 
 const props = defineProps<{ id: string }>()

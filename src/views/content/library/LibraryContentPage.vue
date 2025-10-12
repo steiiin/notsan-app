@@ -10,7 +10,7 @@
     </ion-header>
     <ion-content :fullscreen="true">
       <component v-if="entryComponent" :is="entryComponent" />
-      <NsEmptyState v-else label="Inhalte" />
+      <ns-empty-state v-else label="Eintrag" :id="entryId"></ns-empty-state>
     </ion-content>
   </ion-page>
 </template>
