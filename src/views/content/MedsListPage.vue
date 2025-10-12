@@ -19,7 +19,7 @@
       <template v-if="filteredMedications.length">
         <NsContentListContainer :items="filteredMedications" />
       </template>
-      <NsEmptyState v-else label="Medikamente" />
+      <ns-empty-state v-else label="Medikamente"></ns-empty-state>
     </ion-content>
     <meds-settings v-model="settingsVisible"></meds-settings>
   </ion-page>

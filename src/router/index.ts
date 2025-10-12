@@ -24,7 +24,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/content/MedsListPage.vue'),
       },
       {
-        path: 'meds/:id',
+        path: 'meds/:medId',
         component: () => import('@/views/content/medications/MedsContentPage.vue'),
         props: true
       },

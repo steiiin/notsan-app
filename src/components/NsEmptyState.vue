@@ -1,17 +1,26 @@
 <template>
   <div class="empty-state">
     <ion-icon :icon="searchOutline" />
-    <ion-text>Keine {{ label }} gefunden.</ion-text>
+    <ion-text>{{ text }}</ion-text>
   </div>
 </template>
 
 <script setup lang="ts">
 import { IonIcon, IonText } from '@ionic/vue'
 import { searchOutline } from 'ionicons/icons'
+import { computed } from 'vue';
 
-defineProps<{
-  label: string
+const props = defineProps<{
+  label?: string,
+  id?: string,
 }>()
+
+const text = computed(() => {
+  const key = !props.id ? '': `(${props.id}) `
+  if (!props.label) { return `Keinen Inhalt ${key}gefunden` }
+  return `${props.label} ${key}noch nicht vorhanden`
+})
+
 </script>
 
 <style scoped>
