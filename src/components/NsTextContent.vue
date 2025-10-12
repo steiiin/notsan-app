@@ -22,6 +22,10 @@
   padding: 0 0 0 0;
   border-bottom: 1px solid var(--ns-color-divider);
 }
+.ns-text-content.dense :deep(hr) {
+  margin: 0 -2px 0 -2px;
+}
+
 .ns-text-content :deep(*) {
   margin: 0;
   padding: 0;
@@ -54,15 +58,20 @@
   line-height: 1.2;
 }
 
-.ns-text-content :deep(li[head])
+.ns-text-content :deep(ul[head] li)
 {
   list-style-type: none;
   font-weight: bold;
 }
-.ns-text-content :deep(li[head]) i
+.ns-text-content :deep(ul[head] i)
 {
   font-style: normal;
   font-weight: normal;
+}
+.ns-text-content :deep(ul[head][br] i)
+{
+  display: block;
+  margin-bottom: 4px;
 }
 
 </style>

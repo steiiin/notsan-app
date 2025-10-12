@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="542px" height="522px" viewBox="-0.5 -0.5 542 522">
+  <path d="M 270 60 L 270 70 L 270 71.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 270 78.88 L 266.5 71.88 L 273.5 71.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="0" y="0" width="540" height="60" rx="30" ry="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:#111;stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:30px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:#f7f7f7">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:#f7f7f7;line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">
+          Luftnot (Kind)
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 110 140 L 110 161.14 L 110 171.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 110 178.88 L 106.5 171.88 L 113.5 171.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:163px;margin-left:102px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <a xlink:href="file:///?action=respvers"><path d="M 20 80 L 520 80 L 540 110 L 520 140 L 20 140 L 0 110 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:110px;margin-left:1px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Respiratorisches Versagen?</div></div></div></foreignObject></a>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:atemwegsmanagement"><rect x="0" y="180" width="220" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+
+
+<path d="M 10 180 L 10 240 M 210 180 L 210 240" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:198px;height:1px;padding-top:210px;margin-left:12px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR Atemwegsmanagement</div></div></div></foreignObject></a>
+  <path d="M 430 140 L 430 161.14 L 430 171.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 430 178.88 L 426.5 171.88 L 433.5 171.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:162px;margin-left:422px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 455 350 L 455 361.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 455 368.88 L 451.5 361.88 L 458.5 361.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="370" y="270" width="170" height="80" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-subprocess);stroke:var(--ns-flow-subprocess-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe flex-start;width:164px;height:1px;padding-top:310px;margin-left:376px">
+      <div style="box-sizing:border-box;font-size:0;text-align:left;color:var(--color)">
+        <div style="display:inline-block;font-size:10px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          <b>
+            Fremdkörperaspiration?
+          </b>
+          <div>
+            - beobachtes Ereignis
+            <br/>
+            - Plötzlicher Beginn?
+            <br/>
+            - Husten/Würgen
+            <br/>
+            - Gerade gegessen
+            <br/>
+            <div style="">
+              <span style="background-color:transparent">
+                <font>
+                  - Kind gerade gespielt
+                </font>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 455.14 430 L 455.14 440 L 270 440 L 270 451.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 270 458.88 L 266.5 451.88 L 273.5 451.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:bolus"><rect x="370" y="370" width="170" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+
+
+<path d="M 379 370 L 379 430 M 531 370 L 531 430" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:148px;height:1px;padding-top:400px;margin-left:380px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR<br/>
+Bolus</div></div></div></foreignObject></a>
+  <path d="M 430 240 L 430 250 L 84.86 250 L 84.86 261.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 84.86 268.88 L 81.36 261.88 L 88.36 261.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="320" y="180" width="220" height="60" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:210px;margin-left:321px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          A/B-Problem-Ursache finden
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 270 350 L 270 361.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 270 368.88 L 266.5 361.88 L 273.5 361.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="185" y="270" width="170" height="80" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-subprocess);stroke:var(--ns-flow-subprocess-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe flex-start;width:164px;height:1px;padding-top:310px;margin-left:191px">
+      <div style="box-sizing:border-box;font-size:0;text-align:left;color:var(--color)">
+        <div style="display:inline-block;font-size:10px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          <b>
+            Pseudokrupp?
+          </b>
+          <div>
+            - Alter meist bis 3 Jahre
+            <br/>
+            - AZ nicht kritisch krank
+          </div>
+          <div>
+            - Plötzlicher Beginn
+          </div>
+          <div>
+            - Bellender, heiserer Husten
+          </div>
+          <div>
+            - Temp. subfebril (37,5-37,9°C)
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 270 430 L 270 450 L 270 440 L 270 451.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 270 458.88 L 266.5 451.88 L 273.5 451.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:pseudokrupp"><rect x="185" y="370" width="170" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+
+
+<path d="M 194 370 L 194 430 M 346 370 L 346 430" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:148px;height:1px;padding-top:400px;margin-left:195px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR<br/>
+Pseudokrupp</div></div></div></foreignObject></a>
+  <path d="M 85 350 L 85 361.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 85 368.88 L 81.5 361.88 L 88.5 361.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="0" y="270" width="170" height="80" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-subprocess);stroke:var(--ns-flow-subprocess-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe flex-start;width:164px;height:1px;padding-top:310px;margin-left:6px">
+      <div style="box-sizing:border-box;font-size:0;text-align:left;color:var(--color)">
+        <div style="display:inline-block;font-size:10px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          <b>
+            Asthmaanfall?
+          </b>
+          <div>
+            - Einziehungen
+            <br/>
+            - Einsatz Atemhilfsmuskulatur
+          </div>
+          <div>
+            - Exspiratorisches Giemen
+          </div>
+          <div>
+            - Evtl. Silent Chest
+            <br/>
+          </div>
+          <div>
+            - Evtl. bek. Asthma bronchiale
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 84.86 430 L 84.86 440 L 270 440 L 270 451.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 270 458.88 L 266.5 451.88 L 273.5 451.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:bronchialobstruktion"><rect x="0" y="370" width="170" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+
+
+<path d="M 9 370 L 9 430 M 161 370 L 161 430" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:148px;height:1px;padding-top:400px;margin-left:10px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR<br/>
+Bronchialobstruktion</div></div></div></foreignObject></a>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:dyspnoe"><rect x="185" y="460" width="170" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+
+
+<path d="M 194 460 L 194 520 M 346 460 L 346 520" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:148px;height:1px;padding-top:490px;margin-left:195px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR<br/>
+Dyspnoe</div></div></div></foreignObject></a>
+  <path d="M 430 240 L 430 250 L 270 250 L 270 261.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 270 268.88 L 266.5 261.88 L 273.5 261.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 430 240 L 430 250 L 455.14 250 L 455.06 261.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 455.01 268.88 L 451.56 261.86 L 458.56 261.91 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+</svg>

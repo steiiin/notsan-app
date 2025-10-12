@@ -18,11 +18,11 @@
             <h2>PDE-5-Hemmer</h2>
             <p>Zur Behandlung von pulmonaler Hypertonie oder erektiler Dysfunktion.</p>
             <hr>
-            <ul>
-              <li head>Silfenafil: <i>Viagra, Revatio</i></li>
-              <li head>Tadalafil: <i>Cialis, Adcirca</i></li>
-              <li head>Vardenafil: <i>Levitra, Vivanza</i></li>
-              <li head>Avanafil: <i>Spedra, Stendra (USA)</i></li>
+            <ul head>
+              <li>Silfenafil: <i>Viagra, Revatio</i></li>
+              <li>Tadalafil: <i>Cialis, Adcirca</i></li>
+              <li>Vardenafil: <i>Levitra, Vivanza</i></li>
+              <li>Avanafil: <i>Spedra, Stendra (USA)</i></li>
             </ul>
           </ns-quicktip>
         </ns-contraindication>

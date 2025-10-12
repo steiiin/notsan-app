@@ -15,6 +15,11 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/atemwegsmanagement/ContentAtemwegsmanagement.vue')
       },
       {
+        id: 'bpr-dyspnoekind',
+        title: 'Dyspnoe (Kinder)',
+        component: () => import('@/views/content/library/bpr/dyspnoekind/ContentDyspnoekind.vue')
+      },
+      {
         id: 'bpr-kindkritisch',
         title: 'Kritisches Kind',
         component: () => import('@/views/content/library/bpr/kindkritisch/ContentKindkritisch.vue')

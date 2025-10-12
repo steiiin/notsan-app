@@ -6,7 +6,7 @@
       </p>
     </ns-text-content>
   </ns-content-group>
-  <ns-flow :svg="flowSvg"></ns-flow>
+  <ns-flow :svg="flowSvg" @action="handleAction"></ns-flow>
   <ns-content-group title="PTO">
     <ns-text-content>
       <h2>Rettungsversuch!</h2>
@@ -49,16 +49,38 @@
       </p>
     </ns-text-content>
   </ns-content-group>
+
+  <ns-flow-action ref="action_sga">
+    <h2>Supraglottische Atemwegshilfe</h2>
+    <p>Instrumente zur Atemwegssicherung, mit Ventilationsöffnung <i>oberhalb</i> der Glottis.</p>
+    <hr>
+    <ul>
+      <li>Larynxtubus <i>(z.B. LTS-D<sup>®</sup>)</i></li>
+      <li>Larynxmaske <i>(z.B. LMA, i-gel<sup>®</sup>)</i></li>
+    </ul>
+  </ns-flow-action>
+
 </template>
 
 <script setup lang="ts">
 import NsFlow from '@/components/library/NsFlow.vue'
+import NsFlowAction from '@/components/library/NsFlowAction.vue'
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsTextContent from '@/components/NsTextContent.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
 
 import lig_conicum from '@/data/assets/lig-conicum.png'
 import flowSvg from './flow.svg?raw'
+import { ref } from 'vue'
+import { FlowActionPayload } from '@/types/flow'
+
+const action_sga = ref<InstanceType<typeof NsFlowAction> | null>(null)
+
+function handleAction(payload: FlowActionPayload) {
+  if (payload.key === 'sga') {
+    action_sga.value?.presentPopover(payload)
+  }
+}
 
 </script>
 

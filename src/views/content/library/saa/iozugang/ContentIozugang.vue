@@ -30,10 +30,10 @@
   </ns-content-group>
   <ns-content-group title="Nadelgröße">
     <ns-text-content>
-      <ul>
-        <li head>Rosa: <i>Tibia Kind</i></li>
-        <li head>Rosa: <i>Tibia Erwachsene</i></li>
-        <li head>Rosa: <i>Humerus Erwachsene</i></li>
+      <ul head>
+        <li>Rosa: <i>Tibia Kind</i></li>
+        <li>Rosa: <i>Tibia Erwachsene</i></li>
+        <li>Rosa: <i>Humerus Erwachsene</i></li>
       </ul>
       <hr>
       <p>
