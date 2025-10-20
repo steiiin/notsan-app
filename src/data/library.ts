@@ -15,6 +15,11 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/atemwegsmanagement/ContentAtemwegsmanagement.vue')
       },
       {
+        id: 'bpr-dyspnoe',
+        title: 'Dyspnoe',
+        component: () => import('@/views/content/library/bpr/dyspnoe/ContentDyspnoe.vue')
+      },
+      {
         id: 'bpr-dyspnoekind',
         title: 'Dyspnoe (Kinder)',
         component: () => import('@/views/content/library/bpr/dyspnoekind/ContentDyspnoekind.vue')
@@ -46,13 +51,13 @@ export const library: LibraryListItem[] = [
     [
 
       {
-        id: 'bpr-entlastung',
+        id: 'saa-entlastung',
         title: 'Thoraxentlastungspunktion',
         component: () => import('@/views/content/library/saa/entlastung/ContentEntlastung.vue')
       },
 
       {
-        id: 'bpr-iozugang',
+        id: 'saa-iozugang',
         title: 'Intraossärer Zugang',
         component: () => import('@/views/content/library/saa/iozugang/ContentIozugang.vue')
       },
