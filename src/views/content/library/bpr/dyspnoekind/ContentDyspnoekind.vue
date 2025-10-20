@@ -21,21 +21,34 @@
       <li>Bewusstsein?<i>Vigilanzminderung? Erschöpfung?</i></li>
     </ul>
   </ns-flow-action>
-  <ns-flow-action ref="action_maskoptim">
-    <h2>Maskenbeatmung optimieren</h2>
+  <ns-flow-action ref="action_branchasthma">
+    <h2>Hinweise auf Asthmaanfall</h2>
     <ul>
-      <li>Optimierung des Maskensitzes</li>
-      <li>Guedel/Wendl einsetzen</li>
-      <li>Doppel-C-Griff</li>
+      <li>Einziehungen</li>
+      <li>Einsatz Atemhilfsmuskulatur</li>
+      <li>Exspiratorisches Giemen</li>
+      <li>Evtl. Silent Chest</li>
+      <li>Evtl. bek. Asthma bronchiale</li>
     </ul>
   </ns-flow-action>
-  <ns-flow-action ref="action_sga">
-    <h2>Supraglottische Atemwegshilfe</h2>
-    <p>Instrumente zur Atemwegssicherung, mit Ventilationsöffnung <i>oberhalb</i> der Glottis.</p>
-    <hr>
+  <ns-flow-action ref="action_branchpseudokrupp">
+    <h2>Hinweise auf Pseudokrupp</h2>
     <ul>
-      <li>Larynxtubus <i>(z.B. LTS-D<sup>®</sup>)</i></li>
-      <li>Larynxmaske <i>(z.B. LMA, i-gel<sup>®</sup>)</i></li>
+      <li>Alter meist bis 3 Jahre</li>
+      <li>AZ nicht kritisch krank</li>
+      <li>Plötzlicher Beginn</li>
+      <li>Bellender, heiserer Husten</li>
+      <li>Temp. subfebril (37,5-37,9°C)</li>
+    </ul>
+  </ns-flow-action>
+  <ns-flow-action ref="action_branchbolus">
+    <h2>Hinweise auf Atemwegsverlegung</h2>
+    <ul>
+      <li>Inspiratorischer Stridor</li>
+      <li>Plötzlicher Beginn</li>
+      <li>Husten/Würgen</li>
+      <li>Gerade gegessen</li>
+      <li>Gerade gespielt</li>
     </ul>
   </ns-flow-action>
 
@@ -45,7 +58,6 @@
 import NsFlow from '@/components/library/NsFlow.vue'
 import NsFlowAction from '@/components/library/NsFlowAction.vue'
 import NsContentGroup from '@/components/NsContentGroup.vue'
-import NsSideeffect from '@/components/medications/NsSideeffect.vue'
 import NsTextContent from '@/components/NsTextContent.vue'
 
 import flowSvg from './flow.svg?raw'
@@ -53,18 +65,22 @@ import { FlowActionPayload } from '@/types/flow'
 import { ref } from 'vue'
 
 const action_respvers = ref<InstanceType<typeof NsFlowAction> | null>(null)
-const action_maskoptim = ref<InstanceType<typeof NsFlowAction> | null>(null)
-const action_sga = ref<InstanceType<typeof NsFlowAction> | null>(null)
+const action_branchasthma = ref<InstanceType<typeof NsFlowAction> | null>(null)
+const action_branchpseudokrupp = ref<InstanceType<typeof NsFlowAction> | null>(null)
+const action_branchbolus = ref<InstanceType<typeof NsFlowAction> | null>(null)
 
 function handleAction(payload: FlowActionPayload) {
   if (payload.key === 'respvers') {
     action_respvers.value?.presentPopover(payload)
   }
-  else if (payload.key === 'maskoptim') {
-    action_maskoptim.value?.presentPopover(payload)
+  else if (payload.key === 'branchasthma') {
+    action_branchasthma.value?.presentPopover(payload)
   }
-  else if (payload.key === 'sga') {
-    action_sga.value?.presentPopover(payload)
+  else if (payload.key === 'branchpseudokrupp') {
+    action_branchpseudokrupp.value?.presentPopover(payload)
+  }
+  else if (payload.key === 'branchbolus') {
+    action_branchbolus.value?.presentPopover(payload)
   }
 }
 
