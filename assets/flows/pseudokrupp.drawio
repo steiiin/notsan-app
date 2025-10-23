@@ -1,0 +1,59 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram name="Seite-1" id="L2w308fRFKuACmfVMeDd">
+    <mxGraphModel dx="462" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="540" pageHeight="550" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bO4cj00JHxBitIa0UD0s-28" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="139" y="70" />
+              <mxPoint x="139" y="70" />
+            </Array>
+            <mxPoint x="139" y="79.99999999999989" as="targetPoint" />
+            <mxPoint x="139" y="60" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bO4cj00JHxBitIa0UD0s-1" value="Pseudokrupp" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry width="540" height="60" as="geometry" />
+        </mxCell>
+        <UserObject label="BPR&lt;br&gt;Dyspnoe (Kind)" link="bpr:dyspnoekind" id="3Rt4DNnu2_XIqZ2--i2S-36">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05555555555555555;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;fontColor=default;" parent="1" vertex="1">
+            <mxGeometry x="280" y="80" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="0W22CO86VCLWNXcJxNLQ-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0W22CO86VCLWNXcJxNLQ-1" target="0W22CO86VCLWNXcJxNLQ-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0W22CO86VCLWNXcJxNLQ-1" value="&lt;b&gt;O2-Gabe&lt;/b&gt;&lt;div&gt;8-15l/min, Ziel &amp;gt; 92%&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="80" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0W22CO86VCLWNXcJxNLQ-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0W22CO86VCLWNXcJxNLQ-2" target="0W22CO86VCLWNXcJxNLQ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0W22CO86VCLWNXcJxNLQ-2" value="Anfeuchten der Atemluft&lt;div&gt;Sitzende Lagerung&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="160" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="0W22CO86VCLWNXcJxNLQ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0W22CO86VCLWNXcJxNLQ-3" target="0W22CO86VCLWNXcJxNLQ-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0W22CO86VCLWNXcJxNLQ-3" value="&lt;b&gt;4mg/4ml&lt;/b&gt; Adrenalin &lt;br&gt;(1:1000 = pur)&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;vernebeln&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="240" width="240" height="60" as="geometry" />
+        </mxCell>
+        <UserObject label="SAA Adrenalin" link="med:epinephrin" id="0W22CO86VCLWNXcJxNLQ-4">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05555555555555555;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry x="280" y="239.9999999999999" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="0W22CO86VCLWNXcJxNLQ-5" value="&lt;b&gt;100mg&lt;/b&gt; Prednisolon&lt;br&gt;als Zäpfchen" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="320" width="240" height="60" as="geometry" />
+        </mxCell>
+        <UserObject label="SAA Prednisolon" link="med:prednisolon" id="0W22CO86VCLWNXcJxNLQ-6">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05555555555555555;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry x="280" y="320" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
