@@ -1,0 +1,168 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram name="Seite-1" id="L2w308fRFKuACmfVMeDd">
+    <mxGraphModel dx="995" dy="1505" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="540" pageHeight="550" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="duVAPCJem9WXzaoJZaAi-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.241;exitY=1.007;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;endArrow=block;endFill=1;" edge="1" parent="1" source="bO4cj00JHxBitIa0UD0s-1" target="duVAPCJem9WXzaoJZaAi-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bO4cj00JHxBitIa0UD0s-1" value="Verbrennung / Verbrühung" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry width="540" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="1" source="duVAPCJem9WXzaoJZaAi-1" target="duVAPCJem9WXzaoJZaAi-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-1" value="Akutes A-Problem?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="79.99999999999989" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-31" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;" edge="1" parent="1" source="duVAPCJem9WXzaoJZaAi-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="410" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="BPR&lt;div&gt;Atemwegsmanagement&lt;/div&gt;" link="bpr:atemwegsmanagement" id="duVAPCJem9WXzaoJZaAi-2">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05555555555555555;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry x="290" y="80" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-16" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="duVAPCJem9WXzaoJZaAi-3" target="duVAPCJem9WXzaoJZaAi-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-3" value="Akutes B-Problem?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="180" width="240" height="60" as="geometry" />
+        </mxCell>
+        <UserObject label="BPR&lt;div&gt;Bronchialobstruktion&lt;/div&gt;" link="bpr:obstruktion" id="duVAPCJem9WXzaoJZaAi-4">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05555555555555555;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry x="290" y="180" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-5" value="Relevante CO-Intoxikation?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="280" width="240" height="60" as="geometry" />
+        </mxCell>
+        <UserObject label="SAA NIV" link="saa:niv" id="duVAPCJem9WXzaoJZaAi-7">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05555555555555555;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry x="290" y="279.9999999999999" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-18" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130.04761904761904" y="420" as="sourcePoint" />
+            <mxPoint x="130.04761904761904" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-8" value="Wundabdeckung mit nicht-haftenden Verbänden" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="380" width="520" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-19" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130.04761904761904" y="480" as="sourcePoint" />
+            <mxPoint x="130.04761904761904" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-9" value="Konsequenter Wärmeerhalt" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="440" width="520" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-10" value="Moderate Infusionstherapie (100ml / 10kg)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="500" width="520" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-23" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="duVAPCJem9WXzaoJZaAi-11" target="duVAPCJem9WXzaoJZaAi-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-24" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="duVAPCJem9WXzaoJZaAi-23">
+          <mxGeometry x="-0.0944" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-11" value="Schmerzen NRS&amp;nbsp;≥ 4?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="560" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-12" value="Zügiger Transport" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry y="660" width="540" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-17" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.231;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="duVAPCJem9WXzaoJZaAi-5" target="duVAPCJem9WXzaoJZaAi-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-20" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="540" as="sourcePoint" />
+            <mxPoint x="130" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-21" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="duVAPCJem9WXzaoJZaAi-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="BPR&lt;div&gt;Schmerzen&lt;/div&gt;" link="bpr:schmerzen" id="duVAPCJem9WXzaoJZaAi-22">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05555555555555555;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry x="290" y="560" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-25" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="310" as="sourcePoint" />
+            <mxPoint x="290" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-26" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="duVAPCJem9WXzaoJZaAi-25">
+          <mxGeometry x="-0.0944" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-27" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="210" as="sourcePoint" />
+            <mxPoint x="290" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-28" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="duVAPCJem9WXzaoJZaAi-27">
+          <mxGeometry x="-0.0944" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-29" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="110" as="sourcePoint" />
+            <mxPoint x="290" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-30" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="duVAPCJem9WXzaoJZaAi-29">
+          <mxGeometry x="-0.0944" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-32" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="260" as="targetPoint" />
+            <mxPoint x="410" y="240" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="410" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-33" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="360" as="targetPoint" />
+            <mxPoint x="410" y="340" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="410" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="duVAPCJem9WXzaoJZaAi-34" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="640" as="targetPoint" />
+            <mxPoint x="410" y="620" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="410" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
