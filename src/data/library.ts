@@ -50,6 +50,11 @@ export const library: LibraryListItem[] = [
         title: 'Schmerzen',
         component: () => import('@/views/content/library/bpr/schmerzen/ContentSchmerzen.vue')
       },
+      {
+        id: 'bpr-verbrennung',
+        title: 'Verbrennung',
+        component: () => import('@/views/content/library/bpr/verbrennung/ContentVerbrennung.vue')
+      },
 
     ]
   },
