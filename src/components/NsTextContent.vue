@@ -52,10 +52,23 @@
 }
 
 .ns-text-content :deep(ul) {
-  list-style: square inside;
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
 }
 .ns-text-content :deep(ul li) {
   line-height: 1.2;
+  position: relative;
+  padding-left: 14px;
+}
+.ns-text-content :deep(ul li::before) {
+  position: absolute;
+  left: 1px;
+  top: calc(0.6em - 2.5px);
+  width: 5px;
+  height: 5px;
+  background-color: var(--ion-color-dark);
+  content: " ";
 }
 
 .ns-text-content :deep(ul[head] li)
