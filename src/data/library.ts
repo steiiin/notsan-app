@@ -25,6 +25,12 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/dyspnoekind/ContentDyspnoekind.vue')
       },
       {
+        id: 'bpr-bolus',
+        title: 'Fremdkörperverlegung',
+        subtitle: 'Bolusgeschehen',
+        component: () => import('@/views/content/library/bpr/bolus/ContentBolus.vue')
+      },
+      {
         id: 'bpr-kindkritisch',
         title: 'Kritisches Kind',
         component: () => import('@/views/content/library/bpr/kindkritisch/ContentKindkritisch.vue')

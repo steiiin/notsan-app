@@ -1,0 +1,260 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="541px" height="902px" viewBox="-0.5 -0.5 541 902">
+  <rect x="0" y="0" width="540" height="60" rx="30" ry="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:#111;stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:30px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:#f7f7f7">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:#f7f7f7;line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">
+          Fremdkörperverlegung
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 300 110 L 331.88 110" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 338.88 110 L 331.88 113.5 L 331.88 106.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:110px;margin-left:314px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 80 80 L 280 80 L 300 110 L 280 140 L 80 140 L 60 110 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:110px;margin-left:61px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Bewusstlos?
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <rect x="340" y="160" width="200" height="60" rx="30" ry="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:#111;stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:198px;height:1px;padding-top:190px;margin-left:341px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:#f7f7f7">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:#f7f7f7;line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">
+          Reanimation
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 440 140 L 440 160 L 440 140 L 440 151.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 440 158.88 L 436.5 151.88 L 443.5 151.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="340" y="80" width="200" height="60" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:198px;height:1px;padding-top:110px;margin-left:341px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          <b>
+            Laryngoskopie
+          </b>
+          <br/>
+          Magillzange / Absaugen
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 80 260 L 520 260 L 540 290 L 520 320 L 80 320 L 60 290 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:478px;height:1px;padding-top:290px;margin-left:61px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Hustenstoß effektiv?
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <rect x="80" y="360" width="210" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:208px;height:1px;padding-top:380px;margin-left:81px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Zum Husten Auffordern
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <rect x="310" y="360" width="210" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:208px;height:1px;padding-top:380px;margin-left:311px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          5 Schläge auf Rücken
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 80 420 L 520 420 L 540 450 L 520 480 L 80 480 L 60 450 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:478px;height:1px;padding-top:450px;margin-left:61px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Fremdkörper entfernt &amp; Atmung suffizient?
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 185 140 L 185 251.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 185 258.88 L 181.5 251.88 L 188.5 251.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:200px;margin-left:185px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <rect x="80" y="620" width="210" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:208px;height:1px;padding-top:640px;margin-left:81px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          5 Thoraxkompressionen
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <rect x="130" y="674" width="210" height="50" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:208px;height:1px;padding-top:699px;margin-left:131px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          5 Oberbauchkompressionen
+          <br/>
+          (Heimlich-Manöver)
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 80 520 L 340 520 L 360 550 L 340 580 L 80 580 L 60 550 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:298px;height:1px;padding-top:550px;margin-left:61px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Kind &lt; 1 Jahr?
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 60 770 L 20 770 L 20 110 L 51.88 110" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 58.88 110 L 51.88 113.5 L 51.88 106.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:770px;margin-left:40px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 360 770 L 410 770" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 80 740 L 340 740 L 360 770 L 340 800 L 80 800 L 60 770 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:298px;height:1px;padding-top:770px;margin-left:61px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Fremdkörper entfernt &amp;
+          <br/>
+          Atmung suffizient?
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 184.8 320 L 184.78 340.96 L 184.79 351.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 184.8 358.88 L 181.29 351.89 L 188.29 351.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:338px;margin-left:184px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 414.87 320 L 414.87 340.96 L 414.87 351.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 414.87 358.88 L 411.37 351.88 L 418.37 351.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:337px;margin-left:415px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 185.04 400 L 185.04 411.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 185.04 418.88 L 181.54 411.88 L 188.54 411.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 414.96 400 L 414.96 411.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 414.96 418.88 L 411.46 411.88 L 418.46 411.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 184.79 480 L 184.78 500.96 L 184.79 511.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 184.79 518.88 L 181.29 511.88 L 188.29 511.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:498px;margin-left:185px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 105.03 580 L 105.04 600.96 L 105.04 611.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 105.03 618.88 L 101.54 611.88 L 108.54 611.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:598px;margin-left:104px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 315 580 L 315.04 627.57 L 315.19 665.93" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 315.22 672.93 L 311.69 665.95 L 318.69 665.92 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:597px;margin-left:315px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 314.59 724.35 L 314.74 731.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 314.88 738.88 L 311.24 731.95 L 318.24 731.81 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 105 660 L 105 731.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 105 738.88 L 101.5 731.88 L 108.5 731.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="0" y="840" width="540" height="60" rx="30" ry="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:#111;stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:870px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:#f7f7f7">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:#f7f7f7;line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">
+          Untersuchung / Überwachung / Transport
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 415 480 L 415 831.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 415 838.88 L 411.5 831.88 L 418.5 831.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:496px;margin-left:414px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 365 770 L 415 770" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:770px;margin-left:372px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
