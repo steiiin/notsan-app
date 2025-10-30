@@ -13,6 +13,12 @@ export const forms: FormListItem[] = [
         title: 'EKG-Diagnose',
         component: () => import('@/views/content/forms/diagnose/ekg/ContentEkg.vue')
       },
+      {
+        id: 'diagnose-kof',
+        title: 'KOF-Einschätzung',
+        subtitle: 'Verbrennungen',
+        component: () => import('@/views/content/forms/diagnose/kof/ContentKof.vue')
+      },
 
     ]
   },
