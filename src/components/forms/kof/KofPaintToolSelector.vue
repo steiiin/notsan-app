@@ -18,21 +18,12 @@
         <ion-icon :src="eraser"></ion-icon>
       </ion-button>
     </div>
-    <div class="kof-tools--clear">
-      <!-- TODO: remove clear, we don't need it - user can simply change ages for that. -->
-      <ion-button fill="outline" @click="clearTool"
-        expand="block" color="danger">
-        <ion-icon :src="trashOutline"></ion-icon>
-      </ion-button>
-    </div>
   </div>
 
 </template>
 
 <script setup lang="ts">
 import { IonButton, IonIcon } from '@ionic/vue'
-
-import { trashOutline } from 'ionicons/icons';
 import eraser from '@/data/assets/icons/icon-eraser.svg'
 
 import { computed, ref, watch } from 'vue';
@@ -44,10 +35,6 @@ const selectToolBurn1 = () => { selectTool('1st') }
 const selectToolBurn2 = () => { selectTool('2nd') }
 const selectToolBurn3 = () => { selectTool('3rd') }
 const selectToolEraser = () => { selectTool('erase') }
-const clearTool = () => {
-  selectTool('1st')
-  emit('clear')
-}
 
 const selectTool = (tool: ToolValue) => {
   selectedTool.value = tool;
@@ -56,13 +43,11 @@ const selectTool = (tool: ToolValue) => {
 
 const props = defineProps<{
   modelValue?: ToolValue
-  showClear?: boolean
 }>()
 
 
 const emit = defineEmits<{
   (event: 'update:modelValue', value: ToolValue): void
-  (event: 'clear'): void
 }>()
 
 watch(() => props.modelValue, (v) => {
@@ -71,12 +56,6 @@ watch(() => props.modelValue, (v) => {
 
 const isActive = (option: ToolValue) => option === props.modelValue
 const fill = (option: ToolValue) => isActive(option) ? 'solid' : 'outline'
-
-const tools = computed(() => {
-  return [
-
-  ]
-})
 
 </script>
 
