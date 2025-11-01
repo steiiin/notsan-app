@@ -106,12 +106,12 @@ const percColorStyle = (colorCode?: string): string => {
   }
   else
   {
-    return ''
+    return '--ns-kof-perc-color: var(--ion-color-dark-contrast-rgb);'
   }
 }
 
 const percRoundedValue = (perc: number): number => {
-  return round(perc, 3, perc>3 ? 'down' : 'up')
+  return round(perc, perc>5 ? 5 : 1)
 }
 
 const degreePercs = (pct1: number, pct2: number, pct3: number) => {
@@ -120,7 +120,7 @@ const degreePercs = (pct1: number, pct2: number, pct3: number) => {
   if (pct1 > 0) { parts.push({ deg: '1°', color: percColorStyle('1st'), val: percRoundedValue(pct1) }) }
   if (pct2 > 0) { parts.push({ deg: '2°', color: percColorStyle('2nd'), val: percRoundedValue(pct2) }) }
   if (pct3 > 0) { parts.push({ deg: '3°', color: percColorStyle('3rd'), val: percRoundedValue(pct3) }) }
-
+  if (parts.length>1) { parts.push({ deg: '∑', color: percColorStyle(), val: parts.map(e => e.val).reduce((a, v) => a + v, 0) }) }
   return parts.map(e => `<code style="${e.color}">${e.deg} <i>${e.val}%</i></code>`).join('')
 }
 
