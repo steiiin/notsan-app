@@ -56,7 +56,7 @@
 <script setup lang="ts">
 import { IonModal, IonPage, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonContent } from '@ionic/vue'
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue';
-import { KofAgeValue, KofInfo, KofPaintState } from '@/types/forms/kof';
+import { KofAgeValue, KofCalculation, KofInfo, KofPaintState } from '@/types/forms/kof';
 
 import NsButtonGroup from '@/components/NsButtonGroup.vue';
 import KofPaintToolSelector from './KofPaintToolSelector.vue';
@@ -289,9 +289,9 @@ import { brush, create, refresh } from 'ionicons/icons';
         const o = i * 4
         if (v === 0) { data[o+3] = 0; continue }
         let r=0, g=0, b=0, a=160
-        if (v === 1) { r=255; g=225; b=0 }     // 1° yellow
-        if (v === 2) { r=255; g=120; b=0 }     // 2° orange
-        if (v === 3) { r=220; g=0;   b=0 }     // 3° red
+        if (v === 1) { r=212; g=172; b=13 }     // 1° yellow
+        if (v === 2) { r=192; g=57; b=43 }     // 2° red
+        if (v === 3) { r=142; g=68;   b=173 }     // 3° violet
         data[o] = r; data[o+1] = g; data[o+2] = b; data[o+3] = a
       }
       ctx.putImageData(img, 0, 0)
@@ -364,8 +364,9 @@ import { brush, create, refresh } from 'ionicons/icons';
 
     const refreshing = ref(true)
 
-    watch(() => selectedAge.value, () => {
+    watch(() => selectedAge.value, (v) => {
       refreshing.value = true
+      emit('update:modelValue', { patientAge: v })
     })
 
     let imgResizeObserver: ResizeObserver|null = null
@@ -404,7 +405,10 @@ import { brush, create, refresh } from 'ionicons/icons';
 
 // #region kof calculation
 
-  const calculateKOF = () => {
+  const percCutoff = 0.03
+  const critCutoff = 5
+
+  const calculateKOF = (): KofCalculation => {
     const regionSums: Record<number, number> = {}
     let u1 = 0, u2 = 0, u3 = 0
     for (let i = 0; i < classMap!.length; i++) {
@@ -425,14 +429,30 @@ import { brush, create, refresh } from 'ionicons/icons';
     const regions = {
       face: pctByRegion(R.HEAD_F),
       hands: pctByRegion(R.HANDS),
-      genital: pctByRegion(R.GENITAL)
+      genital: pctByRegion(R.GENITAL),
     }
 
     const pct1 = u1 / scale
     const pct2 = u2 / scale
     const pct3 = u3 / scale
     const total = Math.min(100, (u1 + u2 + u3) / scale)
-    return { pct1, pct2, pct3, total, regions }
+
+    return {
+      perc1st: pct1,
+      perc2nd: pct2,
+      perc3rd: pct3,
+      has1st: (pct1>percCutoff),
+      has2nd: (pct2>percCutoff),
+      has3rd: (pct3>percCutoff),
+      percTotal: total,
+      criticalRegions: {
+        ...regions,
+        hasFace: regions.face>critCutoff,
+        hasHands: regions.hands>critCutoff,
+        hasGenital: regions.genital>critCutoff,
+      },
+    }
+
   }
 
   const scale = 10000 // 100.00% resolution
@@ -573,7 +593,7 @@ import { brush, create, refresh } from 'ionicons/icons';
       classMapRLE: rleEncode(classMap!),
       regionMapRLE: rleEncode(regionMap!)
     }
-    return <KofInfo>{ patientAge: selectedAge.value, paintState: state }
+    return <KofInfo>{ patientAge: selectedAge.value, paintState: state, calculation: calculateKOF() }
   }
 
   // classMap decoder/encoder
