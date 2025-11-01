@@ -1,5 +1,5 @@
 <template>
-  <div class="ns-button-group">
+  <div class="ns-button-group" :class="{ oneliner }">
     <ion-button
       v-for="option in options"
       :key="option.value"
@@ -25,6 +25,7 @@ type ButtonOption = {
 const props = defineProps<{
   options: ButtonOption[]
   modelValue?: ButtonValue
+  oneliner?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -47,9 +48,20 @@ const onSelect = (value: ButtonValue) => {
   gap: 0.5rem;
   width: 100%;
 }
+.ns-button-group.oneliner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
 
 .ns-button-group ion-button {
   width: 100%;
   margin: 0;
 }
+.ns-button-group.oneliner ion-button {
+  width: unset;
+  flex: 1;
+  overflow: hidden;
+}
+
 </style>

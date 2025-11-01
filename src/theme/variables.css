@@ -54,6 +54,16 @@
   --ns-flow-bpr: #F8CECC;
   --ns-flow-bpr-border: #B85450;
 
+  /* kof colors */
+  --ns-kof-burn-3rd:       #9B59B6; /* vivid purple */
+  --ns-kof-burn-3rd-rgb:   140, 80, 164;
+
+  --ns-kof-burn-2nd:       #E74C3C; /* bright red */
+  --ns-kof-burn-2nd-rgb:   208, 68, 54;
+
+  --ns-kof-burn-1st:       #F1C40F; /* rich yellow */
+  --ns-kof-burn-1st-rgb:   217, 176, 14;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -101,6 +111,16 @@
     --ns-flow-subprocess-border: #959595;
     --ns-flow-bpr: #512D2B;
     --ns-flow-bpr-border: #D7817E;
+
+    /* kof colors (dark theme) */
+    --ns-kof-burn-3rd:       #8E44AD;
+    --ns-kof-burn-3rd-rgb:   156, 88, 190;
+
+    --ns-kof-burn-2nd:       #C0392B;
+    --ns-kof-burn-2nd-rgb:   211, 80, 61;
+
+    --ns-kof-burn-1st:       #D4AC0D;
+    --ns-kof-burn-1st-rgb:   233, 190, 14;
 
   }
 }
