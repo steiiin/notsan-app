@@ -24,6 +24,7 @@ import NsContentGroup from '@/components/NsContentGroup.vue';
 import { KofInfo } from '@/types/forms/kof';
 
 import { computed, ref } from 'vue';
+import { round } from '@/service/math';
 
 const kof = ref<KofInfo>({ patientAge: 'adult' })
 const paintVisible = ref(true)
@@ -109,12 +110,16 @@ const percColorStyle = (colorCode?: string): string => {
   }
 }
 
+const percRoundedValue = (perc: number): number => {
+  return round(perc, 3, perc>3 ? 'down' : 'up')
+}
+
 const degreePercs = (pct1: number, pct2: number, pct3: number) => {
 
   const parts = []
-  if (pct1 > 0) { parts.push({ deg: '1°', color: percColorStyle('1st'), val: pct1.toFixed() }) }
-  if (pct2 > 0) { parts.push({ deg: '2°', color: percColorStyle('2nd'), val: pct2.toFixed() }) }
-  if (pct3 > 0) { parts.push({ deg: '3°', color: percColorStyle('3rd'), val: pct3.toFixed() }) }
+  if (pct1 > 0) { parts.push({ deg: '1°', color: percColorStyle('1st'), val: percRoundedValue(pct1) }) }
+  if (pct2 > 0) { parts.push({ deg: '2°', color: percColorStyle('2nd'), val: percRoundedValue(pct2) }) }
+  if (pct3 > 0) { parts.push({ deg: '3°', color: percColorStyle('3rd'), val: percRoundedValue(pct3) }) }
 
   return parts.map(e => `<code style="${e.color}">${e.deg} <i>${e.val}%</i></code>`).join('')
 }
