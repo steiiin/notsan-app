@@ -602,6 +602,11 @@ import { brush, create, refresh } from 'ionicons/icons';
   }
 
   const createKofInfo = (): KofInfo => {
+
+    if (classMap!.every(e=>!e)) {
+      return <KofInfo>{ patientAge: selectedAge.value }
+    }
+
     const state: KofPaintState = {
       width: W,
       height: H,
@@ -609,6 +614,7 @@ import { brush, create, refresh } from 'ionicons/icons';
       regionMapRLE: rleEncode(regionMap!)
     }
     return <KofInfo>{ patientAge: selectedAge.value, paintState: state, calculation: calculateKOF() }
+
   }
 
   // classMap decoder/encoder
