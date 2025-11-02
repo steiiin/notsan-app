@@ -7,7 +7,7 @@
     <div class="subtitle">{{ infoData.subtitle }}</div>
     <div class="percs" v-html="infoData.percs" v-if="infoData.percs"></div>
   </ns-content-group>
-   <ns-content-group style="margin-top:-1rem">
+   <ns-content-group style="margin-top:-0.3rem">
     <div class="buttons">
       <ion-button @click="openPaint" color="light" class="block">Bereiche bearbeiten</ion-button>
       <ion-button @click="resetPaint" color="danger">Neu</ion-button>
@@ -173,6 +173,7 @@ const degreePercs = (pct1: number, pct2: number, pct3: number) => {
   font-size: 0.8em;
   font-family: var(--ion-font-family), inherit;
   font-weight: normal;
+  font-style: normal;
 }
 </style>
 
