@@ -301,36 +301,51 @@ import { brush, create, refresh } from 'ionicons/icons';
   // #region pointer events
 
     const onPointerDown = (e: PointerEvent) => {
+
       isDrawing.value = true
+      scratch.value!.setPointerCapture(e.pointerId)
 
       const { x, y } = toCanvasXY(e)
-
       lastX = x; lastY = y
-      const v = classValueForTool(selectedTool.value)
 
-      paintDot(x, y, brushPx.value, v)
+      paintDot(x, y, brushPx.value, classValueForTool(selectedTool.value))
       redrawDisplay()
 
       e.preventDefault()
+      e.stopPropagation()
+
     }
 
     const onPointerMove = (e: PointerEvent) => {
+
       if (!isDrawing.value) return
+
       const { x, y } = toCanvasXY(e)
-      const v = classValueForTool(selectedTool.value)
-      paintStrokeSegment(lastX, lastY, x, y, brushPx.value, v)
-      lastX = x; lastY = y
+
+      paintStrokeSegment(lastX, lastY, x, y, brushPx.value, classValueForTool(selectedTool.value))
       redrawDisplay()
+
+      lastX = x; lastY = y
+
       e.preventDefault()
+      e.stopPropagation()
+
     }
 
-    const onPointerUp = () => {
+    const onPointerUp = (e?: PointerEvent) => {
 
       isDrawing.value = false
+      if (e && scratch.value?.hasPointerCapture(e.pointerId)) {
+        scratch.value.releasePointerCapture(e.pointerId)
+      }
 
       const info = createKofInfo()
       emit('update:modelValue', info)
 
+    }
+
+    const onPointerCancel = (e: PointerEvent) => {
+      onPointerUp(e)
     }
 
     const pointerEventsRegistered = ref(false)
@@ -342,7 +357,8 @@ import { brush, create, refresh } from 'ionicons/icons';
       el.style.pointerEvents = 'auto'
       el.addEventListener('pointerdown', onPointerDown, { passive: false })
       el.addEventListener('pointermove', onPointerMove, { passive: false })
-      window.addEventListener('pointerup', onPointerUp)
+      el.addEventListener('pointerup', onPointerUp, { passive: false })
+      el.addEventListener('pointercancel', onPointerCancel, { passive: false })
       pointerEventsRegistered.value = true
 
     }
@@ -353,7 +369,8 @@ import { brush, create, refresh } from 'ionicons/icons';
       el.style.pointerEvents = 'none'
       el.removeEventListener('pointerdown', onPointerDown)
       el.removeEventListener('pointermove', onPointerMove)
-      window.removeEventListener('pointerup', onPointerUp)
+      el.removeEventListener('pointerup', onPointerUp)
+      el.removeEventListener('pointercancel', onPointerCancel)
       pointerEventsRegistered.value = false
 
     }
@@ -547,8 +564,6 @@ import { brush, create, refresh } from 'ionicons/icons';
       regionUnit[r] = n > 0 ? (perc * scale) / n : 0
     }
 
-    // Optional: sanity check — sum of all region pixels * unit ≈ 100%
-    // totalUnits should be 100 * SCALE
     totalUnits = 100 * scale
   }
 
@@ -719,6 +734,7 @@ onBeforeUnmount(() => {
   position: relative;
   text-align: center;
   max-width: 100%;
+  overscroll-behavior: none;
 }
 .kof-paint .stage.refreshing {
   opacity: .2;
@@ -740,6 +756,11 @@ onBeforeUnmount(() => {
 
 .kof-paint .stage canvas.scratch {
   pointer-events: auto;
+  touch-action: none;
+  -ms-touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .kof-paint .stage .hidden {
