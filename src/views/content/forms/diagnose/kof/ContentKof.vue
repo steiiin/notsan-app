@@ -9,8 +9,8 @@
   </ns-content-group>
    <ns-content-group style="margin-top:-0.3rem">
     <div class="buttons">
-      <ion-button @click="openPaint" color="light" class="block">Bereiche bearbeiten</ion-button>
-      <ion-button @click="resetPaint" color="danger">Neu</ion-button>
+      <ion-button @click="openPaint" color="light" class="block">Bereiche {{ hasAlreadyPaint ? 'bearbeiten' : 'einzeichnen' }}</ion-button>
+      <ion-button @click="resetPaint" color="danger" v-if="hasAlreadyPaint">Neu</ion-button>
     </div>
   </ns-content-group>
 
@@ -36,6 +36,7 @@ const resetPaint = () => {
   kof.value = { patientAge: 'adult' }
   openPaint()
 }
+const hasAlreadyPaint = computed(() => !!kof.value.paintState)
 
 const infoData = computed(() => {
 
