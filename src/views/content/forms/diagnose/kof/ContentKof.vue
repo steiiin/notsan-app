@@ -180,10 +180,7 @@ const burnclinicInfoData = computed(() => {
   }
   else
   {
-    let color = '1st'
-    if (kof.value.calculation?.has3rd) { color = '3rd' }
-    else if (kof.value.calculation?.has2nd) { color = '2nd' }
-    return { title: 'Verbrennungsbett notwendig', subtitle: checks.join(', '), color: cardColorStyle(color) }
+    return { title: 'Verbrennungsbett notwendig', subtitle: checks.join(', '), color: cardColorStyle('') }
   }
 
 })
