@@ -41,6 +41,12 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/nausea/ContentNausea.vue')
       },
       {
+        id: 'bpr-obstruktion',
+        title: 'Bronchoobstruktion',
+        subtitle: 'Asthmaanfall/COPD',
+        component: () => import('@/views/content/library/bpr/obstruktion/ContentObstruktion.vue')
+      },
+      {
         id: 'bpr-pseudokrupp',
         title: 'Pseudokrupp',
         component: () => import('@/views/content/library/bpr/pseudokrupp/ContentPseudokrupp.vue')
