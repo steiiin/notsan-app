@@ -62,6 +62,11 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/schmerzen/ContentSchmerzen.vue')
       },
       {
+        id: 'bpr-tachykardie',
+        title: 'Instabile Tachykardie',
+        component: () => import('@/views/content/library/bpr/tachykardie/ContentTachykardie.vue')
+      },
+      {
         id: 'bpr-verbrennung',
         title: 'Verbrennung',
         component: () => import('@/views/content/library/bpr/verbrennung/ContentVerbrennung.vue')
