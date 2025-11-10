@@ -1,0 +1,195 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram name="Seite-1" id="L2w308fRFKuACmfVMeDd">
+    <mxGraphModel dx="785" dy="974" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="540" pageHeight="550" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bO4cj00JHxBitIa0UD0s-28" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="70" />
+              <mxPoint x="130" y="70" />
+            </Array>
+            <mxPoint x="130" y="79.99999999999989" as="targetPoint" />
+            <mxPoint x="130" y="60" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bO4cj00JHxBitIa0UD0s-1" value="Hypertensive Krise" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry width="540" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-44" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="0W22CO86VCLWNXcJxNLQ-4" target="026jm_BUoWxCm0zLgHDN-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="SAA Urapidil" link="med:urapidil" id="0W22CO86VCLWNXcJxNLQ-4">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.05555555555555555;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;fontColor=default;labelBackgroundColor=none;" parent="1" vertex="1">
+            <mxGeometry x="10" y="539.9999999999999" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-1" target="026jm_BUoWxCm0zLgHDN-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-4" value="NEIN" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="026jm_BUoWxCm0zLgHDN-3">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint x="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-25" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-1" target="026jm_BUoWxCm0zLgHDN-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-1" value="Zeichen einer&lt;div&gt;Organdysfunktion?&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="79.99999999999989" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-2" value="Transport" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-26" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-5" target="026jm_BUoWxCm0zLgHDN-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-5" value="Dyspnoe mit&amp;nbsp;&lt;div&gt;Lungenstauung?&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="180" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-27" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-6" target="026jm_BUoWxCm0zLgHDN-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-6" value="Angina Pectoris?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="260" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-37" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-8" target="026jm_BUoWxCm0zLgHDN-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="BE-FAST positiv?" link="/?action=befast" id="026jm_BUoWxCm0zLgHDN-8">
+          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;dashed=1;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry x="10" y="339.9999999999999" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-17" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;entryX=0.778;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.914;exitY=0.995;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-9" target="026jm_BUoWxCm0zLgHDN-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="330" as="sourcePoint" />
+            <mxPoint x="510" y="430" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="380" />
+              <mxPoint x="510" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="BPR&lt;br&gt;Kardiales Lungenödem" link="bpr:oedem" id="026jm_BUoWxCm0zLgHDN-9">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.043478260869565216;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;fontColor=default;" vertex="1" parent="1">
+            <mxGeometry x="300" y="180" width="230" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="BPR&lt;br&gt;Akutes Koronarsyndrom" link="bpr:acs" id="026jm_BUoWxCm0zLgHDN-10">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.043478260869565216;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;fontColor=default;" vertex="1" parent="1">
+            <mxGeometry x="300" y="260" width="230" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-38" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-11" target="026jm_BUoWxCm0zLgHDN-32">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="335" y="410" />
+              <mxPoint x="335" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="BPR&lt;br&gt;Schlaganfall" link="bpr:schlaganfall" id="026jm_BUoWxCm0zLgHDN-11">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.043478260869565216;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;fontColor=default;" vertex="1" parent="1">
+            <mxGeometry x="300" y="340" width="190" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-35" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-12" target="0W22CO86VCLWNXcJxNLQ-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="485" y="520" />
+              <mxPoint x="130" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-12" value="&lt;b&gt;Zielwert&lt;/b&gt;&lt;br&gt;140mmHg" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="440" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="210" as="sourcePoint" />
+            <mxPoint x="300" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-20" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="026jm_BUoWxCm0zLgHDN-19">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint x="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="290" as="sourcePoint" />
+            <mxPoint x="300" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-22" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="026jm_BUoWxCm0zLgHDN-21">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint x="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="370" as="sourcePoint" />
+            <mxPoint x="300" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-24" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="026jm_BUoWxCm0zLgHDN-23">
+          <mxGeometry x="-0.1" relative="1" as="geometry">
+            <mxPoint x="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-34" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-31" value="&lt;b&gt;Senkung ab&lt;/b&gt;&amp;nbsp;&lt;br&gt;RRsyst &amp;gt; 180mmHg&amp;nbsp;&lt;div&gt;RRdia &amp;gt; 110mmHg&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="440" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-36" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="335" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-32" value="&lt;b&gt;Senkung ab&lt;/b&gt;&amp;nbsp;&lt;br&gt;RRsyst &amp;gt; 220mmHg&amp;nbsp;&lt;div&gt;RRdia &amp;gt; 120mmHg&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="240" y="440" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-45" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-39" target="026jm_BUoWxCm0zLgHDN-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-39" value="Kontrolle nach 3min" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="619.9999999999999" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-42" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-40" target="026jm_BUoWxCm0zLgHDN-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-43" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="026jm_BUoWxCm0zLgHDN-42">
+          <mxGeometry x="-0.1152" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-46" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="026jm_BUoWxCm0zLgHDN-40" target="0W22CO86VCLWNXcJxNLQ-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="715" />
+              <mxPoint x="300" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-47" value="NEIN" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="026jm_BUoWxCm0zLgHDN-46">
+          <mxGeometry x="-0.8074" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-40" value="Senkung um 25% des&amp;nbsp;&lt;br&gt;Ausgangswertes?&amp;nbsp;&lt;div&gt;Oder Zielwert erreicht?&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="10" y="680" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="026jm_BUoWxCm0zLgHDN-41" value="Transport" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="10" y="790" width="240" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

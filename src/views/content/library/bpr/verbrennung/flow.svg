@@ -27,7 +27,11 @@
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:atemwegsmanagement"><rect x="290" y="80" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
 
 
+
+
 <path d="M 303 80 L 303 140 M 517 80 L 517 140" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:211px;height:1px;padding-top:110px;margin-left:304px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR<div>Atemwegsmanagement</div></div></div></div></foreignObject></a>
@@ -46,7 +50,11 @@
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:obstruktion"><rect x="290" y="180" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
 
 
+
+
 <path d="M 303 180 L 303 240 M 517 180 L 517 240" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:211px;height:1px;padding-top:210px;margin-left:304px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR<div>Bronchialobstruktion</div></div></div></div></foreignObject></a>
@@ -63,7 +71,11 @@
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/saa:niv"><rect x="290" y="280" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
 
 
+
+
 <path d="M 303 280 L 303 340 M 517 280 L 517 340" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:211px;height:1px;padding-top:310px;margin-left:304px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">SAA NIV</div></div></div></foreignObject></a>
@@ -141,7 +153,11 @@
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:schmerzen"><rect x="290" y="560" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
 
 
+
+
 <path d="M 303 560 L 303 620 M 517 560 L 517 620" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:211px;height:1px;padding-top:590px;margin-left:304px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR<div>Schmerzen</div></div></div></div></foreignObject></a>
