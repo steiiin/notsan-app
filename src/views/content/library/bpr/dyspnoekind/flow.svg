@@ -35,6 +35,8 @@
 
 
 
+
+
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:110px;margin-left:1px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Respiratorisches Versagen?</div></div></div></foreignObject></a>
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:atemwegsmanagement"><rect x="0" y="180" width="220" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
 
@@ -49,7 +51,11 @@
 
 
 
+
+
 <path d="M 10 180 L 10 240 M 210 180 L 210 240" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 
@@ -90,7 +96,11 @@
 
 
 
+
+
 <path d="M 379 360 L 379 420 M 531 360 L 531 420" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 
@@ -134,7 +144,11 @@ Bolus</div></div></div></foreignObject></a>
 
 
 
+
+
 <path d="M 194 360 L 194 420 M 346 360 L 346 420" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 
@@ -165,7 +179,11 @@ Pseudokrupp</div></div></div></foreignObject></a>
 
 
 
+
+
 <path d="M 9 360 L 9 420 M 161 360 L 161 420" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 
@@ -193,7 +211,11 @@ Bronchialobstruktion</div></div></div></foreignObject></a>
 
 
 
+
+
 <path d="M 194 460 L 194 520 M 346 460 L 346 520" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 
@@ -223,6 +245,8 @@ Dyspnoe</div></div></div></foreignObject></a>
 
 
 
+
+
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:173px;height:1px;padding-top:310px;margin-left:186px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Pseudokrupp?</div></div></div></foreignObject></a>
   <a xlink:href="file:///?action=branchbolus"><path d="M 390 280 L 520 280 L 540 310 L 520 340 L 390 340 L 370 310 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
 
@@ -237,8 +261,12 @@ Dyspnoe</div></div></div></foreignObject></a>
 
 
 
+
+
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:168px;height:1px;padding-top:310px;margin-left:371px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Verlegung?</div></div></div></foreignObject></a>
   <a xlink:href="file:///?action=branchasthma"><path d="M 20 280 L 150 280 L 170 310 L 150 340 L 20 340 L 0 310 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+
+
 
 
 

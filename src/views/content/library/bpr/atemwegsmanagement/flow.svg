@@ -92,7 +92,11 @@
 
 
 
+
+
 <path d="M 313 80 L 313 140 M 527 80 L 527 140" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 
@@ -316,6 +320,8 @@
   <path d="M 430 600 L 430 610 L 430 611.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 430 618.88 L 426.5 611.88 L 433.5 611.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <a xlink:href="file:///?action=sga"><rect x="320" y="560" width="220" height="40" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+
+
 
 
 
