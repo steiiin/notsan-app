@@ -62,12 +62,8 @@
           </p>
 
         </ns-dosage-usage>
-        <ns-dosage-usage type="nasal">
+        <ns-dosage-usage type="im">
 
-          <p>
-            Der <b>MAD</b>-Zerstäuber ist <text-underline>obligatorisch</text-underline>,<br>
-            da Bioverfügbarkeit nur bei 40-50%.
-          </p>
           <p>
             Nur benutzen, wenn kein i.v.-Zugang möglich.
           </p>
@@ -79,7 +75,7 @@
     </ns-content-group>
 
     <ns-pharmacokinetics
-      onset="<case>i.v.</case>1-2 Minuten|<case>nasal</case>3-10 Minuten"
+      onset="<case>i.v.</case>1-2 Minuten|<case>i.m.</case>3-5 Minuten"
       duration="30-90 Minuten">
     </ns-pharmacokinetics>
 
