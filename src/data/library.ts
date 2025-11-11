@@ -31,6 +31,11 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/bolus/ContentBolus.vue')
       },
       {
+        id: 'bpr-bradykardie',
+        title: 'Instabile Bradykardie',
+        component: () => import('@/views/content/library/bpr/bradykardie/ContentBradykardie.vue')
+      },
+      {
         id: 'bpr-hypertensiv',
         title: 'Hypertensiver Notfall',
         component: () => import('@/views/content/library/bpr/hypertensiv/ContentHypertensiv.vue')

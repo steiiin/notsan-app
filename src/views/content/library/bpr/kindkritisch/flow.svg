@@ -123,10 +123,18 @@
 
 
 
+
+
+
+
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:270px;margin-left:1px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Atemwege stabilisieren</div></div></div></foreignObject></a>
   <path d="M 420 290 L 420 310 L 420 280 L 420 291.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 420 298.88 L 416.5 291.88 L 423.5 291.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <a xlink:href="file:///?action=atemwege"><rect x="300" y="250" width="240" height="40" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+
+
+
+
 
 
 
