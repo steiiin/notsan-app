@@ -178,11 +178,11 @@ export const usePatientStore = defineStore('patient', {
     weight(state): number {
 
       const nextHash = this._hashInputs
-      if (nextHash == state.cache.weightHash) { return state.cache.weightValue }
+      if (!isNaN(state.cache.weightValue) && nextHash == state.cache.weightHash) { return state.cache.weightValue }
 
       if (this.resultType == 'direct')
       {
-        state.cache.weightValue = this.weight
+        state.cache.weightValue = this.inputWeight
       }
       else if (this.resultType == 'by-age')
       {
