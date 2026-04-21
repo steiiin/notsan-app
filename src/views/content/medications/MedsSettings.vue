@@ -70,23 +70,8 @@
               </ion-item>
             </template>
 
-            <ion-note
-              v-if="inlineHintByMedication[medication.id]"
-              class="ion-padding-start hint"
-              color="warning"
-            >
-              {{ inlineHintByMedication[medication.id] }}
-            </ion-note>
           </template>
         </ion-list>
-
-        <ion-toast
-          :is-open="toastOpen"
-          :message="toastMessage"
-          :duration="1600"
-          position="bottom"
-          @didDismiss="toastOpen = false"
-        />
       </ion-content>
     </ion-page>
   </ion-modal>
@@ -110,11 +95,9 @@ import {
   IonList,
   IonListHeader,
   IonToggle,
-  IonNote,
-  IonToast,
 } from '@ionic/vue';
 import { closeOutline } from 'ionicons/icons'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { regionOptions } from '@/data/regions'
 import { useContentStore } from '@/stores/content'
 import { useConfigStore } from '@/stores/config'
@@ -130,9 +113,6 @@ const emit = defineEmits<{
 
 const contentStore = useContentStore()
 const configStore = useConfigStore()
-const toastOpen = ref(false)
-const toastMessage = ref('')
-const inlineHintByMedication = ref<Record<string, string>>({})
 
 const selectedRegionId = computed(() => configStore.medSettings.selectedRegionId ?? 'default')
 
@@ -156,30 +136,6 @@ const onMedicationToggle = (medicationId: string, event: CustomEvent) => {
 
 const onPackageToggle = (medicationId: string, packageId: string, event: CustomEvent) => {
   const enabled = Boolean(event.detail?.checked)
-  const medication = contentStore.findMedicationById(medicationId)
-
-  if (!medication) {
-    return
-  }
-
-  if (!enabled) {
-    const activePackages = medication.packages.filter(pkg => configStore.checkPackageEnabled(medicationId, pkg.id)).length
-    if (activePackages <= 1) {
-      const message = 'Mindestens eine Packung muss aktiv bleiben.'
-      inlineHintByMedication.value = {
-        ...inlineHintByMedication.value,
-        [medicationId]: message,
-      }
-      toastMessage.value = message
-      toastOpen.value = true
-      return
-    }
-  }
-
-  inlineHintByMedication.value = {
-    ...inlineHintByMedication.value,
-    [medicationId]: '',
-  }
   configStore.toggleMedicationPackage(medicationId, packageId, enabled)
 }
 </script>
@@ -187,12 +143,5 @@ const onPackageToggle = (medicationId: string, packageId: string, event: CustomE
 <style scoped>
 .package-item {
   --inner-padding-start: 1.5rem;
-}
-
-.hint {
-  display: block;
-  font-size: 0.8rem;
-  margin-top: -0.35rem;
-  margin-bottom: 0.4rem;
 }
 </style>

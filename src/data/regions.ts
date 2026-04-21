@@ -30,20 +30,9 @@ export const createDefaultMedSettings = (): MedSettings => ({
   selectedRegionId: null,
 });
 
-const ensureAtLeastOnePackageEnabled = (medicationSettings: PerMedicationConfig): PerMedicationConfig => {
-  const packageIds = Object.keys(medicationSettings.packages);
-
-  if (packageIds.length === 0) {
-    return medicationSettings;
-  }
-
-  const hasEnabledPackage = packageIds.some((packageId) => medicationSettings.packages[packageId]);
-
-  if (hasEnabledPackage) {
-    return medicationSettings;
-  }
-
-  medicationSettings.packages[packageIds[0]] = true;
+const syncMedicationEnabledWithPackages = (medicationSettings: PerMedicationConfig): PerMedicationConfig => {
+  const hasEnabledPackage = Object.values(medicationSettings.packages).some(Boolean);
+  medicationSettings.enabled = hasEnabledPackage;
   return medicationSettings;
 };
 
@@ -68,7 +57,7 @@ export const normalizeMedSettings = (value: unknown): MedSettings => {
         incomingMed?.packages?.[packageId] ?? defaults.medications[medId].packages[packageId];
     }
 
-    ensureAtLeastOnePackageEnabled(defaults.medications[medId]);
+    syncMedicationEnabledWithPackages(defaults.medications[medId]);
   }
 
   defaults.selectedRegionId = typeof input.selectedRegionId === 'string' || input.selectedRegionId === null
@@ -102,16 +91,10 @@ export const applyMedSettingsOverride = (
       }
     }
 
-    ensureAtLeastOnePackageEnabled(normalized.medications[medId])
+    syncMedicationEnabledWithPackages(normalized.medications[medId])
   }
 
   return normalized
-}
-
-export const ensureMedicationHasEnabledPackage = (settings: MedSettings, medId: string): MedSettings => {
-  if (!settings.medications[medId]) { return settings }
-  ensureAtLeastOnePackageEnabled(settings.medications[medId])
-  return settings
 }
 
 // ############################################################################
@@ -127,10 +110,10 @@ export const regionProfiles: Record<string, RegionProfile> = {
   },
 
   rdb_nord: {
-    id: 'lk_mei',
+    id: 'rdb_nord',
     label: 'Landkreis Meißen (Stub)',
     settings: {
-      selectedRegionId: 'lk_mei',
+      selectedRegionId: 'rdb_nord',
       medications: {
         [MedId.Prednisolon]: {
           packages: {

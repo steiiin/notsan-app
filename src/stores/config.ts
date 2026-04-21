@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { applyMedSettingsOverride, createDefaultMedSettings, ensureMedicationHasEnabledPackage, normalizeMedSettings, regionProfiles } from '@/data/regions'
+import { applyMedSettingsOverride, createDefaultMedSettings, normalizeMedSettings, regionProfiles } from '@/data/regions'
 import type { MedSettings } from '@/types/config'
 
 const CONFIGSTORE_KEY = 'configstore';
@@ -26,8 +26,16 @@ export const useConfigStore = defineStore('config', {
         return;
       }
 
-      const nextValue = enabled ?? !this.medSettings.medications[medId].enabled;
-      this.medSettings.medications[medId].enabled = nextValue;
+      const medication = this.medSettings.medications[medId];
+      const nextValue = enabled ?? !medication.enabled;
+      medication.enabled = nextValue;
+
+      if (nextValue) {
+        for (const packageId of Object.keys(medication.packages)) {
+          medication.packages[packageId] = true;
+        }
+      }
+
       this.persistConfig();
     },
 
@@ -43,13 +51,9 @@ export const useConfigStore = defineStore('config', {
 
       const nextValue = enabled ?? !medication.packages[packageId];
       medication.packages[packageId] = nextValue;
-
-      this.enforceAtLeastOnePackageActive(medId);
+      const hasAnyPackageEnabled = Object.values(medication.packages).some(Boolean);
+      medication.enabled = hasAnyPackageEnabled;
       this.persistConfig();
-    },
-
-    enforceAtLeastOnePackageActive(medId: string) {
-      this.medSettings = ensureMedicationHasEnabledPackage(this.medSettings, medId);
     },
 
     applyRegionPreset(regionId: string) {

@@ -30,6 +30,7 @@
 import { IonPage, IonHeader, IonToolbar, IonIcon, IonTitle, IonContent, IonButtons, IonButton, IonSearchbar, onIonViewWillEnter } from '@ionic/vue';
 
 import { useContentStore } from '@/stores/content'
+import { useConfigStore } from '@/stores/config'
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -41,8 +42,13 @@ import { settingsOutline } from 'ionicons/icons'
 import { gainFocus } from '@/service/input';
 
 const content = useContentStore()
+const config = useConfigStore()
 
-const medications = computed(() => content.getMedications.map(i => ({ ...i, path: `/tabs/meds/${i.id}` })) )
+const medications = computed(() =>
+  content.medications
+    .filter((medication) => config.checkMedicationEnabled(medication.id))
+    .map(i => ({ ...i, path: `/tabs/meds/${i.id}` })),
+)
 
 // #region Search
 
@@ -100,4 +106,3 @@ const medications = computed(() => content.getMedications.map(i => ({ ...i, path
 // #endregion
 
 </script>
-
