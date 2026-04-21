@@ -22,6 +22,10 @@ export const useConfigStore = defineStore('config', {
     },
   },
   actions: {
+    clearSelectedRegionPreset() {
+      this.medSettings.selectedRegionId = null;
+    },
+
     toggleMedicationEnabled(medId: string, enabled?: boolean) {
 
       if (!this.medSettings.medications[medId]) {
@@ -38,6 +42,7 @@ export const useConfigStore = defineStore('config', {
         }
       }
 
+      this.clearSelectedRegionPreset();
       this.persistConfig()
     },
 
@@ -55,6 +60,7 @@ export const useConfigStore = defineStore('config', {
       medication.packages[packageId] = nextValue;
       const hasAnyPackageEnabled = Object.values(medication.packages).some(Boolean);
       medication.enabled = hasAnyPackageEnabled;
+      this.clearSelectedRegionPreset();
       this.persistConfig();
     },
 

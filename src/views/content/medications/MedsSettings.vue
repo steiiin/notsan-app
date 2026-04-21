@@ -11,55 +11,45 @@
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding">
+      <ion-content>
         <ion-list inset>
           <ion-item>
+
             <ion-select
-              aria-label="Rettungsdienstbereich"
               label="Rettungsdienstbereich"
-              label-placement="stacked"
               interface="popover"
-              :value="selectedRegionId"
-              @update:modelValue="onRegionChange"
-            >
-              <ion-select-option
-                v-for="region in regionOptions"
-                :key="region.id"
-                :value="region.id"
-              >
+              placeholder="Keine Bereich gewählt"
+              :model-value="selectedRegionId"
+              @update:modelValue="onRegionChange">
+              <ion-select-option v-for="region in regionOptions"
+                :key="region.id" :value="region.id">
                 {{ region.label }}
               </ion-select-option>
             </ion-select>
+
           </ion-item>
         </ion-list>
 
         <ion-list inset>
-          <ion-list-header>
-            <ion-label>Medikamente</ion-label>
-          </ion-list-header>
 
           <template v-for="medication in contentStore.medications" :key="medication.id">
 
-            <ion-item>
+            <ion-item :lines="medication.packages.length>1 ? 'inset' : 'full'">
               <ion-toggle label-placement="start"
                 :checked="configStore.checkMedicationEnabled(medication.id)"
                 @update:modelValue="onMedicationToggle(medication.id, $event)">
-                <ion-label>
-                  <h3>{{ medication.title }}</h3>
-                  <p v-if="medication.subtitle">{{ medication.subtitle }}</p>
-                </ion-label>
+                <ion-label>{{ medication.title }}</ion-label>
               </ion-toggle>
             </ion-item>
 
             <template v-if="medication.packages.length > 1">
-              <ion-item
-                v-for="medPackage in medication.packages"
-                :key="medPackage.id"
-                lines="none"
-                class="package-item"
-              >
+
+              <ion-item v-for="medPackage in medication.packages" :key="medPackage.id"
+                lines="none" class="package-item">
+
                 <ion-label class="ion-text-wrap">
-                  <p>{{ medPackage.name }}</p>
+                  <h3>{{ medPackage.name }}</h3>
+                  <p>{{ medPackage.incredients[0].amount }}</p>
                 </ion-label>
                 <ion-toggle
                   slot="end"
@@ -67,6 +57,7 @@
                   :disabled="!configStore.checkMedicationEnabled(medication.id)"
                   @update:modelValue="onPackageToggle(medication.id, medPackage.id, $event)"
                 />
+
               </ion-item>
             </template>
 
@@ -78,6 +69,7 @@
 </template>
 
 <script setup lang="ts">
+
 import {
   IonModal,
   IonPage,
@@ -99,7 +91,7 @@ import {
 
 import { closeOutline } from 'ionicons/icons'
 import { computed } from 'vue'
-import { regionOptions } from '@/data/regions'
+import { findMatchingRegionId, regionOptions } from '@/data/regions'
 import { useContentStore } from '@/stores/content'
 import { useConfigStore } from '@/stores/config'
 
@@ -115,7 +107,11 @@ const emit = defineEmits<{
 const contentStore = useContentStore()
 const configStore = useConfigStore()
 
-const selectedRegionId = computed(() => configStore.medSettings.selectedRegionId ?? 'default')
+const selectedRegionId = computed(() => {
+  return configStore.medSettings.selectedRegionId
+    ?? findMatchingRegionId(configStore.medSettings)
+    ?? undefined
+})
 
 const closeSettings = () => {
   emit('update:modelValue', false)
@@ -134,8 +130,6 @@ const onMedicationToggle = (medicationId: string, enabled: boolean | null | unde
 }
 
 const onPackageToggle = (medicationId: string, packageId: string, enabled: boolean | null | undefined) => {
-  console.log('onPackageToggle fired', medicationId, packageId, enabled)
-  debugger
   configStore.toggleMedicationPackage(medicationId, packageId, Boolean(enabled))
 }
 </script>

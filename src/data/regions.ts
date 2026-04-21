@@ -97,13 +97,50 @@ export const applyMedSettingsOverride = (
   return normalized
 }
 
+const haveMatchingMedicationSettings = (left: MedSettings, right: MedSettings): boolean => {
+  for (const medication of medications) {
+    const leftMedication = left.medications[medication.id]
+    const rightMedication = right.medications[medication.id]
+
+    if (!leftMedication || !rightMedication) {
+      return false
+    }
+
+    if (leftMedication.enabled !== rightMedication.enabled) {
+      return false
+    }
+
+    for (const medicationPackage of medication.packages) {
+      if (leftMedication.packages[medicationPackage.id] !== rightMedication.packages[medicationPackage.id]) {
+        return false
+      }
+    }
+  }
+
+  return true
+}
+
+export const findMatchingRegionId = (settings: MedSettings): string | null => {
+  const normalizedSettings = normalizeMedSettings(settings)
+
+  for (const regionProfile of Object.values(regionProfiles)) {
+    const regionSettings = applyMedSettingsOverride(createDefaultMedSettings(), regionProfile.settings)
+
+    if (haveMatchingMedicationSettings(normalizedSettings, regionSettings)) {
+      return regionProfile.id
+    }
+  }
+
+  return null
+}
+
 // ############################################################################
 
 export const regionProfiles: Record<string, RegionProfile> = {
 
   default: {
     id: 'default',
-    label: 'Standard',
+    label: 'Alles Anzeigen',
     settings: {
       selectedRegionId: null,
     },
