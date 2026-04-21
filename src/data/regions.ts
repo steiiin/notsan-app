@@ -148,15 +148,108 @@ export const regionProfiles: Record<string, RegionProfile> = {
 
   lk_mei: {
     id: 'lk_mei',
-    label: 'Landkreis Meißen (Stub)',
+    label: 'Landkreis Meißen',
     settings: {
       selectedRegionId: 'lk_mei',
       medications: {
+
+        [MedId.Dimenhydrinat]: {
+          packages: {
+            supp_40mg: false,
+            supp_70mg: false,
+          }
+        },
+
+        [MedId.Esketamin]: {
+          packages: {
+            iv_5mgml_5ml: false,
+            iv_25mgml_10ml: false,
+          }
+        },
+
+        [MedId.Fentanyl]: {
+          packages: {
+            iv_0_05mgml_10ml: false,
+          }
+        },
+
+        [MedId.Furosemid]: {
+          packages: {
+            iv_20mg: false,
+          }
+        },
+
+        [MedId.Glucagon]: {
+          packages: {
+            nasal_3mg: false,
+          }
+        },
+
+        [MedId.Glucose]: {
+          packages: {
+            iv_1g_10ml: false,
+            iv_4g_10ml: false,
+          }
+        },
+
+        [MedId.Heparin]: {
+          packages: {
+            iv_5000ieml_5ml: false,
+            iv_5000ieml_1ml: false,
+          }
+        },
+
+        [MedId.Ibuprofen]: {
+          packages: {
+            iv_4mgml_6mgml_100ml: false,
+          }
+        },
+
+        [MedId.Ipratropiumbromid]: {
+          packages: {
+            inh_500ug: false,
+          }
+        },
+
+        [MedId.Metamizol]: {
+          enabled: false,
+        },
+
+        [MedId.Midazolam]: {
+          packages: {
+            iv_1mgml_5ml: false,
+            iv_5mgml_3ml: false,
+          }
+        },
+
+        [MedId.Morphin]: {
+          packages: {
+            iv_20mg: false,
+          }
+        },
+
+        [MedId.Nalbuphin]: {
+          enabled: false,
+        },
+
         [MedId.Prednisolon]: {
           packages: {
-            supp_100mg: false,
+            iv_100mg: false,
           },
         },
+
+        [MedId.Tranexam]: {
+          packages: {
+            iv_100mgml_10ml: false,
+          },
+        },
+
+        [MedId.Urapidil]: {
+          packages: {
+            iv_5mgml_10ml: false,
+          },
+        },
+
       },
     },
   },
