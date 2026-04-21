@@ -6,6 +6,12 @@ import router from './router';
 /* IONIC */
 import { IonicVue } from '@ionic/vue';
 
+/* ServiceWorker */
+import { registerSW } from 'virtual:pwa-register'
+registerSW({
+  immediate: true
+})
+
 // -- Core CSS required for Ionic components to work properly
 import '@ionic/vue/css/core.css';
 
