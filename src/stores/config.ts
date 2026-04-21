@@ -1,36 +1,113 @@
-import { MedId, PerMedicationConfig } from '@/types/medication';
 import { defineStore } from 'pinia'
+import { applyMedSettingsOverride, createDefaultMedSettings, normalizeMedSettings, regionProfiles } from '@/data/regions'
+import type { MedSettings } from '@/types/config'
+
+const CONFIGSTORE_KEY = 'configstore';
 
 export const useConfigStore = defineStore('config', {
   state: () => ({
-    medicationConfig: {} as Record<string, PerMedicationConfig>
+    medSettings: createDefaultMedSettings() as MedSettings,
   }),
-  actions: {
-
-    checkMedicationEnabled(medId: string): boolean {
-      if (this.medicationConfig.hasOwnProperty(medId)) {
-        return this.medicationConfig[medId].enabled
-      }
-      return true
+  getters: {
+    checkMedicationEnabled: (state) => {
+      return (medId: string): boolean => state.medSettings.medications[medId]?.enabled ?? true;
     },
-    checkPackageEnabled(medId: string, packageId: string): boolean {
-      if (this.medicationConfig.hasOwnProperty(medId)) {
-        if (!this.checkMedicationEnabled(medId)) { return false }
-        if (this.medicationConfig[medId].packages.hasOwnProperty(packageId)) {
-          return this.medicationConfig[medId].packages[packageId]
+    checkPackageEnabled: (state) => {
+      return (medId: string, packageId: string): boolean => {
+        if (!state.medSettings.medications[medId]?.enabled) {
+          return false;
+        }
+        return state.medSettings.medications[medId]?.packages[packageId] ?? true;
+      };
+    },
+  },
+  actions: {
+    clearSelectedRegionPreset() {
+      this.medSettings.selectedRegionId = null;
+    },
+
+    toggleMedicationEnabled(medId: string, enabled?: boolean) {
+
+      if (!this.medSettings.medications[medId]) {
+        return;
+      }
+
+      const medication = this.medSettings.medications[medId];
+      const nextValue = enabled ?? !medication.enabled;
+      medication.enabled = nextValue;
+
+      if (nextValue) {
+        for (const packageId of Object.keys(medication.packages)) {
+          medication.packages[packageId] = true;
         }
       }
-      return true
+
+      this.clearSelectedRegionPreset();
+      this.persistConfig()
+    },
+
+    toggleMedicationPackage(medId: string, packageId: string, enabled?: boolean) {
+      if (!this.medSettings.medications[medId]) {
+        return;
+      }
+
+      const medication = this.medSettings.medications[medId];
+      if (medication.packages[packageId] === undefined) {
+        return;
+      }
+
+      const nextValue = enabled ?? !medication.packages[packageId];
+      medication.packages[packageId] = nextValue;
+      const hasAnyPackageEnabled = Object.values(medication.packages).some(Boolean);
+      medication.enabled = hasAnyPackageEnabled;
+      this.clearSelectedRegionPreset();
+      this.persistConfig();
+    },
+
+    applyRegionPreset(regionId: string) {
+      const regionProfile = regionProfiles[regionId];
+      if (!regionProfile) {
+        return;
+      }
+
+      const defaultSettings = createDefaultMedSettings();
+      this.medSettings = applyMedSettingsOverride(defaultSettings, regionProfile.settings);
+      this.persistConfig();
+    },
+
+    resetToDefaultSettings() {
+      this.medSettings = createDefaultMedSettings();
+      this.persistConfig();
+    },
+
+    persistConfig() {
+      localStorage.setItem(CONFIGSTORE_KEY, JSON.stringify(this.medSettings));
     },
 
     loadConfig() {
+      const persistedValue = localStorage.getItem(CONFIGSTORE_KEY);
+      const defaults = createDefaultMedSettings();
 
-      /* TODO: implement config save/load */
-      this.medicationConfig = {
-        'prednisolxon': { enabled: true, packages: { 'supp_100mg': false } }
+      if (!persistedValue) {
+        this.medSettings = defaults;
+        return;
       }
 
-    },
+      try {
+        const parsed = JSON.parse(persistedValue) as unknown
 
-  }
-})
+        if (parsed && typeof parsed === 'object' && 'medicationConfig' in parsed) {
+          const legacyConfig = parsed as { medicationConfig?: Record<string, unknown>; selectedRegionId?: string | null }
+          this.medSettings = normalizeMedSettings({
+            medications: legacyConfig.medicationConfig,
+            selectedRegionId: legacyConfig.selectedRegionId ?? null,
+          })
+        } else {
+          this.medSettings = normalizeMedSettings(parsed)
+        }
+      } catch {
+        this.medSettings = defaults;
+      }
+    },
+  },
+});

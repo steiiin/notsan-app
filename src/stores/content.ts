@@ -9,7 +9,6 @@ import { useConfigStore } from './config'
 import { FormList } from '@/types/form-list'
 import { FormEntry } from '@/types/form-entry'
 
-const configStore = useConfigStore()
 
 export const useContentStore = defineStore('content', {
   state: () => ({
@@ -20,6 +19,7 @@ export const useContentStore = defineStore('content', {
   getters: {
 
     getMedications(state) {
+      const configStore = useConfigStore()
       return state.medications.filter(e => configStore.checkMedicationEnabled(e.id))
     },
     getLibrary(state) {
