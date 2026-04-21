@@ -109,11 +109,11 @@ export const regionProfiles: Record<string, RegionProfile> = {
     },
   },
 
-  rdb_nord: {
-    id: 'rdb_nord',
+  lk_mei: {
+    id: 'lk_mei',
     label: 'Landkreis Meißen (Stub)',
     settings: {
-      selectedRegionId: 'rdb_nord',
+      selectedRegionId: 'lk_mei',
       medications: {
         [MedId.Prednisolon]: {
           packages: {
