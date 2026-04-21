@@ -1,36 +1,101 @@
-import { MedId, PerMedicationConfig } from '@/types/medication';
 import { defineStore } from 'pinia'
+import { applyMedSettingsOverride, createDefaultMedSettings, ensureMedicationHasEnabledPackage, normalizeMedSettings, regionProfiles } from '@/data/regions'
+import type { MedSettings } from '@/types/config'
+
+const CONFIGSTORE_KEY = 'configstore';
 
 export const useConfigStore = defineStore('config', {
   state: () => ({
-    medicationConfig: {} as Record<string, PerMedicationConfig>
+    medSettings: createDefaultMedSettings() as MedSettings,
   }),
   actions: {
-
     checkMedicationEnabled(medId: string): boolean {
-      if (this.medicationConfig.hasOwnProperty(medId)) {
-        return this.medicationConfig[medId].enabled
-      }
-      return true
+      return this.medSettings.medications[medId]?.enabled ?? true;
     },
+
     checkPackageEnabled(medId: string, packageId: string): boolean {
-      if (this.medicationConfig.hasOwnProperty(medId)) {
-        if (!this.checkMedicationEnabled(medId)) { return false }
-        if (this.medicationConfig[medId].packages.hasOwnProperty(packageId)) {
-          return this.medicationConfig[medId].packages[packageId]
-        }
+      if (!this.checkMedicationEnabled(medId)) {
+        return false;
       }
-      return true
+
+      return this.medSettings.medications[medId]?.packages[packageId] ?? true;
+    },
+
+    toggleMedicationEnabled(medId: string, enabled?: boolean) {
+      if (!this.medSettings.medications[medId]) {
+        return;
+      }
+
+      const nextValue = enabled ?? !this.medSettings.medications[medId].enabled;
+      this.medSettings.medications[medId].enabled = nextValue;
+      this.persistConfig();
+    },
+
+    toggleMedicationPackage(medId: string, packageId: string, enabled?: boolean) {
+      if (!this.medSettings.medications[medId]) {
+        return;
+      }
+
+      const medication = this.medSettings.medications[medId];
+      if (medication.packages[packageId] === undefined) {
+        return;
+      }
+
+      const nextValue = enabled ?? !medication.packages[packageId];
+      medication.packages[packageId] = nextValue;
+
+      this.enforceAtLeastOnePackageActive(medId);
+      this.persistConfig();
+    },
+
+    enforceAtLeastOnePackageActive(medId: string) {
+      this.medSettings = ensureMedicationHasEnabledPackage(this.medSettings, medId);
+    },
+
+    applyRegionPreset(regionId: string) {
+      const regionProfile = regionProfiles[regionId];
+      if (!regionProfile) {
+        return;
+      }
+
+      const defaultSettings = createDefaultMedSettings();
+      this.medSettings = applyMedSettingsOverride(defaultSettings, regionProfile.settings);
+      this.persistConfig();
+    },
+
+    resetToDefaultSettings() {
+      this.medSettings = createDefaultMedSettings();
+      this.persistConfig();
+    },
+
+    persistConfig() {
+      localStorage.setItem(CONFIGSTORE_KEY, JSON.stringify(this.medSettings));
     },
 
     loadConfig() {
+      const persistedValue = localStorage.getItem(CONFIGSTORE_KEY);
+      const defaults = createDefaultMedSettings();
 
-      /* TODO: implement config save/load */
-      this.medicationConfig = {
-        'prednisolxon': { enabled: true, packages: { 'supp_100mg': false } }
+      if (!persistedValue) {
+        this.medSettings = defaults;
+        return;
       }
 
-    },
+      try {
+        const parsed = JSON.parse(persistedValue) as unknown
 
-  }
-})
+        if (parsed && typeof parsed === 'object' && 'medicationConfig' in parsed) {
+          const legacyConfig = parsed as { medicationConfig?: Record<string, unknown>; selectedRegionId?: string | null }
+          this.medSettings = normalizeMedSettings({
+            medications: legacyConfig.medicationConfig,
+            selectedRegionId: legacyConfig.selectedRegionId ?? null,
+          })
+        } else {
+          this.medSettings = normalizeMedSettings(parsed)
+        }
+      } catch {
+        this.medSettings = defaults;
+      }
+    },
+  },
+});

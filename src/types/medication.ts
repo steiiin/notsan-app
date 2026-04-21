@@ -1,4 +1,5 @@
 import { Package } from "./package";
+export type { PerMedicationConfig } from "./config";
 
 export const MedId = Object.freeze({
   Acetylsalicyl: 'acetylsalicyl',
@@ -39,10 +40,6 @@ export interface Medication {
   component: () => Promise<any>,
 }
 
-export interface PerMedicationConfig {
-  enabled: boolean;
-  packages: Record<string, boolean>;
-}
 
 export interface MedicationSwitchOption {
   id: string;
