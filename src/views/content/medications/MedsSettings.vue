@@ -20,7 +20,7 @@
               label-placement="stacked"
               interface="popover"
               :value="selectedRegionId"
-              @ionChange="onRegionChange"
+              @update:modelValue="onRegionChange"
             >
               <ion-select-option
                 v-for="region in regionOptions"
@@ -39,16 +39,16 @@
           </ion-list-header>
 
           <template v-for="medication in contentStore.medications" :key="medication.id">
+
             <ion-item>
-              <ion-label>
-                <h3>{{ medication.title }}</h3>
-                <p v-if="medication.subtitle">{{ medication.subtitle }}</p>
-              </ion-label>
-              <ion-toggle
-                slot="end"
+              <ion-toggle label-placement="start"
                 :checked="configStore.checkMedicationEnabled(medication.id)"
-                @ionChange="onMedicationToggle(medication.id, $event)"
-              />
+                @update:modelValue="onMedicationToggle(medication.id, $event)">
+                <ion-label>
+                  <h3>{{ medication.title }}</h3>
+                  <p v-if="medication.subtitle">{{ medication.subtitle }}</p>
+                </ion-label>
+              </ion-toggle>
             </ion-item>
 
             <template v-if="medication.packages.length > 1">
@@ -65,7 +65,7 @@
                   slot="end"
                   :checked="configStore.checkPackageEnabled(medication.id, medPackage.id)"
                   :disabled="!configStore.checkMedicationEnabled(medication.id)"
-                  @ionChange="onPackageToggle(medication.id, medPackage.id, $event)"
+                  @update:modelValue="onPackageToggle(medication.id, medPackage.id, $event)"
                 />
               </ion-item>
             </template>
@@ -95,7 +95,8 @@ import {
   IonList,
   IonListHeader,
   IonToggle,
-} from '@ionic/vue';
+} from '@ionic/vue'
+
 import { closeOutline } from 'ionicons/icons'
 import { computed } from 'vue'
 import { regionOptions } from '@/data/regions'
@@ -121,22 +122,21 @@ const closeSettings = () => {
   emit('closed')
 }
 
-const onRegionChange = (event: CustomEvent) => {
-  const regionId = event.detail?.value as string
+const onRegionChange = (regionId: string | null | undefined) => {
   if (!regionId) {
     return
   }
   configStore.applyRegionPreset(regionId)
 }
 
-const onMedicationToggle = (medicationId: string, event: CustomEvent) => {
-  const enabled = Boolean(event.detail?.checked)
-  configStore.toggleMedicationEnabled(medicationId, enabled)
+const onMedicationToggle = (medicationId: string, enabled: boolean | null | undefined) => {
+  configStore.toggleMedicationEnabled(medicationId, Boolean(enabled))
 }
 
-const onPackageToggle = (medicationId: string, packageId: string, event: CustomEvent) => {
-  const enabled = Boolean(event.detail?.checked)
-  configStore.toggleMedicationPackage(medicationId, packageId, enabled)
+const onPackageToggle = (medicationId: string, packageId: string, enabled: boolean | null | undefined) => {
+  console.log('onPackageToggle fired', medicationId, packageId, enabled)
+  debugger
+  configStore.toggleMedicationPackage(medicationId, packageId, Boolean(enabled))
 }
 </script>
 

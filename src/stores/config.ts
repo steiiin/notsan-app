@@ -12,19 +12,18 @@ export const useConfigStore = defineStore('config', {
     checkMedicationEnabled: (state) => {
       return (medId: string): boolean => state.medSettings.medications[medId]?.enabled ?? true;
     },
-
     checkPackageEnabled: (state) => {
       return (medId: string, packageId: string): boolean => {
         if (!state.medSettings.medications[medId]?.enabled) {
           return false;
         }
-
         return state.medSettings.medications[medId]?.packages[packageId] ?? true;
       };
     },
   },
   actions: {
     toggleMedicationEnabled(medId: string, enabled?: boolean) {
+
       if (!this.medSettings.medications[medId]) {
         return;
       }
@@ -39,7 +38,7 @@ export const useConfigStore = defineStore('config', {
         }
       }
 
-      this.persistConfig();
+      this.persistConfig()
     },
 
     toggleMedicationPackage(medId: string, packageId: string, enabled?: boolean) {
