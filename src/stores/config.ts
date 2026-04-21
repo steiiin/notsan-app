@@ -8,19 +8,22 @@ export const useConfigStore = defineStore('config', {
   state: () => ({
     medSettings: createDefaultMedSettings() as MedSettings,
   }),
+  getters: {
+    checkMedicationEnabled: (state) => {
+      return (medId: string): boolean => state.medSettings.medications[medId]?.enabled ?? true;
+    },
+
+    checkPackageEnabled: (state) => {
+      return (medId: string, packageId: string): boolean => {
+        if (!state.medSettings.medications[medId]?.enabled) {
+          return false;
+        }
+
+        return state.medSettings.medications[medId]?.packages[packageId] ?? true;
+      };
+    },
+  },
   actions: {
-    checkMedicationEnabled(medId: string): boolean {
-      return this.medSettings.medications[medId]?.enabled ?? true;
-    },
-
-    checkPackageEnabled(medId: string, packageId: string): boolean {
-      if (!this.checkMedicationEnabled(medId)) {
-        return false;
-      }
-
-      return this.medSettings.medications[medId]?.packages[packageId] ?? true;
-    },
-
     toggleMedicationEnabled(medId: string, enabled?: boolean) {
       if (!this.medSettings.medications[medId]) {
         return;
