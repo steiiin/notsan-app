@@ -3,10 +3,16 @@
     <template v-if="useFull">
       <ns-dosage mono :dosage="{ target: 'Adrenalin', dose: '1mg', hint: '(1 Ampulle)' }"></ns-dosage>
     </template>
+    <template v-else-if="use10">
+      <div>
+        <p>1 Ampulle auf <text-mono>10ml</text-mono> NaCl aufziehen, dann:</p>
+        <ns-dosage mono :dosage="{ target: 'Adrenalin',  dose: `${child10Hint}ml`, hint: `${child10Dose}mg` }"></ns-dosage>
+      </div>
+    </template>
     <template v-else>
       <div>
         <p>1 Ampulle auf <text-mono>20ml</text-mono> NaCl aufziehen, dann:</p>
-        <ns-dosage mono :dosage="{ target: 'Adrenalin',  dose: `${childHint}ml`, hint: `${childDose}mg` }"></ns-dosage>
+        <ns-dosage mono :dosage="{ target: 'Adrenalin',  dose: `${child20Hint}ml`, hint: `${child20Hint}mg` }"></ns-dosage>
       </div>
     </template>
   </template>
@@ -30,8 +36,13 @@ import { round } from '@/service/math';
 import { computed } from 'vue';
 
 const useFull = computed(() => patient.isLikelyAnAdult || patient.weight>=100)
-const childDose = computed(() => useFull.value ? 1 : round(patient.weight*0.01, 0.05, 'up'))
-const childHint = computed(() => (childDose.value / 0.05).toFixed())
+const use10 = computed(() => !useFull.value && patient.weight>=10)
+
+const child10Dose = computed(() => round(patient.weight*0.01, 0.1, 'up'))
+const child10Hint = computed(() => (child10Dose.value / 0.1).toFixed())
+
+const child20Dose = computed(() => round(patient.weight*0.01, 0.05, 'up'))
+const child20Hint = computed(() => (child20Dose.value / 0.05).toFixed())
 
 </script>
 
