@@ -56,6 +56,11 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/nausea/ContentNausea.vue')
       },
       {
+        id: 'bpr-nasenbluten',
+        title: 'Nasenbluten',
+        component: () => import('@/views/content/library/bpr/nasenbluten/ContentNasenbluten.vue')
+      },
+      {
         id: 'bpr-obstruktion',
         title: 'Bronchoobstruktion',
         subtitle: 'Asthmaanfall/COPD',
