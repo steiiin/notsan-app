@@ -2,7 +2,7 @@
   <ns-content-group>
     <ns-text-content>
       <p>
-        <b>Strukturiertes</b> Vorgehen bei einer <b>instabilen Bradykardie</b>.
+        <b>Strukturiertes</b> Vorgehen bei <b>nichttraumatischem Brustschmerz</b>.
       </p>
     </ns-text-content>
   </ns-content-group>

@@ -43,6 +43,10 @@
           <hr>
           <p><text-underline>Keine</text-underline> Repetition.</p>
         </ns-dosage-usage>
+        <ns-dosage-usage type="nasal">
+          <ns-dosage :dosage="{ dose: '500mg', hint: nasalHint }"></ns-dosage>
+          <p>Per <text-underline>MAD</text-underline> oder als Tamponade einbrinden.</p>
+        </ns-dosage-usage>
       </ns-dosage-indication>
     </ns-content-group>
 
@@ -85,6 +89,12 @@ import TextColored from '@/components/TextColored.vue'
 import { iv_100mgml_5ml, iv_100mgml_10ml, isIv_100mgml_5mlEnabled, isIv_100mgml_10mlEnabled } from './Packages'
 
 // ########################################################################################################
+
+const nasalHint = computed(() => {
+  if (isIv_100mgml_10mlEnabled.value && isIv_100mgml_5mlEnabled.value) { return '' }
+  else if (isIv_100mgml_5mlEnabled.value) { return '(1 Ampulle)' }
+  else if (isIv_100mgml_10mlEnabled.value) { return '(½ Ampulle)' }
+})
 
 </script>
 
