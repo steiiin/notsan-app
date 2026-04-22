@@ -24,6 +24,7 @@ import { useRouter } from 'vue-router'
 
 import NsContentListContainer from '@/components/NsContentListContainer.vue'
 import { useContentStore } from '@/stores/content'
+import { scrollTo } from '@/service/input'
 
 // ############################################################################
 
@@ -57,7 +58,7 @@ router.afterEach(async (to, from) => {
 
 onIonViewWillEnter(() => {
   if (!mycontent.value) { return }
-  mycontent.value.$el.scrollToPoint(0, scrollPos.value, 400)
+  scrollTo(mycontent, scrollPos.value)
 })
 
 </script>

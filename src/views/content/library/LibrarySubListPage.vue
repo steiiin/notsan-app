@@ -21,6 +21,7 @@
 </template>
 
 <script setup lang="ts">
+
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, onIonViewWillEnter } from '@ionic/vue'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -28,11 +29,15 @@ import { useRouter } from 'vue-router'
 import NsContentListContainer from '@/components/NsContentListContainer.vue'
 import NsEmptyState from '@/components/NsEmptyState.vue'
 import { useContentStore } from '@/stores/content'
+import { scrollTo } from '@/service/input'
+
+// ############################################################################
 
 const props = defineProps<{ id: string }>()
 
-const content = useContentStore()
+// ############################################################################
 
+const content = useContentStore()
 const list = computed(() => content.findLibraryListById(props.id))
 
 const entries = computed(() => {
@@ -42,6 +47,8 @@ const entries = computed(() => {
     path: `/tabs/lib/list/${list.value?.id}/${entry.id}`
   }))
 })
+
+// ############################################################################
 
 const mycontent = ref<{ $el: HTMLIonContentElement } | null>(null)
 const scrollPos = ref<number>(0)
@@ -61,14 +68,16 @@ router.afterEach(async (to, from) => {
 
 onIonViewWillEnter(() => {
   if (!mycontent.value) { return }
-  mycontent.value.$el.scrollToPoint(0, scrollPos.value, 400)
+  scrollTo(mycontent, scrollPos.value)
 })
-</script>
 
+</script>
 <style scoped>
+
 .empty-state {
   padding: 16px;
   text-align: center;
   color: var(--ion-color-medium);
 }
+
 </style>

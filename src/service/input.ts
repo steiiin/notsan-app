@@ -26,3 +26,17 @@ export function gainFocus(inputCmp: any|null, selectAll: boolean = false)
 
   }, 300)
 }
+
+export function scrollTo(contentCmp: any|null, pos: number)
+{
+  setTimeout(() => {
+
+    if (!contentCmp) { return }
+    if (!contentCmp.value) { return }
+    if (!contentCmp.value.$el) { return }
+
+    const EL = contentCmp.value.$el
+    if (typeof EL.scrollToPoint === "function") { EL.scrollToPoint(0, pos, 400) }
+
+  }, 300)
+}

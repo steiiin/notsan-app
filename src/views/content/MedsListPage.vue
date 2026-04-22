@@ -33,7 +33,7 @@ import { IonPage, IonHeader, IonToolbar, IonIcon, IonTitle, IonContent, IonButto
 
 import { useContentStore } from '@/stores/content'
 import { useConfigStore } from '@/stores/config'
-import { ref, computed } from 'vue'
+import { ref, computed, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 
 // ############################################################################
@@ -42,6 +42,7 @@ import NsContentListContainer from '@/components/NsContentListContainer.vue'
 import NsEmptyState from '@/components/NsEmptyState.vue'
 import MedsSettings from './medications/MedsSettings.vue'
 import { settingsOutline } from 'ionicons/icons'
+import { scrollTo } from '@/service/input'
 
 // ############################################################################
 
@@ -56,59 +57,54 @@ const medications = computed(() =>
 
 // ############################################################################
 
-// #region Search
-
-  const searchTerm = ref('')
-  const filteredMedications = computed(() => {
-    const term = searchTerm.value.trim().toLowerCase()
-    if (!term) {
-      return medications.value
-    }
-    return medications.value.filter(item => {
-      const title = item.title.toLowerCase()
-      const subtitle = item.subtitle?.toLowerCase() ?? ''
-      return title.includes(term) || subtitle.includes(term)
-    })
+const searchTerm = ref('')
+const filteredMedications = computed(() => {
+  const term = searchTerm.value.trim().toLowerCase()
+  if (!term) {
+    return medications.value
+  }
+  return medications.value.filter(item => {
+    const title = item.title.toLowerCase()
+    const subtitle = item.subtitle?.toLowerCase() ?? ''
+    return title.includes(term) || subtitle.includes(term)
   })
+})
 
-// #endregion
-// #region Settings
+// ############################################################################
 
-  const settingsVisible = ref(false)
-  const openSettings = () => settingsVisible.value = true
+const settingsVisible = ref(false)
+const openSettings = () => settingsVisible.value = true
 
-// #endregion
-// #region ScrollPosition
+// ############################################################################
 
-  const mycontent = ref<{ $el: HTMLIonContentElement } | null>(null);
-  const scrollPos = ref<number>(0);
+const mycontent = ref<{ $el: HTMLIonContentElement } | null>(null);
+const scrollPos = ref<number>(0);
 
-  const router = useRouter()
-  router.afterEach(async (to, from) => {
-    if (!mycontent || !mycontent.value) { return }
+const router = useRouter()
+router.afterEach(async (to, from) => {
+  if (!mycontent || !mycontent.value) { return }
 
-    if (to.fullPath.includes('meds') && from.fullPath.includes('meds'))
+  if (to.fullPath.includes('meds') && from.fullPath.includes('meds'))
+  {
+    if (to.fullPath.length > from.fullPath.length)
     {
-      if (to.fullPath.length > from.fullPath.length)
-      {
-        mycontent.value.$el.getScrollElement().then(el => {
-          scrollPos.value = el.scrollTop
-        })
-      }
+      mycontent.value.$el.getScrollElement().then(el => {
+        scrollPos.value = el.scrollTop
+      })
     }
-    else
-    {
-      // reset search after switching tab
-      searchTerm.value = ''
-    }
+  }
+  else
+  {
+    // reset search&scroll after switching tab
+    searchTerm.value = ''
+    scrollPos.value = 0
+  }
 
-  })
+})
 
-  onIonViewWillEnter(() => {
-    if (!mycontent || !mycontent.value) { return }
-    mycontent.value.$el.scrollToPoint(0, scrollPos.value, 400);
-  })
-
-// #endregion
+onIonViewWillEnter(async () => {
+  if (!mycontent || !mycontent.value) { return }
+  scrollTo(mycontent, scrollPos.value)
+})
 
 </script>
