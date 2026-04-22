@@ -49,7 +49,6 @@
       <ns-list>
         <ns-contraindication type="chronic">Schwerer Leberschaden <b>(Liberzirrhose)</b></ns-contraindication>
         <ns-contraindication type="chronic">Schwere <b>Nierenfunktionsstörung</b></ns-contraindication>
-        <ns-contraindication type="chronic">Schwerer </ns-contraindication>
       </ns-list>
       <ns-list>
         <ns-contraindication type="pediatric">Schwangerschaft</ns-contraindication>
