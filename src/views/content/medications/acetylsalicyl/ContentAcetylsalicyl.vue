@@ -49,7 +49,6 @@
       <ns-list>
         <ns-contraindication type="chronic">Schwerer Leberschaden <b>(Liberzirrhose)</b></ns-contraindication>
         <ns-contraindication type="chronic">Schwere <b>Nierenfunktionsstörung</b></ns-contraindication>
-        <ns-contraindication type="chronic">Schwerer </ns-contraindication>
       </ns-list>
       <ns-list>
         <ns-contraindication type="pediatric">Schwangerschaft</ns-contraindication>
@@ -78,7 +77,6 @@
           <ns-dosage :dosage="{ type: 'adult', dose: '250mg', hint: '(½ Flasche)' }"></ns-dosage>
           <hr>
           <p>Langsam spritzen.</p>
-          <p>Eventuell ist zu einem späteren Zeitpunkt eine orale Gabe möglich.</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
 
