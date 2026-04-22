@@ -27,19 +27,23 @@
 
 <script setup lang="ts">
 
-import { IonPage, IonHeader, IonToolbar, IonIcon, IonTitle, IonContent, IonButtons, IonButton, IonSearchbar, onIonViewWillEnter } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonIcon, IonTitle, IonContent, IonButtons, IonButton, IonSearchbar, onIonViewWillEnter } from '@ionic/vue'
+
+// ############################################################################
 
 import { useContentStore } from '@/stores/content'
 import { useConfigStore } from '@/stores/config'
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
-import NsContentListContainer from '@/components/NsContentListContainer.vue';
-import NsEmptyState from '@/components/NsEmptyState.vue';
-import MedsSettings from './medications/MedsSettings.vue';
+// ############################################################################
 
+import NsContentListContainer from '@/components/NsContentListContainer.vue'
+import NsEmptyState from '@/components/NsEmptyState.vue'
+import MedsSettings from './medications/MedsSettings.vue'
 import { settingsOutline } from 'ionicons/icons'
-import { gainFocus } from '@/service/input';
+
+// ############################################################################
 
 const content = useContentStore()
 const config = useConfigStore()
@@ -49,6 +53,8 @@ const medications = computed(() =>
     .filter((medication) => config.checkMedicationEnabled(medication.id))
     .map(i => ({ ...i, path: `/tabs/meds/${i.id}` })),
 )
+
+// ############################################################################
 
 // #region Search
 

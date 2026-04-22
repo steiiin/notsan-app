@@ -17,6 +17,7 @@
 </template>
 
 <script setup lang="ts">
+
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, onIonViewWillEnter } from '@ionic/vue'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -24,8 +25,9 @@ import { useRouter } from 'vue-router'
 import NsContentListContainer from '@/components/NsContentListContainer.vue'
 import { useContentStore } from '@/stores/content'
 
-const content = useContentStore()
+// ############################################################################
 
+const content = useContentStore()
 const items = computed(() =>
   content.getLibrary.map(item => {
     if ('entries' in item) {
@@ -34,6 +36,8 @@ const items = computed(() =>
     return { ...item, path: `/tabs/lib/entry/${item.id}` }
   })
 )
+
+// ############################################################################
 
 const mycontent = ref<{ $el: HTMLIonContentElement } | null>(null)
 const scrollPos = ref<number>(0)
@@ -55,4 +59,5 @@ onIonViewWillEnter(() => {
   if (!mycontent.value) { return }
   mycontent.value.$el.scrollToPoint(0, scrollPos.value, 400)
 })
+
 </script>
