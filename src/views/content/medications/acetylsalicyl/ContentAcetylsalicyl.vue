@@ -78,7 +78,6 @@
           <ns-dosage :dosage="{ type: 'adult', dose: '250mg', hint: '(½ Flasche)' }"></ns-dosage>
           <hr>
           <p>Langsam spritzen.</p>
-          <p>Eventuell ist zu einem späteren Zeitpunkt eine orale Gabe möglich.</p>
         </ns-dosage-usage>
       </ns-dosage-indication>
 
