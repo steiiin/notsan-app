@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="542px" height="542px" viewBox="-0.5 -0.5 542 542">
+  <path d="M 120.11 60 L 120.11 70 L 120.11 71.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120.11 78.88 L 116.61 71.88 L 123.61 71.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="0" y="0" width="540" height="60" rx="30" ry="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:#111;stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:30px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:#f7f7f7">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:#f7f7f7;line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">
+          Nichttraumatischer Brustschmerz
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 239.33 109 L 270 109 L 291.88 109" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 298.88 109 L 291.88 112.5 L 291.88 105.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:110px;margin-left:266px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 120.11 140 L 120.11 171.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120.11 178.88 L 116.61 171.88 L 123.61 171.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:158px;margin-left:121px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 20 80 L 220 80 L 240 110 L 220 140 L 20 140 L 0 110 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:110px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Anhalt ACS?
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:acs"><rect x="300" y="80" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+
+
+<path d="M 310 80 L 310 140 M 530 80 L 530 140" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:110px;margin-left:312px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal"><font style="font-size:13px">BPR: ACS</font></div></div></div></foreignObject></a>
+  <path d="M 239.19 211.22 L 291.88 211.22" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 298.88 211.22 L 291.88 214.72 L 291.88 207.72 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:212px;margin-left:266px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 120.11 240 L 120.11 271.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120.11 278.88 L 116.61 271.88 L 123.61 271.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:258px;margin-left:121px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 20 180 L 220 180 L 240 210 L 220 240 L 20 240 L 0 210 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:210px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Anhalt
+          <br/>
+          Spannungspneumothorax?
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 239.33 309 L 270 309 L 291.88 309" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 298.88 309 L 291.88 312.5 L 291.88 305.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:310px;margin-left:266px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 120.11 340 L 120.11 371.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120.11 378.88 L 116.61 371.88 L 123.61 371.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:358px;margin-left:121px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 20 280 L 220 280 L 240 310 L 220 340 L 20 340 L 0 310 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:310px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Anhalt Lungenembolie?
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:lungenembolie"><rect x="300" y="280" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+
+
+<path d="M 310 280 L 310 340 M 530 280 L 530 340" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:310px;margin-left:312px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal"><font style="font-size:13px">BPR: Lungenembolie</font></div></div></div></foreignObject></a>
+  <path d="M 239.33 409 L 270 409 L 291.88 409" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 298.88 409 L 291.88 412.5 L 291.88 405.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:410px;margin-left:266px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 120.11 440 L 120.11 471.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120.11 478.88 L 116.61 471.88 L 123.61 471.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:458px;margin-left:121px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 20 380 L 220 380 L 240 410 L 220 440 L 20 440 L 0 410 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:410px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Anhalt Aortensyndrom?
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:aortensyndrom"><rect x="300" y="380" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+
+
+<path d="M 310 380 L 310 440 M 530 380 L 530 440" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:410px;margin-left:312px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal"><font style="font-size:13px">BPR: Aortensyndrom</font></div></div></div></foreignObject></a>
+  <path d="M 240 510 L 240 509.12" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 240 502.12 L 243.5 509.12 L 236.5 509.12 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:schmerzen"><rect x="0" y="480" width="540" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+
+
+<path d="M 10 480 L 10 540 M 530 480 L 530 540" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:518px;height:1px;padding-top:510px;margin-left:12px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal"><font style="font-size:13px">BPR: Schmerzen</font></div></div></div></foreignObject></a>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/saa:entlastung"><rect x="300" y="180" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
+
+
+<path d="M 310 180 L 310 240 M 530 180 L 530 240" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:210px;margin-left:312px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">SAA: Entlastungspunktion</div></div></div></foreignObject></a>
+</svg>
