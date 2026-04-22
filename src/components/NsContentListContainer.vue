@@ -22,14 +22,16 @@
 <script setup lang="ts">
 
 import { IonList, IonItem, IonLabel, IonItemGroup, IonItemDivider } from '@ionic/vue'
-
 import { Medication } from '@/types/medication'
-
 import { computed } from 'vue'
+
+// ############################################################################
 
 const props = defineProps<{
   items: any[]
 }>()
+
+// ############################################################################
 
 const groupedList = computed(() => {
   const groups: Record<string, Medication[]> = {}
@@ -50,9 +52,10 @@ const groupedList = computed(() => {
 })
 
 </script>
-
 <style scoped>
+
 .list-group ion-item:last-of-type {
   --inner-border-width: 0;
 }
+
 </style>

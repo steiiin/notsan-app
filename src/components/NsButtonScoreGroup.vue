@@ -15,17 +15,20 @@
 </template>
 
 <script setup lang="ts">
+
 import { IonButton, IonIcon } from '@ionic/vue'
 import { checkmark, close } from 'ionicons/icons'
-import { computed } from 'vue'
+
+// ############################################################################
 
 type ScoreOptionColor = 'good' | 'bad' | 'okay' | 'neutral'
-
 type ScoreTypeValue = 'yes-no'
 type ScoreOption = {
   type: ScoreTypeValue
   label: string
 }
+
+// ############################################################################
 
 const props = defineProps<{
   option: ScoreOption
@@ -36,16 +39,19 @@ const emit = defineEmits<{
   (event: 'update:modelValue', value: any): void
 }>()
 
+// ############################################################################
+
 const isActive = (value: any) => value == props.modelValue
 const fill = (value: any) => isActive(value) ? 'solid' : 'outline'
 const color = (value: any, def: ScoreOptionColor = 'neutral') => isActive(value) ? defColor(def) : 'medium'
-
 const defColor = (value: ScoreOptionColor) => {
   if (value == 'good') { return 'success' }
   if (value == 'okay') { return 'warn' }
   if (value == 'bad') { return 'danger' }
   return 'dark'
 }
+
+// ############################################################################
 
 const onSelect = (value: any) => {
   if (value != props.modelValue) {

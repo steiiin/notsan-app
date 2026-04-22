@@ -67,6 +67,8 @@ import NsFlowAction from '@/components/library/NsFlowAction.vue'
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsSideeffect from '@/components/medications/NsSideeffect.vue'
 import NsTextContent from '@/components/NsTextContent.vue'
+import TextMono from '@/components/TextMono.vue'
+import TextUnderline from '@/components/TextUnderline.vue'
 
 import flowSvg from './flow.svg?raw'
 import { FlowActionPayload } from '@/types/flow'

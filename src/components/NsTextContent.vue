@@ -3,11 +3,6 @@
     <slot></slot>
   </div>
 </template>
-
-<script setup lang="ts">
-
-</script>
-
 <style lang="css" scoped>
 
 .ns-text-content {
@@ -16,7 +11,6 @@
   gap: .5rem;
 }
 
-/* text styles */
 .ns-text-content :deep(hr) {
   margin: 0px var(--ns-card-neg-padding) 0 -2px;
   padding: 0 0 0 0;
@@ -25,7 +19,6 @@
 .ns-text-content.dense :deep(hr) {
   margin: 0 -2px 0 -2px;
 }
-
 .ns-text-content :deep(*) {
   margin: 0;
   padding: 0;

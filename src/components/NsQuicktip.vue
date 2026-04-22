@@ -9,29 +9,30 @@
     </div>
   </ion-popover>
 </template>
-
 <script setup lang="ts">
 
 import { IonPopover } from '@ionic/vue'
-import NsTextContent from './NsTextContent.vue';
+import NsTextContent from './NsTextContent.vue'
 import { ref } from 'vue'
+
+// ############################################################################
 
 defineProps<{
   text?: string,
   tip?: string,
 }>()
 
+// ############################################################################
+
 const generateId = () => { return 'ns-quicktip-' + Math.random().toString(36).substring(2, 9) }
 const linkId = ref(generateId())
 
 </script>
-
 <style lang="css" scoped>
 
 .dense {
   font-size: 0.8rem !important;
 }
-
 .link
 {
   text-decoration: underline;

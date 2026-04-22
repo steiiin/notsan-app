@@ -1,12 +1,16 @@
 <template>
   <div class="ns-svg" :class="{ 'no-border': noframe }" v-html="svg"></div>
 </template>
-
 <script setup lang="ts">
-defineProps<{ svg: string, noframe?: boolean }>();
-</script>
 
+defineProps<{
+  svg: string,
+  noframe?: boolean
+}>()
+
+</script>
 <style scoped>
+
 .ns-svg {
   display: flex;
   border: 2px solid #000;
@@ -16,11 +20,11 @@ defineProps<{ svg: string, noframe?: boolean }>();
 .ns-svg.no-border {
   border: none;
 }
-
 .ns-svg :deep(svg) {
   width: 100%;
   height: auto;
   border-radius: 4px;
   overflow: hidden;
 }
+
 </style>

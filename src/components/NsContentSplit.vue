@@ -8,7 +8,6 @@
     </div>
   </div>
 </template>
-
 <script setup lang="ts">
 
 const props = defineProps<{
@@ -16,7 +15,6 @@ const props = defineProps<{
 }>()
 
 </script>
-
 <style lang="css" scoped>
 
 .ns-content-split {
@@ -56,4 +54,5 @@ const props = defineProps<{
 {
   .left { display: none; }
 }
+
 </style>

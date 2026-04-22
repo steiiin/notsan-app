@@ -8,17 +8,18 @@
     </div>
   </ion-accordion>
 </template>
-
 <script setup lang="ts">
+
 import { IonAccordion, IonItem, IonLabel } from '@ionic/vue'
+
 defineProps<{
   title: string,
   id?: string,
   color?: string,
   gap?: boolean
 }>()
-</script>
 
+</script>
 <style lang="css" scoped>
 
 .with-gap {

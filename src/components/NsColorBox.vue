@@ -3,37 +3,31 @@
 </template>
 
 <script setup lang="ts">
+
 import { computed } from 'vue'
+
+// ############################################################################
 
 const props = defineProps<{
   colorKey: string
 }>()
 
-const normalizeKey = (key: string): string => key.trim()
+// ############################################################################
 
+const normalizeKey = (key: string): string => key.trim()
 const backgroundColor = computed(() => {
   const key = normalizeKey(props.colorKey)
-
-  if (!key)
-    return 'transparent'
-
+  if (!key) { return 'transparent' }
   const lowerKey = key.toLowerCase()
-
-  if (lowerKey.startsWith('#') || lowerKey.startsWith('rgb') || lowerKey.startsWith('hsl'))
-    return key
-
-  if (key.startsWith('--'))
-    return `var(${key})`
-
+  if (lowerKey.startsWith('#') || lowerKey.startsWith('rgb') || lowerKey.startsWith('hsl')) { return key }
+  if (key.startsWith('--')) { return `var(${key})` }
   return `var(--ns-colorbox-${key})`
 })
-
 const boxStyle = computed(() => ({
   backgroundColor: backgroundColor.value,
 }))
 
 </script>
-
 <style>
 
 /* Colors */

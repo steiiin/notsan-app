@@ -9,8 +9,6 @@
       <tbody>
         <tr v-for="row in rows" :key="row.key">
           <th v-if="row.head">{{ row.head }}</th>
-
-          <!-- auto rowspan + colspan -->
           <template v-for="(cell, idx) in row.values" :key="`${row.key}:${idx}`">
             <td v-if="!cell.skip" :rowspan="cell.rowspan" :colspan="cell.colspan">
               <text-underline v-if="cell.bold">{{ cell.text }}</text-underline>
@@ -24,10 +22,11 @@
 </template>
 
 <script setup lang="ts">
+
 import { computed } from 'vue'
 import TextUnderline from './TextUnderline.vue'
 
-const props = defineProps<{ def: NsTableContentDefinition }>()
+// ############################################################################
 
 export interface NsTableContentDefinition {
   columns: Array<string>
@@ -41,20 +40,22 @@ type Cell = {
   colspan: number
   skip: boolean
 }
-
 type Row = {
   head: string | null
   values: Cell[]
   key: string
 }
 
-/* ---------------- helpers ---------------- */
+// ############################################################################
+
+const props = defineProps<{ def: NsTableContentDefinition }>()
+
+// ############################################################################
 
 const isMap = (v: unknown): v is Map<string, string[]> => v instanceof Map
 const hasRowHead = computed(() => isMap(props.def.rows))
 const isEmptyCell = (s: string) => !s || s.trim() === ''
 
-// keep your '!bold' convention but compare by plain text
 const parseCell = (raw: string | null | undefined): { text: string; bold: boolean } => {
   const v = (raw ?? '') + ''
   return v.startsWith('!') ? { text: v.slice(1), bold: true } : { text: v, bold: false }
@@ -62,7 +63,6 @@ const parseCell = (raw: string | null | undefined): { text: string; bold: boolea
 
 const getKey = (values: string[], head?: string | null) => `${head ?? ''}#${values.join('#')}`
 
-/** Normalize input into rows with head + rawValues */
 const baseRows = computed(() => {
   if (hasRowHead.value) {
     return Array.from((props.def.rows as Map<string, string[]>).entries()).map(
@@ -76,12 +76,6 @@ const baseRows = computed(() => {
   }))
 })
 
-/**
- * Build final rows with rowspan/colspan metadata.
- * Rules:
- *  - Rowspan: merge identical, non-empty vertical runs (data columns only).
- *  - Colspan: in each row, absorb empty cells to the right into the previous visible cell.
- */
 const rows = computed<Row[]>(() => {
   const data = baseRows.value
   if (!data.length) return []
@@ -163,9 +157,10 @@ const rows = computed<Row[]>(() => {
 const columns = computed(() =>
   hasRowHead.value ? [' ', ...props.def.columns] : props.def.columns
 )
-</script>
 
+</script>
 <style lang="css" scoped>
+
 .ns-table-content {
   overflow-x: auto;
 }
@@ -205,4 +200,5 @@ table tbody td:first-of-type,
 table tbody td:empty {
   border-left: none;
 }
+
 </style>

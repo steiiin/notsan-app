@@ -4,16 +4,20 @@
     <ion-text>{{ text }}</ion-text>
   </div>
 </template>
-
 <script setup lang="ts">
+
 import { IonIcon, IonText } from '@ionic/vue'
 import { searchOutline } from 'ionicons/icons'
-import { computed } from 'vue';
+import { computed } from 'vue'
+
+// ############################################################################
 
 const props = defineProps<{
   label?: string,
   id?: string,
 }>()
+
+// ############################################################################
 
 const text = computed(() => {
   const key = !props.id ? '': `(${props.id}) `
@@ -24,6 +28,7 @@ const text = computed(() => {
 </script>
 
 <style scoped>
+
 .empty-state {
   margin-top: 4rem;
   display: flex;
@@ -32,8 +37,8 @@ const text = computed(() => {
   gap: 0.5rem;
   color: var(--ion-color-medium);
 }
-
 .empty-state ion-icon {
   font-size: 2.5rem;
 }
+
 </style>

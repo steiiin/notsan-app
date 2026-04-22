@@ -7,17 +7,14 @@
           <ion-icon aria-hidden="true" :icon="medkit" />
           <ion-label>Medikamente</ion-label>
         </ion-tab-button>
-
         <ion-tab-button tab="lib" href="/tabs/lib">
           <ion-icon aria-hidden="true" :icon="library" />
           <ion-label>Wissen</ion-label>
         </ion-tab-button>
-
         <ion-tab-button tab="calc" href="/tabs/forms">
           <ion-icon aria-hidden="true" :icon="calculator" />
           <ion-label>Rechner</ion-label>
         </ion-tab-button>
-
         <ion-tab-button tab="emerg" href="/tabs/emergency" class="emergButton">
           <ion-icon aria-hidden="true" :icon="warning" />
           <ion-label>Notfall</ion-label>
@@ -26,12 +23,12 @@
     </ion-tabs>
   </ion-page>
 </template>
-
 <script setup lang="ts">
-import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { medkit, library, calculator, warning } from 'ionicons/icons';
-</script>
 
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue'
+import { medkit, library, calculator, warning } from 'ionicons/icons'
+
+</script>
 <style lang="css" scoped>
 
 .emergButton {

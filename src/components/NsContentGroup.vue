@@ -8,15 +8,18 @@
     </ion-card-content>
   </ion-card>
 </template>
-
 <script setup lang="ts">
+
 import { IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/vue'
+
+// ############################################################################
+
 defineProps<{
   title?: string,
   dense?: boolean,
 }>()
-</script>
 
+</script>
 <style lang="css" scoped>
 
 .ns-content-group ion-card-header

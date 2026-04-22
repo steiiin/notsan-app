@@ -12,17 +12,22 @@
     </div>
   </div>
 </template>
-
 <script setup lang="ts">
-import { defineProps } from 'vue';
-import NsTextContent from './NsTextContent.vue';
 
-defineProps<{ label: string }>();
+import NsTextContent from './NsTextContent.vue'
+
+// ############################################################################
+
+defineProps<{
+  label: string
+}>()
+
 </script>
-
 <style scoped>
+
 .ns-key-value__key {
   font-style: italic;
   font-weight: inherit;
 }
+
 </style>

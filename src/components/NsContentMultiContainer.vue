@@ -3,16 +3,13 @@
     <slot></slot>
   </div>
 </template>
-
 <script setup lang="ts">
-import { computed } from 'vue';
 
 defineProps<{
   cardsize?: number,
 }>()
-const style = computed
-</script>
 
+</script>
 <style lang="css" scoped>
 
 .ns-content-multi-container {
@@ -30,6 +27,5 @@ const style = computed
     width: unset;
   }
 }
-
 
 </style>
