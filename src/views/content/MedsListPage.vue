@@ -33,7 +33,7 @@ import { IonPage, IonHeader, IonToolbar, IonIcon, IonTitle, IonContent, IonButto
 
 import { useContentStore } from '@/stores/content'
 import { useConfigStore } from '@/stores/config'
-import { ref, computed, nextTick } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
 // ############################################################################
@@ -58,16 +58,70 @@ const medications = computed(() =>
 // ############################################################################
 
 const searchTerm = ref('')
+
+const fuzzyMatchScore = (query: string, text: string): number => {
+  const normalizedQuery = query.trim().toLowerCase()
+  const normalizedText = text.trim().toLowerCase()
+
+  if (!normalizedQuery || !normalizedText) {
+    return -Infinity
+  }
+
+  // exact substring gets highest ranking
+  const directMatchIndex = normalizedText.indexOf(normalizedQuery)
+  if (directMatchIndex >= 0) {
+    return 1000 - directMatchIndex
+  }
+
+  // subsequence fallback (characters in order, not necessarily contiguous)
+  let queryIndex = 0
+  let textIndex = 0
+  let matchedChars = 0
+  let firstMatchIndex = -1
+  let previousMatchIndex = -1
+  let gaps = 0
+
+  while (queryIndex < normalizedQuery.length && textIndex < normalizedText.length) {
+    if (normalizedQuery[queryIndex] === normalizedText[textIndex]) {
+      matchedChars++
+      if (firstMatchIndex === -1) {
+        firstMatchIndex = textIndex
+      }
+      if (previousMatchIndex >= 0) {
+        gaps += textIndex - previousMatchIndex - 1
+      }
+      previousMatchIndex = textIndex
+      queryIndex++
+    }
+    textIndex++
+  }
+
+  if (queryIndex < normalizedQuery.length) {
+    return -Infinity
+  }
+
+  // higher score for more compact and early matches
+  return 500 - firstMatchIndex - gaps - (normalizedText.length - matchedChars) * 0.1
+}
+
 const filteredMedications = computed(() => {
   const term = searchTerm.value.trim().toLowerCase()
   if (!term) {
     return medications.value
   }
-  return medications.value.filter(item => {
-    const title = item.title.toLowerCase()
-    const subtitle = item.subtitle?.toLowerCase() ?? ''
-    return title.includes(term) || subtitle.includes(term)
-  })
+
+  return medications.value
+    .map(item => {
+      const titleScore = fuzzyMatchScore(term, item.title)
+      const subtitleScore = fuzzyMatchScore(term, item.subtitle ?? '')
+      return {
+        item,
+        score: Math.max(titleScore, subtitleScore),
+      }
+    })
+    .filter(({ score }) => score > -Infinity)
+    .sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title))
+    .map(({ item }) => item)
 })
 
 // ############################################################################
@@ -82,7 +136,7 @@ const scrollPos = ref<number>(0);
 
 const router = useRouter()
 router.afterEach(async (to, from) => {
-  if (!mycontent || !mycontent.value) { return }
+  if (!mycontent.value) { return }
 
   if (to.fullPath.includes('meds') && from.fullPath.includes('meds'))
   {
@@ -103,7 +157,7 @@ router.afterEach(async (to, from) => {
 })
 
 onIonViewWillEnter(async () => {
-  if (!mycontent || !mycontent.value) { return }
+  if (!mycontent.value) { return }
   scrollTo(mycontent, scrollPos.value)
 })
 
