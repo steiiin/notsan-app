@@ -17,18 +17,17 @@
 
 <script setup lang="ts">
 
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton } from '@ionic/vue'
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, useIonRouter } from '@ionic/vue'
 import NsEmptyState from '@/components/NsEmptyState.vue'
 
 import { useContentStore } from '@/stores/content'
 import { computed, defineAsyncComponent } from 'vue'
-import { useRouter } from 'vue-router'
 
 const props = defineProps<{
   medId: string
 }>()
 
-const router = useRouter()
+const ionRouter = useIonRouter()
 const content = useContentStore()
 
 const medication = computed(() => content.findMedicationById(props.medId))
@@ -39,8 +38,13 @@ const medicationComponent = computed(() => {
   return null;
 })
 
-const back = () => {
-  router.back()
+const back = (event: Event) => {
+  event.preventDefault()
+  if (ionRouter.canGoBack()) {
+    ionRouter.back()
+    return
+  }
+  ionRouter.navigate('/tabs/meds', 'root', 'replace')
 }
 
 </script>
