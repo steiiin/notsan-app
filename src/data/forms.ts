@@ -23,4 +23,10 @@ export const forms: FormListItem[] = [
     ]
   },
 
+  {
+    id: 'score-na',
+    title: 'Notarzt-Nachforderung',
+    component: () => import('@/views/content/forms/score/na/ContentNa.vue')
+  },
+
 ];

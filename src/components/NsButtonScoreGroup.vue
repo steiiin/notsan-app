@@ -8,6 +8,14 @@
         <ion-icon :src="close"></ion-icon>
       </ion-button>
     </template>
+    <template v-if="option.type === 'no-yes'">
+      <ion-button :color="color(true, 'bad')" :fill="fill(true)" expand="block" @click="onSelect(true)">
+        <ion-icon :src="checkmark"></ion-icon>
+      </ion-button>
+      <ion-button :color="color(false, 'good')" :fill="fill(false)" expand="block" @click="onSelect(false)">
+        <ion-icon :src="close"></ion-icon>
+      </ion-button>
+    </template>
     <div class="label">
       {{ option.label }}
     </div>
@@ -22,7 +30,7 @@ import { checkmark, close } from 'ionicons/icons'
 // ############################################################################
 
 type ScoreOptionColor = 'good' | 'bad' | 'okay' | 'neutral'
-type ScoreTypeValue = 'yes-no'
+type ScoreTypeValue = 'yes-no' | 'no-yes'
 type ScoreOption = {
   type: ScoreTypeValue
   label: string
