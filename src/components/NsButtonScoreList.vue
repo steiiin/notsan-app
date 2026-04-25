@@ -12,4 +12,12 @@
   padding-inline: var(--ns-card-padding);
 }
 
+.ns-button-score-list :deep(hr) {
+  margin-inline: var(--ns-card-neg-padding);
+  padding-inline: var(--ns-card-padding);
+  background-color: var(--ion-color-light);
+}
+
+
+
 </style>
