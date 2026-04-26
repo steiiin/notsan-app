@@ -177,6 +177,15 @@ const normalizeHref = (rawHref: string): URL | null => {
 }
 
 const svgLinkListeners: Array<{ element: Element; handler: (event: Event) => void }> = []
+let suppressNextClickUntil = 0
+const shouldSuppressNextClick = () => suppressNextClickUntil > 0 && performance.now() <= suppressNextClickUntil
+const suppressNextClick = () => {
+  suppressNextClickUntil = performance.now() + TAP_MAX_DELAY
+  setTimeout(() => {
+    if (performance.now() >= suppressNextClickUntil) suppressNextClickUntil = 0
+  }, TAP_MAX_DELAY)
+}
+
 const cleanupSvgLinkListeners = () => {
   while (svgLinkListeners.length) {
     const { element, handler } = svgLinkListeners.pop()!
@@ -205,6 +214,12 @@ const setupSvgLinks = () => {
   const links = host.querySelectorAll('a')
   links.forEach(link => {
     const handler = (event: Event) => {
+      if (shouldSuppressNextClick()) {
+        event.preventDefault()
+        event.stopPropagation()
+        return
+      }
+
       event.preventDefault()
       event.stopPropagation()
       const rawHref = link.getAttribute('xlink:href') || link.getAttribute('href')
@@ -296,6 +311,7 @@ const onPointerUp = (e: PointerEvent) => {
     // it's a double-tap
     e.preventDefault();
     e.stopPropagation();
+    suppressNextClick()
     toggleZoomAt(e.clientX, e.clientY);
     lastTap.time = 0; // reset sequence
   } else {
