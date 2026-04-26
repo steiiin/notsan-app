@@ -28,6 +28,7 @@ const buildMedicationDefaults = (): Record<string, PerMedicationConfig> => {
 export const createDefaultMedSettings = (): MedSettings => ({
   medications: buildMedicationDefaults(),
   selectedRegionId: null,
+  themeMode: 'auto',
 });
 
 const syncMedicationEnabledWithPackages = (medicationSettings: PerMedicationConfig): PerMedicationConfig => {
@@ -63,6 +64,10 @@ export const normalizeMedSettings = (value: unknown): MedSettings => {
   defaults.selectedRegionId = typeof input.selectedRegionId === 'string' || input.selectedRegionId === null
     ? input.selectedRegionId
     : defaults.selectedRegionId;
+
+  defaults.themeMode = input.themeMode === 'auto' || input.themeMode === 'light' || input.themeMode === 'dark'
+    ? input.themeMode
+    : defaults.themeMode;
 
   return defaults
 }

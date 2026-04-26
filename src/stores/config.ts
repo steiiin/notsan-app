@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { applyMedSettingsOverride, createDefaultMedSettings, normalizeMedSettings, regionProfiles } from '@/data/regions'
-import type { MedSettings } from '@/types/config'
+import { applyThemeMode } from '@/service/theme'
+import type { MedSettings, ThemeMode } from '@/types/config'
 
 const CONFIGSTORE_KEY = 'configstore';
 
@@ -71,13 +72,21 @@ export const useConfigStore = defineStore('config', {
       }
 
       const defaultSettings = createDefaultMedSettings();
+      defaultSettings.themeMode = this.medSettings.themeMode;
       this.medSettings = applyMedSettingsOverride(defaultSettings, regionProfile.settings);
       this.persistConfig();
+    },
+
+    setThemeMode(themeMode: ThemeMode) {
+      this.medSettings.themeMode = themeMode;
+      this.persistConfig();
+      applyThemeMode(themeMode);
     },
 
     resetToDefaultSettings() {
       this.medSettings = createDefaultMedSettings();
       this.persistConfig();
+      applyThemeMode(this.medSettings.themeMode ?? 'auto');
     },
 
     persistConfig() {
@@ -108,6 +117,8 @@ export const useConfigStore = defineStore('config', {
       } catch {
         this.medSettings = defaults;
       }
+
+      applyThemeMode(this.medSettings.themeMode ?? 'auto');
     },
   },
 });

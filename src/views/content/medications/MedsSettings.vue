@@ -12,7 +12,27 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <ion-list inset>
+        <ion-list full>
+          <ion-item>
+
+            <ion-select
+              label="Theme"
+              interface="popover"
+              placeholder="Automatisch"
+              :model-value="selectedThemeMode"
+              @update:modelValue="onThemeChange">
+              <ion-select-option value="auto">
+                Automatisch
+              </ion-select-option>
+              <ion-select-option value="light">
+                Hell
+              </ion-select-option>
+              <ion-select-option value="dark">
+                Dunkel
+              </ion-select-option>
+            </ion-select>
+
+          </ion-item>
           <ion-item>
 
             <ion-select
@@ -85,7 +105,6 @@ import {
   IonSelect,
   IonSelectOption,
   IonList,
-  IonListHeader,
   IonToggle,
 } from '@ionic/vue'
 
@@ -94,6 +113,7 @@ import { computed } from 'vue'
 import { findMatchingRegionId, regionOptions } from '@/data/regions'
 import { useContentStore } from '@/stores/content'
 import { useConfigStore } from '@/stores/config'
+import type { ThemeMode } from '@/types/config'
 
 defineProps<{
   modelValue: boolean
@@ -113,9 +133,23 @@ const selectedRegionId = computed(() => {
     ?? undefined
 })
 
+const selectedThemeMode = computed(() => configStore.medSettings.themeMode ?? 'auto')
+
 const closeSettings = () => {
   emit('update:modelValue', false)
   emit('closed')
+}
+
+const isThemeMode = (value: unknown): value is ThemeMode => {
+  return value === 'auto' || value === 'light' || value === 'dark'
+}
+
+const onThemeChange = (themeMode: string | null | undefined) => {
+  if (!isThemeMode(themeMode)) {
+    return
+  }
+
+  configStore.setThemeMode(themeMode)
 }
 
 const onRegionChange = (regionId: string | null | undefined) => {

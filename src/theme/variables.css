@@ -66,61 +66,59 @@
 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+:root.ion-palette-dark {
 
-    /* overwrite style */
-    --ion-color-primary: #4d8dff;
-    --ion-color-primary-rgb: 77, 141, 255;
+  /* overwrite style */
+  --ion-color-primary: #4d8dff;
+  --ion-color-primary-rgb: 77, 141, 255;
 
-    /* colors */
-    --ns-color-blue: #4d8dff; /* Lighter blue */
-    --ns-color-blue-shade: #4d8dff;
+  /* colors */
+  --ns-color-blue: #4d8dff; /* Lighter blue */
+  --ns-color-blue-shade: #4d8dff;
 
-    --ns-color-purple: #B583E7; /* Lighter purple */
-    --ns-color-purple-shade: #B583E7;
+  --ns-color-purple: #B583E7; /* Lighter purple */
+  --ns-color-purple-shade: #B583E7;
 
-    --ns-color-red: #ff3b3f; /* Lighter red  */
-    --ns-color-red-shade: #ff3b3f;
+  --ns-color-red: #ff3b3f; /* Lighter red  */
+  --ns-color-red-shade: #ff3b3f;
 
-    --ns-color-orange: #e6a820; /* Lighter orange */
-    --ns-color-orange-shade: #e6a820;
+  --ns-color-orange: #e6a820; /* Lighter orange */
+  --ns-color-orange-shade: #e6a820;
 
-    --ns-color-green: #3ddc97; /* Lighter green */
-    --ns-color-green-shade: #3ddc97;
+  --ns-color-green: #3ddc97; /* Lighter green */
+  --ns-color-green-shade: #3ddc97;
 
-    --ns-color-divider: #f4f5f866;
+  --ns-color-divider: #f4f5f866;
 
-    /* broselow colors */
-    --ns-broselow-code-grey:    #7A7A7A; /* darker grey */
-    --ns-broselow-code-pink:    #D16C90; /* stronger pink */
-    --ns-broselow-code-red:     #C0392B; /* deep red */
-    --ns-broselow-code-purple:    #8E44AD; /* dark purple */
-    --ns-broselow-code-yellow:    #D4AC0D; /* warm golden yellow */
-    --ns-broselow-code-white:    #BDC3C7; /* light grey for dark UI */
-    --ns-broselow-code-blue:    #2E86C1; /* dark blue */
-    --ns-broselow-code-orange:  #CA6F1E; /* dark orange */
-    --ns-broselow-code-green:    #1E8449; /* deep green */
+  /* broselow colors */
+  --ns-broselow-code-grey:    #7A7A7A; /* darker grey */
+  --ns-broselow-code-pink:    #D16C90; /* stronger pink */
+  --ns-broselow-code-red:     #C0392B; /* deep red */
+  --ns-broselow-code-purple:    #8E44AD; /* dark purple */
+  --ns-broselow-code-yellow:    #D4AC0D; /* warm golden yellow */
+  --ns-broselow-code-white:    #BDC3C7; /* light grey for dark UI */
+  --ns-broselow-code-blue:    #2E86C1; /* dark blue */
+  --ns-broselow-code-orange:  #CA6F1E; /* dark orange */
+  --ns-broselow-code-green:    #1E8449; /* deep green */
 
-    /* flow colors */
-    --ns-flow-saa: #1F2F1E;
-    --ns-flow-saa-border: #446E2C;
-    --ns-flow-process: #1D293B;
-    --ns-flow-process-border: #5C79A3;
-    --ns-flow-subprocess: #1A1A1A;
-    --ns-flow-subprocess-border: #959595;
-    --ns-flow-bpr: #512D2B;
-    --ns-flow-bpr-border: #D7817E;
+  /* flow colors */
+  --ns-flow-saa: #1F2F1E;
+  --ns-flow-saa-border: #446E2C;
+  --ns-flow-process: #1D293B;
+  --ns-flow-process-border: #5C79A3;
+  --ns-flow-subprocess: #1A1A1A;
+  --ns-flow-subprocess-border: #959595;
+  --ns-flow-bpr: #512D2B;
+  --ns-flow-bpr-border: #D7817E;
 
-    /* kof colors (dark theme) */
-    --ns-kof-burn-3rd:       #8E44AD;
-    --ns-kof-burn-3rd-rgb:   156, 88, 190;
+  /* kof colors (dark theme) */
+  --ns-kof-burn-3rd:       #8E44AD;
+  --ns-kof-burn-3rd-rgb:   156, 88, 190;
 
-    --ns-kof-burn-2nd:       #C0392B;
-    --ns-kof-burn-2nd-rgb:   211, 80, 61;
+  --ns-kof-burn-2nd:       #C0392B;
+  --ns-kof-burn-2nd-rgb:   211, 80, 61;
 
-    --ns-kof-burn-1st:       #D4AC0D;
-    --ns-kof-burn-1st-rgb:   233, 190, 14;
+  --ns-kof-burn-1st:       #D4AC0D;
+  --ns-kof-burn-1st-rgb:   233, 190, 14;
 
-  }
 }

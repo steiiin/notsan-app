@@ -32,7 +32,7 @@ export const library: LibraryListItem[] = [
       },
       {
         id: 'bpr-bradykardie',
-        title: 'Instabile Bradykardie',
+        title: 'Bradykardie',
         component: () => import('@/views/content/library/bpr/bradykardie/ContentBradykardie.vue')
       },
       {
@@ -78,7 +78,7 @@ export const library: LibraryListItem[] = [
       },
       {
         id: 'bpr-tachykardie',
-        title: 'Instabile Tachykardie',
+        title: 'Tachykardie',
         component: () => import('@/views/content/library/bpr/tachykardie/ContentTachykardie.vue')
       },
       {
