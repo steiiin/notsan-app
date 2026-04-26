@@ -39,7 +39,11 @@
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:acs"><rect x="290" y="80" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
 
 
+
+
 <path d="M 303 80 L 303 140 M 517 80 L 517 140" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:211px;height:1px;padding-top:110px;margin-left:304px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR<div>Akutes Koronarsyndrom</div></div></div></div></foreignObject></a>
@@ -68,13 +72,19 @@
   <a xlink:href="file:///?action=instabil"><path d="M 30 160 L 510 160 L 530 190 L 510 220 L 30 220 L 10 190 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
 
 
+
+
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:518px;height:1px;padding-top:190px;margin-left:11px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Instabilitätszeichen?</div></div></div></foreignObject></a>
   <path d="M 329.96 320 L 330 330 L 329.97 351.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 329.96 358.88 L 326.47 351.88 L 333.47 351.89 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/med:atropin"><rect x="300" y="260" width="180" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
 
 
+
+
 <path d="M 308 260 L 308 320 M 472 260 L 472 320" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:163px;height:1px;padding-top:290px;margin-left:309px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">SAA Atropin</div></div></div></foreignObject></a>
@@ -151,6 +161,8 @@
   <a xlink:href="file:///?action=asystoliegefahr"><path d="M 30 260 L 220 260 L 240 290 L 220 320 L 30 320 L 10 290 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
 
 
+
+
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:228px;height:1px;padding-top:290px;margin-left:11px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Asystoliegefahr?</div></div></div></foreignObject></a>
   <path d="M 125 680 L 125 700 L 125 680 L 125 691.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 125 698.88 L 121.5 691.88 L 128.5 691.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
@@ -172,7 +184,11 @@
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/med:epinephrin"><rect x="10" y="440" width="230" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
 
 
+
+
 <path d="M 20 440 L 20 500 M 230 440 L 230 500" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:208px;height:1px;padding-top:470px;margin-left:21px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">SAA<div>Adrenalin</div></div></div></div></foreignObject></a>
@@ -196,7 +212,11 @@
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:schmerzen"><rect x="10" y="800" width="230" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
 
 
+
+
 <path d="M 20 800 L 20 860 M 230 800 L 230 860" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:208px;height:1px;padding-top:830px;margin-left:21px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR Schmerzen</div></div></div></foreignObject></a>
