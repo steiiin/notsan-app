@@ -10,6 +10,11 @@ export const library: LibraryListItem[] = [
     [
 
       {
+        id: 'bpr-anaphylaxie',
+        title: 'Anaphylaxie',
+        component: () => import('@/views/content/library/bpr/anaphylaxie/ContentAnaphylaxie.vue')
+      },
+      {
         id: 'bpr-atemwegsmanagement',
         title: 'Atemwegsmanagement',
         component: () => import('@/views/content/library/bpr/atemwegsmanagement/ContentAtemwegsmanagement.vue')
