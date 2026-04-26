@@ -12,77 +12,90 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <ion-list full>
-          <ion-item>
 
-            <ion-select
-              label="Theme"
-              interface="popover"
-              placeholder="Automatisch"
-              :model-value="selectedThemeMode"
-              @update:modelValue="onThemeChange">
-              <ion-select-option value="auto">
-                Automatisch
-              </ion-select-option>
-              <ion-select-option value="light">
-                Hell
-              </ion-select-option>
-              <ion-select-option value="dark">
-                Dunkel
-              </ion-select-option>
-            </ion-select>
+        <ion-card>
+          <ion-card-content class="version">
+            <p><strong>Version:</strong> {{ versionData.version }}</p>
+            <p><strong>Letzte Aktualisierung:</strong> {{ formattedLastUpdate }}</p>
+          </ion-card-content>
+        </ion-card>
 
-          </ion-item>
-          <ion-item>
+        <ion-card>
+          <ion-list>
+            <ion-item lines="full">
 
-            <ion-select
-              label="Rettungsdienstbereich"
-              interface="popover"
-              placeholder="Keine Bereich gewählt"
-              :model-value="selectedRegionId"
-              @update:modelValue="onRegionChange">
-              <ion-select-option v-for="region in regionOptions"
-                :key="region.id" :value="region.id">
-                {{ region.label }}
-              </ion-select-option>
-            </ion-select>
+              <ion-select
+                label="Theme"
+                interface="popover"
+                placeholder="Automatisch"
+                :model-value="selectedThemeMode"
+                @update:modelValue="onThemeChange">
+                <ion-select-option value="auto">
+                  Automatisch
+                </ion-select-option>
+                <ion-select-option value="light">
+                  Hell
+                </ion-select-option>
+                <ion-select-option value="dark">
+                  Dunkel
+                </ion-select-option>
+              </ion-select>
 
-          </ion-item>
-        </ion-list>
-
-        <ion-list inset>
-
-          <template v-for="medication in contentStore.medications" :key="medication.id">
-
-            <ion-item :lines="medication.packages.length>1 ? 'inset' : 'full'">
-              <ion-toggle label-placement="start"
-                :checked="configStore.checkMedicationEnabled(medication.id)"
-                @update:modelValue="onMedicationToggle(medication.id, $event)">
-                <ion-label>{{ medication.title }}</ion-label>
-              </ion-toggle>
             </ion-item>
+            <ion-item lines="none">
 
-            <template v-if="medication.packages.length > 1">
+              <ion-select
+                label="Rettungsdienstbereich"
+                interface="popover"
+                placeholder="Keine Bereich gewählt"
+                :model-value="selectedRegionId"
+                @update:modelValue="onRegionChange">
+                <ion-select-option v-for="region in regionOptions"
+                  :key="region.id" :value="region.id">
+                  {{ region.label }}
+                </ion-select-option>
+              </ion-select>
 
-              <ion-item v-for="medPackage in medication.packages" :key="medPackage.id"
-                lines="none" class="package-item">
+            </ion-item>
+          </ion-list>
+        </ion-card>
 
-                <ion-label class="ion-text-wrap">
-                  <h3>{{ medPackage.name }}</h3>
-                  <p>{{ medPackage.incredients[0].amount }}</p>
-                </ion-label>
-                <ion-toggle
-                  slot="end"
-                  :checked="configStore.checkPackageEnabled(medication.id, medPackage.id)"
-                  :disabled="!configStore.checkMedicationEnabled(medication.id)"
-                  @update:modelValue="onPackageToggle(medication.id, medPackage.id, $event)"
-                />
+        <ion-card>
+          <ion-list>
 
+            <template v-for="medication in contentStore.medications" :key="medication.id">
+
+              <ion-item :lines="medication.packages.length>1 ? 'inset' : 'full'">
+                <ion-toggle label-placement="start"
+                  :checked="configStore.checkMedicationEnabled(medication.id)"
+                  @update:modelValue="onMedicationToggle(medication.id, $event)">
+                  <ion-label>{{ medication.title }}</ion-label>
+                </ion-toggle>
               </ion-item>
-            </template>
 
-          </template>
-        </ion-list>
+              <template v-if="medication.packages.length > 1">
+
+                <ion-item v-for="medPackage in medication.packages" :key="medPackage.id"
+                  lines="none" class="package-item">
+
+                  <ion-label class="ion-text-wrap">
+                    <h3>{{ medPackage.name }}</h3>
+                    <p>{{ medPackage.incredients[0].amount }}</p>
+                  </ion-label>
+                  <ion-toggle
+                    slot="end"
+                    :checked="configStore.checkPackageEnabled(medication.id, medPackage.id)"
+                    :disabled="!configStore.checkMedicationEnabled(medication.id)"
+                    @update:modelValue="onPackageToggle(medication.id, medPackage.id, $event)"
+                  />
+
+                </ion-item>
+              </template>
+
+            </template>
+          </ion-list>
+        </ion-card>
+
       </ion-content>
     </ion-page>
   </ion-modal>
@@ -106,6 +119,10 @@ import {
   IonSelectOption,
   IonList,
   IonToggle,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonCardContent,
 } from '@ionic/vue'
 
 import { closeOutline } from 'ionicons/icons'
@@ -114,6 +131,7 @@ import { findMatchingRegionId, regionOptions } from '@/data/regions'
 import { useContentStore } from '@/stores/content'
 import { useConfigStore } from '@/stores/config'
 import type { ThemeMode } from '@/types/config'
+import versionData from '@/version.json'
 
 defineProps<{
   modelValue: boolean
@@ -134,6 +152,17 @@ const selectedRegionId = computed(() => {
 })
 
 const selectedThemeMode = computed(() => configStore.medSettings.themeMode ?? 'auto')
+
+const formattedLastUpdate = computed(() => {
+  const date = new Date(versionData.lastUpdate)
+  return date.toLocaleDateString('de-DE', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit'
+  })
+})
 
 const closeSettings = () => {
   emit('update:modelValue', false)
@@ -171,5 +200,8 @@ const onPackageToggle = (medicationId: string, packageId: string, enabled: boole
 <style scoped>
 .package-item {
   --inner-padding-start: 1.5rem;
+}
+.version {
+  color: var(--ion-item-color, var(--ion-text-color, #000));
 }
 </style>
