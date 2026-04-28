@@ -13,10 +13,10 @@
   </foreignObject>
   <path d="M 300 190 L 248.12 190" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 241.12 190 L 248.12 186.5 L 248.12 193.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/keyword:sepsis"><rect x="300" y="160" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:#fff2cc;stroke:#d6b656"/>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/keyword:sepsis"><rect x="300" y="160" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-emergency);stroke:var(--ns-flow-emergency-border)"/>
 
 
-<path d="M 310 160 L 310 220 M 530 160 L 530 220" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:#d6b656"/>
+<path d="M 310 160 L 310 220 M 530 160 L 530 220" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-emergency-border)"/>
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:190px;margin-left:311px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal"><font style="font-size:13px">Score: Sepsis (NEWS2)</font></div></div></div></foreignObject></a>
@@ -87,10 +87,10 @@
   </foreignObject>
   <path d="M 300 385 L 238.12 385" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 231.12 385 L 238.12 381.5 L 238.12 388.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/emergency:sepsis"><rect x="300" y="355" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:#fff2cc;stroke:#d6b656"/>
+  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/emergency:sepsis"><rect x="300" y="355" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-emergency);stroke:var(--ns-flow-emergency-border)"/>
 
 
-<path d="M 310 355 L 310 415 M 530 355 L 530 415" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:#d6b656"/>
+<path d="M 310 355 L 310 415 M 530 355 L 530 415" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-emergency-border)"/>
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:385px;margin-left:311px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal"><font style="font-size:13px">Notfall: Sepsis</font></div></div></div></foreignObject></a>

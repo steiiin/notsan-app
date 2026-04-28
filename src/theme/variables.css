@@ -53,6 +53,8 @@
   --ns-flow-subprocess-border: #666666;
   --ns-flow-bpr: #F8CECC;
   --ns-flow-bpr-border: #B85450;
+  --ns-flow-emergency: #FFF2CC;
+  --ns-flow-emergency-border: #D6B656;
 
   /* kof colors */
   --ns-kof-burn-3rd:       #9B59B6; /* vivid purple */
@@ -110,6 +112,8 @@
   --ns-flow-subprocess-border: #959595;
   --ns-flow-bpr: #512D2B;
   --ns-flow-bpr-border: #D7817E;
+  --ns-flow-emergency: #281D00;
+  --ns-flow-emergency-border: #6D5100;
 
   /* kof colors (dark theme) */
   --ns-kof-burn-3rd:       #8E44AD;

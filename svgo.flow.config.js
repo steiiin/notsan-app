@@ -12,6 +12,8 @@ const COLORMAP = new Map([
   ['#82b366', 'var(--ns-flow-saa-border)'],
   ['#f8cecc', 'var(--ns-flow-bpr)'],
   ['#b85450', 'var(--ns-flow-bpr-border)'],
+  ['#fff2cc', 'var(--ns-flow-emergency)'],
+  ['#d6b656', 'var(--ns-flow-emergency-border)'],
 ]);
 
 const NodesToNeutralize = new Set([
