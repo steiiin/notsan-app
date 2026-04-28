@@ -12,7 +12,7 @@ export default defineConfig({
     vue(),
     legacy(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       manifest: {
         name: 'NotSan-Taschenbuch',
         short_name: 'NotSan-App',

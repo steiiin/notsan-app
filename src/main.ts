@@ -4,12 +4,48 @@ import App from './App.vue'
 import router from './router';
 
 /* IONIC */
-import { IonicVue } from '@ionic/vue';
+import { IonicVue, actionSheetController } from '@ionic/vue';
 
 /* ServiceWorker */
 import { registerSW } from 'virtual:pwa-register'
-registerSW({
-  immediate: true
+let updateActionSheetOpen = false
+
+const updateServiceWorker = registerSW({
+  immediate: true,
+  onNeedRefresh: async () => {
+    if (updateActionSheetOpen) {
+      return
+    }
+
+    updateActionSheetOpen = true
+
+    const actionSheet = await actionSheetController.create({
+      header: 'Update verfügbar',
+      buttons: [
+        {
+          text: 'Jetzt installieren',
+          handler: () => {
+            updateServiceWorker(true).catch((error: unknown) => {
+              console.error('Failed to install service worker update', error)
+            })
+          },
+        },
+        {
+          text: 'Beim nächsten Start',
+          role: 'cancel',
+        },
+      ],
+    })
+
+    actionSheet.onDidDismiss().then(() => {
+      updateActionSheetOpen = false
+    })
+
+    await actionSheet.present()
+  },
+  onRegisterError: (error: unknown) => {
+    console.error('Service worker registration failed', error)
+  },
 })
 
 // -- Core CSS required for Ionic components to work properly
