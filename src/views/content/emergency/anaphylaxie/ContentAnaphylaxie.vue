@@ -1,20 +1,18 @@
 <template>
-  <ns-accordion-group>
-    <ns-accordion title="Anaphylaxie">
+  <ns-accordion title="Anaphylaxie" value="anaphylaxie">
 
-      <ns-content-group dense>
-        <frag-epinephrine-anaphylaxie></frag-epinephrine-anaphylaxie>
-        <ns-dosage-usage type="iv" dense>
+    <ns-content-group dense>
+      <frag-epinephrine-anaphylaxie></frag-epinephrine-anaphylaxie>
+      <ns-dosage-usage type="iv" dense>
 
-          <frag-dimetinden-anaphylaxie></frag-dimetinden-anaphylaxie>
-          <frag-prednisolon-anaphylaxie-iv></frag-prednisolon-anaphylaxie-iv>
+        <frag-dimetinden-anaphylaxie></frag-dimetinden-anaphylaxie>
+        <frag-prednisolon-anaphylaxie-iv></frag-prednisolon-anaphylaxie-iv>
 
-        </ns-dosage-usage>
-        <frag-prednisolon-anaphylaxie-supp></frag-prednisolon-anaphylaxie-supp>
-      </ns-content-group>
+      </ns-dosage-usage>
+      <frag-prednisolon-anaphylaxie-supp></frag-prednisolon-anaphylaxie-supp>
+    </ns-content-group>
 
-    </ns-accordion>
-  </ns-accordion-group>
+  </ns-accordion>
 </template>
 
 <script setup lang="ts">

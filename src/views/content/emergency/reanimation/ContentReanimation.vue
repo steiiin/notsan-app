@@ -1,22 +1,19 @@
 <template>
-  <ns-accordion-group>
-    <ns-accordion title="Reanimation">
+  <ns-accordion title="Reanimation" value="reanimation">
 
-      <frag-defibrillation></frag-defibrillation>
-      <frag-intubation></frag-intubation>
+    <frag-defibrillation></frag-defibrillation>
+    <frag-intubation></frag-intubation>
 
-      <ns-content-group title="Medikamente" dense>
-        <ns-dosage-usage type="iv" dense>
+    <ns-content-group title="Medikamente" dense>
+      <ns-dosage-usage type="iv" dense>
 
-          <frag-epinephrine-reanimation></frag-epinephrine-reanimation>
-          <frag-amiodaron-reanimation></frag-amiodaron-reanimation>
+        <frag-epinephrine-reanimation></frag-epinephrine-reanimation>
+        <frag-amiodaron-reanimation></frag-amiodaron-reanimation>
 
-        </ns-dosage-usage>
-      </ns-content-group>
+      </ns-dosage-usage>
+    </ns-content-group>
 
-
-    </ns-accordion>
-  </ns-accordion-group>
+  </ns-accordion>
 </template>
 
 <script setup lang="ts">

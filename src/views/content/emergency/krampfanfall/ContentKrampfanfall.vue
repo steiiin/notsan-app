@@ -1,17 +1,15 @@
 <template>
-  <ns-accordion-group>
-    <ns-accordion title="Krampfanfall">
+  <ns-accordion title="Krampfanfall" value="krampfanfall">
 
-      <ns-content-group dense>
+    <ns-content-group dense>
 
-        <frag-midazolam-krampfanfall-buccal></frag-midazolam-krampfanfall-buccal>
-        <frag-midazolam-krampfanfall-nasal></frag-midazolam-krampfanfall-nasal>
-        <frag-midazolam-krampfanfall-iv></frag-midazolam-krampfanfall-iv>
+      <frag-midazolam-krampfanfall-buccal></frag-midazolam-krampfanfall-buccal>
+      <frag-midazolam-krampfanfall-nasal></frag-midazolam-krampfanfall-nasal>
+      <frag-midazolam-krampfanfall-iv></frag-midazolam-krampfanfall-iv>
 
-      </ns-content-group>
+    </ns-content-group>
 
-    </ns-accordion>
-  </ns-accordion-group>
+  </ns-accordion>
 </template>
 
 <script setup lang="ts">
