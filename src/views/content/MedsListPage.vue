@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Medikamente</ion-title>
+        <ion-title>Medikamenten</ion-title>
         <ion-buttons slot="end">
           <ion-button fill="clear" @click="openSettings">
             <ion-icon :icon="settingsOutline" slot="icon-only" />
