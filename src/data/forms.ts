@@ -24,9 +24,32 @@ export const forms: FormListItem[] = [
   },
 
   {
-    id: 'score-na',
-    title: 'Notarzt-Nachforderung',
-    component: () => import('@/views/content/forms/score/na/ContentNa.vue')
+    id: 'score',
+    title: 'Scores',
+    entries:
+    [
+      {
+        id: 'score-sepsis',
+        title: 'Sepsis',
+        subtitle: 'NEWS2-Score',
+        component: () => import('@/views/content/forms/score/sepsis/ContentSepsis.vue')
+      },
+    ]
   },
+
+  {
+    id: 'decision',
+    title: 'Entscheidungshilfe',
+    entries:
+    [
+      {
+        id: 'decision-na',
+        title: 'Notarzt-Nachforderung',
+        component: () => import('@/views/content/forms/decision/na/ContentNa.vue')
+      },
+    ]
+  },
+
+
 
 ];

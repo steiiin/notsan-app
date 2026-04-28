@@ -82,6 +82,11 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/schmerzen/ContentSchmerzen.vue')
       },
       {
+        id: 'bpr-sepsis',
+        title: 'Sepsis',
+        component: () => import('@/views/content/library/bpr/sepsis/ContentSepsis.vue')
+      },
+      {
         id: 'bpr-tachykardie',
         title: 'Tachykardie',
         component: () => import('@/views/content/library/bpr/tachykardie/ContentTachykardie.vue')

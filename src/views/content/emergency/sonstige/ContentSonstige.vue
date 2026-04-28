@@ -1,22 +1,24 @@
 <template>
-  <ns-accordion-group>
-    <ns-accordion title="Sonstige">
+  <ns-accordion title="Sonstige" value="sonstige">
 
-      <ns-content-group title="Hypoglykämie" dense>
-        <frag-glucose-hypoglyk-iv></frag-glucose-hypoglyk-iv>
-      </ns-content-group>
+    <ns-content-group title="Hypoglykämie" dense>
+      <frag-glucose-hypoglyk-iv></frag-glucose-hypoglyk-iv>
+    </ns-content-group>
 
-    </ns-accordion>
-  </ns-accordion-group>
+    <ns-content-group title="Sepsis" dense id="sepsis">
+      <frag-vel-sepsis></frag-vel-sepsis>
+    </ns-content-group>
+
+  </ns-accordion>
 </template>
 
 <script setup lang="ts">
 
-import NsAccordionGroup from '@/components/NsAccordionGroup.vue';
-import NsAccordion from '@/components/NsAccordion.vue';
-import NsContentGroup from '@/components/NsContentGroup.vue';
+import NsAccordion from '@/components/NsAccordion.vue'
+import NsContentGroup from '@/components/NsContentGroup.vue'
 
-import FragGlucoseHypoglykIv from '../../medications/glucose/FragGlucoseHypoglykIv.vue';
+import FragGlucoseHypoglykIv from '../../medications/glucose/FragGlucoseHypoglykIv.vue'
+import FragVelSepsis from '../../medications/vel/FragVelSepsis.vue'
 
 </script>
 

@@ -1,21 +1,19 @@
 <template>
-  <ns-accordion-group>
-    <ns-accordion title="Luftnot">
+  <ns-accordion title="Luftnot" value="luftnot">
 
-      <!-- Obstruktion -->
-      <ns-content-group title="Obstruktion" dense>
+    <!-- Obstruktion -->
+    <ns-content-group title="Obstruktion" dense>
 
-        <ns-dosage-usage type="pi" dense>
-          <frag-salbutamol-obstruktion-pi></frag-salbutamol-obstruktion-pi>
-          <frag-ipratropiumbromid-obstruktion-pi></frag-ipratropiumbromid-obstruktion-pi>
-        </ns-dosage-usage>
-        <frag-prednisolon-obstruktion-iv></frag-prednisolon-obstruktion-iv>
-        <frag-prednisolon-anaphylaxie-supp></frag-prednisolon-anaphylaxie-supp>
+      <ns-dosage-usage type="pi" dense>
+        <frag-salbutamol-obstruktion-pi></frag-salbutamol-obstruktion-pi>
+        <frag-ipratropiumbromid-obstruktion-pi></frag-ipratropiumbromid-obstruktion-pi>
+      </ns-dosage-usage>
+      <frag-prednisolon-obstruktion-iv></frag-prednisolon-obstruktion-iv>
+      <frag-prednisolon-anaphylaxie-supp></frag-prednisolon-anaphylaxie-supp>
 
-      </ns-content-group>
+    </ns-content-group>
 
-    </ns-accordion>
-  </ns-accordion-group>
+  </ns-accordion>
 </template>
 
 <script setup lang="ts">

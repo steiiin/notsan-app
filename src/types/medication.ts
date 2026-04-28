@@ -29,6 +29,7 @@ export const MedId = Object.freeze({
   Salbutamol: 'salbutamol',
   Tranexam: 'tranexam',
   Urapidil: 'urapidil',
+  VEL: 'vel',
 });
 
 export interface Medication {
