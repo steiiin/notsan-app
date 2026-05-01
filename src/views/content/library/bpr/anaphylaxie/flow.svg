@@ -18,6 +18,8 @@
 
 
 
+
+
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:258px;height:1px;padding-top:170px;margin-left:1px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Stadium I</div></div></div></foreignObject></a>
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/med:epinephrin"><rect x="290" y="300" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
 
@@ -28,7 +30,11 @@
 
 
 
+
+
 <path d="M 300 300 L 300 360 M 520 300 L 520 360" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+
+
 
 
 
@@ -47,7 +53,11 @@
 
 
 
+
+
 <path d="M 370 380 L 370 440 M 520 380 L 520 440" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 
@@ -61,6 +71,8 @@ Bronchoobstruktion</div></div></div></foreignObject></a>
   <path d="M 410 200 L 410 220 L 410 200 L 410 211.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 410 218.88 L 406.5 211.88 L 413.5 211.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <a xlink:href="file:///?action=severe"><path d="M 300 140 L 520 140 L 540 170 L 520 200 L 300 200 L 280 170 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+
+
 
 
 
@@ -131,7 +143,11 @@ Bronchoobstruktion</div></div></div></foreignObject></a>
 
 
 
+
+
 <path d="M 160 520 L 160 580 M 380 520 L 380 580" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+
+
 
 
 
@@ -150,7 +166,11 @@ Bronchoobstruktion</div></div></div></foreignObject></a>
 
 
 
+
+
 <path d="M 160 590 L 160 650 M 380 590 L 380 650" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+
+
 
 
 

@@ -45,7 +45,11 @@
 
 
 
+
+
 <path d="M 310 80 L 310 140 M 530 80 L 530 140" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 
@@ -233,6 +237,8 @@
   <path d="M 430 680 L 429.92 691.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 429.87 698.88 L 426.42 691.86 L 433.42 691.91 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <a xlink:href="file:///?action=sga"><rect x="320" y="640" width="220" height="40" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+
+
 
 
 
@@ -435,7 +441,11 @@ Atemwegshilfe</div></div></div></foreignObject></a>
 
 
 
+
+
 <path d="M 310 180 L 310 240 M 530 180 L 530 240" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+
+
 
 
 
