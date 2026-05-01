@@ -46,6 +46,11 @@ export const library: LibraryListItem[] = [
         component: () => import('@/views/content/library/bpr/brustschmerz/ContentBrustschmerz.vue')
       },
       {
+        id: 'bpr-geburt',
+        title: 'Geburt',
+        component: () => import('@/views/content/library/bpr/geburt/ContentGeburt.vue')
+      },
+      {
         id: 'bpr-hypertensiv',
         title: 'Hypertensiver Notfall',
         component: () => import('@/views/content/library/bpr/hypertensiv/ContentHypertensiv.vue')
@@ -117,6 +122,12 @@ export const library: LibraryListItem[] = [
         id: 'saa-iozugang',
         title: 'Intraossärer Zugang',
         component: () => import('@/views/content/library/saa/iozugang/ContentIozugang.vue')
+      },
+
+      {
+        id: 'saa-geburt',
+        title: 'Geburt',
+        component: () => import('@/views/content/library/saa/geburt/ContentGeburt.vue')
       },
 
     ]
