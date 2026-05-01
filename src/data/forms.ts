@@ -43,6 +43,11 @@ export const forms: FormListItem[] = [
     entries:
     [
       {
+        id: 'decision-geburt',
+        title: 'Transportentscheidung Geburt',
+        component: () => import('@/views/content/forms/decision/geburt/ContentGeburt.vue')
+      },
+      {
         id: 'decision-na',
         title: 'Notarzt-Nachforderung',
         component: () => import('@/views/content/forms/decision/na/ContentNa.vue')

@@ -1,0 +1,200 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36" version="28.2.5">
+  <diagram name="Seite-1" id="KUEDkLfnaIW7LQIo-YSv">
+    <mxGraphModel dx="388" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="540" pageHeight="1030" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vWd70z1flt8huPi2ldyt-21" style="edgeStyle=elbowEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;elbow=horizontal;html=1;shadow=0;strokeColor=default;strokeWidth=1;align=center;verticalAlign=middle;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=11;fontColor=default;labelBackgroundColor=default;startArrow=none;startFill=0;endArrow=block;endFill=1;flowAnimation=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="vWd70z1flt8huPi2ldyt-19" target="Wz-J1CUwlF303v3oBWPs-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120.33333333333326" y="80" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="120" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWd70z1flt8huPi2ldyt-19" value="Bevorstehende Geburt" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;" parent="1" vertex="1">
+          <mxGeometry width="540" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-9" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="vWd70z1flt8huPi2ldyt-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="&lt;font style=&quot;font-size: 13px;&quot;&gt;Transportentscheidung&lt;br&gt;Geburt&lt;/font&gt;" link="keyword:geburtTransport" id="vWd70z1flt8huPi2ldyt-22">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.041666666666666664;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;" parent="1" vertex="1">
+            <mxGeometry x="300" y="80" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-12" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-1" target="Wz-J1CUwlF303v3oBWPs-28">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-13" value="NEIN" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="Wz-J1CUwlF303v3oBWPs-12">
+          <mxGeometry x="-0.0214" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-25" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-1" target="Wz-J1CUwlF303v3oBWPs-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-26" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="Wz-J1CUwlF303v3oBWPs-25">
+          <mxGeometry x="-0.1889" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-1" value="Transport in Klinik möglich?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry y="160" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-24" value="Transport" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="300" y="160" width="240" height="60" as="geometry" />
+        </mxCell>
+        <UserObject label="SAA: Geburt" link="saa:geburt" id="Wz-J1CUwlF303v3oBWPs-27">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.041666666666666664;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry x="300" y="259.9999999999999" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-30" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-28">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-28" value="Geburt durchführen" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry y="269.9999999999999" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-39" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-33" target="Wz-J1CUwlF303v3oBWPs-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-40" value="NEIN" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="Wz-J1CUwlF303v3oBWPs-39">
+          <mxGeometry x="0.1852" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="-6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-59" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-33" target="Wz-J1CUwlF303v3oBWPs-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-60" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="Wz-J1CUwlF303v3oBWPs-59">
+          <mxGeometry x="-0.6989" y="-1" relative="1" as="geometry">
+            <mxPoint x="-6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Vitales Kind?" link="/?action=erstbeurteilung" id="Wz-J1CUwlF303v3oBWPs-33">
+          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;dashed=1;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry y="459.9999999999999" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-38" value="taktile &lt;b&gt;Stimulation&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry y="559.9999999999999" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-43" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-41" target="Wz-J1CUwlF303v3oBWPs-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-44" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="Wz-J1CUwlF303v3oBWPs-43">
+          <mxGeometry x="-0.0667" y="-1" relative="1" as="geometry">
+            <mxPoint x="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-45" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-41" target="Wz-J1CUwlF303v3oBWPs-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-46" value="NEIN" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="Wz-J1CUwlF303v3oBWPs-45">
+          <mxGeometry x="-0.5208" relative="1" as="geometry">
+            <mxPoint y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-41" value="&lt;b&gt;Frühgeborenes&lt;/b&gt; (&amp;lt; 37 SSW)?" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry y="339.9999999999999" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-47" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=none;endFill=0;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="420" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-42" value="&lt;b&gt;Nicht Abtrocknen&lt;/b&gt;&lt;div&gt;Direkt NeoHelp nutzen&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="300" y="349.9999999999999" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-50" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-48" target="Wz-J1CUwlF303v3oBWPs-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-48" value="sofort &lt;b&gt;Abnabeln&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry y="600" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-61" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-49" target="Wz-J1CUwlF303v3oBWPs-58">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="690" />
+              <mxPoint x="290" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-62" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="Wz-J1CUwlF303v3oBWPs-61">
+          <mxGeometry x="-0.7888" relative="1" as="geometry">
+            <mxPoint x="8" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="Vitales Kind?" link="/?action=erstbeurteilung" id="Wz-J1CUwlF303v3oBWPs-49">
+          <mxCell style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;size=20;dashed=1;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry y="660" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-51" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="720" as="sourcePoint" />
+            <mxPoint x="120" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-52" value="NEIN" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" connectable="0" parent="Wz-J1CUwlF303v3oBWPs-51">
+          <mxGeometry x="0.1852" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="-6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-63" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-54" target="Wz-J1CUwlF303v3oBWPs-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-54" value="&lt;b&gt;Abnabeln&lt;/b&gt; (nach bis 60s)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="510" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-58" value="Neugeborenes &lt;b&gt;zur Mutter&lt;/b&gt;&amp;nbsp;geben" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="569.9999999999999" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-64" value="Wärmeerhalt ständig beachten" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="610" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-68" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-65" target="Wz-J1CUwlF303v3oBWPs-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-65" value="Engmaschig überwachen" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="650" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-72" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-66" target="Wz-J1CUwlF303v3oBWPs-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-66" value="&lt;b&gt;APGAR &lt;/b&gt;nach 1, 5 und 10 min" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="710" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-67" value="Transport" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="310" y="840" width="240" height="60" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;span style=&quot;font-size: 13px;&quot;&gt;APGAR&lt;/span&gt;" link="keyword:geburtApgar" id="Wz-J1CUwlF303v3oBWPs-55">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.041666666666666664;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;" vertex="1" parent="1">
+            <mxGeometry x="310" y="760" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-73" value="Neugeborenenreanimation" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry y="840" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Wz-J1CUwlF303v3oBWPs-75" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" edge="1" parent="1" source="Wz-J1CUwlF303v3oBWPs-74" target="Wz-J1CUwlF303v3oBWPs-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="BPR:&lt;br&gt;Neugeborenenreanimation" link="bpr:reanimationNeonat" id="Wz-J1CUwlF303v3oBWPs-74">
+          <mxCell style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.041666666666666664;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;fontColor=default;" vertex="1" parent="1">
+            <mxGeometry y="760" width="240" height="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

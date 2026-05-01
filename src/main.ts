@@ -13,6 +13,7 @@ let updateActionSheetOpen = false
 const updateServiceWorker = registerSW({
   immediate: true,
   onNeedRefresh: async () => {
+
     if (updateActionSheetOpen) {
       return
     }
