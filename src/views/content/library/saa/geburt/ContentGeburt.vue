@@ -45,10 +45,8 @@
 </template>
 
 <script setup lang="ts">
-import NsSvg from '@/components/NsSvg.vue'
 import NsContentGroup from '@/components/NsContentGroup.vue'
 import NsTextContent from '@/components/NsTextContent.vue'
-import TextUnderline from '@/components/TextUnderline.vue'
 import TextMono from '@/components/TextMono.vue'
 import TextColored from '@/components/TextColored.vue'
 
