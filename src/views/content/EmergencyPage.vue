@@ -5,12 +5,7 @@
         <ion-title>Notfall</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true" ref="mycontent">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Notfall</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content ref="mycontent">
 
       <ns-patient-input></ns-patient-input>
 

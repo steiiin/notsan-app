@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
           <ion-back-button default-href="/tabs/forms" />
@@ -8,16 +8,9 @@
         <ion-title>{{ list?.title ?? 'Scores & Rechner' }}</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true" ref="mycontent">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ list?.title ?? 'Scores & Rechner' }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content ref="mycontent">
       <NsContentListContainer v-if="entries.length" :items="entries" />
-      <div v-else class="empty-state">
-        <p>Es konnten keine Inhalte gefunden werden.</p>
-      </div>
+      <ns-empty-state v-else label="Inhalt"></ns-empty-state>
     </ion-content>
   </ion-page>
 </template>
@@ -30,6 +23,7 @@ import { useRouter } from 'vue-router'
 import NsContentListContainer from '@/components/NsContentListContainer.vue'
 import { useContentStore } from '@/stores/content'
 import { scrollTo } from '@/service/input'
+import NsEmptyState from '@/components/NsEmptyState.vue'
 
 const props = defineProps<{ id: string }>()
 

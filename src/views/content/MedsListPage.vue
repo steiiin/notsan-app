@@ -15,7 +15,7 @@
         </ion-searchbar>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true" ref="mycontent">
+    <ion-content ref="mycontent">
       <template v-if="filteredMedications.length">
         <NsContentListContainer :items="filteredMedications" />
       </template>

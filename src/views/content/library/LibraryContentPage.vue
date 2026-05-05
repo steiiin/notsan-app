@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
           <ion-back-button :default-href="defaultHref"></ion-back-button>
@@ -8,7 +8,7 @@
         <ion-title>{{ entry?.title ?? 'Wissen' }}</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true">
+    <ion-content ref="mycontent">
       <component v-if="entryComponent" :is="entryComponent" />
       <ns-empty-state v-else label="Eintrag" :id="entryId"></ns-empty-state>
     </ion-content>
@@ -48,6 +48,7 @@ const defaultHref = computed(() => {
   }
   return '/tabs/lib'
 })
+
 </script>
 
 <style scoped>

@@ -2,7 +2,7 @@
   <ion-modal :is-open="open" :keep-contents-mounted="true" :animated="true"
     @willPresent="openModal" @didDismiss="closeModal" class="kof-modal">
     <ion-page>
-      <ion-header :translucent="true">
+      <ion-header>
         <ion-toolbar>
           <ion-title>Areale</ion-title>
           <ion-buttons slot="end">

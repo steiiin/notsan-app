@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
+    <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
           <ion-back-button default-href="/tabs/lib" />
@@ -8,12 +8,7 @@
         <ion-title>{{ list?.title ?? 'Wissen' }}</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true" ref="mycontent">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ list?.title ?? 'Wissen' }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content ref="mycontent">
       <NsContentListContainer v-if="entries.length" :items="entries" />
       <ns-empty-state v-else label="Liste" :key="id"></ns-empty-state>
     </ion-content>

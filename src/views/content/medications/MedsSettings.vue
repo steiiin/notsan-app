@@ -1,7 +1,7 @@
 <template>
   <ion-modal :is-open="modelValue" @didDismiss="closeSettings">
     <ion-page>
-      <ion-header :translucent="true">
+      <ion-header>
         <ion-toolbar>
           <ion-title>Einstellungen</ion-title>
           <ion-buttons slot="end">

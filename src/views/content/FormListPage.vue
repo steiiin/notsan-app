@@ -5,12 +5,7 @@
         <ion-title>Scores &amp; Rechner</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true" ref="mycontent">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Scores &amp; Rechner</ion-title>
-        </ion-toolbar>
-      </ion-header>
+    <ion-content ref="mycontent">
       <NsContentListContainer :items="items" />
     </ion-content>
   </ion-page>
