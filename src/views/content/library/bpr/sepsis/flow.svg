@@ -18,7 +18,11 @@
 
 
 
+
+
 <path d="M 310 160 L 310 220 M 530 160 L 530 220" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-emergency-border)"/>
+
+
 
 
 
@@ -48,6 +52,8 @@
   <path d="M 120 140 L 120 160 L 120 140 L 120 151.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 120 158.88 L 116.5 151.88 L 123.5 151.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
   <a xlink:href="file:///?action=verdacht"><path d="M 20 80 L 220 80 L 240 110 L 220 140 L 20 140 L 0 110 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+
+
 
 
 
@@ -98,7 +104,11 @@
 
 
 
+
+
 <path d="M 310 355 L 310 415 M 530 355 L 530 415" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-emergency-border)"/>
+
+
 
 
 

@@ -1,0 +1,293 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="541px" height="691px" viewBox="-0.5 -0.5 541 691" content="&lt;mxfile host=&quot;Electron&quot; agent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36&quot; version=&quot;28.2.5&quot; scale=&quot;1&quot; border=&quot;0&quot;&gt; &lt;diagram name=&quot;Seite-1&quot; id=&quot;L2w308fRFKuACmfVMeDd&quot;&gt; &lt;mxGraphModel dx=&quot;473&quot; dy=&quot;591&quot; grid=&quot;1&quot; gridSize=&quot;10&quot; guides=&quot;1&quot; tooltips=&quot;1&quot; connect=&quot;1&quot; arrows=&quot;1&quot; fold=&quot;1&quot; page=&quot;1&quot; pageScale=&quot;1&quot; pageWidth=&quot;540&quot; pageHeight=&quot;365&quot; math=&quot;0&quot; shadow=&quot;0&quot;&gt; &lt;root&gt; &lt;mxCell id=&quot;0&quot; /&gt; &lt;mxCell id=&quot;1&quot; parent=&quot;0&quot; /&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-10&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; target=&quot;DxEyLN7qZUIu7upFpujX-9&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;120&quot; y=&quot;440&quot; as=&quot;sourcePoint&quot; /&gt; &lt;mxPoint x=&quot;130&quot; y=&quot;480&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;bO4cj00JHxBitIa0UD0s-28&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;&quot; parent=&quot;1&quot; source=&quot;bO4cj00JHxBitIa0UD0s-1&quot; edge=&quot;1&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;Array as=&quot;points&quot;&gt; &lt;mxPoint x=&quot;120&quot; y=&quot;70&quot; /&gt; &lt;mxPoint x=&quot;120&quot; y=&quot;70&quot; /&gt; &lt;/Array&gt; &lt;mxPoint x=&quot;120&quot; y=&quot;79.99999999999989&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;bO4cj00JHxBitIa0UD0s-1&quot; value=&quot;Starker Erregungszustand&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry width=&quot;540&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;bO4cj00JHxBitIa0UD0s-29&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot; parent=&quot;1&quot; edge=&quot;1&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;120&quot; y=&quot;139.9999999999999&quot; as=&quot;sourcePoint&quot; /&gt; &lt;mxPoint x=&quot;120&quot; y=&quot;179.9999999999999&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;bO4cj00JHxBitIa0UD0s-30&quot; value=&quot;NEIN&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;&quot; parent=&quot;bO4cj00JHxBitIa0UD0s-29&quot; vertex=&quot;1&quot; connectable=&quot;0&quot;&gt; &lt;mxGeometry x=&quot;-0.0435&quot; y=&quot;1&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;-1&quot; y=&quot;-2&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-1&quot; value=&quot;Unverträglichkeit ggb.&amp;lt;div&amp;gt;#RPLC-Unvtrgl&amp;lt;/div&amp;gt;&quot; style=&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry y=&quot;79.99999999999989&quot; width=&quot;240&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-4&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;DxEyLN7qZUIu7upFpujX-2&quot; target=&quot;DxEyLN7qZUIu7upFpujX-3&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-5&quot; value=&quot;NEIN&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;DxEyLN7qZUIu7upFpujX-4&quot;&gt; &lt;mxGeometry x=&quot;-0.1667&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint y=&quot;1&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-2&quot; value=&quot;Respiratorische Insuffizienz?&amp;lt;div&amp;gt;Schwere COPD?&amp;lt;/div&amp;gt;&quot; style=&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry y=&quot;180&quot; width=&quot;240&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-3&quot; value=&quot;Vigilanzminderung&amp;lt;div&amp;gt;&amp;lt;b&amp;gt;GCS &amp;amp;lt; 14&amp;lt;/b&amp;gt;&amp;lt;/div&amp;gt;&quot; style=&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry y=&quot;280&quot; width=&quot;240&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-6&quot; value=&quot;&amp;lt;span style=&amp;quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&amp;quot;&amp;gt;&amp;lt;b&amp;gt;Vorbereitung&amp;lt;/b&amp;gt;: O&amp;lt;/span&amp;gt;&amp;lt;sub style=&amp;quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&amp;quot;&amp;gt;2&amp;lt;/sub&amp;gt;&amp;lt;span style=&amp;quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&amp;quot;&amp;gt;-Gabe, SpO&amp;lt;/span&amp;gt;&amp;lt;sub style=&amp;quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&amp;quot;&amp;gt;2&amp;lt;/sub&amp;gt;&amp;lt;span style=&amp;quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&amp;quot;&amp;gt;-Überwachung, ggf. pVK+Infusion&amp;lt;/span&amp;gt;&amp;lt;br&amp;gt;&amp;lt;div&amp;gt;&amp;lt;b&amp;gt;Bereithalten&amp;lt;/b&amp;gt;: Beatmungsbeutel+Maske, Guedel-Tubus, SGA, Absaugbereitschaft&amp;lt;/div&amp;gt;&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;align=left;spacingLeft=13;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry y=&quot;380&quot; width=&quot;540&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-7&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;120&quot; y=&quot;340&quot; as=&quot;sourcePoint&quot; /&gt; &lt;mxPoint x=&quot;120&quot; y=&quot;380&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-8&quot; value=&quot;NEIN&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;DxEyLN7qZUIu7upFpujX-7&quot;&gt; &lt;mxGeometry x=&quot;-0.1667&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint y=&quot;1&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-20&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;DxEyLN7qZUIu7upFpujX-9&quot; target=&quot;DxEyLN7qZUIu7upFpujX-16&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-21&quot; value=&quot;JA&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;DxEyLN7qZUIu7upFpujX-20&quot;&gt; &lt;mxGeometry x=&quot;-0.3054&quot; y=&quot;1&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;1&quot; y=&quot;1&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-9&quot; value=&quot;&amp;lt;b&amp;gt;Oral&amp;lt;/b&amp;gt;/&amp;lt;b&amp;gt;Bukkal&amp;lt;/b&amp;gt;/&amp;lt;b&amp;gt;Nasal&amp;lt;/b&amp;gt;-Gabe&amp;lt;div&amp;gt;situativ möglich?&amp;lt;/div&amp;gt;&quot; style=&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry y=&quot;459.9999999999999&quot; width=&quot;240&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-14&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.333;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;DxEyLN7qZUIu7upFpujX-9&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;20&quot; y=&quot;520&quot; as=&quot;sourcePoint&quot; /&gt; &lt;mxPoint x=&quot;119.92000000000002&quot; y=&quot;560&quot; as=&quot;targetPoint&quot; /&gt; &lt;Array as=&quot;points&quot;&gt; &lt;mxPoint x=&quot;120&quot; y=&quot;560&quot; /&gt; &lt;/Array&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-15&quot; value=&quot;NEIN&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;DxEyLN7qZUIu7upFpujX-14&quot;&gt; &lt;mxGeometry x=&quot;-0.1667&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint y=&quot;1&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-25&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;DxEyLN7qZUIu7upFpujX-16&quot; target=&quot;DxEyLN7qZUIu7upFpujX-22&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-16&quot; value=&quot;&amp;lt;b&amp;gt;Oral&amp;lt;/b&amp;gt;/&amp;lt;b&amp;gt;Bukkal&amp;lt;/b&amp;gt;/&amp;lt;b&amp;gt;Nasal&amp;lt;/b&amp;gt;-Gabe&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry x=&quot;280&quot; y=&quot;469.9999999999999&quot; width=&quot;240&quot; height=&quot;40&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-27&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;DxEyLN7qZUIu7upFpujX-18&quot; target=&quot;DxEyLN7qZUIu7upFpujX-26&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-18&quot; value=&quot;&amp;lt;b&amp;gt;Intravenöse&amp;lt;/b&amp;gt;-Gabe&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry y=&quot;560&quot; width=&quot;240&quot; height=&quot;40&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-23&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;DxEyLN7qZUIu7upFpujX-22&quot; target=&quot;DxEyLN7qZUIu7upFpujX-18&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-24&quot; value=&quot;NEIN&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;DxEyLN7qZUIu7upFpujX-23&quot;&gt; &lt;mxGeometry x=&quot;-0.073&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;2&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-22&quot; value=&quot;&amp;lt;b&amp;gt;Ruhiger&amp;lt;/b&amp;gt;&amp;amp;nbsp;Zustand?&amp;lt;br&amp;gt;&amp;lt;b&amp;gt;Agitiertheit&amp;lt;/b&amp;gt; abgeklungen?&quot; style=&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;size=20;fontColor=default;labelBackgroundColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry x=&quot;280&quot; y=&quot;549.9999999999999&quot; width=&quot;240&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-26&quot; value=&quot;Transport&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry y=&quot;630&quot; width=&quot;240&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-28&quot; value=&quot;Keine&amp;lt;div&amp;gt;Sedativa-Gabe&amp;lt;/div&amp;gt;&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;labelBackgroundColor=none;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry x=&quot;390&quot; y=&quot;90&quot; width=&quot;120&quot; height=&quot;240&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-29&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;DxEyLN7qZUIu7upFpujX-1&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;390&quot; y=&quot;110&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-30&quot; value=&quot;JA&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;DxEyLN7qZUIu7upFpujX-29&quot;&gt; &lt;mxGeometry x=&quot;-0.4345&quot; y=&quot;-1&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;-20&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-31&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;240&quot; y=&quot;209.88&quot; as=&quot;sourcePoint&quot; /&gt; &lt;mxPoint x=&quot;390&quot; y=&quot;209.88&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-32&quot; value=&quot;JA&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;DxEyLN7qZUIu7upFpujX-31&quot;&gt; &lt;mxGeometry x=&quot;-0.4345&quot; y=&quot;-1&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;-20&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-33&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot; edge=&quot;1&quot; parent=&quot;1&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;240&quot; y=&quot;309.88&quot; as=&quot;sourcePoint&quot; /&gt; &lt;mxPoint x=&quot;390&quot; y=&quot;309.88&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;DxEyLN7qZUIu7upFpujX-34&quot; value=&quot;JA&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;DxEyLN7qZUIu7upFpujX-33&quot;&gt; &lt;mxGeometry x=&quot;-0.4345&quot; y=&quot;-1&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;-20&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;/root&gt; &lt;/mxGraphModel&gt; &lt;/diagram&gt; &lt;/mxfile&gt;">
+  <path d="M 120 440 L 120 451.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 458.88 L 116.5 451.88 L 123.5 451.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <path d="M 120 60 L 120 70 L 120 71.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 78.88 L 116.5 71.88 L 123.5 71.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="0" y="0" width="540" height="60" rx="30" ry="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:#111;stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:30px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:#f7f7f7">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:#f7f7f7;line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">
+          Starker Erregungszustand
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 120 140 L 120 161 L 120 171.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 178.88 L 116.5 171.88 L 123.5 171.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:158px;margin-left:120px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 20 80 L 220 80 L 240 110 L 220 140 L 20 140 L 0 110 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:110px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Unverträglichkeit ggb.
+          <div>
+            #RPLC-Unvtrgl
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 120 240 L 120 271.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 278.88 L 116.5 271.88 L 123.5 271.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:258px;margin-left:120px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 20 180 L 220 180 L 240 210 L 220 240 L 20 240 L 0 210 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:210px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Respiratorische Insuffizienz?
+          <div>
+            Schwere COPD?
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 20 280 L 220 280 L 240 310 L 220 340 L 20 340 L 0 310 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:310px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Vigilanzminderung
+          <div>
+            <b>
+              GCS &lt; 14
+            </b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <rect x="0" y="380" width="540" height="60" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe flex-start;width:525px;height:1px;padding-top:410px;margin-left:15px">
+      <div style="box-sizing:border-box;font-size:0;text-align:left;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          <span style="background-color:transparent;color:light-dark(#000,#fff)">
+            <b>
+              Vorbereitung
+            </b>
+            : O
+          </span>
+          <sub style="background-color:transparent;color:light-dark(#000,#fff)">
+            2
+          </sub>
+          <span style="background-color:transparent;color:light-dark(#000,#fff)">
+            -Gabe, SpO
+          </span>
+          <sub style="background-color:transparent;color:light-dark(#000,#fff)">
+            2
+          </sub>
+          <span style="background-color:transparent;color:light-dark(#000,#fff)">
+            -Überwachung, ggf. pVK+Infusion
+          </span>
+          <br/>
+          <div>
+            <b>
+              Bereithalten
+            </b>
+            : Beatmungsbeutel+Maske, Guedel-Tubus, SGA, Absaugbereitschaft
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 120 340 L 120 361 L 120 371.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 378.88 L 116.5 371.88 L 123.5 371.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:359px;margin-left:120px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 240 490 L 271.88 490" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 278.88 490 L 271.88 493.5 L 271.88 486.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:490px;margin-left:255px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 20 460 L 220 460 L 240 490 L 220 520 L 20 520 L 0 490 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:490px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          <b>
+            Oral
+          </b>
+          /
+          <b>
+            Bukkal
+          </b>
+          /
+          <b>
+            Nasal
+          </b>
+          -Gabe
+          <div>
+            situativ möglich?
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 120 520 L 120 551.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 558.88 L 116.5 551.88 L 123.5 551.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:538px;margin-left:120px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 400 510 L 400 541.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 400 548.88 L 396.5 541.88 L 403.5 541.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="280" y="470" width="240" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:490px;margin-left:281px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          <b>
+            Oral
+          </b>
+          /
+          <b>
+            Bukkal
+          </b>
+          /
+          <b>
+            Nasal
+          </b>
+          -Gabe
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 120 600 L 120 621.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 120 628.88 L 116.5 621.88 L 123.5 621.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <rect x="0" y="560" width="240" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:580px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          <b>
+            Intravenöse
+          </b>
+          -Gabe
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 280 580 L 248.12 580" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 241.12 580 L 248.12 576.5 L 248.12 583.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:580px;margin-left:264px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 300 550 L 500 550 L 520 580 L 500 610 L 300 610 L 280 580 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:580px;margin-left:281px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          <b>
+            Ruhiger
+          </b>
+          Zustand?
+          <br/>
+          <b>
+            Agitiertheit
+          </b>
+          abgeklungen?
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <rect x="0" y="630" width="240" height="60" rx="30" ry="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:#111;stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:660px;margin-left:1px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:#f7f7f7">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:#f7f7f7;line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">
+          Transport
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <rect x="390" y="90" width="120" height="240" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:118px;height:1px;padding-top:210px;margin-left:391px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
+        <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
+          Keine
+          <div>
+            Sedativa-Gabe
+          </div>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 240 110 L 381.88 110" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 388.88 110 L 381.88 113.5 L 381.88 106.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:111px;margin-left:262px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 240 209.88 L 381.88 209.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 388.88 209.88 L 381.88 213.38 L 381.88 206.38 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:211px;margin-left:262px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <path d="M 240 309.88 L 381.88 309.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+  <path d="M 388.88 309.88 L 381.88 313.38 L 381.88 306.38 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:311px;margin-left:262px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
