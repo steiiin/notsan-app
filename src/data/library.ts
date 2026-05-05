@@ -8,7 +8,11 @@ export const library: LibraryListItem[] = [
     subtitle: 'BPR',
     entries:
     [
-
+      {
+        id: 'bpr-agitation',
+        title: 'Agitation',
+        component: () => import('@/views/content/library/bpr/agitation/ContentAgitation.vue')
+      },
       {
         id: 'bpr-anaphylaxie',
         title: 'Anaphylaxie',

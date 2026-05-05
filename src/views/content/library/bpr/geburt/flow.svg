@@ -16,7 +16,11 @@
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/keyword:geburtTransport"><rect x="300" y="80" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-emergency);stroke:var(--ns-flow-emergency-border)"/>
 
 
+
+
 <path d="M 310 80 L 310 140 M 530 80 L 530 140" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-emergency-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:110px;margin-left:311px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal"><font style="font-size:13px">Transportentscheidung<br/>
@@ -66,7 +70,11 @@ Geburt</font></div></div></div></foreignObject></a>
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/saa:geburt"><rect x="300" y="260" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
 
 
+
+
 <path d="M 310 260 L 310 320 M 530 260 L 530 320" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:290px;margin-left:311px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">SAA: Geburt</div></div></div></foreignObject></a>
@@ -105,6 +113,8 @@ Geburt</font></div></div></div></foreignObject></a>
     </div>
   </foreignObject>
   <a xlink:href="file:///?action=erstbeurteilung"><path d="M 20 460 L 220 460 L 240 490 L 220 520 L 20 520 L 0 490 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:490px;margin-left:1px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Vitales Kind?</div></div></div></foreignObject></a>
@@ -201,6 +211,8 @@ Geburt</font></div></div></div></foreignObject></a>
   <a xlink:href="file:///?action=erstbeurteilung"><path d="M 20 660 L 220 660 L 240 690 L 220 720 L 20 720 L 0 690 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
 
 
+
+
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:690px;margin-left:1px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Vitales Kind?</div></div></div></foreignObject></a>
   <path d="M 120 720 L 120 741.03 L 120 740 L 120 751.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
   <path d="M 120 758.88 L 116.5 751.88 L 123.5 751.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
@@ -292,7 +304,11 @@ Geburt</font></div></div></div></foreignObject></a>
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/keyword:geburtApgar"><rect x="310" y="760" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-emergency);stroke:var(--ns-flow-emergency-border)"/>
 
 
+
+
 <path d="M 320 760 L 320 820 M 540 760 L 540 820" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-emergency-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:790px;margin-left:321px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal"><span style="font-size:13px">APGAR</span></div></div></div></foreignObject></a>
@@ -311,7 +327,11 @@ Geburt</font></div></div></div></foreignObject></a>
   <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:reanimationNeonat"><rect x="0" y="760" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
 
 
+
+
 <path d="M 10 760 L 10 820 M 230 760 L 230 820" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+
+
 
 
 <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:790px;margin-left:11px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR:<br/>
