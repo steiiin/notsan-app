@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { gainFocus } from '@/service/input';
-import { IonInput, IonLabel, IonNote, IonSelect, IonSelectOption } from '@ionic/vue'
+import { IonInput } from '@ionic/vue'
 import { computed, ref, watch } from 'vue'
 
 const props = defineProps<{ modelValue?: number|null }>()
@@ -38,8 +38,10 @@ const yearsSuffix = computed(() => (internalYears.value != '' && internalYears.v
 const monthsSuffix = computed(() => (internalMonths.value != '' && internalMonths.value == '1') ? 'Monat' : 'Monate')
 
 const calculateTotalYears = (): number|null => {
-  if (internalYears.value == '' || internalMonths.value == '') { return null }
-  return Number(internalYears.value) + (Number(internalMonths.value) / 12)
+  if (internalYears.value == '') { return null }
+  if (internalYears.value != '0') { return Number(internalYears.value) }
+  if (internalMonths.value == '') { return null }
+  return Number(internalMonths.value) / 12
 }
 const onYearInput = (event: Event) => {
 
@@ -64,6 +66,9 @@ const onYearInput = (event: Event) => {
    * the component to keep them in sync.
    */
   internalYears.value = years;
+  if (years != '0') {
+    internalMonths.value = '0';
+  }
 
   const inputCmp = internalYearEl.value;
   if (inputCmp !== undefined) {
