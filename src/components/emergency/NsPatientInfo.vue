@@ -17,6 +17,7 @@ import { SexValue } from '@/types/patient';
 const patient = usePatientStore()
 
 const showAnything = computed(() => patient.hasResult && infoData.value != null)
+const formatWeight = (weight: number): string => `${weight.toFixed(1)} kg`
 
 class InfoData {
   constructor(
@@ -43,7 +44,7 @@ const infoData = computed((): InfoData|null => {
     else
     {
       if (patient.isEstimate) {
-        return new InfoData(`${patient.inputSex == 'male' ? 'Männlicher' : 'Weiblicher'} Patient`, `ca. ${patient.weight} (nach ${resultType})`)
+        return new InfoData(`${patient.inputSex == 'male' ? 'Männlicher' : 'Weiblicher'} Patient`, `ca. ${formatWeight(patient.weight)} (nach ${resultType})`)
       }
     }
 
