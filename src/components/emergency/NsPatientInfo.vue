@@ -43,7 +43,7 @@ const infoData = computed((): InfoData|null => {
     else
     {
       if (patient.isEstimate) {
-        return new InfoData(`${patient.inputSex == 'male' ? 'Männlicher' : 'Weiblicher'} Patient`, `ca. ${patient.weight} (nach ${resultType})`)
+        return new InfoData(`${patient.inputSex == 'male' ? 'Männlicher' : 'Weiblicher'} Patient`, `ca. ${patient.weight}kg (nach ${resultType})`)
       }
     }
 

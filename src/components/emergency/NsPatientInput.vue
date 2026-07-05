@@ -15,8 +15,8 @@
     <template v-else-if="weightAccuracy == 'estimate'">
 
       <ns-button-group v-model="weightEstimateBy" :options="[
-        { label: 'Nach Größe', value: 'by-height' },
-        { label: 'Nach Alter', value: 'by-age' }, ]">
+        { label: 'Nach Alter', value: 'by-age' },
+        { label: 'Nach Größe', value: 'by-height' }, ]">
       </ns-button-group>
       <hr>
       <div class="ns-same-row">
@@ -82,14 +82,14 @@ watch(() => weightAccuracy.value, (v) => {
   }
   else if (v == 'estimate')
   {
-    patientHeight.value = 180
-    if (weightEstimateBy.value != 'by-height')
+    patientAge.value = 12
+    if (weightEstimateBy.value != 'by-age')
     {
-      weightEstimateBy.value = 'by-height'
+      weightEstimateBy.value = 'by-age'
     }
     else
     {
-      gainFocus(inputHeight, true)
+      gainFocus(inputAge, true)
     }
   }
 
