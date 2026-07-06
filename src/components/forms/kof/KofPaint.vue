@@ -1,6 +1,6 @@
 <template>
   <ion-modal :is-open="open" :keep-contents-mounted="true" :animated="true"
-    @willPresent="openModal" @didDismiss="closeModal" class="kof-modal">
+    @didPresent="openModal" @didDismiss="closeModal" class="kof-modal">
     <ion-page>
       <ion-header>
         <ion-toolbar>
@@ -20,8 +20,7 @@
             <div class="kof-paint">
               <div class="stage" ref="stageEl" :class="{ refreshing }">
                 <img :src="mannequinSource" ref="mannequinImg"
-                  class="stage--bg" draggeable="false" @load="initPaint(false)">
-                </img>
+                  class="stage--bg" draggeable="false" />
 
                 <!-- painting layer -->
                 <canvas ref="burns" :class="{ hidden: refreshing }"></canvas>
@@ -101,7 +100,6 @@ const weights = ref<HTMLCanvasElement|null>(null)
   import weightSourceAdult from '@/data/assets/mannequins/weights-adult.png'
   import weightSourceChild from '@/data/assets/mannequins/weights-child.png'
   import weightSourceBaby from '@/data/assets/mannequins/weights-baby.png'
-import { brush, create, refresh } from 'ionicons/icons';
 
   const mannequinSource = computed(() => {
     if (selectedAge.value == 'child') { return mannequinSourceChild }
@@ -123,31 +121,81 @@ import { brush, create, refresh } from 'ionicons/icons';
 
 // #region painting
 
+  const maxCanvasDpr = 2
+  let initPaintGen = 0
+
+  const isCurrentInit = (gen: number) => gen === initPaintGen
+
+  const waitForImage = async (img: HTMLImageElement) => {
+    if (!img.complete) {
+      await new Promise<void>((resolve, reject) => {
+        img.onload = () => resolve()
+        img.onerror = () => reject(new Error(`Unable to load image: ${img.currentSrc || img.src}`))
+      }).catch(() => undefined)
+    }
+
+    if (img.decode) {
+      await img.decode().catch(() => undefined)
+    }
+  }
+
+  const loadImage = async (src: string) => {
+    const img = new Image()
+    const loaded = new Promise<void>((resolve, reject) => {
+      img.onload = () => resolve()
+      img.onerror = () => reject(new Error(`Unable to load image: ${src}`))
+    })
+
+    img.src = src
+    if (!img.complete) {
+      await loaded.catch(() => undefined)
+    }
+
+    if (img.decode) {
+      await img.decode().catch(() => undefined)
+    }
+
+    return img
+  }
+
   const initPaint = async (loadState = false) => {
+    const gen = ++initPaintGen
 
     refreshing.value = true
 
-    // ensure mannequin is completed (for layouting)
-    const img = mannequinImg.value!
-    if (!img.complete) {
-      await img.decode().catch(() => new Promise<void>(res => (img.onload = () => res())))
+    try {
+      // ensure mannequin is completed (for layouting)
+      const img = mannequinImg.value!
+      await waitForImage(img)
+      if (!isCurrentInit(gen)) { return }
+
+      // create necessary data
+      await nextTick()
+      if (!isCurrentInit(gen)) { return }
+
+      initBackstores()
+      await loadMaskToCanvas(gen)
+      if (!isCurrentInit(gen)) { return }
+
+      await loadWeightsToCanvas(gen)
+      if (!isCurrentInit(gen)) { return }
+
+      buildRegionUnits(percentTable.value)
+      redrawDisplay()
+      if (loadState) { loadKofInfoPaintState() }
+    }
+    finally {
+      if (isCurrentInit(gen)) {
+        refreshing.value = false
+      }
     }
 
-    // create necessary data
-    await nextTick()
-    initBackstores()
-    await loadMaskToCanvas()
-    await loadWeightsToCanvas()
-    buildRegionUnits(percentTable.value)
-    redrawDisplay()
-    if (loadState) { loadKofInfoPaintState() }
-
-    refreshing.value = false
 
   }
 
   const closePaint = () => {
 
+    initPaintGen++
     refreshing.value = true
 
     unbindPointerEvents()
@@ -171,15 +219,15 @@ import { brush, create, refresh } from 'ionicons/icons';
       const rect = mannequinImg.value!.getBoundingClientRect()
       const cssW = Math.max(1, Math.round(rect.width))
       const cssH = Math.max(1, Math.round(rect.height))
-      const dpr = Math.max(1, Math.round(window.devicePixelRatio || 1))
+      const dpr = Math.max(1, Math.min(maxCanvasDpr, window.devicePixelRatio || 1))
       brushPx.value = Math.max(1, Math.min(cssW, cssH)) / 8
 
       // resize canvases
       for (const c of [burns.value!, scratch.value!, mask.value!, weights.value!]) {
         c.style.width = `${cssW}px`
         c.style.height = `${cssH}px`
-        c.width  = cssW * dpr
-        c.height = cssH * dpr
+        c.width  = Math.round(cssW * dpr)
+        c.height = Math.round(cssH * dpr)
       }
 
       W = burns.value!.width
@@ -189,11 +237,10 @@ import { brush, create, refresh } from 'ionicons/icons';
     }
 
     // load images
-    const loadMaskToCanvas = async () => {
+    const loadMaskToCanvas = async (gen: number) => {
 
-      const m = new Image()
-      m.src = maskSource.value
-      await m.decode().catch(() => new Promise<void>(res => (m.onload = () => res())))
+      const m = await loadImage(maskSource.value)
+      if (!isCurrentInit(gen)) { return }
       const mctx = mask.value!.getContext('2d')!
       mctx.clearRect(0, 0, W, H)
       mctx.drawImage(m, 0, 0, W, H)
@@ -208,10 +255,9 @@ import { brush, create, refresh } from 'ionicons/icons';
       }
 
     }
-    const loadWeightsToCanvas = async () => {
-      const m = new Image()
-      m.src = weightsSource.value
-      await m.decode().catch(() => new Promise<void>(res => (m.onload = () => res())))
+    const loadWeightsToCanvas = async (gen: number) => {
+      const m = await loadImage(weightsSource.value)
+      if (!isCurrentInit(gen)) { return }
       const wctx = weights.value!.getContext('2d')!
       wctx.clearRect(0, 0, W, H)
       wctx.drawImage(m, 0, 0, W, H)
@@ -288,7 +334,8 @@ import { brush, create, refresh } from 'ionicons/icons';
         const v = classMap![i]
         const o = i * 4
         if (v === 0) { data[o+3] = 0; continue }
-        let r=0, g=0, b=0, a=160
+        let r=0, g=0, b=0
+        const a=160
         if (v === 1) { r=212; g=172; b=13 }     // 1° yellow
         if (v === 2) { r=192; g=57; b=43 }     // 2° red
         if (v === 3) { r=142; g=68;   b=173 }     // 3° violet
@@ -384,23 +431,46 @@ import { brush, create, refresh } from 'ionicons/icons';
     watch(() => selectedAge.value, (v) => {
       refreshing.value = true
       emit('update:modelValue', { patientAge: v })
+      if (props.open) {
+        void nextTick().then(() => initPaint(false))
+      }
     })
 
     let imgResizeObserver: ResizeObserver|null = null
     let imgResizeDebounceTimer: number|null = null
-    let imgResizeGen = 0
+    let lastObservedSize: { width: number, height: number }|null = null
+
+    const getPaintSize = () => {
+      const rect = mannequinImg.value?.getBoundingClientRect()
+      if (!rect) { return null }
+      return {
+        width: Math.max(1, Math.round(rect.width)),
+        height: Math.max(1, Math.round(rect.height)),
+      }
+    }
+
+    const hasPaintSizeChanged = () => {
+      const size = getPaintSize()
+      if (!size) { return false }
+
+      if (lastObservedSize && lastObservedSize.width === size.width && lastObservedSize.height === size.height) {
+        return false
+      }
+
+      lastObservedSize = size
+      return true
+    }
 
     const attachResizeObserver = () => {
       if (imgResizeObserver || !mannequinImg.value) { return }
+      lastObservedSize = getPaintSize()
       imgResizeObserver = new ResizeObserver(() => {
-        refreshing.value = true
         if (imgResizeDebounceTimer) { window.clearTimeout(imgResizeDebounceTimer) }
         imgResizeDebounceTimer = window.setTimeout(async () => {
           await nextTick()
-          const myGen = ++imgResizeGen
+          if (!hasPaintSizeChanged()) { return }
           await initPaint(true)
-          if (myGen !== imgResizeGen) { return }
-        })
+        }, 80)
       })
       imgResizeObserver.observe(observedEl.value!)
     }
@@ -414,6 +484,7 @@ import { brush, create, refresh } from 'ionicons/icons';
         window.clearTimeout(imgResizeDebounceTimer)
         imgResizeDebounceTimer = null
       }
+      lastObservedSize = null
     }
 
   // #endregion
@@ -475,7 +546,6 @@ import { brush, create, refresh } from 'ionicons/icons';
   const scale = 10000 // 100.00% resolution
   let regionMap: Uint8Array|null = null
   let regionUnit: number[] = []
-  let totalUnits = 100 * scale
 
   const R = {
     NONE: 0,
@@ -555,16 +625,12 @@ import { brush, create, refresh } from 'ionicons/icons';
 
     // Compute unit per pixel for each region so sums equal 100% (scaled)
     regionUnit = []
-    let sumPerc = 0
     for (const rStr of Object.keys(percentTable)) {
       const r = +rStr
       const perc = percentTable[r] || 0
-      sumPerc += perc
       const n = counts[r] || 0
       regionUnit[r] = n > 0 ? (perc * scale) / n : 0
     }
-
-    totalUnits = 100 * scale
   }
 
 // #endregion
@@ -581,19 +647,16 @@ import { brush, create, refresh } from 'ionicons/icons';
     if (!props.modelValue.paintState) { return }
 
     const state = props.modelValue.paintState
-    let _classMap = null, _regionMap = null
+    let _classMap = null
 
     if (state.width == W && state.height == H)
     {
       _classMap = rleDecode(state.classMapRLE, W*H)
-      _regionMap = rleDecode(state.regionMapRLE, W*H)
     }
     else
     {
       const decClassMap = rleDecode(state.classMapRLE, state.width * state.height)
-      const decRegionMap = rleDecode(state.regionMapRLE, state.width * state.height)
       _classMap = resampleNearest(decClassMap, state.width, state.height, W, H)
-      _regionMap = resampleNearest(decRegionMap, state.width, state.height, W, H)
     }
 
     classMap = _classMap
@@ -604,7 +667,7 @@ import { brush, create, refresh } from 'ionicons/icons';
   const createKofInfo = (): KofInfo => {
 
     if (classMap!.every(e=>!e)) {
-      return <KofInfo>{ patientAge: selectedAge.value }
+      return { patientAge: selectedAge.value } as KofInfo
     }
 
     const state: KofPaintState = {
@@ -613,7 +676,7 @@ import { brush, create, refresh } from 'ionicons/icons';
       classMapRLE: rleEncode(classMap!),
       regionMapRLE: rleEncode(regionMap!)
     }
-    return <KofInfo>{ patientAge: selectedAge.value, paintState: state, calculation: calculateKOF() }
+    return { patientAge: selectedAge.value, paintState: state, calculation: calculateKOF() } as KofInfo
 
   }
 
