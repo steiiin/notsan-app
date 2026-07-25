@@ -52,6 +52,11 @@ export const forms: FormListItem[] = [
         title: 'Notarzt-Nachforderung',
         component: () => import('@/views/content/forms/decision/na/ContentNa.vue')
       },
+      {
+        id: 'decision-dot',
+        title: 'Transportverweigerung',
+        component: () => import('@/views/content/forms/decision/dot/ContentDot.vue')
+      },
     ]
   },
 
