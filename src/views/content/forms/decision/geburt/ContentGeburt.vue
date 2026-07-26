@@ -28,9 +28,6 @@
         <ns-button-score-group v-model="plazentaPrae" v-if="!geburt_2nd || plazentaPrae" :option="{
           type: 'yes-no', label: 'Plazenta Praevia?'}">
         </ns-button-score-group>
-        <ns-button-score-group v-model="lageSL" v-if="!geburt_2nd || lageSL" :option="{
-          type: 'yes-no', label: 'Schädellage (SL)?'}">
-        </ns-button-score-group>
         <ns-button-score-group v-model="lageBEL" v-if="!geburt_2nd || lageBEL" :option="{
           type: 'yes-no', label: 'Beckenendlage (BEL)?'}">
         </ns-button-score-group>
@@ -95,10 +92,9 @@ const anusKlaffen = ref(false)
 const geburt_1st = computed(() => wehen2min.value || pressdrang.value || kindskopf.value || anusKlaffen.value)
 
 const plazentaPrae = ref(false)
-const lageSL = ref(false)
 const lageBEL = ref(false)
 const lageQL = ref(false)
-const geburt_2nd = computed(() => plazentaPrae.value || lageSL.value || lageBEL.value || lageQL.value)
+const geburt_2nd = computed(() => plazentaPrae.value || lageBEL.value || lageQL.value)
 const nichtMoeglich = computed(() => plazentaPrae.value || lageBEL.value || lageQL.value)
 
 const transportInfoData = computed(() => {
