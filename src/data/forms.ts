@@ -7,7 +7,12 @@ export const forms: FormListItem[] = [
     title: 'Diagnose',
     entries:
     [
-
+      {
+        id: 'diagnose-acs',
+        title: 'ACS-Diagnose',
+        subtitle: 'Nicht-traumatische Thoraxschmerzen',
+        component: () => import('@/views/content/forms/diagnose/acs/ContentAcs.vue')
+      },
       {
         id: 'diagnose-ekg',
         title: 'EKG-Diagnose',

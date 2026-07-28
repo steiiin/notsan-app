@@ -9,6 +9,12 @@ export const library: LibraryListItem[] = [
     entries:
     [
       {
+        id: 'bpr-acs',
+        title: 'ACS',
+        subtitle: 'Akutes Koronarsyndrom',
+        component: () => import('@/views/content/library/bpr/acs/ContentAcs.vue')
+      },
+      {
         id: 'bpr-agitation',
         title: 'Agitation',
         component: () => import('@/views/content/library/bpr/agitation/ContentAgitation.vue')
