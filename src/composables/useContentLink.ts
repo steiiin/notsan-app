@@ -2,6 +2,7 @@
 const fixed_keywords: Record<string, string> = {
   sepsis: '/tabs/forms/list/score/score-sepsis',
   geburtTransport: '/tabs/forms/list/decision/decision-geburt',
+  acs: '/tabs/forms/list/diagnose/diagnose-acs',
 }
 
 export function useContentLink(link: string): string {
