@@ -3,7 +3,6 @@ import { round } from '@/service/math'
 import { BmiCalculation, CurveCalculation, PatientCalculation } from '@/service/calculation'
 import { HabitusModeValue, HabitusValue, ResultTypeValue, SexValue, WeightAccuracyValue, WeightEstimateByValue } from '@/types/patient'
 import { defineStore } from 'pinia'
-import { watch } from 'vue'
 
 export const usePatientStore = defineStore('patient', {
   state: () => ({
@@ -17,31 +16,8 @@ export const usePatientStore = defineStore('patient', {
     inputHeight: 180 as number,
     inputHabitus: 'normal' as HabitusValue,
 
-
-    cache: {
-
-      ageHash: '' as string,
-      ageValue: 0 as number,
-
-      weightHash: '' as string,
-      weightValue: 0 as number,
-
-    },
-
   }),
   getters: {
-
-    /* private getters */
-
-    _hashInputs(state): string {
-      return state.inputWeightAccuracy + '|'
-        + state.inputWeightEstimateBy + '|'
-        + state.inputSex + '|'
-        + String(state.inputAge) + '|'
-        + String(state.inputWeight) + '|'
-        + String(state.inputHeight) + '|'
-        + state.inputHabitus
-    },
 
     /* public getters */
 
@@ -55,7 +31,7 @@ export const usePatientStore = defineStore('patient', {
       else { return 'adult' }
     },
 
-    hasResult(state): boolean {
+    hasResult(): boolean {
       return this.resultType != 'undefined'
     },
     resultType(state): ResultTypeValue {
@@ -176,80 +152,55 @@ export const usePatientStore = defineStore('patient', {
     },
 
     weight(state): number {
-
-      const nextHash = this._hashInputs
-      if (!isNaN(state.cache.weightValue) && nextHash == state.cache.weightHash) { return state.cache.weightValue }
-
       if (this.resultType == 'direct')
       {
-        state.cache.weightValue = this.inputWeight
+        return state.inputWeight
       }
       else if (this.resultType == 'by-age')
       {
-        state.cache.weightValue = PatientCalculation.calculateWeightByAge(
-          this.inputAge, this.inputSex, useHabitusMultiplicator(this.habitusMode, this.inputHabitus)
+        return PatientCalculation.calculateWeightByAge(
+          state.inputAge, state.inputSex, useHabitusMultiplicator(this.habitusMode, state.inputHabitus)
         )
       }
       else if (this.resultType == 'by-height-curve')
       {
-        state.cache.weightValue = CurveCalculation.calculateChildWeightByHeight(
-          this.inputSex, this.inputHeight, useHabitusMultiplicator(this.habitusMode, this.inputHabitus)
+        return CurveCalculation.calculateChildWeightByHeight(
+          state.inputSex, state.inputHeight, useHabitusMultiplicator(this.habitusMode, state.inputHabitus)
         )
       }
       else if (this.resultType == 'by-height-bmi')
       {
-        state.cache.weightValue = BmiCalculation.calculateAdultWeightByHeight(
-          this.inputSex, this.inputHeight, useHabitusMultiplicator(this.habitusMode, this.inputHabitus)
+        return BmiCalculation.calculateAdultWeightByHeight(
+          state.inputSex, state.inputHeight, useHabitusMultiplicator(this.habitusMode, state.inputHabitus)
         )
       }
-      else
-      {
-        return 0
-      }
 
-      state.cache.weightHash = this._hashInputs
-      return state.cache.weightValue
-
+      return 0
     },
 
     age(state): number {
-
-      const nextHash = this._hashInputs
-      if (nextHash == state.cache.ageHash) { return state.cache.ageValue }
-
       if (this.isAgeInputUsed && this.hasResult)
       {
-        state.cache.ageValue = state.inputAge
+        return state.inputAge
       }
-      else
+
+      const estimates: number[] = []
+      if (this.isHeightInputUsed)
       {
-
-        const estimates: number[] = []
-        if (this.isHeightInputUsed)
-        {
-          const heightAge = PatientCalculation.calculateAgeByHeight(state.inputHeight, state.inputSex)
-          estimates.push(heightAge)
-        }
-        if (this.isWeightInputUsed)
-        {
-          const weightAge = PatientCalculation.calculateAgeByWeight(state.inputWeight, state.inputSex)
-          estimates.push(weightAge)
-        }
-
-        if (estimates.length == 0) { state.cache.ageValue = 0 }
-        else
-        {
-
-          const estimate = estimates.reduce((sum, value) => sum + value, 0) / estimates.length
-          if (estimate < 1) { state.cache.ageValue = round(estimate, 0.01) }
-          else { state.cache.ageValue = round(estimate, 1) }
-
-        }
-
+        const heightAge = PatientCalculation.calculateAgeByHeight(state.inputHeight, state.inputSex)
+        estimates.push(heightAge)
+      }
+      if (this.isWeightInputUsed)
+      {
+        const weightAge = PatientCalculation.calculateAgeByWeight(state.inputWeight, state.inputSex)
+        estimates.push(weightAge)
       }
 
-      state.cache.ageHash = this._hashInputs
-      return state.cache.ageValue
+      if (estimates.length == 0) { return 0 }
+
+      const estimate = estimates.reduce((sum, value) => sum + value, 0) / estimates.length
+      if (estimate < 1) { return round(estimate, 0.01) }
+      return round(estimate, 1)
 
     }
 
@@ -265,11 +216,6 @@ export const usePatientStore = defineStore('patient', {
       this.inputWeight = 80
       this.inputHeight = 180
       this.inputHabitus = 'normal'
-
-      this.cache.ageHash = ''
-      this.cache.ageValue = 0
-      this.cache.weightHash = ''
-      this.cache.weightValue = 0
 
     },
 

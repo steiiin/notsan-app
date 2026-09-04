@@ -26,9 +26,11 @@ describe('patient habitus estimates', () => {
       inputSex: 'male',
       inputHabitus: 'very-thin',
     })
+    const displayedWeight = computed(() => patient.weight.toFixed(1))
     const epinephrineDose = computed(() => round(patient.weight * 0.01, 0.1, 'up'))
 
     expect(patient.weight).toBeCloseTo(36.805, 3)
+    expect(displayedWeight.value).toBe('36.8')
     expect(epinephrineDose.value).toBe(0.4)
     expect(patient.age).toBe(12)
 
@@ -36,6 +38,7 @@ describe('patient habitus estimates', () => {
     await nextTick()
 
     expect(patient.weight).toBeCloseTo(58.455, 3)
+    expect(displayedWeight.value).toBe('58.5')
     expect(epinephrineDose.value).toBe(0.6)
     expect(patient.age).toBe(12)
   })
