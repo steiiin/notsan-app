@@ -31,9 +31,12 @@ export const createDefaultMedSettings = (): MedSettings => ({
   themeMode: 'auto',
 });
 
-const syncMedicationEnabledWithPackages = (medicationSettings: PerMedicationConfig): PerMedicationConfig => {
+const syncMedicationEnabledWithPackages = (
+  medicationSettings: PerMedicationConfig,
+  explicitlyEnabled?: boolean,
+): PerMedicationConfig => {
   const hasEnabledPackage = Object.values(medicationSettings.packages).some(Boolean);
-  medicationSettings.enabled = hasEnabledPackage;
+  medicationSettings.enabled = explicitlyEnabled ?? hasEnabledPackage;
   return medicationSettings;
 };
 
@@ -50,15 +53,16 @@ export const normalizeMedSettings = (value: unknown): MedSettings => {
     const medId = medication.id;
     const incomingMed = input.medications?.[medId];
 
-    defaults.medications[medId].enabled = incomingMed?.enabled ?? defaults.medications[medId].enabled;
-
     for (const medicationPackage of medication.packages) {
       const packageId = medicationPackage.id;
       defaults.medications[medId].packages[packageId] =
         incomingMed?.packages?.[packageId] ?? defaults.medications[medId].packages[packageId];
     }
 
-    syncMedicationEnabledWithPackages(defaults.medications[medId]);
+    const explicitlyEnabled = typeof incomingMed?.enabled === 'boolean'
+      ? incomingMed.enabled
+      : undefined;
+    syncMedicationEnabledWithPackages(defaults.medications[medId], explicitlyEnabled);
   }
 
   defaults.selectedRegionId = typeof input.selectedRegionId === 'string' || input.selectedRegionId === null
@@ -85,9 +89,6 @@ export const applyMedSettingsOverride = (
 
     if (!normalized.medications[medId]) { continue }
 
-    if (typeof medOverride.enabled === 'boolean') {
-      normalized.medications[medId].enabled = medOverride.enabled
-    }
     if (medOverride.packages) {
       for (const [packageId, enabled] of Object.entries(medOverride.packages)) {
         if (normalized.medications[medId].packages[packageId] !== undefined) {
@@ -96,7 +97,10 @@ export const applyMedSettingsOverride = (
       }
     }
 
-    syncMedicationEnabledWithPackages(normalized.medications[medId])
+    const explicitlyEnabled = typeof medOverride.enabled === 'boolean'
+      ? medOverride.enabled
+      : undefined
+    syncMedicationEnabledWithPackages(normalized.medications[medId], explicitlyEnabled)
   }
 
   return normalized
