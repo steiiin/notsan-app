@@ -122,6 +122,9 @@
         <mxCell id="rg6YKXPfSoqa-TNo3OOg-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" value="Trauma /&lt;br&gt;immob. Rückenschmerzen /&lt;br&gt;Schrittmacher (außer ACS)" vertex="1">
           <mxGeometry height="60" width="240" y="560" as="geometry" />
         </mxCell>
+        <mxCell id="rg6YKXPfSoqa-TNo3OOg-50" edge="1" parent="1" source="rg6YKXPfSoqa-TNo3OOg-33" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;" target="rg6YKXPfSoqa-TNo3OOg-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="rg6YKXPfSoqa-TNo3OOg-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&quot;Roboto&quot;, &quot;Helvetica Neue&quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;" value="Akutes Abdomen /&lt;br&gt;nicht-traum. Brustschmerz" vertex="1">
           <mxGeometry height="60" width="240" x="300" y="560" as="geometry" />
         </mxCell>
