@@ -39,6 +39,12 @@ export const forms: FormListItem[] = [
         subtitle: 'NEWS2-Score',
         component: () => import('@/views/content/forms/score/sepsis/ContentSepsis.vue')
       },
+      {
+        id: 'score-wells',
+        title: 'Lungenembolie',
+        subtitle: 'Wells',
+        component: () => import('@/views/content/forms/score/wells/ContentWells.vue')
+      },
     ]
   },
 
