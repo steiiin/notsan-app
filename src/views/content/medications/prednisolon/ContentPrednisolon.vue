@@ -3,7 +3,6 @@
 
     <ns-content-group title="Indikationen">
       <ns-list>
-        <ns-list-item>Anaphylaxie</ns-list-item>
         <ns-list-item>Bronchialobstruktion</ns-list-item>
         <ns-list-item>Pseudokrupp</ns-list-item>
       </ns-list>
@@ -33,38 +32,16 @@
       <ns-package :package="iv_100mg" v-if="isIv_100mgEnabled"></ns-package>
       <ns-package :package="iv_250mg" v-if="isIv_250mgEnabled"></ns-package>
 
-      <ns-dosage-indication name="Anaphylaxie">
-        <ns-dosage-usage type="supp" v-if="isSupp_100mgEnabled">
-          <h2>Zäpfchen</h2>
-          <ns-dosage :dosage="{ type: 'child', dose: '100mg'}"></ns-dosage>
-        </ns-dosage-usage>
-        <ns-dosage-usage type="iv">
-          <div>
-            <ns-dosage :dosage="{
-              target: '>12 Jahre', color: 'blue',
-              dose: '250mg', hint: ivAnalphylHintText(250) }">
-            </ns-dosage>
-            <ns-dosage :dosage="{
-              target: '8-12 Jahre', color: 'orange',
-              dose: '100mg', hint: ivAnalphylHintText(100) }">
-            </ns-dosage>
-            <ns-dosage :dosage="{
-              target: '<8 Jahre', color: 'red',
-              dose: ' 50mg', hint: ivAnalphylHintText(50) }">
-            </ns-dosage>
-          </div>
-        </ns-dosage-usage>
-      </ns-dosage-indication>
       <ns-dosage-indication name="Bronchialobstrukiton">
         <ns-dosage-usage type="iv">
           <div>
             <ns-dosage :dosage="{
               target: '<12 Jahre', color: 'red',
-              dose: '20mg /10kg', hint: '(max. 80mg)' }">
+              dose: '1 mg /kg', hint: '(max. 50mg)' }">
             </ns-dosage>
             <ns-dosage :dosage="{
               target: '>12 Jahre', color: 'blue',
-              dose: '80mg' }">
+              dose: '50mg' }">
             </ns-dosage>
           </div>
         </ns-dosage-usage>

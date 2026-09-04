@@ -29,7 +29,7 @@ const patient = usePatientStore()
 import { computed } from 'vue';
 import { round } from '@/service/math';
 
-const weightDose = computed(() => Math.min(80, round(patient.weight * 2, 25, 'up')))
+const weightDose = computed(() => Math.min(50, round(patient.weight * 1, 5, 'up')))
 
 </script>
 
