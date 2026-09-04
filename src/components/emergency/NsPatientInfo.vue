@@ -13,7 +13,6 @@ import { getBroselowCode } from '@/components/emergency/broselow';
 import { computed } from 'vue';
 
 import { usePatientStore } from '@/stores/patient';
-import { SexValue } from '@/types/patient';
 const patient = usePatientStore()
 
 const showAnything = computed(() => patient.hasResult && infoData.value != null)
@@ -44,7 +43,7 @@ const infoData = computed((): InfoData|null => {
     else
     {
       if (patient.isEstimate) {
-        return new InfoData(`${patient.inputSex == 'male' ? 'Männlicher' : 'Weiblicher'} Patient`, `ca. ${formatWeight(patient.weight)}kg (nach ${resultType})`)
+        return new InfoData(`${patient.inputSex == 'male' ? 'Männlicher' : 'Weiblicher'} Patient`, `ca. ${formatWeight(patient.weight)} (nach ${resultType})`)
       }
     }
 
@@ -67,12 +66,6 @@ const infoData = computed((): InfoData|null => {
       return ''
     }
   }
-
-// #endregion
-
-// #region InfoData
-
-  const getSexDescription = (sex: SexValue) => sex == 'male' ? 'Männlicher Patient' : 'Weiblicher Patient'
 
 // #endregion
 

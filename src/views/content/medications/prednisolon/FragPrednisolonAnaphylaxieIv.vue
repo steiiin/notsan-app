@@ -13,6 +13,11 @@ import { isIv_100mgEnabled, isIv_250mgEnabled, isOnlyOneIvEnabled } from './Pack
 import { MedId } from '@/types/medication'
 import { useConfigStore } from '@/stores/config'
 
+
+// ########################################################################################################
+// Gabe von Prednisolon laut ERC2025 nicht mehr empfohlen.
+// Verhindert, wenn überhaupt, einen möglichen Rebound.
+// Wirkung erst nach Stunden.
 // ########################################################################################################
 
 const enabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Prednisolon) ?? true)

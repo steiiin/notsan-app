@@ -1,6 +1,7 @@
 <template>
   <ion-select placeholder="Habitus" class="ns-habitus-input"
-    fill="outline" interface="popover" v-model="currentValue">
+    fill="outline" interface="popover" :value="modelValue"
+    @ionChange="onChange">
 
     <ion-select-option v-for="option in modeOptions"
       :key="option.value" :value="option.value">
@@ -13,7 +14,7 @@
 <script setup lang="ts">
 import { HabitusModeValue, HabitusValue } from '@/types/patient';
 import { IonSelect, IonSelectOption } from '@ionic/vue'
-import { computed, ref, watch } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps<{
   modelValue: HabitusValue,
@@ -44,17 +45,15 @@ const OPTIONS: Record<HabitusModeValue, ReadonlyArray<{ value: HabitusValue, lab
   ],
 }
 
-const currentValue = ref<HabitusValue>(props.modelValue)
-
 const modeOptions = computed(() => {
   const baseOptions = OPTIONS[props.mode]
-  if (baseOptions.some(option => option.value === currentValue.value)) {
+  if (baseOptions.some(option => option.value === props.modelValue)) {
     return baseOptions
   }
 
   const fallbackOption =
-    OPTIONS.child.find(option => option.value === currentValue.value) ||
-    OPTIONS.adult.find(option => option.value === currentValue.value)
+    OPTIONS.child.find(option => option.value === props.modelValue) ||
+    OPTIONS.adult.find(option => option.value === props.modelValue)
 
   if (fallbackOption) {
     return [...baseOptions, fallbackOption]
@@ -63,17 +62,12 @@ const modeOptions = computed(() => {
   return baseOptions
 })
 
-watch(() => props.modelValue, (value) => {
-  if (currentValue.value !== value) {
-    currentValue.value = value
-  }
-})
-
-watch(() => currentValue.value, (value) => {
+const onChange = (event: CustomEvent<{ value: HabitusValue }>) => {
+  const value = event.detail.value
   if (value !== props.modelValue) {
     emit('update:modelValue', value)
   }
-})
+}
 
 </script>
 
