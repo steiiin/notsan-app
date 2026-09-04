@@ -6,10 +6,16 @@
       <ns-dosage-usage type="iv" dense>
 
         <frag-dimetinden-anaphylaxie></frag-dimetinden-anaphylaxie>
-        <frag-prednisolon-anaphylaxie-iv></frag-prednisolon-anaphylaxie-iv>
+        <!--
+          <frag-prednisolon-anaphylaxie-iv></frag-prednisolon-anaphylaxie-iv>
+          Nicht mehr empfohlen lt. ERC2025
+        -->
 
       </ns-dosage-usage>
-      <frag-prednisolon-anaphylaxie-supp></frag-prednisolon-anaphylaxie-supp>
+      <!--
+        <frag-prednisolon-anaphylaxie-supp></frag-prednisolon-anaphylaxie-supp>
+        Nicht mehr empfohlen lt. ERC2025
+      -->
     </ns-content-group>
 
   </ns-accordion>
