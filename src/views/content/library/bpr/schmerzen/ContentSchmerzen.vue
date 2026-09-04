@@ -18,6 +18,15 @@
     </ul>
   </ns-flow-action>
 
+  <ns-flow-action ref="action_exKeta">
+    <h2>Ausschlussgründe Esketamin, z.B.</h2>
+    <ul>
+      <li>ACS, kardiale Dekompensation</li>
+      <li>Schwere Hypertonie</li>
+      <li>Schwere psychotische Störung</li>
+    </ul>
+  </ns-flow-action>
+
   <ns-flow-action ref="noPPR">
     <h2>Kein peripheres Schmerzmittel</h2>
     <p>In den Einstellungen wurden alle peripher wirkenden Schmerzmittel ausgeblendet, z.B.:</p>
@@ -26,6 +35,17 @@
       <li>Paracetamol</li>
       <li>Ibuprofen</li>
       <li>Metamizol</li>
+    </ul>
+  </ns-flow-action>
+
+  <ns-flow-action ref="noOpioid">
+    <h2>Kein Opioid</h2>
+    <p>In den Einstellungen wurden alle opioiden Schmerzmittel ausgeblendet, z.B.:</p>
+    <hr>
+    <ul>
+      <li>Nalbuphin</li>
+      <li>Morphin</li>
+      <li>Fentanyl</li>
     </ul>
   </ns-flow-action>
 
@@ -46,11 +66,18 @@ import { isAnyIvEnabled, isAnyIvEnabled as isIbuEnabled } from '@/views/content/
 import { isAnyIvEnabled as isParacetamolEnabled } from '@/views/content/medications/paracetamol/Packages'
 const isMetamizolEnabled = computed(() => useConfigStore()?.checkMedicationEnabled(MedId.Metamizol) ?? true)
 
-import { MedicationSwitchOption, MedId } from '@/types/medication'
+const configStore = useConfigStore()
+const isNalbuphinEnabled = computed(() => configStore?.checkMedicationEnabled(MedId.Nalbuphin) ?? true)
+const isMorphinEnabled = computed(() => configStore?.checkMedicationEnabled(MedId.Morphin) ?? true)
+const isFentanylEnabled = computed(() => configStore?.checkMedicationEnabled(MedId.Fentanyl) ?? true)
+
+import { MedId } from '@/types/medication'
 import { useMedicationSwitchOption } from '@/composables/useMedicationSwitchOption'
 import router from '@/router'
 
-const flowEdited = computed(() => flowSvg.replaceAll('#RPLC-Schmerz', 'SAA ' + switchOptionPPR.value.label))
+const flowEdited = computed(() => flowSvg
+  .replaceAll('#RPLC-Schmerz', 'SAA ' + switchOptionPPR.value.label)
+  .replaceAll('#RPLC-Opioid', 'SAA ' + switchOptionOpioid.value.label))
 
 function handleAction(payload: FlowActionPayload) {
   if (payload.key == 'switchPPR') {
@@ -58,8 +85,16 @@ function handleAction(payload: FlowActionPayload) {
     if (target) { router.push(target) }
     else { noPPR.value?.presentPopover(payload) }
   }
+  else if (payload.key == 'switchOpioid') {
+    const target = switchOptionOpioid.value.path
+    if (target) { router.push(target) }
+    else { noOpioid.value?.presentPopover(payload) }
+  }
   else if (payload.key === 'kolik') {
     action_kolik.value?.presentPopover(payload)
+  }
+  else if (payload.key === 'exKeta') {
+    action_exKeta.value?.presentPopover(payload)
   }
 }
 
@@ -73,8 +108,20 @@ const switchOptionPPR = computed(() => {
   return { id: '', label: 'periph. Schmerzmittel', path: null }
 })
 
+const switchOptionOpioid = computed(() => {
+  if (isFentanylEnabled.value) {
+    return useMedicationSwitchOption(MedId.Fentanyl) }
+  if (isMorphinEnabled.value) {
+    return useMedicationSwitchOption(MedId.Morphin) }
+  if (isNalbuphinEnabled.value) {
+    return useMedicationSwitchOption(MedId.Nalbuphin) }
+  return { id: '', label: 'Opioid', path: null }
+})
+
 const action_kolik = ref<InstanceType<typeof NsFlowAction> | null>(null)
+const action_exKeta = ref<InstanceType<typeof NsFlowAction> | null>(null)
 const noPPR = ref<InstanceType<typeof NsFlowAction> | null>(null)
+const noOpioid = ref<InstanceType<typeof NsFlowAction> | null>(null)
 
 </script>
 

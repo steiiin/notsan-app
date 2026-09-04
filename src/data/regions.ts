@@ -173,9 +173,7 @@ export const regionProfiles: Record<string, RegionProfile> = {
         },
 
         [MedId.Fentanyl]: {
-          packages: {
-            iv_0_05mgml_10ml: false,
-          }
+          enabled: false,
         },
 
         [MedId.Furosemid]: {
