@@ -245,6 +245,13 @@ export const regionProfiles: Record<string, RegionProfile> = {
           },
         },
 
+        [MedId.Salbutamol]: {
+          packages: {
+            inh_5mgml: false,
+            inh_2_5mgml: false,
+          }
+        },
+
         [MedId.Tranexam]: {
           packages: {
             iv_100mgml_10ml: false,

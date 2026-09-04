@@ -32,18 +32,20 @@
 
     <ns-content-group title="Einsatz & Dosierung">
 
-      <ns-package :package="inh_5mgml"></ns-package>
+      <ns-package v-if="isInh_5mgmlEnabled" :package="inh_5mgml"></ns-package>
+      <ns-package v-if="isInh_2_5mgmlEnabled" :package="inh_2_5mgml"></ns-package>
+      <ns-package v-if="isInh_1_25mgmlEnabled" :package="inh_1_25mgml"></ns-package>
 
       <ns-dosage-indication>
         <ns-dosage-usage type="pi">
           <div>
             <ns-dosage :dosage="{
-              target: '<12 Jahre', color: 'red',
-              dose: '1,25mg', hint: '(½ Ampulle)' }">
+              target: '≤12 Jahre', color: 'red',
+              dose: '2,5mg', hint: childDoseHint }">
             </ns-dosage>
             <ns-dosage :dosage="{
               target: '>12 Jahre', color: 'blue',
-              dose: '2,50mg', hint: '(1 Ampulle)' }">
+              dose: '5  mg', hint: adultDoseHint }">
             </ns-dosage>
           </div>
           <hr>
@@ -74,7 +76,6 @@
 
 import { computed } from 'vue'
 import NsContentGroup from '@/components/NsContentGroup.vue'
-import NsQuicktip from '@/components/NsQuicktip.vue'
 import NsList from '@/components/NsList.vue'
 import NsListItem from '@/components/NsListItem.vue'
 import NsContraindication from '@/components/medications/NsContraindication.vue'
@@ -85,10 +86,27 @@ import NsDosageUsage from '@/components/medications/NsDosageUsage.vue'
 import NsDosage from '@/components/medications/NsDosage.vue'
 import NsPharmacokinetics from '@/components/medications/NsPharmacokinetics.vue'
 import NsPharmacodynamics from '@/components/medications/NsPharmacodynamics.vue'
-import TextMono from '@/components/TextMono.vue'
 import TextUnderline from '@/components/TextUnderline.vue'
-import TextColored from '@/components/TextColored.vue'
-import { inh_5mgml } from './Packages'
+import {
+  inh_5mgml,
+  inh_2_5mgml,
+  inh_1_25mgml,
+  isInh_5mgmlEnabled,
+  isInh_2_5mgmlEnabled,
+  isInh_1_25mgmlEnabled,
+} from './Packages'
+import { selectSalbutamolAmpouleHint, type SalbutamolStrength } from './SalbutamolDosage'
+
+const enabledStrengths = computed<SalbutamolStrength[]>(() => {
+  const strengths: SalbutamolStrength[] = []
+  if (isInh_5mgmlEnabled.value) { strengths.push(5) }
+  if (isInh_2_5mgmlEnabled.value) { strengths.push(2.5) }
+  if (isInh_1_25mgmlEnabled.value) { strengths.push(1.25) }
+  return strengths
+})
+
+const childDoseHint = computed(() => selectSalbutamolAmpouleHint(2.5, enabledStrengths.value))
+const adultDoseHint = computed(() => selectSalbutamolAmpouleHint(5, enabledStrengths.value))
 
 </script>
 

@@ -592,6 +592,22 @@ export const medications: Medication[] =[
           { amount: '5mg / ml' }
         ]
       },
+      {
+        id: 'inh_2_5mgml',
+        type: 'flexamp',
+        name: 'Inhalationslösung Salbutamol',
+        incredients: [
+          { amount: '2,5mg / ml' }
+        ]
+      },
+      {
+        id: 'inh_1_25mgml',
+        type: 'flexamp',
+        name: 'Inhalationslösung Salbutamol',
+        incredients: [
+          { amount: '1,25mg / ml' }
+        ]
+      },
     ],
     component: () => import('@/views/content/medications/salbutamol/ContentSalbutamol.vue')
   },
