@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="541px" height="651px" viewBox="-0.5 -0.5 541 651">
-  <rect x="0" y="0" width="540" height="60" rx="30" ry="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:#111;stroke:var(--color)"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="542px" height="602px" viewBox="0 0 542 602" content="&lt;mxfile host=&quot;Electron&quot; agent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.5 Chrome/138.0.7204.251 Electron/37.6.1 Safari/537.36&quot; scale=&quot;1&quot; border=&quot;0&quot;&gt; &lt;diagram name=&quot;Seite-1&quot; id=&quot;L2w308fRFKuACmfVMeDd&quot;&gt; &lt;mxGraphModel dx=&quot;1852&quot; dy=&quot;1274&quot; grid=&quot;1&quot; gridSize=&quot;10&quot; guides=&quot;1&quot; tooltips=&quot;1&quot; connect=&quot;1&quot; arrows=&quot;1&quot; fold=&quot;1&quot; page=&quot;1&quot; pageScale=&quot;1&quot; pageWidth=&quot;540&quot; pageHeight=&quot;550&quot; math=&quot;0&quot; shadow=&quot;0&quot;&gt; &lt;root&gt; &lt;mxCell id=&quot;0&quot; /&gt; &lt;mxCell id=&quot;1&quot; parent=&quot;0&quot; /&gt; &lt;mxCell id=&quot;bO4cj00JHxBitIa0UD0s-1&quot; parent=&quot;1&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;arcSize=50;fillColor=#111111;fontColor=#F7F7F7;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;fontStyle=1;labelBackgroundColor=none;strokeColor=default;&quot; value=&quot;Anaphylaxie&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry height=&quot;60&quot; width=&quot;540&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;UserObject label=&quot;SAA: Adrenalin&quot; link=&quot;med:epinephrin&quot; id=&quot;wMs-KfJZ54d-8romMil--24&quot;&gt; &lt;mxCell parent=&quot;1&quot; style=&quot;shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.041666666666666664;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;fontColor=default;labelBackgroundColor=none;&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry height=&quot;60&quot; width=&quot;240&quot; x=&quot;287&quot; y=&quot;320&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;/UserObject&gt; &lt;UserObject label=&quot;BPR: &amp;lt;br&amp;gt;Bronchoobstruktion&quot; link=&quot;bpr:obstruktion&quot; id=&quot;wMs-KfJZ54d-8romMil--28&quot;&gt; &lt;mxCell parent=&quot;1&quot; style=&quot;shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.058823529411764705;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;labelBackgroundColor=none;&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry height=&quot;60&quot; width=&quot;170&quot; x=&quot;357&quot; y=&quot;400&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;/UserObject&gt; &lt;mxCell id=&quot;JwkV0UwC9lAJ2fDAmOlr-2&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;78ABQJdSXeH2nOvy_yZS-1&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot; target=&quot;78ABQJdSXeH2nOvy_yZS-10&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;Array as=&quot;points&quot;&gt; &lt;mxPoint x=&quot;407&quot; y=&quot;220&quot; /&gt; &lt;mxPoint x=&quot;407&quot; y=&quot;220&quot; /&gt; &lt;/Array&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;n1rCOMpJF7dWhQ3q2OxB-1&quot; connectable=&quot;0&quot; parent=&quot;JwkV0UwC9lAJ2fDAmOlr-2&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;&quot; value=&quot;JA&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; x=&quot;-0.2391&quot; y=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;-2&quot; y=&quot;2&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;JwkV0UwC9lAJ2fDAmOlr-3&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;78ABQJdSXeH2nOvy_yZS-1&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot; target=&quot;78ABQJdSXeH2nOvy_yZS-20&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;Array as=&quot;points&quot;&gt; &lt;mxPoint x=&quot;130&quot; y=&quot;280&quot; /&gt; &lt;mxPoint x=&quot;130&quot; y=&quot;280&quot; /&gt; &lt;/Array&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;n1rCOMpJF7dWhQ3q2OxB-2&quot; connectable=&quot;0&quot; parent=&quot;JwkV0UwC9lAJ2fDAmOlr-3&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;&quot; value=&quot;NEIN&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; x=&quot;-0.8602&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;-1&quot; y=&quot;120&quot; as=&quot;offset&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;UserObject label=&quot;&amp;lt;b&amp;gt;ABCD&amp;lt;/b&amp;gt;-Problem?&amp;lt;br&amp;gt;Rasche, bedrohliche Progredienz?&quot; link=&quot;/?action=severe&quot; id=&quot;78ABQJdSXeH2nOvy_yZS-1&quot;&gt; &lt;mxCell parent=&quot;1&quot; style=&quot;shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fontSize=14;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;size=20;dashed=1;fontColor=default;labelBackgroundColor=none;&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry height=&quot;60&quot; width=&quot;540&quot; y=&quot;140&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;/UserObject&gt; &lt;mxCell id=&quot;JwkV0UwC9lAJ2fDAmOlr-1&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;78ABQJdSXeH2nOvy_yZS-2&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot; target=&quot;78ABQJdSXeH2nOvy_yZS-1&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;Array as=&quot;points&quot;&gt; &lt;mxPoint x=&quot;270&quot; y=&quot;130&quot; /&gt; &lt;mxPoint x=&quot;270&quot; y=&quot;130&quot; /&gt; &lt;/Array&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;78ABQJdSXeH2nOvy_yZS-2&quot; parent=&quot;1&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;&quot; value=&quot;Allergenexposition beenden, wenn möglich&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry height=&quot;40&quot; width=&quot;500&quot; x=&quot;20&quot; y=&quot;80&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;78ABQJdSXeH2nOvy_yZS-4&quot; edge=&quot;1&quot; parent=&quot;1&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.51;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;Array as=&quot;points&quot;&gt; &lt;mxPoint x=&quot;270&quot; y=&quot;70&quot; /&gt; &lt;mxPoint x=&quot;270&quot; y=&quot;70&quot; /&gt; &lt;/Array&gt; &lt;mxPoint x=&quot;270&quot; y=&quot;60&quot; as=&quot;sourcePoint&quot; /&gt; &lt;mxPoint x=&quot;270&quot; y=&quot;80&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;78ABQJdSXeH2nOvy_yZS-10&quot; parent=&quot;1&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;&quot; value=&quot;O2-Gabe&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry height=&quot;30&quot; width=&quot;240&quot; x=&quot;287&quot; y=&quot;240&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;78ABQJdSXeH2nOvy_yZS-13&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;78ABQJdSXeH2nOvy_yZS-12&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot; target=&quot;wMs-KfJZ54d-8romMil--24&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;78ABQJdSXeH2nOvy_yZS-12&quot; parent=&quot;1&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;&quot; value=&quot;Lagerung nach Kreislauf&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry height=&quot;30&quot; width=&quot;240&quot; x=&quot;287&quot; y=&quot;270&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;78ABQJdSXeH2nOvy_yZS-19&quot; edge=&quot;1&quot; parent=&quot;1&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;442&quot; y=&quot;380&quot; as=&quot;sourcePoint&quot; /&gt; &lt;mxPoint x=&quot;442&quot; y=&quot;400&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;78ABQJdSXeH2nOvy_yZS-29&quot; edge=&quot;1&quot; parent=&quot;1&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;Array as=&quot;points&quot;&gt; &lt;mxPoint x=&quot;130&quot; y=&quot;520.01&quot; /&gt; &lt;mxPoint x=&quot;130&quot; y=&quot;570.01&quot; /&gt; &lt;/Array&gt; &lt;mxPoint x=&quot;127&quot; y=&quot;520&quot; as=&quot;sourcePoint&quot; /&gt; &lt;mxPoint x=&quot;147&quot; y=&quot;570&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;78ABQJdSXeH2nOvy_yZS-20&quot; parent=&quot;1&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontSize=14;fontColor=default;labelBackgroundColor=none;&quot; value=&quot;i.v.-Zugang + kristalloide Infusionslösung&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry height=&quot;40&quot; width=&quot;510&quot; x=&quot;12&quot; y=&quot;480&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;UserObject label=&quot;SAA: Dimetinden&quot; link=&quot;med:dimetinden&quot; id=&quot;78ABQJdSXeH2nOvy_yZS-21&quot;&gt; &lt;mxCell parent=&quot;1&quot; style=&quot;shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.04166666666666619;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=&amp;quot;Roboto&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif;fontStyle=1;fontSize=14;textShadow=0;dashed=1;fontColor=default;labelBackgroundColor=none;&quot; vertex=&quot;1&quot;&gt; &lt;mxGeometry height=&quot;60&quot; width=&quot;240&quot; x=&quot;147&quot; y=&quot;540&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;/UserObject&gt; &lt;mxCell id=&quot;78ABQJdSXeH2nOvy_yZS-24&quot; edge=&quot;1&quot; parent=&quot;1&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.657;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt; &lt;mxPoint x=&quot;321&quot; y=&quot;380&quot; as=&quot;sourcePoint&quot; /&gt; &lt;mxPoint x=&quot;321.06999999999994&quot; y=&quot;480&quot; as=&quot;targetPoint&quot; /&gt; &lt;/mxGeometry&gt; &lt;/mxCell&gt; &lt;mxCell id=&quot;78ABQJdSXeH2nOvy_yZS-26&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;wMs-KfJZ54d-8romMil--28&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.843;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=block;endFill=1;&quot; target=&quot;78ABQJdSXeH2nOvy_yZS-20&quot;&gt; &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt; &lt;/mxCell&gt; &lt;/root&gt; &lt;/mxGraphModel&gt; &lt;/diagram&gt; &lt;/mxfile&gt;">
+  <rect x="0.15" y="0" width="540" height="60" rx="30" ry="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:#111;stroke:var(--color)" transform="translate(0.5,0.5)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
     <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:30px;margin-left:1px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:#f7f7f7">
@@ -9,178 +9,50 @@
       </div>
     </div>
   </foreignObject>
-  <a xlink:href="file:///?action=simple"><path d="M 20 140 L 240 140 L 260 170 L 240 200 L 20 200 L 0 170 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:258px;height:1px;padding-top:170px;margin-left:1px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Stadium I</div></div></div></foreignObject></a>
-  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/med:epinephrin"><rect x="290" y="300" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<path d="M 300 300 L 300 360 M 520 300 L 520 360" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:330px;margin-left:301px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">SAA: Adrenalin</div></div></div></foreignObject></a>
-  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/bpr:obstruktion"><rect x="360" y="380" width="170" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<path d="M 370 380 L 370 440 M 520 380 L 520 440" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:148px;height:1px;padding-top:410px;margin-left:371px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR:<br/>
+  <a xlink:href="file:///snap/drawio/292/app/resources/app.asar/drawio/src/main/webapp/med:epinephrin"><g transform="translate(0.5,0.5)"><rect x="287.15" y="320" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
+<path d="M 297.15 320 L 297.15 380 M 517.15 320 L 517.15 380" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+</g><foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:350px;margin-left:299px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">SAA: Adrenalin</div></div></div></foreignObject></a>
+  <a xlink:href="file:///snap/drawio/292/app/resources/app.asar/drawio/src/main/webapp/bpr:obstruktion"><g transform="translate(0.5,0.5)"><rect x="357.15" y="400" width="170" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-bpr);stroke:var(--ns-flow-bpr-border)"/>
+<path d="M 367.15 400 L 367.15 460 M 517.15 400 L 517.15 460" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-bpr-border)"/>
+</g><foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:148px;height:1px;padding-top:430px;margin-left:369px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">BPR:<br/>
 Bronchoobstruktion</div></div></div></foreignObject></a>
-  <path d="M 410 200 L 410 220 L 410 200 L 410 211.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 410 218.88 L 406.5 211.88 L 413.5 211.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <a xlink:href="file:///?action=severe"><path d="M 300 140 L 520 140 L 540 170 L 520 200 L 300 200 L 280 170 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:258px;height:1px;padding-top:170px;margin-left:281px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Stadium II+III</div></div></div></foreignObject></a>
-  <rect x="10" y="80" width="510" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <g transform="translate(0.5,0.5)">
+    <path d="M 407.23 200 L 407.23 220 L 407.23 231.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+    <path d="M 407.23 238.88 L 403.73 231.88 L 410.73 231.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  </g>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:508px;height:1px;padding-top:100px;margin-left:11px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:218px;margin-left:407px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          JA
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <g transform="translate(0.5,0.5)">
+    <path d="M 130.15 200 L 130.15 280 L 130.15 471.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+    <path d="M 130.15 478.88 L 126.65 471.88 L 133.65 471.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  </g>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:341px;margin-left:130px">
+      <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color);background-color:var(--background)">
+        <div style="display:inline-block;font-size:11px;font-family:Helvetica;color:var(--color);line-height:1.2;pointer-events:all;background-color:var(--background);white-space:nowrap">
+          NEIN
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+  <a xlink:href="file:///?action=severe"><path d="M 20.15 140 L 520.15 140 L 540.15 170 L 520.15 200 L 20.15 200 L 0.15 170 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--background);stroke:var(--color)" transform="translate(0.5,0.5)"/>
+
+<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:538px;height:1px;padding-top:170px;margin-left:1px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal"><b>ABCD</b>-Problem?<br/>
+Rasche, bedrohliche Progredienz?</div></div></div></foreignObject></a>
+  <g transform="translate(0.5,0.5)">
+    <path d="M 270.15 120 L 270.15 130 L 270.15 131.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+    <path d="M 270.15 138.88 L 266.65 131.88 L 273.65 131.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  </g>
+  <rect x="20.15" y="80" width="500" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)" transform="translate(0.5,0.5)"/>
+  <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:498px;height:1px;padding-top:100px;margin-left:21px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
         <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
           Allergenexposition beenden, wenn möglich
@@ -188,15 +60,13 @@ Bronchoobstruktion</div></div></div></foreignObject></a>
       </div>
     </div>
   </foreignObject>
-  <path d="M 270 60 L 270 71.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 270 78.88 L 266.5 71.88 L 273.5 71.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <path d="M 130 120 L 130 131.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 130 138.88 L 126.5 131.88 L 133.5 131.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <path d="M 410 120 L 410 131.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 410 138.88 L 406.5 131.88 L 413.5 131.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <rect x="290" y="220" width="240" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <g transform="translate(0.5,0.5)">
+    <path d="M 270.15 60 L 270.15 70 L 270.15 71.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+    <path d="M 270.15 78.88 L 266.65 71.88 L 273.65 71.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  </g>
+  <rect x="287.15" y="240" width="240" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)" transform="translate(0.5,0.5)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:235px;margin-left:291px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:255px;margin-left:288px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
         <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
           O2-Gabe
@@ -204,11 +74,13 @@ Bronchoobstruktion</div></div></div></foreignObject></a>
       </div>
     </div>
   </foreignObject>
-  <path d="M 410 280 L 410 300 L 410 280 L 410 291.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 410 298.88 L 406.5 291.88 L 413.5 291.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <rect x="290" y="250" width="240" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <g transform="translate(0.5,0.5)">
+    <path d="M 407.23 300 L 407.23 320 L 407.23 300 L 407.18 311.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+    <path d="M 407.15 318.88 L 403.68 311.87 L 410.68 311.9 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  </g>
+  <rect x="287.15" y="270" width="240" height="30" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)" transform="translate(0.5,0.5)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:265px;margin-left:291px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:238px;height:1px;padding-top:285px;margin-left:288px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
         <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
           Lagerung nach Kreislauf
@@ -216,13 +88,17 @@ Bronchoobstruktion</div></div></div></foreignObject></a>
       </div>
     </div>
   </foreignObject>
-  <path d="M 445 360 L 445 371.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 445 378.88 L 441.5 371.88 L 448.5 371.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <path d="M 130 500 L 130 550 L 141.88 550" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 148.88 550 L 141.88 553.5 L 141.88 546.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <rect x="15" y="460" width="510" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)"/>
+  <g transform="translate(0.5,0.5)">
+    <path d="M 442.15 380 L 442.15 391.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+    <path d="M 442.15 398.88 L 438.65 391.88 L 445.65 391.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  </g>
+  <g transform="translate(0.5,0.5)">
+    <path d="M 127.15 520 L 130.15 520 L 130.15 570 L 139.03 570" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+    <path d="M 146.03 570 L 139.03 573.5 L 139.03 566.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  </g>
+  <rect x="12.15" y="480" width="510" height="40" fill="transparent" stroke="transparent" pointer-events="all" style="fill:var(--ns-flow-process);stroke:var(--ns-flow-process-border)" transform="translate(0.5,0.5)"/>
   <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:508px;height:1px;padding-top:480px;margin-left:16px">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:508px;height:1px;padding-top:500px;margin-left:13px">
       <div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)">
         <div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
           i.v.-Zugang + kristalloide Infusionslösung
@@ -230,122 +106,15 @@ Bronchoobstruktion</div></div></div></foreignObject></a>
       </div>
     </div>
   </foreignObject>
-  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/med:dimetinden"><rect x="150" y="520" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<path d="M 160 520 L 160 580 M 380 520 L 380 580" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:550px;margin-left:161px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">SAA: Dimetinden</div></div></div></foreignObject></a>
-  <a xlink:href="file:///snap/drawio/255/resources/app.asar/drawio/src/main/webapp/med:prednisolon"><rect x="150" y="590" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<path d="M 160 590 L 160 650 M 380 590 L 380 650" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:620px;margin-left:161px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">SAA: Prednisolon</div></div></div></foreignObject></a>
-  <path d="M 130 200 L 130 330 L 129.77 451.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 129.75 458.88 L 126.27 451.88 L 133.27 451.89 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <path d="M 324 360 L 324 410.5 L 324.06 451.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 324.07 458.88 L 320.56 451.89 L 327.56 451.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <path d="M 445 440 L 445 451.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 445 458.88 L 441.5 451.88 L 448.5 451.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
-  <path d="M 130 550 L 130 620 L 141.88 620" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
-  <path d="M 148.88 620 L 141.88 623.5 L 141.88 616.5 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  <a xlink:href="file:///snap/drawio/292/app/resources/app.asar/drawio/src/main/webapp/med:dimetinden"><g transform="translate(0.5,0.5)"><rect x="147.15" y="540" width="240" height="60" fill="transparent" stroke="transparent" stroke-dasharray="3 3" pointer-events="all" style="fill:var(--ns-flow-saa);stroke:var(--ns-flow-saa-border)"/>
+<path d="M 157.15 540 L 157.15 600 M 377.15 540 L 377.15 600" fill="transparent" stroke="transparent" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="all" style="stroke:var(--ns-flow-saa-border)"/>
+</g><foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:218px;height:1px;padding-top:570px;margin-left:157px"><div style="box-sizing:border-box;font-size:0;text-align:center;color:var(--color)"><div style="display:inline-block;font-size:14px;font-family:&quot;Roboto&quot;,&quot;Helvetica Neue&quot;,sans-serif;color:var(--color);line-height:1.2;pointer-events:all;font-weight:700;white-space:normal;word-wrap:normal">SAA: Dimetinden</div></div></div></foreignObject></a>
+  <g transform="translate(0.5,0.5)">
+    <path d="M 321.15 380 L 321.23 430.46 L 321.22 471.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+    <path d="M 321.22 478.88 L 317.72 471.88 L 324.72 471.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  </g>
+  <g transform="translate(0.5,0.5)">
+    <path d="M 442.15 460 L 442.15 471.88" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="stroke" style="stroke:var(--color)"/>
+    <path d="M 442.15 478.88 L 438.65 471.88 L 445.65 471.88 Z" fill="transparent" stroke="transparent" stroke-miterlimit="10" pointer-events="all" style="fill:var(--color);stroke:var(--color)"/>
+  </g>
 </svg>
