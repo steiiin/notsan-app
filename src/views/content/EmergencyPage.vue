@@ -3,6 +3,7 @@
     <ion-header>
       <ion-toolbar>
         <ion-title>Notfall</ion-title>
+        <ns-modified :datetime="modified"></ns-modified>
       </ion-toolbar>
     </ion-header>
     <ion-content ref="mycontent">
@@ -36,7 +37,8 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonAccordionGroup
 import NsPatientInput from '../../components/emergency/NsPatientInput.vue'
 import NsPatientInfo from '../../components/emergency/NsPatientInfo.vue'
 import { useRoute, useRouter } from 'vue-router'
-import { nextTick, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
+import { getContentModified } from '@/service/version'
 
 // ############################################################################
 
@@ -52,12 +54,14 @@ import ContentKrampfanfall from './emergency/krampfanfall/ContentKrampfanfall.vu
 import ContentSchmerzen from './emergency/schmerzen/ContentSchmerzen.vue'
 import ContentLuftnot from './emergency/luftnot/ContentLuftnot.vue'
 import ContentSonstige from './emergency/sonstige/ContentSonstige.vue'
+import NsModified from '@/components/NsModified.vue'
 
 // ############################################################################
 
 const router = useRouter()
 const route = useRoute()
-router.afterEach(async (to, from) => {
+const modified = computed(() => getContentModified(route.path))
+router.afterEach(async (to) => {
 
   if (to.fullPath.includes('emergency') && !to.hash)
   {

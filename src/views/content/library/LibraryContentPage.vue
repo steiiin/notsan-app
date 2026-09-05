@@ -6,6 +6,7 @@
           <ion-back-button :default-href="defaultHref"></ion-back-button>
         </ion-buttons>
         <ion-title>{{ entry?.title ?? 'Wissen' }}</ion-title>
+        <ns-modified :datetime="modified"></ns-modified>
       </ion-toolbar>
     </ion-header>
     <ion-content ref="mycontent">
@@ -19,7 +20,10 @@
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue'
 import { computed, defineAsyncComponent } from 'vue'
 import NsEmptyState from '@/components/NsEmptyState.vue';
+import NsModified from '@/components/NsModified.vue';
 import { useContentStore } from '@/stores/content'
+import { useRoute } from 'vue-router'
+import { getContentModified } from '@/service/version'
 
 const props = defineProps<{
   entryId: string
@@ -27,6 +31,8 @@ const props = defineProps<{
 }>()
 
 const content = useContentStore()
+const route = useRoute()
+const modified = computed(() => getContentModified(route.path))
 
 const entry = computed(() => {
   if (props.listId) {
